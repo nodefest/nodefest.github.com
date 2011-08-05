@@ -48,7 +48,7 @@ h1#logo {
 }
 
 h1#logo img {
-	margin-top: -18px;
+	margin-top: -25px;
 }
 
 #twitter, #fb, #plus, #hatena, #mixi, #gree {
@@ -113,10 +113,12 @@ h2 {
 /* the-green 140,200,75 */
 
 footer {
+	clear: both;
 	border-top: solid 2px #ccc;
 	padding-top: 3px;
 	font-size: 11px;
 	text-align: right;
+	margin-bottom: 25px;
 }
 
 /* Clearfix */
