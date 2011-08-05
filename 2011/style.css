@@ -47,6 +47,10 @@ h1#logo {
 	margin: 10px 0;
 }
 
+h1#logo img {
+	margin-top: -18px;
+}
+
 #twitter, #fb, #plus, #hatena, #mixi, #gree {
 	float: right;
 }
@@ -64,7 +68,7 @@ h1#logo {
 #mixi {
 	position: relative;
 	top:70px;
-	right: -230px;
+	right: -225px;
 }
 #gree {
 	position: relative;
