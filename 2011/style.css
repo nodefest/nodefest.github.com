@@ -47,14 +47,29 @@ h1#logo {
 	margin: 10px 0;
 }
 
-#twitter, #fb, #plus, #hatena {
+#twitter, #fb, #plus, #hatena, #mixi, #gree {
 	float: right;
 }
 #twitter {
 	width: 85px;
 }
-#fb, #plus, #hatena {
+#fb, #plus {
 	width: 55px;
+}
+#hatena {
+	position: relative;
+	top:70px;
+	right:-50px;
+}
+#mixi {
+	position: relative;
+	top:70px;
+	right: -230px;
+}
+#gree {
+	position: relative;
+	top: 70px;
+	right: -390px;
 }
 #eyecatch{
 	margin: 10px 0;
