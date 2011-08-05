@@ -44,7 +44,7 @@ section, article, aside, footer, header, nav, hgroup {
 }
 
 h1#logo {
-	margin: 10px 0;
+	margin: 15px 0 10px 0;
 }
 
 h1#logo img {
@@ -76,9 +76,11 @@ h1#logo img {
 	right: -390px;
 }
 #eyecatch{
-	margin: 10px 0;
+	margin: 5px 0;
 }
-
+#sponsors {
+	margin-bottom: 10px;
+}
 /* navigation menu */
 .nav { 
 	margin: 15px auto;
@@ -105,12 +107,13 @@ h1#logo img {
 h2 {
 	font-size: 28px;
 	font-family: 'Puritan', sans-serif;
+	padding-bottom: 5px;
 }
 
 /* the-green 140,200,75 */
 
 footer {
-	border-top: solid 1px #000;
+	border-top: solid 2px #ccc;
 	padding-top: 3px;
 	font-size: 11px;
 	text-align: right;
