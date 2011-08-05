@@ -47,10 +47,15 @@ h1#logo {
 	margin: 10px 0;
 }
 
-#social1, #social2, #social3 {
+#twitter, #fb, #plus {
 	float: right;
 }
-
+#twitter {
+	width: 90px;
+}
+#fb, #plus {
+	width: 60px;
+}
 #eyecatch{
 	margin: 10px 0;
 }
