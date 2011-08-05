@@ -1,9 +1,11 @@
+
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
 	margin:0;
 	padding:0;
 }
 body {
 	border-top: solid 4px #000;
+	font-size: 12px;
 }
 table {
 	border-collapse:collapse;
@@ -32,6 +34,10 @@ q:before,q:after {
 abbr,acronym { border:0;
 }
 
+section, article, aside, footer, header, nav, hgroup {
+  display:block;
+}
+
 #wrapper {
 	width: 920px;
 	margin: 0 auto;
@@ -50,6 +56,13 @@ h1#logo {
 	margin: 15px auto;
 	font: 18px Georgia, serif;
 	border-bottom: 2px solid #ccc; 
+}
+
+footer {
+	border-top: solid 1px #000;
+	padding-top: 3px;
+	font-size: 11px;
+	text-align: right;
 }
 
 /* Clearfix */
@@ -94,3 +107,4 @@ h1#logo {
 .ie6 #magic-line {
 	bottom: -3px;
 }
+

@@ -6,13 +6,26 @@
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js'></script>
     <script src='js/jquery.color-RGBa-patch.js'></script>
     <script src='js/example.js'></script>
+    <!--[if IE]>
+    <script>
+    document.createElement("header" );
+    document.createElement("footer" );
+    document.createElement("section"); 
+    document.createElement("aside"  );
+    document.createElement("nav"    );
+    document.createElement("article"); 
+    document.createElement("hgroup" ); 
+    document.createElement("time"   );
+    </script>
+	<noscript>ご利用のブラウザでJavaScriptを有効にしてください。</noscript>
+	<![endif]-->
 </head>
 <body>
 <div id="wrapper">
+<header>
     <h1 id="logo"><img src="images/logo.png" alt="node.js Conference in Japan 2011" /></h1>
 
-		<div class="nav">
-
+	<div class="nav">
 		<ul class="group" id="example-one">
             <li class="current_page_item"><a href="index.html">HOME</a></li>
             <li><a href="#">SESSION</a></li>
@@ -20,13 +33,16 @@
             <li><a href="#">ACCESS</a></li>
             <li><a href="#">REGISTER</a></li>
         </ul>
-        
     </div>
     
 	<div id="eyecatch"><img src="images/eyecatch.gif" /></div>
-	
+</header>
 
-    
+	<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+
+<footer>
+	<p>&copy; 2011. Node.js Conference Japan 2011.</p>
+</footer>
 </div>
 </body>
 </html>
