@@ -58,6 +58,28 @@ h1#logo {
 	border-bottom: 2px solid #ccc; 
 }
 
+/* columns */
+#col1 {
+	float: left;
+	width: 300px;
+	height: 280px;
+	margin-right: 10px;
+}
+#col2 {
+	float: left;
+	width: 300px;
+	margin-right: 10px;
+}
+#col3 {
+	margin-left: 620px;
+	width: 300px;
+}
+h2 {
+	font-size: 28px;
+	font-family: 'Puritan', sans-serif;
+}
+
+
 footer {
 	border-top: solid 1px #000;
 	padding-top: 3px;

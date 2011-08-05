@@ -1,5 +1,6 @@
 <html>
 <head>
+	<link href='http://fonts.googleapis.com/css?family=Puritan' rel='stylesheet' type='text/css'>
 	<meta charset="UTF-8" />
 	<title>Node.js Conference Japan 2011</title>
 	<link rel="stylesheet" href="style.css" />
@@ -38,7 +39,47 @@
 	<div id="eyecatch"><img src="images/eyecatch.gif" /></div>
 </header>
 
-	<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+<section id="col1">
+	<h2>ABOUT</h2>
+	<p>Node.jsにフォーカスした開発者会議、『Node.js Conference Japan 2011』では、全てのスキルレベルを持つ開発者が参加でき、強力なコミュニティを構築します。参加者に求めるのはただひとつ健全な熱意と、ノンブロッキングなサーバーサイドJavascriptへの愛情です。当日には作成者でもあるJoyentのライアン・ダールも来日し出席します。</p>
+</section>
+<section id="col2">
+	<h2>SPEAKERS</h2>
+	<p>今、Node.jsが近い将来にメジャーなウェブ開発のプレイヤーに入ることが目前なことで世界中から関心を集めていますが、このほとんどの言語と親和性があるJavascriptを使ってどのようなタイプのアプリケーションが構築できるのか？どのように開発者はこの素晴らしいリアルタイムウェブ技術を扱うのか等、全ての疑問に応えるため、わたしたちは決意しカンファレンスを実施します。</p>
+</section>
+<section id="col3">
+	<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 4,
+  interval: 6000,
+  width: 'auto',
+  height: 210,
+  theme: {
+    shell: {
+      background: '#ffffff',
+      color: '#000000'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#000000',
+      links: '#4aed05'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: true,
+    hashtags: true,
+    timestamp: true,
+    avatars: false,
+    behavior: 'all'
+  }
+}).render().setUser('nodejs').start();
+</script>
+</section>
 
 <footer>
 	<p>&copy; 2011. Node.js Conference Japan 2011.</p>
