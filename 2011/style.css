@@ -47,14 +47,14 @@ h1#logo {
 	margin: 10px 0;
 }
 
-#twitter, #fb, #plus {
+#twitter, #fb, #plus, #hatena {
 	float: right;
 }
 #twitter {
-	width: 90px;
+	width: 85px;
 }
-#fb, #plus {
-	width: 60px;
+#fb, #plus, #hatena {
+	width: 55px;
 }
 #eyecatch{
 	margin: 10px 0;
