@@ -3,7 +3,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 	padding:0;
 }
 body {
-	border-top: solid 4px #8CC84B;
+	border-top: solid 4px #333;
 	font-size: 12px;
 	color: #333;
 }
@@ -46,8 +46,8 @@ header {
 }
 
 h1#logo {
-	margin: 10px 0 10px 0;
-	height: 64px;
+	margin: 10px 0 22px 0;
+	height: 80px;
 }
 
 #social {
@@ -126,8 +126,8 @@ footer {
 /* navigation menu */
 .nav {
 	margin: 10px auto;
-	font: 20px 'Puritan', sans-serif;
-	border-bottom: 2px solid #ccc; 
+	font: 18px 'Limelight', cursive;
+	border-bottom: 2px solid #ccc;
 }
 
 /* Clearfix */
@@ -146,14 +146,15 @@ footer {
 }
 #nav-global a { 
 	color: #888; 
-	font-size: 19px; 
+	font-size: 18px; 
 	float: left;
-	padding: 7px 18px 1px 18px;
+	padding: 7px 20px 1px 20px;
 	text-decoration: none;
 	text-transform: uppercase;
 }
 #nav-global a span {
 	font-size: 9px;
+	font-weight: bold;
 	display: block;
 	text-align: center;
 }
