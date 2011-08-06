@@ -9,7 +9,7 @@ $(function() {
     */
     
     /* Add Magic Line markup via JavaScript, because it ain't gonna work without */
-    $("#example-one").append("<li id='magic-line'></li>");
+    $("#nav-global").append("<li id='magic-line'></li>");
     
     /* Cache it */
     var $magicLine = $("#magic-line");
@@ -20,7 +20,7 @@ $(function() {
         .data("origLeft", $magicLine.position().left)
         .data("origWidth", $magicLine.width());
         
-    $("#example-one li").find("a").hover(function() {
+    $("#nav-global li").find("a").hover(function() {
         $el = $(this);
         leftPos = $el.position().left;
         newWidth = $el.parent().width();

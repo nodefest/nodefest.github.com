@@ -58,7 +58,7 @@
     <h1 id="logo"><img src="images/logo.png" alt="node.js Conference in Japan 2011" /></h1>
 
 	<div class="nav">
-		<ul class="group" id="example-one">
+		<ul class="group" id="nav-global">
             <li class="current_page_item"><a href="index.html">HOME<br /><span>ホーム</span></a></li>
             <li><a href="#">SESSION<br /><span>セッション</span></a></li>
             <li><a href="#">SPEAKERS<br /><span>登壇者紹介</span></a></li>
@@ -91,7 +91,7 @@ new TWTR.Widget({
   rpp: 4,
   interval: 6000,
   width: 'auto',
-  height: 210,
+  height: 170,
   theme: {
     shell: {
       background: '#ffffff',
@@ -100,12 +100,12 @@ new TWTR.Widget({
     tweets: {
       background: '#ffffff',
       color: '#000000',
-      links: '#4aed05'
+      links: '#8CC84B'
     }
   },
   features: {
     scrollbar: false,
-    loop: false,
+    loop: true,
     live: true,
     hashtags: true,
     timestamp: true,

@@ -1,10 +1,9 @@
-
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
 	margin:0;
 	padding:0;
 }
 body {
-	border-top: solid 4px #000;
+	border-top: solid 4px #8CC84B;
 	font-size: 12px;
 	color: #333;
 }
@@ -92,15 +91,15 @@ h1#logo {
 	float: left;
 	width: 290px;
 	height: 280px;
-	margin-right: 20px;
+	margin-right: 25px;
 }
 #col2 {
 	float: left;
 	width: 290px;
-	margin-right: 20px;
+	margin-right: 25px;
 }
 #col3 {
-	margin-left: 620px;
+	margin-left: 630px;
 	width: 290px;
 }
 h2 {
@@ -137,16 +136,16 @@ footer {
 *:first-child+html .group { zoom: 1; } /* IE7 */
 
 /* Example One */
-#example-one { 
+#nav-global { 
 	margin: 0 auto; 
 	list-style: none; 
 	position: relative; 
 	width: 920px; 
 }
-#example-one li { 
+#nav-global li { 
 	display: inline-block;	
 }
-#example-one a { 
+#nav-global a { 
 	color: #888; 
 	font-size: 19px; 
 	float: left;
@@ -154,12 +153,12 @@ footer {
 	text-decoration: none;
 	text-transform: uppercase;
 }
-#example-one a span {
+#nav-global a span {
 	font-size: 9px;
 	display: block;
 	text-align: center;
 }
-#example-one a:hover { 
+#nav-global a:hover { 
 	color: #000; 
 }
 #magic-line { 
@@ -173,7 +172,7 @@ footer {
 .current_page_item a { 
 	color: #000 !important; 
 }
-.ie6 #example-one li, .ie7 #example-one li { 
+.ie6 #nav-global li, .ie7 #nav-global li { 
 	display: inline; 
 }
 .ie6 #magic-line {
