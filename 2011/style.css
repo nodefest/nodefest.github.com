@@ -6,6 +6,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 body {
 	border-top: solid 4px #000;
 	font-size: 12px;
+	color: #333;
 }
 table {
 	border-collapse:collapse;
@@ -38,19 +39,23 @@ section, article, aside, footer, header, nav, hgroup {
   display:block;
 }
 
+header {
+}
 #wrapper {
 	width: 920px;
 	margin: 0 auto;
 }
 
 h1#logo {
-	margin: 15px 0 10px 0;
+	margin: 10px 0 10px 0;
+	height: 64px;
 }
 
-h1#logo img {
-	margin-top: -25px;
+#social {
+	width: 300px;
+	height: 95px;
+	float: right;
 }
-
 #twitter, #fb, #plus, #hatena, #mixi, #gree {
 	float: right;
 }
@@ -67,13 +72,13 @@ h1#logo img {
 }
 #mixi {
 	position: relative;
-	top:70px;
-	right: -225px;
+	top:4px;
+	right: -60px;
 }
 #gree {
 	position: relative;
-	top: 70px;
-	right: -390px;
+	top:3px;
+	right: -82px;
 }
 #eyecatch{
 	margin: 5px 0;
@@ -81,37 +86,36 @@ h1#logo img {
 #sponsors {
 	margin-bottom: 10px;
 }
-/* navigation menu */
-.nav { 
-	margin: 15px auto;
-	font: 18px Georgia, serif;
-	border-bottom: 2px solid #ccc; 
-}
 
 /* columns */
 #col1 {
 	float: left;
-	width: 300px;
+	width: 290px;
 	height: 280px;
-	margin-right: 10px;
+	margin-right: 20px;
 }
 #col2 {
 	float: left;
-	width: 300px;
-	margin-right: 10px;
+	width: 290px;
+	margin-right: 20px;
 }
 #col3 {
 	margin-left: 620px;
-	width: 300px;
+	width: 290px;
 }
 h2 {
 	font-size: 28px;
 	font-family: 'Puritan', sans-serif;
 	padding-bottom: 5px;
 }
+h2 span {
+	font-size: 11px;
+	font-weight: bold;
+	position: relative;
+	right: 0px;
+}
 
 /* the-green 140,200,75 */
-
 footer {
 	clear: both;
 	border-top: solid 2px #ccc;
@@ -119,6 +123,13 @@ footer {
 	font-size: 11px;
 	text-align: right;
 	margin-bottom: 25px;
+}
+
+/* navigation menu */
+.nav {
+	margin: 10px auto;
+	font: 20px 'Puritan', sans-serif;
+	border-bottom: 2px solid #ccc; 
 }
 
 /* Clearfix */
@@ -136,12 +147,17 @@ footer {
 	display: inline-block;	
 }
 #example-one a { 
-	color: #bbb; 
-	font-size: 15px; 
+	color: #888; 
+	font-size: 19px; 
 	float: left;
-	padding: 6px 10px 4px 10px;
+	padding: 7px 18px 1px 18px;
 	text-decoration: none;
 	text-transform: uppercase;
+}
+#example-one a span {
+	font-size: 9px;
+	display: block;
+	text-align: center;
 }
 #example-one a:hover { 
 	color: #000; 
@@ -163,4 +179,3 @@ footer {
 .ie6 #magic-line {
 	bottom: -3px;
 }
-
