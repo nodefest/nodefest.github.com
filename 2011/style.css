@@ -117,11 +117,10 @@ h2 span {
 /* the-green 140,200,75 */
 footer {
 	clear: both;
-	border-top: solid 2px #ccc;
 	padding-top: 3px;
 	font-size: 11px;
-	text-align: right;
-	margin-bottom: 25px;
+	text-align: center;
+	margin: 25px 0;
 }
 
 /* navigation menu */
