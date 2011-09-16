@@ -91,15 +91,16 @@ h1#logo {
 /* columns */
 #col1 {
 	float: left;
-	width: 290px;
+	width: 580px;
 	height: 280px;
 	margin-right: 25px;
 }
-#col2 {
+/* 未使用
+	#col2 {
 	float: left;
 	width: 290px;
 	margin-right: 25px;
-}
+} */
 #col3 {
 	margin-left: 630px;
 	width: 290px;
