@@ -46,8 +46,10 @@ header {
 }
 
 h1#logo {
-	margin: 10px 0 22px 0;
+	margin: 0 auto;
+	margin: 10px 0 32px 0;
 	height: 80px;
+	text-align: center;
 }
 
 #social {
@@ -127,7 +129,6 @@ footer {
 .nav {
 	margin: 10px auto;
 	font: 18px 'Limelight', cursive;
-	border-bottom: 2px solid #ccc;
 }
 
 /* Clearfix */
