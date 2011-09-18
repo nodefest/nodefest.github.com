@@ -14,6 +14,10 @@ function cursorShare(ns) {
     }
     cursor.css('left', data.x + 'px');
     cursor.css('top', data.y + 'px');
+    cursor.show();
+    setTimeout(function() {
+      cursor.hide();
+    }, 10000);
   });
   $('#wrapper').mousemove(function(e) {
     socket.emit('location', {
