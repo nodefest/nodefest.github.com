@@ -87,7 +87,7 @@ h1#logo {
 /* ナビゲーション START */
 .nav-box {
 	margin: 10px auto;
-	font: 18px, cursive; /* 'Limelight' */
+	font: 18px, cursive;
 }
 
 #nav { 
@@ -114,6 +114,9 @@ h1#logo {
 	text-decoration: none;
 	font-family: "ヒラギノ明朝 Pro W3","Hiragino Mincho Pro", sans-serif;
 }
+#nav a:hover {
+	color: #000;
+}
 
 #nav span {
 	font-size: 9px;
@@ -137,8 +140,8 @@ h1#logo {
 }
 
 #sliderText {
-	margin-left: 60px;
-    padding-top: 30px;
+	margin-left: 70px;
+  padding-top: 27px;
 	width: 600px;
 }
 
@@ -180,6 +183,10 @@ h1#logo {
 	float: left;
 }
 
+.speaker h3 {
+	font-size: 14px;
+}
+
 #row2 h3 {
 	margin: 0;
 	font-weight: bold;
@@ -187,8 +194,8 @@ h1#logo {
 
 #row2 .imgBox {
 	float: left;
-	width: 120px;
-	height: 120px;
+	width: 130px;
+	height: 130px;
 	margin: 0 15px 20px 0;
 }
 
@@ -238,11 +245,11 @@ h2 span {
 /* フッター START */
 footer {
 	clear: both;
-	padding-top: 12px;
+	padding-top: 14px;
 	font-size: 11px;
 	font-weight: bold;
 	text-align: center;
-	margin: 25px 0;
+	margin: 25px 0 40px 0;
 	background: url('../images/footerLine.png');
 	background-repeat: no-repeat;
 }
