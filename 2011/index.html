@@ -22,21 +22,24 @@
   <script type="text/javascript">
     var socket = io.connect('http://sakura.mesolabs.com:3011/index');
     socket.on('location', function(data) {
-      console.log(data);
-      var cursor = $('img');
-      cursor.attr('src', 'images/cursor.png');
-      cursor.css('position', 'absolute');
-      cursor.css('width', '18px');
-      cursor.css('height', '24px');
+      var cursor = $('#' + socket.id);
+      if (!cursor.attr('id')) {
+        cursor = $('<img>');
+        cursor.attr('id', '' + socket.id);
+        cursor.attr('src', 'images/cursor.png');
+        cursor.css('position', 'absolute');
+        cursor.css('width', '18px');
+        cursor.css('height', '24px');
+        $('#wrapper').append(cursor);
+      }
       cursor.css('left', data.x + 'px');
       cursor.css('top', data.y + 'px');
-      $('#wrapper').append(cursor);
     });
     $(function() {
       $('#wrapper').mousemove(function(e) {
         socket.emit('location', {
-          x: e.clientX,
-          y: e.clientY
+          x: e.pageX,
+          y: e.pageY
         });
       });
     });
