@@ -57,35 +57,25 @@ h1#logo {
 }
 
 #social {
-	width: 300px;
-	height: 95px;
-	float: right;
-}
-#twitter, #fb, #plus, #hatena, #mixi, #gree {
-	float: right;
+	
 }
 #twitter {
-	width: 85px;
-}
-#fb, #plus {
-	width: 55px;
-}
-#hatena {
 	position: relative;
-	top:70px;
-	right:-50px;
-}
-#mixi {
-	position: relative;
-	top:4px;
-	right: -60px;
-}
-#gree {
-	position: relative;
-	top:3px;
-	right: -82px;
+	width: 130px;
 }
 
+#fb {
+	position: relative;
+	width: 100px;
+	left: 130px;
+	top: -20px;
+}
+
+#hatena {
+	position: relative;
+	left: 238px;
+	top:-41px
+}
 
 #sponsors {
 	margin-bottom: 10px;
@@ -130,6 +120,7 @@ h1#logo {
 }
 
 #news {
+	margin-top: -10px;
 	margin-bottom: 25px;
 }
 
@@ -145,6 +136,7 @@ h1#logo {
 
 #news span.date {
 	font-size: 9px;
+	font-weight: bold;
 	color: green;
 	display: block;
 }
