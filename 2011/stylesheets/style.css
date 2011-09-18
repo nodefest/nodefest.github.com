@@ -87,7 +87,7 @@ h1#logo {
 /* ナビゲーション START */
 .nav-box {
 	margin: 10px auto;
-	font: 18px, cursive; /* 'Limelight' */
+	font: 18px, cursive;
 }
 
 #nav { 
@@ -113,6 +113,9 @@ h1#logo {
 	padding: 7px 35px 0px 35px;
 	text-decoration: none;
 	font-family: "ヒラギノ明朝 Pro W3","Hiragino Mincho Pro", sans-serif;
+}
+#nav a:hover {
+	color: #000;
 }
 
 #nav span {
