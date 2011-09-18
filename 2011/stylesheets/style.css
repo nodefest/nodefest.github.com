@@ -69,14 +69,14 @@ h1#logo {
 #fb {
 	position: relative;
 	width: 100px;
-	right: 140px;
+	right: 90px;
 	top: -24px;
 }
 
 #hatena {
 	position: relative;
-	right: 0px;
-	top:-48px
+	right: -15px;
+	top: -48px
 }
 
 #sponsors {
@@ -169,7 +169,7 @@ footer {
 }
 
 /* navigation menu */
-.nav {
+.nav-box {
 	margin: 10px auto;
 	font: 18px, cursive; /* 'Limelight' */
 }
@@ -261,7 +261,7 @@ footer {
 }
 
 #sliderBg {
-	background: url('images/slider.png');
+	background: url('../images/slider.png');
 	background-repeat: no-repeat;
 	font-size: 14px;
 	color: #fff;
@@ -269,17 +269,14 @@ footer {
 }
 
 #sliderText {
-	/*position: relative;
-	top: -122px;
-	left: 60px; */
-	margin-top: -122px;
 	margin-left: 60px;
+    padding-top: 30px;
 	width: 600px;
 }
 
 #sliderOwner {
+    margin-top: -50px;
 	margin-left: 760px;
-	margin-top: -50px;
 	font-weight: bold;
 	color: #000;
 	width: 120px;
