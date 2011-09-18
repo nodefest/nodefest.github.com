@@ -17,6 +17,31 @@
     </script>
 	<noscript>ご利用のブラウザで JavaScript を有効にしてください。</noscript>
 	<![endif]-->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+  <script type="text/javascript" src="http://sakura.mesolabs.com:3011/socket.io/socket.io.js"></script>
+  <script type="text/javascript">
+    var socket = io.connect('http://sakura.mesolabs.com:3011/index');
+    socket.on('location', function(data) {
+      console.log(data);
+      var cursor = $('img');
+      cursor.attr('src', 'images/cursor.png');
+      cursor.css('position', 'absolute');
+      cursor.css('width', '18px');
+      cursor.css('height', '24px');
+      cursor.css('left', data.x + 'px');
+      cursor.css('top', data.y + 'px');
+      $('#wrapper').append(cursor);
+    });
+    $(function() {
+      $('#wrapper').mousemove(function(e) {
+        socket.emit('location', {
+          x: e.clientX,
+          y: e.clientY
+        });
+      });
+    });
+ </script>
+
 </head>
 <body>
 <div id="wrapper">
