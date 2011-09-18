@@ -1,3 +1,4 @@
+/* リセット START */
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
 	margin:0;
 	padding:0;
@@ -33,10 +34,12 @@ q:before,q:after {
 }
 abbr,acronym { border:0;
 }
+/* リセット END */
 
 section, article, aside, footer, header, nav, hgroup {
   display:block;
 }
+
 
 header {
 }
@@ -56,6 +59,7 @@ h1#logo {
 	margin: 0 50px 0 0;
 }
 
+/* ソーシャルメディアボタン START */
 #social {
 	float: right;
 	margin-bottom: -90px;
@@ -78,10 +82,79 @@ h1#logo {
 	right: -15px;
 	top: -48px
 }
+/* ソーシャルメディアボタン END */
 
-#sponsors {
-	margin-bottom: 10px;
+/* ナビゲーション START */
+.nav-box {
+	margin: 10px auto;
+	font: 18px, cursive; /* 'Limelight' */
 }
+
+#nav { 
+	margin: 0 auto; 
+	list-style: none; 
+	position: relative; 
+	width: 920px; 
+	clear: both;
+	background: url('../images/navBg.png');
+	background-repeat: no-repeat;
+	height: 71px;
+}
+
+#nav li { 
+	display: inline-block;
+	padding-top: 8px;
+}
+
+#nav a {
+	color: #888; 
+	font-size: 17px; 
+	float: left;
+	padding: 7px 35px 0px 35px;
+	text-decoration: none;
+	font-family: "ヒラギノ明朝 Pro W3","Hiragino Mincho Pro", sans-serif;
+}
+
+#nav span {
+	font-size: 9px;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+}
+
+.current_page_item a { 
+	color: #000 !important; 
+}
+/* ナビゲーション END */
+
+/* スライダー START */
+#sliderBg {
+	background: url('../images/slider.png');
+	background-repeat: no-repeat;
+	font-size: 14px;
+	color: #fff;
+	height: 160px;
+}
+
+#sliderText {
+	margin-left: 60px;
+    padding-top: 30px;
+	width: 600px;
+}
+
+#sliderOwner {
+    margin-top: -50px;
+	margin-left: 760px;
+	font-weight: bold;
+	color: #000;
+	width: 120px;
+	text-align: center;
+}
+#sliderOwner span {
+	font-size: 11px;
+	font-weight: normal;
+}
+/* スライダー END */
 
 /* columns&rows */
 #col1 {
@@ -156,7 +229,13 @@ h2 span {
 	right: 0px;
 }
 
-/* the-green 140,200,75 */
+/* columns&rows END */
+
+/* Clearfix */
+.group:after { visibility: hidden; display: block; content: ""; clear: both; height: 0; }
+*:first-child+html .group { zoom: 1; } /* IE7 */
+
+/* フッター START */
 footer {
 	clear: both;
 	padding-top: 12px;
@@ -167,213 +246,4 @@ footer {
 	background: url('../images/footerLine.png');
 	background-repeat: no-repeat;
 }
-
-/* navigation menu */
-.nav-box {
-	margin: 10px auto;
-	font: 18px, cursive; /* 'Limelight' */
-}
-
-#nav { 
-	margin: 0 auto; 
-	list-style: none; 
-	position: relative; 
-	width: 920px; 
-	clear: both;
-	background: url('../images/navBg.png');
-	background-repeat: no-repeat;
-	height: 71px;
-}
-
-#nav li { 
-	display: inline-block;
-	padding-top: 8px;
-}
-
-#nav a {
-	color: #888; 
-	font-size: 17px; 
-	float: left;
-	padding: 7px 35px 0px 35px;
-	text-decoration: none;
-	text-transform: uppercase;
-}
-
-#nav span {
-	font-size: 9px;
-	font-weight: bold;
-	display: block;
-	text-align: center;
-}
-
-.current_page_item a { 
-	color: #000 !important; 
-}
-
-
-/* Clearfix */
-.group:after { visibility: hidden; display: block; content: ""; clear: both; height: 0; }
-*:first-child+html .group { zoom: 1; } /* IE7 */
-
-/* Example One */
-#nav-global { 
-	margin: 0 auto; 
-	list-style: none; 
-	position: relative; 
-	width: 920px; 
-}
-#nav-global li { 
-	display: inline-block;	
-}
-#nav-global a { 
-	color: #888; 
-	font-size: 18px; 
-	float: left;
-	padding: 7px 20px 1px 20px;
-	text-decoration: none;
-	text-transform: uppercase;
-}
-#nav-global a span {
-	font-size: 9px;
-	font-weight: bold;
-	display: block;
-	text-align: center;
-}
-#nav-global a:hover { 
-	color: #000; 
-}
-#magic-line { 
-	position: absolute;
-	bottom: -2px; 
-	left: 0; 
-	width: 100px; 
-	height: 2px; 
-	background: #8CC84B;
-}
-.current_page_item a { 
-	color: #000 !important; 
-}
-.ie6 #nav-global li, .ie7 #nav-global li { 
-	display: inline; 
-}
-.ie6 #magic-line {
-	bottom: -3px;
-}
-
-#sliderBg {
-	background: url('../images/slider.png');
-	background-repeat: no-repeat;
-	font-size: 14px;
-	color: #fff;
-	height: 160px;
-}
-
-#sliderText {
-	margin-left: 60px;
-    padding-top: 30px;
-	width: 600px;
-}
-
-#sliderOwner {
-    margin-top: -50px;
-	margin-left: 760px;
-	font-weight: bold;
-	color: #000;
-	width: 120px;
-	text-align: center;
-}
-#sliderOwner span {
-	font-size: 11px;
-	font-weight: normal;
-}
-
-
-/*
- * jQuery Nivo Slider v2.6
- * http://nivo.dev7studios.com
- *
- * Copyright 2011, Gilbert Pellegrom
- * Free to use and abuse under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * March 2010
- */
- 
- 
-/* The Nivo Slider styles */
-.nivoSlider {
-	position:relative;
-}
-.nivoSlider img {
-	position:absolute;
-	top:0px;
-	left:0px;
-}
-/* If an image is wrapped in a link */
-.nivoSlider a.nivo-imageLink {
-	position:absolute;
-	top:0px;
-	left:0px;
-	width:100%;
-	height:100%;
-	border:0;
-	padding:0;
-	margin:0;
-	z-index:6;
-	display:none;
-}
-/* The slices and boxes in the Slider */
-.nivo-slice {
-	display:block;
-	position:absolute;
-	z-index:5;
-	height:100%;
-}
-.nivo-box {
-	display:block;
-	position:absolute;
-	z-index:5;
-}
-/* Caption styles */
-.nivo-caption {
-	position:absolute;
-	left:0px;
-	bottom:0px;
-	background:#000;
-	color:#fff;
-	opacity:0.8; /* Overridden by captionOpacity setting */
-	width:100%;
-	z-index:8;
-}
-.nivo-caption p {
-	padding:5px;
-	margin:0;
-}
-.nivo-caption a {
-	display:inline !important;
-}
-.nivo-html-caption {
-    display:none;
-}
-/* Direction nav styles (e.g. Next & Prev) */
-.nivo-directionNav a {
-	position:absolute;
-	top:45%;
-	z-index:9;
-	cursor:pointer;
-}
-.nivo-prevNav {
-	left:0px;
-}
-.nivo-nextNav {
-	right:0px;
-}
-/* Control nav styles (e.g. 1,2,3…) */
-.nivo-controlNav a {
-	position:relative;
-	z-index:9;
-	cursor:pointer;
-}
-.nivo-controlNav a.active {
-	font-weight:bold;
-}
+/* フッター END */
