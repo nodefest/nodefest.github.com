@@ -1,4 +1,4 @@
-/* リセット START */
+/* CSS reset */
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
 	margin:0;
 	padding:0;
@@ -34,7 +34,7 @@ q:before,q:after {
 }
 abbr,acronym { border:0;
 }
-/* リセット END */
+/* 基本style */
 
 body {
 	font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "メイリオ", Meiryo, "ＭＳ 明朝", sans-serif;
@@ -42,7 +42,6 @@ body {
 section, article, aside, footer, header, nav, hgroup {
   display:block;
 }
-
 
 header {
 }
@@ -61,7 +60,6 @@ h1#logo {
 	float: right;
 	margin: 0 50px 0 0;
 }
-
 a {
 	color: green;
 	text-decoration: none;
@@ -72,6 +70,10 @@ a:hover {
 a:visited {
 	color: green;
 	text-decoration: none;
+}
+
+a img:hover {
+	opacity: 0.9;
 }
 
 /* ソーシャルメディアボタン START */
@@ -161,13 +163,13 @@ a:visited {
 }
 
 #sliderText {
-	margin-left: 70px;
-  padding-top: 27px;
+	margin-left: 95px;
+  padding-top: 32px;
 	width: 600px;
 }
 
 #sliderOwner {
-    margin-top: -80px;
+  margin-top: -80px;
 	margin-left: 753px;
 	font-weight: bold;
 	color: #000;
@@ -175,6 +177,7 @@ a:visited {
 	text-align: center;
 }
 #sliderOwner span {
+	margin-top: -7px;
 	font-size: 11px;
 	font-weight: normal;
 }
