@@ -101,12 +101,12 @@ h1#logo {
 	clear: both;
 	background: url('../images/navBg.png');
 	background-repeat: no-repeat;
-	height: 71px;
+	height: 92px;
 }
 
 #nav li { 
 	display: inline-block;
-	padding-top: 8px;
+	padding-top: 21px;
 }
 
 #nav a {
