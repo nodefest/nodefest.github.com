@@ -6,7 +6,14 @@
 	<meta charset="UTF-8" />
 	<title>Node.js Conference Japan 2011</title>
 	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="default/default.css" />
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js'></script>
+    <script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+    </script>
     <script src='js/jquery.color-RGBa-patch.js'></script>
     <script src='js/example.js'></script>
     <!--[if IE]>
@@ -56,51 +63,83 @@
     	<iframe src="http://share.gree.jp/share?url=http%3A%2F%2Fconf.nodejs.jp%2F2011%2F&type=0&height=20" scrolling="no" frameborder="0" marginwidth="0" marginheight="0" style="border:none; overflow:hidden; width:100px; height:20px;" allowTransparency="true"></iframe>
     </div>
 </div> -->
-    <h1 id="logo"><img src="images/logoHeader.png" alt="node.js東京学園祭" /></h1>
+    <h1 id="logo"><img src="images/logo.png" alt="node.js東京学園祭" /></h1>
+    <img src="images/headerInfo.png" alt="October29th" id="headerInfo" />
 
 	<div class="nav">
-		<!-- <ul class="group" id="nav-global">
-            <li class="current_page_item"><a href="index.html">HOME<br /><span>ホーム</span></a></li>
-            <li><a href="#">SESSION<br /><span>セッション</span></a></li>
-            <li><a href="#">SPEAKERS<br /><span>登壇者紹介</span></a></li>
-            <li><a href="#">ACCESS<br /><span>アクセス</span></a></li>
-            <li><a href="#">REGISTER<br /><span>参加登録</span></a></li>
-        </ul> -->
-        <img src="images/menumock.png" />
+		<ul class="group" id="nav">
+            <li class="current_page_item"><a href="index.html">HOME<span>ホーム</span></a></li>
+            <li><a href="#">SESSION<span>セッション</span></a></li>
+            <li><a href="#">SPEAKERS<span>登壇者紹介</span></a></li>
+            <li><a href="#">ACCESS<span>アクセス</span></a></li>
+            <li><a href="#">GET TICKET<span>チケット購入</span></a></li>
+        </ul>
     </div>
-    
-	<div id="eyecatch"><img src="images/slider1.png" /></div>
+
+            <div id="sliderBg"> <!-- <div id="slider" class="nivoSlider"> -->
+                <img src="images/slider.png" alt="" />
+                <p id="sliderText">Node.jsにフォーカスした開発者会議、『東京node学園祭』では、全てのスキルレベルを持つ開発者が参加でき、強力なコミュニティを構築します。参加者に求めるのはただひとつ健全な熱意と、ノンブロッキングなサーバーサイドJavascriptへの愛情です。</p>
+                <p id="sliderOwner">@meso<br /><span>学園祭 実行委員長</span></p>
+            </div>
+
+
 </header>
 
 	<!-- <div id="sponsors">
 		<img src="images/sponsor-mock.gif" />
 	</div> -->
 
-<section id="col1">
+<div id="col1">
+<section id="row1">
 	<h2>ABOUT<span>｜ カンファレンスについて</span></h2>
 	<p>スマートフォンの増加により現実になりつつあるC10K問題や、WebSocketにより実現されつつあるリアルタイムWeb。これらへのソリューションとして世界中から注目されているのが、サーバサイドJavaScriptプラットフォームのNode.jsです。</p>
-	<p>このたびNode.js日本ユーザグループは、Node.jsの作者Ryan Dahl氏および、Socket.IOの作者Guillermo Rauch氏を招聘し、初のカンファレンスとなる「東京Node学園祭」を開催します。
-</p>
+	<p>このたびNode.js日本ユーザグループは、Node.jsの作者Ryan Dahl氏および、Socket.IOの作者Guillermo Rauch氏を招聘し、初のカンファレンスとなる「東京Node学園祭」を開催します。</p>
 </section>
-<section id="col3">
-	<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<section id="row2">
+	<h2>SPEAKERS<span>｜ 海外スピーカー紹介</span></h2>
+	<div class="speaker">
+		<div class="imgBox"><img src="images/ryan.jpg" alt="Ryan" /></div>
+		<h3>Ryan Dahl</h3>
+		<p>Node.js の生みの親です。学生時代は数学を先攻していた彼は、一方でコンピューティングの世界でも活動しRubyのWebサーバなどを開発していました。そこまでに培った知識を応用し「簡単にスケーラブルなネットワークプログラムを作成する環境」として開発したのが、Node.jsの始まりです。<br />
+		現在はJoyentに在籍し、フルタイムでNode.js の開発に従事しています。</p>
+	</div>
+	
+	<div class="speaker">
+		<div class="imgBox"><img src="images/guillermo.png" alt="Guillermo" /></div>
+		<h3>Guillermo Rauch</h3>
+		<p>Node の代表的なリアルタイム通信モジュール Socket.IO の作者です。Socket.IO は Node.js でのリアルタイムWeb アプリの可能性を強く引き出し、多くの開発者の注目を集めています。<br />
+		オンラインの教育支援サービスを提供するLearnBoostのCTO でもあり、同じく LearnBoost に在籍する TJ Holowaychuk(Express の作者) とともに、Nodeのエコシステムの発展に日々貢献しています。</p>
+	</div>
+</section>
+</div>
+<div id="col2">
+	<div id="news">
+	<h2>NEWS<span>｜ 最新情報</span></h2>
+		<ul>
+			<li><span class="date">2011.09.20</span>東京Node学園祭のWebサイトを公開しました。</li>	
+		</ul>
+	</div>
+	
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
 <script>
 new TWTR.Widget({
   version: 2,
-  type: 'profile',
-  rpp: 4,
-  interval: 6000,
+  type: 'search',
+  search: '#nodefest',
+  interval: 30000,
+  title: '#nodefest',
+  subject: '東京Node学園祭',
   width: 'auto',
-  height: 170,
+  height: 300,
   theme: {
     shell: {
-      background: '#ffffff',
-      color: '#000000'
+      background: '#8fd479',
+      color: '#ffffff'
     },
     tweets: {
       background: '#ffffff',
-      color: '#000000',
-      links: '#8CC84B'
+      color: '#444444',
+      links: '#1985b5'
     }
   },
   features: {
@@ -109,19 +148,21 @@ new TWTR.Widget({
     live: true,
     hashtags: true,
     timestamp: true,
-    avatars: false,
-    behavior: 'all'
+    avatars: true,
+    toptweets: false,
+    behavior: 'default'
   }
-}).render().setUser('nodefest').start();
+}).render().start();
 </script>
-</section>
+</div>
 
-<div id="fb-root"></div><script src="http://connect.facebook.net/ja_JP/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/platform" width="920" height="170" show_faces="true" border_color="#fff" stream="false" header="false"></fb:like-box>
+<!-- <div id="fb-root"></div><script src="http://connect.facebook.net/ja_JP/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/platform" width="920" height="170" show_faces="true" border_color="#fff" stream="false" header="false"></fb:like-box> -->
 
 <footer>
 	<p>&copy; 2011. Node.js Conference Japan 2011.</p>
 </footer>
 </div>
+
 </body>
 </html>
 
