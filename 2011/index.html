@@ -22,10 +22,11 @@
   <script type="text/javascript">
     var socket = io.connect('http://sakura.mesolabs.com:3011/index');
     socket.on('location', function(data) {
-      var cursor = $('#' + socket.id);
+      var cursor = $('#' + data.id);
       if (!cursor.attr('id')) {
         cursor = $('<img>');
-        cursor.attr('id', '' + socket.id);
+        cursor.attr('class', 'cursor');
+        cursor.attr('id', data.id);
         cursor.attr('src', 'images/cursor.png');
         cursor.css('position', 'absolute');
         cursor.css('width', '18px');
