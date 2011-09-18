@@ -37,7 +37,7 @@ abbr,acronym { border:0;
 /* リセット END */
 
 body {
-	font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "メイリオ", Meiryo, "ＭＳ ゴシック", sans-serif;
+	font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "メイリオ", Meiryo, "ＭＳ 明朝", sans-serif;
 }
 section, article, aside, footer, header, nav, hgroup {
   display:block;
