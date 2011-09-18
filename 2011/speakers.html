@@ -21,7 +21,9 @@
   <script type="text/javascript" src="http://sakura.mesolabs.com:3011/socket.io/socket.io.js"></script>
   <script type="text/javascript" src="javascripts/cursorShare.js"></script>
   <script type="text/javascript">
-    $(cursorShare('speakers'));
+    $(function() {
+      cursorShare('speakers');
+    )};
   </script>
 </head>
 <body>
