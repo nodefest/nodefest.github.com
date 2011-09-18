@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
+<link href='http://fonts.googleapis.com/css?family=Puritan' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Limelight' rel='stylesheet' type='text/css'>
 	<meta charset="UTF-8" />
-	<title>東京Node学園祭</title>
-	<link rel="stylesheet" href="stylesheets/style.css" />
+	<title>Node.js Conference Japan 2011</title>
+	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="default/default.css" />
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js'></script>
+    <script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+    </script>
+    <script src='js/jquery.color-RGBa-patch.js'></script>
+    <script src='js/example.js'></script>
     <!--[if IE]>
     <script>
     document.createElement("header" );
@@ -21,24 +33,27 @@
 <body>
 <div id="wrapper">
 <header>
-    <h1 id="logo"><a href="index.html"><img src="images/logo.png" alt="node.js東京学園祭" /></a></h1>
+    <!--
+        <div id="plus">
+    <g:plusone size="tall"></g:plusone>
+    <script type="text/javascript">
+  window.___gcfg = {lang: 'ja'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+  	</script>
+    </div>
+    <div id="mixi">
+    	<iframe scrolling="no" frameborder="0" allowTransparency="true" style="overflow:hidden; border:0; width:120px; height:20px" src="http://plugins.mixi.jp/favorite.pl?href=http%3A%2F%2Fconf.nodejs.jp%2F2011%2F&service_key=53576b12b019aac86612a057c56913d2f21eaee2&show_faces=false&width=120"></iframe>
+    </div>
+    <div id="gree">
+    	<iframe src="http://share.gree.jp/share?url=http%3A%2F%2Fconf.nodejs.jp%2F2011%2F&type=0&height=20" scrolling="no" frameborder="0" marginwidth="0" marginheight="0" style="border:none; overflow:hidden; width:100px; height:20px;" allowTransparency="true"></iframe>
+    </div>-->
+    <h1 id="logo"><img src="images/logo.png" alt="node.js東京学園祭" /></h1>
     <img src="images/headerInfo.png" alt="October29th" id="headerInfo" />
-    	<div id="social">
-	
-		<div id="twitter">
-    	<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-lang="ja">ツイート</a>
-    	<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
-    </div>
-    
-    <div id="fb">
-    	<iframe src="//www.facebook.com/plugins/like.php?app_id=234351823278759&amp;href=file:///Users/djjimba/git/nodefest.new/2011/&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
-    </div>
-    
-    <div id="hatena">
-    	<a href="http://b.hatena.ne.jp/entry/http://nodefest.com" class="hatena-bookmark-button" data-hatena-bookmark-title="node.js Conference Japan 2011" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
-    	<script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-    </div>
-	</div>
 
 	<div class="nav">
 		<ul class="group" id="nav">
@@ -50,13 +65,18 @@
         </ul>
     </div>
 
-            <div id="sliderBg">
+            <div id="sliderBg"> <!-- <div id="slider" class="nivoSlider"> -->
                 <img src="images/slider.png" alt="" />
                 <p id="sliderText">Node.jsにフォーカスした開発者会議、『東京node学園祭』では、全てのスキルレベルを持つ開発者が参加でき、強力なコミュニティを構築します。参加者に求めるのはただひとつ健全な熱意と、ノンブロッキングなサーバーサイドJavascriptへの愛情です。</p>
                 <p id="sliderOwner">@meso<br /><span>学園祭 実行委員長</span></p>
             </div>
 
+
 </header>
+
+	<!-- <div id="sponsors">
+		<img src="images/sponsor-mock.gif" />
+	</div> -->
 
 <div id="col1">
 <section id="row1">
@@ -82,6 +102,24 @@
 </section>
 </div>
 <div id="col2">
+
+	<div id="social">
+	
+		<div id="twitter">
+    	<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-lang="ja">ツイート</a>
+    	<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+    </div>
+    
+    <div id="fb">
+    	<iframe src="//www.facebook.com/plugins/like.php?app_id=234351823278759&amp;href=file:///Users/djjimba/git/nodefest.new/2011/&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+    </div>
+    
+    <div id="hatena">
+    	<a href="http://b.hatena.ne.jp/entry/http://nodefest.com" class="hatena-bookmark-button" data-hatena-bookmark-title="node.js Conference Japan 2011" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    	<script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+    </div>
+    
+</div>
 
 	<div id="news">
 	<h2>NEWS<span>｜ 最新情報</span></h2>
@@ -123,8 +161,10 @@ new TWTR.Widget({
 </script>
 </div>
 
+<!-- <div id="fb-root"></div><script src="http://connect.facebook.net/ja_JP/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/platform" width="920" height="170" show_faces="true" border_color="#fff" stream="false" header="false"></fb:like-box> -->
+
 <footer>
-	<p>&copy; 2011 東京Node学園祭</p>
+	<p>&copy; 2011. 東京Node学園祭</p>
 </footer>
 </div>
 
