@@ -71,11 +71,12 @@ a:visited {
 	color: green;
 	text-decoration: none;
 }
-
 a img:hover {
 	opacity: 0.9;
 }
-
+p {
+	margin-bottom: 12px;
+}
 /* ソーシャルメディアボタン START */
 #social {
 	float: right;
@@ -259,6 +260,31 @@ h2 span {
 }
 
 /* columns&rows END */
+
+/* セッションページ START */
+#sessionTable {
+	
+}
+table {
+	width: 100%;
+}
+table,tr,th,td {
+	border: solid 1px #ccc;
+}
+th,td {
+	padding: 3px 0 3px 6px;
+}
+th {
+	background: #8bbb2d;
+	color: #fff;
+	font-size: 13px;
+	font-weight: bold;
+}
+td {
+	vertical-align: top;
+}
+
+/* セッションページ END */
 
 /* Clearfix */
 .group:after { visibility: hidden; display: block; content: ""; clear: both; height: 0; }
