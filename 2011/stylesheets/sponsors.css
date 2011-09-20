@@ -58,3 +58,9 @@
     font-size: 14px;
 }
 
+#sponsorsListVertical {
+    border-left: 2px dotted green;
+}
+
+#sponsorsListVertical li {
+}
