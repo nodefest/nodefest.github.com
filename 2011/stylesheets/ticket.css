@@ -1,0 +1,25 @@
+.ticket {
+    clear: both;
+    padding: 10px 60px 0 20px;
+}
+
+.ticket h2 {
+    font-size: 24px;
+}
+
+.ticket > p.topnavilink {
+    clear: both;
+    font-size: 14px;
+    text-align: right;
+}
+
+.ticket p.description {
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+.ticket .doorkeeperContainer {
+    margin: 20px auto; 
+    width: 100%;
+    text-align: center;
+}

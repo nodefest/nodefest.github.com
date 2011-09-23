@@ -1,0 +1,29 @@
+.access {
+    clear: both;
+    padding: 10px 60px 0 20px;
+}
+
+.access h2 {
+    font-size: 24px;
+}
+
+.access > p.topnavilink {
+    clear: both;
+    font-size: 14px;
+    text-align: right;
+}
+
+.access p.addr {
+    font-size: 16px;
+    line-height: 2em;
+}
+
+.access .descriptions {
+    margin: 10px 10px 10px 40%;
+    list-style-type:circle;
+}
+
+.access .descriptions li {
+    font-size: 100%;
+    line-height: 2em;
+}
