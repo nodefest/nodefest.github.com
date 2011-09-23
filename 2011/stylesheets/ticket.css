@@ -19,7 +19,14 @@
 }
 
 .ticket .doorkeeperContainer {
-    margin: 20px auto; 
-    width: 100%;
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
     text-align: center;
+    border: 2px dotted #e0e0e0;
+    background-color: #f9f9f9;
+}
+
+.ticket .doorkeeperContainer div{
+    margin: 0 auto;
 }
