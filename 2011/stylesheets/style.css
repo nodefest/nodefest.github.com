@@ -266,7 +266,7 @@ h2 span {
 	
 }
 table {
-	width: 100%;
+	width: 870px;
 }
 table,tr,th,td {
 	border: solid 1px #ccc;
@@ -277,8 +277,14 @@ th,td {
 th {
 	background: #8bbb2d;
 	color: #fff;
-	font-size: 13px;
+	font-size: 16px;
 	font-weight: bold;
+	text-align: center;
+}
+th span {
+	font-size: 11px;
+	text-align: center;
+	display: block;
 }
 td {
 	vertical-align: top;
