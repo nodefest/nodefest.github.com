@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
     <meta charset="UTF-8" />
-    <title>東京Node学園祭2011</title>
+	<title>チケット | 東京Node学園祭2011</title>
     <link rel="stylesheet" href="stylesheets/style.css" />
     <link rel="stylesheet" href="stylesheets/ticket.css" />
     <!--[if IE]>
@@ -18,14 +18,20 @@
     </script>
     <noscript>ご利用のブラウザで JavaScript を有効にしてください。</noscript>
     <![endif]-->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<link href="favicon.ico" rel="shortcut icon" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
     <script type="text/javascript" src="javascripts/socket.io.js"></script>
     <script type="text/javascript" src="javascripts/cursorShare.js"></script>
-</head>
+  <script type="text/javascript">
+    $(function() {
+      cursorShare('ticket');
+    });
+ </script>
+ </head>
 <body>
 <div id="wrapper">
 <header>
-    <h1 id="logo"><a href="/2011/"><img src="images/logo.png" alt="東京Node学園祭" /></a></h1>
+    <h1 id="logo"><a href="index.html"><img src="images/logo.png" alt="東京Node学園祭" /></a></h1>
     <img src="images/headerInfo.png" alt="October29th" id="headerInfo" />
     <div id="social">
         <div id="twitter">
@@ -45,12 +51,12 @@
 
     <div class="nav-box">
         <ul class="group" id="nav">
-            <li><a href="/2011/"><img src="images/title_home.png" alt="HOME" /><span>ホーム</span></a></li>
+            <li><a href="index.html"><img src="images/title_home.png" alt="HOME" /><span>ホーム</span></a></li>
             <li><a href="javascript:void(0)"><img src="images/title_session_uc.png" alt="SESSION" /><span>セッション</span></a></li>
-            <li><a href="/2011/speakers.html"><img src="images/title_speakers.png" alt="SPEAKERS" /><span>登壇者紹介</span></a></li>
+            <li><a href="speakers.html"><img src="images/title_speakers.png" alt="SPEAKERS" /><span>登壇者紹介</span></a></li>
             <li><a href="javascript:void(0)"><img src="images/title_sponsors_uc.png" alt="SPONSORS" /><span>スポンサー</span></a></li>
-            <li><a href="/2011/access.html"><img src="images/title_access.png" alt="ACCESS" /><span>アクセス</span></a></li>
-            <li class="current_page_item"><a href="/2011/ticket.html"><img src="images/title_ticket.png" alt="TICKET" /><span>チケット購入</span></a></li>
+            <li><a href="access.html"><img src="images/title_access.png" alt="ACCESS" /><span>アクセス</span></a></li>
+            <li class="current_page_item"><a href="ticket.html"><img src="images/title_ticket.png" alt="TICKET" /><span>チケット購入</span></a></li>
         </ul>
     </div>
 
@@ -59,7 +65,6 @@
 <section id="top" class="ticket">
     <h2>Ticket<span>｜ チケットのご購入</span></h2>
     <p class="description">東京Node学園祭 2011では、チケットの発行に <a href="http://www.doorkeeper.jp" target="_blank">Doorkeeper</a> を利用させていただいております。</p>
-    <p class="description">下のウィジェットから購入ページに進んで下さい。</p>
     <div class="doorkeeperContainer">
     <script type="text/javascript" src="http://nodefest.doorkeeper.jp/events/279/widget.js"></script><br />
     <p>前売券3,150円</p>
