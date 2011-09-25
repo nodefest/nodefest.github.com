@@ -1,0 +1,73 @@
+.speakers {
+  clear: both;
+  padding: 30px 60px 0 20px;
+  width: 100%;
+}
+
+.speakers nav ul {
+    list-style: none;
+}
+
+.speakers nav ul li {
+    display: inline-block;
+    margin-right: 30px;
+    border: 5px solid #ccc;
+}
+
+.speakers nav ul li a {
+    display: inline-block;
+    width: 200px;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.speakers nav ul li a {
+    font-size: 20px;
+}
+
+
+.speakers .imgBox {
+  float: left;
+  height: 130px;
+  width: 130px;
+  margin: 0 15px 12px 0;
+}
+
+.speakers .imgBox img {
+  width: 130px;
+}
+
+.speakers h3 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.speakers h4 {
+  margin: 5px 0;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.speakers .speaker {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.speakers > p.topnavilink {
+  clear: both;
+  font-size: 14px;
+  text-align: right;
+}
+
+
+#lt .speaker{
+  margin-bottom: 10px;
+}
+
+#lt h3, #lt h4{
+  display: inline;
+}
