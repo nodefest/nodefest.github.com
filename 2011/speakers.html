@@ -4,7 +4,6 @@
 	<meta charset="UTF-8" />
 	<title>東京Node学園祭2011</title>
 	<link rel="stylesheet" href="stylesheets/style.css" />
-	<link rel="stylesheet" href="stylesheets/speakers.css" />
     <!--[if IE]>
     <script>
     document.createElement("header" );
@@ -18,7 +17,6 @@
     </script>
 	<noscript>ご利用のブラウザで JavaScript を有効にしてください。</noscript>
 	<![endif]-->
-  <link href="favicon.ico" rel="shortcut icon" />
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
   <script type="text/javascript" src="javascripts/socket.io.js"></script>
   <script type="text/javascript" src="javascripts/cursorShare.js"></script>
@@ -33,179 +31,51 @@
 <header>
     <h1 id="logo"><a href="/2011/"><img src="images/logo.png" alt="東京Node学園祭" /></a></h1>
     <img src="images/headerInfo.png" alt="October29th" id="headerInfo" />
-    <div id="social">
-        <div id="twitter">
-            <a href="https://twitter.com/share" class="twitter-share-button" data-text="東京Node学園祭2011 #nodefest" data-related="nodefest" data-count="horizontal" data-lang="ja">ツイート</a>
-            <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
-        </div>
+    	<div id="social">
 
-        <div id="fb">
-            <iframe src="//www.facebook.com/plugins/like.php?app_id=234351823278759&amp;href=http://nodefest.jp/2011/&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
-        </div>
-
-        <div id="hatena">
-            <a href="http://b.hatena.ne.jp/entry/http://nodefest.jp/2011/" class="hatena-bookmark-button" data-hatena-bookmark-title="東京Node学園祭2011" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
-            <script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-        </div>
+		<div id="twitter">
+    	<a href="https://twitter.com/share" class="twitter-share-button" data-text="東京Node学園祭2011 #nodefest" data-count="horizontal" data-lang="ja">ツイート</a>
+    	<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
     </div>
+    
+    <div id="fb">
+    	<iframe src="//www.facebook.com/plugins/like.php?app_id=234351823278759&amp;href=http://nodefest.jp/2011/&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+    </div>
+    
+    <div id="hatena">
+    	<a href="http://b.hatena.ne.jp/entry/http://nodefest.jp/2011/" class="hatena-bookmark-button" data-hatena-bookmark-title="東京Node学園祭2011" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    	<script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+    </div>
+	</div>
 
-    <div class="nav-box">
-        <ul class="group" id="nav">
-            <li class="current_page_item"><a href="/2011/"><img src="images/title_home.png" alt="HOME" /><span>ホーム</span></a></li>
+	<div class="nav-box">
+		<ul class="group" id="nav">
+            <li><a href="/2011/"><img src="images/title_home.png" alt="HOME" /><span>ホーム</span></a></li>
             <li><a href="javascript:void(0)"><img src="images/title_session_uc.png" alt="SESSION" /><span>セッション</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/title_speakers_uc.png" alt="SPEAKERS" /><span>登壇者紹介</span></a></li>
+            <li class="current_page_item"><a href="/2011/speakers.html"><img src="images/title_speakers.png" alt="SPEAKERS" /><span>登壇者紹介</span></a></li>
             <li><a href="javascript:void(0)"><img src="images/title_sponsors_uc.png" alt="SPONSORS" /><span>スポンサー</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/title_access_uc.png" alt="ACCESS" /><span>アクセス</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/title_ticket_uc.png" alt="TICKET" /><span>チケット購入</span></a></li>
+            <li><a href="/2011/access.html"><img src="images/title_access.png" alt="ACCESS" /><span>アクセス</span></a></li>
+            <li><a href="/2011/ticket.html"><img src="images/title_ticket.png" alt="TICKET" /><span>チケット購入</span></a></li>
         </ul>
     </div>
+
 </header>
 
-<section class="speakers" id="top">
-    <nav>
-        <ul>
-            <li><a href="#special">Special Guests</a></li>
-            <li><a href="#speakers">Speakers</a></li>
-            <li><a href="#lt">Lightning Talk</a></li>
-        </ul>
-    </nav>
-</section>
+<section id="row2">
+	<h2>SPEAKERS<span>｜ 登壇者紹介</span></h2>
+	<div class="speaker" id="ryan">
+		<div class="imgBox"><img src="images/ryan.png" alt="RyanDahl" /></div>
+		<h3>Ryan Dahl</h3>
+		<p>Node.js の生みの親です。学生時代に数学を専攻していた彼は、一方でプログラミングの世界でも活動しRubyのWebサーバなどを開発していました。それまでに培った知識を応用し、「簡単にスケーラブルなネットワークプログラムを作成する環境」として開発したのが、Node.jsの始まりです。<br />
+		現在はJoyentに在籍し、フルタイムでNode.js の開発に従事しています。</p>
+	</div>
 
-
-<section class="speakers" id="special">
-  <h2>Special Guests<span>｜ 海外スピーカー紹介</span></h2>
-  <div class="speaker">
-    <div class="imgBox"><img src="images/ryan.png" alt="RyanDahl" /></div>
-    <h3><a href="http://twitter.com/#!/ryah" target="_blank">Ryan Dahl</a></h3>
-    <h4>「＊＊＊＊の＊＊＊＊について」 **:**～</h4>
-    <p>
-      <a href="http://nodejs.org/" target="_blank">Node.js</a>の生みの親です。学生時代に数学を専攻していた彼は、一方でプログラミングの世界でも活動しRubyのWebサーバなどを開発していました。それまでに培った知識を応用し、「簡単にスケーラブルなネットワークプログラムを作成する環境」として開発したのが、Node.jsの始まりです。<br />
-      現在は<a href="http://www.joyent.com/" target="_blank">Joyent</a>に在籍し、フルタイムでNode.jsの開発に従事しています。
-    </p>
-  </div>
-
-  <div class="speaker">
-    <div class="imgBox"><img src="images/guillermo.png" alt="GuillermoRauch" /></div>
-    <h3><a href="http://twitter.com/#!/rauchg" target="_blank">Guillermo Rauch</a></h3>
-    <h4>「＊＊＊＊の＊＊＊＊について」 **:**～</h4>
-    <p>
-      Node.jsの代表的なリアルタイム通信モジュール<a href="http://socket.io/" target="_blank">Socket.IO</a>の作者です。Socket.IOはNode.jsでのリアルタイムWebアプリの可能性を強く引き出し、多くの開発者の注目を集めています。<br />
-     オンラインの教育支援サービスを提供する <a href="https://www.learnboost.com/" target="_blank">LearnBoost</a>のCTOでもあり、同じくLearnBoostに在籍する<a href="https://twitter.com/#!/tjholowaychuk" target="_blank">TJ Holowaychuk</a>(<a href="http://expressjs.com/" target="_blank">Express</a>の作者)と共に、Node.jsのエコシステムの発展に日々貢献しています。
-    </p>
-  </div>
-  <p class="topnavilink"><a href="#top">Top へ</a></p>
-</section>
-
-<section class="speakers" id="speakers">
-  <h2>Speakers<span>｜ 登壇者紹介</span></h2>
-  <div class="speaker">
-    <div class="imgBox"><img src="images/meso.png" alt="" /></div>
-    <h3><a href="#" target="_blank">スピーカー名</a></h3>
-    <h4>「＊＊＊＊の＊＊＊＊について」 **:**～</h4>
-    <p>
-      紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト<br />
-      紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト<br />
-    </p>
-  </div>
-
-  <div class="speaker">
-    <div class="imgBox"><img src="images/meso.png" alt="" /></div>
-    <h3><a href="#" target="_blank">スピーカー名</a></h3>
-    <h4>「＊＊＊＊の＊＊＊＊について」 **:**～</h4>
-    <p>
-      紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト<br />
-      紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト<br />
-    </p>
-  </div>
-
-  <div class="speaker">
-    <div class="imgBox"><img src="images/meso.png" alt="" /></div>
-    <h3><a href="#" target="_blank">スピーカー名</a></h3>
-    <h4>「＊＊＊＊の＊＊＊＊について」 **:**～</h4>
-    <p>
-      紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト<br />
-      紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト<br />
-    </p>
-  </div>
-
-  <div class="speaker">
-    <div class="imgBox"><img src="images/meso.png" alt="" /></div>
-    <h3><a href="#" target="_blank">スピーカー名</a></h3>
-    <h4>「＊＊＊＊の＊＊＊＊について」 **:**～</h4>
-    <p>
-      紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト<br />
-      紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト<br />
-    </p>
-  </div>
-  <p class="topnavilink"><a href="#top">Top へ</a></p>
-</section>
-
-<section class="speakers" id="lt">
-  <h2>Lightning Talk<span>｜ ライトニングトーク</span></h2>
-  <div class="speaker">
-    <h3><a href="#" target="_blank">スピーカー名</a></h3>
-    <h4>「＊＊＊＊の＊＊＊＊について」</h4>
-    <p>
-      紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト
-    </p>
-  </div>
-
-  <div class="speaker">
-    <h3><a href="#" target="_blank">スピーカー名</a></h3>
-    <h4>「＊＊＊＊の＊＊＊＊について」</h4>
-    <p>
-      紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト
-    </p>
-  </div>
-
-  <div class="speaker">
-    <h3><a href="#" target="_blank">スピーカー名</a></h3>
-    <h4>「＊＊＊＊の＊＊＊＊について」</h4>
-    <p>
-      紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト
-    </p>
-  </div>
-
-  <div class="speaker">
-    <h3><a href="#" target="_blank">スピーカー名</a></h3>
-    <h4>「＊＊＊＊の＊＊＊＊について」</h4>
-    <p>
-      紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト
-    </p>
-  </div>
-
-  <div class="speaker">
-    <h3><a href="#" target="_blank">スピーカー名</a></h3>
-    <h4>「＊＊＊＊の＊＊＊＊について」</h4>
-    <p>
-      紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト
-    </p>
-  </div>
-
-  <div class="speaker">
-    <h3><a href="#" target="_blank">スピーカー名</a></h3>
-    <h4>「＊＊＊＊の＊＊＊＊について」</h4>
-    <p>
-      紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト
-    </p>
-  </div>
-
-  <div class="speaker">
-    <h3><a href="#" target="_blank">スピーカー名</a></h3>
-    <h4>「＊＊＊＊の＊＊＊＊について」</h4>
-    <p>
-      紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト
-    </p>
-  </div>
-
-  <div class="speaker">
-    <h3><a href="#" target="_blank">スピーカー名</a></h3>
-    <h4>「＊＊＊＊の＊＊＊＊について」</h4>
-    <p>
-      紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト紹介テキスト
-    </p>
-  </div>
-  <p class="topnavilink"><a href="#top">Top へ</a></p>
+	<div class="speaker" id="guillermo">
+		<div class="imgBox"><img src="images/guillermo.png" alt="GuillermoRauch" /></div>
+		<h3>Guillermo Rauch</h3>
+		<p>Node の代表的なリアルタイム通信モジュール Socket.IO の作者です。Socket.IO は Node.js でのリアルタイムWeb アプリの可能性を強く引き出し、多くの開発者の注目を集めています。<br />
+		オンラインの教育支援サービスを提供するLearnBoostのCTO でもあり、同じく LearnBoost に在籍する TJ Holowaychuk(Express の作者) とともに、Nodeのエコシステムの発展に日々貢献しています。</p>
+	</div>
 </section>
 
 <footer>
@@ -215,4 +85,3 @@
 
 </body>
 </html>
-
