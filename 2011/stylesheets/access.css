@@ -7,6 +7,10 @@
     font-size: 24px;
 }
 
+.access h3 {
+    font-size: 14px;
+}
+
 .access > p.topnavilink {
     clear: both;
     font-size: 14px;
@@ -18,12 +22,18 @@
     line-height: 2em;
 }
 
-.access .descriptions {
-    margin: 10px 10px 10px 40%;
-    list-style-type:circle;
+.access p.addren {
+    font-size: 12px;
+    line-height: 1em;
+	margin-left:10px;
 }
 
-.access .descriptions li {
-    font-size: 100%;
+
+.access .descriptions {
+    margin: 20px 10px 10px 10px;
     line-height: 2em;
+}
+
+.access .descriptions span{
+    font-weight:bold;
 }
