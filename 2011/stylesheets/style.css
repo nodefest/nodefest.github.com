@@ -266,7 +266,7 @@ h2 span {
 	
 }
 table {
-	width: 870px;
+	width: 570px;
 }
 table,tr,th,td {
 	border: solid 1px #f1f1f1;
@@ -307,14 +307,14 @@ caption span {
 	margin-top: 7px;
 }
 .time {
-	margin-left: 60px;
+	margin-left: 30px;
 }
 .title {
-	margin-left: 250px;
+	margin-left: 150px;
 }
 .speaker {
-	margin-top: 14px;
-	margin-left: 290px;
+	margin-top: 12px;
+	margin-left: 160px;
 }
 td {
 	vertical-align: top;
