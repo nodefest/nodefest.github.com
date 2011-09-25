@@ -269,22 +269,52 @@ table {
 	width: 870px;
 }
 table,tr,th,td {
-	border: solid 1px #ccc;
+	border: solid 1px #f1f1f1;
 }
+
+caption {
+	height: 58px;
+}
+
+.sessionTableBg {
+	background: url('../images/sessionTableBg.png');
+	background-repeat: no-repeat;
+}
+
 th,td {
 	padding: 3px 0 3px 6px;
 }
-th {
-	background: #8bbb2d;
+caption {
 	color: #fff;
 	font-size: 16px;
 	font-weight: bold;
 	text-align: center;
 }
-th span {
+/* th {
+	background: #8bbb2d;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+} */
+caption span {
 	font-size: 11px;
 	text-align: center;
 	display: block;
+}
+.time, .title, .speaker {
+	float: left;
+	margin-top: 7px;
+}
+.time {
+	margin-left: 60px;
+}
+.title {
+	margin-left: 250px;
+}
+.speaker {
+	margin-top: 14px;
+	margin-left: 290px;
 }
 td {
 	vertical-align: top;
