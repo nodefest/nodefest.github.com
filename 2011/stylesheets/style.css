@@ -203,7 +203,7 @@ p {
 	margin-bottom: 21px;
 }
 
-#row2 .speaker {
+#row3 .speaker {
 	clear: both;
 	float: left;
 }
@@ -212,18 +212,18 @@ p {
 	font-size: 14px;
 }
 
-#row2 h3 {
+#row3 h3 {
 	margin: 0;
 	font-weight: bold;
 }
 
-#row2 .imgBox {
+#row3 .imgBox {
 	float: left;
 	width: 130px;
 	height: 130px;
 	margin: 0 15px 12px 0;
 }
-#row2 .imgBox img{
+#row3 .imgBox img{
 	width: 100%;
 }
 
