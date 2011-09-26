@@ -1,5 +1,5 @@
 function cursorShare(ns) {
-  var socket = io.connect('http://sakura.mesolabs.com:3011/' + ns);
+  var socket = io.connect('http://164.46.240.70:80/' + ns);
   socket.on('location', function(data) {
     var cursor = $('#' + data.id);
     if (!cursor.attr('id')) {
