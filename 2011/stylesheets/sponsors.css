@@ -9,41 +9,68 @@
 
 .sponsors nav ul li {
     display: inline-block;
-    margin-right: 30px;
-    border: 5px solid #ccc;
+    margin-right: 5px;
+    border: 3px solid #eee;
 }
 
 .sponsors nav ul li a {
     display: inline-block;
-    width: 200px;
-    padding: 10px;
+    width: 180px;
+    padding: 10px 5px;
     font-size: 20px;
     text-align: center;
-}
-
-.sponsors nav ul li a {
-    font-size: 20px;
+    text-decoration: underline;
 }
 
 .sponsors h2 {
-    font-size: 24px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    padding-left: 45px;
+    border-bottom: 4px solid #eee;
+    font-size: 28px;
 }
 
-.sponsors > p.topnavilink {
+#platinum h2 {
+  background: 5px 0 no-repeat url('../images/sponsors/platinum.png');
+}
+
+#gold h2 {
+  background: 5px 0 no-repeat url('../images/sponsors/gold.png');
+}
+
+#silver h2 {
+  background: 5px 0 no-repeat url('../images/sponsors/silver.png');
+}
+
+#supporter h2 {
+  background: 5px 0 no-repeat url('../images/sponsors/supporter.png');
+}
+
+.sponsors h2 span {
+  font-size: 18px;
+}
+
+.sponsors p.topnavilink {
     clear: both;
     font-size: 14px;
     text-align: right;
 }
 
+.sponsors .sponsor {
+    clear: both;
+    margin: 10px 0;
+}
+
 .sponsors .sponsor li {
     clear: both;
-    padding-top: 10px;
+    padding-bottom: 20px;
     font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
 }
 
 .sponsors .sponsor li .imgBox {
     float: left;
-    margin-right: 20px;
+    width: 160px;
+    text-align: center;
 }
 
 .sponsors .sponsor li .imgBox img {
@@ -51,11 +78,29 @@
 }
 
 .sponsors .sponsor li h3 {
-    font-size: 20px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    border-bottom: 1px solid #eee;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .sponsors .sponsor li p {
     font-size: 14px;
+}
+
+.sponsors .sponsor li p a {
+    text-decoration: underline;
+}
+
+.sponsors .sponsor li .sponsorLink {
+    clear: both;
+    text-align: right;
+}
+
+.sponsors .sponsor li .sponsorLink a {
+    font-size: 14px;
+    text-decoration: underline;
 }
 
 #sponsorsListVertical {
