@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
-	<meta charset="UTF-8" />
-	<title>東京Node学園祭2011</title>
-	<link rel="stylesheet" href="stylesheets/style.css" />
-    <!--[if IE]>
-    <script>
-    document.createElement("header" );
-    document.createElement("footer" );
-    document.createElement("section"); 
-    document.createElement("aside"  );
-    document.createElement("nav"    );
-    document.createElement("article"); 
-    document.createElement("hgroup" ); 
-    document.createElement("time"   );
-    </script>
-	<noscript>ご利用のブラウザで JavaScript を有効にしてください。</noscript>
-	<![endif]-->
-<link href="favicon.ico" rel="shortcut icon" />
+  <meta charset="UTF-8" />
+  <title>東京Node学園祭2011</title>
+  <link rel="stylesheet" href="stylesheets/style.css" />
+  <link rel="stylesheet" href="stylesheets/sponsors_top.css" />
+  <!--[if IE]>
+  <script>
+  document.createElement("header" );
+  document.createElement("footer" );
+  document.createElement("section");
+  document.createElement("aside"  );
+  document.createElement("nav"    );
+  document.createElement("article");
+  document.createElement("hgroup" );
+  document.createElement("time"   );
+  </script>
+  <noscript>ご利用のブラウザで JavaScript を有効にしてください。</noscript>
+  <![endif]-->
+  <link href="favicon.ico" rel="shortcut icon" />
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.tmpl.js"></script>
   <script type="text/javascript" src="javascripts/socket.io.js"></script>
   <script type="text/javascript" src="javascripts/cursorShare.js"></script>
+  <script type="text/javascript" src="javascripts/util.js"></script>
+  <script type="text/javascript" src="javascripts/sponsors.js"></script>
   <script type="text/javascript">
     $(function() {
       cursorShare('index');
+      buildSponsosrArea('sponsorTemplate');
     });
  </script>
 </head>
@@ -53,7 +58,7 @@
             <li class="current_page_item"><a href="/2011/"><img src="images/title_home.png" alt="HOME" /><span>ホーム</span></a></li>
             <li><a href="javascript:void(0)"><img src="images/title_session_uc.png" alt="SESSION" /><span>セッション</span></a></li>
             <li><a href="speakers.html"><img src="images/title_speakers.png" alt="SPEAKERS" /><span>登壇者紹介</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/title_sponsors_uc.png" alt="SPONSORS" /><span>スポンサー</span></a></li>
+            <li><a href="sponsors.html"><img src="images/title_sponsors.png" alt="SPONSORS" /><span>スポンサー</span></a></li>
             <li><a href="access.html"><img src="images/title_access.png" alt="ACCESS" /><span>アクセス</span></a></li>
             <li><a href="ticket.html"><img src="images/title_ticket.png" alt="TICKET" /><span>チケット購入</span></a></li>
         </ul>
@@ -72,88 +77,119 @@
 
 </header>
 
-<div id="col1">
-<section id="row1">
-	<h2>About<span>｜ 東京Node学園祭について</span></h2>
-	<p>スマートフォンの増加により現実になりつつあるC10K問題や、WebSocketにより実現されつつあるリアルタイムWeb。これらへのソリューションとして世界中から注目されているのが、サーバサイドJavaScriptプラットフォームのNode.jsです。</p>
-	<p>このたびNode.js日本ユーザグループは、Node.jsの作者Ryan Dahl氏および、Socket.IOの作者Guillermo Rauch氏を招聘し、初のカンファレンスとなる「東京Node学園祭」を開催します。</p>
-	<p>なお、ファーストサーバ社とJoyent社が協力して提供するNode.js専用ホスティングサービスを参加者全員に無償提供します！</p>
-</section>
-<section id="row2">
-<h2>Schedule<span>｜ 開催概要</span></h2>
-       <h3>日時</h3>
-       <p>2011年10月29日(土) 10:00〜18:30 (後夜祭 19:00～)<p>
-       <h3>会場</h3>
-       <p>〒107-6211 東京都港区赤坂9-7-1 ミッドタウン・タワー Yahoo! JAPAN 11F</p>
-       </dl>
-</section>
-<section id="row3"><h2>Special Guests<span>｜ 海外スピーカー紹介</span></h2>
-	<div class="speaker">
-		<div class="imgBox"><img src="images/ryan.png" alt="RyanDahl" /></div>
-		<h3><a href="http://twitter.com/#!/ryah" target="_blank">Ryan Dahl</a></h3>
-		<p><a href="http://nodejs.org/" target="_blank">Node.js</a>の生みの親です。学生時代に数学を専攻していた彼は、一方でプログラミングの世界でも活動しRubyのWebサーバなどを開発していました。それまでに培った知識を応用し、「簡単にスケーラブルなネットワークプログラムを作成する環境」として開発したのが、Node.jsの始まりです。<br />
-現在は<a href="http://www.joyent.com/" target="_blank">Joyent</a>に在籍し、フルタイムでNode.jsの開発に従事しています。</p>
-</div>
-
-<div class="speaker">
-    <div class="imgBox"><img src="images/guillermo.png" alt="GuillermoRauch" /></div>
-    <h3><a href="http://twitter.com/#!/rauchg" target="_blank">Guillermo Rauch</a></h3>
-    <p>Node.jsの代表的なリアルタイム通信モジュール<a href="http://socket.io/" target="_blank">Socket.IO</a>の作者です。Socket.IOはNode.jsでのリアルタイムWebアプリの可能性を強く引き出し、多くの開発者の注目を集めています。<br />
-オンラインの教育支援サービスを提供する <a href="https://www.learnboost.com/" target="_blank">LearnBoost</a>のCTOでもあり、同じくLearnBoostに在籍する<a href="https://twitter.com/#!/tjholowaychuk" target="_blank">TJ Holowaychuk</a>(<a href="http://expressjs.com/" target="_blank">Express</a>の作者)と共に、Node.jsのエコシステムの発展に日々貢献しています。</p>
-</div>
-</section>
-</div>
-<div id="col2">
-
-	<div id="news">
-	<h2>News<span>｜ お知らせ</span></h2>
-		<ul>
-			<li><span class="date">2011.09.26</span>TOPページに開催概要を追記しました。</li>	
-			<li><span class="date">2011.09.26</span>チケット販売を開始しました。</li>	
-			<li><span class="date">2011.09.26</span>スピーカとアクセスページを公開しました。</li>	
-			<li><span class="date">2011.09.18</span>東京Node学園祭のWebサイトを公開しました。</li>	
-		</ul>
-	</div>
-
-    <div>
-        <a href="https://twitter.com/nodefest" class="twitter-follow-button" data-show-count="false" data-lang="ja">@nodefestをフォロー</a>
-        <script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
+<div>
+  <div id="col1">
+  <section id="row1">
+    <h2>About<span>｜ 東京Node学園祭について</span></h2>
+    <p>スマートフォンの増加により現実になりつつあるC10K問題や、WebSocketにより実現されつつあるリアルタイムWeb。これらへのソリューションとして世界中から注目されているのが、サーバサイドJavaScriptプラットフォームのNode.jsです。</p>
+    <p>このたびNode.js日本ユーザグループは、Node.jsの作者Ryan Dahl氏および、Socket.IOの作者Guillermo Rauch氏を招聘し、初のカンファレンスとなる「東京Node学園祭」を開催します。</p>
+    <p>なお、ファーストサーバ社とJoyent社が協力して提供するNode.js専用ホスティングサービスを参加者全員に無償提供します！</p>
+  </section>
+  <section id="row2">
+  <h2>Schedule<span>｜ 開催概要</span></h2>
+         <h3>日時</h3>
+         <p>2011年10月29日(土) 10:00〜18:30 (後夜祭 19:00～)<p>
+         <h3>会場</h3>
+         <p>〒107-6211 東京都港区赤坂9-7-1 ミッドタウン・タワー Yahoo! JAPAN 11F</p>
+         </dl>
+  </section>
+  <section id="row3">
+    <h2>Special Guests<span>｜ 海外スピーカー紹介</span></h2>
+    <div class="speaker">
+      <div class="imgBox"><img src="images/ryan.png" alt="RyanDahl" /></div>
+      <h3><a href="http://twitter.com/#!/ryah" target="_blank">Ryan Dahl</a></h3>
+      <p><a href="http://nodejs.org/" target="_blank">Node.js</a>の生みの親です。学生時代に数学を専攻していた彼は、一方でプログラミングの世界でも活動しRubyのWebサーバなどを開発していました。それまでに培った知識を応用し、「簡単にスケーラブルなネットワークプログラムを作成する環境」として開発したのが、Node.jsの始まりです。<br />
+  現在は<a href="http://www.joyent.com/" target="_blank">Joyent</a>に在籍し、フルタイムでNode.jsの開発に従事しています。</p>
     </div>
 
-    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-    <script>
-    new TWTR.Widget({
-      version: 2,
-      type: 'search',
-      search: '#nodefest',
-      interval: 30000,
-      title: '#nodefest',
-      subject: '東京Node学園祭2011',
-      width: 250,
-      height: 300,
-      theme: {
-        shell: {
-          background: '#8bbb2d',
-          color: '#ffffff'
+    <div class="speaker">
+        <div class="imgBox"><img src="images/guillermo.png" alt="GuillermoRauch" /></div>
+        <h3><a href="http://twitter.com/#!/rauchg" target="_blank">Guillermo Rauch</a></h3>
+        <p>Node.jsの代表的なリアルタイム通信モジュール<a href="http://socket.io/" target="_blank">Socket.IO</a>の作者です。Socket.IOはNode.jsでのリアルタイムWebアプリの可能性を強く引き出し、多くの開発者の注目を集めています。<br />
+    オンラインの教育支援サービスを提供する <a href="https://www.learnboost.com/" target="_blank">LearnBoost</a>のCTOでもあり、同じくLearnBoostに在籍する<a href="https://twitter.com/#!/tjholowaychuk" target="_blank">TJ Holowaychuk</a>(<a href="http://expressjs.com/" target="_blank">Express</a>の作者)と共に、Node.jsのエコシステムの発展に日々貢献しています。</p>
+    </div>
+  </section>
+  </div>
+  <div id="col2">
+
+    <div id="news">
+    <h2>News<span>｜ お知らせ</span></h2>
+      <ul>
+        <li><span class="date">2011.09.26</span>TOPページに開催概要を追記しました。</li>
+        <li><span class="date">2011.09.26</span>チケット販売を開始しました。</li>
+        <li><span class="date">2011.09.26</span>スピーカとアクセスページを公開しました。</li>
+        <li><span class="date">2011.09.18</span>東京Node学園祭のWebサイトを公開しました。</li>
+      </ul>
+    </div>
+
+      <div>
+          <a href="https://twitter.com/nodefest" class="twitter-follow-button" data-show-count="false" data-lang="ja">@nodefestをフォロー</a>
+          <script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
+      </div>
+
+      <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+      <script>
+      new TWTR.Widget({
+        version: 2,
+        type: 'search',
+        search: '#nodefest',
+        interval: 30000,
+        title: '#nodefest',
+        subject: '東京Node学園祭2011',
+        width: 250,
+        height: 300,
+        theme: {
+          shell: {
+            background: '#8bbb2d',
+            color: '#ffffff'
+          },
+          tweets: {
+            background: '#ffffff',
+            color: '#444444',
+            links: '#1985b5'
+          }
         },
-        tweets: {
-          background: '#ffffff',
-          color: '#444444',
-          links: '#1985b5'
+        features: {
+          scrollbar: false,
+          loop: true,
+          live: true,
+          hashtags: true,
+          timestamp: true,
+          avatars: true,
+          toptweets: false,
+          behavior: 'default'
         }
-      },
-      features: {
-        scrollbar: false,
-        loop: true,
-        live: true,
-        hashtags: true,
-        timestamp: true,
-        avatars: true,
-        toptweets: false,
-        behavior: 'default'
-      }
-    }).render().start();
-    </script>
+      }).render().start();
+      </script>
+
+  </div>
+</div>
+  
+<div id="sponsors">
+  <div id="platinum">
+    <h2>Platinum sponsors</h2>
+    <ul id="platinumSponsors">
+    </ul>
+  </div>
+
+  <div id="gold">
+    <h2>Gold sponsors</h2>
+    <ul id="goldSponsors">
+      <li>掲載準備中です。</li>
+    </ul>
+  </div>
+
+  <div id="silver">
+    <h2>Silver sponsors</h2>
+    <ul id="silverSponsors">
+    </ul>
+  </div>
+
+  <div id="supporter">
+    <h2>Supporters</h2>
+    <ul id="supporters">
+    </ul>
+  </div>
 
 </div>
 
@@ -161,6 +197,12 @@
     <p>&copy; 2011 東京Node学園祭 実行委員会 | <a href="http://nodejs.jp/">Node.js 日本ユーザグループ</a></p>
 </footer>
 </div>
+
+<script id="sponsorTemplate" type="text/x-jquery-tmpl">
+  <li id="${id}"{{if order}} class="${order}"{{/if}}>
+    <a href="sponsors.html#${id}"><img src="images/sponsors/${logo}" alt="${name}" /></a></div>
+  </li>
+</script>
 
 </body>
 </html>

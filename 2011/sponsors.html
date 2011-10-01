@@ -19,16 +19,15 @@
     <noscript>ご利用のブラウザで JavaScript を有効にしてください。</noscript>
     <![endif]-->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.tmpl.js"></script>
     <script type="text/javascript" src="javascripts/socket.io.js"></script>
     <script type="text/javascript" src="javascripts/cursorShare.js"></script>
     <script type="text/javascript" src="javascripts/util.js"></script>
+    <script type="text/javascript" src="javascripts/sponsors.js"></script>
     <script type="text/javascript">
     $(function() {
         cursorShare('sponsors');
-        listShuffle('platinumSponsors');
-        listShuffle('goldSponsors');
-        listShuffle('silverSponsors');
-        listShuffle('supporters');
+        buildSponsosrArea('sponsorTemplate');
     });
     </script>
 </head>
@@ -55,12 +54,12 @@
 
     <div class="nav-box">
         <ul class="group" id="nav">
-            <li class="current_page_item"><a href="/2011/"><img src="images/title_home.png" alt="HOME" /><span>ホーム</span></a></li>
+            <li><a href="/2011/"><img src="images/title_home.png" alt="HOME" /><span>ホーム</span></a></li>
             <li><a href="javascript:void(0)"><img src="images/title_session_uc.png" alt="SESSION" /><span>セッション</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/title_speakers_uc.png" alt="SPEAKERS" /><span>登壇者紹介</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/title_sponsors.png" alt="SPONSORS" /><span>スポンサー</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/title_access_uc.png" alt="ACCESS" /><span>アクセス</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/title_ticket_uc.png" alt="TICKET" /><span>チケット購入</span></a></li>
+            <li><a href="speakers.html"><img src="images/title_speakers.png" alt="SPEAKERS" /><span>登壇者紹介</span></a></li>
+            <li class="current_page_item"><a href="sponsors.html"><img src="images/title_sponsors.png" alt="SPONSORS" /><span>スポンサー</span></a></li>
+            <li><a href="access.html"><img src="images/title_access.png" alt="ACCESS" /><span>アクセス</span></a></li>
+            <li><a href="ticket.html"><img src="images/title_ticket.png" alt="TICKET" /><span>チケット購入</span></a></li>
         </ul>
     </div>
 
@@ -80,114 +79,45 @@
 <section id="platinum" class="sponsors">
     <h2>Platinum Sponsors<span>｜ プラチナスポンサー</span></h2>
     <ul id="platinumSponsors" class="sponsor">
-        <li id="dena">
-            <h3>株式会社ディー・エヌ・エー</h3>
-            <div class="imgBox"><img src="images/sponsors/dena.png" alt="sponsor" /></div>
-            <p>
-              ディー・エヌ・エー（DeNA）は、日本、英語圏、中国語圏を中心としたワールドワイドのソーシャルゲームプラットフォーム「Mobage」を展開しています。
-              その展開を支える技術 iOS/Android の両プラットフォームにワンソースでゲームを提供できるゲームエンジン「ngCore」の提供も行っています。
-              「ngCore」は、Web 業界で働いている方には親しみのある言語、JavaScript を使ってアプリを開発できるほか、非エンジニアのための支援ツール、ライブラリ等も提供しています。
-              ぜひダウンロードしてみてください。 <a href="https://developer.mobage.com">https://developer.mobage.com</a>
-            </p>
-            <div class="sponsorLink"><a href="http://dena.jp">http://dena.jp</a></div>
-        </li>
-        <li id="cyberagent">
-            <h3>株式会社サイバーエージェント</h3>
-            <div class="imgBox"><img src="images/sponsors/cyberagent.png" alt="sponsor" /></div>
-            <p>
-              サイバーエージェントは1998年の創業以来、インターネットメディア事業、インターネット広告事業を中心に事業展開をする、インターネット総合サービス企業です。
-              中でも、注力事業であるメディア「Ameba」はブログを中心にコミュニケーションサービス「アメーバピグ」などを展開し、2,500万人以上が利用する国内最大規模のインターネットメディアとなっています。
-              2011年6月より開始し急速に利用者を集めている「ピグライフ」は世界最大規模の Node.js を用いた商用サービスとして注目されています。
-            </p>
-            <div class="sponsorLink"><a href="http://www.cyberagent.co.jp/">http://www.cyberagent.co.jp</a></div>
-        </li>
     </ul>
-    <p class="topnavilink"><a href="#top">Top へ</a></p>
+  <p class="topnavilink"><a href="#top">Top へ戻る</a></p>
 </section>
 
 <section id="gold" class="sponsors">
     <h2>Gold Sponsors<span>｜ ゴールドスポンサー</span></h2>
-    <div>掲載準備中です。</div>
-  <!--
     <ul id="goldSponsors" class="sponsor">
-        <li>
-            <div class="imgBox"><img src="images/sponsors/sponsor-gold.png" alt="sponsor" /></div>
-            <h3></h3>
-            <p></p>
-            <div class="sponsorLink"><a href="#"></a></div>
-        </li>
+      <li>掲載準備中です。</li>
     </ul>
-  -->
-    <p class="topnavilink"><a href="#top">Top へ</a></p>
+  <p class="topnavilink"><a href="#top">Top へ戻る</a></p>
 </section>
 
 <section id="silver" class="sponsors">
     <h2>Silver Sponsors<span>｜ シルバースポンサー</span></h2>
     <ul id="silverSponsors" class="sponsor">
-        <li id="indi">
-            <h3>株式会社インディソフトウェア</h3>
-            <div class="imgBox"><img src="images/sponsors/indi.png" alt="sponsor" /></div>
-            <p>
-              インディソフトウェアは「コンテンツを通じて世界をポジティブに」を合い言葉にコンテンツ・サービスの企画・開発を行っており、Nodeフレームワークであ るSocketStreamの採用実績もございます。
-            </p>
-            <div class="sponsorLink"><a href="http://www.indi.co.jp/">http://www.indi.co.jp</a></div>
-        </li>
-        <li id="pxgrid">
-            <h3>株式会社ピクセルグリッド</h3>
-            <div class="imgBox"><img src="images/sponsors/pxgrid.png" alt="sponsor" /></div>
-            <p>
-              ピクセルグリッドはJavaScriptの会社です。Webアプリケーションのフロントエンド開発を得意としhtml5やCSS3といった技術を積極的に活用しています。node.jsの利用にも取り組んでいます。
-            </p>
-            <div class="sponsorLink"><a href="http://www.pxgrid.com/">http://www.pxgrid.com</a></div>
-        </li>
-        <li id="m3">
-            <h3>エムスリー株式会社</h3>
-            <div class="imgBox"><img src="images/sponsors/m3.png" alt="sponsor" /></div>
-            <p>
-              エムスリー株式会社は20万人以上の医師が登録している日本最大規模の医療専門サイト <a href="http://www.m3.com">m3.com</a> を中心に医療関連サービスを提供している会社です。Node.js on Herokuの運用実績があります。
-            </p>
-            <div class="sponsorLink"><a href="http://corporate.m3.com/">http://corporate.m3.com</a></div>
-        </li>
     </ul>
-    <p class="topnavilink"><a href="#top">Top へ</a></p>
+  <p class="topnavilink"><a href="#top">Top へ戻る</a></p>
 </section>
 
 <section id="supporter" class="sponsors">
     <h2>Supporters<span>｜ 後援企業</span></h2>
     <ul id="supporters" class="sponsor">
-        <li id="yahoo">
-            <h3>ヤフー株式会社</h3>
-            <div class="imgBox"><img src="images/sponsors/yahoo.png" alt="sponsor" /></div>
-            <p>
-              ヤフー株式会社が運営するYahoo! JAPANは、1か月あたり約5287万人のユニークカスタマー数※と、1日23億6500万ページビューのインターネットの総合情報サイトで、検索、コンテンツ、コミュニティー、コマース、モバイル、スマートフォンなど多くのサービスを提供しています。
-              ※Nielsen Online「NetView」、2011年7月、家庭もしくは職場からのアクセスによる。ponsor の説明が入ります。
-            </p>
-            <div class="sponsorLink"><a href="http://www.yahoo.co.jp">http://www.yahoo.co.jp</a></div>
-        </li>
-        <li id="joyent">
-            <h3>Joyent</h3>
-            <div class="imgBox"><img src="images/sponsors/joyent.png" alt="sponsor" /></div>
-            <p>
-              Joyentは、開発者やエンタープライズ、サービスプロバイダに統合的な技術を提供する、世界的なクラウドコンピューティングソフトウェア及びサービスのプロバイダです。
-            </p>
-            <div class="sponsorLink"><a href="http://www.joyent.com">http://www.joyent.com</a></div>
-        </li>
-        <li id="dqango">
-            <h3>株式会社ドワンゴ</h3>
-            <div class="imgBox"><img src="images/sponsors/dwango.png" alt="sponsor" /></div>
-            <p>
-              株式会社ドワンゴは、ゲームや音楽をはじめとするエンタテインメント分野において、次世代ネットワークコミュニケーションの創出を目指す、ネットワーク・エンタテインメント・カンパニーです。
-            </p>
-            <div class="sponsorLink"><a href="http://info.dwango.co.jp">http://info.dwango.co.jp</a></div>
-        </li>
     </ul>
-    <p class="topnavilink"><a href="#top">Top へ</a></p>
+    <p class="topnavilink"><a href="#top">Top へ戻る</a></p>
 </section>
 
 <footer>
     <p>&copy; 2011 東京Node学園祭 実行委員会 | <a href="http://nodejs.jp/">Node.js 日本ユーザグループ</a></p>
 </footer>
 </div>
+
+<script id="sponsorTemplate" type="text/x-jquery-tmpl">
+  <li id="${id}"{{if order}} class="${order}"{{/if}}>
+    <h3>${name}</h3>
+    <div class="imgBox"><a href="${link}"><img src="images/sponsors/${logo}" alt="${name}" /></a></div>
+    <p>{{html description}}</p>
+    <div class="sponsorLink"><a href="${link}">${link}</a></div>
+  </li>
+</script>
 
 </body>
 </html>

@@ -1,6 +1,7 @@
 function listShuffle(id) {
   var list = $('#' + id)
-    , items = $('li', list)
+    , items = $('li[class!=top]', list)
+    , firstItem = $('.first', list)
     , length = items.length
     , i;
 
@@ -20,5 +21,9 @@ function listShuffle(id) {
   list.html('');
   for (i = 0; i < length; ++i) {
     list.append(items.get(ary[i]));
+  }
+
+  if (firstItem.length > 0) {
+    list.prepend(firstItem);
   }
 }
