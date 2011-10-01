@@ -1,11 +1,11 @@
 #sponsors {
+    margin-top: 30px;
     clear: both;
 }
 
 #sponsors h2 {
     margin-bottom: 20px;
-    padding-top: 6px;
-    padding-left: 55px;
+    padding: 10px 0 10px 55px;
     color: #ffffff;
     background-color: #336633;
     background-position: 10px 3px;

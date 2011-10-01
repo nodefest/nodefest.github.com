@@ -1,16 +1,9 @@
-#left {
-  float: left;
-  width: 640px;
-}
-
-#right {
-  width: 210px;
-  margin-left: 660px;
+body {
+  border: none;
 }
 
 #sponsors {
-    width: 180px;
-    margin-left: 20px;
+    width: 190px;
     background-color: #eeffee;
 }
 

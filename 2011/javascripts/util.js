@@ -18,7 +18,6 @@ function listShuffle(id) {
     ary[j] = t;
   }
 
-  list.html('');
   for (i = 0; i < length; ++i) {
     list.append(items.get(ary[i]));
   }
@@ -26,4 +25,13 @@ function listShuffle(id) {
   if (firstItem.length > 0) {
     list.prepend(firstItem);
   }
+}
+
+function adjustFrameHeight() {
+  $('.sponsor-sideber').load(function() {
+    if (typeof $(this).attr('height') == 'undefined') {
+      $(this).height(this.contentWindow.document.documentElement.scrollHeight + 10);
+    }
+  });
+  $('.sponsor-sideber').triggerHandler('load');
 }

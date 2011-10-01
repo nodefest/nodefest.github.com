@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
   <meta charset="UTF-8" />
+  
   <title>東京Node学園祭2011</title>
   <link rel="stylesheet" href="stylesheets/style.css" />
   <link rel="stylesheet" href="stylesheets/sponsors_top.css" />
@@ -199,7 +200,7 @@
 
 <script id="sponsorTemplate" type="text/x-jquery-tmpl">
   <li id="${id}"{{if order}} class="${order}"{{/if}}>
-    <a href="sponsors.html#${id}"><img src="images/sponsors/${logo}" alt="${name}" title="${name}" align="top" /></a></div>
+    <div class="imgBox"><a href="${link}"><img src="images/sponsors/${logo}" alt="${name}" align="top"/></a></div>
   </li>
 </script>
 
