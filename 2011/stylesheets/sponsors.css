@@ -81,7 +81,8 @@
 }
 
 .sponsors .sponsor li .imgBox img {
-    border: 5px solid #eee;
+    background-color: #ffffff;
+    border: 3px solid green;
 }
 
 .sponsors .sponsor li h3 {
