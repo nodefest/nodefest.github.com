@@ -38,7 +38,7 @@ abbr,acronym { border:0;
 /* 基本style */
 
 body {
-	font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "メイリオ", Meiryo, "ＭＳ 明朝", sans-serif;
+	font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
 }
 section, article, aside, footer, header, nav, hgroup {
   display:block;
@@ -267,7 +267,7 @@ h2 span {
 
 #right {
   width: 210px;
-  margin-left: 660px;
+  margin-left: 650px;
 }
 
 #right iframe {
