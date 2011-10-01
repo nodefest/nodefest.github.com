@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
-	<meta charset="UTF-8" />
-	<title>セッション | 東京Node学園祭2011</title>
-	<link rel="stylesheet" href="stylesheets/style.css" />
-	<link rel="stylesheet" href="stylesheets/sponsors.css" />
-    <!--[if IE]>
-    <script>
-    document.createElement("header" );
-    document.createElement("footer" );
-    document.createElement("section"); 
-    document.createElement("aside"  );
-    document.createElement("nav"    );
-    document.createElement("article"); 
-    document.createElement("hgroup" ); 
-    document.createElement("time"   );
-    </script>
-	<noscript>ご利用のブラウザで JavaScript を有効にしてください。</noscript>
-	<![endif]-->
-<link href="favicon.ico" rel="shortcut icon" />
+  <meta charset="UTF-8" />
+  <title>セッション | 東京Node学園祭2011</title>
+  <link rel="stylesheet" href="stylesheets/style.css" />
+  <link rel="stylesheet" href="stylesheets/sponsors_side.css" />
+  <!--[if IE]>
+  <script>
+  document.createElement("header" );
+  document.createElement("footer" );
+  document.createElement("section");
+  document.createElement("aside"  );
+  document.createElement("nav"    );
+  document.createElement("article");
+  document.createElement("hgroup" );
+  document.createElement("time"   );
+  </script>
+  <noscript>ご利用のブラウザで JavaScript を有効にしてください。</noscript>
+  <![endif]-->
+  <link href="favicon.ico" rel="shortcut icon" />
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.tmpl.js"></script>
   <script type="text/javascript" src="javascripts/socket.io.js"></script>
   <script type="text/javascript" src="javascripts/cursorShare.js"></script>
+  <script type="text/javascript" src="javascripts/util.js"></script>
+  <script type="text/javascript" src="javascripts/sponsors.js"></script>
   <script type="text/javascript">
     $(function() {
       cursorShare('session');
+      buildSponsosrArea('sponsorTemplate');
     });
- </script>
+  </script>
 </head>
 <body>
 <div id="wrapper">
@@ -136,27 +140,44 @@
 </div>
 
 <div id="col2">
-    <ul id="sponsorsListVertical">
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-    </ul>
+  <div id="sponsors">
+    <div id="platinum">
+      <h2>Platinum sponsors</h2>
+      <ul id="platinumSponsors">
+      </ul>
+    </div>
+
+    <div id="gold">
+      <h2>Gold sponsors</h2>
+      <ul id="goldSponsors">
+        <li>掲載準備中です。</li>
+      </ul>
+    </div>
+
+    <div id="silver">
+      <h2>Silver sponsors</h2>
+      <ul id="silverSponsors">
+      </ul>
+    </div>
+
+    <div id="supporter">
+      <h2>Supporters</h2>
+      <ul id="supporters">
+      </ul>
+    </div>
+  </div>
 </div>
 
 <footer>
     <p>&copy; 2011 東京Node学園祭 実行委員会 | <a href="http://nodejs.jp/">Node.js 日本ユーザグループ</a></p>
 </footer>
 </div>
+
+<script id="sponsorTemplate" type="text/x-jquery-tmpl">
+  <li id="${id}"{{if order}} class="${order}"{{/if}}>
+    <a href="sponsors.html#${id}"><img src="images/sponsors/${logo}" alt="${name}" title="${name}" /></a></div>
+  </li>
+</script>
 
 </body>
 </html>
