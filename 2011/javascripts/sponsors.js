@@ -33,7 +33,7 @@ var sponsors = {
       "name": "株式会社ピクセルグリッド",
       "logo": "pxgrid.png",
       "description": "ピクセルグリッドはJavaScriptの会社です。Webアプリケーションのフロントエンド開発を得意としhtml5やCSS3といった技術を積極的に活用しています。node.jsの利用にも取り組んでいます。",
-      "link": "http://www.pxgrid.co.jp/"
+      "link": "http://www.pxgrid.com/"
     },
     {
       "id": "m3",
