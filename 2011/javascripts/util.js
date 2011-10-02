@@ -1,6 +1,7 @@
 function listShuffle(id) {
   var list = $('#' + id)
-    , items = $('li', list)
+    , items = $('li[class!=top]', list)
+    , firstItem = $('.first', list)
     , length = items.length
     , i;
 
@@ -17,8 +18,20 @@ function listShuffle(id) {
     ary[j] = t;
   }
 
-  list.html('');
   for (i = 0; i < length; ++i) {
     list.append(items.get(ary[i]));
   }
+
+  if (firstItem.length > 0) {
+    list.prepend(firstItem);
+  }
+}
+
+function adjustFrameHeight() {
+  $('.sponsor-sideber').load(function() {
+    if (typeof $(this).attr('height') == 'undefined') {
+      $(this).height(this.contentWindow.document.documentElement.scrollHeight + 10);
+    }
+  });
+  $('.sponsor-sideber').triggerHandler('load');
 }
