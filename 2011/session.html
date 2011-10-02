@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
-	<meta charset="UTF-8" />
-	<title>セッション | 東京Node学園祭2011</title>
-	<link rel="stylesheet" href="stylesheets/style.css" />
-	<link rel="stylesheet" href="stylesheets/sponsors.css" />
-    <!--[if IE]>
-    <script>
-    document.createElement("header" );
-    document.createElement("footer" );
-    document.createElement("section"); 
-    document.createElement("aside"  );
-    document.createElement("nav"    );
-    document.createElement("article"); 
-    document.createElement("hgroup" ); 
-    document.createElement("time"   );
-    </script>
-	<noscript>ご利用のブラウザで JavaScript を有効にしてください。</noscript>
-	<![endif]-->
-<link href="favicon.ico" rel="shortcut icon" />
+  <meta charset="UTF-8" />
+  <title>セッション | 東京Node学園祭2011</title>
+  <link rel="stylesheet" href="stylesheets/style.css" />
+  <!--[if IE]>
+  <script>
+  document.createElement("header" );
+  document.createElement("footer" );
+  document.createElement("section");
+  document.createElement("aside"  );
+  document.createElement("nav"    );
+  document.createElement("article");
+  document.createElement("hgroup" );
+  document.createElement("time"   );
+  </script>
+  <noscript>ご利用のブラウザで JavaScript を有効にしてください。</noscript>
+  <![endif]-->
+  <link href="favicon.ico" rel="shortcut icon" />
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.tmpl.js"></script>
   <script type="text/javascript" src="javascripts/socket.io.js"></script>
   <script type="text/javascript" src="javascripts/cursorShare.js"></script>
+  <script type="text/javascript" src="javascripts/util.js"></script>
   <script type="text/javascript">
     $(function() {
       cursorShare('session');
+      adjustFrameHeight();
     });
- </script>
+  </script>
 </head>
 <body>
 <div id="wrapper">
@@ -61,7 +63,7 @@
 
 </header>
 
-<div id="col1">
+<div id="left">
 <article id="sessionTable">
 	<p style="margin-bottom:10px">セッションは日本語・英語で行われます。<br />なお、現在まだ調整中ですのでプログラムが変更となる場合がございますのでご了承下さい。</p>
 	<table>
@@ -135,22 +137,8 @@
 </article>
 </div>
 
-<div id="col2">
-    <ul id="sponsorsListVertical">
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-        <li><img src="images/sponsors/sponsor.png"/></li>
-    </ul>
+<div id="right">
+  <iframe class="sponsor-sideber" src="sponsors-sidebar.html" frameborder="0" scroll="no" width="200"/>
 </div>
 
 <footer>

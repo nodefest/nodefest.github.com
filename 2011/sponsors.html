@@ -9,25 +9,25 @@
     <script>
     document.createElement("header" );
     document.createElement("footer" );
-    document.createElement("section"); 
+    document.createElement("section");
     document.createElement("aside"  );
     document.createElement("nav"    );
-    document.createElement("article"); 
-    document.createElement("hgroup" ); 
+    document.createElement("article");
+    document.createElement("hgroup" );
     document.createElement("time"   );
     </script>
     <noscript>ご利用のブラウザで JavaScript を有効にしてください。</noscript>
     <![endif]-->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.tmpl.js"></script>
     <script type="text/javascript" src="javascripts/socket.io.js"></script>
     <script type="text/javascript" src="javascripts/cursorShare.js"></script>
     <script type="text/javascript" src="javascripts/util.js"></script>
+    <script type="text/javascript" src="javascripts/sponsors.js"></script>
     <script type="text/javascript">
     $(function() {
         cursorShare('sponsors');
-        listShuffle('platinumSponsors');
-        listShuffle('goldSponsors');
-        listShuffle('silverSponsors');
+        buildSponsosrArea('sponsorTemplate');
     });
     </script>
 </head>
@@ -54,12 +54,12 @@
 
     <div class="nav-box">
         <ul class="group" id="nav">
-            <li class="current_page_item"><a href="/2011/"><img src="images/title_home.png" alt="HOME" /><span>ホーム</span></a></li>
+            <li><a href="/2011/"><img src="images/title_home.png" alt="HOME" /><span>ホーム</span></a></li>
             <li><a href="javascript:void(0)"><img src="images/title_session_uc.png" alt="SESSION" /><span>セッション</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/title_speakers_uc.png" alt="SPEAKERS" /><span>登壇者紹介</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/title_sponsors.png" alt="SPONSORS" /><span>スポンサー</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/title_access_uc.png" alt="ACCESS" /><span>アクセス</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/title_ticket_uc.png" alt="TICKET" /><span>チケット購入</span></a></li>
+            <li><a href="speakers.html"><img src="images/title_speakers.png" alt="SPEAKERS" /><span>登壇者紹介</span></a></li>
+            <li class="current_page_item"><a href="sponsors.html"><img src="images/title_sponsors.png" alt="SPONSORS" /><span>スポンサー</span></a></li>
+            <li><a href="access.html"><img src="images/title_access.png" alt="ACCESS" /><span>アクセス</span></a></li>
+            <li><a href="ticket.html"><img src="images/title_ticket.png" alt="TICKET" /><span>チケット購入</span></a></li>
         </ul>
     </div>
 
@@ -71,6 +71,7 @@
             <li><a href="#platinum">Platinum Sponsors</a></li>
             <li><a href="#gold">Gold Sponsors</a></li>
             <li><a href="#silver">Silver Sponsors</a></li>
+            <li><a href="#supporter">Supporters</a></li>
         </ul>
     </nav>
 </section>
@@ -78,103 +79,45 @@
 <section id="platinum" class="sponsors">
     <h2>Platinum Sponsors<span>｜ プラチナスポンサー</span></h2>
     <ul id="platinumSponsors" class="sponsor">
-        <li>
-            <div class="imgBox"><img src="images/sponsors/sponsor-platinum.png" alt="sponsor" /></div>
-            <h3>Platinum Sponsor 001</h3>
-            <p>Sponsor の説明が入ります。色々と会社の説明などを記述していきます。採用している技術や開発手法、方針などなど。</p>
-        </li>
-        <li>
-            <div class="imgBox"><img src="images/sponsors/sponsor-platinum.png" alt="sponsor" /></div>
-            <h3>Platinum Sponsor 002</h3>
-            <p>Sponsor の説明が入ります。色々と会社の説明などを記述していきます。採用している技術や開発手法、方針などなど。</p>
-        </li>
-        <li>
-            <div class="imgBox"><img src="images/sponsors/sponsor-platinum.png" alt="sponsor" /></div>
-            <h3>Platinum Sponsor 003</h3>
-            <p>Sponsor の説明が入ります。色々と会社の説明などを記述していきます。採用している技術や開発手法、方針などなど。</p>
-        </li>
     </ul>
-    <p class="topnavilink"><a href="#top">Top へ</a></p>
+  <p class="topnavilink"><a href="#top">Top へ戻る</a></p>
 </section>
 
 <section id="gold" class="sponsors">
     <h2>Gold Sponsors<span>｜ ゴールドスポンサー</span></h2>
     <ul id="goldSponsors" class="sponsor">
-        <li>
-            <div class="imgBox"><img src="images/sponsors/sponsor-gold.png" alt="sponsor" /></div>
-            <h3>Gold Sponsor 001</h3>
-            <p>Sponsor の説明が入ります。</p>
-        </li>
-        <li>
-            <div class="imgBox"><img src="images/sponsors/sponsor-gold.png" alt="sponsor" /></div>
-            <h3>Gold Sponsor 002</h3>
-            <p>Sponsor の説明が入ります。</p>
-        </li>
-        <li>
-            <div class="imgBox"><img src="images/sponsors/sponsor-gold.png" alt="sponsor" /></div>
-            <h3>Gold Sponsor 003</h3>
-            <p>Sponsor の説明が入ります。</p>
-        </li>
+      <li>掲載準備中です。</li>
     </ul>
-    <p class="topnavilink"><a href="#top">Top へ</a></p>
+  <p class="topnavilink"><a href="#top">Top へ戻る</a></p>
 </section>
 
 <section id="silver" class="sponsors">
     <h2>Silver Sponsors<span>｜ シルバースポンサー</span></h2>
     <ul id="silverSponsors" class="sponsor">
-        <li>
-            <div class="imgBox"><img src="images/sponsors/sponsor-silver.png" alt="sponsor" /></div>
-            <h3>Silver Sponsor 001</h3>
-            <p>Sponsor の説明が入ります。</p>
-        </li>
-        <li>
-            <div class="imgBox"><img src="images/sponsors/sponsor-silver.png" alt="sponsor" /></div>
-            <h3>Silver Sponsor 002</h3>
-            <p>Sponsor の説明が入ります。</p>
-        </li>
-        <li>
-            <div class="imgBox"><img src="images/sponsors/sponsor-silver.png" alt="sponsor" /></div>
-            <h3>Silver Sponsor 003</h3>
-            <p>Sponsor の説明が入ります。</p>
-        </li>
-        <li>
-            <div class="imgBox"><img src="images/sponsors/sponsor-silver.png" alt="sponsor" /></div>
-            <h3>Silver Sponsor 004</h3>
-            <p>Sponsor の説明が入ります。</p>
-        </li>
-        <li>
-            <div class="imgBox"><img src="images/sponsors/sponsor-silver.png" alt="sponsor" /></div>
-            <h3>Silver Sponsor 005</h3>
-            <p>Sponsor の説明が入ります。</p>
-        </li>
-        <li>
-            <div class="imgBox"><img src="images/sponsors/sponsor-silver.png" alt="sponsor" /></div>
-            <h3>Silver Sponsor 006</h3>
-            <p>Sponsor の説明が入ります。</p>
-        </li>
-        <li>
-            <div class="imgBox"><img src="images/sponsors/sponsor-silver.png" alt="sponsor" /></div>
-            <h3>Silver Sponsor 007</h3>
-            <p>Sponsor の説明が入ります。</p>
-        </li>
-        <li>
-            <div class="imgBox"><img src="images/sponsors/sponsor-silver.png" alt="sponsor" /></div>
-            <h3>Silver Sponsor 008</h3>
-            <p>Sponsor の説明が入ります。</p>
-        </li>
-        <li>
-            <div class="imgBox"><img src="images/sponsors/sponsor-silver.png" alt="sponsor" /></div>
-            <h3>Silver Sponsor 001</h3>
-            <p>Sponsor の説明が入ります。</p>
-        </li>
     </ul>
-    <p class="topnavilink"><a href="#top">Top へ</a></p>
+  <p class="topnavilink"><a href="#top">Top へ戻る</a></p>
+</section>
+
+<section id="supporter" class="sponsors">
+    <h2>Supporters<span>｜ 後援企業</span></h2>
+    <ul id="supporters" class="sponsor">
+    </ul>
+    <p class="topnavilink"><a href="#top">Top へ戻る</a></p>
 </section>
 
 <footer>
     <p>&copy; 2011 東京Node学園祭 実行委員会 | <a href="http://nodejs.jp/">Node.js 日本ユーザグループ</a></p>
 </footer>
 </div>
+
+<script id="sponsorTemplate" type="text/x-jquery-tmpl">
+  <li id="${id}"{{if order}} class="${order}"{{/if}}>
+    <h3>${name}</h3>
+    <div class="imgBox"><a href="${link}"><img src="images/sponsors/${logo}" alt="${name}" /></a></div>
+    <p>{{html description}}</p>
+    <div class="sponsorLink"><a href="${link}">${link}</a></div>
+  </li>
+</script>
 
 </body>
 </html>

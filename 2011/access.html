@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
-    <meta charset="UTF-8" />
-	<title>アクセス | 東京Node学園祭2011</title>
-    <link rel="stylesheet" href="stylesheets/style.css" />
-    <link rel="stylesheet" href="stylesheets/access.css" />
-    <!--[if IE]>
-    <script>
-    document.createElement("header" );
-    document.createElement("footer" );
-    document.createElement("section"); 
-    document.createElement("aside"  );
-    document.createElement("nav"    );
-    document.createElement("article"); 
-    document.createElement("hgroup" ); 
-    document.createElement("time"   );
-    </script>
-    <noscript>ご利用のブラウザで JavaScript を有効にしてください。</noscript>
-    <![endif]-->
-<link href="favicon.ico" rel="shortcut icon" />
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-    <script type="text/javascript" src="javascripts/socket.io.js"></script>
-    <script type="text/javascript" src="javascripts/cursorShare.js"></script>
+  <meta charset="UTF-8" />
+  <title>アクセス | 東京Node学園祭2011</title>
+  <link rel="stylesheet" href="stylesheets/style.css" />
+  <link rel="stylesheet" href="stylesheets/access.css" />
+  <!--[if IE]>
+  <script>
+  document.createElement("header" );
+  document.createElement("footer" );
+  document.createElement("section");
+  document.createElement("aside"  );
+  document.createElement("nav"    );
+  document.createElement("article");
+  document.createElement("hgroup" );
+  document.createElement("time"   );
+  </script>
+  <noscript>ご利用のブラウザで JavaScript を有効にしてください。</noscript>
+  <![endif]-->
+  <link href="favicon.ico" rel="shortcut icon" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.tmpl.js"></script>
+  <script type="text/javascript" src="javascripts/socket.io.js"></script>
+  <script type="text/javascript" src="javascripts/cursorShare.js"></script>
+  <script type="text/javascript" src="javascripts/util.js"></script>
   <script type="text/javascript">
     $(function() {
       cursorShare('access');
+      adjustFrameHeight();
     });
- </script>
+  </script>
  </head>
 <body>
 <div id="wrapper">
@@ -54,7 +57,7 @@
             <li><a href="/2011/"><img src="images/title_home.png" alt="HOME" /><span>ホーム</span></a></li>
             <li><a href="javascript:void(0)"><img src="images/title_session_uc.png" alt="SESSION" /><span>セッション</span></a></li>
             <li><a href="speakers.html"><img src="images/title_speakers.png" alt="SPEAKERS" /><span>登壇者紹介</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/title_sponsors_uc.png" alt="SPONSORS" /><span>スポンサー</span></a></li>
+            <li><a href="sponsors.html"><img src="images/title_sponsors.png" alt="SPONSORS" /><span>スポンサー</span></a></li>
             <li class="current_page_item"><a href="access.html"><img src="images/title_access.png" alt="ACCESS" /><span>アクセス</span></a></li>
             <li><a href="ticket.html"><img src="images/title_ticket.png" alt="TICKET" /><span>チケット購入</span></a></li>
         </ul>
@@ -63,25 +66,31 @@
 
 </header>
 
-<section id="top" class="access">
-    <h2>Access<span>｜ 会場へのアクセス</span></h2>
-    <script type="text/javascript" charset="UTF-8" src="http://map.yahooapis.jp/MapsService/embedmap/V2/?lat=35.666201166236995&amp;lon=139.73123376272&amp;z=18&amp;mode=map&amp;pointer=on&amp;datum=wgs&amp;fa=ks&amp;home=on&amp;hlat=35.666201166237&amp;hlon=139.73123376272&amp;ei=utf-8&amp;s=1316770317266c1616d94218eee3369de60a6ce1f8&amp;width=100%&amp;height=360"></script>
-    <p class="addr">〒107-6211 東京都港区赤坂9-7-1 ミッドタウン・タワー Yahoo! JAPAN 11F</p>
-    <p class="addren">Location: Yahoo! JAPAN 11F Midtown Tower 9-7-1 Akasaka, Minato, Tokyo, Japan</p>
-	<p class="descriptions">
-    <span>地下鉄</span><br>
-    都営大江戸線 六本木駅・東京メトロ日比谷線 六本木駅・東京メトロ千代田線 乃木坂駅・東京メトロ南北線 六本木一丁目駅<br>
-    <span>バス</span><br>
-    都営バス都01折返 渋谷駅 - 赤坂アークヒルズ行き・溜池行き・新橋駅行き 六本木駅前下車<br>
-    ちぃばす（港区コミュニティバス） 檜町公園、または六本木七丁目下車<br>
-    東京空港交通 成田空港 - 赤坂方面・六本木方面 ザ・リッツ・カールトン東京下車<br>
-	※会場へは公共交通機関でお越し下さい<br>
-    <span>問い合わせ先</span><br>
-    東京Node学園祭 実行委員会 E-mail：<a href="mailto:nodefest@nodejs.jp">nodefest@nodejs.jp</a>
-    </p>
+<div id="left">
+  <section id="top" class="access">
+      <h2>Access<span>｜ 会場へのアクセス</span></h2>
+      <script type="text/javascript" charset="UTF-8" src="http://map.yahooapis.jp/MapsService/embedmap/V2/?lat=35.666201166236995&amp;lon=139.73123376272&amp;z=18&amp;mode=map&amp;pointer=on&amp;datum=wgs&amp;fa=ks&amp;home=on&amp;hlat=35.666201166237&amp;hlon=139.73123376272&amp;ei=utf-8&amp;s=1316770317266c1616d94218eee3369de60a6ce1f8&amp;width=100%&amp;height=360"></script>
+      <p class="addr">〒107-6211 東京都港区赤坂9-7-1 ミッドタウン・タワー Yahoo! JAPAN 11F</p>
+      <p class="addren">Location: Yahoo! JAPAN 11F Midtown Tower 9-7-1 Akasaka, Minato, Tokyo, Japan</p>
+    <p class="descriptions">
+      <span>地下鉄</span><br>
+      都営大江戸線 六本木駅・東京メトロ日比谷線 六本木駅・東京メトロ千代田線 乃木坂駅・東京メトロ南北線 六本木一丁目駅<br>
+      <span>バス</span><br>
+      都営バス都01折返 渋谷駅 - 赤坂アークヒルズ行き・溜池行き・新橋駅行き 六本木駅前下車<br>
+      ちぃばす（港区コミュニティバス） 檜町公園、または六本木七丁目下車<br>
+      東京空港交通 成田空港 - 赤坂方面・六本木方面 ザ・リッツ・カールトン東京下車<br>
+    ※会場へは公共交通機関でお越し下さい<br>
+      <span>問い合わせ先</span><br>
+      東京Node学園祭 実行委員会 E-mail：<a href="mailto:nodefest@nodejs.jp">nodefest@nodejs.jp</a>
+      </p>
 
-    <p class="topnavilink"><a href="#top">Top へ</a></p>
-</section>
+      <p class="topnavilink"><a href="#top">Top へ</a></p>
+  </section>
+</div>
+
+<div id="right">
+  <iframe class="sponsor-sideber" src="sponsors-sidebar.html" frameborder="0" scroll="no" width="200"/>
+</div>
 
 <footer>
     <p>&copy; 2011 東京Node学園祭 実行委員会 | <a href="http://nodejs.jp/">Node.js 日本ユーザグループ</a></p>
