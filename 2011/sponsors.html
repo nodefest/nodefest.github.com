@@ -113,7 +113,7 @@
 <script id="sponsorTemplate" type="text/x-jquery-tmpl">
   <li id="${id}"{{if order}} class="${order}"{{/if}}>
     <h3>${name}</h3>
-    <div class="imgBox"><a href="${link}"><img src="images/sponsors/${logo}" alt="${name}" /></a></div>
+    <div class="imgBox"><a href="sponsors.html#${id}"><img src="images/sponsors/${logo}" {{if alt}}alt="${alt}" title="${alt}{{else}}alt="${name}" title="${name}{{/if}}" align="top"/></a></div>
     <p>{{html description}}</p>
     <div class="sponsorLink"><a href="${link}">${link}</a></div>
   </li>
