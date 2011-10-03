@@ -18,13 +18,6 @@ var sponsors = {
   ],
 
   "gold": [
-    {
-      "id": "microsoft",
-      "name": "マイクロソフト",
-      "logo": "microsoft_azure.png",
-      "description": "インディソフトウェアは「コンテンツを通じて世界をポジティブに」を合い言葉にコンテンツ・サービスの企画・開発を行っており、Nodeフレームワークであ るSocketStreamの採用実績もございます。",
-      "link": "http://www.indi.co.jp/"
-    }
   ],
 
   "silver": [
