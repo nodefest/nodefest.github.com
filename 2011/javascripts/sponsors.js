@@ -22,7 +22,7 @@ var sponsors = {
       "id": "microsoft",
       "name": "日本マイクロソフト株式会社",
       "logo": "microsoft_azure.png",
-      "description": "マイクロソフトでは、近年オープンソースへの対応を強化しています。クラウドサービスであるWindows Azureもその例外ではなく、.NETに限らずPHPやRuby on Railsのサーバーアプリをホストすることが可能です。近年、node.jsへの対応や技術情報提供も強化しています。無償でお試しできますのでNode.jsアプリのホスト環境として是非ご活用ください。",
+      "description": "マイクロソフトでは、近年オープンソースへの対応を強化しています。クラウドサービスであるWindows Azureもその例外ではなく、.NETに限らずPHPやRuby on Railsのサーバーアプリをホストすることが可能です。近年、Node.jsへの対応や技術情報提供も強化しています。無償でお試しできますのでNode.jsアプリのホスト環境として是非ご活用ください。",
       "alt": "WindowsAzure",
       "link": "http://www.microsoft.com/japan/windowsazure/campaign/mobile/",
     }
