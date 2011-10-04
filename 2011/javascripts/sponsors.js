@@ -49,6 +49,13 @@ var sponsors = {
       "logo": "m3.png",
       "description": "エムスリー株式会社は20万人以上の医師が登録している日本最大規模の医療専門サイト <a href='http://www.m3.com'>m3.com</a> を中心に医療関連サービスを提供している会社です。Node.js on Herokuの運用実績があります。",
       "link": "http://corporate.m3.com/"
+    },
+    {
+      "id": "nifty",
+      "name": "ニフティ株式会社",
+      "logo": "nifty.png",
+      "description": "ニフティ株式会社は“ニフティとなら、きっとかなう。 With Us, You Can.”を経営理念とし、高品質で安心安全なインターネットサービスを提供しています。Node.jsにも取り組んでいます。",
+      "link": "http://www.nifty.co.jp/"
     }
   ],
 
