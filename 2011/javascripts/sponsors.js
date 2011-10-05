@@ -25,6 +25,13 @@ var sponsors = {
       "description": "マイクロソフトでは、近年オープンソースへの対応を強化しています。クラウドサービスであるWindows Azureもその例外ではなく、.NETに限らずPHPやRuby on Railsのサーバーアプリをホストすることが可能です。近年、Node.jsへの対応や技術情報提供も強化しています。無償でお試しできますのでNode.jsアプリのホスト環境として是非ご活用ください。",
       "alt": "WindowsAzure",
       "link": "http://www.microsoft.com/japan/windowsazure/campaign/mobile/",
+    },
+    {
+      "id": "gree",
+      "name": "グリー株式会社",
+      "logo": "gree.png",
+      "description": "グリーは、世界に1.4億ユーザーを抱えるソーシャルプラットフォームを運営しています。ソーシャル・ネットワーキング・サービス「GREE」を ベースに、SNSとしての基本機能に加え、ソーシャルゲーム、アバター、占い、Q&A投稿などのユーザー間のコミュニケーションを中心に 据えたエンターテインメント性の高い多様なコンテンツを提供しています。現在、モバイルでの提供アプリ数は8,000超にものぼっています。",
+      "link": "http://www.gree.co.jp/"
     }
   ],
 
