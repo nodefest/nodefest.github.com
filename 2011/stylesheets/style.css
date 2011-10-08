@@ -289,6 +289,10 @@ table,tr,th,td {
 	border: solid 1px #f1f1f1;
 }
 
+#sessionTable table tr td {
+  padding: 10px 0;
+}
+
 caption {
 	height: 58px;
 }
