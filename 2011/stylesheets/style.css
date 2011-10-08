@@ -279,6 +279,7 @@ h2 span {
 
 /* セッションページ START */
 #sessionTable {
+  margin-left: 20px;
 }
 table {
 	width: 570px;
@@ -353,8 +354,5 @@ footer {
 	margin: 25px 0 40px 0;
 	background: url('../images/footerLine.png');
 	background-repeat: no-repeat;
-	display:block;
-	position:relative;
-	bottom:10px;
 }
 /* フッター END */
