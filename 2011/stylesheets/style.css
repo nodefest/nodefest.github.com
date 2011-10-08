@@ -275,6 +275,15 @@ h2 span {
   margin-left: 20px;
 }
 
+#press {
+  border-top: 2px solid green;
+  padding: 20px;
+}
+
+#press p {
+  padding: 10px 50px 0px 0px;
+}
+
 /* columns&rows END */
 
 /* セッションページ START */
