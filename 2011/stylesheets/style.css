@@ -262,7 +262,8 @@ h2 span {
 
 #left {
   float: left;
-  width: 640px;
+  width: 600px;
+  margin-left:20px;
 }
 
 #right {
@@ -278,7 +279,6 @@ h2 span {
 
 /* セッションページ START */
 #sessionTable {
-	
 }
 table {
 	width: 570px;
@@ -295,7 +295,10 @@ caption {
 	background: url('../images/sessionTableBg.png');
 	background-repeat: no-repeat;
 }
-
+.sessionTableBg .speaker {
+    margin-left:140px;
+	margin-top: 14px;
+}
 th,td {
 	padding: 3px 0 3px 6px;
 }
@@ -319,16 +322,16 @@ caption span {
 }
 .time, .title, .speaker {
 	float: left;
-	margin-top: 7px;
+	margin-top: 14px;
 }
 .time {
 	margin-left: 30px;
 }
 .title {
-	margin-left: 150px;
+	margin-left: 140px;
 }
 .speaker {
-	margin-top: 12px;
+	margin-top: 10px;
 }
 td {
 	vertical-align: top;
@@ -350,5 +353,8 @@ footer {
 	margin: 25px 0 40px 0;
 	background: url('../images/footerLine.png');
 	background-repeat: no-repeat;
+	display:block;
+	position:relative;
+	bottom:10px;
 }
 /* フッター END */
