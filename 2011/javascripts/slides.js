@@ -1,4 +1,4 @@
-var documents = {
+var slides = {
   "items": [
     {
       "title": "基調講演",
@@ -36,7 +36,7 @@ var documents = {
     templateLink = $(templateLink);
     templateSlideShare = $(templateSlideShare);
 
-    $.each(documents.items, function(key, item) {
+    $.each(slides.items, function(key, item) {
       if (item.link.match(/^http\:\/\/www\.slideshare\.net/)) {
         item.link = item.link.match(/[0-9]+$/);
         templateSlideShare.tmpl(item).appendTo(target);
