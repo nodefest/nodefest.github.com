@@ -1,0 +1,6 @@
+source: src
+destination: _site
+plugins: plugin
+scss:
+  source: src/_scss
+  destination: css
