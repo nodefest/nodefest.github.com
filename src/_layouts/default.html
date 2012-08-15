@@ -3,9 +3,28 @@
 <head>
 <meta charset="utf-8">
 <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/script.js"></script>
 </head>
 <body>
+
+{% include header.html %}
+
+<div class="mod-pageBody">
+	<div class="mod-pageBody-main">
 {{ content }}
+	</div>
+
+	<div class="mod-pageBody-side">
+	</div>
+<!-- /.mod-pageBody --></div>
+
+{% include footer.html %}
+
+<div class="mod-avatar" style="top:150px; left:100px;">
+	<div class="mod-avatar-comment">はろーわーるど</div>
+	<img src="assets/img/mod-avatar/img_01.png" width="40" height="70">
+</div>
+
 </body>
 </html>

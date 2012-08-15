@@ -1,0 +1,107 @@
+$basefontSize : 14;
+$color1 : #333;
+$color2 : #666;
+$color3 : #c00;
+
+// font-size based length
+@function font-size($size, $currentSize:$basefontSize){
+	@return $size / $currentSize * 1em;
+}
+
+$fontSansSerif : '\30D2\30E9\30AE\30CE\89D2\30B4\20\50\72\6F\20\57\33','Hiragino Kaku Gothic Pro','\30E1\30A4\30EA\30AA',Meiryo,'\FF2D\FF33\20\FF30\30B4\30B7\30C3\30AF',sans-serif;
+
+$fontSerif : "\30D2\30E9\30AE\30CE\660E\671D ProN W3", "HiraMinProN-W3","\30D2\30E9\30AE\30CE\660E\671D Pro W3", "Hiragino Mincho Pro",'\30E1\30A4\30EA\30AA',Meiryo,'\FF2D\FF33\20\FF30\30B4\30B7\30C3\30AF',serif;
+
+@mixin opacity($opacity){
+	filter:alpha(opacity=$opacity*100);
+	opacity:$opacity;
+}
+@mixin border-radius($radius){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin box-shadow($shadow){
+	-webkit-box-shadow:$shadow;
+	-moz-box-shadow:$shadow;
+	box-shadow:$shadow;
+}
+@mixin box-sizing($sizing){
+	-webkit-box-sizing:$sizing;
+	-moz-box-sizing:$sizing;
+	-ms-box-sizing:$sizing;
+	box-sizing:$sizing;
+}
+
+%clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    content: "";
+    display: table; }
+  &:after {clear: both;}
+}
+
+@mixin linear-gradient($angle, $color1, $offset1, $color2 ,$offset2:100, $color3:null, $offset3:100, $color4:null, $offset4:100, $color5:null, $offset5:100){
+	$angle_webkit:'';
+	$angle_svg:'';
+	$color-stop1_css:'#'#{$color1}' '#{$offset1}'%';
+	$color-stop2_css:',#'#{$color2}' '#{$offset2}'%';
+	$color-stop3_css:'';
+	$color-stop4_css:'';
+	$color-stop5_css:'';
+	$color-stop1_svg:'%3cstop%20style%3d%22stop%2dcolor%3a%23'#{$color1}'%22%20offset%3d%22'#{$offset1}'%25%22%2f%3e';
+	$color-stop2_svg:'%3cstop%20style%3d%22stop%2dcolor%3a%23'#{$color2}'%22%20offset%3d%22'#{$offset2}'%25%22%2f%3e';
+	$color-stop3_svg:'';
+	$color-stop4_svg:'';
+	$color-stop5_svg:'';
+	$color-stop1_webkit:'color-stop('#{$offset1}'%, #'#{$color1}')';
+	$color-stop2_webkit:',color-stop('#{$offset2}'%, #'#{$color2}')';
+	$color-stop3_webkit:'';
+	$color-stop4_webkit:'';
+	$color-stop5_webkit:'';
+	@if $angle == top{
+		$angle:'';
+		$angle_webkit:'left top, left bottom';
+		$angle_svg:'%20x2%3d%220%25%22%20y2%3d%22100%25%22';
+}
+	@if $angle == right{
+		$angle:'right,';
+		$angle_webkit:'right top, left top';
+		$angle_svg:'%20x2%3d%22100%25%22';
+	}
+	@if $angle == bottom{
+		$angle:'bottom,';
+		$angle_webkit:'left bottom, left top';
+		$angle_svg:'%20x2%3d%220%22%20y1%3d%22100%25%22';
+	}
+	@if $angle == left{
+		$angle:'left,';
+		$angle_webkit:'left top, right top';
+		$angle_svg:'';
+	}
+	@if $color3 != null {
+		$color-stop3_css:',#'#{$color3}' '#{$offset3}'%';
+		$color-stop3_svg:'%3cstop%20style%3d%22stop%2dcolor%3a%23'#{$color3}'%22%20offset%3d%22'#{$offset3}'%25%22%2f%3e';
+		$color-stop3_webkit:',color-stop('#{$offset3}'%, #'#{$color3}')';
+	}
+	@if $color4 != null {
+		$color-stop4_css:',#'#{$color4}' '#{$offset4}'%';
+		$color-stop4_svg:'%3cstop%20style%3d%22stop%2dcolor%3a%23'#{$color4}'%22%20offset%3d%22'#{$offset4}'%25%22%2f%3e';
+		$color-stop4_webkit:',color-stop('#{$offset4}'%, #'#{$color4}')';
+	}
+	@if $color5 != null {
+		$color-stop5_css:',#'#{$color5}' '#{$offset5}'%';
+		$color-stop5_svg:'%3cstop%20style%3d%22stop%2dcolor%3a%23'#{$color5}'%22%20offset%3d%22'#{$offset5}'%25%22%2f%3e';
+		$color-stop5_webkit:',color-stop('#{$offset5}'%, #'#{$color5}')';
+	}
+
+	-pie-background: linear-gradient(#{$angle}#{$color-stop1_css}#{$color-stop2_css}#{$color-stop3_css}#{$color-stop4_css}#{$color-stop5_css});
+	background-image: url(data:image/svg+xml,%3c%3fxml%20version%3d%221%2e0%22%3f%3e%3csvg%20xmlns%3d%22http%3a%2f%2fwww%2ew3%2eorg%2f2000%2fsvg%22%20width%3d%22100%25%22%20height%3d%22100%25%22%3e%3cdefs%3e%3clinearGradient%20id%3d%22G%22#{$angle_svg}%3e#{$color-stop1_svg}#{$color-stop2_svg}#{$color-stop3_svg}#{$color-stop4_svg}#{$color-stop5_svg}%3c%2flinearGradient%3e%3c%2fdefs%3e%3crect%20width%3d%22100%25%22%20height%3d%22100%25%22%20fill%3d%22url%28%23G%29%22%2f%3e%3c%2fsvg%3e);
+	background-image: -webkit-gradient(linear,#{$angle_webkit},#{$color-stop1_webkit}#{$color-stop2_webkit}#{$color-stop3_webkit}#{$color-stop4_webkit}#{$color-stop5_webkit});
+	background-image:-webkit-linear-gradient(#{$angle}#{$color-stop1_css}#{$color-stop2_css}#{$color-stop3_css}#{$color-stop4_css}#{$color-stop5_css});
+	background-image: -moz-linear-gradient(#{$angle}#{$color-stop1_css}#{$color-stop2_css}#{$color-stop3_css}#{$color-stop4_css}#{$color-stop5_css});
+	background-image: -ms-linear-gradient(#{$angle}#{$color-stop1_css}#{$color-stop2_css}#{$color-stop3_css}#{$color-stop4_css}#{$color-stop5_css});
+	background-image: -o-linear-gradient(#{$angle}#{$color-stop1_css}#{$color-stop2_css}#{$color-stop3_css}#{$color-stop4_css}#{$color-stop5_css});
+	background-image: linear-gradient(#{$angle}#{$color-stop1_css}#{$color-stop2_css}#{$color-stop3_css}#{$color-stop4_css}#{$color-stop5_css});
+}
