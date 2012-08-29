@@ -20,6 +20,10 @@ a{
 	}
 }
 
+ul, ol{
+	margin-top:.6em;
+	margin-bottom:.6em;
+}
 /* ==========================================================================
    mod-pageHeader
    ========================================================================== */
@@ -146,6 +150,33 @@ a{
 	}
 }
 
+/* ==========================================================================
+   mod-list
+   ========================================================================== */
+.mod-listMarkNone{
+	padding-left:0;
+	margin-left:0;
+	list-style:none;
+	li{
+		padding-left:0;
+		margin-left:0;
+	}
+}
+
+.mod-listMarkText{
+	padding-left:0;
+	margin-left:0;
+	list-style:none;
+	li{
+		padding-left: 1.5em;
+		margin-left:0;
+	}
+	span.mod-listMarkText-mark{
+		display: inline-block;
+		width: 1.5em;
+		margin-left: -1.5em;
+	}
+}
 
 
 /* ==========================================================================
@@ -211,6 +242,10 @@ a{
 	}
 	.mod-section-eyecatch{
 		@extend %mod-section-eyecatch;
+	}
+	.mod-section-h2{
+		font-size:100%;
+		margin:1em 0 .1em;
 	}
 }
 
@@ -279,6 +314,31 @@ a{
 }
 
 /* ==========================================================================
+   mod-suponsorInfo
+   ========================================================================== */
+.mod-suponsorInfo{
+	font-size:font-size(13);
+	line-height: 1.4;
+	margin:0 0 font-size(30, 13);
+	p{
+		margin:0 0 .5em;
+	}
+	.mod-suponsorInfo-header{
+		h1{
+			font-size:font-size(18,13);
+			margin:0 0 .3em;
+		}
+	}
+	.mod-suponsorInfo-image{
+		margin:0 0 10px 30px;
+		float:right;
+		img{
+			display:block;
+		}
+	}
+}
+
+/* ==========================================================================
    mod-newsList
    ========================================================================== */
 .mod-newsList{
@@ -295,6 +355,49 @@ a{
 		color:#546c22;
 		font-weight:bold;
 		display:block;
+	}
+}
+
+/* ==========================================================================
+   mod-ticketVendor
+   ========================================================================== */
+.mod-ticketVendor{
+	@extend %clearfix;
+	font-size:font-size(13);
+	margin:2em 0 1em;
+	h2{
+		font-size:100%;
+		margin:0 0 .2em;
+	}
+	table{
+		font-size:font-size(12,13);
+	}
+	th{
+		text-align: left;
+		font-weight:normal;
+		padding:0 .5em 0 0;
+		white-space: nowrap;
+	}
+	.mod-ticketVendor-text{
+		float: left;
+		width:200px;
+	}
+	.mod-ticketVendor-embeded{
+		float:right;
+		width:345px;
+	}
+}
+
+
+/* ==========================================================================
+   mod-sessionTable
+   ========================================================================== */
+.mod-sessionTable{
+	table{
+		width:100%;
+	}
+	th{
+		background:url(../2012/assets/img/mod-);
 	}
 }
 

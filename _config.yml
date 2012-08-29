@@ -3,4 +3,4 @@ destination: _site
 plugins: plugin
 scss:
   source: src/_scss
-  destination: assets/css
+  destination: 2012/assets/css
