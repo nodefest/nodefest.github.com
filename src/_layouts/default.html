@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
 <link rel="stylesheet" href="assets/css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="assets/js/script.js"></script>
 </head>
 <body>
@@ -16,12 +17,14 @@
 	</div>
 
 	<div class="mod-pageBody-side">
+{% include side_sponsors.html %}
+{% include side_twitter.html %}
 	</div>
 <!-- /.mod-pageBody --></div>
 
 {% include footer.html %}
 
-<div class="mod-avatar" style="top:150px; left:100px;">
+<div class="mod-avatar" style="top:150px; left:20%;">
 	<div class="mod-avatar-comment">はろーわーるど</div>
 	<img src="assets/img/mod-avatar/img_01.png" width="40" height="70">
 </div>

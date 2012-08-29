@@ -26,11 +26,11 @@ $fontSerif : "\30D2\30E9\30AE\30CE\660E\671D ProN W3", "HiraMinProN-W3","\30D2\3
 	-moz-box-shadow:$shadow;
 	box-shadow:$shadow;
 }
-@mixin box-sizing($sizing){
-	-webkit-box-sizing:$sizing;
-	-moz-box-sizing:$sizing;
-	-ms-box-sizing:$sizing;
-	box-sizing:$sizing;
+@mixin transition($property:all, $duration:.2s, $timing-function:ease){
+	-webkit-transition:$property $duration $timing-function;
+	-moz-transition:$property $duration $timing-function;
+	-ms-transition:$property $duration $timing-function;
+	transition:$property $duration $timing-function;
 }
 
 %clearfix {
@@ -96,7 +96,7 @@ $fontSerif : "\30D2\30E9\30AE\30CE\660E\671D ProN W3", "HiraMinProN-W3","\30D2\3
 		$color-stop5_webkit:',color-stop('#{$offset5}'%, #'#{$color5}')';
 	}
 
-	-pie-background: linear-gradient(#{$angle}#{$color-stop1_css}#{$color-stop2_css}#{$color-stop3_css}#{$color-stop4_css}#{$color-stop5_css});
+	//-pie-background: linear-gradient(#{$angle}#{$color-stop1_css}#{$color-stop2_css}#{$color-stop3_css}#{$color-stop4_css}#{$color-stop5_css});
 	background-image: url(data:image/svg+xml,%3c%3fxml%20version%3d%221%2e0%22%3f%3e%3csvg%20xmlns%3d%22http%3a%2f%2fwww%2ew3%2eorg%2f2000%2fsvg%22%20width%3d%22100%25%22%20height%3d%22100%25%22%3e%3cdefs%3e%3clinearGradient%20id%3d%22G%22#{$angle_svg}%3e#{$color-stop1_svg}#{$color-stop2_svg}#{$color-stop3_svg}#{$color-stop4_svg}#{$color-stop5_svg}%3c%2flinearGradient%3e%3c%2fdefs%3e%3crect%20width%3d%22100%25%22%20height%3d%22100%25%22%20fill%3d%22url%28%23G%29%22%2f%3e%3c%2fsvg%3e);
 	background-image: -webkit-gradient(linear,#{$angle_webkit},#{$color-stop1_webkit}#{$color-stop2_webkit}#{$color-stop3_webkit}#{$color-stop4_webkit}#{$color-stop5_webkit});
 	background-image:-webkit-linear-gradient(#{$angle}#{$color-stop1_css}#{$color-stop2_css}#{$color-stop3_css}#{$color-stop4_css}#{$color-stop5_css});

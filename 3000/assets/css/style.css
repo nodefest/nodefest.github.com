@@ -469,14 +469,14 @@ table {
   border-spacing: 0;
 }
 
-.mod-pageHeader nav, .mod-pageBody, .mod-sponsors ul {
+.mod-pageHeader nav, .mod-pageBody {
   *zoom: 1;
 }
-.mod-pageHeader nav:before, .mod-pageBody:before, .mod-sponsors ul:before, .mod-pageHeader nav:after, .mod-pageBody:after, .mod-sponsors ul:after {
+.mod-pageHeader nav:before, .mod-pageBody:before, .mod-pageHeader nav:after, .mod-pageBody:after {
   content: "";
   display: table;
 }
-.mod-pageHeader nav:after, .mod-pageBody:after, .mod-sponsors ul:after {
+.mod-pageHeader nav:after, .mod-pageBody:after {
   clear: both;
 }
 
@@ -493,7 +493,7 @@ body {
 }
 
 a {
-  color: #6b9f00;
+  color: #6b9e00;
 }
 a:hover {
   text-decoration: none;
@@ -528,7 +528,7 @@ a:hover {
   display: block;
 }
 .mod-pageHeader .mod-pageHeader-text {
-  color: #b3ff50;
+  color: #fff32d;
   font-size: 1em;
   font-weight: bold;
   line-height: 1.4;
@@ -569,6 +569,13 @@ a:hover {
 .mod-pageHeader nav a {
   display: block;
   width: 100%;
+  -webkit-transition: margin 0.1s linear;
+  -moz-transition: margin 0.1s linear;
+  -ms-transition: margin 0.1s linear;
+  transition: margin 0.1s linear;
+}
+.mod-pageHeader nav a:hover {
+  margin-left: -6px;
 }
 .mod-pageHeader nav img {
   display: block;
@@ -579,40 +586,63 @@ a:hover {
    ========================================================================== */
 .mod-pageBody {
   clear: both;
-  width: 970px;
+  width: 950px;
   margin: 0 auto;
+  padding: 0 5px;
 }
 .mod-pageBody .mod-pageBody-main {
   float: left;
-  width: 610px;
+  width: 620px;
 }
 .mod-pageBody .mod-pageBody-side {
   float: right;
-  width: 630px;
+  width: 310px;
 }
 
 /* ==========================================================================
    mod-pageFooter
    ========================================================================== */
 .mod-pageFooter {
+  color: #d2d8ba;
   clear: both;
+  margin-top: 20px;
+  background: #46483e;
+}
+.mod-pageFooter .mod-pageFooter-inner {
   width: 970px;
-  padding: 0 0 90px;
-  margin: 20px auto 0;
+  padding: 20px 0;
+  margin: 0 auto;
 }
 .mod-pageFooter small {
   font-size: 0.85714em;
   text-align: center;
   display: block;
 }
+.mod-pageFooter a {
+  color: #8cc84b;
+}
 
 /* ==========================================================================
    mod-section / mod-subSection
    ========================================================================== */
 .mod-section, .mod-subSection {
-  padding: 15px 15px 15px 40px;
+  padding: 30px;
   margin: 0 0 20px;
-  background: rgba(255, 255, 255, 0.87);
+  background: rgba(255, 255, 247, 0.87);
+  background: url(../img/mod-section/bg_01_top.png) no-repeat, url(../img/mod-section/bg_01_btm.png) no-repeat 0 100%;
+  position: relative;
+  z-index: 2;
+}
+.mod-section:before, .mod-subSection:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 28px;
+  bottom: 28px;
+  right: 0;
+  left: 0;
+  display: block;
+  background: rgba(255, 255, 247, 0.87);
 }
 .mod-section p, .mod-subSection p {
   margin: 0 0 1em;
@@ -620,11 +650,12 @@ a:hover {
 
 .mod-section .mod-section-header, .mod-subSection .mod-subSection-header {
   display: table;
-  width: 100%;
-  margin: 0 0 1em -30px;
+  position: relative;
+  width: 620px;
+  margin: -24px -30px 1em -30px;
 }
 .mod-section .mod-section-header h1, .mod-subSection .mod-subSection-header h1 {
-  font-size: 1.71429em;
+  font-size: 100%;
   vertical-align: middle;
   display: table-cell;
   *display: inline;
@@ -645,15 +676,22 @@ a:hover {
 }
 
 /* mod-section */
+.mod-section .mod-section-header {
+  color: #32351d;
+}
+.mod-section .mod-section-header h1 {
+  font-size: 2.14286em;
+}
+
 /* mod-subSection */
 .mod-subSection {
   font-size: 0.85714em;
 }
 .mod-subSection .mod-subSection-header {
-  color: #546c22;
+  color: #46483e;
 }
 .mod-subSection .mod-subSection-header h1 {
-  font-size: 1.28571em;
+  font-size: 1.83333em;
 }
 .mod-subSection .mod-subSection-eyecatch {
   padding-right: 10px;
@@ -697,35 +735,99 @@ a:hover {
 }
 .mod-speakerInfo .mod-speakerInfo-image img {
   display: block;
-  border: 3px solid #546c22;
+}
+
+/* ==========================================================================
+   mod-newsList
+   ========================================================================== */
+.mod-newsList ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mod-newsList li {
+  margin: 0 0 .3em;
+  padding: 0;
+}
+.mod-newsList span {
+  color: #546c22;
+  font-weight: bold;
+  display: block;
 }
 
 /* ==========================================================================
    mod-sponsors
    ========================================================================== */
-.mod-sponsors .mod-sponsors-label {
-  font-weight: bold;
-  margin: 0 0 0.8em;
-  padding: 1px 0 1px 18px;
-  background: url(../img/mod-sponsors/ico_01.png) no-repeat 0 46%;
+.mod-sponsors {
+  padding: 30px 20px;
+  margin: 0 0 20px;
+  background: url(../img/mod-sponsors/bg_01_top.png) no-repeat, url(../img/mod-sponsors/bg_01_btm.png) no-repeat 0 100%;
+  position: relative;
+  z-index: 2;
+}
+.mod-sponsors:before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 22px;
+  bottom: 22px;
+  background: #fff;
+}
+.mod-sponsors .mod-sponsors-header {
+  display: table;
+  width: 310px;
+  margin: -20px -20px 10px;
+}
+.mod-sponsors .mod-sponsors-header h1 {
+  font-size: 100%;
+  vertical-align: middle;
+  display: table-cell;
+  *display: inline;
+  *zoom: 1;
+  margin: 0;
+}
+.mod-sponsors .mod-sponsors-eyecatch {
+  vertical-align: middle;
+  display: table-cell;
+  *display: inline;
+  *zoom: 1;
+  width: 1%;
+  padding: 0 15px 0 0;
+}
+.mod-sponsors .mod-sponsors-eyecatch img {
+  display: block;
+}
+.mod-sponsors h2 {
+  font-size: 1em;
+  padding: 2px 0 2px 30px;
+  background: url(../img/mod-sponsors/ico_01.png) no-repeat 0 48%;
 }
 .mod-sponsors ul {
-  margin: 0 0 1em;
-  padding: 0 0 1em;
+  padding: 0;
+  margin: 0;
   list-style: none;
-  border-bottom: 1px solid #d6dac9;
-}
-.mod-sponsors ul:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
 }
 .mod-sponsors li {
-  float: left;
-  margin: 0 25px 0 0;
   padding: 0;
+  margin: 0 0 20px;
 }
-.mod-sponsors img {
+.mod-sponsors li img {
   display: block;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   mod-twitterWedget
+   ========================================================================== */
+.mod-twitterWedget {
+  background: #fff;
+  padding: 10px;
+}
+.mod-twitterWedget .mod-twitterWedget-timeline {
+  margin: 0 0 10px;
 }
 
 /* ==========================================================================
@@ -777,7 +879,3 @@ a:hover {
   display: block;
   margin: 0 0 0 -8px;
 }
-
-/* ==========================================================================
-   mod-table
-   ========================================================================== */
