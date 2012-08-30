@@ -393,11 +393,61 @@ ul, ol{
    mod-sessionTable
    ========================================================================== */
 .mod-sessionTable{
+	font-size:font-size(13);
 	table{
+		line-height: 1.4;
 		width:100%;
+		border-spacing:10;
 	}
-	th{
-		background:url(../2012/assets/img/mod-);
+	th,td{
+	}
+	thead th{
+		color:#fff;
+		padding:.3em 0 .3em 10px;
+		background:url(../img/mod-sessionTable/bg_01_btm.png) no-repeat 100% 100%, url(../img/mod-sessionTable/bg_01_top.png) no-repeat 10px 0;
+		&:first-child{
+			background-position: 100% 100%, 0 0;
+		}
+	}
+	tbody th{
+		text-align: left;
+		vertical-align: top;
+		padding:.8em 0 .8em 10px;
+		border-bottom:1px solid #d6dac9;
+	}
+	td{
+		padding:.8em 0 .8em 10px;
+		border-bottom:1px solid #d6dac9;
+	}
+	a[href*=twitter]{
+		color:#666;
+	}
+	.mod-sessionTable-title{
+		font-size:font-size(14);
+		font-weight:bold;
+	}
+	.mod-sessionTable-list{
+		h1{
+			color:#3f4517;
+			font-size:100%;
+			text-align: center;
+			padding:.3em 10px;
+			margin:-.3em 0 0;
+			background:url(../img/mod-sessionTable/bg_02_btm.png) no-repeat 100% 100%, url(../img/mod-sessionTable/bg_02_top.png) no-repeat 0 0 #a4ed3b;
+		}
+		ul{
+			margin:0;
+			padding:0;
+			list-style: none;
+		}
+		li{
+			margin: 0;
+			padding:.8em 0;
+			border-top:1px solid #d6dac9;
+			&:first-child{
+				border-top:none;
+			}
+		}
 	}
 }
 
@@ -492,7 +542,6 @@ ul, ol{
 		line-break: strict;
 		word-break: break-all;
 		word-wrap: break-word;
-		overflow:hidden;
 		position:relative;
 		max-width:200px;
 		padding: 0 8px;
@@ -521,6 +570,17 @@ ul, ol{
 				//no-border-radius
 				bottom:-16px;
 			}
+		}
+	}
+	&.ex-avatar-me{
+		.mod-avatar-comment{
+			-webkit-border-image: url(../img/mod-avatar/bg_01me.png) 8 6 stretch;
+			   -moz-border-image: url(../img/mod-avatar/bg_01me.png) 8 6 stretch;
+			     -o-border-image: url(../img/mod-avatar/bg_01me.png) 8 6 stretch;
+			        border-image: url(../img/mod-avatar/bg_01me.png) 8 6 fill stretch;
+		}
+		&:after{
+			background:url(../img/mod-avatar/bg_02me.png);
 		}
 	}
 	img{
