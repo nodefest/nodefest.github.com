@@ -533,7 +533,7 @@ ul, ol{
 .mod-avatar{
 	position:absolute;
 	z-index: 1;
-	pointer-events:none;
+	//pointer-events:none;
 	padding:0 0 0 8px;
 	.mod-avatar-comment{
 		font-size:font-size(12);
@@ -578,9 +578,9 @@ ul, ol{
 			   -moz-border-image: url(../img/mod-avatar/bg_01me.png) 8 6 stretch;
 			     -o-border-image: url(../img/mod-avatar/bg_01me.png) 8 6 stretch;
 			        border-image: url(../img/mod-avatar/bg_01me.png) 8 6 fill stretch;
-		}
-		&:after{
-			background:url(../img/mod-avatar/bg_02me.png);
+			&:after{
+				background:url(../img/mod-avatar/bg_02me.png);
+			}
 		}
 	}
 	img{
