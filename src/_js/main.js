@@ -1,6 +1,10 @@
 $(function() {
-  $('img[src*=_n]').rollover();
+  // 画像のロールオーバー設定
+  $('img').filter(function() {
+    return (/_n\.png$/).test(this.src);
+  }).rollover();
 
+  // ページ遷移の設定
   $.LazyJaxDavis(function(router) {
     var $content = $('.mod-pageBody-main');
 
