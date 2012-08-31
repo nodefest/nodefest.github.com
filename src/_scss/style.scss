@@ -234,9 +234,9 @@ ul, ol{
 .mod-section{
 	@extend %mod-section;
 	&.ex-section-important{
-		background:#fffff7;
+		background:#fff;
 		background:url(../img/mod-section/bg_02_top.png) no-repeat, url(../img/mod-section/bg_02_btm.png) no-repeat 0 100%;
-		&:before{background:#fffff7;}
+		&:before{background:#fff;}
 	}
 	.mod-section-header{
 		@extend %mod-section-header;
