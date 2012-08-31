@@ -233,6 +233,11 @@ ul, ol{
 /* mod-section */
 .mod-section{
 	@extend %mod-section;
+	&.ex-section-important{
+		background:#fffff7;
+		background:url(../img/mod-section/bg_02_top.png) no-repeat, url(../img/mod-section/bg_02_btm.png) no-repeat 0 100%;
+		&:before{background:#fffff7;}
+	}
 	.mod-section-header{
 		@extend %mod-section-header;
 		color:#32351d;
@@ -294,8 +299,8 @@ ul, ol{
 	font-size:font-size(13);
 	line-height: 1.4;
 	position: relative;
-	_height:110px;
-	min-height:110px;
+	_height:130px;
+	min-height:130px;
 	padding-left:165px;
 	.mod-speakerInfo-header{
 		h1{
