@@ -19,7 +19,7 @@ js:
         - lib/jquery.lazyjaxdavis.js
     script.js:
       files:
-        - app/jquery.rollover.js
+        - app/headerNavi.js
         - main.js
 
 # site data

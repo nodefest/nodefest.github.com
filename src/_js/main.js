@@ -1,8 +1,7 @@
 $(function() {
-  // 画像のロールオーバー設定
-  $('img').filter(function() {
-    return (/_n\.png$/).test(this.src);
-  }).rollover();
+  // ヘッダ画像のロールオーバー
+  $imgs = $('.mod-pageHeader nav img');
+  $imgs.headerNavi();
 
   // ページ遷移の設定
   $.LazyJaxDavis(function(router) {
@@ -18,6 +17,7 @@ $(function() {
       var $newcontent = $(newcontent).hide();
       $content.css('opacity', 1).empty().append($newcontent); 
       $newcontent.slideDown();
+      $imgs.setCurrent();
       page.trigger('pageready');
     });
   });

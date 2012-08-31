@@ -12,12 +12,12 @@
 	</div></div>
 	<nav>
 		<ul>
-			<li><a href="index.html"><img src="assets/img/mod-pageHeader/nav_01_n.png" alt="home" width="430" height="52"></a></li>
-			<li><a href="session.html"><img src="assets/img/mod-pageHeader/nav_02_n.png" alt="session" width="430" height="52"></a></li>
-			<li><a href="speakers.html"><img src="assets/img/mod-pageHeader/nav_03_n.png" alt="speakers" width="430" height="52"></a></li>
-			<li><a href="sponsors.html"><img src="assets/img/mod-pageHeader/nav_04_n.png" alt="sponsors" width="430" height="52"></a></li>
-			<li><a href="access.html"><img src="assets/img/mod-pageHeader/nav_05_n.png" alt="access" width="430" height="52"></a></li>
-			<li><a href="ticket.html"><img src="assets/img/mod-pageHeader/nav_06_n.png" alt="ticket" width="430" height="52"></a></li>
+			<li><a href="index.html"><img src="assets/img/mod-pageHeader/nav_01_{% if page.name == 'index' %}a{% else %}n{% endif %}.png" alt="home" width="430" height="52"></a></li>
+			<li><a href="session.html"><img src="assets/img/mod-pageHeader/nav_02_{% if page.name == 'session' %}a{% else %}n{% endif %}.png" alt="session" width="430" height="52"></a></li>
+			<li><a href="speakers.html"><img src="assets/img/mod-pageHeader/nav_03_{% if page.name == 'speakers' %}a{% else %}n{% endif %}.png" alt="speakers" width="430" height="52"></a></li>
+			<li><a href="sponsors.html"><img src="assets/img/mod-pageHeader/nav_04_{% if page.name == 'sponsors' %}a{% else %}n{% endif %}.png" alt="sponsors" width="430" height="52"></a></li>
+			<li><a href="access.html"><img src="assets/img/mod-pageHeader/nav_05_{% if page.name == 'access' %}a{% else %}n{% endif %}.png" alt="access" width="430" height="52"></a></li>
+			<li><a href="ticket.html"><img src="assets/img/mod-pageHeader/nav_06_{% if page.name == 'ticket' %}a{% else %}n{% endif %}.png" alt="ticket" width="430" height="52"></a></li>
 		</ul>
 	</nav>
 <!-- /.mod-pageHeader --></header>
