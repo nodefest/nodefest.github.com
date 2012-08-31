@@ -11,5 +11,5 @@ end
 desc 'run jekyll server'
 task :server do
   port = ENV['PORT'] || '4000'
-  sh "bundle exec jekyll --server --auto #{port}"
+  sh "bundle exec jekyll --auto --server #{port}"
 end
