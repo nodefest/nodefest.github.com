@@ -2,109 +2,25 @@
 layout: default
 ---
 
+{% for sponsor in site.sponsors %}
 <section class="mod-section">
 	<header class="mod-section-header">
-		<div class="mod-section-eyecatch"><img src="img/sponsors/ico_01.png" alt="Platinum" width="60" height="70"></div>
-		<h1>プラチナスポンサー</h1>
+		<div class="mod-section-eyecatch"><img src="img/sponsors/{{ sponsor.icon }}" alt="{{ sponsor.label }}" width="60" height="70"></div>
+		<h1>{{ sponsor.label_ja }}</h1>
 	</header>
 
+	{% for company in sponsor.companies %}
 	<section class="mod-suponsorInfo">
-		<a href="#">
+		<a href="{{ company.url }}">
 			<div class="mod-suponsorInfo-header">
-				<h1>スポンサー名</h1>
+				<h1>{{ company.name }}</h1>
 			</div>
 			<div class="mod-suponsorInfo-image">
-				<img src="http://placehold.us/230x125" alt="">
+				<img src="assets/img/logo/{{ company.img }}" alt="{{ company.name }}">
 			</div>
 		</a>
-		<p>このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。このテキストはダミーこのテキストはダミーのテキストです。</p>
-		<p>文字レイアウトの際に文字数の指標として使用しています。</p>
-		<p>このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。このテキストはダミーこのテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。</p>
-		<p>このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。300文字程度</p>
+		{{ company.description | markdownify }}
 	</section>
-
-	<section class="mod-suponsorInfo">
-		<a href="#">
-			<div class="mod-suponsorInfo-header">
-				<h1>スポンサー名</h1>
-			</div>
-			<div class="mod-suponsorInfo-image">
-				<img src="http://placehold.us/230x125" alt="">
-			</div>
-		</a>
-		<p>このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。このテキストはダミーこのテキストはダミーのテキストです。</p>
-		<p>文字レイアウトの際に文字数の指標として使用しています。</p>
-		<p>このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。このテキストはダミーこのテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。</p>
-		<p>このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。300文字程度</p>
-	</section>
-	
+	{% endfor %}
 <!-- /.mod-section --></section>
-
-<section class="mod-section">
-	<header class="mod-section-header">
-		<div class="mod-section-eyecatch"><img src="img/sponsors/ico_02.png" alt="Gold" width="60" height="70"></div>
-		<h1>ゴールドスポンサー</h1>
-	</header>
-
-	<section class="mod-suponsorInfo">
-		<a href="#">
-			<div class="mod-suponsorInfo-header">
-				<h1>スポンサー名</h1>
-			</div>
-			<div class="mod-suponsorInfo-image">
-				<img src="http://placehold.us/230x125" alt="">
-			</div>
-		</a>
-		<p>このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。このテキストはダミーこのテキストはダミーのテキストです。</p>
-		<p>文字レイアウトの際に文字数の指標として使用しています。</p>
-		<p>このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。このテキストはダミーこのテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。</p>
-		<p>このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。300文字程度</p>
-	</section>
-
-<!-- /.mod-section --></section>
-
-<section class="mod-section">
-	<header class="mod-section-header">
-		<div class="mod-section-eyecatch"><img src="img/sponsors/ico_03.png" alt="Shilver" width="60" height="70"></div>
-		<h1>シルバースポンサー</h1>
-	</header>
-
-	<section class="mod-suponsorInfo">
-		<a href="#">
-			<div class="mod-suponsorInfo-header">
-				<h1>スポンサー名</h1>
-			</div>
-			<div class="mod-suponsorInfo-image">
-				<img src="http://placehold.us/230x125" alt="">
-			</div>
-		</a>
-		<p>このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。このテキストはダミーこのテキストはダミーのテキストです。</p>
-		<p>文字レイアウトの際に文字数の指標として使用しています。</p>
-		<p>このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。このテキストはダミーこのテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。</p>
-		<p>このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。300文字程度</p>
-	</section>
-	
-<!-- /.mod-section --></section>
-
-<section class="mod-section">
-	<header class="mod-section-header">
-		<div class="mod-section-eyecatch"><img src="img/sponsors/ico_04.png" alt="Supporter" width="60" height="70"></div>
-		<h1>後援企業</h1>
-	</header>
-
-	<section class="mod-suponsorInfo">
-		<a href="#">
-			<div class="mod-suponsorInfo-header">
-				<h1>スポンサー名</h1>
-			</div>
-			<div class="mod-suponsorInfo-image">
-				<img src="http://placehold.us/230x125" alt="">
-			</div>
-		</a>
-		<p>このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。このテキストはダミーこのテキストはダミーのテキストです。</p>
-		<p>文字レイアウトの際に文字数の指標として使用しています。</p>
-		<p>このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。このテキストはダミーこのテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。</p>
-		<p>このテキストはダミーのテキストです。文字レイアウトの際に文字数の指標として使用しています。300文字程度</p>
-	</section>
-	
-<!-- /.mod-section --></section>
+{% endfor %}

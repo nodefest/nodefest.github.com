@@ -4,12 +4,15 @@
 		<h1>スポンサー紹介</h1>
 	</div>
 
-	<h2>Platinum Sponsors</h2>
+	{% for sponsor in site.sponsors %}
+	<h2>{{ sponsor.label }}</h2>
 	<ul>
-		<li><a href="#"><img src="http://placehold.us/230x125" alt=""></a></li>
-		<li><a href="#"><img src="http://placehold.us/230x125" alt=""></a></li>
-		<li><a href="#"><img src="http://placehold.us/230x125" alt=""></a></li>
+		{% for company in sponsor.companies %}
+		<li><a href="{{ company.url }}"><img src="assets/img/logo/{{ company.img }}" alt="{{ company.name }}"></a></li>
+		{% endfor %}
 	</ul>
+	{% endfor %}
+	<!--
 	<h2>Gold Sponsors</h2>
 	<ul>
 		<li><a href="#"><img src="http://placehold.us/190x70" alt=""></a></li>
@@ -28,4 +31,5 @@
 		<li><a href="#"><img src="http://placehold.us/150x50" alt=""></a></li>
 		<li><a href="#"><img src="http://placehold.us/150x50" alt=""></a></li>
 	</ul>
+	-->
 <!-- /..mod-sponsors --></section>
