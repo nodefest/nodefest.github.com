@@ -4,3 +4,19 @@ plugins: plugin
 scss:
   source: src/_scss
   destination: 2012/assets/css
+js:
+  source: src/_js
+  destination: 2012/assets/js
+  targets:
+    lib.js:
+      files:
+        - lib/jquery.min.js
+        - lib/modernizr.js
+        - lib/underscore.js 
+        - lib/backbone.js
+        - lib/davis.js
+        - lib/jquery.lazyjaxdavis.js
+    script.js:
+      files:
+        - app/jquery.rollover.js
+        - main.js
