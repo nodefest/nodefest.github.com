@@ -6,6 +6,6 @@ var Nodefest = window.Nodefest = {
   View: {}
 };
 
-Nodefest.socket = io.connect('http://localhost:8080');
+Nodefest.socket = io.connect('http://210.152.156.43:80/');
 
 })();

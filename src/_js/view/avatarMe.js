@@ -8,14 +8,13 @@
  * @constructor
  */
 Nodefest.View.AvatarMe = Nodefest.View.Avatar.extend({
-  tmpl: 'avatarMe',
-
-  defaultText: 'click and input text',
+  defaultText: 'クリックかスペースキーで入力開始',
 
   events: {
     'click': '_onClick',
-    'keydown input': '_onKeydownInput',
-    'focusout input': '_onFocusoutInput'
+    'keydown textarea': '_onKeydownInput',
+    'keyup textarea': '_onKeyupInput',
+    'focusout textarea': '_onFocusoutInput'
   },
 
   initialize: function() {
@@ -23,7 +22,11 @@ Nodefest.View.AvatarMe = Nodefest.View.Avatar.extend({
 
     self.render();
     self.bindEvent();
-    self.$el.addClass('me');
+    self.$el.addClass('ex-avatar-me');
+    self.$input = $('<textarea>')
+      .attr('maxlength', 140)
+      .appendTo(self.$comment)
+      .hide();
 
     $(document).bind('click', function(e) {
       self._onDocClick(e);
@@ -84,7 +87,7 @@ Nodefest.View.AvatarMe = Nodefest.View.Avatar.extend({
 
   /**
    * テキストボックスでキー入力したときのイベントハンドラ  
-   * エンターキーが押されたらテキストを確定する
+   * エンターかescキーが押されたらテキストを確定する
    *
    * @method _onKeydownInput
    * @private
@@ -92,10 +95,28 @@ Nodefest.View.AvatarMe = Nodefest.View.Avatar.extend({
    */
   _onKeydownInput: function(e) {
     var enter = 13;
+    var esc = 27;
 
-    if (e.keyCode === enter) {
+    if (e.keyCode === enter || e.keyCode === esc) {
       this.submitText();
     }
+  },
+
+  /**
+   * テキストボックスでキーアップしたときのイベントハンドラ  
+   * 入力エリアの高さを計算する
+   *
+   * @method _onKeyupInput
+   * @private
+   * @param {event} e
+   */
+  _onKeyupInput: function(e) {
+    var val = this.$input.val();
+    if (!val) return;
+
+    this.$text.text(this.$input.val());
+    var height = this.$text.height();
+    if (height) this.$input.height(height);
   },
 
   /**
@@ -123,8 +144,8 @@ Nodefest.View.AvatarMe = Nodefest.View.Avatar.extend({
       // TODO:
       // クリックした位置に画像の中央部分がくるように画像の高さと幅を引いて
       // いるけどハードコーディングしてるので外に出す
-      top: e.pageY - 26,
-      left: e.pageX - 18
+      top: e.pageY - 40,
+      left: e.pageX - 22
     });
   },
 

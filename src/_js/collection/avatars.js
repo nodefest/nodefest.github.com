@@ -49,7 +49,7 @@ Nodefest.Collection.Avatars = Backbone.Collection.extend({
 
     this.me = new Avatar({
       position: { 
-        top: getRand(0, 300),
+        top: getRand(100, 400),
         left: getRand(0, 300)
       },
       type: getRand(0, imageLength - 1),

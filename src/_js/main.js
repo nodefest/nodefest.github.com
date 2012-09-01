@@ -22,18 +22,20 @@ $(function() {
     });
   });
 
-  //Nodefest.Model.Avatar.images = [
-  //  './img/avatar1.gif',
-  //  './img/avatar2.gif'
-  //];
+  Nodefest.Model.Avatar.images = [
+    './assets/img/mod-avatar/boy01.gif',
+    './assets/img/mod-avatar/boy02.gif',
+    './assets/img/mod-avatar/girl01.gif',
+    './assets/img/mod-avatar/girl02.gif'
+  ];
 
-  //var avatars = new Nodefest.Collection.Avatars();
+  var avatars = new Nodefest.Collection.Avatars();
 
-  //var avatarsField = new Nodefest.View.AvatarsField({
-  //  collection: avatars,
-  //  el: '.field'
-  //});
+  var avatarsField = new Nodefest.View.AvatarsField({
+    collection: avatars,
+    el: '#avatarField'
+  });
 
-  //avatars.createMe();
-  //avatars.sync();
+  avatars.createMe();
+  avatars.sync();
 });

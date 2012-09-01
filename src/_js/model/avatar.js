@@ -35,7 +35,13 @@ Nodefest.Model.Avatar = Backbone.Model.extend({
   getImagePath: function() {
     var type = this.get('type');
 
-    return Nodefest.Model.Avatar.images[type];
+    var src = Nodefest.Model.Avatar.images[type];
+
+    if (this.isMe()) {
+      src = src.replace(/\.gif$/, 'me.gif');
+    }
+
+    return src;
   },
 
   /**

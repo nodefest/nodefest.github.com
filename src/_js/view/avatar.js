@@ -1,6 +1,6 @@
 (function() {
 
-var MOVE_SPEED = 400;
+var MOVE_SPEED = 300;
 
 /**
  * アバター一体を管理するView
@@ -11,7 +11,7 @@ var MOVE_SPEED = 400;
 Nodefest.View.Avatar = Backbone.View.extend({
   tagName: 'div',
 
-  className: 'avatar',
+  className: 'mod-avatar',
 
   tmpl: 'avatar',
 
@@ -48,8 +48,8 @@ Nodefest.View.Avatar = Backbone.View.extend({
     var html = _.template(tmpl, { image: imagePath });
 
     this.$el.html(html).css(position);
-    this.$text = this.$('.text');
-    this.$input = this.$('input');
+    this.$comment = this.$('.mod-avatar-comment');
+    this.$text = $('<span>').appendTo(this.$comment);
 
     this.talk();
   },
@@ -85,10 +85,11 @@ Nodefest.View.Avatar = Backbone.View.extend({
     var text = this.model.get('text') || this.defaultText;
 
     if (text) {
-      this.$text.text(text).show();
+      this.$text.text(text);
+      this.$comment.show();
     }
     else {
-      this.$text.hide();
+      this.$comment.hide();
     }
   }
 });

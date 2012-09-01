@@ -547,8 +547,10 @@ ul, ol{
 		line-break: strict;
 		word-break: break-all;
 		word-wrap: break-word;
-		position:relative;
-		max-width:200px;
+		position:absolute;
+		bottom: 80px;
+		left: 10px;
+		width:200px;
 		padding: 0 8px;
 		margin:0 0 10px;
 		border-width: 8px 6px;
@@ -575,6 +577,18 @@ ul, ol{
 				//no-border-radius
 				bottom:-16px;
 			}
+		}
+		textarea{
+			font-family:inherit;
+			font-size:inherit;
+			line-height: 1.2;
+			border: none;
+			outline: none;
+			resize: none;
+			padding: 0;
+			margin: 0;
+			height: 1.2em;
+			width: 202px;
 		}
 	}
 	&.ex-avatar-me{
