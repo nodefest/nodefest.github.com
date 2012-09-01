@@ -25,7 +25,8 @@ Nodefest.View.AvatarsField = Backbone.View.extend({
       model: avatarModel
     });
 
-    this.$el.append(avatarView.el);
+    // appendだと重なり順で自分が一番下になるのでprepend
+    this.$el.prepend(avatarView.el);
   }
 });
 
