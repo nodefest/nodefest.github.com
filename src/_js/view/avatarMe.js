@@ -175,7 +175,7 @@ Nodefest.View.AvatarMe = Nodefest.View.Avatar.extend({
     }
 
     switch (e.keyCode) {
-      case space: this.toInputMode(); break;
+      case space: this.toInputMode(); this.$input.select(); break;
       case up:    this.model.moveToUp(); break;
       case down:  this.model.moveToDown(); break;
       case left:  this.model.moveToLeft(); break;
