@@ -53,6 +53,7 @@ Nodefest.View.AvatarMe = Nodefest.View.Avatar.extend({
    * @method toInputMode
    */
   toInputMode: function() {
+    this.$el.addClass('inputMode');
     this.$input.show().focus();
     this.$text.hide();
   },
@@ -63,6 +64,7 @@ Nodefest.View.AvatarMe = Nodefest.View.Avatar.extend({
    * @method submitText
    */
   submitText: function() {
+    this.$el.removeClass('inputMode');
     this.model.set('text', this.$input.val());
     this.$input.hide();
     this.$text.show();
