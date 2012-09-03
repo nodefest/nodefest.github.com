@@ -129,14 +129,11 @@ sponsors:
     icon: ico_03.png
     companies:
       - 
-        name: Joyent
-        url: http://www.joyent.com
-        img: gold_joyent.png
+        name: PixelGrid
+        url: http://www.pxgrid.com/
+        img: silver_pxgrid.png
         description: |-
-          Joyent は今日の Web やモバイル向けアプリケーションがに求められる高度な要求に特化した、IaaS を提供するハイポフォーマンスなクラウドインフラストラクチャの企業です。
-          また Node.js をの開発を強く牽引する企業でもあり、サーバサイド JavaScript の開発環境を広く扱っています。
-
-          興味のある方は[http://www.joyent.com](http://www.joyent.com)も是非御覧ください。
+          ピクセルグリッドはJavaScriptの会社です。Webアプリケーションのフロントエンド開発を得意としhtml5やCSS3といった技術を積極的に活用しています。node.jsの利用にも取り組んでいます。
 
 # 後援企業
 #=========================
