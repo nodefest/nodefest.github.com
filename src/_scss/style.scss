@@ -6,6 +6,9 @@
 	z-index:10;
 }
 
+html{
+}
+
 body{
 	font-size:$basefontSize * 1px;
 	font-family: $fontSansSerif;
@@ -189,6 +192,9 @@ ul, ol{
 	background:url(../img/mod-section/bg_01_top.png) no-repeat, url(../img/mod-section/bg_01_btm.png) no-repeat 0 100%;
 	position:relative;
 	z-index:2;
+	.no-rgba &{
+		background: url(../img/mod-section/bg-all.png);
+	}
 	&:before{
 		content:'';
 		position:absolute;
@@ -466,6 +472,10 @@ ul, ol{
 	background:url(../img/mod-sponsors/bg_01_top.png) no-repeat, url(../img/mod-sponsors/bg_01_btm.png) no-repeat 0 100%;
 	position:relative;
 	z-index:2;
+	.no-multiplebgs &{
+		padding-top:42px;
+		top: -20px;
+	}
 	&:before{
 		content:'';
 		display:block;
@@ -609,6 +619,9 @@ ul, ol{
 			   -moz-border-image: url(../img/mod-avatar/bg_01me_input.png) 8 6 stretch;
 				 -o-border-image: url(../img/mod-avatar/bg_01me_input.png) 8 6 stretch;
 					border-image: url(../img/mod-avatar/bg_01me_input.png) 8 6 fill stretch;
+			.no-borderimage &{
+				background: #ffc8c8;
+			}
 		}
 		textarea{
 			background: #ffc8c8;
