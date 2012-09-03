@@ -564,19 +564,17 @@ ul, ol{
 		left: 10px;
 		width:200px;
 		padding: 0 8px;
-		margin:0 0 10px;
+		border-color: #a9b88a;
+		border-style: solid;
 		border-width: 8px 6px;
-		-webkit-border-image: url(../img/mod-avatar/bg_01.png) 8 6 stretch;
-		   -moz-border-image: url(../img/mod-avatar/bg_01.png) 8 6 stretch;
-		     -o-border-image: url(../img/mod-avatar/bg_01.png) 8 6 stretch;
-				border-image-source: url(../img/mod-avatar/bg_01.png);
-				border-image-slice: 8 6;
-				border-image-width: 8px 6px;
-				border-image-outset: 8px 6px;
-		background:#fff;
+		margin:0 0 10px;
+		-webkit-border-image: url(../img/mod-avatar/bg_01.png) 8 6 fill stretch;
+		   -moz-border-image: url(../img/mod-avatar/bg_01.png) 8 6 fill stretch;
+		     -o-border-image: url(../img/mod-avatar/bg_01.png) 8 6 fill stretch;
+		        border-image: url(../img/mod-avatar/bg_01.png) 8 6 fill stretch;
 		.no-borderimage &{
 			//no-border-radius
-			border:2px solid #a9b88a;
+			border-width:2px;
 			padding:6px 14px;
 			background:#fff;
 		}
@@ -609,13 +607,10 @@ ul, ol{
 	}
 	&.ex-avatar-me{
 		.mod-avatar-comment{
-			-webkit-border-image: url(../img/mod-avatar/bg_01me.png) 8 6 stretch;
-			   -moz-border-image: url(../img/mod-avatar/bg_01me.png) 8 6 stretch;
-			     -o-border-image: url(../img/mod-avatar/bg_01me.png) 8 6 stretch;
-					border-image-source: url(../img/mod-avatar/bg_01me.png);
-					border-image-slice: 8 6;
-					border-image-width: 8px 6px;
-					border-image-outset: 8px 6px;
+			-webkit-border-image: url(../img/mod-avatar/bg_01me.png) 8 6 fill stretch;
+			   -moz-border-image: url(../img/mod-avatar/bg_01me.png) 8 6 fill stretch;
+			     -o-border-image: url(../img/mod-avatar/bg_01me.png) 8 6 fill stretch;
+			        border-image: url(../img/mod-avatar/bg_01me.png) 8 6 fill stretch;
 			&:after{
 				background:url(../img/mod-avatar/bg_02me.png);
 			}
@@ -623,14 +618,10 @@ ul, ol{
 	}
 	&.inputMode{
 		.mod-avatar-comment{
-			-webkit-border-image: url(../img/mod-avatar/bg_01me_input.png) 8 6 stretch;
-			   -moz-border-image: url(../img/mod-avatar/bg_01me_input.png) 8 6 stretch;
-				 -o-border-image: url(../img/mod-avatar/bg_01me_input.png) 8 6 stretch;
-					border-image-source: url(../img/mod-avatar/bg_01me_input.png);
-					border-image-slice: 8 6;
-					border-image-width: 8px 6px;
-					border-image-outset: 8px 6px;
-			background: #ffc8c8;
+			-webkit-border-image: url(../img/mod-avatar/bg_01me_input.png) 8 6 fill stretch;
+			   -moz-border-image: url(../img/mod-avatar/bg_01me_input.png) 8 6 fill stretch;
+				 -o-border-image: url(../img/mod-avatar/bg_01me_input.png) 8 6 fill stretch;
+				    border-image: url(../img/mod-avatar/bg_01me_input.png) 8 6 fill stretch;
 			.no-borderimage &{
 				background: #ffc8c8;
 			}
