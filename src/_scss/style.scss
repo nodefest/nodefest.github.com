@@ -97,6 +97,7 @@ ul, ol{
 		a{
 			display: block;
 			width:100%;
+			outline: none;
 			@include transition(margin, .1s, linear);
 			&:hover{
 				margin-left:-6px;

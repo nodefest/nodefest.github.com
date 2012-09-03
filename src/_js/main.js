@@ -14,9 +14,9 @@ $(function() {
 
     router.bind('everyfetchsuccess', function(page) {
       var newcontent = page.rip('content');
-      var $newcontent = $(newcontent).hide();
+      var $newcontent = $('<div>').append(newcontent).hide();
       $content.css('opacity', 1).empty().append($newcontent); 
-      $newcontent.slideDown();
+      $newcontent.slideDown(500);
       $imgs.setCurrent();
       page.trigger('pageready');
     });
