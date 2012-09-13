@@ -40,41 +40,13 @@ sponsors:
     icon: ico_01.png
     companies:
       - 
-        name: Joyent
-        url: http://www.joyent.com
-        img: gold_joyent.png
+        name: リクルート
+        url: http://www.recruit.jp/
+        img: recruit.png
         description: |-
-          Joyent は今日の Web やモバイル向けアプリケーションがに求められる高度な要求に特化した、IaaS を提供するハイポフォーマンスなクラウドインフラストラクチャの企業です。
-          また Node.js をの開発を強く牽引する企業でもあり、サーバサイド JavaScript の開発環境を広く扱っています。
+          リクルートは、「じゃらん」「SUUMO」「リクナビ」をはじめとする大小様々なWebサービスを展開しています。
 
-          興味のある方は[http://www.joyent.com](http://www.joyent.com)も是非御覧ください。
-
-      - 
-        name: Noejitsu
-        url: http://nodejitsu.com/
-        img: gold_nodejitsu.png
-        description: |-
-          ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。
-
-          ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。
-
-      - 
-        name: GREE
-        url: http://www.gree.co.jp
-        img: gold_gree.png
-        description: |-
-          グリーは、世界最大級のワンプラットフォーム「GREE Platform」をグローバルに展開しています。
-
-          現在、「GREE Platform」にて北米・欧州に配信中で、この秋日本でも提供が開始されるアクションバトルRPG「MONPLA SMASH（モンプラスマッシュ）」はNode.jsを利用しており、世界規模での導入に取り組んでいます。
-
-      - 
-        name: DeNA
-        url: http://dena.jp/engineer/
-        img: gold_dena.png
-        description: |-
-          ディー・エヌ・エー（DeNA）は、日本、英語圏、中国、韓国へワールドワイドのソーシャルゲームプラットフォーム「Mobage」を展開している、インターネットサービス事業を主軸としたグローバルカンパニーです。
-
-          WW向けコンテンツ展開を支える技術のひとつに、iOS/Androidの両プラットフォーム向けにワンソースでゲームを展開できるクロスプラットフォームゲームエンジン「ngCore」を提供。このプロダクトにおいてNode.jsをはじめとした先鋭的な技術を積極的に活用しています。
+          これらのWebサービスを支えるアーキテクチャとして、Solr・Hadoop等オープンソースを積極的に活用しており、現在、リアルタイムWebの実現に向けNode.jsの導入に取り組んでいます。
 
 # ゴールドスポンサー
 #=========================
@@ -84,41 +56,22 @@ sponsors:
     icon: ico_02.png
     companies:
       - 
-        name: Joyent
-        url: http://www.joyent.com
-        img: gold_joyent.png
-        description: |-
-          Joyent は今日の Web やモバイル向けアプリケーションがに求められる高度な要求に特化した、IaaS を提供するハイポフォーマンスなクラウドインフラストラクチャの企業です。
-          また Node.js をの開発を強く牽引する企業でもあり、サーバサイド JavaScript の開発環境を広く扱っています。
-
-          興味のある方は[http://www.joyent.com](http://www.joyent.com)も是非御覧ください。
-
-      - 
-        name: Noejitsu
-        url: http://nodejitsu.com/
-        img: gold_nodejitsu.png
-        description: |-
-          ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。
-
-          ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。
-
-      - 
-        name: GREE
-        url: http://www.gree.co.jp
-        img: gold_gree.png
-        description: |-
-          グリーは、世界最大級のワンプラットフォーム「GREE Platform」をグローバルに展開しています。
-
-          現在、「GREE Platform」にて北米・欧州に配信中で、この秋日本でも提供が開始されるアクションバトルRPG「MONPLA SMASH（モンプラスマッシュ）」はNode.jsを利用しており、世界規模での導入に取り組んでいます。
-
-      - 
         name: DeNA
         url: http://dena.jp/engineer/
-        img: gold_dena.png
+        img: dena.png
         description: |-
           ディー・エヌ・エー（DeNA）は、日本、英語圏、中国、韓国へワールドワイドのソーシャルゲームプラットフォーム「Mobage」を展開している、インターネットサービス事業を主軸としたグローバルカンパニーです。
 
           WW向けコンテンツ展開を支える技術のひとつに、iOS/Androidの両プラットフォーム向けにワンソースでゲームを展開できるクロスプラットフォームゲームエンジン「ngCore」を提供。このプロダクトにおいてNode.jsをはじめとした先鋭的な技術を積極的に活用しています。
+
+      - 
+        name: GREE
+        url: http://www.gree.co.jp
+        img: gree.png
+        description: |-
+          グリーは、世界最大級のワンプラットフォーム「GREE Platform」をグローバルに展開しています。
+
+          現在、「GREE Platform」にて北米・欧州に配信中で、この秋日本でも提供が開始されるアクションバトルRPG「MONPLA SMASH（モンプラスマッシュ）」はNode.jsを利用しており、世界規模での導入に取り組んでいます。
 
 # シルバースポンサー
 #=========================
@@ -129,9 +82,27 @@ sponsors:
     icon: ico_03.png
     companies:
       - 
+        name: Joyent
+        url: http://www.joyent.com
+        img: joyent.png
+        description: |-
+          Joyent は今日の Web やモバイル向けアプリケーションがに求められる高度な要求に特化した、IaaS を提供するハイポフォーマンスなクラウドインフラストラクチャの企業です。
+          また Node.js をの開発を強く牽引する企業でもあり、サーバサイド JavaScript の開発環境を広く扱っています。
+
+          興味のある方は[http://www.joyent.com](http://www.joyent.com)も是非御覧ください。
+
+      - 
+        name: Noejitsu
+        url: http://nodejitsu.com/
+        img: nodejitsu.png
+        description: |-
+          ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。
+
+          ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。
+      - 
         name: PixelGrid
         url: http://www.pxgrid.com/
-        img: silver_pxgrid.png
+        img: pxgrid.png
         description: |-
           ピクセルグリッドはJavaScriptの会社です。Webアプリケーションのフロントエンド開発を得意としhtml5やCSS3といった技術を積極的に活用しています。node.jsの利用にも取り組んでいます。
 
@@ -146,7 +117,7 @@ sponsors:
       - 
         name: Joyent
         url: http://www.joyent.com
-        img: gold_joyent.png
+        img: joyent.png
         description: |-
           Joyent は今日の Web やモバイル向けアプリケーションがに求められる高度な要求に特化した、IaaS を提供するハイポフォーマンスなクラウドインフラストラクチャの企業です。
           また Node.js をの開発を強く牽引する企業でもあり、サーバサイド JavaScript の開発環境を広く扱っています。
