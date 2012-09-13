@@ -25,8 +25,16 @@ $(function() {
   Nodefest.Model.Avatar.images = [
     './assets/img/mod-avatar/boy01.gif',
     './assets/img/mod-avatar/boy02.gif',
+    './assets/img/mod-avatar/boy03.gif',
+    './assets/img/mod-avatar/boy04.gif',
+    './assets/img/mod-avatar/boy05.gif',
+    './assets/img/mod-avatar/boy02.gif',
     './assets/img/mod-avatar/girl01.gif',
-    './assets/img/mod-avatar/girl02.gif'
+    './assets/img/mod-avatar/girl02.gif',
+    './assets/img/mod-avatar/girl03.gif',
+    './assets/img/mod-avatar/girl04.gif',
+    './assets/img/mod-avatar/girl05.gif',
+    './assets/img/mod-avatar/sp.gif'
   ];
 
   var avatars = new Nodefest.Collection.Avatars();
