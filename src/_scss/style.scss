@@ -461,6 +461,10 @@ ul, ol{
 				border-top:none;
 			}
 		}
+		p.note {
+			margin-top: 20px;
+			text-align: center;
+		}
 	}
 }
 
@@ -644,4 +648,14 @@ ul, ol{
 	.mod-image-gmapLink {
 		font-size: 11px;
 	}
+}
+
+/* ==========================================================================
+   mod-note
+   ========================================================================== */
+.mod-note {
+	font-size: 16px;
+	margin: 15px 0;
+	font-weight: bold;
+	text-align: center;
 }

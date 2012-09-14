@@ -11,6 +11,7 @@ name: sponsors
 	</header>
 
 	{% for company in sponsor.companies %}
+	{% if company.description %}
 	<section class="mod-suponsorInfo">
 		<a href="{{ company.url }}">
 			<div class="mod-suponsorInfo-header">
@@ -22,6 +23,7 @@ name: sponsors
 		</a>
 		{{ company.description | markdownify }}
 	</section>
+	{% endif %}
 	{% endfor %}
 <!-- /.mod-section --></section>
 {% endfor %}

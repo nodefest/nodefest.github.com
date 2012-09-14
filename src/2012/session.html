@@ -10,7 +10,7 @@ name: session
 	</header>
 
 	<p>セッションは日本語・英語で行われます。</p>
-	<p>なお、現在まだ調整中ですのでプログラムが変更となる場合がございますのでご了承下さい。</p>
+	<p>なお、現在まだ調整中ですのでプログラムの内容や順番が変更となる場合がございますのでご了承下さい。</p>
 
 	<div class="mod-sessionTable">
 		<table>
@@ -32,48 +32,56 @@ name: session
 				</tr>
 				<tr>
 					<th>10:55〜11:00</th>
-					<td><div class="mod-sessionTable-title">イントロダクション</div>学園祭 実行委員長 <a href="https://twitter.com/">@meso</a></td>
+					<td><div class="mod-sessionTable-title">イントロダクション</div>学園祭 実行委員長 <a href="https://twitter.com/meso">@meso</a></td>
 					<td>―</td>
 				</tr>
 				<tr>
 					<th>11:00〜11:45</th>
-					<td><div class="mod-sessionTable-title">基調講演</div><a href="#">Isaac Z. Schlueter</a>氏 <a href="https://twitter.com/">@izs</a></td>
+					<td><div class="mod-sessionTable-title">基調講演</div><a href="speakers.html#izs">Isaac Schlueter</a> <a href="https://twitter.com/izs">@izs</a></td>
 					<td>―</td>
 				</tr>
 				<tr>
 					<th>12:00〜12:45</th>
-					<td><div class="mod-sessionTable-title">未定</div>海外ゲスト1</td>
+					<td><div class="mod-sessionTable-title">未定</div><a href="speakers.html#mikeal">Mikeal Rogers</a> <a href="https://twitter.com/mikeal">@mikeal</a></td>
 					<td><div class="mod-sessionTable-title">未定</div>スポンサーセッション</td>
 				</tr>
 				<tr>
 					<th>13:00〜13:45</th>
-					<td><div class="mod-sessionTable-title">未定</div>海外ゲスト2</td>
-					<td><div class="mod-sessionTable-title">未定</div>日本人スピーカ1</td>
+					<td><div class="mod-sessionTable-title">未定</div><a href="speakers.html#substack">James Halliday</a> <a href="https://twitter.com/substack">@substack</a></td>
+					<td><div class="mod-sessionTable-title">未定</div>募集中</td>
 				</tr>
 				<tr>
 					<th>14:00〜14:45</th>
-					<td><div class="mod-sessionTable-title">未定 タイトルが長くなった時の折り返しの処理例</div>海外ゲスト3</td>
-					<td><div class="mod-sessionTable-title">未定 タイトルが長くなった時の折り返しの処理例</div>日本人スピーカ2</td>
+					<td><div class="mod-sessionTable-title">未定</div><a href="speakers.html#charlie">Charlie Robbins</a> <a href="https://twitter.com/indexzero">@indexzero</a></td>
+					<td><div class="mod-sessionTable-title">未定</div>募集中</td>
 				</tr>
 				<tr>
 					<th>15:00〜15:45</th>
-					<td><div class="mod-sessionTable-title">未定</div>日本人スピーカ3</td>
-					<td><div class="mod-sessionTable-title">未定</div>日本人スピーカ4</td>
+					<td><div class="mod-sessionTable-title">未定</div>募集中</td>
+					<td><div class="mod-sessionTable-title">未定</div>募集中</td>
 				</tr>
 				<tr>
 					<th>16:00〜16:45</th>
 					<td colspan="2">
 						<section class="mod-sessionTable-list">
 							<h1>LT大会（各10分）</h1>
+							{% if site.sessions.LT %}
 							<ul>
-								<li><div class="mod-sessionTable-title">Kinect を利用した簡易3Dモデル作成ツール</div><a href="#">ndruger</a> <a href="https://twitter.com/">@ndruger</a></li>
-								<li><div class="mod-sessionTable-title">Next JS によるアプリケーション開発</div><a href="#">小堤一弘</a> <a href="https://twitter.com/">@aaaaaa</a></li>
-								<li><div class="mod-sessionTable-title">Windows Azure での Node.js の利用</div><a href="#">勇大地</a> <a href="https://twitter.com/">@aaaaaa</a></li>
-								<li><div class="mod-sessionTable-title">UV-Shell</div><a href="#">大津 繁樹</a> <a href="https://twitter.com/">@aaaaaa</a></li>
-								<li><div class="mod-sessionTable-title">全部 coffee でスマートフォンアプリを作る</div><a href="#">naoya</a> <a href="https://twitter.com/">@naoya</a></li>
-								<li><div class="mod-sessionTable-title">Node.js + WebSocket でブラウザネイティブなMORPG</div><a href="#">co1row.jp</a> <a href="https://twitter.com/">@co1row.jp</a></li>
-								<li><div class="mod-sessionTable-title">Moji-TV = Node.js + Socket.io + Titanium</div><a href="#">すどうあきひと</a> <a href="https://twitter.com/">@aaaaaa</a></li>
+								{% for data in site.sessions.LT %}
+								<li>
+									<div class="mod-sessionTable-title">
+										{{ data.title }}
+									</div>
+									{{ data.name }}
+									{% if data.twitter %}
+									<a href="https://twitter.com/{{ data.twitter }}">@{{ data.twitter }}</a>
+									{% endif %}
+								</li>
+								{% endfor %}
 							</ul>
+							{% else %}
+							<p class="note">募集中</p>
+							{% endif %}
 						</section>
 					</td>
 				</tr>

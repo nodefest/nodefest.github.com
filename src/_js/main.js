@@ -16,12 +16,14 @@ $(function() {
       var newcontent = page.rip('content');
       var $newcontent = $('<div>').append(newcontent).hide();
       $content.css('opacity', 1).empty().append($newcontent); 
-      $newcontent.slideDown(500);
       $imgs.setCurrent();
-      page.trigger('pageready');
+      $newcontent.slideDown(500, function() {
+        page.trigger('pageready');
+      });
     });
   });
 
+  // アバター画像の設定
   Nodefest.Model.Avatar.images = [
     './assets/img/mod-avatar/boy01.gif',
     './assets/img/mod-avatar/boy02.gif',

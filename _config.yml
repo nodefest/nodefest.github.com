@@ -97,6 +97,13 @@ sponsors:
         img: nodejitsu.png
         description: |-
             NodejitsuはNode.jsの開発者に、多くの最適なツールやサービスを提供します。Nodejitsuが提供するシンプルで信頼性の高いNode.jsのホスティングサービスは、エンタープライズ用途にもライセンス可能で、自社のクラウドでホスティングすることもできます。 チームはオープンソースにも深く貢献しており、多くのプロジェクトにコントリビュートし、コミュニティでも広く活動しています。
+
+      - 
+        name: ニフティ
+        url: http://cloud.nifty.com/
+        img: nifty.png
+        description: |-
+          ニフティ株式会社は“ニフティとなら、きっとかなう。 With Us, You Can.”を経営理念とし、安心安全なインターネットサービス、高品質なクラウドサービスを提供しています。Node.jsにも取り組んでいます。
           
       - 
         name: PixelGrid
@@ -114,11 +121,16 @@ sponsors:
     icon: ico_04.png
     companies:
       - 
-        name: Joyent
-        url: http://www.joyent.com
-        img: joyent.png
-        description: |-
-          Joyent は今日の Web やモバイル向けアプリケーションがに求められる高度な要求に特化した、IaaS を提供するハイポフォーマンスなクラウドインフラストラクチャの企業です。
-          また Node.js をの開発を強く牽引する企業でもあり、サーバサイド JavaScript の開発環境を広く扱っています。
+        name: Node Ninja
+        url: http://node-ninja.com/
+        img: node-ninja.png
 
-          興味のある方は[http://www.joyent.com](http://www.joyent.com)も是非御覧ください。
+sessions:
+  #LT:
+  #  -
+  #    name: スピーカー1
+  #    title: タイトル1
+  #    twitter: xxx
+  #  -
+  #    name: スピーカー2
+  #    title: タイトル2
