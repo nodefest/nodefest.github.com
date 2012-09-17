@@ -21,12 +21,12 @@ js:
       files:
         - app/core.js
         - app/utils.js
-        - app/headerNavi.js
         - model/avatar.js
         - collection/avatars.js
         - view/avatar.js
         - view/avatarMe.js
         - view/avatarsField.js
+        - app/headerNavi.js
         - main.js
 
 # site data
