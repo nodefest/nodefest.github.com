@@ -117,13 +117,17 @@ sponsors:
 
   - 
     label: Supporters
-    label_ja: 後援企業
+    label_ja: 後援
     icon: ico_04.png
     companies:
       - 
         name: Node Ninja
         url: http://node-ninja.com/
         img: node-ninja.png
+      - 
+        name: 法政大学情報科学部
+        url: http://cis.k.hosei.ac.jp/
+        img: housei.png
 
 sessions:
   #LT:
