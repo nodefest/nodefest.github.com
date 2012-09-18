@@ -140,14 +140,22 @@ ul, ol{
 	margin-top:20px;
 	background:#46483e;
 	.mod-pageFooter-inner{
+		@extend %clearfix;
 		width:970px;
 		padding:20px 0;
 		margin:0 auto;
 	}
 	small{
 		font-size:font-size(12);
-		text-align: center;
 		display: block;
+		width: 50%;
+	}
+	.copyright {
+		float: left;
+	}
+	.createby {
+		float: right;
+		text-align: right;
 	}
 	a{
 		color:#8cc84b;
