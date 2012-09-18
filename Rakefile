@@ -14,18 +14,18 @@ task :server do
   sh "bundle exec jekyll --auto --server #{port}"
 end
 
-#desc 'deploy to github pages'
-#task :deploy do
-#  unless Dir.exists? 'github-pages'
-#    sh 'git clone git@github.com:nodefest/nodefest.github.com.git github-pages'
-#  end
-#
-#  sh 'bundle exec jekyll'
-#  sh 'rm -rf github-pages/2012/*'
-#  sh 'cp -R _site/2012/* github-pages/2012'
-#  cd 'github-pages' do
-#    sh 'git add -A'
-#    sh 'git commit -v'
-#    sh 'git push origin master'
-#  end
-#end
+desc 'deploy to github pages'
+task :deploy do
+  unless Dir.exists? 'github-pages'
+    sh 'git clone git@github.com:nodefest/nodefest.github.com.git github-pages'
+  end
+
+  sh 'bundle exec jekyll'
+  sh 'rm -rf github-pages/2012/*'
+  sh 'cp -R _site/2012/* github-pages/2012'
+  cd 'github-pages' do
+    sh 'git add -A'
+    sh 'git commit -v'
+    sh 'git push origin master'
+  end
+end
