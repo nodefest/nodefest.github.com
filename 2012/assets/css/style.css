@@ -553,8 +553,18 @@ ul, ol {
   background: url(../img/mod-pageHeader/bg_03.png) repeat-x #e9efd6;
 }
 .mod-pageHeader .mod-pageHeader-socialButtonsInner {
+  width: 970px;
+  margin: 0 auto;
   min-height: 22px;
-  padding: 1px 5px;
+  padding: 3px 0 2px 10px;
+}
+.mod-pageHeader .mod-pageHeader-socialButtonsInner .item {
+  height: 22px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.mod-pageHeader .mod-pageHeader-socialButtonsInner iframe.twitter-share-button {
+  width: 105px!important;
 }
 .mod-pageHeader nav {
   width: 950px;
