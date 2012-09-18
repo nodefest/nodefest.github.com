@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="http://210.152.156.43/socket.io/socket.io.js"></script>
+<script src="assets/js/lib.js"></script>
+<script src="assets/js/script.js"></script>
+</head>
+<body>
+
+<header class="mod-pageHeader">
+	<div class="mod-pageHeader-banner"><div class="mod-pageHeader-bannerInner">
+		<div class="mod-pageHeader-logo"><a href="./"><img src="assets/img/mod-pageHeader/logo_01.png" alt="東京Node学園祭2012" width="650" height="102"></a></div>
+		<div class="mod-pageHeader-text">
+			<img src="assets/img/mod-pageHeader/txt_01.png" alt="Tokyo Node Fest." width="182" height="28">
+			2012<span>年</span>11<span>月</span>18<span>日(日)</span> 10:30-17:30<span>(予定)</span><br>
+			<span>後夜祭</span>18:00-<br>
+			法政大学 市ヶ谷キャンパス 外濠校舎
+		</div>
+	</div></div>
+	<div class="mod-pageHeader-socialButtons"><div class="mod-pageHeader-socialButtonsInner">
+	</div></div>
+	<nav>
+		<ul>
+			<li><a href="index.html"><img src="assets/img/mod-pageHeader/nav_01_n.png" alt="home" width="430" height="52"></a></li>
+			<li><a href="session.html"><img src="assets/img/mod-pageHeader/nav_02_a.png" alt="session" width="430" height="52"></a></li>
+			<li><a href="speakers.html"><img src="assets/img/mod-pageHeader/nav_03_n.png" alt="speakers" width="430" height="52"></a></li>
+			<li><a href="sponsors.html"><img src="assets/img/mod-pageHeader/nav_04_n.png" alt="sponsors" width="430" height="52"></a></li>
+			<li><a href="access.html"><img src="assets/img/mod-pageHeader/nav_05_n.png" alt="access" width="430" height="52"></a></li>
+			<li><a href="ticket.html"><img src="assets/img/mod-pageHeader/nav_06_n.png" alt="ticket" width="430" height="52"></a></li>
+		</ul>
+	</nav>
+<!-- /.mod-pageHeader --></header>
+
+
+<div class="mod-pageBody">
+	<div class="mod-pageBody-main">
+	<!-- LazyJaxDavis start -->
+<section class="mod-section">
+	<header class="mod-section-header">
+		<div class="mod-section-eyecatch"><img src="img/session/ico_01.png" alt="session" width="60" height="70"></div>
+		<h1>学園祭セッション内容</h1>
+	</header>
+
+	<p>セッションは日本語・英語で行われます。</p>
+	<p>なお、現在まだ調整中ですのでプログラムの内容や順番が変更となる場合がございますのでご了承下さい。</p>
+
+	<div class="mod-sessionTable">
+		<table>
+			<col width="140">
+			<col width="220">
+			<col width="200">
+			<thead>
+				<tr>
+					<th>時間</th>
+					<th>トラック A</th>
+					<th>トラック B</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>10:30〜10:55</th>
+					<td><div class="mod-sessionTable-title">開場</div></td>
+					<td>―</td>
+				</tr>
+				<tr>
+					<th>10:55〜11:00</th>
+					<td><div class="mod-sessionTable-title">イントロダクション</div>学園祭 実行委員長 <a href="https://twitter.com/meso">@meso</a></td>
+					<td>―</td>
+				</tr>
+				<tr>
+					<th>11:00〜11:45</th>
+					<td><div class="mod-sessionTable-title">基調講演</div><a href="speakers.html#izs">Isaac Schlueter</a> <a href="https://twitter.com/izs">@izs</a></td>
+					<td>―</td>
+				</tr>
+				<tr>
+					<th>12:00〜12:45</th>
+					<td><div class="mod-sessionTable-title">未定</div><a href="speakers.html#mikeal">Mikeal Rogers</a> <a href="https://twitter.com/mikeal">@mikeal</a></td>
+					<td><div class="mod-sessionTable-title">未定</div>近日公募予定</td>
+				</tr>
+				<tr>
+					<th>13:00〜13:45</th>
+					<td><div class="mod-sessionTable-title">未定</div><a href="speakers.html#substack">James Halliday</a> <a href="https://twitter.com/substack">@substack</a></td>
+					<td><div class="mod-sessionTable-title">未定</div>近日公募予定</td>
+				</tr>
+				<tr>
+					<th>14:00〜14:45</th>
+					<td><div class="mod-sessionTable-title">未定</div><a href="speakers.html#charlie">Charlie Robbins</a> <a href="https://twitter.com/indexzero">@indexzero</a></td>
+					<td><div class="mod-sessionTable-title">未定</div>近日公募予定</td>
+				</tr>
+				<tr>
+					<th>15:00〜15:45</th>
+					<td><div class="mod-sessionTable-title">未定</div>スポンサーセッション<br>（リクルート）</td>
+					<td><div class="mod-sessionTable-title">未定</div>近日公募予定</td>
+				</tr>
+				<tr>
+					<th>16:00〜17:00</th>
+					<td colspan="2">
+						<section class="mod-sessionTable-list">
+							<h1>LT大会（各10分）</h1>
+							
+							<p class="note">近日公募予定</p>
+							
+						</section>
+					</td>
+				</tr>
+				<tr>
+					<th>17:00〜17:30</th>
+					<td><div class="mod-sessionTable-title">閉幕</div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<th>18:00〜</th>
+					<td><div class="mod-sessionTable-title">後夜祭</div></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+<!-- /.mod-section --></section>
+
+	<!-- LazyJaxDavis end -->
+	</div>
+
+	<div class="mod-pageBody-side">
+<section class="mod-sponsors">
+	<div class="mod-sponsors-header">
+		<div class="mod-sponsors-eyecatch"><img src="assets/img/mod-sponsors/img_01.png" alt="sponsors" height="46" width="40"></div>
+		<h1>スポンサー紹介</h1>
+	</div>
+
+	
+	<h2>Platinum Sponsors</h2>
+	<ul>
+		
+		<li><a href="http://www.recruit.jp/"><img src="assets/img/logo/recruit.png" alt="リクルート"></a></li>
+		
+	</ul>
+	
+	<h2>Gold Sponsors</h2>
+	<ul>
+		
+		<li><a href="http://dena.jp/engineer/"><img src="assets/img/logo/dena.png" alt="DeNA"></a></li>
+		
+		<li><a href="http://www.gree.co.jp"><img src="assets/img/logo/gree.png" alt="GREE"></a></li>
+		
+	</ul>
+	
+	<h2>Silver Sponsors</h2>
+	<ul>
+		
+		<li><a href="http://www.joyent.com"><img src="assets/img/logo/joyent.png" alt="Joyent"></a></li>
+		
+		<li><a href="http://nodejitsu.com/"><img src="assets/img/logo/nodejitsu.png" alt="Noejitsu"></a></li>
+		
+		<li><a href="http://cloud.nifty.com/"><img src="assets/img/logo/nifty.png" alt="ニフティ"></a></li>
+		
+		<li><a href="http://www.pxgrid.com/"><img src="assets/img/logo/pxgrid.png" alt="PixelGrid"></a></li>
+		
+	</ul>
+	
+	<h2>Supporters</h2>
+	<ul>
+		
+		<li><a href="http://node-ninja.com/"><img src="assets/img/logo/node-ninja.png" alt="Node Ninja"></a></li>
+		
+		<li><a href="http://cis.k.hosei.ac.jp/"><img src="assets/img/logo/housei.png" alt="法政大学情報科学部"></a></li>
+		
+		<li><a href="http://sinap.jp/"><img src="assets/img/logo/sinap.png" alt="SINAP"></a></li>
+		
+	</ul>
+	
+<!-- /..mod-sponsors --></section>
+
+<div class="mod-twitterWedget">
+  <div class="mod-twitterWedget-timeline">
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'search',
+  search: '#nodefest',
+  interval: 30000,
+  title: '#nodefest',
+  subject: '東京Node学園祭2012',
+  width: 290,
+  height: 330,
+  theme: {
+    shell: {
+      background: '#546c22',
+      color: '#fff52d'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#444444',
+      links: '#556c22'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: true,
+    live: true,
+    behavior: 'default'
+  }
+}).render().start();
+</script>
+</div>
+
+<a href="https://twitter.com/nodefest" class="twitter-follow-button" data-show-count="false" data-lang="ja">@nodefestさんをフォロー</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+
+	</div>
+<!-- /.mod-pageBody --></div>
+
+<footer class="mod-pageFooter">
+	<div class="mod-pageFooter-inner">
+		<small class="copyright">© 2012 東京Node学園祭 実行委員会 | <a href="#">Node.js 日本ユーザグループ</a></small>
+		<small class="createby">This site is created by <a href="http://www.pxgrid.com/">PixelGrid, Inc.</a> and <a href="http://sinap.jp">SINAP, Inc.</a></small>
+	</div>
+<!-- /.mod-pageFooter --></footer>
+
+
+<div id="avatarField"></div>
+
+<script type="text/x-tmpl" id="tmpl-avatar">
+<div class="mod-avatar-comment"></div>
+<img src="<%= image %>" alt="avatar">
+</script>
+
+</body>
+</html>

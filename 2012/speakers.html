@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="http://210.152.156.43/socket.io/socket.io.js"></script>
+<script src="assets/js/lib.js"></script>
+<script src="assets/js/script.js"></script>
+</head>
+<body>
+
+<header class="mod-pageHeader">
+	<div class="mod-pageHeader-banner"><div class="mod-pageHeader-bannerInner">
+		<div class="mod-pageHeader-logo"><a href="./"><img src="assets/img/mod-pageHeader/logo_01.png" alt="東京Node学園祭2012" width="650" height="102"></a></div>
+		<div class="mod-pageHeader-text">
+			<img src="assets/img/mod-pageHeader/txt_01.png" alt="Tokyo Node Fest." width="182" height="28">
+			2012<span>年</span>11<span>月</span>18<span>日(日)</span> 10:30-17:30<span>(予定)</span><br>
+			<span>後夜祭</span>18:00-<br>
+			法政大学 市ヶ谷キャンパス 外濠校舎
+		</div>
+	</div></div>
+	<div class="mod-pageHeader-socialButtons"><div class="mod-pageHeader-socialButtonsInner">
+	</div></div>
+	<nav>
+		<ul>
+			<li><a href="index.html"><img src="assets/img/mod-pageHeader/nav_01_n.png" alt="home" width="430" height="52"></a></li>
+			<li><a href="session.html"><img src="assets/img/mod-pageHeader/nav_02_n.png" alt="session" width="430" height="52"></a></li>
+			<li><a href="speakers.html"><img src="assets/img/mod-pageHeader/nav_03_a.png" alt="speakers" width="430" height="52"></a></li>
+			<li><a href="sponsors.html"><img src="assets/img/mod-pageHeader/nav_04_n.png" alt="sponsors" width="430" height="52"></a></li>
+			<li><a href="access.html"><img src="assets/img/mod-pageHeader/nav_05_n.png" alt="access" width="430" height="52"></a></li>
+			<li><a href="ticket.html"><img src="assets/img/mod-pageHeader/nav_06_n.png" alt="ticket" width="430" height="52"></a></li>
+		</ul>
+	</nav>
+<!-- /.mod-pageHeader --></header>
+
+
+<div class="mod-pageBody">
+	<div class="mod-pageBody-main">
+	<!-- LazyJaxDavis start -->
+<section class="mod-section">
+	<header class="mod-section-header">
+		<div class="mod-section-eyecatch"><img src="img/speakers/ico_01.png" alt="Special guests" width="60" height="69"></div>
+		<h1>海外スピーカー紹介</h1>
+	</header>
+		<section class="mod-speakerInfo" id="izs">
+		<a href="https://twitter.com/izs">
+			<header class="mod-speakerInfo-header">
+				<div class="mod-speakerInfo-image">
+					<img src="img/speakers/izs.jpg" alt="Isaac Schlueter" width="130" height="130">
+				</div>
+				<h1>Isaac Schlueter</h1>
+			</header>
+		</a>
+		<p><a href="http://joyent.com/">Joyent</a>で働くエンジニアであり、<a href="http://nodejs.org/">Node.js</a>のパッケージ管理ツールである<a href="https://npmjs.org/">npm</a>などの開発者です。現在はNode.jsのオリジナルの作者である<a href="https://twitter.com/ryah">Ryan</a>からその座を受け継ぎ、二代目のゲートキーパーとしてNode.jsの開発をリードしています。かつては掃除機のセールスをやっていたという異色の経歴を持つことでも有名。</p>
+	<!-- /.mod-speakerInfo --></section>
+
+	<section class="mod-speakerInfo" id="mikeal">
+		<a href="https://twitter.com/mikeal">
+			<header class="mod-speakerInfo-header">
+				<div class="mod-speakerInfo-image">
+					<img src="img/speakers/img_02.png" alt="Mikeal Rogers" width="130" height="130">
+				</div>
+				<h1>Mikeal Rogers</h1>
+			</header>
+		</a>
+		<p><a href="http://www.nodeconf.com/">NodeConf</a>の主催者であり、 Mozilla, CouchOne, Yammerと渡り、現在は<a href="https://gather.at/">Gather.at</a>というスタートアップで働く実力者です。<a href="https://npmjs.org/package/request">request</a>というモジュールを公開するように、 HTTP周りに非常に詳しく、MLでもNode.jsコアの通信周りにも鋭く切り込む場面が良くあります。非常にグルメなことでも知られており、日本食ではラーメンが好きだそうです。</p>
+	<!-- /.mod-speakerInfo --></section>
+
+	<section class="mod-speakerInfo" id="charlie">
+		<a href="https://twitter.com/indexzero">
+			<header class="mod-speakerInfo-header">
+				<div class="mod-speakerInfo-image">
+					<img src="img/speakers/img_01.png" alt="Charlie Robbins" width="130" height="130">
+				</div>
+				<h1>Charlie Robbins</h1>
+			</header>
+		</a>
+		<p>Node.jsのPaaSを提供する<a href="http://nodejitsu.com/">NodeJitsu</a>のCEOです。プロセス管理ツール<a href="https://npmjs.org/package/forever">forever</a>、プロキシ実装の<a href="https://npmjs.org/package/http-proxy">node-http-proxy</a>、 MVCフレームワークの<a href="https://npmjs.org/package/flatiron">Flatiron</a>、Loggerモジュールの<a href="https://npmjs.org/package/winston">Winston</a>など、様々な玄人向けモジュールの開発に関わる実力派です。元はMicrosoftでエンタープライズ開発に従事していたそうです。</p>
+	<!-- /.mod-speakerInfo --></section>
+
+	<section class="mod-speakerInfo" id="substack">
+		<a href="https://twitter.com/substack">
+			<header class="mod-speakerInfo-header">
+				<div class="mod-speakerInfo-image">
+					<img src="img/speakers/img_03.png" alt="James Halliday" width="130" height="130">
+				</div>
+				<h1>James Halliday</h1>
+			</header>
+		</a>
+		<p><a href="https://browserling.com/">browserling</a>というブラウザテストのクラウド環境を提供するスタートアップを立ち上げています。彼のサイトである<a href="http://substack.net/">The UNIVERSE of DISCORD</a>を訪れればわかるように、非常に独特な絵を描くことでも有名です。githubには283ものリポジトリを公開しており、npmに最も多くのモジュールをpublishする開発者です。</p>
+	<!-- /.mod-speakerInfo --></section>
+
+
+<!-- /.mod-section --></section>
+
+<section class="mod-section">
+	<header class="mod-section-header">
+		<div class="mod-section-eyecatch"><img src="img/speakers/ico_02.png" alt="Speakers" width="60" height="69"></div>
+		<h1>登壇者紹介</h1>
+	</header>
+
+	<p class="mod-note">近日公募予定</p>
+
+
+<!-- /.mod-section --></section>
+
+	<!-- LazyJaxDavis end -->
+	</div>
+
+	<div class="mod-pageBody-side">
+<section class="mod-sponsors">
+	<div class="mod-sponsors-header">
+		<div class="mod-sponsors-eyecatch"><img src="assets/img/mod-sponsors/img_01.png" alt="sponsors" height="46" width="40"></div>
+		<h1>スポンサー紹介</h1>
+	</div>
+
+	
+	<h2>Platinum Sponsors</h2>
+	<ul>
+		
+		<li><a href="http://www.recruit.jp/"><img src="assets/img/logo/recruit.png" alt="リクルート"></a></li>
+		
+	</ul>
+	
+	<h2>Gold Sponsors</h2>
+	<ul>
+		
+		<li><a href="http://dena.jp/engineer/"><img src="assets/img/logo/dena.png" alt="DeNA"></a></li>
+		
+		<li><a href="http://www.gree.co.jp"><img src="assets/img/logo/gree.png" alt="GREE"></a></li>
+		
+	</ul>
+	
+	<h2>Silver Sponsors</h2>
+	<ul>
+		
+		<li><a href="http://www.joyent.com"><img src="assets/img/logo/joyent.png" alt="Joyent"></a></li>
+		
+		<li><a href="http://nodejitsu.com/"><img src="assets/img/logo/nodejitsu.png" alt="Noejitsu"></a></li>
+		
+		<li><a href="http://cloud.nifty.com/"><img src="assets/img/logo/nifty.png" alt="ニフティ"></a></li>
+		
+		<li><a href="http://www.pxgrid.com/"><img src="assets/img/logo/pxgrid.png" alt="PixelGrid"></a></li>
+		
+	</ul>
+	
+	<h2>Supporters</h2>
+	<ul>
+		
+		<li><a href="http://node-ninja.com/"><img src="assets/img/logo/node-ninja.png" alt="Node Ninja"></a></li>
+		
+		<li><a href="http://cis.k.hosei.ac.jp/"><img src="assets/img/logo/housei.png" alt="法政大学情報科学部"></a></li>
+		
+		<li><a href="http://sinap.jp/"><img src="assets/img/logo/sinap.png" alt="SINAP"></a></li>
+		
+	</ul>
+	
+<!-- /..mod-sponsors --></section>
+
+<div class="mod-twitterWedget">
+  <div class="mod-twitterWedget-timeline">
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'search',
+  search: '#nodefest',
+  interval: 30000,
+  title: '#nodefest',
+  subject: '東京Node学園祭2012',
+  width: 290,
+  height: 330,
+  theme: {
+    shell: {
+      background: '#546c22',
+      color: '#fff52d'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#444444',
+      links: '#556c22'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: true,
+    live: true,
+    behavior: 'default'
+  }
+}).render().start();
+</script>
+</div>
+
+<a href="https://twitter.com/nodefest" class="twitter-follow-button" data-show-count="false" data-lang="ja">@nodefestさんをフォロー</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+
+	</div>
+<!-- /.mod-pageBody --></div>
+
+<footer class="mod-pageFooter">
+	<div class="mod-pageFooter-inner">
+		<small class="copyright">© 2012 東京Node学園祭 実行委員会 | <a href="#">Node.js 日本ユーザグループ</a></small>
+		<small class="createby">This site is created by <a href="http://www.pxgrid.com/">PixelGrid, Inc.</a> and <a href="http://sinap.jp">SINAP, Inc.</a></small>
+	</div>
+<!-- /.mod-pageFooter --></footer>
+
+
+<div id="avatarField"></div>
+
+<script type="text/x-tmpl" id="tmpl-avatar">
+<div class="mod-avatar-comment"></div>
+<img src="<%= image %>" alt="avatar">
+</script>
+
+</body>
+</html>
