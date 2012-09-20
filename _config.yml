@@ -2,6 +2,7 @@
 source: src
 destination: _site
 plugins: plugin
+socket_host: '210.152.156.43:80'
 scss:
   source: src/_scss
   destination: 2012/assets/css

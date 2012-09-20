@@ -7,7 +7,7 @@ var Nodefest = window.Nodefest = {
 };
 
 if (window.io) {
-  Nodefest.socket = io.connect('http://49.212.31.180:9000/');
+  Nodefest.socket = io.connect('http://' + window.socketHost + '/');
 }
 else {
   Nodefest.socket = {

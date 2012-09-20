@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
 <link rel="stylesheet" href="assets/css/style.css">
-<script src="http://49.212.31.180:9000/socket.io/socket.io.js"></script>
+<script src="http://{{ site.socket_host }}/socket.io/socket.io.js"></script>
+<script>window.socketHost = '{{ site.socket_host }}';</script>
 <script src="assets/js/lib.js"></script>
 <script src="assets/js/script.js"></script>
 </head>
