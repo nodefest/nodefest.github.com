@@ -89,13 +89,13 @@ sponsors:
         url: http://www.joyent.com
         img: joyent.png
         description: |-
-          Joyent は今日の Web やモバイル向けアプリケーションに求められる高度な要求に特化した、IaaS を提供するハイポフォーマンスなクラウドインフラストラクチャの企業です。
-          また Node.js をの開発を強く牽引する企業でもあり、サーバサイド JavaScript の開発環境を広く扱っています。
+          Joyent は今日の Web やモバイル向けアプリケーションに求められる高度な要求に特化した、IaaS を提供するハイパフォーマンスなクラウドインフラストラクチャの企業です。
+          また Node.js の開発を強く牽引する企業でもあり、サーバサイド JavaScript の開発環境を広く扱っています。
 
           興味のある方は[http://www.joyent.com](http://www.joyent.com)も是非御覧ください。
 
       - 
-        name: Noejitsu
+        name: Nodejitsu
         url: http://nodejitsu.com/
         img: nodejitsu.png
         description: |-
