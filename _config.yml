@@ -141,11 +141,41 @@ sponsors:
           シナップは、コミュニケーションをデザインする会社です。インターネットをコミュニケーション戦略の中心に据え、Webサイト、スマートフォンサイト、アプリ、各種広告・プロモーションなど、コミュニケーション・コンサルティングから実制作まで、一貫してサポートしています。
 
 sessions:
-  #LT:
-  #  -
-  #    name: スピーカー1
-  #    title: タイトル1
-  #    twitter: xxx
-  #  -
-  #    name: スピーカー2
-  #    title: タイトル2
+  LT:
+    -
+      name: animist
+      title: Node.js on Raspberry Pi
+      twitter: animist
+    -
+      name: cou929
+      title: ハテブからノードの動向を振り返る
+      twitter: cou929
+
+    -
+      name: Blacks_G
+      title: Node.jsで作る授業システム
+      twitter: Blacks_G
+
+    -
+      name: niccolli
+      title: node-serialportがつなげるハードウェア
+      twitter: niccolli
+
+    -
+      name: 村山
+      title: Node.jsを使った次世代2ch
+
+    -
+      name: hecomi
+      title: Node.js で音声認識家電コントロール
+      twitter: hecomi
+
+    -
+      name: muddydixon
+      title: Server side visualization
+      twitter: muddydixon
+
+    -
+      name: nazomikan
+      title: nude knock out
+      twitter: nazomikan
