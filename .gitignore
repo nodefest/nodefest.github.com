@@ -1,0 +1,11 @@
+# craps
+*.sass-cache
+.DS_Store
+.cache
+Thumbs.db
+_notes
+_delivery
+node_modules
+config.rb
+
+# compiled files

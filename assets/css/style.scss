@@ -1,0 +1,350 @@
+@import "_utility.scss";
+@import "_normalize.scss";
+
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200);
+@font-face {
+	font-family: 'BLACK';
+	src: url('../fonts/mplus-2p-heavy.eot?') format('eot'),
+	     url('../fonts/mplus-2p-heavy.woff') format('woff'),
+	     url('../fonts/mplus-2p-heavy.ttf')  format('truetype');
+}
+
+$basefontSize : 16;
+$color1 : #000;
+$tapHighlightColor: rgba(0,0,0,.7);
+
+/* ==========================================================================
+   base style
+   ========================================================================== */
+::-webkit-selection {background:$tapHighlightColor; color:#fff;}
+::-moz-selection    {background:$tapHighlightColor; color:#fff;}
+::selection         {background:$tapHighlightColor; color:#fff;}
+
+html{
+	color: $color1;
+	font-family: $fontSansSerif;
+	font-size:$basefontSize * 1px;
+	line-height: 1.5;
+	background: url("../img/misc/bg_01.png") repeat-y 50% 0;
+	background: url("../img/misc/bg_02.jpg") no-repeat 50% 0,
+	            url("../img/misc/bg_01.png") repeat-y 50% 0;
+}
+
+body{
+	margin:0;
+	padding:50px 0 0 0;
+	min-width: 1040px;
+	background: url("../img/misc/bg_03.png") repeat-y 50% -300px;
+	-webkit-animation: bgAnim 150s linear;
+	   -moz-animation: bgAnim 150s linear;
+	        animation: bgAnim 150s linear;
+}
+
+
+@-webkit-keyframes bgAnim {
+	from { background-position:50% 0; }
+	to   { background-position:50% -100%; }
+}
+@-moz-keyframes bgAnim {
+	from { background-position:50% 0; }
+	to   { background-position:50% -100%; }
+}
+@keyframes bgAnim {
+	from { background-position:50% 0; }
+	to   { background-position:50% -100%; }
+}
+
+a{
+	color: #12806a;
+}
+
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li{
+	margin: 0;
+	padding: 0;
+}
+
+/* ==========================================================================
+   mod-pageHeader
+   ========================================================================== */
+.mod-pageHeader{
+	@include clearfix();
+	background: url(../img/mod-pageHeader/bg_01.png) no-repeat 50% 0;
+	h1{
+		margin: 0;
+		padding: 10px;
+		float: left;
+		img{
+			display: block;
+		}
+	}
+}
+.mod-pageHeader-inner{
+	width: 1000px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+.mod-pageHeader-info{
+	font-size: font-size( 12 );
+	line-height: 1.4;
+	text-align: right;
+	padding:4px 0;
+	float: right;
+}
+.mod-pageHeader-info1{font-size: font-size( 18, 12 ); font-weight: bold; }
+.mod-pageHeader-info2{font-size: font-size( 14, 12 ); font-weight: bold; }
+.mod-pageHeader-info3{font-size: font-size( 14, 12 ); }
+.mod-pageHeader-info4{font-weight: bold; }
+
+/* ==========================================================================
+   mod-pageFooter
+   ========================================================================== */
+.mod-pageFooter{
+	color: #FFF;
+	font-size: font-size( 14 );
+	padding: 40px 0;
+	background: #16a085;
+	a{
+		color: #ffff00;
+	}
+}
+.mod-pageFooter-inner{
+	@include clearfix();
+	width: 1040px;
+	margin: 0 auto;
+}
+.mod-pageFooter-copyright{
+	float: left;
+}
+.mod-pageFooter-createdBy{
+	float: right;
+}
+
+/* ==========================================================================
+   mod-pageBody
+   ========================================================================== */
+.mod-pageBody{
+	@include clearfix();
+	width: 1000px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+/* ==========================================================================
+   mod-pageMain
+   ========================================================================== */
+.mod-pageMain{
+	width: 560px;
+	padding: 50px 40px 0;
+	float: right;
+}
+
+/* ==========================================================================
+   mod-pageSide
+   ========================================================================== */
+.mod-pageSide{
+	float: left;
+	width: 300px;
+}
+
+/* ==========================================================================
+   mod-nav
+   ========================================================================== */
+
+.mod-nav{
+	font-size: font-size( 26 );
+	margin: 0 0 20px;
+	padding: 10px;
+	background: url(../img/mod-nav/bg_01.png);
+	a{
+		color: #000;
+		font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-decoration: none;
+		padding: 0 0 0 26px;
+		background: url(../img/mod-nav/ico_01.png) no-repeat 0 50%;
+	}
+}
+
+
+/* ==========================================================================
+   mod-share
+   ========================================================================== */
+.mod-share{
+	margin: 20px 0;
+	text-align: center;
+	li{
+		display: inline-block;
+		vertical-align: bottom;
+	}
+}
+
+/* ==========================================================================
+   mod-twitterTimeline
+   ========================================================================== */
+.mod-twitterTimeline{
+	margin: 20px 0;
+}
+
+/* ==========================================================================
+   mod-sideItem
+   ========================================================================== */
+.mod-sideItem{
+	border: 2px solid #86eed7;
+	padding: 10px 5px;
+	margin: 20px 0;
+	background: #FFF;
+	iframe{
+		display: block;
+	}
+}
+
+/* ==========================================================================
+   mod-section
+   ========================================================================== */
+.mod-section{
+	margin: 0 0 3em;
+}
+
+/* ==========================================================================
+   mod-heading
+   ========================================================================== */
+.mod-heading{
+	margin: 0 -10px 2em -36px;
+	padding: 0 0 10px 38px;
+	line-height: 1;
+	background: url("../img/mod-heading/bg_01.png") no-repeat 0 100%;
+	*zoom:1;
+	h1, h2{
+		font-size: 100%;
+		margin: 0;
+	}
+	.mod-heading-en{
+		font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: font-size( 38 );
+		font-weight: normal;
+		display: light;
+	}
+	.mod-heading-ja{
+		font-family: "BLACK";
+		font-size: font-size( 22 );
+		font-weight: bold;
+		letter-spacing: -0.05em;
+		display: block;
+	}
+}
+
+
+/* ==========================================================================
+   mod-table
+   ========================================================================== */
+.mod-table{
+	margin: 1em 0;
+	th{
+		vertical-align: top;
+		padding: 0 20px 10px 0;
+		div{
+			color: #FFF;
+			font-weight: normal;
+			text-shadow: 0 0 3px rgba( 0, 0, 0, .2 );
+			position: relative;
+			margin: 0 10px;
+			padding: 3px 0;
+			background:url(../img/mod-table/bg_01.png);
+			&:after,
+			&:before{
+				content: '';
+				display: block;
+				width: 10px;
+				position: absolute;
+				top:0;
+				bottom:0;
+				background:url(../img/mod-table/bg_01.png);
+			}
+			&:after{
+				left: -10px;
+				background-position: 0 100%;
+			}
+			&:before{
+				right: -10px;
+				background-position: 100% 0;
+			}
+		}
+	}
+
+	td{
+		padding: 3px 0 10px;
+	}
+}
+
+/* ==========================================================================
+   mod-speaker
+   ========================================================================== */
+.mod-speaker{
+	min-height: 130px;
+	padding: 0 0 0 154px;
+	margin-bottom: 20px;
+	position: relative;
+	*zoom:1;
+	p{
+		margin-top: .5em;
+	}
+	p:last-child{
+		margin-bottom: 0;
+	}
+	.mod-speaker-image{
+		position: absolute;
+		top:0;
+		left: 0;
+		img{
+			display: block;
+		}
+	}
+	.mod-speaker-name{
+		color: #fff;
+		font-size: font-size( 18 );
+		text-shadow: 0 0 3px #009978, -1px -1px 1px rgba( 0, 0, 0, .5 );
+		position: relative;
+		display: inline-block;
+		margin:0 14px;
+		background: #16a085;
+		&:after,
+		&:before{
+			content: '';
+			position: absolute;
+			top:0;
+			bottom: 0;
+			width: 14px;
+			background: url("../img/mod-speaker/bg_01.png") no-repeat;
+		}
+		&:after {
+			left: -14px;
+			background-position: 0 50%;
+		}
+		&:before{
+			right: -14px;
+			background-position: 100% 50%;
+		}
+	}
+}
+
+
+/* ==========================================================================
+   mod-news
+   ========================================================================== */
+
+.mod-news{}
+.mod-news-date{
+	font-size: font-size( 14 );
+	color: #fff;
+	display: inline-block;
+	padding: 0 6px;
+	background: #838988;
+}
+.mod-news-text{
+	margin: .3em 0 .5em;
+}
