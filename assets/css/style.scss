@@ -9,7 +9,7 @@
 	     url('../fonts/mplus-2p-heavy.ttf')  format('truetype');
 }
 
-$basefontSize : 16;
+$basefontSize : 14;
 $color1 : #000;
 $tapHighlightColor: rgba(0,0,0,.7);
 
@@ -130,8 +130,9 @@ li{
    ========================================================================== */
 .mod-pageBody{
 	@include clearfix();
+	position: relative;
 	width: 1000px;
-	padding: 0 20px;
+	padding: 0 20px 20px;
 	margin: 0 auto;
 }
 
@@ -168,6 +169,12 @@ li{
 		padding: 0 0 0 26px;
 		background: url(../img/mod-nav/ico_01.png) no-repeat 0 50%;
 	}
+	li.mod-nav--current{
+		a{
+			color: #ffff00;
+			background-position: -400px 50%;
+		}
+	}
 }
 
 
@@ -201,6 +208,43 @@ li{
 	iframe{
 		display: block;
 	}
+}
+.mod-sideItem-heading{
+	font-size: font-size( 20 );
+	font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align: center;
+	padding: 0 60px;
+	margin: 1em 0 .5em;
+	background: url("../img/mod-sideItem/bg_01.png") no-repeat 50% 50%;
+}
+
+/* ==========================================================================
+   mod-sponsorLogo
+   ========================================================================== */
+.mod-sponsorLogo{
+	width: 200px;
+	margin: 0 auto 10px;
+	img{
+		display: block;
+	}
+}
+
+
+/* ==========================================================================
+   mod-pagetop
+   ========================================================================== */
+.mod-pagetop{
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	bottom: 50px;
+	right: -40px;
+	background: url("../img/mod-pagetop/bg_01.png") no-repeat;
+}
+
+@media ( max-width:1039px ) {
+	.mod-pagetop{ display: none; }
 }
 
 /* ==========================================================================
@@ -245,6 +289,7 @@ li{
 .mod-table{
 	margin: 1em 0;
 	th{
+		white-space: nowrap;
 		vertical-align: top;
 		padding: 0 20px 10px 0;
 		div{

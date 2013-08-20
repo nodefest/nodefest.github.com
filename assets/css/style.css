@@ -353,7 +353,7 @@ table {
 html {
   color: black;
   font-family: "\30D2\30E9\30AE\30CE\89D2\30B4\20\50\72\6F\20\57\33", "Hiragino Kaku Gothic Pro", "\30E1\30A4\30EA\30AA", Meiryo, "\FF2D\FF33\20\FF30\30B4\30B7\30C3\30AF", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
   background: url("../img/misc/bg_01.png") repeat-y 50% 0;
   background: url("../img/misc/bg_02.jpg") no-repeat 50% 0, url("../img/misc/bg_01.png") repeat-y 50% 0; }
@@ -424,7 +424,7 @@ li {
   margin: 0 auto; }
 
 .mod-pageHeader-info {
-  font-size: 0.75em;
+  font-size: 0.85714em;
   line-height: 1.4;
   text-align: right;
   padding: 4px 0;
@@ -449,7 +449,7 @@ li {
    ========================================================================== */
 .mod-pageFooter {
   color: #FFF;
-  font-size: 0.875em;
+  font-size: 1em;
   padding: 40px 0;
   background: #16a085; }
   .mod-pageFooter a {
@@ -476,8 +476,9 @@ li {
    ========================================================================== */
 .mod-pageBody {
   *zoom: 1;
+  position: relative;
   width: 1000px;
-  padding: 0 20px;
+  padding: 0 20px 20px;
   margin: 0 auto; }
   .mod-pageBody:before, .mod-pageBody:after {
     content: "";
@@ -504,7 +505,7 @@ li {
    mod-nav
    ========================================================================== */
 .mod-nav {
-  font-size: 1.625em;
+  font-size: 1.85714em;
   margin: 0 0 20px;
   padding: 10px;
   background: url(../img/mod-nav/bg_01.png); }
@@ -514,6 +515,9 @@ li {
     text-decoration: none;
     padding: 0 0 0 26px;
     background: url(../img/mod-nav/ico_01.png) no-repeat 0 50%; }
+  .mod-nav li.mod-nav--current a {
+    color: #ffff00;
+    background-position: -400px 50%; }
 
 /* ==========================================================================
    mod-share
@@ -542,6 +546,38 @@ li {
   .mod-sideItem iframe {
     display: block; }
 
+.mod-sideItem-heading {
+  font-size: 1.42857em;
+  font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  padding: 0 60px;
+  margin: 1em 0 .5em;
+  background: url("../img/mod-sideItem/bg_01.png") no-repeat 50% 50%; }
+
+/* ==========================================================================
+   mod-sponsorLogo
+   ========================================================================== */
+.mod-sponsorLogo {
+  width: 200px;
+  margin: 0 auto 10px; }
+  .mod-sponsorLogo img {
+    display: block; }
+
+/* ==========================================================================
+   mod-pagetop
+   ========================================================================== */
+.mod-pagetop {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 50px;
+  right: -40px;
+  background: url("../img/mod-pagetop/bg_01.png") no-repeat; }
+
+@media (max-width: 1039px) {
+  .mod-pagetop {
+    display: none; } }
 /* ==========================================================================
    mod-section
    ========================================================================== */
@@ -562,12 +598,12 @@ li {
     margin: 0; }
   .mod-heading .mod-heading-en {
     font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 2.375em;
+    font-size: 2.71429em;
     font-weight: normal;
     display: light; }
   .mod-heading .mod-heading-ja {
     font-family: "BLACK";
-    font-size: 1.375em;
+    font-size: 1.57143em;
     font-weight: bold;
     letter-spacing: -0.05em;
     display: block; }
@@ -578,6 +614,7 @@ li {
 .mod-table {
   margin: 1em 0; }
   .mod-table th {
+    white-space: nowrap;
     vertical-align: top;
     padding: 0 20px 10px 0; }
     .mod-table th div {
@@ -626,7 +663,7 @@ li {
       display: block; }
   .mod-speaker .mod-speaker-name {
     color: #fff;
-    font-size: 1.125em;
+    font-size: 1.28571em;
     text-shadow: 0 0 3px #009978, -1px -1px 1px rgba(0, 0, 0, 0.5);
     position: relative;
     display: inline-block;
@@ -650,7 +687,7 @@ li {
    mod-news
    ========================================================================== */
 .mod-news-date {
-  font-size: 0.875em;
+  font-size: 1em;
   color: #fff;
   display: inline-block;
   padding: 0 6px;
