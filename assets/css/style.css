@@ -363,30 +363,32 @@ body {
   padding: 50px 0 0 0;
   min-width: 1040px;
   background: url("../img/misc/bg_03.png") repeat-y 50% -300px;
-  -webkit-animation: bgAnim 150s linear;
-  -moz-animation: bgAnim 150s linear;
-  animation: bgAnim 150s linear; }
+  -webkit-animation: bgAnim 20s linear;
+  -moz-animation: bgAnim 20s linear;
+  animation: bgAnim 20s linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
 
 @-webkit-keyframes bgAnim {
   from {
     background-position: 50% 0; }
 
   to {
-    background-position: 50% -100%; } }
+    background-position: 50% -807px; } }
 
 @-moz-keyframes bgAnim {
   from {
     background-position: 50% 0; }
 
   to {
-    background-position: 50% -100%; } }
+    background-position: 50% -807px; } }
 
 @keyframes bgAnim {
   from {
     background-position: 50% 0; }
 
   to {
-    background-position: 50% -100%; } }
+    background-position: 50% -807px; } }
 
 a {
   color: #12806a; }
@@ -490,7 +492,7 @@ li {
    mod-pageMain
    ========================================================================== */
 .mod-pageMain {
-  width: 560px;
+  width: 600px;
   padding: 50px 40px 0;
   float: right; }
 
@@ -527,13 +529,27 @@ li {
   text-align: center; }
   .mod-share li {
     display: inline-block;
+    *display: inline;
+    *zoom: 1;
     vertical-align: bottom; }
 
 /* ==========================================================================
    mod-twitterTimeline
    ========================================================================== */
 .mod-twitterTimeline {
-  margin: 20px 0; }
+  margin: 20px 0;
+  border: 2px solid #86eed7;
+  border-radius: 6px 6px 0 0;
+  background: url("../img/mod-twitterTimeline/bg_01.png"); }
+  .mod-twitterTimeline iframe {
+    display: block; }
+  .mod-twitterTimeline .mod-twitterTimeline-title {
+    color: #009e96;
+    font-size: 0.85714em;
+    padding: 6px 0 0 4px; }
+  .mod-twitterTimeline .mod-twitterTimeline-subTitle {
+    padding: 0 0 0 4px;
+    margin-bottom: .5em; }
 
 /* ==========================================================================
    mod-sideItem
@@ -575,7 +591,7 @@ li {
   right: -40px;
   background: url("../img/mod-pagetop/bg_01.png") no-repeat; }
 
-@media (max-width: 1039px) {
+@media (max-width: 1140px) {
   .mod-pagetop {
     display: none; } }
 /* ==========================================================================
@@ -589,6 +605,7 @@ li {
    ========================================================================== */
 .mod-heading {
   margin: 0 -10px 2em -36px;
+  margin: 0 -10px 2em 0;
   padding: 0 0 10px 38px;
   line-height: 1;
   background: url("../img/mod-heading/bg_01.png") no-repeat 0 100%;
@@ -607,6 +624,52 @@ li {
     font-weight: bold;
     letter-spacing: -0.05em;
     display: block; }
+
+/* ==========================================================================
+   mod-heading2
+   ========================================================================== */
+.mod-heading2 {
+  padding: 0 10px;
+  margin: 3em 0 .8em; }
+  .mod-heading2 h2 {
+    color: #FFF;
+    font-size: 1.14286em;
+    font-weight: normal;
+    text-align: left;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    padding: 3px;
+    margin: 0;
+    position: relative;
+    background: #838988; }
+    .mod-heading2 h2:after, .mod-heading2 h2:before {
+      content: '';
+      display: block;
+      width: 10px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      background: url(../img/mod-timeTable/bg_01.png); }
+    .mod-heading2 h2:after {
+      left: -10px;
+      background-position: 0 100%; }
+    .mod-heading2 h2:before {
+      right: -10px;
+      background-position: 100% 0; }
+
+/* ==========================================================================
+   mod-heading3
+   ========================================================================== */
+.mod-heading3 {
+  margin: 1em 0 0; }
+  .mod-heading3 h3 {
+    color: #12806a;
+    font-weight: bold;
+    margin: 0; }
+  .mod-heading3 + p {
+    margin-top: 0; }
 
 /* ==========================================================================
    mod-table
@@ -690,8 +753,160 @@ li {
   font-size: 1em;
   color: #fff;
   display: inline-block;
+  *display: inline;
+  *zoom: 1;
   padding: 0 6px;
   background: #838988; }
 
 .mod-news-text {
   margin: .3em 0 .5em; }
+
+/* ==========================================================================
+   mod-timeTable
+   ========================================================================== */
+.mod-timeTable {
+  margin: 1em -5px 2em; }
+  .mod-timeTable table {
+    border-collapse: separate;
+    width: 100%; }
+  .mod-timeTable thead th {
+    padding: 0 16px 0 14px; }
+    .mod-timeTable thead th div {
+      color: #FFF;
+      font-weight: normal;
+      text-align: left;
+      text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+      padding: 3px;
+      position: relative;
+      background: #838988; }
+      .mod-timeTable thead th div:after, .mod-timeTable thead th div:before {
+        content: '';
+        display: block;
+        width: 10px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background: url(../img/mod-timeTable/bg_01.png); }
+      .mod-timeTable thead th div:after {
+        left: -10px;
+        background-position: 0 100%; }
+      .mod-timeTable thead th div:before {
+        right: -10px;
+        background-position: 100% 0; }
+  .mod-timeTable tbody th {
+    white-space: nowrap; }
+  .mod-timeTable tbody th, .mod-timeTable tbody td {
+    vertical-align: top;
+    text-align: left;
+    border-color: #fff;
+    border-color: rgba(0, 0, 0, 0);
+    border-style: solid;
+    border-width: 0 5px;
+    padding: 8px 16px 8px 12px;
+    background: #FFF;
+    background: url("../img/mod-timeTable/bg_03.png") repeat-y, url("../img/mod-timeTable/bg_02.png") no-repeat 100% 100%;
+    background-clip: padding-box; }
+  .mod-timeTable tbody tr:first-child td, .mod-timeTable tbody tr:first-child th {
+    border-top-width: 10px;
+    background: url("../img/mod-timeTable/bg_05.png") no-repeat 100% -2px, url("../img/mod-timeTable/bg_03.png") repeat-y, url("../img/mod-timeTable/bg_02.png") no-repeat 100% 100%;
+    background-clip: padding-box; }
+  .mod-timeTable tbody tr:last-child td, .mod-timeTable tbody tr:last-child th {
+    background: url("../img/mod-timeTable/bg_05.png") no-repeat 100% 100%, url("../img/mod-timeTable/bg_03.png") repeat-y, url("../img/mod-timeTable/bg_02.png") no-repeat 100% 100%;
+    background-clip: padding-box; }
+  .mod-timeTable tbody tr th.mod-timeTable--collapse,
+  .mod-timeTable tbody tr:first-child:last-child td,
+  .mod-timeTable tbody tr:first-child:last-child th {
+    background: url("../img/mod-timeTable/bg_05.png") no-repeat 100% 100%, url("../img/mod-timeTable/bg_04.png") repeat-x, url("../img/mod-timeTable/bg_03.png") repeat-y, url("../img/mod-timeTable/bg_02.png") no-repeat 100% 100%;
+    background-clip: padding-box; }
+  .mod-timeTable .mod-timeTable-title {
+    font-weight: bold; }
+  .mod-timeTable .mod-timeTable-heading {
+    color: #fff;
+    text-align: center;
+    padding: 2px 20px 1px;
+    margin-bottom: .8em;
+    background: url("../img/mod-timeTable/bg_06.png") no-repeat 0 50%, url("../img/mod-timeTable/bg_06.png") no-repeat 100% 50%;
+    background-color: #16a085; }
+
+/* ==========================================================================
+   mod-icon
+   ========================================================================== */
+.mod-icon {
+  display: inline-block;
+  width: 20px;
+  height: 15px;
+  background: url("../img/mod-icon/ico_01.png") no-repeat; }
+
+.mod-icon--movie {
+  background-position: 0 0; }
+
+a:hover .mod-icon--movie {
+  background-position: 0 -20px; }
+
+.mod-icon--slide {
+  background-position: -30px 0; }
+
+a:hover .mod-icon--slide {
+  background-position: -30px -20px; }
+
+/* ==========================================================================
+   mod-floorMap
+   ========================================================================== */
+.mod-floorMap h1 {
+  font-size: 1em;
+  text-align: center;
+  margin: 0 0 1em; }
+
+/* ==========================================================================
+   mod-image
+   ========================================================================== */
+.mod-image {
+  margin: 1em -1px; }
+  .mod-image img {
+    border: 1px solid #d6d6d6;
+    border-radius: 3px;
+    display: block;
+    margin: 0 auto; }
+
+/* ==========================================================================
+   mod-sponsor
+   ========================================================================== */
+.mod-sponsor {
+  position: relative;
+  min-height: 180px;
+  _height: 180px;
+  padding: 0 0 0 200px;
+  margin: 0 0 40px; }
+  .mod-sponsor a {
+    color: black;
+    text-decoration: none;
+    display: block; }
+  .mod-sponsor h1 {
+    color: #12806a;
+    font-size: 1.42857em;
+    text-decoration: underline;
+    margin: 0 0 .5em; }
+  .mod-sponsor p {
+    margin: 0 0 1em; }
+    .mod-sponsor p:last-child {
+      margin-bottom: 0; }
+
+.mod-sponsor-image {
+  position: absolute;
+  top: 0;
+  left: 0; }
+  .mod-sponsor-image img {
+    display: block;
+    border: 1px solid #838988;
+    border-radius: 6px; }
+
+/* ==========================================================================
+   mod-gmap
+   ========================================================================== */
+.mod-gmap {
+  display: block;
+  margin: 1em 0; }
+  .mod-gmap iframe {
+    display: block; }
+  .mod-gmap p {
+    margin: .3em 0 0; }
