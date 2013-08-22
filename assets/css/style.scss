@@ -96,7 +96,7 @@ li{
 	font-size: font-size( 12 );
 	line-height: 1.4;
 	text-align: right;
-	padding:4px 0;
+	padding:4px 20px 4px 0;
 	float: right;
 }
 .mod-pageHeader-info1{font-size: font-size( 18, 12 ); font-weight: bold; }
@@ -137,15 +137,33 @@ li{
 	width: 1000px;
 	padding: 0 20px 20px;
 	margin: 0 auto;
+	-webkit-perspective: 1000px;
+	   -moz-perspective: 1000px;
+	        perspective: 1000px;
+	-webkit-transform: perspective( 1000px );
+	   -moz-transform: perspective( 1000px );
+	        transform: perspective( 1000px );
+	-webkit-perspective-origin: 50% 0%;
+	   -moz-perspective-origin: 50% 0%;
+	        perspective-origin: 50% 0%;
 }
 
 /* ==========================================================================
    mod-pageMain
    ========================================================================== */
 .mod-pageMain{
-	width: 600px;
-	padding: 50px 40px 0;
+	width: 620px;
+	padding: 50px 20px 0;
 	float: right;
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+	        transition: all .2s;
+	&.mod-pageMain--changing{
+		opacity:.5;
+		-webkit-transform: translateZ( -50px );
+		   -moz-transform: translateZ( -50px );
+		        transform: translateZ( -50px );
+	}
 }
 
 /* ==========================================================================
@@ -171,6 +189,9 @@ li{
 		text-decoration: none;
 		padding: 0 0 0 26px;
 		background: url(../img/mod-nav/ico_01.png) no-repeat 0 50%;
+		-webkit-transition: color .2s;
+		   -moz-transition: color .2s;
+		        transition: color .2s;
 	}
 	li.mod-nav--current{
 		a{
@@ -278,8 +299,8 @@ li{
    mod-heading
    ========================================================================== */
 .mod-heading{
-	margin: 0 -10px 2em -36px;
-	margin: 0 -10px 2em 0;
+	// margin: 0 -10px 2em -36px;
+	margin: 0 -20px 2em -16px;
 	padding: 0 0 10px 38px;
 	line-height: 1;
 	background: url("../img/mod-heading/bg_01.png") no-repeat 0 100%;

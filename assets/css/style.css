@@ -429,7 +429,7 @@ li {
   font-size: 0.85714em;
   line-height: 1.4;
   text-align: right;
-  padding: 4px 0;
+  padding: 4px 20px 4px 0;
   float: right; }
 
 .mod-pageHeader-info1 {
@@ -481,7 +481,16 @@ li {
   position: relative;
   width: 1000px;
   padding: 0 20px 20px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transform: perspective(1000px);
+  -moz-transform: perspective(1000px);
+  transform: perspective(1000px);
+  -webkit-perspective-origin: 50% 0%;
+  -moz-perspective-origin: 50% 0%;
+  perspective-origin: 50% 0%; }
   .mod-pageBody:before, .mod-pageBody:after {
     content: "";
     display: table; }
@@ -492,9 +501,17 @@ li {
    mod-pageMain
    ========================================================================== */
 .mod-pageMain {
-  width: 600px;
-  padding: 50px 40px 0;
-  float: right; }
+  width: 620px;
+  padding: 50px 20px 0;
+  float: right;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  transition: all .2s; }
+  .mod-pageMain.mod-pageMain--changing {
+    opacity: .5;
+    -webkit-transform: translateZ(-50px);
+    -moz-transform: translateZ(-50px);
+    transform: translateZ(-50px); }
 
 /* ==========================================================================
    mod-pageSide
@@ -516,7 +533,10 @@ li {
     font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     padding: 0 0 0 26px;
-    background: url(../img/mod-nav/ico_01.png) no-repeat 0 50%; }
+    background: url(../img/mod-nav/ico_01.png) no-repeat 0 50%;
+    -webkit-transition: color .2s;
+    -moz-transition: color .2s;
+    transition: color .2s; }
   .mod-nav li.mod-nav--current a {
     color: #ffff00;
     background-position: -400px 50%; }
@@ -604,8 +624,7 @@ li {
    mod-heading
    ========================================================================== */
 .mod-heading {
-  margin: 0 -10px 2em -36px;
-  margin: 0 -10px 2em 0;
+  margin: 0 -20px 2em -16px;
   padding: 0 0 10px 38px;
   line-height: 1;
   background: url("../img/mod-heading/bg_01.png") no-repeat 0 100%;
@@ -910,3 +929,5 @@ a:hover .mod-icon--slide {
     display: block; }
   .mod-gmap p {
     margin: .3em 0 0; }
+
+/*@ sourceMappingURL=style.css.map */
