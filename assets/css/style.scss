@@ -27,15 +27,13 @@ html{
 	font-size:$basefontSize * 1px;
 	line-height: 1.5;
 	background: url("../img/misc/bg_01.png") repeat-y 50% 0;
-	background: url("../img/misc/bg_02.jpg") no-repeat 50% 0,
-	            url("../img/misc/bg_01.png") repeat-y 50% 0;
 }
 
 body{
 	margin:0;
 	padding:50px 0 0 0;
 	min-width: 1040px;
-	background: url("../img/misc/bg_03.png") repeat-y 50% -300px;
+	background: url("../img/misc/bg_02.png") repeat-y 50% -300px;
 	-webkit-animation: bgAnim 20s linear;
 	   -moz-animation: bgAnim 20s linear;
 	        animation: bgAnim 20s linear;

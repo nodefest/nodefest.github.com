@@ -355,14 +355,13 @@ html {
   font-family: "\30D2\30E9\30AE\30CE\89D2\30B4\20\50\72\6F\20\57\33", "Hiragino Kaku Gothic Pro", "\30E1\30A4\30EA\30AA", Meiryo, "\FF2D\FF33\20\FF30\30B4\30B7\30C3\30AF", sans-serif;
   font-size: 14px;
   line-height: 1.5;
-  background: url("../img/misc/bg_01.png") repeat-y 50% 0;
-  background: url("../img/misc/bg_02.jpg") no-repeat 50% 0, url("../img/misc/bg_01.png") repeat-y 50% 0; }
+  background: url("../img/misc/bg_01.png") repeat-y 50% 0; }
 
 body {
   margin: 0;
   padding: 50px 0 0 0;
   min-width: 1040px;
-  background: url("../img/misc/bg_03.png") repeat-y 50% -300px;
+  background: url("../img/misc/bg_02.png") repeat-y 50% -300px;
   -webkit-animation: bgAnim 20s linear;
   -moz-animation: bgAnim 20s linear;
   animation: bgAnim 20s linear;
