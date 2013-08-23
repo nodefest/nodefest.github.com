@@ -1,0 +1,124 @@
+---
+nav: sessions
+---
+{{> first }}
+
+<header class="mod-pageHeader">
+	<div class="mod-pageHeader-inner">
+		<h1><a href="/2013/"><img src="/2013/assets/img/mod-pageHeader/logo.png" height="72" width="280" alt="東京Node学園祭2013"></a></h1>
+		<div class="mod-pageHeader-info">
+			<span class="mod-pageHeader-info1">Tokyo Node Fest.</span><br>
+			<span class="mod-pageHeader-info2">2013年10月26日(土) 11:00-18:00</span>(予定)<br>
+			後夜祭<span class="mod-pageHeader-info3">18:30-</span><br>
+			<span class="mod-pageHeader-info4">ニフティ株式会社 セミナールーム（新宿フロントタワー内）</span>
+		</div>
+	</div>
+</header>
+
+<div class="mod-pageBody">
+	<div class="mod-pageMain"><!-- LazyJaxDavis start -->
+
+<section class="mod-section">
+	<div class="mod-heading">
+		<h1>
+			<span class="mod-heading-en">Session</span>
+			<span class="mod-heading-ja">学園祭セッション内容</span>
+		</h1>
+	</div>
+	<p>セッションは日本語・英語で行われます。</p>
+
+	<div class="mod-timeTable">
+		<table>
+			<thead>
+				<tr>
+					<th><div>時間</div></th>
+					<th><div>トラックA(S405 教室)</div></th>
+					<th><div>トラックB(S406 教室)</div></th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{{#each session.main }}
+					<tr>
+						<th>{{ time }}</th>
+						<td>
+							<div class="mod-timeTable-title">
+								{{ trackA.title }}
+								{{#isnt trackA.movie undefined}}<a href="{{trackA.movie}}"><span class="mod-icon mod-icon--movie"></span></a>{{/isnt}}
+								{{#isnt trackA.slide undefined}}<a href="{{trackA.slide}}"><span class="mod-icon mod-icon--slide"></span></a>{{/isnt}}
+							</div>
+							{{#isnt trackA.name undefined}}
+								<div class="mod-timeTable-speaker">
+									{{trackA.jobTitle}}
+									<a href="{{speakerUrl}}">{{trackA.speakerName}}</a>
+								</div>
+							{{/isnt}}
+						</td>
+						<td>
+							{{#isnt trackB undefined}}
+								<div class="mod-timeTable-title">
+									{{ trackB.title }}
+									{{#isnt trackB.movie undefined}}<a href="{{trackB.movie}}"><span class="mod-icon mod-icon--movie"></span></a>{{/isnt}}
+									{{#isnt trackB.slide undefined}}<a href="{{trackB.slide}}"><span class="mod-icon mod-icon--slide"></span></a>{{/isnt}}
+								</div>
+								{{#isnt trackB.name undefined}}
+									<div class="mod-timeTable-speaker">
+										{{trackB.jobTitle}}
+										<a href="{{speakerUrl}}">{{trackB.speakerName}}</a>
+									</div>
+								{{/isnt}}
+							{{else}}
+								-
+							{{/isnt}}
+						</td>
+					</tr>
+				{{/each}}
+			</tbody>
+
+			<tbody>
+				<tr>
+					<th>{{session.lt.time}}</th>
+					<td colspan="2">
+						<div class="mod-timeTable-heading">LT大会（各5分×8）</div>
+						{{#each session.lt.track }}
+							<div class="mod-timeTable-item">
+								<div class="mod-timeTable-title">
+									{{title}}
+									{{#isnt movie undefined}}<a href="{{movie}}"><span class="mod-icon mod-icon--movie"></span></a>{{/isnt}}
+									{{#isnt slide undefined}}<a href="{{slide}}"><span class="mod-icon mod-icon--slide"></span></a>{{/isnt}}
+								</div>
+								<div class="mod-timeTable-speaker">
+									<a href="{{speakerUrl}}">{{speakerName}}</a>
+								</div>
+							</div>
+						{{/each}}
+					</td>
+				</tr>
+			</tbody>
+
+			<tbody>
+				{{#each session.misc }}
+					<tr>
+						<th>{{time}}</th>
+						<td>
+							<div class="mod-timeTable-title">
+								{{title}}
+							</div>
+						</td>
+					</tr>
+				{{/each}}
+			</tbody>
+
+		</table>
+	</div>
+
+	<section class="mod-floorMap">
+		<h1>会場案内</h1>
+		<div class="mod-image">
+			<img src="http://img.pxgrid.net/620x380" width="620" height="380" alt="">
+		</div>
+	</section>
+
+</section>
+
+{{> second }}

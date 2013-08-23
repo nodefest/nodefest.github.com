@@ -1,0 +1,22 @@
+sponsors:
+  - name  : 企業名
+    url   : http://pxgrid.com
+    imageA: http://img.pxgrid.net/180x180
+    imageB: http://img.pxgrid.net/200x80
+    text  : 'markdown is available [google](http://google.com)'
+  - name  : 企業名2
+    url   : http://pxgrid.com
+    imageA: http://img.pxgrid.net/180x180
+    imageB: http://img.pxgrid.net/200x80
+    text  : 'markdown is available [google](http://google.com)'
+supporters:
+  - name  : 企業名3
+    url   : http://pxgrid.com
+    imageA: http://img.pxgrid.net/180x180
+    imageB: http://img.pxgrid.net/200x80
+    text  : 'markdown is available [google](http://google.com)'
+  - name  : 企業名4
+    url   : http://pxgrid.com
+    imageA: http://img.pxgrid.net/180x180
+    imageB: http://img.pxgrid.net/200x80
+    text  : 'markdown is available [google](http://google.com)'

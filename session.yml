@@ -1,0 +1,44 @@
+main:
+  - time: 10:00～10:25
+    trackA:
+      title: 会場
+  - time: 00:00～00:00
+    trackA:
+      title: 公演名A
+      jobTitle: jobタイトルA
+      speakerName: 名前A
+      speakerUrl: http://example.com
+      movie: http://example.com
+      slide: http://example.com
+    trackB:
+      title: 公演名B
+      jobTitle: jobタイトルB
+      speakerName: 名前B
+      movie: http://example.com
+      slide: http://example.com
+  - time: 00:00～00:00
+    trackA:
+      title: 公演名A
+      jobTitle: jobタイトルA
+      speakerName: 名前A
+    trackB:
+      title: 公演名B
+      jobTitle: jobタイトルB
+      speakerName: 名前B
+lt:
+  time: 00:00～00:00
+  track:
+  - title: 公演名
+    jobTitle: jobタイトル
+    speakerName: 名前
+    speakerUrl: http://example.com
+    movie: http://example.com
+    slide: http://example.com
+  - title: 公演名
+    jobTitle: jobタイトル
+    speakerName: 名前
+misc:
+- time: 00:00～00:00
+  title: 閉幕
+- time: 00:00～
+  title: 後夜祭

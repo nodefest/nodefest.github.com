@@ -1,0 +1,18 @@
+- name : 高林 貴仁
+  image: img/speaker_img_01.jpg
+  text : '[google](http://google.com)desuyo'
+- name : 高林 貴仁
+  image: img/speaker_img_01.jpg
+  text : '[リクルートテクノロジーズ/Advanced Technology Lab](http://example.com)所属。脳波データを利用してスロットカーを動かしてみました。Node( 脳DE).jsのバックエンドに関して紹介致します。'
+- name : 大津 繁樹
+  image: img/speaker_img_02.jpg
+  text : '[株式会社インターネットイニシアティブ](http://example.com)所属。SI エンジニア・コンサルタント、サービスエンジニアを経て現在Node.js、HTML5 などアプリケーション新技術の検証・評価を中心に行っています。最近はNode にずっぽりはまり、毎朝コミットログをチェックするのが日課になってます。'
+- name : Jon Keating
+  image: img/speaker_img_03.jpg
+  text : '[Geeklist](http://example.com)という開発者向けのSNSのSr. Software Engineerです。10年以上C++の経験を持ち、Node v0.4の頃からNode.jsに乗り換えました。元はヤフーでログイン、動画システム、Y!ボックスのバックエンドエンジニアです。'
+- name : swdyh
+  image: img/speaker_img_04.jpg
+  text : 'Webページの自動つぎ足しを行う[AutoPagerize](http://autopagerize.net) というブラウザ拡張機能をつくっています。その他の活動は[Github](http://example.com) や[ブログ](http://example.com)を見てください。'
+- name : Constellation
+  image: img/speaker_img_05.jpg
+  text : 'ECMA262 5.1th に準拠するEngine、iv/lv5を作成し最適化を行なっています。また、ECMAScript parserである[Esprima](http://example.com)のcommitterや、ASTから[ECMAScript](http://example.com)を生成するEscodegenのownerをしています。'
