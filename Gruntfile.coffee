@@ -1,6 +1,7 @@
 module.exports = (grunt) ->
   
   grunt.task.loadNpmTasks 'assemble'
+  grunt.task.loadNpmTasks 'grunt-contrib-sass'
 
   grunt.initConfig
 
@@ -36,7 +37,19 @@ module.exports = (grunt) ->
           }
         ]
 
-  grunt.registerTask 'default', [
+    sass:
+      dist:
+        options:
+          bundleExec: true
+        files:
+          '2013/assets/css/style.css': 'scss/style.scss'
+
+  grunt.registerTask 'build', [
+    'sass'
     'assemble'
+  ]
+
+  grunt.registerTask 'default', [
+    'build'
   ]
 
