@@ -6,43 +6,19 @@ module.exports = (grunt) ->
   grunt.initConfig
 
     assemble:
-
       options:
-        partials: 'partials/*.hbs'
-
-      pages:
-        options:
-          data: 'data/*.yml'
-
-        files: [
-          {
-            src: 'pagesrc/index.hbs'
-            dest: '2013/index.html'
-          },
-          {
-            src: 'pagesrc/sessions.hbs'
-            dest: '2013/sessions.html'
-          },
-          {
-            src: 'pagesrc/speakers.hbs'
-            dest: '2013/speakers.html'
-          },
-          {
-            src: 'pagesrc/sponsors.hbs'
-            dest: '2013/sponsors.html'
-          },
-          {
-            src: 'pagesrc/access.hbs'
-            dest: '2013/access.html'
-          }
-        ]
+        partials: 'src/partials/*.hbs'
+        data: 'data/*.yml'
+      dist:
+        files:
+          '2013/': 'src/tmpls/*.hbs'
 
     sass:
+      options:
+        bundleExec: true
       dist:
-        options:
-          bundleExec: true
         files:
-          '2013/assets/css/style.css': 'scss/style.scss'
+          '2013/assets/css/style.css': 'src/scss/style.scss'
 
   grunt.registerTask 'build', [
     'sass'
