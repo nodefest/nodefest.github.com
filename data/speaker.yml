@@ -1,8 +1,5 @@
 - name : 高林 貴仁
   image: img/speaker_img_01.jpg
-  text : '[google](http://google.com)desuyo'
-- name : 高林 貴仁
-  image: img/speaker_img_01.jpg
   text : '[リクルートテクノロジーズ/Advanced Technology Lab](http://example.com)所属。脳波データを利用してスロットカーを動かしてみました。Node( 脳DE).jsのバックエンドに関して紹介致します。'
 - name : 大津 繁樹
   image: img/speaker_img_02.jpg

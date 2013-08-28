@@ -3,21 +3,6 @@ nav: sessions
 ---
 {{> first }}
 
-<header class="mod-pageHeader">
-	<div class="mod-pageHeader-inner">
-		<h1><a href="/2013/"><img src="/2013/assets/img/mod-pageHeader/logo.png" height="72" width="280" alt="東京Node学園祭2013"></a></h1>
-		<div class="mod-pageHeader-info">
-			<span class="mod-pageHeader-info1">Tokyo Node Fest.</span><br>
-			<span class="mod-pageHeader-info2">2013年10月26日(土) 11:00-18:00</span>(予定)<br>
-			後夜祭<span class="mod-pageHeader-info3">18:30-</span><br>
-			<span class="mod-pageHeader-info4">ニフティ株式会社 セミナールーム（新宿フロントタワー内）</span>
-		</div>
-	</div>
-</header>
-
-<div class="mod-pageBody">
-	<div class="mod-pageMain"><!-- LazyJaxDavis start -->
-
 <section class="mod-section">
 	<div class="mod-heading">
 		<h1>
@@ -47,7 +32,7 @@ nav: sessions
 								{{#isnt trackA.movie undefined}}<a href="{{trackA.movie}}"><span class="mod-icon mod-icon--movie"></span></a>{{/isnt}}
 								{{#isnt trackA.slide undefined}}<a href="{{trackA.slide}}"><span class="mod-icon mod-icon--slide"></span></a>{{/isnt}}
 							</div>
-							{{#isnt trackA.name undefined}}
+							{{#isnt trackA.speakerName undefined}}
 								<div class="mod-timeTable-speaker">
 									{{trackA.jobTitle}}
 									<a href="{{speakerUrl}}">{{trackA.speakerName}}</a>
@@ -61,7 +46,7 @@ nav: sessions
 									{{#isnt trackB.movie undefined}}<a href="{{trackB.movie}}"><span class="mod-icon mod-icon--movie"></span></a>{{/isnt}}
 									{{#isnt trackB.slide undefined}}<a href="{{trackB.slide}}"><span class="mod-icon mod-icon--slide"></span></a>{{/isnt}}
 								</div>
-								{{#isnt trackB.name undefined}}
+								{{#isnt trackB.speakerName undefined}}
 									<div class="mod-timeTable-speaker">
 										{{trackB.jobTitle}}
 										<a href="{{speakerUrl}}">{{trackB.speakerName}}</a>
@@ -100,7 +85,7 @@ nav: sessions
 				{{#each session.misc }}
 					<tr>
 						<th>{{time}}</th>
-						<td>
+						<td colspan="2">
 							<div class="mod-timeTable-title">
 								{{title}}
 							</div>
