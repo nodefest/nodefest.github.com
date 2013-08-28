@@ -11,12 +11,4 @@ vendor/bundle
 .bundle
 
 # compiled files
-*.map
-
-
-access.html
-index.html
-sessions.html
-speakers.html
-sponsors.html
-2013/assets/css/style.css
+/build
