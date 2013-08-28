@@ -2,6 +2,8 @@ module.exports = (grunt) ->
   
   grunt.task.loadNpmTasks 'assemble'
   grunt.task.loadNpmTasks 'grunt-contrib-sass'
+  grunt.task.loadNpmTasks 'grunt-contrib-watch'
+  grunt.task.loadNpmTasks 'grunt-contrib-connect'
 
   grunt.initConfig
 
@@ -20,12 +22,18 @@ module.exports = (grunt) ->
         files:
           '2013/assets/css/style.css': 'src/scss/style.scss'
 
-  grunt.registerTask 'build', [
-    'sass'
-    'assemble'
-  ]
+    connect:
+      options:
+        port: process.env.PORT || 3000
 
-  grunt.registerTask 'default', [
-    'build'
-  ]
+    watch:
+      sass:
+        files: 'src/scss/*'
+        tasks: 'sass'
+      assemble:
+        files: ['data/*', 'src/tmpls/*', 'src/partials/*']
+        tasks: 'assemble'
 
+  grunt.registerTask 'build', ['sass', 'assemble']
+  grunt.registerTask 'server', ['build', 'connect', 'watch']
+  grunt.registerTask 'default', ['build']
