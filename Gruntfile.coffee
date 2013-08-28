@@ -11,7 +11,7 @@ module.exports = (grunt) ->
 
       pages:
         options:
-          data: [ 'news.yml', 'session.yml', 'speaker.yml', 'sponsor.yml' ]
+          data: 'data/*.yml'
 
         files: [
           {
