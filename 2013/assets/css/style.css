@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200);
+@import url(http://fonts.googleapis.com/css?family=Raleway:300);
 /* normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -331,9 +331,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/**
+ * IPA Font is licensed under the IPA Font License
+ * the original font file can be get from
+ * http://ossipedia.ipa.go.jp/ipafont/
+ */
 @font-face {
-  font-family: 'BLACK';
-  src: url("../fonts/mplus-2p-heavy.eot?") format("eot"), url("../fonts/mplus-2p-heavy.woff") format("woff"), url("../fonts/mplus-2p-heavy.ttf") format("truetype"); }
+  font-family: 'HEADING_BOLD';
+  src: url("../fonts/migmix-2p-bold.eot?") format("eot"), url("../fonts/migmix-2p-bold.woff") format("woff"), url("../fonts/migmix-2p-bold.ttf") format("truetype"); }
 
 /* ==========================================================================
    base style
@@ -529,7 +534,7 @@ li {
   background: url(../img/mod-nav/bg_01.png); }
   .mod-nav a {
     color: #000;
-    font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     padding: 0 0 0 26px;
     background: url(../img/mod-nav/ico_01.png) no-repeat 0 50%;
@@ -583,7 +588,7 @@ li {
 
 .mod-sideItem-heading {
   font-size: 1.42857em;
-  font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
   padding: 0 60px;
   margin: 1em 0 .5em;
@@ -632,12 +637,12 @@ li {
     font-size: 100%;
     margin: 0; }
   .mod-heading .mod-heading-en {
-    font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 2.71429em;
     font-weight: normal;
     display: light; }
   .mod-heading .mod-heading-ja {
-    font-family: "BLACK";
+    font-family: 'HEADING_BOLD';
     font-size: 1.57143em;
     font-weight: bold;
     letter-spacing: -0.05em;

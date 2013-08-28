@@ -1,12 +1,18 @@
 @import "_utility.scss";
 @import "_normalize.scss";
 
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200);
+@import url(http://fonts.googleapis.com/css?family=Raleway:300);
+
+/**
+ * IPA Font is licensed under the IPA Font License
+ * the original font file can be get from
+ * http://ossipedia.ipa.go.jp/ipafont/
+ */
 @font-face {
-	font-family: 'BLACK';
-	src: url('../fonts/mplus-2p-heavy.eot?') format('eot'),
-	     url('../fonts/mplus-2p-heavy.woff') format('woff'),
-	     url('../fonts/mplus-2p-heavy.ttf')  format('truetype');
+	font-family: 'HEADING_BOLD';
+	src: url('../fonts/migmix-2p-bold.eot?') format('eot'),
+	     url('../fonts/migmix-2p-bold.woff') format('woff'),
+	     url('../fonts/migmix-2p-bold.ttf')  format('truetype');
 }
 
 $basefontSize : 14;
@@ -183,7 +189,7 @@ li{
 	background: url(../img/mod-nav/bg_01.png);
 	a{
 		color: #000;
-		font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-decoration: none;
 		padding: 0 0 0 26px;
 		background: url(../img/mod-nav/ico_01.png) no-repeat 0 50%;
@@ -250,7 +256,7 @@ li{
 }
 .mod-sideItem-heading{
 	font-size: font-size( 20 );
-	font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-align: center;
 	padding: 0 60px;
 	margin: 1em 0 .5em;
@@ -308,13 +314,13 @@ li{
 		margin: 0;
 	}
 	.mod-heading-en{
-		font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
 		font-size: font-size( 38 );
 		font-weight: normal;
 		display: light;
 	}
 	.mod-heading-ja{
-		font-family: "BLACK";
+		font-family: 'HEADING_BOLD';
 		font-size: font-size( 22 );
 		font-weight: bold;
 		letter-spacing: -0.05em;
