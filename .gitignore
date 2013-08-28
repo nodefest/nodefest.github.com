@@ -10,3 +10,10 @@ config.rb
 
 # compiled files
 *.map
+
+
+access.html
+index.html
+sessions.html
+speakers.html
+sponsors.html
