@@ -45,18 +45,6 @@
 			</ul>
 		</div>
 
-		<div class="mod-twitterTimeline">
-			<div class="mod-twitterTimeline-title">nodefest on twitter</div>
-			<div class="mod-twitterTimeline-subTitle">「東京Node学園祭」についてのツイート</div>
-			<a class="twitter-timeline" href="https://twitter.com/Takazudo/pxgplus" data-widget-id="369885125518958592" width="296" height="500" >@Takazudo/pxgplus からのツイート</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-		</div>
-
-		<section class="mod-sideItem">
-			<a href="https://twitter.com/nodefest" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @nodefest</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-		</section>
-
 		<section class="mod-sideItem">
 
 			<div class="mod-sideItem-heading">Sponsors</div>
@@ -64,7 +52,7 @@
 {{#each sponsor.sponsors}}
 			<div class="mod-sponsorLogo">
 				<a href="{{ url }}">
-					<img src="{{ imageB }}" width="180" height="180" alt="{{ name }}">
+					<img src="{{ imageB }}" width="200" height="80" alt="{{ name }}">
 				</a>
 			</div>
 {{/each}}
@@ -74,11 +62,23 @@
 {{#each sponsor.supporters}}
 			<div class="mod-sponsorLogo">
 				<a href="{{ url }}">
-					<img src="{{ imageB }}" width="180" height="180" alt="{{ name }}">
+					<img src="{{ imageB }}" width="200" height="80" alt="{{ name }}">
 				</a>
 			</div>
 {{/each}}
 
+		</section>
+
+		<div class="mod-twitterTimeline">
+			<div class="mod-twitterTimeline-title">nodefest on twitter</div>
+			<div class="mod-twitterTimeline-subTitle">「東京Node学園祭」についてのツイート</div>
+			<a class="twitter-timeline" href="https://twitter.com/search?q=%23nodefest" data-widget-id="372335677225971712">#nodefest に関するツイート</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div>
+
+		<section class="mod-sideItem">
+			<a href="https://twitter.com/nodefest" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @nodefest</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 		</section>
 
 	</div>

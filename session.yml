@@ -1,7 +1,7 @@
 main:
   - time: 10:00～10:25
     trackA:
-      title: 会場
+      title: 開場
   - time: 00:00～00:00
     trackA:
       title: 公演名A
