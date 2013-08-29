@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width">
+<title></title>
+<style>
+body{margin: 0;padding: 0;}
+canvas{display: block;}
+</style>
+</head>
+<body>
+
+<div id="bg"></div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script>
+
+var DOT_RADIUS = 4;
+
+var RAF = ( function(){
+  return window.requestAnimationFrame       ||
+         window.webkitRequestAnimationFrame ||
+         function( callback ){
+             window.setTimeout( callback, 1000.0 / 60.0 );
+         };
+} )();
+
+
+var $el = $( '#bg' );
+var $canvas = $( '<canvas/>' );
+$el.append( $canvas );
+$canvas.attr( {
+  'width' : window.innerWidth,
+  'height': window.innerHeight
+} );
+ctx = $canvas[ 0 ].getContext( '2d' );
+
+var x = 100, y = 100, timestamp = Date.now();
+
+( function drawPoints () {
+  var now = Date.now();
+  var elapsedTime = now - timestamp;
+  if( elapsedTime < 20000 ) {
+    requestAnimationFrame( drawPoints );
+  }
+  $canvas[ 0 ].width = $canvas[ 0 ].width;
+
+  var progress = Math.min( ( now - timestamp ) / 3000, 1 );
+
+  drawDot( 100, 100, progress );
+
+  //dummy ---
+      drawDot( 200, 200, Math.min( ( now - timestamp - 1000 ) / 3000, 1 ) );
+      drawDot( 200, 300, Math.min( ( now - timestamp - 2000 ) / 3000, 1 ) );
+      drawDot( 200, 100, Math.min( ( now - timestamp - 3000 ) / 3000, 1 ) );
+  //dummy ---
+  
+} )();
+
+function drawDot ( x, y, progress ) {
+  if ( ! ( 0 < progress && progress < 1 ) ) {
+    return;
+  };
+  var COLOR1 = [ 82, 204, 186 ];
+  var COLOR2 = [ 255, 248, 59 ];
+  var color = [];
+
+  var localProgress1 = getLocalProgress( 0, 0.05 );
+  var r = DOT_RADIUS - 3 + ( 3 * localProgress1 );
+  var r2 = DOT_RADIUS + 10 - ( 6 * localProgress1 );
+
+  for ( var i = 0; i < 3; i ++ ) {
+    var localProgress2 = getLocalProgress( 0.5, 0.8 );
+    color[ i ] = ( COLOR1[ i ] + ( COLOR2[ i ] - COLOR1[ i ] ) * localProgress2 )|0;
+  }
+  var alpha = 1 - getLocalProgress( 0.9, 1 );
+
+  ctx.save();
+  ctx.beginPath();
+  ctx.arc( x, y, r, 0, Math.PI * 2, false );
+  ctx.fillStyle = 'rgba( ' + color[ 0 ] + ', ' + color[ 1 ] + ', ' + color[ 2 ] + ',' + alpha + ' )';
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.arc( x, y, r2, 0, Math.PI * 2, false );
+  ctx.fillStyle = 'rgba( ' + color[ 0 ] + ', ' + color[ 1 ] + ', ' + color[ 2 ] + ', ' + Math.min( 0.2, alpha ) + ')';
+  ctx.fill();
+
+  ctx.restore();
+
+  function getLocalProgress ( min, max ) {
+    if ( progress < min ) {
+      return 0;
+    }
+    if ( progress > max ) {
+      return 1;
+    }
+    return ( progress - min ) * 1 / ( max - min );
+  }
+}
+
+
+
+
+</script>
+
+
+</body>
+</html>
