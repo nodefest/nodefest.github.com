@@ -39,26 +39,6 @@ body{
 	margin:0;
 	padding:50px 0 0 0;
 	min-width: 1040px;
-	background: url("../img/misc/bg_02.png") repeat-y 50% -300px;
-	-webkit-animation: bgAnim 20s linear;
-	   -moz-animation: bgAnim 20s linear;
-	        animation: bgAnim 20s linear;
-	-webkit-animation-iteration-count: infinite;
-	        animation-iteration-count: infinite;
-}
-
-
-@-webkit-keyframes bgAnim {
-	from { background-position:50% 0; }
-	to   { background-position:50% -807px; }
-}
-@-moz-keyframes bgAnim {
-	from { background-position:50% 0; }
-	to   { background-position:50% -807px; }
-}
-@keyframes bgAnim {
-	from { background-position:50% 0; }
-	to   { background-position:50% -807px; }
 }
 
 a{
@@ -81,6 +61,8 @@ li{
    ========================================================================== */
 .mod-pageHeader{
 	@include clearfix();
+	position: relative;
+	z-index: 1;
 	background: url(../img/mod-pageHeader/bg_01.png) no-repeat 50% 0;
 	h1{
 		margin: 0;
@@ -114,6 +96,8 @@ li{
 .mod-pageFooter{
 	color: #FFF;
 	font-size: font-size( 14 );
+	position: relative;
+	z-index: 1;
 	padding: 40px 0;
 	background: #16a085;
 	a{
@@ -138,6 +122,8 @@ li{
 .mod-pageBody{
 	@include clearfix();
 	position: relative;
+	z-index: 1;
+	zoom: 1;
 	width: 1000px;
 	padding: 0 20px 20px;
 	margin: 0 auto;
@@ -682,4 +668,38 @@ a:hover .mod-icon--slide{background-position: -30px -20px;}
 		margin: .3em 0 0;
 	}
 }
+/* ==========================================================================
+   #dotEffect
+   ========================================================================== */
+#dotEffect{
+	top:0;
+	bottom:0;
+	left: 0;
+	right: 0;
+	position: absolute;
+	background: url("../img/misc/bg_02.png") repeat-y 50% -300px;
+	-webkit-animation: bgAnim 20s linear;
+	   -moz-animation: bgAnim 20s linear;
+	        animation: bgAnim 20s linear;
+	-webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+	canvas{
+		top:0;
+		left: 0;
+		position: fixed;
+		display: block;
+	}
+}
 
+@-webkit-keyframes bgAnim {
+	from { background-position:50% 0; }
+	to   { background-position:50% -807px; }
+}
+@-moz-keyframes bgAnim {
+	from { background-position:50% 0; }
+	to   { background-position:50% -807px; }
+}
+@keyframes bgAnim {
+	from { background-position:50% 0; }
+	to   { background-position:50% -807px; }
+}

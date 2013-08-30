@@ -1,33 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title></title>
-<style>
-body{margin: 0;padding: 0;}
-canvas{display: block;}
-#bg{
-  top:0;
-  bottom:0;
-  left: 0;
-  right: 0;
-  position: absolute;
-}
-#bg canvas{
-  top:0;
-  left: 0;
-  position: fixed;
-  display: block;
-}
-</style>
-</head>
-<body>
-
-<div id="bg"></div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<!-- <script src="http://pxgrid.net:8000/socket.io/socket.io.js"></script> -->
-<script src="http://localhost:8000/socket.io/socket.io.js"></script>
-<script>
 ( function () {
   var DOT_RADIUS = 3;
 
@@ -39,7 +9,7 @@ canvas{display: block;}
            };
   } )();
 
-  var $el = $( '#bg' );
+  var $el = $( '#dotEffect' );
   var $canvas = $( '<canvas/>' );
   $el.append( $canvas );
   $canvas.attr( {
@@ -230,7 +200,7 @@ canvas{display: block;}
 
   //---- sockets
 
-  var socket = io.connect( 'http://localhost:8000' );
+  var socket = io.connect( 'http://pxgrid.net:8000' );
 
   socket.on( 'connect', function() {
     socket.emit( 'client_firstConnect', me );
@@ -249,7 +219,3 @@ canvas{display: block;}
   } );
 
 } )();
-</script>
-
-</body>
-</html>

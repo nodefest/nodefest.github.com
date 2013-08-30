@@ -11,7 +11,7 @@ io.sockets.on( 'connection', function ( socket ) {
       myID : socket.id,
       players : players
     } );
-  });
+  } );
 
   socket.on( 'client_pushMyData', function ( data ) {
     players[ data.id ] = {
@@ -22,9 +22,9 @@ io.sockets.on( 'connection', function ( socket ) {
   socket.on( 'disconnect', function () {
     delete players[ socket.id ];
   } );
-});
+} );
 
 ( function loop () {
-    setTimeout( loop, 500 );
+    setTimeout( loop, 50 );
     io.sockets.emit( 'server_sync', players );
 } )();
