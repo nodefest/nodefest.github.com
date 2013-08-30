@@ -12,7 +12,7 @@ canvas{display: block;}
 <div id="bg"></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<script src="http://localhost:8000/socket.io/socket.io.js"></script> 
+<script src="http://pxgrid.net:8000/socket.io/socket.io.js"></script> 
 <script>
 
 var DOT_RADIUS = 3;
@@ -210,9 +210,9 @@ function getLocalProgress ( min, max, progress ) {
 
 //---- sockets
 
-var socket = io.connect('http://localhost:8000');
+var socket = io.connect( 'http://pxgrid.net:8000' );
 
-socket.on('connect', function() {
+socket.on( 'connect', function() {
   socket.emit( 'client_firstConnect', me );
 } );
 
