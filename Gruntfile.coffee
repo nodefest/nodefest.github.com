@@ -1,4 +1,7 @@
 BUILD_DIR = 'build/2013'
+DEPLOY_DIR = 'deploy'
+DEPLOY_BRANCH = 'master'
+DEPLOY_REPOSITORY = 'git@github.com:hakobera/nodefest_2013.git'
 
 module.exports = (grunt) ->
   
@@ -8,6 +11,7 @@ module.exports = (grunt) ->
   grunt.task.loadNpmTasks 'grunt-contrib-clean'
   grunt.task.loadNpmTasks 'grunt-contrib-connect'
   grunt.task.loadNpmTasks 'grunt-contrib-watch'
+  grunt.loadTasks 'tasks'
 
   grunt.initConfig
 
@@ -31,11 +35,16 @@ module.exports = (grunt) ->
         ]
 
     copy:
-      dist:
+      static:
         expand: true
         cwd: 'src/static'
         src: '**/*'
         dest: BUILD_DIR
+      deploy:
+        expand: true
+        cwd: BUILD_DIR
+        src: ['**/*', '!**/_**/*', '!**/_*'] # ignore files start with underscore.
+        dest: "#{DEPLOY_DIR}/2013"
 
     clean: [BUILD_DIR]
 
@@ -56,6 +65,18 @@ module.exports = (grunt) ->
         files: 'src/static/**/*'
         tasks: 'copy'
 
-  grunt.registerTask 'build', ['clean', 'sass', 'assemble', 'copy']
+    setup:
+      repository: DEPLOY_REPOSITORY
+      branch: DEPLOY_BRANCH
+      dir: DEPLOY_DIR
+
+    deploy:
+      #dryrun: true
+      branch: DEPLOY_BRANCH
+      dir: DEPLOY_DIR
+      message: 'Update 2013 with <%= sha1 %>'
+
+  grunt.registerTask 'build', ['clean', 'sass', 'assemble', 'copy:static']
   grunt.registerTask 'server', ['build', 'connect', 'watch']
+  grunt.registerTask 'publish', ['setup', 'build', 'copy:deploy', 'deploy']
   grunt.registerTask 'default', ['build']
