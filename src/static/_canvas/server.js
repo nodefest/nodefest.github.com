@@ -14,7 +14,6 @@ io.sockets.on( 'connection', function ( socket ) {
   });
 
   socket.on( 'client_pushMyData', function ( data ) {
-    console.log( data.id );
     players[ data.id ] = {
       points: data.points
     };
