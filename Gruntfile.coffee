@@ -63,7 +63,7 @@ module.exports = (grunt) ->
         tasks: 'sass'
       copy:
         files: 'src/static/**/*'
-        tasks: 'copy'
+        tasks: 'copy:static'
 
     setup:
       repository: DEPLOY_REPOSITORY
