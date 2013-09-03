@@ -27,7 +27,7 @@
             var $navItem = $( this );
             var href = $navItem.find( 'a' ).attr( 'href' );
             var url = document.URL;
-            if ( new RegExp( href ).test( url ) || isHome ){
+            if ( new RegExp( href ).test( url ) ){
               $navItem.addClass( 'mod-nav--current' );
             } else {
               $navItem.removeClass( 'mod-nav--current' );
