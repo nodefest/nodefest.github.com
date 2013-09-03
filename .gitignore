@@ -9,6 +9,7 @@ node_modules
 config.rb
 vendor/bundle
 .bundle
+/deploy
 
 # compiled files
 /build
