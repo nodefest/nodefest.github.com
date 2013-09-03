@@ -26,8 +26,11 @@
           $navItems.each( function () {
             var $navItem = $( this );
             var href = $navItem.find( 'a' ).attr( 'href' );
-            var url = document.URL;
-            if ( new RegExp( href ).test( url ) ){
+            var path = location.pathname;
+            if (path.match(/\/$/)){
+              path += 'index.html';
+            }
+            if ( path === href ){
               $navItem.addClass( 'mod-nav--current' );
             } else {
               $navItem.removeClass( 'mod-nav--current' );
