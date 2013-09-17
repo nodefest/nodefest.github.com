@@ -1,14 +1,37 @@
 sponsors:
-  - name  : 企業名
-    url   : http://pxgrid.com
+  - name  : 株式会社 ドワンゴ
+    url   : http://info.dwango.co.jp/
+    imageA: http://img.pxgrid.net/180x180
+    imageB: http://img.pxgrid.net/200x80
+    text  : |-
+        株式会社ドワンゴは、ゲームや音楽をはじめとするエンタテインメント分野において、次世代ネットワークコミュニケーションの創出を目指す、ネットワーク・エンタテインメント・カンパニーです。
+
+        約3,400万人の登録ユーザー数を誇る国内最大級の動画サイト「niconico（ニコニコ動画）」の運営をはじめ、モバイル向け音楽配信、ゲームソフト及びオンラインゲームの企画・開発・販売などを行っています。高度なネットワーク技術と独創的な発想を強みに、良質なコンテンツを様々なプラットフォームに提供しています。
+
+  - name  : 株式会社 ディー・エヌ・エー
+    url   : http://dena.com/
     imageA: http://img.pxgrid.net/180x180
     imageB: http://img.pxgrid.net/200x80
     text  : 'markdown is available [google](http://google.com)'
-  - name  : 企業名2
-    url   : http://pxgrid.com
+
+  - name  : ニフティ株式会社
+    url   : http://www.nifty.co.jp/
     imageA: http://img.pxgrid.net/180x180
     imageB: http://img.pxgrid.net/200x80
-    text  : 'markdown is available [google](http://google.com)'
+    text  : |-
+        ニフティ株式会社は、インターネットサービス「＠nifty（アット・ニフティ）」やパブリック型クラウドサービス「NIFTY Cloud（ニフティクラウド）」などを提供している企業です。自社サービスの開発ではNode.jsにも取り組んでいます。
+
+        当社は今後も“ニフティとなら、きっとかなう。With Us, You Can.”をコーポレートメッセージとし、高品質で安心・安全なサービスの提供を通じて、お客様の日々の生活をより便利で豊かにするための支援をしています。
+
+  - name  : 株式会社リクルートテクノロジーズ
+    url   : http://recruit-tech.co.jp/
+    imageA: http://img.pxgrid.net/180x180
+    imageB: http://img.pxgrid.net/200x80
+    text  : |-
+        株式会社リクルートテクノロジーズはリクルートグループのIT・ネットマーケティングテクノロジー開発機能会社です。
+
+        リクルートグループ各社のニーズを見据えて競合優位性の高いIT・ネットマーケティング基盤を開拓、実装することにより、競争優位を構築していきます。業界を驚かせるレベルでテクノロジーの開拓を行い、業界のルールをイノベーションによって変革して行きます。オープンソースを積極的に活用しており、リアルタイムWebの実現に向けNode.jsの導入などに取り組んでいます。
+
 supporters:
   - name  : 企業名3
     url   : http://pxgrid.com
