@@ -11,7 +11,7 @@ var DOT_RADIUS = 3;
 var $canvas = $('<canvas>');
 var canvas = $canvas.get(0);
 
-$canvas.appendTo('#dotEffect').attr({
+$canvas.appendTo('body').attr({
   'width' : window.innerWidth,
   'height': window.innerHeight
 });
@@ -28,7 +28,7 @@ var me = new User();
 
 var socket;
 if (window.io) {
-  socket = io.connect( 'http://' + window.__socketServer );
+  socket = io.connect('http://localhost:8080/');
 
   socket.emit('create', function(result) {
     $.each(result.users, function(id, point) {

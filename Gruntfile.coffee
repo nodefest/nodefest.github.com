@@ -17,6 +17,7 @@ module.exports = (grunt) ->
 
     assemble:
       options:
+        socketServer: process.env['SOCKET_HOST'] || 'nodefest2013.c.node-ninja.com:80'
         partials: 'src/partials/*.hbs'
         data: 'data/*.yml'
       dist:
