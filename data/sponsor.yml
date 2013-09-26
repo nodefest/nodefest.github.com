@@ -27,15 +27,3 @@ sponsors:
         株式会社リクルートテクノロジーズはリクルートグループのIT・ネットマーケティングテクノロジー開発機能会社です。
 
         リクルートグループ各社のニーズを見据えて競合優位性の高いIT・ネットマーケティング基盤を開拓、実装することにより、競争優位を構築していきます。業界を驚かせるレベルでテクノロジーの開拓を行い、業界のルールをイノベーションによって変革して行きます。オープンソースを積極的に活用しており、リアルタイムWebの実現に向けNode.jsの導入などに取り組んでいます。
-
-supporters:
-  - name  : 企業名3
-    url   : http://pxgrid.com
-    imageA: http://img.pxgrid.net/180x180
-    imageB: http://img.pxgrid.net/200x80
-    text  : 'markdown is available [google](http://google.com)'
-  - name  : 企業名4
-    url   : http://pxgrid.com
-    imageA: http://img.pxgrid.net/180x180
-    imageB: http://img.pxgrid.net/200x80
-    text  : 'markdown is available [google](http://google.com)'

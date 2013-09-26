@@ -25,26 +25,4 @@ nav: sponsors
 
 </section>
 
-<section class="mod-section">
-	<div class="mod-heading">
-		<h1>
-			<span class="mod-heading-en">Supporters</span>
-			<span class="mod-heading-ja">サポーター紹介</span>
-		</h1>
-	</div>
-
-	{{#each sponsor.supporters}}
-	<section class="mod-sponsor">
-		<a href="{{ url }}">
-			<div class="mod-sponsor-image">
-				<img src="{{ imageA }}" width="180" height="180" alt="">
-			</div>
-			<h1>{{ name }}</h1>
-			{{#markdown}}{{ text }}{{/markdown}}
-		</a>
-	</section>
-	{{/each}}
-
-</section>
-
 {{> second }}
