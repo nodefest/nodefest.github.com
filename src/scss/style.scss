@@ -259,7 +259,6 @@ li{
 	padding: 10px 5px;
 	margin: 20px 0;
 	background: #FFF;
-	background: rgba( 255, 255, 255, .8 );
 	iframe{
 		display: block;
 	}
@@ -278,7 +277,7 @@ li{
    ========================================================================== */
 .mod-sponsorLogo{
 	width: 200px;
-	margin: 0 auto 10px;
+	margin: 25px auto;
 	img{
 		display: block;
 	}
@@ -649,7 +648,7 @@ a:hover .mod-icon--slide{background-position: -30px -20px;}
 	position: relative;
 	min-height: 180px;
 	_height: 180px;
-	padding: 0 0 0 200px;
+	padding: 0 0 0 205px;
 	margin: 0 0 40px;
 	a{
 		color: $color1;
@@ -671,12 +670,18 @@ a:hover .mod-icon--slide{background-position: -30px -20px;}
 }
 .mod-sponsor-image{
 	position: absolute;
+	display: table;
 	top:0;
 	left: 0;
-	img{
-		display: block;
+	>div {
+		display: table-cell;
+		width: 180px;
+		height: 180px;
 		border: 1px solid #838988;
+		text-align: center;
 		border-radius: 6px;
+		background: #FFF;
+		vertical-align: middle;
 	}
 }
 /* ==========================================================================
