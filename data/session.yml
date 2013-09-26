@@ -1,44 +1,74 @@
 main:
-  - time: 10:00～10:25
+  - time: 12:00 〜
     trackA:
       title: 開場
-  - time: 00:00～00:00
+
+  - time: 13:00 〜 13:10 
     trackA:
-      title: 公演名A
-      jobTitle: jobタイトルA
-      speakerName: 名前A
-      speakerUrl: http://example.com
-      movie: http://example.com
-      slide: http://example.com
-    trackB:
-      title: 公演名B
-      jobTitle: jobタイトルB
-      speakerName: 名前B
-      movie: http://example.com
-      slide: http://example.com
-  - time: 00:00～00:00
+      title: 挨拶/会場注意
+      speakerName: '@muddydixon'
+      speakerUrl: https://twitter.com/muddydixon
+      #movie: http://example.com
+      #slide: http://example.com
+
+  - time: 13:10 〜 13:30
     trackA:
-      title: 公演名A
-      jobTitle: jobタイトルA
-      speakerName: 名前A
+      title: 基調講演
+      #jobTitle: 学園祭 実行委員長
+      speakerName: '@meso'
+      speakerUrl: https://twitter.com/meso
+      #movie: http://example.com
+      #slide: http://example.com
+
+  - time: 13:45 〜 14:15
+    trackA:
+      title: Rendr（仮）
+      speakerName: '@mshk'
+      speakerUrl: https://twitter.com/mshk
     trackB:
-      title: 公演名B
-      jobTitle: jobタイトルB
-      speakerName: 名前B
+      title: Grunt, Yeoman, Sails.js
+      speakerName: '@yosuke_furukawa'
+      speakerUrl: https://twitter.com/yosuke_furukawa
+
+  - time: 14:30 〜 15:00
+    trackA:
+      title: JSX（仮）
+      speakerName: '@kazuho'
+      speakerUrl: https://twitter.com/kazuho
+    trackB:
+      title: Node.jsに足りないもの
+      speakerName: '@tricknotes'
+      speakerUrl: https://twitter.com/tricknotes
+
+  - time: 15:30 〜 16:00
+    trackA:
+      title: ES6で変わるNode.jsプログラミング
+      speakerName: '@Constellation'
+      speakerUrl: https://twitter.com/Constellation
+    trackB:
+      title: 公募中
+
+  - time: 16:15 〜 16:45
+    trackA:
+      title: ロボットの外部脳としてのnode.js
+      speakerName: '@shougo'
+      speakerUrl: https://twitter.com/shougo
+    trackB:
+      title: 公募中
+
 lt:
-  time: 00:00～00:00
+  time: 17:00 〜 17:30
   track:
-  - title: 公演名
-    jobTitle: jobタイトル
-    speakerName: 名前
-    speakerUrl: http://example.com
-    movie: http://example.com
-    slide: http://example.com
-  - title: 公演名
-    jobTitle: jobタイトル
-    speakerName: 名前
+  #- title: 公演名
+  #  speakerName: 名前
+  #  speakerUrl: http://example.com
+  #  movie: http://example.com
+  #  slide: http://example.com
+  #- title: 公演名
+  #  jobTitle: jobタイトル
+  #  speakerName: 名前
 misc:
-- time: 00:00～00:00
-  title: 閉幕
-- time: 00:00～
+- time: 17:30 ～
+  title: 閉会 + 撤収
+- time: 18:30 〜
   title: 後夜祭
