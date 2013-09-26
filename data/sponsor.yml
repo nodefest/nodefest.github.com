@@ -1,8 +1,7 @@
 sponsors:
   - name  : 株式会社 ドワンゴ
     url   : http://info.dwango.co.jp/
-    imageA: http://img.pxgrid.net/180x180
-    imageB: http://img.pxgrid.net/200x80
+    image: img/sponsor_dwango.png
     text  : |-
         株式会社ドワンゴは、ゲームや音楽をはじめとするエンタテインメント分野において、次世代ネットワークコミュニケーションの創出を目指す、ネットワーク・エンタテインメント・カンパニーです。
 
@@ -10,14 +9,12 @@ sponsors:
 
   - name  : 株式会社 ディー・エヌ・エー
     url   : http://dena.com/
-    imageA: http://img.pxgrid.net/180x180
-    imageB: http://img.pxgrid.net/200x80
+    image: img/sponsor_dena.png
     text  : 'markdown is available [google](http://google.com)'
 
   - name  : ニフティ株式会社
     url   : http://www.nifty.co.jp/
-    imageA: http://img.pxgrid.net/180x180
-    imageB: http://img.pxgrid.net/200x80
+    image: img/sponsor_nifty.png
     text  : |-
         ニフティ株式会社は、インターネットサービス「＠nifty（アット・ニフティ）」やパブリック型クラウドサービス「NIFTY Cloud（ニフティクラウド）」などを提供している企業です。自社サービスの開発ではNode.jsにも取り組んでいます。
 
@@ -25,8 +22,7 @@ sponsors:
 
   - name  : 株式会社リクルートテクノロジーズ
     url   : http://recruit-tech.co.jp/
-    imageA: http://img.pxgrid.net/180x180
-    imageB: http://img.pxgrid.net/200x80
+    image: img/sponsor_recruit.png
     text  : |-
         株式会社リクルートテクノロジーズはリクルートグループのIT・ネットマーケティングテクノロジー開発機能会社です。
 
