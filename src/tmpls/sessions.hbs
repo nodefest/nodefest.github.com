@@ -35,7 +35,7 @@ nav: sessions
 							{{#isnt trackA.speakerName undefined}}
 								<div class="mod-timeTable-speaker">
 									{{trackA.jobTitle}}
-									<a href="{{speakerUrl}}">{{trackA.speakerName}}</a>
+									<a href="{{trackA.speakerUrl}}">{{trackA.speakerName}}</a>
 								</div>
 							{{/isnt}}
 						</td>
@@ -49,7 +49,7 @@ nav: sessions
 								{{#isnt trackB.speakerName undefined}}
 									<div class="mod-timeTable-speaker">
 										{{trackB.jobTitle}}
-										<a href="{{speakerUrl}}">{{trackB.speakerName}}</a>
+										<a href="{{trackB.speakerUrl}}">{{trackB.speakerName}}</a>
 									</div>
 								{{/isnt}}
 							{{else}}
