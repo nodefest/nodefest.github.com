@@ -17,6 +17,7 @@ module.exports = (grunt) ->
 
     assemble:
       options:
+        socketServer: process.env['SOCKET_HOST'] || 'localhost:8080'
         partials: 'src/partials/*.hbs'
         data: 'data/*.yml'
       dist:
