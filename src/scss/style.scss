@@ -673,7 +673,7 @@ a:hover .mod-icon--slide{background-position: -30px -20px;}
 	display: table;
 	top:0;
 	left: 0;
-	>div {
+	> div {
 		display: table-cell;
 		width: 180px;
 		height: 180px;
@@ -682,6 +682,24 @@ a:hover .mod-icon--slide{background-position: -30px -20px;}
 		border-radius: 6px;
 		background: #FFF;
 		vertical-align: middle;
+	}
+	img {
+		vertical-align: bottom;
+	}
+	.type {
+		position: absolute;
+		bottom: 10px;
+		display: block;
+		width: 100%;
+		text-align: center;
+		> span {
+			display: inline-block;
+			background: #808080;
+			color: #FFF;
+			border-radius: 5px;
+			font-size: 14px;
+			padding: 2px 15px;
+		}
 	}
 }
 /* ==========================================================================

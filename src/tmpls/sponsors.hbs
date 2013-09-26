@@ -16,6 +16,9 @@ nav: sponsors
 		<a href="{{ url }}">
 			<div class="mod-sponsor-image"><div>
 				<img src="{{ image }}" alt="{{ name }}">
+				{{#if type}}
+				<span class="type"><span>{{type}}</span></span>
+				{{/if}}
 			</div></div>
 			<h1>{{ name }}</h1>
 			{{#markdown}}{{ text }}{{/markdown}}
