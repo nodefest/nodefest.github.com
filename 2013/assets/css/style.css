@@ -361,7 +361,7 @@ html {
   font-size: 14px;
   line-height: 1.5;
   height: 100%;
-  background: url("../img/misc/bg_01.png") repeat-y 50% 0; }
+  background: url("../img/misc/bg_01.png") 50% 0; }
 
 body {
   margin: 0;
