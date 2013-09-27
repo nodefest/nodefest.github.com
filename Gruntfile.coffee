@@ -1,7 +1,7 @@
 BUILD_DIR = 'build/2013'
 DEPLOY_DIR = 'deploy'
 DEPLOY_BRANCH = 'master'
-DEPLOY_REPOSITORY = 'git@github.com:hakobera/nodefest_2013.git'
+DEPLOY_REPOSITORY = 'git@github.com:nodefest/nodefest.github.com.git'
 
 module.exports = (grunt) ->
   
