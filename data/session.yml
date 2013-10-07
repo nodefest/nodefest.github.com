@@ -3,7 +3,7 @@ main:
     trackA:
       title: 開場
 
-  - time: 13:00 〜 13:10 
+  - time: 13:00 〜 13:10
     trackA:
       title: 挨拶/会場注意
       speakerName: '@muddydixon'
@@ -22,7 +22,7 @@ main:
 
   - time: 13:45 〜 14:15
     trackA:
-      title: Rendr（仮）
+      title: Rendr
       speakerName: '@mshk'
       speakerUrl: https://twitter.com/mshk
     trackB:
@@ -32,7 +32,7 @@ main:
 
   - time: 14:30 〜 15:00
     trackA:
-      title: JSX（仮）
+      title: JSXネタ
       speakerName: '@kazuho'
       speakerUrl: https://twitter.com/kazuho
     trackB:
@@ -46,7 +46,8 @@ main:
       speakerName: '@Constellation'
       speakerUrl: https://twitter.com/Constellation
     trackB:
-      title: 公募中
+      title: Node.jsで学生向けe-learningサイトを作った話
+      speakerName: '吉田徹生'
 
   - time: 16:15 〜 16:45
     trackA:
@@ -54,7 +55,8 @@ main:
       speakerName: '@shougo'
       speakerUrl: https://twitter.com/shougo
     trackB:
-      title: 公募中
+      title: WebRTCを始めよう
+      speakerName: 'がねこまさし'
 
 lt:
   time: 17:00 〜 17:30
