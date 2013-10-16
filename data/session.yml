@@ -61,6 +61,25 @@ main:
 lt:
   time: 17:00 〜 17:30
   track:
+  - title: ユニークで堅牢なセレクターの作り方
+    speakerName: '@ngs'
+    speakerUrl: https://twitter.com/ngs
+
+  - title: 実践で使える拙作npmモジュール
+    speakerName: '@maaash'
+    speakerUrl: https://twitter.com/maaash
+
+  - title: Node.js on Windows and Windows Azure
+    speakerName: 佐藤直生
+
+  - title: マイナーaltJS百花繚乱
+    speakerName: '@esehara'
+    speakerUrl: https://twitter.com/esehara
+
+  - title: Webアプリケーション開発と管理のコツ
+    speakerName: '@ystk_skm'
+    speakerUrl: https://twitter.com/ystk_skm
+
   #- title: 公演名
   #  speakerName: 名前
   #  speakerUrl: http://example.com
