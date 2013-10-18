@@ -28,7 +28,7 @@ var me = new User();
 
 var socket;
 if (window.io) {
-  socket = io.connect( 'http://' + window.__socketServer, { 'sync disconnect on unload' : true } );
+  socket = io.connect( 'http://' + window.__socketServer );
 
   socket.emit('create', function(result) {
     $.each(result.users, function(id, point) {
