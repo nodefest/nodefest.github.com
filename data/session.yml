@@ -26,7 +26,7 @@ main:
       speakerName: '@mshk'
       speakerUrl: https://twitter.com/mshk
     trackB:
-      title: Grunt, Yeoman, Sails.js
+      title: Grunt, Yeoman, Bower
       speakerName: '@yosuke_furukawa'
       speakerUrl: https://twitter.com/yosuke_furukawa
 
@@ -36,7 +36,7 @@ main:
       speakerName: '@kazuho'
       speakerUrl: https://twitter.com/kazuho
     trackB:
-      title: Node.jsに足りないもの
+      title: Node.jsを選ぶとき,選ばないとき
       speakerName: '@tricknotes'
       speakerUrl: https://twitter.com/tricknotes
 
