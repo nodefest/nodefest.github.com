@@ -535,12 +535,13 @@ a img:hover {
   margin: auto; }
 
 .l-header__logo {
+  float: left;
   width: 210px;
-  float: left; }
+  padding-top: 10px; }
 
 .l-header__utility {
-  width: 576px;
-  float: right; }
+  float: right;
+  width: 576px; }
 
 .l-header__info {
   padding: 6px 0 18px; }
