@@ -1,0 +1,476 @@
+@import "bourbon/bourbon";
+@import "normalize";
+
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700);
+
+@font-face {
+  font-family: 'NotoSansJP-Light';
+  src: url('/fonts/NotoSansJP-Light.eot') format('eot'),
+       url('/fonts/NotoSansJP-Light.woff') format('woff'),
+}
+@font-face {
+  font-family: 'NotoSansJP-Regular';
+  src: url('/fonts/NotoSansJP-Regular.eot') format('eot'),
+       url('/fonts/NotoSansJP-Regular.woff') format('woff'),
+}
+@font-face {
+  font-family: 'NotoSansJP-Medium';
+  src: url('/fonts/NotoSansJP-Medium.eot') format('eot'),
+       url('/fonts/NotoSansJP-Medium.woff') format('woff'),
+}
+
+$basefontSize: 16px;
+$basefontColor: #333;
+$linkColor: #1f8c6f;
+$mainColor: #28b38d;
+$tapHighlightColor: #1f8c6f;
+$headerHeight: 112px;
+$transitionTime: .5s;
+
+/* ==========================================================================
+   base style
+   ========================================================================== */
+::-webkit-selection { background: $tapHighlightColor; color: #fff; }
+::-moz-selection    { background: $tapHighlightColor; color: #fff; }
+::selection         { background: $tapHighlightColor; color: #fff; }
+
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: $basefontColor;
+  font-family: sans-serif;
+  font-size: $basefontSize;
+  line-height: 1.5;
+}
+body {
+  position: relative;
+  min-width: 800px;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: $linkColor;
+}
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+small {
+  font-size: inherit;
+}
+header, footer,
+h1, h2, h3, h4, h5, h6,
+ul, ol, li, p {
+  margin: 0;
+  padding: 0;
+}
+img {
+  vertical-align: top;
+}
+a img {
+  transition: opacity $transitionTime;
+}
+a img:hover {
+  opacity: .7;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 108px;
+  border-top: 4px solid $mainColor;
+  background: #fff;
+  box-shadow: 0 0 5px 0 rgba(38, 56, 47, .2);
+}
+.l-header__inner {
+  width: 800px;
+  margin: auto;
+}
+.l-header__logo {
+  width: 210px;
+  float: left;
+}
+.l-header__utility {
+  width: 576px;
+  float: right;
+}
+.l-header__info {
+  padding: 6px 0 18px;
+}
+
+.l-intro {
+  width: 800px;
+  margin: 0 auto;
+  padding-top: $headerHeight;
+}
+
+.l-content {
+  width: 800px;
+  margin: 0 auto;
+  background: #fff url(/img/l-content.png) repeat-y;
+}
+
+.l-footer {
+  width: 100%;
+  background: $mainColor;
+}
+.l-footer a {
+  color: #fff;
+}
+.l-footer__inner {
+  @include clearfix;
+  width: 800px;
+  margin: auto;
+  padding: 10px 0;
+}
+
+.l-fireworks {
+  position: fixed;
+  top: $headerHeight;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: #666;
+}
+
+/* ==========================================================================
+   Modules
+   ========================================================================== */
+
+/* header module */
+.scheduleInfo {
+  font-size: 10px;
+  font-weight: bold;
+}
+.scheduleInfo > li {
+  display: inline-block;
+  margin-right: 8px;
+}
+.scheduleInfo__title {
+  display: inline-block;
+  margin-right: 2px;
+  padding: 2px 5px;
+  background: $mainColor;
+  color: #fff;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+
+.nav {
+  @include clearfix;
+  position: absolute;
+  bottom: 0;
+  font-family: 'Noto Sans', sans-serif;
+}
+.nav > li {
+  float: left;
+  position: relative;
+  width: 96px;
+  text-align: center;
+}
+.nav a {
+  display: block;
+  height: 59px;
+  padding-top: 8px;
+  color: $basefontColor;
+  text-decoration: none;
+  font-weight: bold;
+}
+.nav a:hover {
+  background: #e7f5f1;
+}
+.nav__ico {
+  display: block;
+}
+.nav__ico:after {
+  content: "";
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  background: #ccc;
+}
+
+/* footer module */
+.copyright {
+  float: left;
+  font-size: 12px;
+}
+.createdBy {
+  float: right;
+  font-size: 12px;
+}
+
+/* content module */
+.section {
+  padding: 35px 50px 80px;
+}
+.section__header {
+  margin-bottom: 35px;
+  text-align: center;
+}
+.section__title {
+  display: inline-block;
+  min-height: 50px;
+  padding: 30px 0 0 50px;
+  background: url(/img/section__title.png) no-repeat;
+  color: $mainColor;
+  font-size: 48px;
+  font-weight: bold;
+  font-family: 'Noto Sans', sans-serif;
+  line-height: 1;
+}
+.section__subTitle {
+  font-size: 30px;
+  font-weight: normal;
+  font-family: 'NotoSansJP-Light', sans-serif;
+}
+.section--sponsors {
+  background: #fff;
+}
+
+.intro {
+  position: relative;
+  padding: 120px 0 70px;
+  color: #fff;
+  text-align: center;
+}
+.intro a {
+  color: #fff;
+}
+.intro__subTitle {
+  font-size: 20px;
+  font-family: 'NotoSansJP-Regular', sans-serif;
+}
+.intro__title {
+  font-size: 80px;
+  font-family: 'Noto Sans', 'NotoSansJP-Medium', sans-serif;
+  white-space: nowrap;
+}
+.intro__texts {
+  margin-bottom: 35px;
+}
+.intro__datetime {
+  font-family: 'Noto Sans', 'NotoSansJP-Medium', sans-serif;
+}
+.intro__date {
+  font-size: 38px;
+  font-weight: bold;
+}
+.intro__num {
+  font-size: 66px;
+  font-weight: bold;
+}
+.intro__time {
+  font-size: 22px;
+  font-weight: bold;
+}
+.intro__separator {
+  font-size: 20px;
+}
+.intro__afterParty {
+  font-size: 16px;
+}
+.intro__place {
+  font-size: 22px;
+  font-family: 'Noto Sans', 'NotoSansJP-Medium', sans-serif;
+}
+.intro__buttons {
+  margin-bottom: 60px;
+  text-align: center;
+}
+.intro__button {
+  display: inline-block;
+  padding: 10px 45px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 22px;
+  font-family: 'Noto Sans', 'NotoSansJP-Medium', sans-serif;
+  text-decoration: none;
+  transition: background $transitionTime;
+}
+.intro__button:before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin: 0 10px 0 0;
+  border-style: solid;
+  border-width: 5px 0 5px 6px;
+  border-color: transparent transparent transparent #ffffff;
+  vertical-align: middle;
+}
+.intro__button:hover {
+  background: rgba(255, 255, 255, .2);
+}
+.intro__detail {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  font-family: 'Noto Sans', 'NotoSansJP-Medium', sans-serif;
+}
+
+.recentNews {
+  background: rgba(0, 0, 0, .3);
+  padding: 5px 0;
+  font-size: 12px;
+  vertical-align: middle;
+}
+.recentNews__title {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 16px;
+}
+.recentNews__subTitle {
+  display: inline-block;
+  vertical-align: middle;
+}
+.recentNews__date {
+  display: inline-block;
+  vertical-align: middle;
+}
+.recentNews__text {
+  width: 30em;
+  margin-left: 1em;
+  vertical-align: middle;
+  @include ellipsis(30em);
+}
+
+.texts > p + p {
+  margin-top: 1.5em;
+}
+
+.table--row {
+  border-top: 2px solid #d9d9d9;
+  border-bottom: 2px solid #d9d9d9;
+}
+.table--row th,
+.table--row td {
+  padding: 10px 0;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  vertical-align: top;
+}
+.table--row th {
+  width: 160px;
+  text-align: center;
+}
+
+.thumbList__item + .thumbList__item {
+  margin-top: 50px;
+}
+.thumbList__item {
+  @include clearfix;
+}
+.thumbList__thumb {
+  float: left;
+  overflow: hidden;
+  margin-right: 20px;
+}
+.thumbList__thumb > a {
+  display: inline-block;
+  border: 8px solid #cce2dc;
+}
+.thumbList__title {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.dateList {
+  list-style: none;
+}
+.dateList > li + li {
+  @include clearfix;
+  margin-top: 20px;
+}
+.dateList__date {
+  float: left;
+  overflow: hidden;
+  width: 160px;
+  margin-right: 35px;
+  padding: 3px 0;
+  background: #d9d9d9;
+  font-size: 14px;
+  text-align: center;
+}
+
+.bannerList {
+  @include clearfix;
+  overflow: hidden;
+  width: 720px;
+  margin: 0 -20px -20px 0;
+}
+.bannerList > li {
+  float: left;
+  margin: 0 20px 20px 0;
+}
+
+.l-socialParts {
+  @include clearfix;
+  padding: 80px 50px;
+  background: #f0f0f0;
+}
+.l-socialParts__left {
+  float: left;
+  width: 345px;
+}
+.l-socialParts__right {
+  float: right;
+  width: 345px;
+}
+
+.socialParts + .socialParts {
+  margin-top: 45px;
+}
+.socialParts__title {
+  margin: 0 0 20px;
+  padding: 5px 0;
+  background: $mainColor;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Noto Sans', sans-serif;
+  text-align: center;
+}
+.socialParts__content {
+  font-size: 14px;
+}
+
+.followButton {
+  text-align: center;
+}
+.followButton__title {
+  font-weight: bold;
+}
+
+.twitterTimeline {
+  border: 2px solid $mainColor;
+  border-radius: 6px;
+  background: #fff;
+}
+.twitterTimeline__header {
+  padding: 5px 10px;
+  background: $mainColor;
+  color: #fff;
+}
+.twitterTimeline__title,
+.twitterTimeline__subTitle {
+  font-size: 12px;
+  font-weight: bold;
+}
+.twitterTimeline__content {
+  height: 378px;
+}
