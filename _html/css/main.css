@@ -531,6 +531,9 @@ table {
 @font-face {
   font-family: 'NotoSansJP-Medium';
   src: url("/fonts/NotoSansJP-Medium.eot") format("eot"), url("/fonts/NotoSansJP-Medium.woff") format("woff"); }
+@font-face {
+  font-family: 'NotoSansJP-Bold';
+  src: url("/fonts/NotoSansJP-Bold.eot") format("eot"), url("/fonts/NotoSansJP-Bold.woff") format("woff"); }
 /* ==========================================================================
    base style
    ========================================================================== */

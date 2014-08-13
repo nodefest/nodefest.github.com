@@ -19,6 +19,11 @@
   src: url('/fonts/NotoSansJP-Medium.eot') format('eot'),
        url('/fonts/NotoSansJP-Medium.woff') format('woff'),
 }
+@font-face {
+  font-family: 'NotoSansJP-Bold';
+  src: url('/fonts/NotoSansJP-Bold.eot') format('eot'),
+       url('/fonts/NotoSansJP-Bold.woff') format('woff'),
+}
 
 $basefontSize: 16px;
 $basefontColor: #333;
@@ -349,30 +354,33 @@ a img:hover {
   left: 50%;
   font-family: 'Noto Sans', 'NotoSansJP-Medium', sans-serif;
 }
+.intro__recentNews {
+  position: relative;
+  z-index: 1;
+}
 
 .recentNews {
   background: rgba(0, 0, 0, .3);
   padding: 5px 0;
   font-size: 12px;
-  vertical-align: middle;
 }
 .recentNews__title {
-  display: inline-block;
-  vertical-align: middle;
   font-size: 16px;
+  font-weight: bold;
+  font-family: 'Noto Sans', sans-serif;
 }
 .recentNews__subTitle {
-  display: inline-block;
-  vertical-align: middle;
+  font-family: 'Noto Sans', 'NotoSansJP-Bold', sans-serif;
 }
 .recentNews__date {
-  display: inline-block;
-  vertical-align: middle;
 }
 .recentNews__text {
-  width: 30em;
   margin-left: 1em;
-  vertical-align: middle;
+  
+}
+.recentNews__text a {
+  width: 30em;
+  vertical-align: text-bottom;
   @include ellipsis(30em);
 }
 
