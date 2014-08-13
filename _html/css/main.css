@@ -871,29 +871,29 @@ a img:hover {
   left: 50%;
   font-family: 'Noto Sans', 'NotoSansJP-Medium', sans-serif; }
 
+.intro__recentNews {
+  position: relative;
+  z-index: 1; }
+
 .recentNews {
   background: rgba(0, 0, 0, 0.3);
   padding: 5px 0;
-  font-size: 12px;
-  vertical-align: middle; }
+  font-size: 12px; }
 
 .recentNews__title {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 16px; }
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Noto Sans', sans-serif; }
 
 .recentNews__subTitle {
-  display: inline-block;
-  vertical-align: middle; }
-
-.recentNews__date {
-  display: inline-block;
-  vertical-align: middle; }
+  font-family: 'Noto Sans', 'NotoSansJP-Bold', sans-serif; }
 
 .recentNews__text {
+  margin-left: 1em; }
+
+.recentNews__text a {
   width: 30em;
-  margin-left: 1em;
-  vertical-align: middle;
+  vertical-align: text-bottom;
   display: inline-block;
   max-width: 30em;
   overflow: hidden;
