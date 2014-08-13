@@ -5,16 +5,21 @@
   var app = {
 
     run: function () {
-      this.$window = $(window);
-      this.$header = $('.l-header');
-      this.$intro  = $('.l-intro');
+      this.$window     = $(window);
+      this.$header     = $('.l-header');
+      this.$intro      = $('.l-intro');
       this.$fireworks  = $('.l-fireworks');
+      this.$help       = $('.help');
+      this.$helpButton = $('.help__button');
+      this.$helpList   = $('.help__list');
 
       this.windowHeight = window.innerHeight;
       this.headerHeight = this.$header.height();
 
       this.useEaseScrollable();
       this.resizeContentsHeight();
+
+      setTimeout($.proxy(this.hideHelp, this), 3000);
 
       this.eventify();
     },
@@ -23,6 +28,7 @@
       var self = this;
 
       self.$window.on('resize', $.proxy(self.resizeContentsHeight, self));
+      self.$helpButton.on('click', $.proxy(self.toggleHelp, self));
     },
 
     resizeContentsHeight: function () {
@@ -42,6 +48,14 @@
         adjustEndY: -this.headerHeight,
         dontAdjustEndYIfSelectorIs: '#all'
       });
+    },
+
+    toggleHelp: function () {
+      this.$helpList.fadeToggle();
+    },
+
+    hideHelp: function () {
+      this.$helpList.fadeOut();
     }
 
   };
