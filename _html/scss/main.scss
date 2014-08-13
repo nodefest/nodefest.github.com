@@ -178,6 +178,7 @@ a img:hover {
   @include clearfix;
   position: absolute;
   bottom: 0;
+  width: 576px;
   font-family: 'Noto Sans', sans-serif;
 }
 .nav > li {

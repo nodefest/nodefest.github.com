@@ -681,6 +681,7 @@ a img:hover {
 .nav {
   position: absolute;
   bottom: 0;
+  width: 576px;
   font-family: 'Noto Sans', sans-serif; }
   .nav:after {
     content: "";
