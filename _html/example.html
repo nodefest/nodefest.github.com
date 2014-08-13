@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>東京Node学園祭2014</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="このたびNode.js日本ユーザグループは、第3回目となるNode.jsのカンファレンス「東京Node学園祭 2014」を開催いたします。今回は、{}">
+<meta name="viewport" content="width=800">
+<meta property="og:title" content="東京Node学園祭2014">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://nodefest.jp/2014/">
+<meta property="og:image" content="http://nodefest.jp/2014/assets/img/logo.png">
+<meta property="og:description" content="このたびNode.js日本ユーザグループは、第3回目となるNode.jsのカンファレンス「東京Node学園祭 2014」を開催いたします。今回は、{}">
+<link rel="stylesheet" href="css/normalize.min.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+<div class="l-body">
+
+<header class="l-header" role="banner">
+  <div class="l-header__inner">
+    <div class="l-header__logo">
+      <h1 class="logo"><svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 210 90" style="enable-background:new 0 0 210 90;" xml:space="preserve"><g><polygon style="fill:#040000;" points="23.837,49.211 23.837,46.7 16.969,46.7 16.969,49.211 0,49.211 0,55.018 40.682,55.018 40.682,49.211 "/><path style="fill:#040000;" d="M38.535,58.134H23.837h-6.868h-9.4l-5.367,5.352v12.81h14.773v6.844h-6.849l6.849,6.814v-0.008h6.861v-13.65h9.433l5.264-5.229V58.134z M31.735,70.897H9.07v-7.424h22.665V70.897z"/><polygon style="fill:#040000;" points="6.143,89.889 6.143,78.971 0,83.774 "/><polygon style="fill:#040000;" points="34.539,89.889 34.539,78.971 40.682,83.774 "/></g><path style="fill:#040000;" d="M40.682,2.551v5.808H23.837v1.939h14.698v16.106l-5.264,5.229h-9.433v11.653h-6.868V31.633H2.202V15.648l5.367-5.352h9.4V8.358H0V2.551h16.969V0.04h6.868v2.511H40.682z M9.071,18.632h7.898v-2.996H9.071V18.632z M16.969,26.277v-2.996H9.071v2.996H16.969z M23.837,15.636v2.996h7.899v-2.996H23.837z M31.692,26.234v-2.953h-7.855v2.953H31.692z M4.47,33.871h9.878l-9.373,9.357L0,38.276L4.47,33.871z M40.682,37.277l-4.975,4.953l-9.373-9.357h9.878L40.682,37.277z"/></g><g><path style="fill:#040000;" d="M185.852,30.764l-3.764,3.745V59.09h23.464l3.764-3.745V30.764H185.852z M193.271,34.301v1.516h-5.44v1.997h5.44v1.529h-5.683v1.966h16.258v-1.966h-6.047v-1.529h5.713v-1.997h-5.713v-1.516h7.568v14.511h-3.226l-1.432,1.452l-1.379-1.361H196.3v-0.967h4.994l2.097-2.112v-3.366h-15.559v5.478h2.705l-4.469,4.445V34.301H193.271z M191.844,45.965v-1.539h7.542v1.539H191.844z M192.299,51.821v3.52h-3.554L192.299,51.821z M196.3,50.522l4.845,4.82H196.3V50.522z M202.861,52.73l2.506-2.535v2.535H202.861z"/><g><rect x="182.802" y="74.895" style="fill:#040000;" width="25.8" height="3.013"/><polygon style="fill:#040000;" points="205.791,70.169 209.058,66.874 209.058,63.127 196.933,63.127 196.933,66.148 205.969,66.148 201.97,70.169 199.673,67.933 197.472,70.153 200.543,73.215 209.961,73.215 209.961,70.169 "/><polygon style="fill:#040000;" points="181.344,82.382 193.45,82.382 193.45,86.245 189.72,86.251 193.45,90 197.993,90 197.993,82.382 209.961,82.382 209.961,79.413 181.344,79.413 "/><polygon style="fill:#040000;" points="186.694,90 186.694,83.035 182.775,86.099 "/><polygon style="fill:#040000;" points="196.106,70.209 196.106,66.152 196.106,63.162 188.752,63.162 189.913,62.037 186.07,62.037 182.726,65.369 184.643,67.26 185.773,66.148 193.107,66.148 193.107,69.902 190.703,67.509 187.278,67.509 190.02,70.209 187.538,70.209 185.472,68.113 182.225,68.113 184.299,70.209 181.344,70.209 181.344,73.215 193.107,73.215 "/><polygon style="fill:#040000;" points="204.688,90 208.607,86.099 204.688,83.035 "/></g><path style="fill:#040000;" d="M205.746,10.288H210V3.727h-5.891l3.57-3.575h-3.933l-3.678,3.575h-1.465l-3.678-3.575h-3.933l3.57,3.575h-3.238l-3.678-3.575h-3.933l3.57,3.575h-5.877v6.561h2.34v3.143h15.559v2.45h-17.534v4.444h12.307v1.925l-1.216,1.16h-2.948l-4.132,4.111h11.344l2.543-2.539v-4.656h9.846V15.88h-3.768v-0.635V10.288z M186.631,10.082V7.959h18.142v2.123H186.631z"/></g><g><g><path style="fill:#040000;" d="M65.141,10.665L55.183,0.521v42.694L44.764,32.819V10.55L54.952,0.006h10.304L75.56,10.55v32.701L65.141,33.219V10.665z"/><path style="fill:#040000;" d="M88.511,43.251L78.379,33.173V20.457l10.131-10.078h10.246l10.073,10.078v12.715L98.757,43.251H88.511z M88.798,33.058l9.786,9.563v-22.05l-9.786-9.735V33.058z"/><path style="fill:#040000;" d="M143.713,10.379v22.565l-10.304,10.307h-10.361l-10.246-10.193V20.4l10.477-10.193h9.843L133.117,0l10.596,10.322V10.379z M133.121,42.85V20.571l-9.728-9.677v21.935L133.121,42.85z"/><path style="fill:#040000;" d="M157.182,10.837v22.05l10.167,10.364h-10.397l-10.303-10.364V20.571l10.361-10.25h10.073l10.246,10.135v12.659H166.91V20.571L157.182,10.837z"/></g><g><polygon style="fill:#2DA986;" points="56.296,79.418 56.296,69.555 45.934,79.418 56.296,89.854 66.312,89.854 76.801,79.418 "/><polygon style="fill:#2DA986;" points="66.426,49.312 56.18,49.312 56.065,49.427 45.841,59.619 56.296,59.619 66.197,49.77 66.197,59.505 66.197,66.46 66.197,72.846 76.558,62.514 76.558,59.391 "/></g><path style="fill:#2DA986;" d="M114.426,79.719l-10.073,10.135H93.934L83.746,79.719V59.333l10.189-10.078h10.418l10.073,10.078V79.719z M104.065,59.391l-9.958-9.735v30.006l9.958,9.62V59.391z"/><path style="fill:#2DA986;" d="M176.249,79.424l-10.534,10.431V79.424h-10.303l-10.304-10.365v-9.231l10.649-10.438v19.669l9.958,9.907V49.26l10.534,10.453V79.424z"/><polygon style="fill:#2DA986;" points="124.102,59.682 124.102,79.319 124.102,89.854 134.752,79.319 134.752,59.682 134.752,49.26 "/></svg></h1>
+    </div>
+    <div class="l-header__utility">
+      <div class="l-header__info">
+        <ul class="scheduleInfo">
+          <li>
+            <span class="scheduleInfo__title">日時</span>
+            <span class="scheduleInfo__content"><time datetime="2014-11-15">2014年11月15日(土)</time> <time>13:00</time>-<time>18:00</time>(予定)/後夜祭<time>18:30</time>-</span>
+          </li>
+          <li>
+            <span class="scheduleInfo__title">会場</span>
+            <span class="scheduleInfo__content">株式会社サイバーエージェント セミナールーム</span>
+          </li>
+        </ul>
+      </div>
+      <nav class="l-header__nav" role="navigation">
+        <ul class="nav">
+          <li><a href="/2014/index.html"><span class="nav__ico"></span>Home</a></li>
+          <li><a href="/2014/sessions.html"><span class="nav__ico"></span>Sessions</a></li>
+          <li><a href="/2014/speakers.html"><span class="nav__ico"></span>Speakers</a></li>
+          <li><a href="/2014/sponsors.html"><span class="nav__ico"></span>Sponsors</a></li>
+          <li><a href="/2014/access.html"><span class="nav__ico"></span>Access</a></li>
+          <li><a href="{}"><span class="nav__ico"></span>Entry</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="l-intro">
+  <div class="intro">
+    <header class="intro__header">
+      <p class="intro__subTitle">年に一度、真剣に学んで遊ぼう！日本最大級のNode.jsカンファレンス！</p>
+      <h1 class="intro__title">東京Node学園祭2014</h1>
+    </header>
+    <div class="intro__content">
+      <div class="intro__texts">
+        <p class="intro__datetime">
+          <time class="intro__date" datetime="2014-11-15"><span class="intro__num">11</span>月<span class="intro__num">15</span>日（土）</time>
+          <span class="intro__time"><time>13:00</time>-<time>18:00</time></span>
+          <span class="intro__separator"> / </span>
+          <span class="intro__afterParty">後夜祭 <time>18:30</time>-</span>
+        </p>
+        <p class="intro__place">会場：株式会社サイバーエージェント セミナールーム</p>
+      </div>
+      <div class="intro__buttons">
+        <a class="intro__button" href="{}">イベントに参加する</a>
+      </div>
+      <div class="intro__recentNews">
+        <p class="recentNews">
+          <span class="recentNews__title">News</span>
+          <span class="recentNews__subTitle"> - お知らせ | </span>
+          <time class="recontNews__date" datetime="2014-09-22">2014.09.22</time>
+          <span class="recentNews__text"><a href="#news">東京Node学園祭2013 参加者募集を開始しました。 東京Node学園祭2013参加者募集を開始しました。</a></span>
+        </p>
+      </div>
+      <a class="intro__detail" href="#content">詳細</a>
+    </div>
+  </div>
+</section>
+
+<article class="l-content" role="main" id="content">
+  <section class="section" id="about">
+    <header class="section__header">
+      <h2 class="section__title">About<span class="section__subTitle"> - 東京Node学園祭について</span></h2>
+    </header>
+    <div class="section__content">
+      <div class="texts">
+        <p>WebSocketの普及により実現されつつあるリアルタイムWebとそれに伴って現実となりつつあるC10K問題。これらへのソリューションとして世界中から注目されているのが、サーバサイドJavaScriptプラットフォームのNode.jsです。</p>
+        <p>このたびNode.js日本ユーザグループは、第3回目となるNode.jsのカンファレンス「東京Node学園祭 2014」を開催いたします。今回は、日本国内のエンジニアに多くの発表機会を提供することを狙いとしています。参加者がただの聴衆にならず、真の"参加"者となれるカンファレンスを目指します。</p>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="schedule">
+    <header class="section__header">
+      <h2 class="section__title">Schedule<span class="section__subTitle"> - 開催概要</span></h2>
+    </header>
+    <div class="section__content">
+      <table class="table table--row">
+        <tr>
+          <th>日時</th>
+          <td>2014年11月15日(土) 12:00 開場 / 13:00 〜 18:00 / 後夜祭18:30 〜</td>
+        </tr>
+        <tr>
+          <th>会場</th>
+          <td>〒150-0043 渋谷区道玄坂1丁目12番1号渋谷マークシティウエスト17<br>
+          <a href="/2014/access.html">株式会社 サイバーエージェントセミナールーム</a></td>
+        </tr>
+        <tr>
+          <th>ハッシュタグ</th>
+          <td>#nodefest<br>
+          #nodefestA (トラックA専用)<br>
+          #nodefestB (トラック B専用)</td>
+        </tr>
+        <tr>
+          <th>Ustream</th>
+          <td><a href="{}">トラックA</a><br>
+          <a href="{}">トラックB</a></td>
+        </tr>
+        <tr>
+          <th>無線LAN</th>
+          <td>無料のWiFi アクセスポイントを用意します。<br>
+          SSIDなどは当日お知らせします。</td>
+        </tr>
+        <tr>
+          <th>参加費</th>
+          <td>1,000円（チケットは<a href="{}">こちら</a>から購入できます）</td>
+        </tr>
+        <tr>
+          <th>主催</th>
+          <td><a href="http://nodejs.jp/">Node.js日本ユーザグループ</a></td>
+        </tr>
+      </table>
+    </div>
+  </section>
+  <section class="section" id="guests">
+    <header class="section__header">
+      <h2 class="section__title">Special guests<span class="section__subTitle"> - 海外スピーカー</span></h2>
+    </header>
+    <div class="section__content">
+      <div class="thumbList">
+        <div class="thumbList__item">
+          <div class="thumbList__thumb">
+            <a href="{}"><img src="http://dummyimage.com/144" alt="" width="144" height="144"></a>
+          </div>
+          <div class="thumbList__content">
+            <h3 class="thumbList__title"><a href="{}">Isaac Schlueter</a></h3>
+            <p class="thumbList__text">Joyentで働くエンジニアであり、Node.jsのパッケージ管理ツールであるnpmなどの開発者です。現在はNode.jsのオリジナルの作者であるRyanからその座を受け継ぎ、二代目のゲートキーパーとしてNode.jsの開発をリードしています。かつては掃除機のセールスをやっていたという異色の経歴を持つことでも有名。</p>
+          </div>
+        </div>
+        <div class="thumbList__item">
+          <div class="thumbList__thumb">
+            <a href="{}"><img src="http://dummyimage.com/144" alt="" width="144" height="144"></a>
+          </div>
+          <div class="thumbList__content">
+            <h3 class="thumbList__title"><a href="{}">Isaac Schlueter</a></h3>
+            <p class="thumbList__text">Joyentで働くエンジニアであり、Node.jsのパッケージ管理ツールであるnpmなどの開発者です。現在はNode.jsのオリジナルの作者であるRyanからその座を受け継ぎ、二代目のゲートキーパーとしてNode.jsの開発をリードしています。かつては掃除機のセールスをやっていたという異色の経歴を持つことでも有名。</p>
+          </div>
+        </div>
+        <div class="thumbList__item">
+          <div class="thumbList__thumb">
+            <a href="{}"><img src="http://dummyimage.com/144" alt="" width="144" height="144"></a>
+          </div>
+          <div class="thumbList__content">
+            <h3 class="thumbList__title"><a href="{}">Isaac Schlueter</a></h3>
+            <p class="thumbList__text">Joyentで働くエンジニアであり、Node.jsのパッケージ管理ツールであるnpmなどの開発者です。現在はNode.jsのオリジナルの作者であるRyanからその座を受け継ぎ、二代目のゲートキーパーとしてNode.jsの開発をリードしています。かつては掃除機のセールスをやっていたという異色の経歴を持つことでも有名。</p>
+          </div>
+        </div>
+        <div class="thumbList__item">
+          <div class="thumbList__thumb">
+            <a href="{}"><img src="http://dummyimage.com/144" alt="" width="144" height="144"></a>
+          </div>
+          <div class="thumbList__content">
+            <h3 class="thumbList__title"><a href="{}">Isaac Schlueter</a></h3>
+            <p class="thumbList__text">Joyentで働くエンジニアであり、Node.jsのパッケージ管理ツールであるnpmなどの開発者です。現在はNode.jsのオリジナルの作者であるRyanからその座を受け継ぎ、二代目のゲートキーパーとしてNode.jsの開発をリードしています。かつては掃除機のセールスをやっていたという異色の経歴を持つことでも有名。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="news">
+    <header class="section__header">
+      <h2 class="section__title">News<span class="section__subTitle"> - お知らせ</span></h2>
+    </header>
+    <div class="section__content">
+      <ol class="dateList">
+        <li>
+          <time class="dateList__date" datetime="2014-09-22">2014.09.22</time>
+          <span class="dateList__text">東京Node学園祭2013 参加者募集を開始しました。 東京Node学園祭2013参加者募集を開始しました。</span>
+        </li>
+        <li>
+          <time class="dateList__date" datetime="2014-09-22">2014.09.22</time>
+          <span class="dateList__text">東京Node学園祭2013 参加者募集を開始しました。 東京Node学園祭2013参加者募集を開始しました。</span>
+        </li>
+        <li>
+          <time class="dateList__date" datetime="2014-09-22">2014.09.22</time>
+          <span class="dateList__text">東京Node学園祭2013 参加者募集を開始しました。 東京Node学園祭2013参加者募集を開始しました。</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="section section--sponsors" id="sponsors">
+    <header class="section__header">
+      <h2 class="section__title">Sponsores<span class="section__subTitle"> - スポンサー</span></h2>
+    </header>
+    <div class="section__content">
+      <ul class="bannerList">
+        <li>
+          <a href="{}"><img src="http://dummyimage.com/160x100" alt="" width="160" height="100"></a>
+        </li>
+        <li>
+          <a href="{}"><img src="http://dummyimage.com/160x100" alt="" width="160" height="100"></a>
+        </li>
+        <li>
+          <a href="{}"><img src="http://dummyimage.com/160x100" alt="" width="160" height="100"></a>
+        </li>
+        <li>
+          <a href="{}"><img src="http://dummyimage.com/160x100" alt="" width="160" height="100"></a>
+        </li>
+        <li>
+          <a href="{}"><img src="http://dummyimage.com/160x100" alt="" width="160" height="100"></a>
+        </li>
+        <li>
+          <a href="{}"><img src="http://dummyimage.com/160x100" alt="" width="160" height="100"></a>
+        </li>
+        <li>
+          <a href="{}"><img src="http://dummyimage.com/160x100" alt="" width="160" height="100"></a>
+        </li>
+        <li>
+          <a href="{}"><img src="http://dummyimage.com/160x100" alt="" width="160" height="100"></a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="section" id="attention">
+    <header class="section__header">
+      <h2 class="section__title">Attention<span class="section__subTitle"> - 取材をご希望の方へ</span></h2>
+    </header>
+    <div class="section__content">
+      <div class="texts">
+        <p>東京Node学園祭2014の取材をご希望されるプレスの皆様に取材の申し込み方法をお知らせいたします。 東京Node学園祭2014の取材につきましては、会場のセキュリティの問題で、事前にご登録いただかないと入場することができません。</p>
+        <p>そこで、取材をご希望される方は、2014年{}月{}日（金）までに nodefest@nodejs.jp まで、取材ご担当者の氏名・所属、媒体名などをご連絡いただければ幸いです。</p>
+        <p>なお、当日は満席になることが予想されるため、立ち見での取材をお願いいたします。あらかじめご了承ください。</p>
+        <p>当日受付にて、プレスである旨を告げ、プレス用カードを受け取ったうえでご入場ください。この際、御名刺をいただきたく存じますので、ご用意をよろしくお願い致します。</p>
+      </div>
+    </div>
+  </section>
+  <aside class="l-socialParts">
+    <div class="l-socialParts__left">
+      <div class="twitterTimeline">
+        <div class="twitterTimeline__header">
+          <div class="twitterTimeline__title">nodefest on twitter</div>
+          <div class="twitterTimeline__subTitle">「東京Node学園祭」についてのツイート</div>
+        </div>
+        <div class="twitterTimeline__content"></div>
+      </div>
+    </div>
+    <div class="l-socialParts__right">
+      <div class="socialParts">
+        <div class="socialParts__title">Share</div>
+        <div class="socialParts__content">
+          <div class="shareButton"></div>
+        </div>
+      </div>
+      <div class="socialParts">
+        <div class="socialParts__title">Follow</div>
+        <div class="socialParts__content">
+          <div class="followButton">
+            <p class="followButton__title">『東京Node学園祭』公式アカウントをフォロー！</p>
+            <p class="followButton__text">学園祭に関する情報をつぶやいています。</p>
+            <div class="followButton__button"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+</article>
+
+<footer class="l-footer" role="contentinfo">
+  <div class="l-footer__inner">
+    <p class="copyright"><small>© 2014 東京Node学園祭 実行委員会 | <a href="http://nodejs.jp/">Node.js 日本ユーザグループ</a></small></p>
+    <p class="createdBy">This Web site was created by <a href="http://www.pxgrid.com/">PixelGrid, Inc.</a> and <a href="http://sinap.jp/">SINAP, Inc.</a></p>
+  </div>
+</footer>
+
+</div>
+
+<div class="l-fireworks" role="application">
+  <div class="view3d" id="fireworks">
+    <div class="view3d__inner">
+      <div class="view3d__cursor">
+        <div class="view3d__textField">
+          <input>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="js/main.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js"></script>
+<script src="./js/vendor/PeriodicEventEmitter.js"></script>
+<script src="./js/NF14.view3d.js"></script>
+<script>
+
+var headerHeight = 0;//$( '.l-header' ).height();
+var width = window.innerWidth;
+var height = window.innerHeight - headerHeight;
+var viewport = new NF14.view3d.Viewport( document.getElementById( 'fireworks' ) );
+viewport.setSize( width, height );
+viewport.run();
+
+var building = new NF14.view3d.BuildingMesh();
+viewport.scene.add( building );
+
+var inputUI = new NF14.view3d.InputUI( document.getElementById( 'fireworks' ), viewport );
+
+// 適当にインターバルを作って、自動で花火を new してください。
+// new した花火は、寿命が尽きると自分で自分を delete します。たぶん。
+var interval = new PeriodicEventEmitter( 750 );
+
+interval.addEventListener( 'period', function () {
+
+  var pos = new THREE.Vector3(
+    Math.random() * 40 - 20,
+    Math.random() * 40,
+    Math.random() * 40 - 20
+  );
+  var f = new NF14.view3d.Fire( pos, '', viewport, true );
+
+} );
+
+// ウィンドウのサイズが変わったらビューポートの大きさを更新してください
+$( window ).on( 'resize', function ( e ) {
+
+  var width = window.innerWidth;
+  var height = window.innerHeight - headerHeight;
+  viewport.setSize( width, height );
+
+} );
+
+
+////////////////////////
+// socket 利用時の例
+////////////////////////
+
+// 閲覧者が花火を打ち上げると 'userinput:fire' イベントが発火します
+// これをソケットサーバに送ってください。
+viewport.addEventListener( 'userinput:fire', function ( position, text ) {
+
+  console.log( position, text );
+  // socket.emit( 'client_fire', position, text );
+
+} );
+
+
+// socket.on( 'server_fire', function ( pos, text ) {
+
+//   console.log( position, text );
+//   new NF14.view3d.Fire( position, text, viewport );
+
+// } );
+
+</script>
+
+</body>
+</html>

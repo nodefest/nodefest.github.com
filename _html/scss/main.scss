@@ -1,5 +1,6 @@
 @import "bourbon/bourbon";
 @import "normalize";
+@import "view3d";
 
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700);
 
@@ -87,7 +88,7 @@ a img:hover {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   height: 108px;
   border-top: 4px solid $mainColor;
@@ -118,12 +119,16 @@ a img:hover {
 }
 
 .l-content {
+  position: relative;
+  z-index: 1;
   width: 800px;
   margin: 0 auto;
   background: #fff url(/img/l-content.png) repeat-y;
 }
 
 .l-footer {
+  position: relative;
+  z-index: 1;
   width: 100%;
   background: $mainColor;
 }
@@ -141,7 +146,7 @@ a img:hover {
   position: fixed;
   top: $headerHeight;
   left: 0;
-  z-index: -1;
+  // z-index: -1;
   width: 100%;
   height: 100%;
   background: #666;
@@ -242,7 +247,14 @@ a img:hover {
   background: #fff;
 }
 
+@mixin top () {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
 .intro {
+  // @include top;
   position: relative;
   padding: 120px 0 70px;
   color: #fff;
@@ -252,39 +264,49 @@ a img:hover {
   color: #fff;
 }
 .intro__subTitle {
+  @include top;
   font-size: 20px;
   font-family: 'NotoSansJP-Regular', sans-serif;
 }
 .intro__title {
+  @include top;
   font-size: 80px;
   font-family: 'Noto Sans', 'NotoSansJP-Medium', sans-serif;
   white-space: nowrap;
 }
 .intro__texts {
+  @include top;
   margin-bottom: 35px;
 }
 .intro__datetime {
+  @include top;
   font-family: 'Noto Sans', 'NotoSansJP-Medium', sans-serif;
 }
 .intro__date {
+  @include top;
   font-size: 38px;
   font-weight: bold;
 }
 .intro__num {
+  @include top;
   font-size: 66px;
   font-weight: bold;
 }
 .intro__time {
+  @include top;
   font-size: 22px;
   font-weight: bold;
 }
 .intro__separator {
+  @include top;
   font-size: 20px;
 }
 .intro__afterParty {
+  @include top;
   font-size: 16px;
 }
 .intro__place {
+  @include top;
   font-size: 22px;
   font-family: 'Noto Sans', 'NotoSansJP-Medium', sans-serif;
 }
@@ -293,6 +315,8 @@ a img:hover {
   text-align: center;
 }
 .intro__button {
+  @include top;
+  pointer-events: auto;
   display: inline-block;
   padding: 10px 45px;
   border: 1px solid #fff;
@@ -318,6 +342,8 @@ a img:hover {
   background: rgba(255, 255, 255, .2);
 }
 .intro__detail {
+  @include top;
+  pointer-events: auto;
   position: absolute;
   bottom: 0;
   left: 50%;
