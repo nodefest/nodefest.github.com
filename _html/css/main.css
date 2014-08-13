@@ -531,6 +531,9 @@ table {
 @font-face {
   font-family: 'NotoSansJP-Medium';
   src: url("/fonts/NotoSansJP-Medium.eot") format("eot"), url("/fonts/NotoSansJP-Medium.woff") format("woff"); }
+@font-face {
+  font-family: 'NotoSansJP-Bold';
+  src: url("/fonts/NotoSansJP-Bold.eot") format("eot"), url("/fonts/NotoSansJP-Bold.woff") format("woff"); }
 /* ==========================================================================
    base style
    ========================================================================== */
@@ -620,11 +623,6 @@ a img:hover {
 
 .l-header__info {
   padding: 6px 0 18px; }
-
-.l-intro {
-  width: 800px;
-  margin: 0 auto;
-  padding-top: 112px; }
 
 .l-content {
   position: relative;
@@ -752,8 +750,13 @@ a img:hover {
 .section--sponsors {
   background: #fff; }
 
-.intro {
+.l-intro {
   position: relative;
+  width: 800px;
+  margin: 0 auto;
+  padding-top: 112px; }
+
+.intro {
   padding: 120px 0 70px;
   color: #fff;
   text-align: center; }
@@ -777,9 +780,6 @@ a img:hover {
   white-space: nowrap; }
 
 .intro__texts {
-  position: relative;
-  z-index: 1;
-  pointer-events: none;
   margin-bottom: 35px; }
 
 .intro__datetime {
@@ -789,36 +789,21 @@ a img:hover {
   font-family: 'Noto Sans', 'NotoSansJP-Medium', sans-serif; }
 
 .intro__date {
-  position: relative;
-  z-index: 1;
-  pointer-events: none;
   font-size: 38px;
   font-weight: bold; }
 
 .intro__num {
-  position: relative;
-  z-index: 1;
-  pointer-events: none;
   font-size: 66px;
   font-weight: bold; }
 
 .intro__time {
-  position: relative;
-  z-index: 1;
-  pointer-events: none;
   font-size: 22px;
   font-weight: bold; }
 
 .intro__separator {
-  position: relative;
-  z-index: 1;
-  pointer-events: none;
   font-size: 20px; }
 
 .intro__afterParty {
-  position: relative;
-  z-index: 1;
-  pointer-events: none;
   font-size: 16px; }
 
 .intro__place {
@@ -869,31 +854,64 @@ a img:hover {
   position: absolute;
   bottom: 0;
   left: 50%;
-  font-family: 'Noto Sans', 'NotoSansJP-Medium', sans-serif; }
+  width: 80px;
+  margin-left: -40px;
+  padding-bottom: 13px;
+  font-size: 14px;
+  font-family: 'Noto Sans', 'NotoSansJP-Medium', sans-serif;
+  color: #28b38d !important;
+  text-decoration: none !important;
+  text-align: center; }
+
+.intro__detail:before {
+  content: "";
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  bottom: -40px;
+  z-index: -1;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 80px; }
+
+.intro__detail:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -4px;
+  border-style: solid;
+  border-width: 6px 4px 0 4px;
+  border-color: #28b38e transparent transparent transparent; }
+
+.intro__recentNews {
+  position: relative;
+  z-index: 1;
+  pointer-events: none; }
 
 .recentNews {
   background: rgba(0, 0, 0, 0.3);
   padding: 5px 0;
-  font-size: 12px;
-  vertical-align: middle; }
+  font-size: 12px; }
 
 .recentNews__title {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 16px; }
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Noto Sans', sans-serif; }
 
 .recentNews__subTitle {
-  display: inline-block;
-  vertical-align: middle; }
-
-.recentNews__date {
-  display: inline-block;
-  vertical-align: middle; }
+  font-family: 'Noto Sans', 'NotoSansJP-Bold', sans-serif; }
 
 .recentNews__text {
+  margin-left: 1em; }
+
+.recentNews__text a {
   width: 30em;
-  margin-left: 1em;
-  vertical-align: middle;
+  vertical-align: text-bottom;
   display: inline-block;
   max-width: 30em;
   overflow: hidden;
