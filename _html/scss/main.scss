@@ -117,12 +117,6 @@ a img:hover {
   padding: 6px 0 18px;
 }
 
-.l-intro {
-  width: 800px;
-  margin: 0 auto;
-  padding-top: $headerHeight;
-}
-
 .l-content {
   position: relative;
   z-index: 1;
@@ -258,9 +252,13 @@ a img:hover {
   pointer-events: none;
 }
 
-.intro {
-  // @include top;
+.l-intro {
   position: relative;
+  width: 800px;
+  margin: 0 auto;
+  padding-top: $headerHeight;
+}
+.intro {
   padding: 120px 0 70px;
   color: #fff;
   text-align: center;
@@ -280,7 +278,6 @@ a img:hover {
   white-space: nowrap;
 }
 .intro__texts {
-  @include top;
   margin-bottom: 35px;
 }
 .intro__datetime {
@@ -288,26 +285,21 @@ a img:hover {
   font-family: 'Noto Sans', 'NotoSansJP-Medium', sans-serif;
 }
 .intro__date {
-  @include top;
   font-size: 38px;
   font-weight: bold;
 }
 .intro__num {
-  @include top;
   font-size: 66px;
   font-weight: bold;
 }
 .intro__time {
-  @include top;
   font-size: 22px;
   font-weight: bold;
 }
 .intro__separator {
-  @include top;
   font-size: 20px;
 }
 .intro__afterParty {
-  @include top;
   font-size: 16px;
 }
 .intro__place {
@@ -355,8 +347,7 @@ a img:hover {
   font-family: 'Noto Sans', 'NotoSansJP-Medium', sans-serif;
 }
 .intro__recentNews {
-  position: relative;
-  z-index: 1;
+  @include top;
 }
 
 .recentNews {
