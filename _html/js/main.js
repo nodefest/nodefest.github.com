@@ -13,6 +13,7 @@
       this.windowHeight = window.innerHeight;
       this.headerHeight = this.$header.height();
 
+      this.useEaseScrollable();
       this.resizeContentsHeight();
 
       this.eventify();
@@ -32,6 +33,15 @@
 
       this.$intro.css('min-height', height);
       this.$fireworks.css('min-height', height);
+    },
+
+    useEaseScrollable: function () {
+      $('a[href^=#]').easescrollable({
+        easing: 'easeInOutExpo',
+        changehash: false,
+        adjustEndY: -this.headerHeight,
+        dontAdjustEndYIfSelectorIs: '#all'
+      });
     }
 
   };
@@ -40,6 +50,8 @@
 
   $(function () {
     app.run();
+
+    
   });
 
 })(jQuery, this, this.document);
