@@ -13,6 +13,3 @@ vendor/bundle
 
 # compiled files
 /build
-
-# local files
-_docs
