@@ -854,7 +854,39 @@ a img:hover {
   position: absolute;
   bottom: 0;
   left: 50%;
-  font-family: 'Noto Sans', 'NotoSansJP-Medium', sans-serif; }
+  width: 80px;
+  margin-left: -40px;
+  padding-bottom: 13px;
+  font-size: 14px;
+  font-family: 'Noto Sans', 'NotoSansJP-Medium', sans-serif;
+  color: #28b38d !important;
+  text-decoration: none !important;
+  text-align: center; }
+
+.intro__detail:before {
+  content: "";
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  bottom: -40px;
+  z-index: -1;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 80px; }
+
+.intro__detail:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -4px;
+  border-style: solid;
+  border-width: 6px 4px 0 4px;
+  border-color: #28b38e transparent transparent transparent; }
 
 .intro__recentNews {
   position: relative;
