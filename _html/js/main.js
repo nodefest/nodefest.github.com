@@ -65,7 +65,6 @@
   $(function () {
     app.run();
 
-    
   });
 
 })(jQuery, this, this.document);

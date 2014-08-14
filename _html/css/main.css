@@ -711,15 +711,8 @@ a img:hover {
 .nav a:hover {
   background: #e7f5f1; }
 
-.nav__ico {
-  display: block; }
-
-.nav__ico:after {
-  content: "";
-  display: inline-block;
-  width: 26px;
-  height: 26px;
-  background: #ccc; }
+.icon {
+  display: inline-block; }
 
 .help {
   position: relative; }

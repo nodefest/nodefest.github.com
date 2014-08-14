@@ -1,0 +1,25 @@
+{
+  "name": "nodefest",
+  "version": "0.0.0",
+  "homepage": "https://github.com/pxgrid/nodefest",
+  "authors": [
+    "tacamy <takami.yamada@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "jquery/jquery#1.11",
+    "jQuery.EaseScroller": "Takazudo/jQuery.EaseScroller#~1.1.2",
+    "EaseStepper": "Takazudo/EaseStepper#~1.1.0",
+    "jquery-easing": "danro/jquery-easing",
+    "three.js": "mrdoob/three.js#r68",
+    "PeriodicEventEmitter": "yomotsu/PeriodicEventEmitter",
+    "socket.io-client": "Automattic/socket.io-client#~1.0.6"
+  }
+}

@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://nodefest.jp/2014/">
 <meta property="og:image" content="http://nodefest.jp/2014/assets/img/logo.png">
 <meta property="og:description" content="このたびNode.js日本ユーザグループは、Socket.IOの作者でAutomatticのCTOであるGuillermo Rauch氏、browserifyの作者であるJames Halliday氏、NodeSchoolの作成者の一人であるMaxwell Ogden氏を招聘し、4回目の「東京Node学園祭」を開催します。">
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/style.min.css">
 <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
@@ -38,12 +38,12 @@
       </div>
       <nav class="l-header__nav" role="navigation">
         <ul class="nav">
-          <li><a href="/2014/index.html"><span class="nav__ico"></span>Home</a></li>
-          <li><a href="/2014/sessions.html"><span class="nav__ico"></span>Sessions</a></li>
-          <li><a href="/2014/speakers.html"><span class="nav__ico"></span>Speakers</a></li>
-          <li><a href="/2014/sponsors.html"><span class="nav__ico"></span>Sponsors</a></li>
-          <li><a href="/2014/access.html"><span class="nav__ico"></span>Access</a></li>
-          <li><a href="{}"><span class="nav__ico"></span>Entry</a></li>
+          <li><a href="/2014/index.html"><span class="icon icon-home"></span><div>Home</div></a></li>
+          <li><a href="/2014/session.html"><span class="icon icon-session"></span><div>Sessions</div></a></li>
+          <li><a href="/2014/speaker.html"><span class="icon icon-speaker"></span><div>Speakers</div></a></li>
+          <li><a href="/2014/sponsor.html"><span class="icon icon-sponsor"></span><div>Sponsors</div></a></li>
+          <li><a href="/2014/access.html"><span class="icon icon-access"></span><div>Access</div></a></li>
+          <li><a href="{}"><span class="icon icon-entry"></span><div>Entry</div></a></li>
         </ul>
       </nav>
     </div>
@@ -293,17 +293,8 @@
   </div>
 </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-<script src="/js/vendor/jquery.easing.min.js"></script>
-<script src="/js/vendor/easestepper.min.js"></script>
-<script src="/js/vendor/jquery.easescroller.min.js"></script>
-<script src="/js/main.js"></script>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js"></script>
-<script src="./js/vendor/PeriodicEventEmitter.js"></script>
-<script src="./js/NF14.view3d.js"></script>
-<script src="http://localhost:8080/socket.io/socket.io.js"></script>
+<script src="/js/lib.min.js"></script>
+<script src="/js/app.min.js"></script>
 
 <script>
 

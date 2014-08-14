@@ -1,83 +1,91 @@
-BUILD_DIR = 'build/2013'
-DEPLOY_DIR = 'deploy'
-DEPLOY_BRANCH = 'master'
-DEPLOY_REPOSITORY = 'git@github.com:nodefest/nodefest.github.com.git'
-
 module.exports = (grunt) ->
-  
-  grunt.task.loadNpmTasks 'assemble'
+
   grunt.task.loadNpmTasks 'grunt-contrib-sass'
-  grunt.task.loadNpmTasks 'grunt-contrib-copy'
-  grunt.task.loadNpmTasks 'grunt-contrib-clean'
-  grunt.task.loadNpmTasks 'grunt-contrib-connect'
+  grunt.task.loadNpmTasks 'grunt-contrib-concat'
+  grunt.task.loadNpmTasks 'grunt-spritesmith'
+  grunt.task.loadNpmTasks 'grunt-image'
+  grunt.task.loadNpmTasks 'grunt-csso'
+  grunt.task.loadNpmTasks 'grunt-csscomb'
+  grunt.task.loadNpmTasks 'grunt-contrib-uglify'
   grunt.task.loadNpmTasks 'grunt-contrib-watch'
-  grunt.loadTasks 'tasks'
 
   grunt.initConfig
 
-    assemble:
-      options:
-        socketServer: process.env['SOCKET_HOST'] || 'nodefest2013.c.node-ninja.com:80'
-        partials: 'src/partials/*.hbs'
-        data: 'data/*.yml'
-      dist:
-        expand: true
-        cwd: 'src/tmpls'
-        src: '*.hbs'
-        dest: BUILD_DIR
+    concat:
+      css:
+        src: ['./_html/css/main.css', './_html/css/nav.css']
+        dest: './_html/css/style.css'
+      jslib:
+        src: [
+          'bower_components/jquery/dist/jquery.min.js'
+          'bower_components/jquery-easing/jquery.easing.min.js'
+          'bower_components/EaseStepper/easestepper.min.js'
+          'bower_components/jQuery.EaseScroller/jquery.easescroller.min.js'
+          'bower_components/three.js/build/three.min.js'
+          'bower_components/PeriodicEventEmitter/PeriodicEventEmitter.js'
+          'bower_components/socket.io-client/socket.io.js'
+        ]
+        dest: './_html/js/lib.js'
+      jsapp:
+        src: [
+          '_html/js/main.js'
+          '_html/js/NF14.view3d.js'
+        ]
+        dest: './_html/js/app.js'
+
+    uglify:
+      jsapp:
+        files:
+          './_html/js/app.min.js': ['./_html/js/app.js']
+      jslib:
+        options:
+          preserveComments: 'all'
+        files:
+          './_html/js/lib.min.js': ['./_html/js/lib.js']
 
     sass:
-      options:
-        bundleExec: true
-      dist:
-        files: [
-          src: 'src/scss/style.scss'
-          dest: "#{BUILD_DIR}/assets/css/style.css"
-        ]
+      main:
+        files:
+          './_html/css/main.css': './_html/scss/main.scss'
 
-    copy:
-      static:
-        expand: true
-        cwd: 'src/static'
-        src: '**/*'
-        dest: BUILD_DIR
-      deploy:
-        expand: true
-        cwd: BUILD_DIR
-        src: ['**/*', '!**/_**/*', '!**/_*'] # ignore files start with underscore.
-        dest: "#{DEPLOY_DIR}/2013"
+    csscomb:
+      css:
+        files:
+          './_html/css/style.css': './_html/css/style.css'
 
-    clean: [BUILD_DIR]
+    csso:
+      css:
+        files:
+          './_html/css/style.min.css': './_html/css/style.css'
 
-    connect:
-      server:
-        options:
-          port: process.env.PORT || 3000
-          base: './build'
+    sprite:
+      nav:
+        src: './_html/img/nav/*.png'
+        destImg: './_html/img/nav.png'
+        destCSS: './_html/css/nav.css'
+
+    image:
+      all:
+        files:
+          '_html/img/nav.png': '_html/img/nav.png'
+          '_html/img/section__title.png': '_html/img/section__title.png'
+          '_html/img/logo.svg': '_html/img/logo.svg'
 
     watch:
-      assemble:
-        files: ['data/*', 'src/tmpls/*', 'src/partials/*']
-        tasks: 'assemble'
-      sass:
-        files: 'src/scss/*'
-        tasks: 'sass'
-      copy:
-        files: 'src/static/**/*'
-        tasks: 'copy:static'
+      js:
+        files: [
+          './_html/js/*.js'
+          '!./_html/js/app.js'
+          '!./_html/js/app.min.js'
+          '!./_html/js/lib.js'
+          '!./_html/js/lib.min.js'
+        ]
+        tasks: ['concat:jsapp', 'uglify:jsapp']
+      css:
+        files: ['./_html/scss/*.scss']
+        tasks: ['sass', 'sprite', 'concat', 'csscomb', 'csso']
 
-    setup:
-      repository: DEPLOY_REPOSITORY
-      branch: DEPLOY_BRANCH
-      dir: DEPLOY_DIR
-
-    deploy:
-      #dryrun: true
-      branch: DEPLOY_BRANCH
-      dir: DEPLOY_DIR
-      message: 'Update 2013 with <%= sha1 %>'
-
-  grunt.registerTask 'build', ['clean', 'sass', 'assemble', 'copy:static']
-  grunt.registerTask 'server', ['build', 'connect', 'watch']
-  grunt.registerTask 'publish', ['setup', 'build', 'copy:deploy', 'deploy']
-  grunt.registerTask 'default', ['build']
+  grunt.registerTask 'build:js', ['concat:jslib', 'concat:jsapp', 'uglify:jslib', 'uglify:jsapp']
+  grunt.registerTask 'build:css', ['sass', 'sprite', 'image', 'concat:css', 'csscomb', 'csso']
+  grunt.registerTask 'build', ['build:js', 'build:css']
+  grunt.registerTask 'default', ['watch']
