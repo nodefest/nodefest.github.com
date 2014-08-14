@@ -622,7 +622,8 @@ a img:hover {
   width: 576px; }
 
 .l-header__info {
-  padding: 6px 0 18px; }
+  padding: 6px 0 18px;
+  text-align: right; }
 
 .l-header__help {
   position: absolute;
