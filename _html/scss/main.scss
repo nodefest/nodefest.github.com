@@ -1,4 +1,4 @@
-@import "bourbon/bourbon";
+@import "mixins";
 @import "normalize";
 @import "view3d";
 
@@ -290,12 +290,6 @@ a img:hover {
 }
 .section--sponsors {
   background: #fff;
-}
-
-@mixin top () {
-  position: relative;
-  z-index: 1;
-  pointer-events: none;
 }
 
 .l-intro {
