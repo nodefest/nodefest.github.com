@@ -26,7 +26,8 @@ interval.addEventListener( 'period', function () {
     Math.random() * 40,
     Math.random() * 40 - 20
   );
-  var f = new NF14.view3d.Fire( pos, '', viewport, true );
+  var color = 0x76f693;
+  var f = new NF14.view3d.Fire( pos, color, '', viewport, true );
 
 } );
 
@@ -50,11 +51,12 @@ var socket = io( 'http://localhost:8080' );
 // これをソケットサーバに送ってください。
 viewport.addEventListener( 'userinput:fire', function ( fire ) {
 
-  // console.log( fire.position, fire.text );
+  // console.log( fire.position, fire.color, fire.text );
   var data = {
     x: fire.position.x,
     y: fire.position.y,
     z: fire.position.z, 
+    color: fire.color,
     text: fire.text
   }
   console.log( data );
@@ -70,7 +72,7 @@ socket.on( 'client_fire', function ( data ) {
     data.y,
     data.z
   );
-  new NF14.view3d.Fire( position, data.text, viewport );
+  new NF14.view3d.Fire( position, data.color, data.text, viewport );
 
 } );
 

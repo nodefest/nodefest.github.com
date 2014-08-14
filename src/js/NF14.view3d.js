@@ -484,14 +484,7 @@ var FS = [
   '}'
 ].join( '' );
 
-var COLORS = [
-  0xf4fb7f, //黄色
-  0x4df0ff, //水色
-  0x4e69f4, //青
-  0xfbb9db, //ピンク
-];
-
-NF14.view3d.Fire = function ( position, text, viewport, npc ) {
+NF14.view3d.Fire = function ( position, color, text, viewport, npc ) {
   
   THREE.EventDispatcher.prototype.apply( this );
 
@@ -499,7 +492,7 @@ NF14.view3d.Fire = function ( position, text, viewport, npc ) {
   this.isNPC = npc;
 
   var texture = npc ? TEXTURE2 : TEXTURE1,
-      color = npc ? 0x76f693 : COLORS[ ( Math.random() * 4 )|0 ],
+      color = color,
       attributes,
       uniforms,
       material;
@@ -707,11 +700,18 @@ NF14.view3d.InputUI = function ( el, viewport ) {
         var pos = that.viewport.camera.position.clone().add( direction.multiplyScalar( distance ) );
         pos.y -= fireRadius;
 
-        new NF14.view3d.Fire( pos, text, that.viewport );
+        var color = ( [
+          0xf4fb7f, //黄色
+          0x4df0ff, //水色
+          0x4e69f4, //青
+          0xfbb9db, //ピンク
+        ] )[ ( Math.random() * 4 )|0 ];
+
+        new NF14.view3d.Fire( pos, color, text, that.viewport );
 
         if ( !that.isNPC ) {
 
-          that.viewport.dispatchEvent( { type: 'userinput:fire', position: pos, text: text } );
+          that.viewport.dispatchEvent( { type: 'userinput:fire', position: pos, color: color, text: text } );
 
         }
 
