@@ -1114,4 +1114,16 @@ a img:hover {
   font-weight: bold; }
 
 .twitterTimeline__content {
+  overflow: auto;
   height: 378px; }
+
+.shareButton {
+  text-align: center; }
+
+.shareButton__item {
+  display: inline-block;
+  margin: 0 5px;
+  vertical-align: top; }
+
+.followButton__text {
+  margin-bottom: 10px; }
