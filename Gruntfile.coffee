@@ -13,7 +13,7 @@ module.exports = (grunt) ->
 
     concat:
       css:
-        src: ['./_html/css/main.css', './_html/css/nav.css']
+        src: ['./_html/css/main.css', './_html/css/nav.css', './_html/css/icons.css']
         dest: './_html/css/style.css'
       jslib:
         src: [
@@ -63,11 +63,16 @@ module.exports = (grunt) ->
         src: './_html/img/nav/*.png'
         destImg: './_html/img/nav.png'
         destCSS: './_html/css/nav.css'
+      icons:
+        src: './_html/img/icons/*.png'
+        destImg: './_html/img/icons.png'
+        destCSS: './_html/css/icons.css'
 
     image:
       all:
         files:
           '_html/img/nav.png': '_html/img/nav.png'
+          '_html/img/icons.png': '_html/img/icons.png'
           '_html/img/section__title.png': '_html/img/section__title.png'
           '_html/img/logo.svg': '_html/img/logo.svg'
 

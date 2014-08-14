@@ -187,11 +187,21 @@ a img:hover {
   width: 576px;
   font-family: 'Noto Sans', sans-serif;
 }
-.nav > li {
+.nav__item {
   float: left;
   position: relative;
   width: 96px;
   text-align: center;
+}
+.nav__item--entry:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 2px;
+  height: 53px;
+  background: #f0f0f0;
 }
 .nav a {
   display: block;
@@ -203,6 +213,9 @@ a img:hover {
 }
 .nav a:hover {
   background: #e7f5f1;
+}
+.nav__textIcon {
+  margin-left: 5px;
 }
 
 .icon {
@@ -249,9 +262,17 @@ a img:hover {
 }
 .help__list > li {
   padding: 10px;
+  @include clearfix;
 }
 .help__list > li + li {
   border-top: 2px solid #F0F0F0;
+}
+.help__icon {
+  float: left;
+  margin-right: 10px;
+}
+.help__text {
+  overflow: hidden;
 }
 
 /* footer module */
