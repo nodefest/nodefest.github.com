@@ -958,10 +958,9 @@ a img:hover {
   font-family: 'Noto Sans', 'NotoSansJP-Bold', sans-serif; }
 
 .recentNews__text {
-  margin-left: 1em; }
-
-.recentNews__text a {
-  width: 30em;
+  max-width: 30em;
+  margin-left: 1em;
+  text-align: left;
   vertical-align: text-bottom;
   display: inline-block;
   max-width: 30em;
@@ -997,12 +996,14 @@ a img:hover {
 
 .thumbList__thumb {
   float: left;
-  overflow: hidden;
   margin-right: 20px; }
 
 .thumbList__thumb > a {
   display: inline-block;
   border: 8px solid #cce2dc; }
+
+.thumbList__content {
+  overflow: hidden; }
 
 .thumbList__title {
   margin-bottom: 10px;
