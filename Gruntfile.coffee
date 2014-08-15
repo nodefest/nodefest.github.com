@@ -1,3 +1,8 @@
+BUILD_DIR = 'build/2014'
+DEPLOY_DIR = 'deploy'
+DEPLOY_BRANCH = 'master'
+DEPLOY_REPOSITORY = 'git@github.com:nodefest/nodefest.github.com.git'
+
 module.exports = (grunt) ->
 
   grunt.task.loadNpmTasks 'grunt-contrib-clean'
@@ -16,21 +21,22 @@ module.exports = (grunt) ->
 
     clean:
       build:
-        src: ['build/']
+        src: [BUILD_DIR]
 
     assemble:
       options:
         partials: ['src/includes/**/*.hbs']
         layout: ['src/layouts/default.hbs']
-        flatten: true
-      site:
-        src: ['src/tmpls/*.hbs']
-        dest: 'build/'
+      files:
+        expand: true
+        cwd: 'src/tmpls/'
+        src: ['**/*.hbs']
+        dest: BUILD_DIR
 
     concat:
       css:
-        src: ['build/css/main.css', 'build/css/nav.css', 'build/css/icons.css']
-        dest: 'build/css/style.css'
+        src: ["#{BUILD_DIR}/_dest/css/main.css", "#{BUILD_DIR}/_dest/css/nav.css", "#{BUILD_DIR}/_dest/css/icons.css"]
+        dest: "#{BUILD_DIR}/css/style.css"
       jslib:
         src: [
           'bower_components/jquery/dist/jquery.min.js'
@@ -41,56 +47,77 @@ module.exports = (grunt) ->
           'bower_components/PeriodicEventEmitter/PeriodicEventEmitter.js'
           'bower_components/socket.io-client/socket.io.js'
         ]
-        dest: 'build/js/lib.js'
+        dest: "#{BUILD_DIR}/js/lib.js"
       jsapp:
         src: [
           'src/js/main.js'
           'src/js/NF14.view3d.js'
         ]
-        dest: 'build/js/app.js'
+        dest: "#{BUILD_DIR}/js/app.js"
 
     uglify:
       jsapp:
-        files:
-          'build/js/app.min.js': ['build/js/app.js']
+        files: [{
+          expand: true
+          cwd: "#{BUILD_DIR}/js/"
+          src: 'app.js'
+          dest: "#{BUILD_DIR}/js/"
+          ext: '.min.js'
+        }]
       jslib:
         options:
           preserveComments: 'all'
-        files:
-          'build/js/lib.min.js': ['build/js/lib.js']
+        files: [{
+          expand: true
+          cwd: "#{BUILD_DIR}/js/"
+          src: 'lib.js'
+          dest: "#{BUILD_DIR}/js/"
+          ext: '.min.js'
+        }]
 
     sass:
       main:
-        files:
-          'build/css/main.css': 'src/scss/main.scss'
+        files: [{
+          expand: true
+          cwd: 'src/scss/'
+          src: ['main.scss']
+          dest: "#{BUILD_DIR}/_dest/css/"
+          ext: '.css'
+        }]
 
     csscomb:
-      css:
-        files:
-          'build/css/style.css': 'build/css/style.css'
+      dynamic_mappings:
+        expand: true
+        cwd: "#{BUILD_DIR}/css/"
+        src: ['style.css']
+        dest: "#{BUILD_DIR}/_dest/css/"
+        ext: '.css'
 
     csso:
-      css:
-        files:
-          'build/css/style.min.css': 'build/css/style.css'
+      dynamic_mappings:
+        expand: true
+        cwd: "#{BUILD_DIR}/_dest/css/"
+        src: ['style.css']
+        dest: "#{BUILD_DIR}/css/"
+        ext: '.min.css'
 
     sprite:
       nav:
         src: 'src/sprite_img/nav/*.png'
-        destImg: 'build/img/nav.png'
-        destCSS: 'build/css/nav.css'
+        destImg: "#{BUILD_DIR}/_dest/img/nav.png"
+        destCSS: "#{BUILD_DIR}/_dest/css/nav.css"
       icons:
         src: 'src/sprite_img/icons/*.png'
-        destImg: 'build/img/icons.png'
-        destCSS: 'build/css/icons.css'
+        destImg: "#{BUILD_DIR}/_dest/img/icons.png"
+        destCSS: "#{BUILD_DIR}/_dest/css/icons.css"
 
     image:
       all:
         files: [{
           expand: true,
-          cwd: 'build/img/'
-          src: ['*.{png,jpg,gif,svg}'],
-          dest: 'build/img/'
+          cwd: "#{BUILD_DIR}/img/"
+          src: ['*.{png,jpg,gif,svg}']
+          dest: "#{BUILD_DIR}/img/"
         }]
 
     copy:
@@ -99,21 +126,28 @@ module.exports = (grunt) ->
           expand: true
           cwd: 'src/static/'
           src: '**'
-          dest: 'build/'
+          dest: BUILD_DIR
+        ]
+      image:
+        files: [
+          expand: true
+          cwd: "#{BUILD_DIR}/_dest/img/"
+          src: '**'
+          dest: "#{BUILD_DIR}/img/"
         ]
 
     watch:
       js:
         files: ['src/js/*.js']
-        tasks: ['concat:jsapp', 'uglify:jsapp']
+        tasks: ['build:js']
       css:
         files: ['src/scss/*.scss']
-        tasks: ['sass', 'sprite', 'concat', 'csscomb', 'csso']
+        tasks: ['build:css']
       assemble:
-        files: ['src/includes/*.hbs', 'src/layouts/default.hbs', 'src/tmpls/*.hbs']
+        files: ['src/**/*.hbs']
         tasks: ['assemble']
 
   grunt.registerTask 'build:js', ['concat:jslib', 'concat:jsapp', 'uglify:jslib', 'uglify:jsapp']
-  grunt.registerTask 'build:css', ['sass', 'sprite', 'image', 'concat:css', 'csscomb', 'csso']
-  grunt.registerTask 'build', ['clean', 'assemble', 'copy', 'build:js', 'build:css']
+  grunt.registerTask 'build:css', ['sass', 'sprite', 'concat:css', 'csscomb', 'csso']
+  grunt.registerTask 'build', ['clean', 'assemble', 'build:js', 'build:css', 'copy', 'image']
   grunt.registerTask 'default', ['watch']
