@@ -25,12 +25,21 @@ module.exports = (grunt) ->
 
     assemble:
       options:
+        data: ['src/data/config.yml']
         partials: ['src/includes/**/*.hbs']
-        layout: ['src/layouts/default.hbs']
-      files:
+        layout: ['default.hbs']
+        layoutdir: 'src/layouts'
+      site:
         expand: true
         cwd: 'src/tmpls/'
-        src: ['**/*.hbs']
+        src: ['**/*.hbs', '!index.hbs']
+        dest: BUILD_DIR
+      index:
+        expand: true
+        options:
+          layout: 'index.hbs'
+        cwd: 'src/tmpls/'
+        src: ['index.hbs']
         dest: BUILD_DIR
 
     concat:
@@ -103,11 +112,11 @@ module.exports = (grunt) ->
 
     sprite:
       nav:
-        src: 'src/sprite_img/nav/*.png'
+        src: 'src/static/img/nav/*.png'
         destImg: "#{BUILD_DIR}/_dest/img/nav.png"
         destCSS: "#{BUILD_DIR}/_dest/css/nav.css"
       icons:
-        src: 'src/sprite_img/icons/*.png'
+        src: 'src/static/img/icons/*.png'
         destImg: "#{BUILD_DIR}/_dest/img/icons.png"
         destCSS: "#{BUILD_DIR}/_dest/css/icons.css"
 
@@ -139,10 +148,10 @@ module.exports = (grunt) ->
     watch:
       js:
         files: ['src/js/*.js']
-        tasks: ['build:js']
+        tasks: ['concat:jsapp', 'uglify:jsapp']
       css:
         files: ['src/scss/*.scss']
-        tasks: ['build:css']
+        tasks: ['sass', 'sprite', 'concat:css', 'csso']
       assemble:
         files: ['src/**/*.hbs']
         tasks: ['assemble']

@@ -6,23 +6,23 @@
 
 @font-face {
   font-family: 'NotoSansJP-Light';
-  src: url('/fonts/NotoSansJP-Light.eot') format('eot'),
-       url('/fonts/NotoSansJP-Light.woff') format('woff');
+  src: url('/2014/fonts/NotoSansJP-Light.eot') format('eot'),
+       url('/2014/fonts/NotoSansJP-Light.woff') format('woff');
 }
 @font-face {
   font-family: 'NotoSansJP-Regular';
-  src: url('/fonts/NotoSansJP-Regular.eot') format('eot'),
-       url('/fonts/NotoSansJP-Regular.woff') format('woff');
+  src: url('/2014/fonts/NotoSansJP-Regular.eot') format('eot'),
+       url('/2014/fonts/NotoSansJP-Regular.woff') format('woff');
 }
 @font-face {
   font-family: 'NotoSansJP-Medium';
-  src: url('/fonts/NotoSansJP-Medium.eot') format('eot'),
-       url('/fonts/NotoSansJP-Medium.woff') format('woff');
+  src: url('/2014/fonts/NotoSansJP-Medium.eot') format('eot'),
+       url('/2014/fonts/NotoSansJP-Medium.woff') format('woff');
 }
 @font-face {
   font-family: 'NotoSansJP-Bold';
-  src: url('/fonts/NotoSansJP-Bold.eot') format('eot'),
-       url('/fonts/NotoSansJP-Bold.woff') format('woff');
+  src: url('/2014/fonts/NotoSansJP-Bold.eot') format('eot'),
+       url('/2014/fonts/NotoSansJP-Bold.woff') format('woff');
 }
 
 $basefontSize: 16px;
@@ -124,12 +124,23 @@ a img:hover {
   z-index: 1;
 }
 
+.l-intro {
+  position: relative;
+  width: 800px;
+  margin: 0 auto;
+  padding-top: $headerHeight;
+}
+
 .l-content {
   position: relative;
   z-index: 1;
   width: 800px;
   margin: 0 auto;
-  background: #fff url(/img/l-content.png) repeat-y;
+  padding-top: $headerHeight;
+  background: #fff url(/2014/img/l-content.png) repeat-y;
+}
+.l-content--home {
+  padding-top: 0;
 }
 
 .l-footer {
@@ -298,7 +309,7 @@ a img:hover {
   display: inline-block;
   min-height: 50px;
   padding: 30px 0 0 50px;
-  background: url(/img/section__title.png) no-repeat;
+  background: url(/2014/img/section__title.png) no-repeat;
   color: $mainColor;
   font-size: 48px;
   font-weight: bold;
