@@ -714,3 +714,16 @@ a img:hover {
 .followButton__text {
   margin-bottom: 10px;
 }
+
+.map {
+  margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   Web Components
+   ========================================================================== */
+google-map {
+  display: block;
+  width: 100%;
+  height: 380px;
+}
