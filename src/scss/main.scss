@@ -306,6 +306,14 @@ a img:hover {
   font-family: monospace;
 }
 
+.dfnList dt {
+  margin: 0 0 .1em;
+  font-weight: bold;
+}
+.dfnList dd {
+  margin: 0 0 .5em;
+}
+
 .section {
   padding: 35px 50px 80px;
 }
@@ -586,7 +594,7 @@ a img:hover {
 }
 
 .image--outline {
-  border: solid 10px rgba(40, 179, 141, 0.2)
+  border: solid 8px rgba(40, 179, 141, 0.2)
 }
 
 .thumbList__item + .thumbList__item {
@@ -598,10 +606,6 @@ a img:hover {
 .thumbList__thumb {
   float: left;
   margin-right: 20px;
-}
-.thumbList__thumb > a {
-  display: inline-block;
-  border: 8px solid #cce2dc;
 }
 .thumbList__content {
   overflow: hidden;
