@@ -169,6 +169,20 @@ a img:hover {
   background: #22c69e;
 }
 
+.l-socialParts {
+  @include clearfix;
+  padding: 80px 50px;
+  background: #f0f0f0;
+}
+.l-socialParts__left {
+  float: left;
+  width: 345px;
+}
+.l-socialParts__right {
+  float: right;
+  width: 345px;
+}
+
 /* ==========================================================================
    Modules
    ========================================================================== */
@@ -642,20 +656,6 @@ a img:hover {
 .bannerList > li {
   float: left;
   margin: 0 20px 20px 0;
-}
-
-.l-socialParts {
-  @include clearfix;
-  padding: 80px 50px;
-  background: #f0f0f0;
-}
-.l-socialParts__left {
-  float: left;
-  width: 345px;
-}
-.l-socialParts__right {
-  float: right;
-  width: 345px;
 }
 
 .socialParts + .socialParts {
