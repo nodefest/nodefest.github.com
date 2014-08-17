@@ -144,6 +144,19 @@ module.exports = (grunt) ->
           src: '**'
           dest: "#{BUILD_DIR}/img/"
         ]
+      webcomponents:
+        files: [
+          expand: true
+          cwd: 'bower_components/'
+          src: [
+            'platform/**',
+            'polymer/**',
+            'core-shared-lib/**',
+            'google-apis/**',
+            'google-map/**'
+          ]
+          dest: "#{BUILD_DIR}/webcomponents/"
+        ]
 
     watch:
       js:
