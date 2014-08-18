@@ -171,7 +171,7 @@ module.exports = (grunt) ->
         tasks: ['concat:jsapp', 'uglify:jsapp', 'notify']
       css:
         files: ['src/scss/*.scss']
-        tasks: ['sass', 'sprite', 'concat:css', 'csso', 'notify']
+        tasks: ['build:css', 'notify']
       assemble:
         files: ['src/**/*.hbs']
         tasks: ['assemble', 'notify']
