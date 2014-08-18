@@ -17,12 +17,15 @@ module.exports = (grunt) ->
   grunt.task.loadNpmTasks 'grunt-contrib-copy'
   grunt.task.loadNpmTasks 'grunt-notify'
   grunt.task.loadNpmTasks 'grunt-contrib-watch'
+  grunt.loadTasks 'tasks'
 
   grunt.initConfig
 
     clean:
       build:
         src: [BUILD_DIR]
+      tmp:
+        src: ['build/2014/_dest/']
 
     assemble:
       options:
@@ -138,6 +141,11 @@ module.exports = (grunt) ->
           src: '**'
           dest: BUILD_DIR
         ]
+      deploy:
+        expand: true
+        cwd: BUILD_DIR
+        src: ['**/*', '!**/_**/*', '!**/_*'] # ignore files start with underscore.
+        dest: "#{DEPLOY_DIR}/2014"
       image:
         files: [
           expand: true
@@ -176,7 +184,19 @@ module.exports = (grunt) ->
         files: ['src/**/*.hbs']
         tasks: ['assemble', 'notify']
 
+    setup:
+      repository: DEPLOY_REPOSITORY
+      branch: DEPLOY_BRANCH
+      dir: DEPLOY_DIR
+
+    deploy:
+      #dryrun: true
+      branch: DEPLOY_BRANCH
+      dir: DEPLOY_DIR
+      message: 'Update 2014 with <%= sha1 %>'
+
   grunt.registerTask 'build:js', ['concat:jslib', 'concat:jsapp', 'uglify:jslib', 'uglify:jsapp']
   grunt.registerTask 'build:css', ['sass', 'sprite', 'concat:css', 'csscomb', 'csso']
-  grunt.registerTask 'build', ['clean', 'assemble', 'build:js', 'build:css', 'copy', 'image']
+  grunt.registerTask 'build', ['clean:build', 'assemble', 'build:js', 'build:css', 'copy:build', 'copy:image', 'copy:webcomponents', 'image', 'clean:tmp']
+  grunt.registerTask 'publish', ['setup', 'build', 'copy:deploy', 'deploy']
   grunt.registerTask 'default', ['watch']
