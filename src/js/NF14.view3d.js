@@ -574,11 +574,11 @@ NF14.view3d.Fire = function ( position, color, text, viewport, npc ) {
   var ctx = canvas.getContext( '2d' );
   // ctx.fillStyle = 'red';
   // ctx.fillRect( 0, 0, size, size );
-  ctx.font = fontSize + 'px Arial';
+  ctx.font = 'bold ' + fontSize + 'px Arial';
   ctx.textAlign = 'center';
-  ctx.lineWidth = 10;
+  ctx.lineWidth = 16;
   ctx.shadowColor= '#f4fb7f';
-  ctx.shadowBlur = 10;
+  ctx.shadowBlur = 30;
   ctx.strokeStyle = "#179976";
   ctx.strokeText( text, size / 2, size / 2 );
   ctx.shadowBlur = 0;
