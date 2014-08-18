@@ -15,6 +15,7 @@ module.exports = (grunt) ->
   grunt.task.loadNpmTasks 'grunt-spritesmith'
   grunt.task.loadNpmTasks 'grunt-image'
   grunt.task.loadNpmTasks 'grunt-contrib-copy'
+  grunt.task.loadNpmTasks 'grunt-notify'
   grunt.task.loadNpmTasks 'grunt-contrib-watch'
 
   grunt.initConfig
@@ -158,16 +159,22 @@ module.exports = (grunt) ->
           dest: "#{BUILD_DIR}/webcomponents/"
         ]
 
+    notify:
+      watch:
+        options:
+          title: 'Nodefest 2014'
+          message: '＼(^o^)／ｵﾜﾀ'
+
     watch:
       js:
         files: ['src/js/*.js']
-        tasks: ['concat:jsapp', 'uglify:jsapp']
+        tasks: ['concat:jsapp', 'uglify:jsapp', 'notify']
       css:
         files: ['src/scss/*.scss']
-        tasks: ['sass', 'sprite', 'concat:css', 'csso']
+        tasks: ['sass', 'sprite', 'concat:css', 'csso', 'notify']
       assemble:
         files: ['src/**/*.hbs']
-        tasks: ['assemble']
+        tasks: ['assemble', 'notify']
 
   grunt.registerTask 'build:js', ['concat:jslib', 'concat:jsapp', 'uglify:jslib', 'uglify:jsapp']
   grunt.registerTask 'build:css', ['sass', 'sprite', 'concat:css', 'csscomb', 'csso']
