@@ -6,14 +6,10 @@ Thumbs.db
 _notes
 _delivery
 node_modules
+bower_components
 config.rb
 vendor/bundle
 .bundle
 /deploy
-
 # compiled files
 /build
-
-# local files
-_docs
-_html
