@@ -586,7 +586,7 @@ NF14.view3d.Fire = function ( position, color, text, viewport, npc ) {
 
   for ( var i = 0, l = numOfLines; i < l; i ++ ) {
 
-    textOfCurrentLine = text.slice( numOfLines * i, numOfLines * i + CharsPerALine );
+    textOfCurrentLine = text.slice( CharsPerALine * i, CharsPerALine * ( i + 1 ) );
 
     ctx.shadowBlur = 10;
     ctx.strokeStyle = "#179976";
