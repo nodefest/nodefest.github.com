@@ -65,6 +65,7 @@ module.exports = (grunt) ->
         src: [
           'src/js/main.js'
           'src/js/NF14.view3d.js'
+          'src/js/fireworks.js'
         ]
         dest: "#{BUILD_DIR}/js/app.js"
 
