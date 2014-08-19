@@ -1,5 +1,5 @@
 {
-  "name": "nodefest.github.com#2014",
+  "name": "nodefest",
   "version": "0.0.1",
   "scripts": {
     "postinstall": "bower i"
