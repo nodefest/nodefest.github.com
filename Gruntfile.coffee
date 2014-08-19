@@ -78,16 +78,16 @@ module.exports = (grunt) ->
           dest: "#{BUILD_DIR}/js/"
           ext: '.min.js'
         }]
-      jslib:
-        options:
-          preserveComments: 'all'
-        files: [{
-          expand: true
-          cwd: "#{BUILD_DIR}/js/"
-          src: 'lib.js'
-          dest: "#{BUILD_DIR}/js/"
-          ext: '.min.js'
-        }]
+      # jslib:
+      #   options:
+      #     preserveComments: 'all'
+      #   files: [{
+      #     expand: true
+      #     cwd: "#{BUILD_DIR}/js/"
+      #     src: 'lib.js'
+      #     dest: "#{BUILD_DIR}/js/"
+      #     ext: '.min.js'
+      #   }]
 
     sass:
       main:
@@ -196,7 +196,7 @@ module.exports = (grunt) ->
       dir: DEPLOY_DIR
       message: 'Update 2014 with <%= sha1 %>'
 
-  grunt.registerTask 'build:js', ['concat:jslib', 'concat:jsapp', 'uglify:jslib', 'uglify:jsapp']
+  grunt.registerTask 'build:js', ['concat:jslib', 'concat:jsapp', 'uglify:jsapp']
   grunt.registerTask 'build:css', ['sass', 'sprite', 'concat:css', 'csscomb', 'csso']
   grunt.registerTask 'build', ['clean:build', 'assemble', 'build:js', 'build:css', 'copy:build', 'copy:image', 'copy:webcomponents', 'image', 'clean:tmp']
   grunt.registerTask 'publish', ['setup', 'build', 'copy:deploy', 'deploy']
