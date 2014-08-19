@@ -26,6 +26,7 @@
   overflow: hidden;
 }
 .view3d__cursor{
+  pointer-events: none;
   position: absolute;
   top:-1000px;
   padding: 8px 0 0 8px;
