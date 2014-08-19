@@ -219,7 +219,7 @@
     <div class="view3d__inner">
       <div class="view3d__cursor">
         <div class="view3d__textField">
-          <input>
+          <input maxlength="10">
         </div>
       </div>
     </div>
@@ -232,7 +232,7 @@
 
 <script>
 
-var headerHeight = 0;//$( '.l-header' ).height();
+var headerHeight = $( '.l-header' ).height();
 var width = window.innerWidth;
 var height = window.innerHeight - headerHeight;
 var viewport = new NF14.view3d.Viewport( document.getElementById( 'fireworks' ) );
