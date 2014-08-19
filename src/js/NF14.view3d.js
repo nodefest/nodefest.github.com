@@ -594,7 +594,7 @@ NF14.view3d.Fire = function ( position, color, text, viewport, npc ) {
     ctx.shadowBlur = 0;
     ctx.fillStyle = '#fff';
     ctx.fillText( textOfCurrentLine, size / 2, size / 2 + fontSize * i + firstLineY );
-    console.log( size / 2 + fontSize * i + firstLineY );
+    // console.log( size / 2 + fontSize * i + firstLineY );
 
   }
 

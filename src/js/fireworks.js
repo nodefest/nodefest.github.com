@@ -62,7 +62,7 @@
       color: fire.color,
       text: fire.text
     }
-    console.log( data );
+    // console.log( data );
     socket.emit( 'server_fire', data );
 
   } );
