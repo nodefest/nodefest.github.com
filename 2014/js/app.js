@@ -639,6 +639,10 @@ NF14.view3d.Fire = function ( position, color, text, viewport, npc ) {
 
   var size = 512;
   var fontSize = 80;
+  var CharsPerALine = 6;
+  var numOfLines = -~( text.length / CharsPerALine );
+  var firstLineY = fontSize / 2 + ( numOfLines - 1 ) * -.5 * fontSize;
+  var textOfCurrentLine;
   var canvas = document.createElement( 'canvas' );
   canvas.width = size;
   canvas.height = size;
@@ -650,11 +654,20 @@ NF14.view3d.Fire = function ( position, color, text, viewport, npc ) {
   ctx.lineWidth = 16;
   ctx.shadowColor= '#f4fb7f';
   ctx.shadowBlur = 30;
-  ctx.strokeStyle = "#179976";
-  ctx.strokeText( text, size / 2, size / 2 );
-  ctx.shadowBlur = 0;
-  ctx.fillStyle = '#fff';
-  ctx.fillText( text, size / 2, size / 2 );
+
+  for ( var i = 0, l = numOfLines; i < l; i ++ ) {
+
+    textOfCurrentLine = text.slice( numOfLines * i, numOfLines * i + CharsPerALine );
+
+    ctx.shadowBlur = 10;
+    ctx.strokeStyle = "#179976";
+    ctx.strokeText( textOfCurrentLine, size / 2, size / 2 + fontSize * i + firstLineY );
+    ctx.shadowBlur = 0;
+    ctx.fillStyle = '#fff';
+    ctx.fillText( textOfCurrentLine, size / 2, size / 2 + fontSize * i + firstLineY );
+    console.log( size / 2 + fontSize * i + firstLineY );
+
+  }
 
   var map = new THREE.Texture( canvas );
   map.needsUpdate = true;
@@ -874,74 +887,85 @@ NF14.view3d.InputUI = function ( el, viewport ) {
 
 } )();
 
-var headerHeight = $( '.l-header' ).height();
-var width = window.innerWidth;
-var height = window.innerHeight - headerHeight;
-var viewport = new NF14.view3d.Viewport( document.getElementById( 'fireworks' ) );
-viewport.setSize( width, height );
-viewport.run();
+;( function () {
 
-var building = new NF14.view3d.BuildingMesh();
-viewport.scene.add( building );
+  if ( !Modernizr.webgl ){
 
-var inputUI = new NF14.view3d.InputUI( document.getElementById( 'fireworks' ), viewport );
+    return;
 
-// 適当にインターバルを作って、自動で花火を new してください。
-// new した花火は、寿命が尽きると自分で自分を delete します。たぶん。
-var interval = new PeriodicEventEmitter( 750 );
+  }
 
-interval.addEventListener( 'period', function () {
-
-  var pos = new THREE.Vector3(
-    Math.random() * 40 - 20,
-    Math.random() * 40,
-    Math.random() * 40 - 20
-  );
-  var color = 0x76f693;
-  var f = new NF14.view3d.Fire( pos, color, '', viewport, true );
-
-} );
-
-// ウィンドウのサイズが変わったらビューポートの大きさを更新してください
-$( window ).on( 'resize', function ( e ) {
-
+  var headerHeight = $( '.l-header' ).height();
   var width = window.innerWidth;
   var height = window.innerHeight - headerHeight;
+  var viewport = new NF14.view3d.Viewport( document.getElementById( 'fireworks' ) );
   viewport.setSize( width, height );
+  viewport.run();
 
-} );
+  var building = new NF14.view3d.BuildingMesh();
+  viewport.scene.add( building );
+
+  var inputUI = new NF14.view3d.InputUI( document.getElementById( 'fireworks' ), viewport );
+
+  // 適当にインターバルを作って、自動で花火を new してください。
+  // new した花火は、寿命が尽きると自分で自分を delete します。たぶん。
+  var interval = new PeriodicEventEmitter( 750 );
+
+  interval.addEventListener( 'period', function () {
+
+    var pos = new THREE.Vector3(
+      Math.random() * 40 - 20,
+      Math.random() * 40,
+      Math.random() * 40 - 20
+    );
+    var color = 0x76f693;
+    var f = new NF14.view3d.Fire( pos, color, '', viewport, true );
+
+  } );
+
+  // ウィンドウのサイズが変わったらビューポートの大きさを更新してください
+  $( window ).on( 'resize', function ( e ) {
+
+    var width = window.innerWidth;
+    var height = window.innerHeight - headerHeight;
+    viewport.setSize( width, height );
+
+  } );
 
 
-////////////////////////
-// socket 利用時の例
-////////////////////////
+  ////////////////////////
+  // socket 利用時の例
+  ////////////////////////
 
-var socket = io( '210.152.156.195' );
+  var socket = io( 'http://localhost:8080' );
 
-// 閲覧者が花火を打ち上げると 'userinput:fire' イベントが発火します
-// これをソケットサーバに送ってください。
-viewport.addEventListener( 'userinput:fire', function ( fire ) {
+  // 閲覧者が花火を打ち上げると 'userinput:fire' イベントが発火します
+  // これをソケットサーバに送ってください。
+  viewport.addEventListener( 'userinput:fire', function ( fire ) {
 
-  // console.log( fire.position, fire.color, fire.text );
-  var data = {
-    x: fire.position.x,
-    y: fire.position.y,
-    z: fire.position.z, 
-    color: fire.color,
-    text: fire.text
-  }
-  socket.emit( 'server_fire', data );
+    // console.log( fire.position, fire.color, fire.text );
+    var data = {
+      x: fire.position.x,
+      y: fire.position.y,
+      z: fire.position.z, 
+      color: fire.color,
+      text: fire.text
+    }
+    console.log( data );
+    socket.emit( 'server_fire', data );
 
-} );
+  } );
 
 
-socket.on( 'client_fire', function ( data ) {
+  socket.on( 'client_fire', function ( data ) {
 
-  var position = new THREE.Vector3(
-    data.x,
-    data.y,
-    data.z
-  );
-  new NF14.view3d.Fire( position, data.color, data.text, viewport );
+    var position = new THREE.Vector3(
+      data.x,
+      data.y,
+      data.z
+    );
+    new NF14.view3d.Fire( position, data.color, data.text, viewport );
 
-} );
+  } );
+  
+} )();
