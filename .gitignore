@@ -1,4 +1,16 @@
-.DS_Store
-node_modules/
+# craps
 .idea/
-*~
+*.sass-cache
+.DS_Store
+.cache
+Thumbs.db
+_notes
+_delivery
+node_modules
+bower_components
+config.rb
+vendor/bundle
+.bundle
+/deploy
+# compiled files
+/build
