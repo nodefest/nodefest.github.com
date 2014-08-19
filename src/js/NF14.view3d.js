@@ -568,6 +568,10 @@ NF14.view3d.Fire = function ( position, color, text, viewport, npc ) {
 
   var size = 512;
   var fontSize = 80;
+  var CharsPerALine = 6;
+  var numOfLines = -~( text.length / CharsPerALine );
+  var firstLineY = fontSize / 2 + ( numOfLines - 1 ) * -.5 * fontSize;
+  var textOfCurrentLine;
   var canvas = document.createElement( 'canvas' );
   canvas.width = size;
   canvas.height = size;
@@ -579,11 +583,20 @@ NF14.view3d.Fire = function ( position, color, text, viewport, npc ) {
   ctx.lineWidth = 16;
   ctx.shadowColor= '#f4fb7f';
   ctx.shadowBlur = 30;
-  ctx.strokeStyle = "#179976";
-  ctx.strokeText( text, size / 2, size / 2 );
-  ctx.shadowBlur = 0;
-  ctx.fillStyle = '#fff';
-  ctx.fillText( text, size / 2, size / 2 );
+
+  for ( var i = 0, l = numOfLines; i < l; i ++ ) {
+
+    textOfCurrentLine = text.slice( numOfLines * i, numOfLines * i + CharsPerALine );
+
+    ctx.shadowBlur = 10;
+    ctx.strokeStyle = "#179976";
+    ctx.strokeText( textOfCurrentLine, size / 2, size / 2 + fontSize * i + firstLineY );
+    ctx.shadowBlur = 0;
+    ctx.fillStyle = '#fff';
+    ctx.fillText( textOfCurrentLine, size / 2, size / 2 + fontSize * i + firstLineY );
+    console.log( size / 2 + fontSize * i + firstLineY );
+
+  }
 
   var map = new THREE.Texture( canvas );
   map.needsUpdate = true;
