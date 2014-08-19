@@ -665,7 +665,7 @@ NF14.view3d.Fire = function ( position, color, text, viewport, npc ) {
     ctx.shadowBlur = 0;
     ctx.fillStyle = '#fff';
     ctx.fillText( textOfCurrentLine, size / 2, size / 2 + fontSize * i + firstLineY );
-    console.log( size / 2 + fontSize * i + firstLineY );
+    // console.log( size / 2 + fontSize * i + firstLineY );
 
   }
 
@@ -951,7 +951,7 @@ NF14.view3d.InputUI = function ( el, viewport ) {
       color: fire.color,
       text: fire.text
     }
-    console.log( data );
+    // console.log( data );
     socket.emit( 'server_fire', data );
 
   } );
