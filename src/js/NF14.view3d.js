@@ -1,7 +1,7 @@
 
 ;( function () {
 
-'use strict'
+'use strict';
 
 window.NF14 = window.NF14 || {};
 NF14.view3d = {};
@@ -102,10 +102,13 @@ NF14.view3d.CameraControl = function ( viewport ) {
 
 NF14.view3d.CameraControl.prototype.update = function () {
 
-  this.lat = this.lat >  90 ?  90 :
-             this.lat < -90 ? -90 :
+  this.lat = this.lat >  40 ?  40 :
+             this.lat < -40 ? -40 :
              this.lat;
-  this.lon = this.lon < 0 ? 360 + this.lon % 360 : this.lon % 360;
+  // this.lon = this.lon < 0 ? 360 + this.lon % 360 : this.lon % 360;
+  this.lon = this.lon >  60 ?  60 :
+             this.lon < -60 ? -60 :
+             this.lon;
   this._phi   =  THREE.Math.degToRad( this.lat );
   this._theta = -THREE.Math.degToRad( this.lon - 90 );
 
@@ -457,7 +460,7 @@ var VS = [
   // '  t = fract( time / lifetime + shift / 15. );',
   '  vec3 scaledPosition = position * cubicOut( t );',
   '  vec4 pos = projectionMatrix * modelViewMatrix * vec4( scaledPosition, 1. );',
-  '  pos.y += ( sin( t * 3.14 ) * 10. ) / 2. + 10.;',
+  // '  pos.y += ( sin( t * 3.14 ) * 10. ) / 2.;',
   '',
   '  gl_Position = pos;',
   '  gl_PointSize = ( perspective * size ) / gl_Position.w;',
@@ -484,6 +487,11 @@ var FS = [
   '}'
 ].join( '' );
 
+var cubicOut = function ( t ) {
+  var f = t - 1;
+  return f * f * f + 1;
+};
+
 NF14.view3d.Fire = function ( position, color, text, viewport, npc ) {
   
   THREE.EventDispatcher.prototype.apply( this );
@@ -503,8 +511,7 @@ NF14.view3d.Fire = function ( position, color, text, viewport, npc ) {
   };
   uniforms = {
     time:        { type: 'f', value: 0 }, 
-    size:        { type: 'f', value: npc ? 1.25 : 2 }, 
-    // size:        { type: 'f', value: 2.5 }, 
+    size:        { type: 'f', value: npc ? 1.25 : 2 },
     headColor:   { type: 'c', value: new THREE.Color( color ) },
     texture:     { type: 't', value: texture },
     lifetime:    { type: 'f', value: 2 },
@@ -517,8 +524,8 @@ NF14.view3d.Fire = function ( position, color, text, viewport, npc ) {
     attributes: attributes,
     // blending: THREE.AdditiveBlending,
     transparent: true,
-    // depthTest: false
-    depthWrite: false
+    depthTest: false
+    // depthWrite: false
   } );
 
   var radius = 8,
@@ -559,20 +566,26 @@ NF14.view3d.Fire = function ( position, color, text, viewport, npc ) {
 
   }
 
-  var canvas = document.createElement('canvas');
   var size = 512;
+  var fontSize = 80;
+  var canvas = document.createElement( 'canvas' );
   canvas.width = size;
   canvas.height = size;
-  var ctx = canvas.getContext('2d');
-  ctx.font = '50px Arial';
+  var ctx = canvas.getContext( '2d' );
+  // ctx.fillStyle = 'red';
+  // ctx.fillRect( 0, 0, size, size );
+  ctx.font = 'bold ' + fontSize + 'px Arial';
   ctx.textAlign = 'center';
-  // ctx.strokeStyle = "rgba( 0, 0, 0, .6 )";
-  ctx.strokeStyle = "#f4fb7f";
-  ctx.lineWidth = 3;
-  ctx.strokeText( text, size / 2, size / 2);
+  ctx.lineWidth = 16;
+  ctx.shadowColor= '#f4fb7f';
+  ctx.shadowBlur = 30;
+  ctx.strokeStyle = "#179976";
+  ctx.strokeText( text, size / 2, size / 2 );
+  ctx.shadowBlur = 0;
   ctx.fillStyle = '#fff';
-  ctx.fillText( text, size / 2, size / 2);
-  var map = new THREE.Texture(canvas);
+  ctx.fillText( text, size / 2, size / 2 );
+
+  var map = new THREE.Texture( canvas );
   map.needsUpdate = true;
 
   var spriteMaterial = new THREE.SpriteMaterial( {
@@ -585,7 +598,6 @@ NF14.view3d.Fire = function ( position, color, text, viewport, npc ) {
 
   this.billboard = new THREE.Sprite( spriteMaterial );
   this.billboard.position.copy( position );
-  this.billboard.position.y += radius;
   this.viewport.scene.add( this.billboard );
 
 };
@@ -604,6 +616,7 @@ NF14.view3d.Fire.prototype.update = function () {
   }
 
   this.object.material.uniforms.time.value = elapsed;
+  this.object.position.y += Math.cos( progress * Math.PI ) * .025;
 
   if ( this.isNPC ) {
     
@@ -611,8 +624,12 @@ NF14.view3d.Fire.prototype.update = function () {
 
   }
 
-  this.billboard.scale.set( 10, 10, 1 );
-  this.billboard.position.y += Math.cos( progress * Math.PI ) * .025;
+  this.billboard.scale.set(
+    Math.min( cubicOut( progress * 2 ), 1 ) * 10,
+    Math.min( cubicOut( progress * 2 ), 1 ) * 10,
+    1
+  );
+  this.billboard.position.copy( this.object.position );
   this.billboard.material.opacity = Math.sin( progress * Math.PI );
 
 };
@@ -647,10 +664,14 @@ NF14.view3d.InputUI = function ( el, viewport ) {
   this.$input  = this.$viewport.find( 'input' );
   this.$ignore = this.$viewport.find( '.view3d__ignore' );
   this.cursorPosition = new THREE.Vector2();
+  // this.fire = null;
+  this.isCoolTime = false;
   this.isFocusing = false;
   this.viewportOffset = this.$viewport.offset();
   this.cameraCtrl = new NF14.view3d.CameraControl( viewport );
   this.viewport = viewport;
+
+  that.$cursor.addClass( 'view3d__cursor--focused' );
 
   that.$viewport.on( 'mousemove', function ( e ) {
 
@@ -670,7 +691,6 @@ NF14.view3d.InputUI = function ( el, viewport ) {
   that.$input.on( 'blur', function () {
 
     that.isFocusing = false;
-    that.$cursor.removeClass( 'view3d__cursor--focused' );
     that.$input.val( '' );
 
   } );
@@ -679,10 +699,11 @@ NF14.view3d.InputUI = function ( el, viewport ) {
 
     if ( e.keyCode === 13 ) {
 
-      if ( !that.isFocusing ) {
+      if ( that.isCoolTime ) {
+        return;
+      } else if ( !that.isFocusing ) {
 
         that.isFocusing = true;
-        that.$cursor.addClass( 'view3d__cursor--focused' );
         that.$input.focus();
 
       } else {
@@ -698,7 +719,6 @@ NF14.view3d.InputUI = function ( el, viewport ) {
         direction.normalize();
         var distance = - that.viewport.camera.position.z / direction.z;
         var pos = that.viewport.camera.position.clone().add( direction.multiplyScalar( distance ) );
-        pos.y -= fireRadius;
 
         var color = ( [
           0xf4fb7f, //黄色
@@ -707,13 +727,23 @@ NF14.view3d.InputUI = function ( el, viewport ) {
           0xfbb9db, //ピンク
         ] )[ ( Math.random() * 4 )|0 ];
 
-        new NF14.view3d.Fire( pos, color, text, that.viewport );
+        var fire = new NF14.view3d.Fire( pos, color, text, that.viewport );
+        that.$cursor.removeClass( 'view3d__cursor--focused' );
 
-        if ( !that.isNPC ) {
+        fire.addEventListener( 'disposed', function () {
+
+          that.isCoolTime = false;
+          that.$cursor.addClass( 'view3d__cursor--focused' );
+
+        } );
+
+        that.isCoolTime = true;
+
+        // if ( !that.isNPC ) {
 
           that.viewport.dispatchEvent( { type: 'userinput:fire', position: pos, color: color, text: text } );
 
-        }
+        // }
 
         that.$input.blur();
 
