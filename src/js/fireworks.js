@@ -48,7 +48,7 @@
   // socket 利用時の例
   ////////////////////////
 
-  var socket = io( 'http://localhost:8080' );
+  var socket = io( 'http://nodefest2014.c.node-ninja.com/' );
 
   // 閲覧者が花火を打ち上げると 'userinput:fire' イベントが発火します
   // これをソケットサーバに送ってください。
