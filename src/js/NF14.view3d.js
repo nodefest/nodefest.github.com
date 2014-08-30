@@ -447,18 +447,14 @@ var VS = [
   'uniform float size;',
   'uniform float lifetime;',
   'uniform float perspective;',
+  'uniform float radius;',
   'varying float t;',
-  '',
-  'float cubicOut(float t) {',
-  '  float f = t - 1.0;',
-  '  return f * f * f + 1.0;',
-  '}',
   '',
   'void main () {',
   '',
   '  t = time / lifetime - shift / 15.;',
   // '  t = fract( time / lifetime + shift / 15. );',
-  '  vec3 scaledPosition = position * cubicOut( t );',
+  '  vec3 scaledPosition = position * radius;',
   '  vec4 pos = projectionMatrix * modelViewMatrix * vec4( scaledPosition, 1. );',
   // '  pos.y += ( sin( t * 3.14 ) * 10. ) / 2.;',
   '',
@@ -492,6 +488,14 @@ var cubicOut = function ( t ) {
   return f * f * f + 1;
 };
 
+var radiusFromTime = function (time) {
+  var velocity = 6.0; // 初速
+  var friction = 0.15;
+  var acceleration = 0.0;
+  var position = 0.1;
+  return ((velocity - acceleration * friction) * (Math.pow(Math.E, -1 / friction * time) - 1) - acceleration * time) * -friction + position;
+}
+
 NF14.view3d.Fire = function ( position, color, text, viewport, npc ) {
   
   THREE.EventDispatcher.prototype.apply( this );
@@ -511,6 +515,7 @@ NF14.view3d.Fire = function ( position, color, text, viewport, npc ) {
   };
   uniforms = {
     time:        { type: 'f', value: 0 }, 
+    radius:      { type: 'f', value: 0 },
     size:        { type: 'f', value: npc ? 1.25 : 2 },
     headColor:   { type: 'c', value: new THREE.Color( color ) },
     texture:     { type: 't', value: texture },
@@ -629,6 +634,7 @@ NF14.view3d.Fire.prototype.update = function () {
   }
 
   this.object.material.uniforms.time.value = elapsed;
+  this.object.material.uniforms.radius.value = radiusFromTime(progress);
   this.object.position.y += Math.cos( progress * Math.PI ) * .025;
 
   if ( this.isNPC ) {
