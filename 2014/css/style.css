@@ -702,7 +702,10 @@ a img:hover {
 
 .scheduleInfo > li {
   display: inline-block;
-  margin-right: 8px; }
+  margin-left: 8px; }
+
+.scheduleInfo > li:first-child {
+  margin-left: 0; }
 
 .scheduleInfo__title {
   display: inline-block;
