@@ -589,12 +589,6 @@ ul, ol, li, p {
 img {
   vertical-align: top; }
 
-a img {
-  transition: opacity 0.5s; }
-
-a img:hover {
-  opacity: .7; }
-
 /* ==========================================================================
    Layout
    ========================================================================== */
@@ -1161,7 +1155,11 @@ a img:hover {
   border-color: transparent transparent transparent #28b38e; }
 
 .image--outline {
+  transition: 0.5s;
   border: solid 8px rgba(40, 179, 141, 0.2); }
+
+a:hover .image--outline {
+  border-color: rgba(40, 179, 141, 0.4); }
 
 .thumbList__item + .thumbList__item {
   margin-top: 50px; }
