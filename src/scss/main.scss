@@ -79,12 +79,12 @@ ul, ol, li, p {
 img {
   vertical-align: top;
 }
-a img {
-  transition: opacity $transitionTime;
-}
-a img:hover {
-  opacity: .7;
-}
+// a img {
+//   transition: opacity $transitionTime;
+// }
+// a img:hover {
+//   opacity: .8;
+// }
 
 /* ==========================================================================
    Layout
@@ -645,7 +645,11 @@ a img:hover {
 }
 
 .image--outline {
-  border: solid 8px rgba(40, 179, 141, 0.2)
+  transition: $transitionTime;
+  border: solid 8px rgba(40, 179, 141, 0.2);
+}
+a:hover .image--outline {
+  border-color: rgba(40, 179, 141, 0.4);
 }
 
 .thumbList__item + .thumbList__item {
