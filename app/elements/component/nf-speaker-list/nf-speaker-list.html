@@ -1,0 +1,85 @@
+<dom-module id="nf-speaker-list">
+  <style>
+    :host {
+    }
+    .nf-speaker-list__item {
+      padding: 20px 80px;
+      border-top: 1px solid #DDDDDD;
+    }
+    .nf-speaker-list__item:first-child {
+      border-top: 0;
+    }
+    .nf-speaker {
+      display: table;
+      width: 100%;
+    }
+    .nf-speaker__link {
+      display: table-cell;
+      width: 135px;
+      vertical-align: top;
+      text-align: center;
+    }
+    .nf-speaker__info {
+      display: table-cell;
+      padding-left: 20px;
+      vertical-align: top;
+    }
+    .nf-speaker__thumb {
+      display: block;
+      overflow: hidden;
+      width: 135px;
+      height: 135px;
+      margin-bottom: 10px;
+      border: 4px solid #009688;
+      border-radius: 135px;
+    }
+    .nf-speaker__thumb:hover {
+      border-color: #00796B;
+    }
+    .nf-speaker__id {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .nf-speaker__name {
+      margin-bottom: 10px;
+      font-size: 36px;
+      color: #607D8B;
+    }
+    .nf-speaker__description {
+      line-height: 2;
+    }
+  </style>
+  <template>
+    <template is="dom-repeat" items="{{speakers}}">
+      <div class="nf-speaker-list__item">
+        <div class="nf-speaker">
+          <div class="nf-speaker__link">
+            <a class="nf-speaker__thumb" href$="{{_twitterUrl(item.twitter)}}">
+              <img src$="{{item.thumb}}" width="135" height="135" alt$="{{item.twitter}}">
+            </a>
+            <a class="nf-speaker__id" href$="{{_twitterUrl(item.twitter)}}">@<span>{{item.twitter}}</span></a>
+          </div>
+          <div class="nf-speaker__info">
+            <p class="nf-speaker__name">{{item.name}}</p>
+            <p class="nf-speaker__description" inner-h-t-m-l="{{item.desc}}"</p>
+          </div>
+        </div>
+      </div>
+    </template>
+  </template>
+  <script>
+  Polymer({
+    is: 'nf-speaker-list',
+    properties: {
+      key: String
+    },
+    ready: function() {
+      this.speakers = [];
+    },
+    fetch: function() {
+      this.speakers = window.NF.TEXT.SPEAKERS[this.key];
+    },
+    _twitterUrl: function(account) { return 'https://twitter.com/' + account }
+  });
+  </script>
+</dom-module>

@@ -1,0 +1,24 @@
+<dom-module id="nf-nodejs-logo">
+  <style is="custom-style">
+    :host {
+      display: block;
+    }
+  </style>
+  <template>
+    <a href="https://nodejs.org/">
+      <div class="nf-nodejs-logo__icon">
+        <img src$="{{_createSrcPath()}}" width="187" height="51" alt="">
+      </div>
+    </a>
+  </template>
+</dom-module>
+
+<script>
+  (function () {
+    Polymer({
+      is: 'nf-nodejs-logo',
+      properties: {},
+      _createSrcPath: function() { return location.pathname + 'images/svg/nodejs-logo.svg'; }
+    });
+  })();
+</script>

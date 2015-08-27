@@ -1,0 +1,225 @@
+/*
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+*/
+
+/* Base Style */
+body {
+  min-width: 1024px;
+  background: #F1F1F1;
+  font-family: 'Noto Sans Japanese', Roboto, Noto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #333333;
+}
+
+time {
+  font-family: Roboto;
+}
+
+a {
+  text-decoration: none;
+  color: #009688;
+}
+a:visited {
+  color: #009688;
+}
+a:hover,
+a:active,
+a:focus {
+  color: #00796B;
+}
+
+/* Override Polymer Style */
+#dropShadow.paper-header-panel {
+  z-index: 1 !important;
+}
+
+/* Original Common Component */
+.nf-main {
+  position: relative;
+  z-index: 1;
+}
+
+.nf-ul {
+  list-style: none;
+  line-height: 1.5;
+}
+.nf-ul > li {
+  margin-bottom: 0.5em;
+}
+
+.nf-sections {
+  max-width: 940px;
+  margin: 0 auto 50px;
+  padding: 0 20px;
+}
+
+.nf-section {
+  margin-bottom: 50px;
+}
+.nf-section__body {
+  margin: 0 90px 0 80px;
+}
+.nf-section__body--full {
+  margin: 0;
+}
+
+.nf-heading {
+  margin-bottom: 30px;
+}
+.nf-heading__h {
+  font-size: 36px;
+  font-weight: normal;
+  color: #00796B;
+}
+
+.nf-heading-2 {
+  margin-bottom: 10px;
+}
+.nf-heading-2__h {
+  font-size: 24px;
+  font-weight: normal;
+  color: #00796B;
+}
+
+.nf-heading-3 {
+  line-height: 2;
+}
+.nf-heading-3__h {
+  font-weight: bold;
+}
+
+.nf-frame-section {
+  background-color: #fff;
+  margin-bottom: 50px;
+}
+.nf-frame-section__inner {
+  padding: 50px 160px;
+}
+.nf-frame-section__inner--full {
+  padding: 0;
+}
+.nf-frame-section__inner--large {
+  padding: 20px;
+}
+.nf-frame-section__body--full {
+  margin: 0 -160px -50px;
+}
+
+.nf-frame-heading__h {
+  position: relative;
+  margin: 0 -90px 30px -80px;
+  font-size: 48px;
+  color: rgba(0, 0, 0, 0.54);
+  font-weight: 100;
+}
+.nf-frame-heading__h::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 19px;
+  left: 0;
+  width: 69px;
+  border-top: 2px solid #009688;
+  transform: rotate(-25deg);
+}
+.nf-frame-heading__h::after {
+  content: attr(data-en);
+  display: block;
+  margin: -3px 0 0 64px;
+  padding: 5px 0 0 16px;
+  border-top: 2px solid #009688;
+  font-size: 24px;
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: #000000;
+}
+.nf-frame-heading__h-inner {
+  display: inline-block;
+  margin-left: 64px;
+  padding-left: 16px;
+}
+
+.nf-paragraphs {
+  line-height: 2;
+  font-size: 16px;
+}
+.nf-paragraphs p {
+  margin-top: 2em;
+}
+.nf-paragraphs p:first-child {
+  margin-top: 0;
+}
+
+.nf-buttons {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.nf-button {
+  background: #009688;
+  color: #FFFFFF;
+}
+.nf-button--register {
+  width: 300px;
+}
+
+.nf-fixed-columns {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.nf-fixed-columns__column {
+  display: table-cell;
+  padding-left: 20px;
+}
+.nf-fixed-columns__column:first-child {
+  padding-left: 0;
+}
+
+/* Page About */
+.nf-description-table table {
+  width: 100%;
+  border-top: 1px solid #DDDDDD;
+}
+.nf-description-table th,
+.nf-description-table td {
+  line-height: 2;
+  padding: 15px 10px;
+  border-bottom: 1px solid #DDDDDD;
+  font-size: 16px;
+  text-align: left;
+  vertical-align: top;
+}
+.nf-description-table th {
+  width: 1%;
+  color: rgba(0, 0, 0, 0.54);
+  white-space: nowrap;
+}
+
+/* Page Venue */
+google-map {
+  height: 400px;
+}
+
+/* Page COC */
+.nf-coc__body {
+  padding: 0 80px;
+}
+.nf-coc__section {
+  margin-bottom: 40px;
+}
+.nf-coc__footer {
+  padding: 30px 80px 50px;
+  border-top: 1px solid #EEEEEE;
+  text-align: center;
+}
+.nf-coc__admin {
+  font-weight: bold;
+  color: #009688;
+}
