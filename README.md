@@ -11,7 +11,7 @@ $ npm install
 $ bower install
 ```
 
-### How To Use
+## How To Use
 プレビューするだけなら、
 
 ```
