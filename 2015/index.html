@@ -1,0 +1,374 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!doctype html>
+<html lang="ja" itemscope itemtype="http://schema.org/Organization">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=1024">
+<meta itemprop="name" content="東京Node学園祭2015">
+<meta itemprop="description" content="">
+<meta itemprop="image" content="">
+<meta name="generator" content="Polymer Starter Kit">
+<title>東京Node学園祭2015</title>
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<!-- Chrome for Android theme color -->
+<meta name="theme-color" content="#009688">
+
+<!-- Web Application Manifest -->
+<link rel="manifest" href="manifest.json">
+
+<!-- Tile color for Win8 -->
+<meta name="msapplication-TileColor" content="#009688">
+
+<!-- Add to homescreen for Chrome on Android -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="東京Node学園祭2015">
+<link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+<!-- Add to homescreen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="東京Node学園祭2015">
+<link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+<!-- Tile icon for Win8 (144x144) -->
+<meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+
+<!-- OGP -->
+<meta property="og:title" content="東京Node学園祭2015">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://nodefest.jp/2015/">
+<meta property="og:image" content="http://nodefest.jp/2015/images/touch/ogimage.png">
+<meta property="og:description" content="このたびNode.js日本ユーザグループは、Domenic Denicola氏、Kat Marchán氏、Rod Vagg氏を招聘し、6回目の「東京Node学園祭」を開催します。">
+
+<link rel="stylesheet" href="styles/main.css">
+
+<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+<!-- will be replaced with elements/elements.vulcanized.html -->
+<link rel="import" href="elements/elements.vulcanized.html">
+<link rel="import" href="svg-icons.html">
+<!-- endreplace-->
+</head>
+
+<body class="fullbleed layout vertical">
+
+<paper-header-panel main mode="standard" class="flex">
+  <!-- Main Toolbar -->
+  <paper-toolbar>
+    <nf-site-header class="flex"></nf-site-header>
+  </paper-toolbar>
+
+  <div class="fit">
+    <iron-pages id="js-nf-pages" selected="0">
+      <div id="nf-page-about">
+        <nf-top-gimmick></nf-top-gimmick>
+
+        <main class="nf-main" role="main">
+          <div class="nf-sections">
+            <paper-material class="nf-frame-section">
+              <section class="nf-frame-section__inner">
+                <header class="nf-frame-heading">
+                  <h1 class="nf-frame-heading__h" data-en="About"><span class="nf-frame-heading__h-inner">東京Node学園祭について</span></h1>
+                </header>
+                <div class="nf-frame-section__body">
+                  <div class="nf-paragraphs">
+                    <p>WebSocketの普及により実現されつつあるリアルタイムWebとそれに伴って現実となりつつあるC10K問題。これらへのソリューションとして世界中から注目されているのが、サーバサイドJavaScriptプラットフォームのNode.jsです。</p>
+                    <p>このたびNode.js日本ユーザグループは、OpenDataプロジェクトに従事しつつクライアントのモジュールを多く作成しているMaxwell Ogden氏、Automattic CTOであり、socket.ioの作者であるGuillermo Rauch氏、expressを管理しているStrongLoopという会社のCEOであるIssac Roth氏、NodeConfの主催者であり、Node.jsのコミュニティを支える中心人物であるMikeal Rogers氏を招聘し、5回目の「東京Node学園祭」を開催します。</p>
+                  </div>
+                </div>
+                <div class="nf-buttons">
+                  <paper-button raised class="nf-button nf-button--register">イベントに参加する</paper-button>
+                </div>
+              </section>
+            </paper-material>
+          </div>
+
+          <nf-section-line-picture src="01"></nf-section-line-picture>
+
+          <div class="nf-sections">
+            <nf-news data-jsLoadText></nf-news>
+
+            <paper-material elevation="2" class="nf-frame-section">
+              <section class="nf-frame-section__inner">
+                <header class="nf-frame-heading">
+                  <h1 class="nf-frame-heading__h" data-en="Event Outline"><span class="nf-frame-heading__h-inner">開催概要</span></h1>
+                </header>
+                <div class="nf-frame-section__body">
+                  <div class="nf-description-table">
+                    <table>
+                      <tr>
+                        <th>日時</th>
+                        <td>2015年11月7日(土) 9:00 開場 / 10:00 〜 17:30 / 後夜祭18:30 〜</td>
+                      </tr>
+                      <tr>
+                        <th>会場</th>
+                        <td><a href="#">株式会社サイバーエージェント</a><br>〒150-0043 渋谷区道玄坂1丁目12番1号渋谷マークシティウエスト 13階</td>
+                      </tr>
+                      <tr>
+                        <th>Hashtag</th>
+                        <td><a href="#">#nodefest</a> （全体）<br><a href="#">#nodefestA</a> （トラックA）<br><a href="#">#nodefestB</a> （トラックB）</td>
+                      </tr>
+                      <tr>
+                        <th>Ustream</th>
+                        <td><a href="#">トラックA</a> （全体含む）、<a href="#">トラックB</a></td>
+                      </tr>
+                      <tr>
+                        <th>無線LAN</th>
+                        <td>無料のWi-Fi アクセスポイントを用意します。</td>
+                      </tr>
+                      <tr>
+                        <th>参加費</th>
+                        <td>1,000円（チケットは<a href="#">connpass</a>から購入できます）</td>
+                      </tr>
+                      <tr>
+                        <th>主催</th>
+                        <td><a href="#">Node.js日本ユーザーグループ</a></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </section>
+            </paper-material>
+
+            <nf-sp-speakers data-jsLoadText></nf-sp-speakers>
+
+            <section class="nf-section">
+              <header class="nf-heading">
+                <h1 class="nf-heading__h">カンファレンス取材に関して</h1>
+              </header>
+              <div class="nf-section__body">
+                <div class="nf-paragraphs">
+                  <p>東京Node学園祭2015の取材をご希望されるプレスの皆様に取材の申し込み方法をお知らせいたします。 東京Node学園祭2015の取材につきましては、会場のセキュリティの問題で、事前にご登録いただかないと入場することができません。</p>
+                  <p>そこで、取材をご希望される方は、2015年11月7日（土）までに<b><a href="mailto:nodefest@nodejs.jp">nodefest@nodejs.jp</a></b>まで、取材ご担当者の氏名・所属、媒体名などをご連絡いただければ幸いです。</p>
+                  <p>なお、当日は満席になることが予想されるため、立ち見での取材をお願いいたします。あらかじめご了承ください。<br>当日受付にて、プレスである旨を告げ、プレス用カードを受け取ったうえでご入場ください。この際、御名刺をいただきたく存じますので、ご用意をよろしくお願い致します。</p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+
+      <div id="nf-page-schedule">
+        <nf-page-header src="schedule">Schedule</nf-page-header>
+        <main class="nf-main" role="main">
+          <div class="nf-sections">
+            <paper-material elevation="2" class="nf-frame-section">
+              <section class="nf-frame-section__inner nf-frame-section__inner--full">
+                <nf-schedule-table data-jsLoadText></nf-schedule-table>
+              </section>
+            </paper-material>
+
+            <div class="nf-section">
+              <ul class="nf-ul">
+                <li>※ セッションの内容／時間は変更になる可能性があります。</li>
+                <li>※ セッションは日本語・英語で行われます。</li>
+              </ul>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <div id="page-speakers">
+        <nf-page-header src="speakers">Speakers</nf-page-header>
+        <main class="nf-main" role="main">
+          <div class="nf-sections">
+            <paper-material class="nf-frame-section">
+              <section class="nf-frame-section__inner">
+                <header class="nf-frame-heading">
+                  <h1 class="nf-frame-heading__h" data-en="Special Guest Speakers"><span class="nf-frame-heading__h-inner">海外登壇者</span></h1>
+                </header>
+                <div class="nf-frame-section__body--full">
+                  <nf-speaker-list key="OVERSEAS" data-jsLoadText></nf-speaker-list>
+                </div>
+              </section>
+            </paper-material>
+
+            <paper-material class="nf-frame-section">
+              <section class="nf-frame-section__inner">
+                <header class="nf-frame-heading">
+                  <h1 class="nf-frame-heading__h" data-en="Guest Speakers"><span class="nf-frame-heading__h-inner">登壇者</span></h1>
+                </header>
+                <div class="nf-frame-section__body--full">
+                  <nf-speaker-list key="DOMESTIC" data-jsLoadText></nf-speaker-list>
+                </div>
+              </section>
+            </paper-material>
+          </div>
+        </main>
+      </div>
+
+      <div id="nf-page-venue">
+        <nf-page-header src="venue">Venue</nf-page-header>
+        <main class="nf-main" role="main">
+          <div class="nf-sections">
+            <paper-material elevation="2" class="nf-frame-section">
+              <section class="nf-frame-section__inner nf-frame-section__inner--full">
+                <google-map latitude="35.657997" longitude="139.698080" zoom="17" fitToMarkers>
+                  <google-map-marker latitude="35.657997" longitude="139.698080" draggable="false" title="株式会社サイバーエージェント"></google-map-marker>
+                </google-map>
+              </section>
+              <div class="nf-frame-section__inner nf-frame-section__inner--large">
+                <div class="nf-heading-3">
+                  <h2 class="nf-heading-3__h">株式会社サイバーエージェント<a href="https://goo.gl/maps/mWBPj">（大きな地図で見る）</a></h2>
+                </div>
+                <div class="nf-paragraphs">
+                  <p>〒150-0043 東京都渋谷区道玄坂1丁目12番1号 渋谷マークシティ ウエスト13階</p>
+                </div>
+              </div>
+            </paper-material>
+
+            <section class="nf-section">
+              <header class="nf-heading">
+                <h1 class="nf-heading__h">最寄り駅からのアクセス</h1>
+              </header>
+              <div class="nf-section__body">
+                <div class="nf-fixed-columns">
+                  <div class="nf-fixed-columns__column">
+                    <div class="nf-heading-3">
+                      <h2 class="nf-heading-3__h">【京王井の頭線】 渋谷駅 西口より</h2>
+                    </div>
+                    <div class="nf-paragraphs">
+                      <p>渋谷マークシティWEST MALL 1Fに直結しております。渋谷マークシティ ウエスト13階までお越しください。</p>
+                    </div>
+                  </div>
+                  <div class="nf-fixed-columns__column">
+                    <div class="nf-heading-3">
+                      <h2 class="nf-heading-3__h">【東京メトロ】 銀座線・半蔵門線・副都心線 渋谷駅より</h2>
+                    </div>
+                    <div class="nf-paragraphs">
+                      <p>京王井の頭線 渋谷駅方面にお越しください。</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="nf-fixed-columns">
+                  <div class="nf-fixed-columns__column">
+                    <div class="nf-heading-3">
+                      <h2 class="nf-heading-3__h">【東急】 東横線・田園調布線 渋谷駅より</h2>
+                    </div>
+                    <div class="nf-paragraphs">
+                      <p>京王井の頭線 渋谷駅方面にお越しください。</p>
+                    </div>
+                  </div>
+                  <div class="nf-fixed-columns__column">
+                    <div class="nf-heading-3">
+                      <h2 class="nf-heading-3__h">【JR】山手線・埼京線 渋谷駅より</h2>
+                    </div>
+                    <div class="nf-paragraphs">
+                      <p>京王井の頭線 渋谷駅方面にお越しください。</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="nf-paragraphs">
+                  <p>※ 会場へは公共交通機関でお越し下さい</p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <nf-section-line-picture src="02"></nf-section-line-picture>
+
+          <div class="nf-sections">
+            <section class="nf-section">
+              <header class="nf-heading">
+                <h1 class="nf-heading__h">問い合わせ先</h1>
+              </header>
+              <div class="nf-section__body">
+                <div class="nf-paragraphs">
+                  <p>東京Node学園祭<br>
+                  実行委員会 E-mail：<a href="mailto:nodefest@nodejs.jp">nodefest@nodejs.jp</a></p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+
+      <div id="nf-page-coc">
+        <nf-page-header src="coc">Code of Conduct</nf-page-header>
+        <main class="nf-main" role="main">
+          <div class="nf-sections">
+            <paper-material class="nf-frame-section">
+              <section class="nf-frame-section__inner">
+                <div class="nf-frame-section__body--full">
+                  <article class="nf-coc">
+                    <div class="nf-coc__body">
+                      <section class="nf-coc__section">
+                        <div class="nf-paragraphs">
+                          <p>この会議ではすべての参加者，スピーカー，スポンサーとボランティアは以下の行動規範に従うことへの同意を必要とします．会議主催者は会議の間を通じてこの規範の実施を徹底します．私達主催者は誰にとっても安全な環境を確約するためにすべての参加者が協力することを期待しています．<br>
+                          <strong>一言でいえば: サイテーな人になってはいけません</strong></p>
+                        </div>
+                      </section>
+                      <section class="nf-coc__section">
+                        <div class="nf-heading-2">
+                          <h2 class="nf-heading-2__h">困っていて助けが必要ですか?</h2>
+                        </div>
+                        <div class="nf-paragraphs">
+                          <p>私達主催者の連絡先の詳細はお送りしたメールに含まれています．</p>
+                        </div>
+                      </section>
+                      <section class="nf-coc__section">
+                        <div class="nf-heading-2">
+                          <h2 class="nf-heading-2__h">要約版</h2>
+                        </div>
+                        <div class="nf-paragraphs">
+                          <p>私達の会議では，性別，性的指向，障碍の有無，外見，身体の大きさ，人種，宗教にかかわりなく，全員がハラスメント行為なく会議に参加し体験できる環境の提供に最善を尽くします．私達主催者は，会議参加者によるハラスメント行為を一切許容しません．性的な言葉や映像表現を使うことは会議場および会議に関連するいかなる場でも不適切であり，その適用範囲は発表やトークの内容，ワークショップ，関連パーティー，ツイッターやその他のオンラインメディアでの発言を含みます．これらのルールを破った会議参加者は，主催者の判断によって，会議内での行動を制限されたり，参加費の返却なく会議からの追放処分を受けることがあります．</p>
+                        </div>
+                      </section>
+                      <section class="nf-coc__section">
+                        <div class="nf-heading-2">
+                          <h2 class="nf-heading-2__h">詳細版</h2>
+                        </div>
+                        <div class="nf-paragraphs">
+                          <p>ハラスメント行為には，言葉による性別，性的指向，障碍の有無，外見，身体の大きさ，人種，宗教に関する攻撃的なコメント，公的空間での性的な映像表現，意図的な威力行為，ストーキング，つきまとい，写真撮影や録音によるいやがらせ，トークやその他の会議イベントに対して繰り返して中断しようとする行為，不適切な身体接触，そして望まれない性的な注意を引きつける行為を含みます．</p>
+                          <p>参加者は，これらのハラスメント行為を止めるように求められた場合，すぐに従わなければなりません．</p>
+                          <p>スポンサーもまた反ハラスメント行為ポリシーに従わなければなりません．特に，スポンサーは性的な関心を引き起こす映像表現，活動，あるいはその他の物品を使うべきではありません．ボランティアを含め，ブースのスタッフは，性的な関心を引き起こすような服装/制服/コスチュームを使うべきではありませんし，その他の手段で性的な関心を引き起こすような環境を作ることもすべきではありません．</p>
+                          <p>参加者がハラスメント行為に属するふるまいをした場合は，会議主催者は適切と判断した範囲で，当該行為を行った者に対する警告や，参加費を返還せずに会議から追放処分とするなどを含むいかなる行動も取ります．</p>
+                          <p>もしあなたがハラスメントに遭った場合，他の人がハラスメントに遭っている場合，あるいは他に気になることがあった時は，すぐに会議スタッフの誰かに連絡していただくようお願いします．会議スタッフは会議のブランドを付けたTシャツを着ています．</p>
+                          <p>会議スタッフは，ハラスメントを経験した人が，会議期間中安全かつ安心と感じられるように，参加者がホテル/会場の警備や近隣の警察に連絡すること，付き添い者の提供，およびその他の支援を行います．私達にとってあなたが参加しているのは大事なことなのです．</p>
+                          <p>私達は参加者が会議場とワークショップ会場，また会議に関連したソーシャルイベントにて，このルールに従うことを望みます．</p>
+                        </div>
+                      </section>
+                    </div>
+                    <footer class="nf-coc__footer">
+                      <p class="nf-coc__admin">東京Node学園祭 実行委員会</p>
+                    </footer>
+                  </article>
+                </div>
+              </section>
+            </paper-material>
+          </div>
+        </main>
+      </div>
+    </iron-pages>
+
+    <div class="nf-sections">
+      <div class="nf-section">
+        <nf-social-parts></nf-social-parts>
+      </div>
+      <div class="nf-section">
+        <nf-twitter-widget></nf-twitter-widget>
+      </div>
+    </div>
+
+    <nf-sponsors data-jsLoadText></nf-sponsors>
+
+    <nf-site-footer></nf-site-footer>
+  </div>
+</paper-header-panel>
+
+<script src="scripts/app.js"></script>
+
+</body>
+</html>

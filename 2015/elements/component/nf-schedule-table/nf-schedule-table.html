@@ -1,0 +1,145 @@
+<dom-module id="nf-schedule-table">
+  <style>
+    :host {
+    }
+    .nf-timetable table {
+      width: 100%;
+    }
+    .nf-timetable th,
+    .nf-timetable td {
+      padding: 15px 20px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    .nf-timetable th {
+      color: rgba(0, 0, 0, 0.54);
+      font-weight: bold;
+      vertical-align: middle;
+    }
+    .nf-timetable td {
+      font-weight: bold;
+      vertical-align: top;
+    }
+    .nf-timetable thead th {
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .nf-timetable tbody th {
+      width: 1%;
+      white-space: nowrap;
+    }
+    .nf-timetable__inner-heading {
+      margin-bottom: 20px;
+      color: rgba(0, 0, 0, 0.54);
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: bold;
+    }
+    .nf-session-item {
+      display: table;
+      width: 100%;
+      line-height: 1.5;
+    }
+    .nf-session-item__thumb {
+      display: table-cell;
+      width: 1%;
+      padding-right: 10px;
+      vertical-align: top;
+    }
+    .nf-session-item__thumb > a {
+      display: block;
+      width: 50px;
+      height: 50px;
+      overflow: hidden;
+      border: 2px solid #009688;
+      border-radius: 50px;
+    }
+    .nf-session-item__thumb > a:hover {
+      border-color: #00796B;
+    }
+    .nf-session-item__text {
+      display: table-cell;
+      vertical-align: top;
+    }
+  </style>
+  <template>
+    <div class="nf-timetable">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Room A</th>
+            <th>Room B</th>
+          </tr>
+        </thead>
+        <tbody>
+          <template is="dom-repeat" items="{{timeTable}}" as="row">
+          <tr>
+            <th>{{row.time}}</th>
+            <template is="dom-repeat" items="{{row.content}}">
+            <td colspan$="{{_colspan(row)}}">
+              <template is="dom-if" if="{{row.isFrame}}">
+              <span>{{item}}</span>
+              </template>
+              <template is="dom-if" if="{{row.isSession}}">
+              <div class="nf-session-item">
+                <div class="nf-session-item__thumb"><a href$="{{item.url}}"><img src="{{item.thumb}}" alt$="{{item.name}}" width="50" height="50"></a></div>
+                <div class="nf-session-item__text">
+                  <div class="nf-session-item__title">{{item.title}}</div>
+                  <div class="nf-session-item__name"><a href$="{{item.url}}">{{item.name}}</a></div>
+                </div>
+              </div>
+              </template>
+              <template is="dom-if" if="{{row.isLT}}">
+              <div class="nf-timetable__inner-heading">Lightning Talks</div>
+              <ul class="nf-ul">
+                <template is="dom-repeat" items="{{row.content.0}}">
+                <li><span>{{item.title}}</span>, <a href$="{{_twitterUrl(item.twitter)}}">@<span>{{item.twitter}}</span></a></li>
+                </template>
+              </ul>
+              </template>
+            </td>
+            </template>
+          </tr>
+          </template>
+        </tbody>
+      </table>
+    </div>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        is: 'nf-schedule-table',
+        properties: {},
+        ready: function() {
+          this.timeTable = [];
+        },
+        fetch: function() {
+          var TIME_TABLE = window.NF.TEXT.SCHEDULE.ORDER;
+          var CONTENT    = window.NF.TEXT.SCHEDULE.CONTENT;
+
+          TIME_TABLE.forEach(function(row) {
+            row.isFrame   = row.type === 1;
+            row.isSession = row.type === 2;
+            row.isLT      = row.type === 3;
+
+            row.content = row.content.map(function(key) {
+              return CONTENT[key];
+            });
+          });
+          this.timeTable = TIME_TABLE;
+        },
+        _colspan: function(row) {
+          // セッションじゃないならぶちぬき
+          if (row.type !== 2) {
+            return 2;
+          }
+
+          // セッションなら部屋分かれてるかどうか
+          var arr = row.content;
+          return (arr.length === 1) ? 2 : 1;
+        },
+        _twitterUrl: function(a) { return 'https://twitter.com/' + a; }
+      });
+    })();
+  </script>
+</dom-module>

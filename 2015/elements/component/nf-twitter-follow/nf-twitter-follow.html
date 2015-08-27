@@ -1,0 +1,48 @@
+<dom-module id="nf-twitter-follow">
+  <style is="custom-style">
+    :host {
+      display: block;
+    }
+    .nf-twitter-follow__link {
+      display: block;
+      height: 350px;
+      background: #009688;
+      color: #FFFFFF;
+      text-decoration: none;
+      text-align: center;
+    }
+    .nf-twitter-follow__link:hover,
+    .nf-twitter-follow__link:active,
+    .nf-twitter-follow__link:focus {
+      color: #00796B;
+    }
+    .nf-twitter-follow__icon {
+      margin-bottom: 20px;
+      padding-top: 100px;
+    }
+    .nf-twitter-follow__text {
+      display: block;
+      font-size: 24px;
+      font-weight: normal;
+    }
+    iron-icon.nf-twitter-follow__icon {
+      --iron-icon-height: 100px;
+      --iron-icon-width: 100px;
+    }
+  </style>
+  <template>
+    <a class="nf-twitter-follow__link" href="https://twitter.com/intent/user?screen_name=nodefest"svg-icons>
+      <iron-icon icon="svg-icons:twitter" class="nf-twitter-follow__icon"></iron-icon>
+      <span class="nf-twitter-follow__text">Follow us on Twitter</span>
+    </a>
+  </template>
+</dom-module>
+
+<script>
+  (function () {
+    Polymer({
+      is: 'nf-twitter-follow',
+      properties: {}
+    });
+  })();
+</script>

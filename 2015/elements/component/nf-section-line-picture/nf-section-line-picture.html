@@ -1,0 +1,35 @@
+<dom-module id="nf-section-line-picture">
+  <style>
+    :host {
+      display: block;
+      overflow: hidden;
+      width: 100%;
+      max-height: 350px;
+      margin-bottom: 50px;
+    }
+    .nf-section-line-picture img {
+      width: 100%;
+    }
+  </style>
+  <template>
+    <picture>
+      <source srcset$="{{_createSrcPath(src, '.webp')}}" type="image/webp">
+      <img srcset$="{{_createSrcPath(src, '.jpg')}}" alt="">
+    </picture>
+  </template>
+</dom-module>
+
+<script>
+  (function () {
+    Polymer({
+      is: 'nf-section-line-picture',
+      properties: {
+        src: {
+          type: String,
+          value: ''
+        }
+      },
+      _createSrcPath: function(src, ext) { return 'images/section-line-picture/' + src + ext; }
+    });
+  })();
+</script>
