@@ -7,7 +7,7 @@
   <template>
     <a href="https://nodejs.org/">
       <div class="nf-nodejs-logo__icon">
-        <img src="/images/svg/nodejs-logo.svg" width="187" height="51" alt="">
+        <img src$="{{_createSrcPath()}}" width="187" height="51" alt="">
       </div>
     </a>
   </template>
@@ -17,7 +17,8 @@
   (function () {
     Polymer({
       is: 'nf-nodejs-logo',
-      properties: {}
+      properties: {},
+      _createSrcPath: function() { return location.pathname + 'images/svg/nodejs-logo.svg'; }
     });
   })();
 </script>

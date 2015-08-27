@@ -25,9 +25,9 @@
     }
   </style>
   <template>
-    <a class="nf-app-logo__link" href="/">
+    <a class="nf-app-logo__link" href="/2015">
       <div class="nf-app-logo__icon">
-        <img src="/images/svg/app-logo.svg" height="36" alt="">
+        <img src$="{{_createSrcPath()}}" height="36" alt="">
       </div>
       <div class="nf-app-logo__text">
         <h1 class="nf-app-logo__name">東京Node学園祭2015</h1>
@@ -40,7 +40,8 @@
   (function () {
     Polymer({
       is: 'nf-app-logo',
-      properties: {}
+      properties: {},
+      _createSrcPath: function() { return location.pathname + 'images/svg/app-logo.svg'; }
     });
   })();
 </script>
