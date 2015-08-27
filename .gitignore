@@ -8,9 +8,12 @@ _notes
 _delivery
 node_modules
 bower_components
+!/2015/bower_components
 config.rb
 vendor/bundle
 .bundle
 /deploy
+/.tmp
+/dist
 # compiled files
 /build
