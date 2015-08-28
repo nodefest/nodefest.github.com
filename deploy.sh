@@ -19,8 +19,8 @@ gulp
 
 echo ""
 echo "[3] ビルドしたファイルをコピーします"
-mkdir -p deploy/2015
-cp -rf dist/* deploy/2015
+rm -rf deploy/2015
+cp -rf dist deploy/2015
 
 echo ""
 echo "[4] コミットしてプッシュします"
