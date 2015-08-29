@@ -23,47 +23,44 @@
     }
     .nf-top-gimmick__game-bar {
       position: relative;
-      width: 162px;
-      height: 22px;
-      margin: 0 9px;
-      background: #DDDDDD;
+      width: 140px;
+      height: 20px;
+      background: rgba(0,0,0,0.87);
+      border-radius: 4px;
     }
-    svg.nf-top-gimmick__game-bar-frame {
-      position: absolute;
-      display: block;
-      width: 180px;
-      height: 22px;
-      margin: 0 -9px;
-    }
-    .nf-top-gimmick__game-bar-data1,
-    .nf-top-gimmick__game-bar-data2 {
+    .nf-top-gimmick__game-bar-data {
       position: absolute;
       top: 0;
       height: 100%;
+      border-radius: 4px;
     }
-    .nf-top-gimmick__game-bar-data1 {
+    .nf-top-gimmick__game-bar-data--1 {
       left: 0;
       background: #0091EA;
     }
-    .nf-top-gimmick__game-bar-data2 {
+    .nf-top-gimmick__game-bar-data--2 {
       right: 0;
       background: #FFAB00;
     }
-    .nf-top-gimmick__game-bar-label1,
-    .nf-top-gimmick__game-bar-label2 {
+    .nf-top-gimmick__game-bar-label {
       position: absolute;
       top: 5px;
+      line-height: 1;
       font-family: Roboto;
-      font-size: 12px;
+      font-size: 10px;
       font-weight: bold;
+      color: #FFFFFF;
     }
-    .nf-top-gimmick__game-bar-label1 {
+    .nf-top-gimmick__game-bar-label--1 {
       left: 5px;
       text-align: left;
     }
-    .nf-top-gimmick__game-bar-label2 {
+    .nf-top-gimmick__game-bar-label--2 {
       right: 5px;
       text-align: right;
+    }
+    .nf-top-gimmick__game-bar-label-num {
+      font-size: 12px;
     }
 
     .nf-top-gimmick__rhino-wrap {
@@ -263,13 +260,10 @@
 
       <div class="nf-top-gimmick__game-info">
         <div class="nf-top-gimmick__game-bar">
-          <div id="js-nf-paint-bar-a" class="nf-top-gimmick__game-bar-data1"></div>
-          <div id="js-nf-paint-bar-b" class="nf-top-gimmick__game-bar-data2"></div>
-          <div class="nf-top-gimmick__game-bar-label1"><span id="js-nf-paint-stat-a">0</span>%</div>
-          <div class="nf-top-gimmick__game-bar-label2"><span id="js-nf-paint-stat-b">0</span>%</div>
-          <svg class="nf-top-gimmick__game-bar-frame" fill="#666666" width="540" height="66" viewBox="0 0 540 66">
-            <path d="M518,0H22C9.8,0,0,14.8,0,33s9.8,33,22,33H518c12.1,0,22-14.8,22-33S530.2,0,518,0z M514,47c0,5.5-4.5,10-10,10H36c-5.5,0-10-4.5-10-10V19c0-5.5,4.5-10,10-10h468c5.5,0,10,4.5,10,10V47z"/>
-          </svg>
+          <div id="js-nf-paint-bar-a" class="nf-top-gimmick__game-bar-data nf-top-gimmick__game-bar-data--1"></div>
+          <div id="js-nf-paint-bar-b" class="nf-top-gimmick__game-bar-data nf-top-gimmick__game-bar-data--2"></div>
+          <div class="nf-top-gimmick__game-bar-label nf-top-gimmick__game-bar-label--1"><span class="nf-top-gimmick__game-bar-label-num" id="js-nf-paint-stat-a">0</span>%</div>
+          <div class="nf-top-gimmick__game-bar-label nf-top-gimmick__game-bar-label--2"><span class="nf-top-gimmick__game-bar-label-num" id="js-nf-paint-stat-b">0</span>%</div>
         </div>
       </div>
 
