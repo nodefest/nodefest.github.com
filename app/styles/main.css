@@ -223,3 +223,16 @@ google-map {
   font-weight: bold;
   color: #009688;
 }
+
+/* inner-h-t-m-t-lで突っ込んだ要素にスタイル当たらない問題 */
+.nf-sponsor-description a {
+  color: #FFFF00;
+}
+.nf-sponsor-description a:visited {
+  color: #FFF9C4;
+}
+.nf-sponsor-description a:hover,
+.nf-sponsor-description a:active,
+.nf-sponsor-description a:focus {
+  color: #FBC02D;
+}
