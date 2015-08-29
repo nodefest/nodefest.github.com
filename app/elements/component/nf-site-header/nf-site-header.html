@@ -9,16 +9,37 @@
       margin-left: 30px;
     }
     .nf-ticket-link {
+      position: relative;
       display: block;
       color: rgba(256, 256, 256, 0.3);
     }
     .nf-ticket-link:hover {
       color: #FFFF00;
     }
+    .nf-ticket-link:hover .nf-ticket-link__tooltip {
+      opacity: 1;
+    }
     iron-icon.nf-ticket-link__icon {
       --iron-icon-height: 20px;
       --iron-icon-width: 20px;
       vertical-align: top;
+    }
+    .nf-ticket-link__tooltip {
+      position: absolute;
+      display: inline-block;
+      top: 30px;
+      left: 50%;
+      width: 8em;
+      margin-left: -4em;
+      z-index: 1;
+      opacity: 0;
+      padding: 5px 0;
+      background: rgba(97, 97, 97, 0.9);
+      color: #FFFFFF;
+      font-size: 12px;
+      text-align: center;
+      white-space: nowrap;
+      transition: all 0.5s;
     }
     paper-tab {
       text-decoration: none;
@@ -39,16 +60,16 @@
       <div class="nf-site-header__col nf-site-header__col--2 flex">
         <paper-tabs id="js-nf-tabs" selected="0">
           <paper-tab link>
-            <a href="#!/about" class="horizontal center-center layout">About</a>
+            <a href="#!/about" class="horizontal center-center layout" title="概要">About</a>
           </paper-tab>
           <paper-tab link>
-            <a href="#!/schedule" class="horizontal center-center layout">Schedule</a>
+            <a href="#!/schedule" class="horizontal center-center layout" title="スケジュール">Schedule</a>
           </paper-tab>
           <paper-tab link>
-            <a href="#!/speakers" class="horizontal center-center layout">Speakers</a>
+            <a href="#!/speakers" class="horizontal center-center layout" title="講演者">Speakers</a>
           </paper-tab>
           <paper-tab link>
-            <a href="#!/venue" class="horizontal center-center layout">Venue</a>
+            <a href="#!/venue" class="horizontal center-center layout" title="アクセス">Venue</a>
           </paper-tab>
           <paper-tab link hidden>
             <a href="#!/coc" class="horizontal center-center layout">CoC</a>
@@ -56,8 +77,9 @@
         </paper-tabs>
       </div>
       <div class="nf-site-header__col nf-site-header__col--3">
-        <a class="nf-ticket-link" href="#">
+        <a class="nf-ticket-link">
           <iron-icon icon="svg-icons:ticket" class="nf-ticket-link__icon"></iron-icon>
+          <div class="nf-ticket-link__tooltip">チケット購入<br>（Coming Soon）</div>
         </a>
       </div>
     </div>
