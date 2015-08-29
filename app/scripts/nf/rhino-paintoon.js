@@ -10,8 +10,8 @@
   var InkEffect     = global.NF.InkEffect;
 
   var COLORS = {
-    ALPHA: '#6CDFEA',
-    BRAVO: '#FBB829'
+    ALPHA: '#0091EA',
+    BRAVO: '#FFAB00'
   };
   var colors = Object.keys(COLORS);
   var rand = ( Math.random() * colors.length )|0;
