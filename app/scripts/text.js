@@ -11,17 +11,17 @@
     SPONSORS: [
       // 左端から順に
       {
-        name:  '株式会社ピクセルグリッド',
-        desc:  'ピクセルグリッドはJavaScriptの会社です。HTML5やCSS3といった技術も合わせたWebアプリケーションのフロントエンド開発をもっとも得意としています。また、サーバー技術としてだけでなく、フロントエンド開発のインフラとしてもNode.jsを積極的に活用。さらに、自社で運営するフロントエンド開発者のための技術情報配信サービス「<a href="http://app.codegrid.net">CodeGrid</a>」では、Node.js関連の情報発信も活発に行っています。',
-        thumb: 'http://dummyimage.com/220x160',
-        url:   'http://www.pxgrid.com/'
+        name:  'スポンサー募集中',
+        desc:  '詳細は、<a href="mailto:nodefest@nodejs.jp">nodefest@nodejs.jp</a>までお問い合わせください。',
+        thumb: './images/sponsors/dummy2.png',
+        url:   ''
       },
       {
-        name:  '株式会社ピクセルグリッドゥーン',
-        desc:  'ピクセルグリッドゥーンです',
-        thumb: 'http://dummyimage.com/220x160',
-        url:   'http://www.pxgrid.com/'
-      },
+        name:  'スポンサー募集中',
+        desc:  '詳細は、<a href="mailto:nodefest@nodejs.jp">nodefest@nodejs.jp</a>までお問い合わせください。',
+        thumb: './images/sponsors/dummy.png',
+        url:   ''
+      }
     ],
 
     SCHEDULE: {
@@ -277,4 +277,3 @@
     }
   };
 })(window);
-
