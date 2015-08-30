@@ -165,6 +165,9 @@ a:focus {
   color: #FFFFFF;
   text-transform: none !important;
 }
+.nf-button a {
+  color: #FFFFFF;
+}
 .nf-button--register {
   width: 300px;
 }

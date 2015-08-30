@@ -6,7 +6,8 @@
   global.NF.TEXT = {
     NEWS: [
       // 上が新しいやつ
-      { date: '2015-08-31', text: '公式サイトを本公開しました。' },
+      { date: '2015-08-31', text: '<a href="http://goo.gl/forms/66JmdMXiU6">セッション・LT登壇希望者の募集</a>を開始しました。' },
+      { date: '2015-08-31', text: '公式サイトを本公開しました。' }
     ],
     SPONSORS: [
       // 左端から順に
