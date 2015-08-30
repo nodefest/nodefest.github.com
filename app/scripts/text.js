@@ -129,106 +129,150 @@
         f3: '昼食 / Lunch',
         f4: '終了 / Close',
         s1: {
-          thumb: './images/speakers/dummy.png',
+          thumb: './images/speakers/yosuke_furukawa.jpg',
           title: 'Greeting, Notice',
-          url:   '#',
-          name:  '@yosuke_furukawa, @tito'
+          speakers: [
+            {
+              url: 'http://twitter.com/yosuke_furukawa',
+              name: '@yosuke_furukawa'
+            },
+            {
+              url: 'http://twitter.com/tito',
+              name: '@tito'
+            }
+          ]
         },
         s2: {
           thumb: './images/speakers/dummy.png',
           title: 'NodeSchool in Japan',
-          url:   '#',
-          name:  'NodeSchool mentors'
+          speakers: [
+            {
+              url: 'http://nodeschool.io/',
+              name: 'NodeSchool mentors'
+            }
+          ]
         },
         s3: {
           thumb: './images/speakers/dummy.png',
           title: 'NodeDiscussion',
-          url:   '#',
-          name:  '@jacob, @mikeal, @rvagg, @domenic'
+          speakers: [
+            {
+              url: 'http://twitter.com/jacob',
+              name: '@jacob'
+            },
+            {
+              url: 'http://twitter.com/mikeal',
+              name: '@mikeal'
+            },
+            {
+              url: 'http://twitter.com/rvagg',
+              name: '@rvagg'
+            },
+            {
+              url: 'http://twitter.com/domenic',
+              name: '@domenic'
+            }
+          ]
         },
         s4: {
           thumb: './images/speakers/domenic.jpg',
           title: '基調講演',
-          url:   'http://twitter.com/domenic',
-          name:  '@domenic'
+          speakers: [
+            {
+              url: 'http://twitter.com/domenic',
+              name: '@domenic'
+            }
+          ]
         },
         s5: {
           thumb: './images/speakers/rvagg.jpg',
           title: '調整中',
-          url:   'http://twitter.com/rvagg',
-          name:  '@rvagg'
+          speakers: [
+            {
+              url: 'http://twitter.com/rvagg',
+              name: '@rvagg'
+            }
+          ]
         },
         s6: {
           thumb: './images/speakers/dummy.png',
           title: '調整中',
-          url:   '#',
-          name:  '調整中'
+          speakers: []
         },
         s7: {
           thumb: './images/speakers/dshaw.png',
           title: '調整中',
-          url:   'http://twitter.com/dshaw',
-          name:  '@dshaw'
+          speakers: [
+            {
+              url: 'http://twitter.com/dshaw',
+              name: '@dshaw'
+            }
+          ]
         },
         s8: {
           thumb: './images/speakers/dummy.png',
           title: '調整中',
-          url:   '#',
-          name:  '調整中'
+          speakers: []
         },
         s9: {
           thumb: './images/speakers/maybekatz.jpg',
           title: '調整中',
-          url:   'http://twitter.com/maybekatz',
-          name:  '@maybekatz'
+          speakers: [
+            {
+              url: 'http://twitter.com/maybekatz',
+              name: '@maybekatz'
+            }
+          ]
         },
         s10: {
           thumb: './images/speakers/dummy.png',
           title: '調整中',
-          url:   '#',
-          name:  '調整中'
+          speakers: []
         },
         s11: {
           thumb: './images/speakers/kosamari.jpg',
           title: '調整中',
-          url:   'http://twitter.com/kosamari',
-          name:  '@kosamari'
+          speakers: [
+            {
+              url: 'http://twitter.com/kosamari',
+              name: '@kosamari'
+            }
+          ]
         },
         s12: {
           thumb: './images/speakers/dummy.png',
           title: '調整中',
-          url:   '#',
-          name:  '調整中'
+          speakers: []
         },
         s13: {
           thumb: './images/speakers/dummy.png',
           title: '調整中',
-          url:   '#',
-          name:  '調整中'
+          speakers: []
         },
         s14: {
           thumb: './images/speakers/dummy.png',
           title: '調整中',
-          url:   '#',
-          name:  '調整中'
+          speakers: []
         },
         s15: {
           thumb: './images/speakers/dummy.png',
           title: '調整中',
-          url:   '#',
-          name:  '調整中'
+          speakers: []
         },
         s16: {
           thumb: './images/speakers/dummy.png',
           title: '調整中',
-          url:   '#',
-          name:  '調整中'
+          speakers: []
         },
         s17: {
           thumb: './images/speakers/yosuke_furukawa.jpg',
           title: 'Closing message',
-          url:   'http://twitter.com/yosuke_furukawa',
-          name:  '@yosuke_furukawa'
+          speakers: [
+            {
+              url: 'http://twitter.com/yosuke_furukawa',
+              name: '@yosuke_furukawa'
+            }
+          ]
         },
         lt: [
           // 上から順に
