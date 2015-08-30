@@ -54,7 +54,7 @@
         },
         {
           time: '13:00 - 13:45',
-          type: 2,
+          type: 1,
           content: ['s4']
         },
         {
@@ -129,106 +129,106 @@
         f3: '昼食 / Lunch',
         f4: '終了 / Close',
         s1: {
-          thumb: 'http://www.gravatar.com/avatar/488f250a73526954e447cb39669615c8.png?s=256',
-          title: 'まずあたしの歌を聞いて！',
-          url:   'http://twitter.com/tacamy',
-          name:  '@tacamy'
+          thumb: './images/speakers/dummy.png',
+          title: 'Greeting, Notice',
+          url:   '#',
+          name:  '@yosuke_furukawa, @tito'
         },
         s2: {
-          thumb: 'https://pbs.twimg.com/profile_images/206948941/wall-e_400x400.jpg',
-          title: 'Node.jsとわたし',
-          url:   'http://twitter.com/yosuke_furukawa',
-          name:  '@yosuke_furukawa'
+          thumb: './images/speakers/dummy.png',
+          title: 'NodeSchool in Japan',
+          url:   '#',
+          name:  'NodeSchool mentors'
         },
         s3: {
-          thumb: 'http://www.gravatar.com/avatar/488f250a73526954e447cb39669615c8.png?s=256',
-          title: 'いいからあたしの歌を聞いて！',
-          url:   'http://twitter.com/tacamy',
-          name:  '@tacamy'
+          thumb: './images/speakers/dummy.png',
+          title: 'NodeDiscussion',
+          url:   '#',
+          name:  '@jacob, @mikeal, @rvagg, @domenic'
         },
         s4: {
-          thumb: 'http://www.gravatar.com/avatar/488f250a73526954e447cb39669615c8.png?s=256',
-          title: 'いいからあたしの歌を聞いて！',
-          url:   'http://twitter.com/tacamy',
-          name:  '@tacamy'
+          thumb: './images/speakers/domenic.jpg',
+          title: '基調講演',
+          url:   'http://twitter.com/domenic',
+          name:  '@domenic'
         },
         s5: {
-          thumb: 'http://www.gravatar.com/avatar/488f250a73526954e447cb39669615c8.png?s=256',
-          title: 'いいからあたしの歌を聞いて！',
-          url:   'http://twitter.com/tacamy',
-          name:  '@tacamy'
+          thumb: './images/speakers/rvagg.jpg',
+          title: '調整中',
+          url:   'http://twitter.com/rvagg',
+          name:  '@rvagg'
         },
         s6: {
-          thumb: 'http://www.gravatar.com/avatar/488f250a73526954e447cb39669615c8.png?s=256',
-          title: 'いいからあたしの歌を聞いて！',
-          url:   'http://twitter.com/tacamy',
-          name:  '@tacamy'
+          thumb: './images/speakers/dummy.png',
+          title: '調整中',
+          url:   '#',
+          name:  '調整中'
         },
         s7: {
-          thumb: 'http://www.gravatar.com/avatar/488f250a73526954e447cb39669615c8.png?s=256',
-          title: 'いいからあたしの歌を聞いて！',
-          url:   'http://twitter.com/tacamy',
-          name:  '@tacamy'
+          thumb: './images/speakers/dshaw.png',
+          title: '調整中',
+          url:   'http://twitter.com/dshaw',
+          name:  '@dshaw'
         },
         s8: {
-          thumb: 'http://www.gravatar.com/avatar/488f250a73526954e447cb39669615c8.png?s=256',
-          title: 'いいからあたしの歌を聞いて！',
-          url:   'http://twitter.com/tacamy',
-          name:  '@tacamy'
+          thumb: './images/speakers/dummy.png',
+          title: '調整中',
+          url:   '#',
+          name:  '調整中'
         },
         s9: {
-          thumb: 'http://www.gravatar.com/avatar/488f250a73526954e447cb39669615c8.png?s=256',
-          title: 'いいからあたしの歌を聞いて！',
-          url:   'http://twitter.com/tacamy',
-          name:  '@tacamy'
+          thumb: './images/speakers/maybekatz.jpg',
+          title: '調整中',
+          url:   'http://twitter.com/maybekatz',
+          name:  '@maybekatz'
         },
         s10: {
-          thumb: 'http://www.gravatar.com/avatar/488f250a73526954e447cb39669615c8.png?s=256',
-          title: 'いいからあたしの歌を聞いて！',
-          url:   'http://twitter.com/tacamy',
-          name:  '@tacamy'
+          thumb: './images/speakers/dummy.png',
+          title: '調整中',
+          url:   '#',
+          name:  '調整中'
         },
         s11: {
-          thumb: 'http://www.gravatar.com/avatar/488f250a73526954e447cb39669615c8.png?s=256',
-          title: 'いいからあたしの歌を聞いて！',
-          url:   'http://twitter.com/tacamy',
-          name:  '@tacamy'
+          thumb: './images/speakers/kosamari.jpg',
+          title: '調整中',
+          url:   'http://twitter.com/kosamari',
+          name:  '@kosamari'
         },
         s12: {
-          thumb: 'http://www.gravatar.com/avatar/488f250a73526954e447cb39669615c8.png?s=256',
-          title: 'いいからあたしの歌を聞いて！',
-          url:   'http://twitter.com/tacamy',
-          name:  '@tacamy'
+          thumb: './images/speakers/dummy.png',
+          title: '調整中',
+          url:   '#',
+          name:  '調整中'
         },
         s13: {
-          thumb: 'http://www.gravatar.com/avatar/488f250a73526954e447cb39669615c8.png?s=256',
-          title: 'いいからあたしの歌を聞いて！',
-          url:   'http://twitter.com/tacamy',
-          name:  '@tacamy'
+          thumb: './images/speakers/dummy.png',
+          title: '調整中',
+          url:   '#',
+          name:  '調整中'
         },
         s14: {
-          thumb: 'http://www.gravatar.com/avatar/488f250a73526954e447cb39669615c8.png?s=256',
-          title: 'いいからあたしの歌を聞いて！',
-          url:   'http://twitter.com/tacamy',
-          name:  '@tacamy'
+          thumb: './images/speakers/dummy.png',
+          title: '調整中',
+          url:   '#',
+          name:  '調整中'
         },
         s15: {
-          thumb: 'http://www.gravatar.com/avatar/488f250a73526954e447cb39669615c8.png?s=256',
-          title: 'いいからあたしの歌を聞いて！',
-          url:   'http://twitter.com/tacamy',
-          name:  '@tacamy'
+          thumb: './images/speakers/dummy.png',
+          title: '調整中',
+          url:   '#',
+          name:  '調整中'
         },
         s16: {
-          thumb: 'http://www.gravatar.com/avatar/488f250a73526954e447cb39669615c8.png?s=256',
-          title: 'いいからあたしの歌を聞いて！',
-          url:   'http://twitter.com/tacamy',
-          name:  '@tacamy'
+          thumb: './images/speakers/dummy.png',
+          title: '調整中',
+          url:   '#',
+          name:  '調整中'
         },
         s17: {
-          thumb: 'http://www.gravatar.com/avatar/488f250a73526954e447cb39669615c8.png?s=256',
-          title: 'いいからあたしの歌を聞いて！',
-          url:   'http://twitter.com/tacamy',
-          name:  '@tacamy'
+          thumb: './images/speakers/yosuke_furukawa.jpg',
+          title: 'Closing message',
+          url:   'http://twitter.com/yosuke_furukawa',
+          name:  '@yosuke_furukawa'
         },
         lt: [
           // 上から順に
