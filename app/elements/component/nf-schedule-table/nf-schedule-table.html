@@ -85,10 +85,12 @@
               </template>
               <template is="dom-if" if="{{row.isSession}}">
               <div class="nf-session-item">
-                <div class="nf-session-item__thumb"><a href$="{{item.url}}"><img src="{{item.thumb}}" alt$="{{item.name}}" width="50" height="50"></a></div>
+                <div class="nf-session-item__thumb"><img src="{{item.thumb}}" alt$="{{item.name}}" width="50" height="50"></div>
                 <div class="nf-session-item__text">
                   <div class="nf-session-item__title">{{item.title}}</div>
-                  <div class="nf-session-item__name"><a href$="{{item.url}}">{{item.name}}</a></div>
+                  <template is="dom-repeat" items="{{item.speakers}}">
+                    <div class="nf-session-item__name"><a href$="{{item.speakers.url}}">{{item.speakers.name}}</a></div>
+                  </template>
                 </div>
               </div>
               </template>
