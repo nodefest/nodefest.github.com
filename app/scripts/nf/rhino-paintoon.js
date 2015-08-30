@@ -13,16 +13,16 @@
     ALPHA: '#0091EA',
     BRAVO: '#FFAB00'
   };
-  var colors = Object.keys(COLORS);
-  var rand = ( Math.random() * colors.length )|0;
-  var myColor = RhinoRenderer.hexToRGBArray(COLORS[colors[ rand ]]);
 
   var RhinoPaintoon = function() {
     this.isConnected = false;
     this.client = mqtt.connect('ws://222.158.218.158');
     this.client.on('connect', this._onConnect.bind(this));
 
-    this.rr = new RhinoRenderer(myColor);
+    var colors = Object.keys(COLORS);
+    var rand = ( Math.random() * colors.length )|0;
+    this.myColor = RhinoRenderer.hexToRGBArray(COLORS[colors[ rand ]]);
+    this.rr = new RhinoRenderer(this.myColor);
     this.rs = new RhinoStatus();
 
     this._watchTimer = null;
@@ -37,15 +37,15 @@
       var that = this;
       eve.on( 'rhino1.click', function ( e, order ) {
         var now = Date.now();
-        that.rr.rhinoSVG1.paint( order, myColor, now );
-        that.paint('p:' + order, myColor, now);
-        new InkEffect( myColor, e.pageX, e.pageY );
+        that.rr.rhinoSVG1.paint( order, that.myColor, now );
+        that.paint('p:' + order, that.myColor, now);
+        new InkEffect( that.myColor, e.pageX, e.pageY );
       });
       eve.on( 'rhino2.click', function ( e, order ) {
         var now = Date.now();
-        that.rr.rhinoSVG2.paint( order, myColor, now );
-        that.paint('c:' + order, myColor, now);
-        new InkEffect( myColor, e.pageX, e.pageY );
+        that.rr.rhinoSVG2.paint( order, that.myColor, now );
+        that.paint('c:' + order, that.myColor, now);
+        new InkEffect( that.myColor, e.pageX, e.pageY );
       });
     },
     _onConnect: function() {
@@ -72,9 +72,9 @@
         });
       }
     },
-    paint: function(order, myColor, now) {
+    paint: function(order, color, now) {
       if (!this.isConnected) { return; }
-      var paint = JSON.stringify({ color: myColor, timestamp: now });
+      var paint = JSON.stringify({ color: color, timestamp: now });
       var payload = order + '@' + paint;
       this.client.publish('nodefest-2015/rhino/paint', payload);
     },
