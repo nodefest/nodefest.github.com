@@ -12,15 +12,9 @@
       // 左端から順に
       {
         name:  'スポンサー募集中',
-        desc:  '詳細は、<a href="mailto:nodefest@nodejs.jp">nodefest@nodejs.jp</a>までお問い合わせください。',
-        thumb: './images/sponsors/dummy2.png',
-        url:   '/2015/'
-      },
-      {
-        name:  'スポンサー募集中',
-        desc:  '詳細は、<a href="mailto:nodefest@nodejs.jp">nodefest@nodejs.jp</a>までお問い合わせください。',
+        desc:  '「東京Node学園祭 2015」は2015年11月7日に開催される、Node.jsについての日本最大のカンファレンスです。 協賛を希望される方は、「<a href="https://docs.google.com/document/d/1dOl3jbuHrUclLFqIZBWytk2l-A84ZjSBoJk1Mr30918/edit">スポンサーシップのご案内</a>」をご確認の上、<a href="https://docs.google.com/forms/d/1fhgchPhfK1bBk_nGZLcAXK5mM4u6f1sQB28kyRAL_Ks/viewform">「東京Node学園祭 2015」 協賛申込書</a>」からお申込みください。',
         thumb: './images/sponsors/dummy.png',
-        url:   '/2015/'
+        url:   'https://docs.google.com/forms/d/1fhgchPhfK1bBk_nGZLcAXK5mM4u6f1sQB28kyRAL_Ks/viewform'
       }
     ],
 
