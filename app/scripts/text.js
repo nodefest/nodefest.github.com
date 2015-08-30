@@ -14,13 +14,13 @@
         name:  'スポンサー募集中',
         desc:  '詳細は、<a href="mailto:nodefest@nodejs.jp">nodefest@nodejs.jp</a>までお問い合わせください。',
         thumb: './images/sponsors/dummy2.png',
-        url:   ''
+        url:   '/2015/'
       },
       {
         name:  'スポンサー募集中',
         desc:  '詳細は、<a href="mailto:nodefest@nodejs.jp">nodefest@nodejs.jp</a>までお問い合わせください。',
         thumb: './images/sponsors/dummy.png',
-        url:   ''
+        url:   '/2015/'
       }
     ],
 
