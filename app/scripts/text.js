@@ -197,12 +197,7 @@
         s6: {
           thumb: './images/speakers/dummy.png',
           title: '調整中',
-          speakers: [
-            {
-              url: '#',
-              name: '調整中'
-            }
-          ]
+          speakers: []
         },
         s7: {
           thumb: './images/speakers/dshaw.png',
@@ -217,12 +212,7 @@
         s8: {
           thumb: './images/speakers/dummy.png',
           title: '調整中',
-          speakers: [
-            {
-              url: '#',
-              name: '調整中'
-            }
-          ]
+          speakers: []
         },
         s9: {
           thumb: './images/speakers/maybekatz.jpg',
@@ -237,12 +227,7 @@
         s10: {
           thumb: './images/speakers/dummy.png',
           title: '調整中',
-          speakers: [
-            {
-              url: '#',
-              name: '調整中'
-            }
-          ]
+          speakers: []
         },
         s11: {
           thumb: './images/speakers/kosamari.jpg',
@@ -257,52 +242,27 @@
         s12: {
           thumb: './images/speakers/dummy.png',
           title: '調整中',
-          speakers: [
-            {
-              url: '#',
-              name: '調整中'
-            }
-          ]
+          speakers: []
         },
         s13: {
           thumb: './images/speakers/dummy.png',
           title: '調整中',
-          speakers: [
-            {
-              url: '#',
-              name: '調整中'
-            }
-          ]
+          speakers: []
         },
         s14: {
           thumb: './images/speakers/dummy.png',
           title: '調整中',
-          speakers: [
-            {
-              url: '#',
-              name: '調整中'
-            }
-          ]
+          speakers: []
         },
         s15: {
           thumb: './images/speakers/dummy.png',
           title: '調整中',
-          speakers: [
-            {
-              url: '#',
-              name: '調整中'
-            }
-          ]
+          speakers: []
         },
         s16: {
           thumb: './images/speakers/dummy.png',
           title: '調整中',
-          speakers: [
-            {
-              url: '#',
-              name: '調整中'
-            }
-          ]
+          speakers: []
         },
         s17: {
           thumb: './images/speakers/yosuke_furukawa.jpg',
