@@ -219,9 +219,8 @@ google-map {
   border-top: 1px solid #EEEEEE;
   text-align: center;
 }
-.nf-coc__admin {
+.nf-coc__source {
   font-weight: bold;
-  color: #009688;
 }
 
 /* inner-h-t-m-t-lで突っ込んだ要素にスタイル当たらない問題 */
