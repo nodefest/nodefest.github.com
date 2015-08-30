@@ -16071,7 +16071,7 @@ Polymer({
         <template is="dom-repeat" items="{{news}}">
         <li class="nf-news-list__item">
           <time class="nf-news-list__time" datetime$="{{item.date}}">{{item.date}}</time>
-          <span class="nf-news-list__text">{{item.text}}</span>
+          <span class="nf-news-list__text" inner-h-t-m-l="{{item.text}}"></span>
         </li>
         </template>
       </ol>
@@ -16126,7 +16126,7 @@ Polymer({
       border-radius: 135px;
     }
     .nf-speaker__thumb:visited {
-      border-color: #B2DFDB;
+      border-color: #4DB6AC;
     }
     .nf-speaker__thumb:hover {
       border-color: #00796B;
