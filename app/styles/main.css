@@ -163,9 +163,13 @@ a:focus {
 .nf-button {
   background: #009688;
   color: #FFFFFF;
+  text-transform: none !important;
 }
 .nf-button--register {
   width: 300px;
+}
+.nf-button--disabled {
+  width: 350px;
 }
 
 .nf-fixed-columns {
