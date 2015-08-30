@@ -53,6 +53,9 @@
       border: 2px solid #009688;
       border-radius: 50px;
     }
+    .nf-session-item__thumb > a:visited {
+      border-color: #B2DFDB;
+    }
     .nf-session-item__thumb > a:hover {
       border-color: #00796B;
     }
@@ -92,9 +95,10 @@
               <template is="dom-if" if="{{row.isLT}}">
               <div class="nf-timetable__inner-heading">Lightning Talks</div>
               <ul class="nf-ul">
-                <template is="dom-repeat" items="{{row.content.0}}">
+                <li>調整中</li>
+                <!-- <template is="dom-repeat" items="{{row.content.0}}">
                 <li><span>{{item.title}}</span>, <a href$="{{_twitterUrl(item.twitter)}}">@<span>{{item.twitter}}</span></a></li>
-                </template>
+                </template> -->
               </ul>
               </template>
             </td>
