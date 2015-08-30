@@ -15,15 +15,18 @@
   };
 
   var RhinoPaintoon = function() {
-    this.isConnected = false;
-    this.client = mqtt.connect('ws://222.158.218.158');
-    this.client.on('connect', this._onConnect.bind(this));
-
     var colors = Object.keys(COLORS);
     var rand = ( Math.random() * colors.length )|0;
-    this.myColor = RhinoRenderer.hexToRGBArray(COLORS[colors[ rand ]]);
+    this.myColorRGB = COLORS[colors[ rand ]];
+    this.myColor = RhinoRenderer.hexToRGBArray(this.myColorRGB);
     this.rr = new RhinoRenderer(this.myColor);
     this.rs = new RhinoStatus();
+
+    this.isConnected = false;
+    this.client = mqtt.connect('ws://222.158.218.158', {
+      clientId: 'mqttjs_' + Math.random().toString(16).substr(2, 8) + '@' + this.myColorRGB
+    });
+    this.client.on('connect', this._onConnect.bind(this));
 
     this._watchTimer = null;
 
@@ -51,13 +54,13 @@
     _onConnect: function() {
       this.isConnected = true;
       this.client.on('message', this._onMessage.bind(this));
-      this.client.subscribe('nodefest-2015/#');
+      this.client.subscribe('nodefest-2015/+/sync');
     },
     _onMessage: function(topic, payload) {
-      var that = this;
       if (topic === 'nodefest-2015/client/sync') {
         var clientData = JSON.parse(payload);
-        var clientNum = clientData.connected;
+        var stat = this._getClientStat(clientData);
+        this.rs.updateClientStat(stat.alpha, stat.bravo);
       }
       if (topic === 'nodefest-2015/rhino/sync') {
         var paintData = JSON.parse(payload);
@@ -66,10 +69,10 @@
           var orderId = target[0];
           var orderNo = target[1];
 
-          var rhino = (orderId === 'p') ? that.rr.rhinoSVG1 : that.rr.rhinoSVG2;
+          var rhino = (orderId === 'p') ? this.rr.rhinoSVG1 : this.rr.rhinoSVG2;
           var data  = paintData[order];
           rhino.paint(orderNo, data.color, data.timestamp);
-        });
+        }, this);
       }
     },
     paint: function(order, color, now) {
@@ -101,6 +104,12 @@
     _unwatchStatus: function() {
       cancelAnimationFrame(this._watchTimer);
       this._watchTimer = null;
+    },
+    _getClientStat: function(data) {
+      return {
+        alpha: data[COLORS.ALPHA] || 0,
+        bravo: data[COLORS.BRAVO] || 0
+      };
     },
     _getPaintStat: function() {
       var all   = this.rr.rhinoSVG1.getTileLength() + this.rr.rhinoSVG2.getTileLength();

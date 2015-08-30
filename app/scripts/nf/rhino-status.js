@@ -4,6 +4,8 @@
   global.NF = global.NF || {};
 
   var RhinoStatus = function() {
+    this.$paintPeopleA = document.getElementById('js-nf-paint-people-a');
+    this.$paintPeopleB = document.getElementById('js-nf-paint-people-b');
     this.$paintBarA = document.getElementById('js-nf-paint-bar-a');
     this.$paintBarB = document.getElementById('js-nf-paint-bar-b');
     this.$paintStatA = document.getElementById('js-nf-paint-stat-a');
@@ -12,6 +14,10 @@
 
   RhinoStatus.prototype = {
     constructor: RhinoStatus,
+    updateClientStat: function(a, b) {
+      this.$paintPeopleA.textContent = a;
+      this.$paintPeopleB.textContent = b;
+    },
     updatePaintStat: function(a, b) {
       this.$paintBarA.style.width = a + '%';
       this.$paintBarB.style.width = b + '%';
