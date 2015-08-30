@@ -15031,16 +15031,37 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       margin-left: 30px;
     }
     .nf-ticket-link {
+      position: relative;
       display: block;
       color: rgba(256, 256, 256, 0.3);
     }
     .nf-ticket-link:hover {
       color: #FFFF00;
     }
+    .nf-ticket-link:hover .nf-ticket-link__tooltip {
+      opacity: 1;
+    }
     iron-icon.nf-ticket-link__icon {
       --iron-icon-height: 20px;
       --iron-icon-width: 20px;
       vertical-align: top;
+    }
+    .nf-ticket-link__tooltip {
+      position: absolute;
+      display: inline-block;
+      top: 30px;
+      left: 50%;
+      width: 8em;
+      margin-left: -4em;
+      z-index: 1;
+      opacity: 0;
+      padding: 5px 0;
+      background: rgba(97, 97, 97, 0.9);
+      color: #FFFFFF;
+      font-size: 12px;
+      text-align: center;
+      white-space: nowrap;
+      transition: all 0.5s;
     }
     paper-tab {
       text-decoration: none;
@@ -15061,25 +15082,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <div class="nf-site-header__col nf-site-header__col--2 flex">
         <paper-tabs id="js-nf-tabs" selected="0">
           <paper-tab link="">
-            <a href="#!/about" class="horizontal center-center layout">About</a>
+            <a href="#!/about" class="horizontal center-center layout" title="概要">About</a>
           </paper-tab>
           <paper-tab link="">
-            <a href="#!/schedule" class="horizontal center-center layout">Schedule</a>
+            <a href="#!/schedule" class="horizontal center-center layout" title="スケジュール">Schedule</a>
           </paper-tab>
           <paper-tab link="">
-            <a href="#!/speakers" class="horizontal center-center layout">Speakers</a>
+            <a href="#!/speakers" class="horizontal center-center layout" title="講演者">Speakers</a>
           </paper-tab>
           <paper-tab link="">
-            <a href="#!/venue" class="horizontal center-center layout">Venue</a>
+            <a href="#!/venue" class="horizontal center-center layout" title="アクセス">Venue</a>
           </paper-tab>
           <paper-tab link="" hidden="">
-            <a href="#!/coc" class="horizontal center-center layout">CoC</a>
+            <a href="#!/coc" class="horizontal center-center layout">Code of Conduct</a>
           </paper-tab>
         </paper-tabs>
       </div>
       <div class="nf-site-header__col nf-site-header__col--3">
-        <a class="nf-ticket-link" href="#">
+        <a class="nf-ticket-link">
           <iron-icon icon="svg-icons:ticket" class="nf-ticket-link__icon"></iron-icon>
+          <div class="nf-ticket-link__tooltip">チケット購入<br>（Coming Soon）</div>
         </a>
       </div>
     </div>
@@ -15331,51 +15353,85 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     .nf-top-gimmick__game-info {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 25px;
+      right: 40px;
       font-size: 12px;
     }
     .nf-top-gimmick__game-bar {
       position: relative;
-      width: 162px;
-      height: 22px;
-      margin: 0 9px;
-      background: #DDDDDD;
+      width: 140px;
+      height: 20px;
+      margin-bottom: 5px;
+      background: rgba(0,0,0,0.87);
+      border-radius: 4px;
     }
-    svg.nf-top-gimmick__game-bar-frame {
-      position: absolute;
-      display: block;
-      width: 180px;
-      height: 22px;
-      margin: 0 -9px;
-    }
-    .nf-top-gimmick__game-bar-data1,
-    .nf-top-gimmick__game-bar-data2 {
+    .nf-top-gimmick__game-bar-data {
       position: absolute;
       top: 0;
       height: 100%;
+      border-radius: 4px;
     }
-    .nf-top-gimmick__game-bar-data1 {
+    .nf-top-gimmick__game-bar-data--1 {
       left: 0;
+      background: #0091EA;
     }
-    .nf-top-gimmick__game-bar-data2 {
+    .nf-top-gimmick__game-bar-data--2 {
       right: 0;
+      background: #FFAB00;
     }
-    .nf-top-gimmick__game-bar-label1,
-    .nf-top-gimmick__game-bar-label2 {
+    .nf-top-gimmick__game-bar-label {
       position: absolute;
       top: 5px;
+      line-height: 1;
       font-family: Roboto;
-      font-size: 12px;
+      font-size: 10px;
       font-weight: bold;
+      color: #FFFFFF;
     }
-    .nf-top-gimmick__game-bar-label1 {
+    .nf-top-gimmick__game-bar-label--1 {
       left: 5px;
       text-align: left;
     }
-    .nf-top-gimmick__game-bar-label2 {
+    .nf-top-gimmick__game-bar-label--2 {
       right: 5px;
       text-align: right;
+    }
+    .nf-top-gimmick__game-bar-label-num {
+      font-size: 12px;
+    }
+    .nf-top-gimmick__game-people {
+      display: table;
+      width: 100%;
+      line-height: 1;
+    }
+    .nf-top-gimmick__game-people-label {
+      display: table-cell;
+      width: 45%;
+      padding: 0 10px;
+      font-family: Roboto;
+      font-size: 10px;
+      font-weight: bold;
+    }
+    .nf-top-gimmick__game-people-label--1 {
+      color: #0091EA;
+      text-align: left;
+    }
+    .nf-top-gimmick__game-people-label--2 {
+      color: #FFAB00;
+      text-align: right;
+    }
+    .nf-top-gimmick__game-people-label-num {
+      font-size: 12px;
+    }
+    .nf-top-gimmick__game-people-vs {
+      display: table-cell;
+      width: 10%;
+      text-align: center;
+    }
+    .nf-top-gimmick__game-people-icon {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
     }
 
     .nf-top-gimmick__rhino-wrap {
@@ -15534,7 +15590,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
     .nf-top-gimmick__info-en {
       position: absolute;
-      top: 30px;
+      top: 20px;
       left: 0;
       z-index: 1;
       width: 100%;
@@ -15575,13 +15631,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <div class="nf-top-gimmick__game-info">
         <div class="nf-top-gimmick__game-bar">
-          <div id="js-nf-paint-bar-a" class="nf-top-gimmick__game-bar-data1" style="background:#6CDFEA;"></div>
-          <div id="js-nf-paint-bar-b" class="nf-top-gimmick__game-bar-data2" style="background:#FBB829;"></div>
-          <div class="nf-top-gimmick__game-bar-label1"><span id="js-nf-paint-stat-a">0</span>%</div>
-          <div class="nf-top-gimmick__game-bar-label2"><span id="js-nf-paint-stat-b">0</span>%</div>
-          <svg class="nf-top-gimmick__game-bar-frame" fill="#666666" width="540" height="66" viewBox="0 0 540 66">
-            <path d="M518,0H22C9.8,0,0,14.8,0,33s9.8,33,22,33H518c12.1,0,22-14.8,22-33S530.2,0,518,0z M514,47c0,5.5-4.5,10-10,10H36c-5.5,0-10-4.5-10-10V19c0-5.5,4.5-10,10-10h468c5.5,0,10,4.5,10,10V47z"></path>
-          </svg>
+          <div id="js-nf-paint-bar-a" class="nf-top-gimmick__game-bar-data nf-top-gimmick__game-bar-data--1"></div>
+          <div id="js-nf-paint-bar-b" class="nf-top-gimmick__game-bar-data nf-top-gimmick__game-bar-data--2"></div>
+          <div class="nf-top-gimmick__game-bar-label nf-top-gimmick__game-bar-label--1">
+            <span class="nf-top-gimmick__game-bar-label-num" id="js-nf-paint-stat-a">0</span>%
+          </div>
+          <div class="nf-top-gimmick__game-bar-label nf-top-gimmick__game-bar-label--2">
+            <span class="nf-top-gimmick__game-bar-label-num" id="js-nf-paint-stat-b">0</span>%
+          </div>
+        </div>
+        <div class="nf-top-gimmick__game-people">
+          <div class="nf-top-gimmick__game-people-label nf-top-gimmick__game-people-label--1">
+            <span class="nf-top-gimmick__game-people-label-num">0</span>
+            people
+          </div>
+          <div class="nf-top-gimmick__game-people-vs">
+            <iron-icon icon="svg-icons:vs" class="nf-top-gimmick__game-people-icon"></iron-icon>
+          </div>
+          <div class="nf-top-gimmick__game-people-label nf-top-gimmick__game-people-label--2">
+            <span class="nf-top-gimmick__game-people-label-num">0</span>
+            people
+          </div>
         </div>
       </div>
 
@@ -15741,17 +15811,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       color: #FFFFFF;
       transition: all 0.5s;
     }
-    .nf-sponsor-description a {
-      color: #FFFF00;
-    }
-    .nf-sponsor-description a:visited {
-      color: #FFF9C4;
-    }
-    .nf-sponsor-description a:hover,
-    .nf-sponsor-description a:active,
-    .nf-sponsor-description a:focus {
-      color: #FBC02D;
-    }
     .nf-sponsor-description__heading {
       padding: 15px 0 10px;
       font-size: 16px;
@@ -15851,7 +15910,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
   <template>
-    <a class="twitter-timeline" href="https://twitter.com/hashtag/nodefest" data-widget-id="628418330785779712">#nodefest のツイート</a>
+    <a class="twitter-timeline" href="https://twitter.com/hashtag/nodefest" data-widget-id="637776288254586880">#nodefest のツイート</a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
   </template>
 </dom-module>
