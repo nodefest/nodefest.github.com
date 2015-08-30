@@ -12,15 +12,9 @@
       // 左端から順に
       {
         name:  'スポンサー募集中',
-        desc:  '詳細は、<a href="mailto:nodefest@nodejs.jp">nodefest@nodejs.jp</a>までお問い合わせください。',
-        thumb: './images/sponsors/dummy2.png',
-        url:   '/2015/'
-      },
-      {
-        name:  'スポンサー募集中',
-        desc:  '詳細は、<a href="mailto:nodefest@nodejs.jp">nodefest@nodejs.jp</a>までお問い合わせください。',
+        desc:  '「東京Node学園祭 2015」は2015年11月7日に開催される、Node.jsについての日本最大のカンファレンスです。 協賛を希望される方は、「<a href="https://docs.google.com/document/d/1dOl3jbuHrUclLFqIZBWytk2l-A84ZjSBoJk1Mr30918/edit">スポンサーシップのご案内</a>」をご確認の上、<a href="https://docs.google.com/forms/d/1fhgchPhfK1bBk_nGZLcAXK5mM4u6f1sQB28kyRAL_Ks/viewform">「東京Node学園祭 2015」 協賛申込書</a>」からお申込みください。',
         thumb: './images/sponsors/dummy.png',
-        url:   '/2015/'
+        url:   'https://docs.google.com/forms/d/1fhgchPhfK1bBk_nGZLcAXK5mM4u6f1sQB28kyRAL_Ks/viewform'
       }
     ],
 
@@ -299,21 +293,18 @@
         {
           name: 'Domenic Denicola',
           twitter: 'domenic',
-          job: 'TODO',
           thumb: './images/speakers/domenic.jpg',
           desc: 'Domenic Denicola is a software engineer on the Google Chrome team. His job is to advance the  state-of-the-art in web platform technology, coordinating, prototyping, implementing, and standardizing APIs to driving the web forward. Domenic serves on the Ecma TC39 committee in charge of standardizing JavaScript and is the editor of the <a href="http://streams.spec.whatwg.org/" target="_blank">Streams Standard</a>. In his free time he contributes to the Node.js and jsdom projects.'
         },
         {
           name: 'Kat Marchán',
           twitter: 'maybekatz',
-          job: 'TODO',
           thumb: './images/speakers/maybekatz.jpg',
           desc: 'Is one of the CLI engineers at npm, Inc. She previously specialized in JavaScript web applications, and was a contributor for the CanJS web framework. Within JavaScript land, Kat likes build and automation tooling, ES6/ES2015, and web-based edge technologies like web components. Beyond that, she loves distributed system architectures, Lisp, compilers and programming language theory, and taking selfies.'
         },
         {
           name: 'Rod Vagg',
           twitter: 'rvagg',
-          job: 'TODO',
           thumb: './images/speakers/rvagg.jpg',
           desc: 'Rod Vagg is Director of Engineering with NodeSource. Rod is known for his work across the Node.js ecosystem, including in the the Node.js databases community and for the creation of key NodeSchool workshoppers. He is passionate about Node.js and its future as a wide-spread, general-purpose and enterprise programming platform. This passion has lead to his involvement in io.js as a way to reinvigorate the core of Node.js and bring it in alignment with the future of JavaScript. Under the new converged Node.js Foundation, Rod represents the TSC (Technical Steering Committee) to the Foundation\'s board.'
         },
