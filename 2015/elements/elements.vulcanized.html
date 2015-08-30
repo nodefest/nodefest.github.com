@@ -15975,7 +15975,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
     .nf-special-speaker__info {
-      padding: 7px 7px 10px;
+      padding: 7px 10px;
     }
     .nf-special-speaker__name {
       font-size: 16px;
@@ -15985,10 +15985,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       margin-bottom: 7px;
       font-size: 16px;
       font-weight: bold;
-    }
-    .nf-special-speaker__job {
-      font-size: 14px;
-      color: rgba(0, 0, 0, 0.54);
     }
   </style>
 <template>
@@ -16010,7 +16006,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="nf-special-speaker__info">
                   <p class="nf-special-speaker__name"><span>{{item.name}}</span></p>
                   <p class="nf-special-speaker__id"><a href$="{{_twitterUrl(item.twitter)}}">@<span>{{item.twitter}}</span></a></p>
-                  <p class="nf-special-speaker__job">{{item.job}}</p>
                 </div>
               </div>
             </paper-material>
