@@ -299,21 +299,18 @@
         {
           name: 'Domenic Denicola',
           twitter: 'domenic',
-          job: 'TODO',
           thumb: './images/speakers/domenic.jpg',
           desc: 'Domenic Denicola is a software engineer on the Google Chrome team. His job is to advance the  state-of-the-art in web platform technology, coordinating, prototyping, implementing, and standardizing APIs to driving the web forward. Domenic serves on the Ecma TC39 committee in charge of standardizing JavaScript and is the editor of the <a href="http://streams.spec.whatwg.org/" target="_blank">Streams Standard</a>. In his free time he contributes to the Node.js and jsdom projects.'
         },
         {
           name: 'Kat Marchán',
           twitter: 'maybekatz',
-          job: 'TODO',
           thumb: './images/speakers/maybekatz.jpg',
           desc: 'Is one of the CLI engineers at npm, Inc. She previously specialized in JavaScript web applications, and was a contributor for the CanJS web framework. Within JavaScript land, Kat likes build and automation tooling, ES6/ES2015, and web-based edge technologies like web components. Beyond that, she loves distributed system architectures, Lisp, compilers and programming language theory, and taking selfies.'
         },
         {
           name: 'Rod Vagg',
           twitter: 'rvagg',
-          job: 'TODO',
           thumb: './images/speakers/rvagg.jpg',
           desc: 'Rod Vagg is Director of Engineering with NodeSource. Rod is known for his work across the Node.js ecosystem, including in the the Node.js databases community and for the creation of key NodeSchool workshoppers. He is passionate about Node.js and its future as a wide-spread, general-purpose and enterprise programming platform. This passion has lead to his involvement in io.js as a way to reinvigorate the core of Node.js and bring it in alignment with the future of JavaScript. Under the new converged Node.js Foundation, Rod represents the TSC (Technical Steering Committee) to the Foundation\'s board.'
         },
