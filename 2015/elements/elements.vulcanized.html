@@ -15146,7 +15146,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <a class="nf-app-logo__link" href="/2015/">
       <div class="nf-app-logo__icon">
-        <img src$="{{_createSrcPath()}}" height="36" alt="">
+        <img src$="{{_createSrcPath()}}" width="36" height="36" alt="">
       </div>
       <div class="nf-app-logo__text">
         <h1 class="nf-app-logo__name">東京Node学園祭2015</h1>
@@ -16388,6 +16388,9 @@ Polymer({
           type: String,
           value: ''
         }
+      },
+      ready: function () {
+        picturefill();
       },
       _createSrcPath: function(src, ext) { return location.pathname + 'images/page-header/' + src + ext; }
     });
