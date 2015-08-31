@@ -10,6 +10,7 @@
     new global.NF.TPC();
     new global.NF.LTC();
 
+    global.picturefill();
   });
 
 })(window);
