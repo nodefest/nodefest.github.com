@@ -111,37 +111,21 @@ a:focus {
 }
 
 .nf-frame-heading__h {
-  position: relative;
   margin: 0 -90px 30px -80px;
+  padding: 0 0 0 80px;
   font-size: 48px;
   color: rgba(0, 0, 0, 0.54);
   font-weight: 100;
-}
-.nf-frame-heading__h::before {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 19px;
-  left: 0;
-  width: 69px;
-  border-top: 2px solid #009688;
-  transform: rotate(-25deg);
+  background: url(/images/svg/nf-frame-heading.svg) no-repeat 0 68px;
 }
 .nf-frame-heading__h::after {
   content: attr(data-en);
   display: block;
-  margin: -3px 0 0 64px;
-  padding: 5px 0 0 16px;
-  border-top: 2px solid #009688;
+  padding: 3px 0 0;
   font-size: 24px;
   font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: normal;
   color: #000000;
-}
-.nf-frame-heading__h-inner {
-  display: inline-block;
-  margin-left: 64px;
-  padding-left: 16px;
 }
 
 .nf-paragraphs {
