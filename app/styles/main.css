@@ -116,7 +116,7 @@ a:focus {
   font-size: 48px;
   color: rgba(0, 0, 0, 0.54);
   font-weight: 100;
-  background: url(/images/svg/nf-frame-heading.svg) no-repeat 0 68px;
+  background: url(../images/svg/nf-frame-heading.svg) no-repeat 0 68px;
 }
 .nf-frame-heading__h::after {
   content: attr(data-en);
