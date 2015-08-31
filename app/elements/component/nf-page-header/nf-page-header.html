@@ -53,6 +53,9 @@
           value: ''
         }
       },
+      ready: function () {
+        picturefill();
+      },
       _createSrcPath: function(src, ext) { return location.pathname + 'images/page-header/' + src + ext; }
     });
   })();
