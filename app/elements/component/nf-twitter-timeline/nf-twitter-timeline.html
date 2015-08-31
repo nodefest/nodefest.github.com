@@ -8,15 +8,20 @@
   </style>
   <template>
     <a class="twitter-timeline" href="https://twitter.com/hashtag/nodefest" data-widget-id="637776288254586880">#nodefest のツイート</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <script type="text/x-load-after" id="js-nf-tw">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
   </template>
+  <script>
+    (function () {
+      Polymer({
+        is: 'nf-twitter-timeline',
+        properties: {},
+        ready: function() {
+          var sc = this.$['js-nf-tw'];
+          var s = document.createElement('script');
+          s.textContent = sc.textContent;
+          document.body.appendChild(s);
+        }
+      });
+    })();
+  </script>
 </dom-module>
-
-<script>
-  (function () {
-    Polymer({
-      is: 'nf-twitter-timeline',
-      properties: {}
-    });
-  })();
-</script>
