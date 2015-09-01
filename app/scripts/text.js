@@ -132,8 +132,8 @@
               name: '@yosuke_furukawa'
             },
             {
-              url: 'http://twitter.com/tito',
-              name: '@tito'
+              url: 'http://twitter.com/tito_net',
+              name: '@tito_net'
             }
           ]
         },
