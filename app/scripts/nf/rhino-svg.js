@@ -68,8 +68,8 @@
 
       requestAnimationFrame( this.watchFillColor.bind( this ) );
 
-      var EXPIRED  = 5000.0;
-      var DURATION = 1000.0;
+      var EXPIRED  = 60000.0; // 60秒は色が戻らない
+      var DURATION =  1000.0;
       var now = Date.now();
       var numOfShapes = this.getTileLength();
 
