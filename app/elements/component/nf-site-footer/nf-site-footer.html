@@ -8,42 +8,66 @@
     .nf-site-footer__inner {
       border-bottom: 1px solid #B6B6B6;
     }
-    .nf-site-footer__cols {
-      width: 940px;
+    .nf-site-footer__top,
+    .nf-site-footer__bottom {
+      max-width: 940px;
       margin: 0 auto;
-      display: table;
     }
-    .nf-site-footer__cols--top {
+    .nf-site-footer__top {
       margin-bottom: 20px;
     }
-    .nf-site-footer__cols--bottom {
+    .nf-site-footer__bottom {
       margin-bottom: -30px;
+    }
+    .nf-site-footer__cols {
+      display: table;
+      width: 100%;
     }
     .nf-site-footer__col {
       display: table-cell;
+      padding: 0 10px;
       vertical-align: bottom;
     }
     .nf-site-footer__col:last-child {
       text-align: right;
     }
+    @media ( max-width: 800px ) {
+      .nf-site-footer__inner {
+        border: none;
+      }
+      .nf-site-footer__cols {
+        display: block;
+      }
+      .nf-site-footer__col {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .nf-site-footer__col:last-child {
+        text-align: left;
+      }
+    }
   </style>
   <template>
     <footer>
       <div class="nf-site-footer__inner">
-        <div class="nf-site-footer__cols nf-site-footer__cols--top">
-          <div class="nf-site-footer__col">
-            <nf-nodejs-logo></nf-nodejs-logo>
-          </div>
-          <div class="nf-site-footer__col">
-            <nf-link-list></nf-link-list>
+        <div class="nf-site-footer__top">
+          <div class="nf-site-footer__cols">
+            <div class="nf-site-footer__col">
+              <nf-nodejs-logo></nf-nodejs-logo>
+            </div>
+            <div class="nf-site-footer__col">
+              <nf-link-list></nf-link-list>
+            </div>
           </div>
         </div>
-        <div class="nf-site-footer__cols nf-site-footer__cols--bottom">
-          <div class="nf-site-footer__col">
-            <nf-copyright></nf-copyright>
-          </div>
-          <div class="nf-site-footer__col">
-            <nf-created-by></nf-created-by>
+        <div class="nf-site-footer__bottom">
+          <div class="nf-site-footer__cols">
+            <div class="nf-site-footer__col">
+              <nf-copyright></nf-copyright>
+            </div>
+            <div class="nf-site-footer__col">
+              <nf-created-by></nf-created-by>
+            </div>
           </div>
         </div>
       </div>

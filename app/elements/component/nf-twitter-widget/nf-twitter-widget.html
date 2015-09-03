@@ -16,6 +16,19 @@
     .nf-twitter-widget__col:first-child {
       padding-left: 0;
     }
+    @media ( max-width: 600px ) {
+      .nf-twitter-widget__cols {
+        display: block;
+      }
+      .nf-twitter-widget__col {
+        display: block;
+        margin-top: 50px;
+        padding-left: 0;
+      }
+      .nf-twitter-widget__col:first-child {
+        margin-top: 0;
+      }
+    }
   </style>
   <template>
     <div class="nf-twitter-widget__cols">

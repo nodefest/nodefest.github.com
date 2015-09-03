@@ -18,7 +18,7 @@
       padding-top: 10px;
       border-top: 1px solid #FFFF00;
       font-size: 24px;
-      font-family: Roboto;
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-weight: normal;
     }
     .nf-sponsors__body {
@@ -26,15 +26,14 @@
       margin: 0 auto;
     }
     .nf-sponsors__bunners {
+      position: relative;
       list-style: none;
     }
     .nf-sponsors__bunner {
-      position: relative;
       margin: 0 9px;
       padding-bottom: 18px;
     }
     .nf-sponsors__bunner:hover .nf-sponsor-description {
-      height: auto;
       opacity: 1;
     }
     .nf-sponsors__link {
@@ -44,14 +43,12 @@
 
     .nf-sponsor-description {
       position: absolute;
-      top: 178px;
       left: 0;
       z-index: 1;
       opacity: 0;
-      height: 0;
       overflow: hidden;
       box-sizing: border-box;
-      width: 458px;
+      width: 100%;
       padding: 0 15px;
       background: rgba(97, 97, 97, 0.9);
       color: #FFFFFF;

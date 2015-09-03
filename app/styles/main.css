@@ -9,7 +9,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 /* Base Style */
 body {
-  min-width: 1024px;
   background: #F1F1F1;
   font-family: 'Noto Sans Japanese', Roboto, Noto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -17,7 +16,7 @@ body {
 }
 
 time {
-  font-family: Roboto;
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -51,11 +50,21 @@ a:focus {
 .nf-ul > li {
   margin-bottom: 0.5em;
 }
+@media ( max-width: 480px ) {
+  .nf-ul {
+    font-size: 14px;
+  }
+}
 
 .nf-sections {
   max-width: 940px;
   margin: 0 auto 50px;
   padding: 0 20px;
+}
+@media ( max-width: 480px ) {
+  .nf-sections {
+    padding: 0 10px;
+  }
 }
 
 .nf-section {
@@ -65,7 +74,17 @@ a:focus {
   margin: 0 90px 0 80px;
 }
 .nf-section__body--full {
-  margin: 0;
+  margin: 0 !important;
+}
+@media ( min-width: 601px ) and ( max-width: 840px ) {
+  .nf-section__body {
+    margin: 0 40px;
+  }
+}
+@media ( max-width: 600px ) {
+  .nf-section__body {
+    margin: 0;
+  }
 }
 
 .nf-heading {
@@ -76,6 +95,16 @@ a:focus {
   font-weight: normal;
   color: #00796B;
 }
+@media ( max-width: 481px ) and ( max-width: 840px ) {
+  .nf-heading__h {
+    font-size: 28px;
+  }
+}
+@media ( max-width: 480px ) {
+  .nf-heading__h {
+    font-size: 24px;
+  }
+}
 
 .nf-heading-2 {
   margin-bottom: 10px;
@@ -85,12 +114,22 @@ a:focus {
   font-weight: normal;
   color: #00796B;
 }
+@media ( max-width: 480px ) {
+  .nf-heading-2__h {
+    font-size: 20px;
+  }
+}
 
 .nf-heading-3 {
   line-height: 2;
 }
 .nf-heading-3__h {
   font-weight: bold;
+}
+@media ( max-width: 480px ) {
+  .nf-heading-3__h {
+    font-size: 14px;
+  }
 }
 
 .nf-frame-section {
@@ -101,13 +140,29 @@ a:focus {
   padding: 50px 160px;
 }
 .nf-frame-section__inner--full {
-  padding: 0;
+  padding: 0 !important;
 }
 .nf-frame-section__inner--large {
-  padding: 20px;
+  padding: 20px !important;
 }
 .nf-frame-section__body--full {
   margin: 0 -160px -50px;
+}
+@media ( min-width: 601px ) and ( max-width: 840px ) {
+  .nf-frame-section__inner {
+    padding: 40px 70px;
+  }
+  .nf-frame-section__body--full {
+    margin: 0 -70px -40px;
+  }
+}
+@media ( max-width: 600px ) {
+  .nf-frame-section__inner {
+    padding: 30px 40px;
+  }
+  .nf-frame-section__body--full {
+    margin: 0 -40px -30px;
+  }
 }
 
 .nf-frame-heading__h {
@@ -127,6 +182,36 @@ a:focus {
   font-weight: normal;
   color: #000000;
 }
+@media ( min-width: 601px ) and ( max-width: 840px ) {
+  .nf-frame-heading__h {
+    line-height: 1.2;
+    margin: 0 0 30px;
+    padding: 0;
+    background: none;
+    font-size: 36px;
+  }
+  .nf-frame-heading__h::after {
+    margin-top: 8px;
+    padding-top: 5px;
+    border-top: 2px solid #009688;
+    font-size: 20px;
+  }
+}
+@media ( max-width: 600px ) {
+  .nf-frame-heading__h {
+    line-height: 1.2;
+    margin: 0 0 30px;
+    padding: 0;
+    background: none;
+    font-size: 28px;
+  }
+  .nf-frame-heading__h::after {
+    margin-top: 8px;
+    padding-top: 5px;
+    border-top: 2px solid #009688;
+    font-size: 18px;
+  }
+}
 
 .nf-paragraphs {
   line-height: 2;
@@ -137,6 +222,14 @@ a:focus {
 }
 .nf-paragraphs p:first-child {
   margin-top: 0;
+}
+@media ( max-width: 480px ) {
+  .nf-paragraphs {
+    font-size: 14px;
+  }
+  .nf-paragraphs p {
+    margin-top: 1em;
+  }
 }
 
 .nf-buttons {
@@ -157,6 +250,14 @@ a:focus {
 }
 .nf-button--disabled {
   width: 350px;
+}
+@media ( max-width: 480px ) {
+  .nf-button--register {
+    width: 100%;
+  }
+  .nf-button--disabled {
+    width: 100%;
+  }
 }
 
 .nf-fixed-columns {
@@ -192,6 +293,29 @@ a:focus {
   color: rgba(0, 0, 0, 0.54);
   white-space: nowrap;
 }
+@media ( max-width: 480px ) {
+  .nf-description-table table {
+    display: block;
+    border-top: none;
+  }
+  .nf-description-table th,
+  .nf-description-table td {
+    display: block;
+    padding: 0;
+    border-bottom: none;
+    font-size: 14px;
+  }
+  .nf-description-table th {
+    width: auto;
+    padding-bottom: 0;
+  }
+  .nf-description-table tr:first-child th {
+    padding-top: 0;
+  }
+  .nf-description-table td {
+    margin-bottom: 20px;
+  }
+}
 
 /* Page Venue */
 google-map {
@@ -212,6 +336,24 @@ google-map {
 }
 .nf-coc__source {
   font-weight: bold;
+}
+@media ( min-width: 601px ) and ( max-width: 840px ) {
+  .nf-coc__body {
+    padding: 0 40px;
+  }
+  .nf-coc__footer {
+    padding: 30px 40px 50px;
+    font-size: 14px;
+  }
+}
+@media ( max-width: 600px ) {
+  .nf-coc__body {
+    padding: 0 20px;
+  }
+  .nf-coc__footer {
+    padding: 30px 20px 50px;
+    font-size: 14px;
+  }
 }
 
 /* inner-h-t-m-t-lで突っ込んだ要素にスタイル当たらない問題 */
