@@ -6,7 +6,7 @@
       z-index: 0;
       overflow: hidden;
       width: 100%;
-      height: 350px;
+      max-height: 350px;
       margin-bottom: -100px;
     }
     .nf-page-header__h-wrapper {
@@ -16,16 +16,51 @@
     }
     .nf-page-header__h {
       position: absolute;
-      padding-top: 130px;
+      bottom: 120px;
       color: #FFFFFF;
-      font-family: Roboto;
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 72px;
       font-weight: 100;
       -webkit-font-smoothing: antialiased;
       letter-spacing: 2px;
     }
+    .nf-page-header__bg {
+      text-align: left;
+    }
     .nf-page-header__bg img {
       width: 100%;
+    }
+    @media ( min-width: 601px ) and ( max-width: 840px ) {
+      .nf-page-header__h {
+        bottom: 120px;
+        font-size: 60px;
+      }
+      .nf-page-header__bg img {
+        max-height: 350px;
+      }
+    }
+    @media ( min-width: 481px ) and ( max-width: 600px ) {
+      .nf-page-header__h {
+        bottom: 110px;
+        font-size: 48px;
+      }
+      .nf-page-header__bg img {
+        width: auto;
+        height: 200px;
+      }
+    }
+    @media ( max-width: 480px ) {
+      .nf-page-header__h-wrapper {
+        padding: 0 10px;
+      }
+      .nf-page-header__h {
+        bottom: 110px;
+        font-size: 36px;
+      }
+      .nf-page-header__bg img {
+        width: auto;
+        height: 200px;
+      }
     }
   </style>
   <template>

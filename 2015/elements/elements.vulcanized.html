@@ -11131,19 +11131,7 @@ The `google-map` element renders a Google Map.
   }
 
   paper-toolbar {
-    height: 48px;
-  }
-
-  /* Breakpoints */
-
-  /* Small */
-  @media (max-width: 600px) {
-
-    paper-material {
-      --menu-container-display: none;
-      width: 97.33%;
-    }
-
+    height: auto;
   }
 
   /* Material Design Adaptive Breakpoints */
@@ -11197,8 +11185,8 @@ The `google-map` element renders a Google Map.
 
 <style scope="paper-toolbar">
   #topBar {
-    width: 940px;
-    height: 48px;
+    max-width: 940px;
+    height: auto;
     margin: 0 auto;
     padding: 0;
   }
@@ -15023,13 +15011,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="nf-site-header" assetpath="component/nf-site-header/">
   <style is="custom-style">
     :host {
+      width: 100%;
+    }
+    .nf-site-header__cols {
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -ms-flex-pack: space-between;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
     }
     .nf-site-header__col--1 {
-      margin-right: 30px;
+      margin: 0 20px 0 10px;
+    }
+    .nf-site-header__col--2 {
+      -ms-flex: 1 1 0.000000001px;
+      -webkit-flex: 1;
+      flex: 1;
     }
     .nf-site-header__col--3 {
-      margin-left: 30px;
+      margin: 0 10px 0 20px;
     }
+
     .nf-ticket-link {
       position: relative;
       display: block;
@@ -15050,9 +15056,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       position: absolute;
       display: inline-block;
       top: 30px;
-      left: 50%;
-      width: 8em;
-      margin-left: -4em;
+      right: 0;
       z-index: 1;
       opacity: 0;
       padding: 5px 0;
@@ -15066,20 +15070,39 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     paper-tab {
       text-decoration: none;
       font-size: 16px;
-      font-family: Roboto;
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-weight: bold;
     }
     paper-tab a {
       color: #FFFFFF;
       opacity: 30;
     }
+    @media (min-width: 481px) and (max-width: 600px) {
+      .nf-site-header__col--1 {
+        margin: 0 0 0 10px !important;
+      }
+      .nf-site-header__col--3 {
+        margin: 0 10px !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .nf-site-header__col--1 {
+        margin: 0 -10px 0 5px !important;
+      }
+      .nf-site-header__col--3 {
+        margin: 0 5px !important;
+      }
+      paper-tab {
+        font-size: 14px !important;
+      }
+    }
   </style>
   <template>
-    <div class="center horizontal layout">
+    <div class="nf-site-header__cols">
       <div class="nf-site-header__col nf-site-header__col--1">
         <nf-app-logo></nf-app-logo>
       </div>
-      <div class="nf-site-header__col nf-site-header__col--2 flex">
+      <div class="nf-site-header__col nf-site-header__col--2">
         <paper-tabs id="js-nf-tabs" selected="0">
           <paper-tab link="">
             <a href="#!/about" class="horizontal center-center layout" title="概要">About</a>
@@ -15142,6 +15165,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       font-size: 16px;
       font-weight: bold;
     }
+    @media ( max-width: 600px ) {
+      .nf-app-logo__name {
+        display: none;
+      }
+    }
   </style>
   <template>
     <a class="nf-app-logo__link" href="/2015/">
@@ -15174,42 +15202,66 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     .nf-site-footer__inner {
       border-bottom: 1px solid #B6B6B6;
     }
-    .nf-site-footer__cols {
-      width: 940px;
+    .nf-site-footer__top,
+    .nf-site-footer__bottom {
+      max-width: 940px;
       margin: 0 auto;
-      display: table;
     }
-    .nf-site-footer__cols--top {
+    .nf-site-footer__top {
       margin-bottom: 20px;
     }
-    .nf-site-footer__cols--bottom {
+    .nf-site-footer__bottom {
       margin-bottom: -30px;
+    }
+    .nf-site-footer__cols {
+      display: table;
+      width: 100%;
     }
     .nf-site-footer__col {
       display: table-cell;
+      padding: 0 10px;
       vertical-align: bottom;
     }
     .nf-site-footer__col:last-child {
       text-align: right;
     }
+    @media ( max-width: 800px ) {
+      .nf-site-footer__inner {
+        border: none;
+      }
+      .nf-site-footer__cols {
+        display: block;
+      }
+      .nf-site-footer__col {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .nf-site-footer__col:last-child {
+        text-align: left;
+      }
+    }
   </style>
   <template>
     <footer>
       <div class="nf-site-footer__inner">
-        <div class="nf-site-footer__cols nf-site-footer__cols--top">
-          <div class="nf-site-footer__col">
-            <nf-nodejs-logo></nf-nodejs-logo>
-          </div>
-          <div class="nf-site-footer__col">
-            <nf-link-list></nf-link-list>
+        <div class="nf-site-footer__top">
+          <div class="nf-site-footer__cols">
+            <div class="nf-site-footer__col">
+              <nf-nodejs-logo></nf-nodejs-logo>
+            </div>
+            <div class="nf-site-footer__col">
+              <nf-link-list></nf-link-list>
+            </div>
           </div>
         </div>
-        <div class="nf-site-footer__cols nf-site-footer__cols--bottom">
-          <div class="nf-site-footer__col">
-            <nf-copyright></nf-copyright>
-          </div>
-          <div class="nf-site-footer__col">
-            <nf-created-by></nf-created-by>
+        <div class="nf-site-footer__bottom">
+          <div class="nf-site-footer__cols">
+            <div class="nf-site-footer__col">
+              <nf-copyright></nf-copyright>
+            </div>
+            <div class="nf-site-footer__col">
+              <nf-created-by></nf-created-by>
+            </div>
           </div>
         </div>
       </div>
@@ -15278,10 +15330,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
     .nf-link-list__item {
       display: inline-block;
-      margin-left: 1em;
-      font-family: Roboto;
+      margin-right: 1em;
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 14px;
       font-weight: bold;
+    }
+    .nf-link-list__item:last-child {
+      margin-right: 0;
     }
   </style>
   <template>
@@ -15314,6 +15369,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <style is="custom-style">
     :host {
       display: block;
+    }
+    @media ( max-width: 800px ) {
+      :host {
+        margin-bottom: 30px;
+      }
     }
   </style>
   <template>
@@ -15350,7 +15410,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           -ms-user-select: none;
               user-select: none;
     }
-
     .nf-top-gimmick__game-info {
       position: absolute;
       top: 25px;
@@ -15383,7 +15442,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       position: absolute;
       top: 5px;
       line-height: 1;
-      font-family: Roboto;
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 10px;
       font-weight: bold;
       color: #FFFFFF;
@@ -15407,7 +15466,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     .nf-top-gimmick__game-people-label {
       display: table-cell;
       width: 45%;
-      font-family: Roboto;
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 10px;
       font-weight: bold;
       white-space: nowrap;
@@ -15454,29 +15513,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     .nf-top-gimmick__rhino--child {}
     .nf-top-gimmick__rhino svg {
       vertical-align: bottom;
-    }
-    @media ( max-width: 680px ) {
-      .nf-top-gimmick__rhino-wrap {
-        display: table;
-        width: 100%;
-        height: 250px;
-      }
-      .nf-top-gimmick__rhino {
-        vertical-align: bottom;
-        display: table-cell;
-        height: 250px;
-      }
-      .nf-top-gimmick__rhino--parent {
-        width: 60%;
-      }
-      .nf-top-gimmick__rhino--child {
-        width: 40%;
-      }
-      .nf-top-gimmick__rhino svg {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
     }
     .nf-top-gimmick__grasses1 {
       pointer-events: none;
@@ -15565,11 +15601,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       font-size: 48px;
       font-weight: 100;
     }
-    @media ( max-width: 680px ) {
-      .nf-top-gimmick__info-title {
-        font-size: 30px;
-      }
-    }
     .nf-top-gimmick__info-copy {
       margin-bottom: 10px;
       font-size: 18px;
@@ -15578,14 +15609,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
     .nf-top-gimmick__info-copy br {
       display: none;
-    }
-    @media ( max-width: 680px ) {
-      .nf-top-gimmick__info-copy {
-        font-size: 14px;
-      }
-      .nf-top-gimmick__info-copy br {
-        display: inline;
-      }
     }
     .nf-top-gimmick__info-place {
       font-size: 24px;
@@ -15597,7 +15620,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       z-index: 1;
       width: 100%;
       line-height: 1.5;
-      font-family: Roboto;
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
       color: rgba(0, 0, 0, 0.54);
     }
     .nf-top-gimmick__info-en-inner {
@@ -15611,9 +15634,89 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     .nf-top-gimmick__info-en-place {
       font-size: 14px;
     }
-    @media ( max-width: 680px ) {
+
+    @media ( min-width: 481px ) and ( max-width: 700px ) {
+      .nf-top-gimmick__rhino-wrap {
+        display: table;
+        width: 100%;
+      }
+      .nf-top-gimmick__rhino {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .nf-top-gimmick__rhino--parent {
+        width: 65%;
+      }
+      .nf-top-gimmick__rhino--child {
+        width: 35%;
+        padding-top: 20%;
+      }
+      .nf-top-gimmick__rhino svg {
+        display: inline-block;
+        width: 100%;
+      }
+      .nf-top-gimmick__info-place {
+        font-size: 20px;
+      }
+      .nf-top-gimmick__game-info {
+        right: 20px;
+      }
+      .nf-top-gimmick__info-title {
+        font-size: 38px;
+      }
+      .nf-top-gimmick__info-copy {
+        font-size: 16px;
+      }
+      .nf-top-gimmick__info-copy br {
+        display: inline;
+      }
       .nf-top-gimmick__info-en-inner {
         padding-left: 20px;
+      }
+    }
+    @media ( max-width: 480px ) {
+      .nf-top-gimmick__rhino-wrap {
+        display: table;
+        width: 100%;
+        margin-top: 30px;
+      }
+      .nf-top-gimmick__rhino {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .nf-top-gimmick__rhino--parent {
+        width: 60%;
+      }
+      .nf-top-gimmick__rhino--child {
+        width: 40%;
+        padding-top: 10%;
+      }
+      .nf-top-gimmick__rhino svg {
+        width: 100%;
+      }
+      .nf-top-gimmick__game-info {
+        right: 10px;
+      }
+      .nf-top-gimmick__info-copy {
+        font-size: 14px;
+      }
+      .nf-top-gimmick__info-copy br {
+        display: inline;
+      }
+      .nf-top-gimmick__info-place {
+        font-size: 20px;
+      }
+      .nf-top-gimmick__info-title {
+        font-size: 30px;
+      }
+      .nf-top-gimmick__info-en-inner {
+        padding-left: 20px;
+      }
+      .nf-top-gimmick__info-en-time {
+        font-size: 14px;
+      }
+      .nf-top-gimmick__info-en-place {
+        font-size: 12px;
       }
     }
   </style>
@@ -15770,7 +15873,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       padding-top: 10px;
       border-top: 1px solid #FFFF00;
       font-size: 24px;
-      font-family: Roboto;
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-weight: normal;
     }
     .nf-sponsors__body {
@@ -15778,15 +15881,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       margin: 0 auto;
     }
     .nf-sponsors__bunners {
+      position: relative;
       list-style: none;
     }
     .nf-sponsors__bunner {
-      position: relative;
       margin: 0 9px;
       padding-bottom: 18px;
     }
     .nf-sponsors__bunner:hover .nf-sponsor-description {
-      height: auto;
       opacity: 1;
     }
     .nf-sponsors__link {
@@ -15796,14 +15898,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     .nf-sponsor-description {
       position: absolute;
-      top: 178px;
       left: 0;
       z-index: 1;
       opacity: 0;
-      height: 0;
       overflow: hidden;
       box-sizing: border-box;
-      width: 458px;
+      width: 100%;
       padding: 0 15px;
       background: rgba(97, 97, 97, 0.9);
       color: #FFFFFF;
@@ -15940,6 +16040,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     .nf-twitter-widget__col:first-child {
       padding-left: 0;
     }
+    @media ( max-width: 600px ) {
+      .nf-twitter-widget__cols {
+        display: block;
+      }
+      .nf-twitter-widget__col {
+        display: block;
+        margin-top: 50px;
+        padding-left: 0;
+      }
+      .nf-twitter-widget__col:first-child {
+        margin-top: 0;
+      }
+    }
   </style>
   <template>
     <div class="nf-twitter-widget__cols">
@@ -16059,6 +16172,11 @@ Polymer({
       display: block;
       font-size: 16px;
     }
+    @media ( max-width: 480px ) {
+      .nf-news-list__text {
+        font-size: 14px;
+      }
+    }
   </style>
 <template>
   <section class="nf-section">
@@ -16100,6 +16218,17 @@ Polymer({
     .nf-speaker-list__item:first-child {
       border-top: 0;
     }
+    @media ( min-width: 601px ) and ( max-width: 840px ) {
+      .nf-speaker-list__item {
+        padding: 20px 70px;
+      }
+    }
+    @media ( max-width: 600px ) {
+      .nf-speaker-list__item {
+        padding: 20px 40px;
+      }
+    }
+
     .nf-speaker {
       display: table;
       width: 100%;
@@ -16116,11 +16245,11 @@ Polymer({
       vertical-align: top;
     }
     .nf-speaker__thumb {
-      display: block;
+      display: inline-block;
       overflow: hidden;
       width: 135px;
       height: 135px;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       border: 4px solid #009688;
       border-radius: 135px;
     }
@@ -16131,6 +16260,7 @@ Polymer({
       border-color: #00796B;
     }
     .nf-speaker__id {
+      display: block;
       font-size: 18px;
       font-weight: bold;
     }
@@ -16141,6 +16271,48 @@ Polymer({
     }
     .nf-speaker__description {
       line-height: 2;
+    }
+    @media ( min-width: 601px ) and ( max-width: 840px ) {
+      .nf-speaker__name {
+        font-size: 30px;
+      }
+    }
+    @media ( min-width: 481px ) and ( max-width: 600px ) {
+      .nf-speaker {
+        display: block;
+      }
+      .nf-speaker__link {
+        display: block;
+        width: auto;
+        margin-bottom: 20px;
+      }
+      .nf-speaker__info {
+        display: block;
+        padding-left: 0;
+      }
+      .nf-speaker__name {
+        font-size: 30px;
+      }
+    }
+    @media ( max-width: 480px ) {
+      .nf-speaker {
+        display: block;
+      }
+      .nf-speaker__link {
+        display: block;
+        width: auto;
+        margin-bottom: 20px;
+      }
+      .nf-speaker__info {
+        display: block;
+        padding-left: 0;
+      }
+      .nf-speaker__name {
+        font-size: 24px;
+      }
+      .nf-speaker__description {
+        font-size: 14px;
+      }
     }
   </style>
   <template>
@@ -16255,6 +16427,51 @@ Polymer({
     .nf-session-item__speaker:first-child:before {
       content: ""
     }
+    @media ( min-width: 481px ) and ( max-width: 600px ) {
+      .nf-timetable-cell-index {
+        white-space: normal;
+        width: 95px;
+      }
+      .nf-session-item {
+        display: block;
+      }
+      .nf-session-item__thumb {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .nf-session-item__text {
+        display: block;
+      }
+      .nf-timetable__row__index,
+      .nf-timetable__row__item {
+        font-size: 16px;
+      }
+    }
+    @media ( max-width: 480px ) {
+      :host {
+        font-size: 14px;
+      }
+      .nf-timetable-cell-index {
+        white-space: normal;
+        width: 60px;
+        text-align: center;
+      }
+      .nf-session-item {
+        display: block;
+      }
+      .nf-session-item__thumb {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .nf-session-item__text {
+        display: block;
+      }
+      .nf-timetable__row__index,
+      .nf-timetable__row__item {
+        padding: 15px 10px;
+        font-size: 14px;
+      }
+    }
   </style>
   <template>
     <div class="nf-timetable">
@@ -16340,7 +16557,7 @@ Polymer({
       z-index: 0;
       overflow: hidden;
       width: 100%;
-      height: 350px;
+      max-height: 350px;
       margin-bottom: -100px;
     }
     .nf-page-header__h-wrapper {
@@ -16350,16 +16567,51 @@ Polymer({
     }
     .nf-page-header__h {
       position: absolute;
-      padding-top: 130px;
+      bottom: 120px;
       color: #FFFFFF;
-      font-family: Roboto;
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 72px;
       font-weight: 100;
       -webkit-font-smoothing: antialiased;
       letter-spacing: 2px;
     }
+    .nf-page-header__bg {
+      text-align: left;
+    }
     .nf-page-header__bg img {
       width: 100%;
+    }
+    @media ( min-width: 601px ) and ( max-width: 840px ) {
+      .nf-page-header__h {
+        bottom: 120px;
+        font-size: 60px;
+      }
+      .nf-page-header__bg img {
+        max-height: 350px;
+      }
+    }
+    @media ( min-width: 481px ) and ( max-width: 600px ) {
+      .nf-page-header__h {
+        bottom: 110px;
+        font-size: 48px;
+      }
+      .nf-page-header__bg img {
+        width: auto;
+        height: 200px;
+      }
+    }
+    @media ( max-width: 480px ) {
+      .nf-page-header__h-wrapper {
+        padding: 0 10px;
+      }
+      .nf-page-header__h {
+        bottom: 110px;
+        font-size: 36px;
+      }
+      .nf-page-header__bg img {
+        width: auto;
+        height: 200px;
+      }
     }
   </style>
   <template>
