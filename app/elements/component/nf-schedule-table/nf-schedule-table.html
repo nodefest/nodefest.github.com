@@ -76,6 +76,51 @@
     .nf-session-item__speaker:first-child:before {
       content: ""
     }
+    @media ( min-width: 481px ) and ( max-width: 600px ) {
+      .nf-timetable-cell-index {
+        white-space: normal;
+        width: 95px;
+      }
+      .nf-session-item {
+        display: block;
+      }
+      .nf-session-item__thumb {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .nf-session-item__text {
+        display: block;
+      }
+      .nf-timetable__row__index,
+      .nf-timetable__row__item {
+        font-size: 16px;
+      }
+    }
+    @media ( max-width: 480px ) {
+      :host {
+        font-size: 14px;
+      }
+      .nf-timetable-cell-index {
+        white-space: normal;
+        width: 60px;
+        text-align: center;
+      }
+      .nf-session-item {
+        display: block;
+      }
+      .nf-session-item__thumb {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .nf-session-item__text {
+        display: block;
+      }
+      .nf-timetable__row__index,
+      .nf-timetable__row__item {
+        padding: 15px 10px;
+        font-size: 14px;
+      }
+    }
   </style>
   <template>
     <div class="nf-timetable">

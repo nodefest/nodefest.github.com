@@ -14,7 +14,6 @@
           -ms-user-select: none;
               user-select: none;
     }
-
     .nf-top-gimmick__game-info {
       position: absolute;
       top: 25px;
@@ -47,7 +46,7 @@
       position: absolute;
       top: 5px;
       line-height: 1;
-      font-family: Roboto;
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 10px;
       font-weight: bold;
       color: #FFFFFF;
@@ -71,7 +70,7 @@
     .nf-top-gimmick__game-people-label {
       display: table-cell;
       width: 45%;
-      font-family: Roboto;
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 10px;
       font-weight: bold;
       white-space: nowrap;
@@ -118,29 +117,6 @@
     .nf-top-gimmick__rhino--child {}
     .nf-top-gimmick__rhino svg {
       vertical-align: bottom;
-    }
-    @media ( max-width: 680px ) {
-      .nf-top-gimmick__rhino-wrap {
-        display: table;
-        width: 100%;
-        height: 250px;
-      }
-      .nf-top-gimmick__rhino {
-        vertical-align: bottom;
-        display: table-cell;
-        height: 250px;
-      }
-      .nf-top-gimmick__rhino--parent {
-        width: 60%;
-      }
-      .nf-top-gimmick__rhino--child {
-        width: 40%;
-      }
-      .nf-top-gimmick__rhino svg {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
     }
     .nf-top-gimmick__grasses1 {
       pointer-events: none;
@@ -229,11 +205,6 @@
       font-size: 48px;
       font-weight: 100;
     }
-    @media ( max-width: 680px ) {
-      .nf-top-gimmick__info-title {
-        font-size: 30px;
-      }
-    }
     .nf-top-gimmick__info-copy {
       margin-bottom: 10px;
       font-size: 18px;
@@ -242,14 +213,6 @@
     }
     .nf-top-gimmick__info-copy br {
       display: none;
-    }
-    @media ( max-width: 680px ) {
-      .nf-top-gimmick__info-copy {
-        font-size: 14px;
-      }
-      .nf-top-gimmick__info-copy br {
-        display: inline;
-      }
     }
     .nf-top-gimmick__info-place {
       font-size: 24px;
@@ -261,7 +224,7 @@
       z-index: 1;
       width: 100%;
       line-height: 1.5;
-      font-family: Roboto;
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
       color: rgba(0, 0, 0, 0.54);
     }
     .nf-top-gimmick__info-en-inner {
@@ -275,9 +238,89 @@
     .nf-top-gimmick__info-en-place {
       font-size: 14px;
     }
-    @media ( max-width: 680px ) {
+
+    @media ( min-width: 481px ) and ( max-width: 700px ) {
+      .nf-top-gimmick__rhino-wrap {
+        display: table;
+        width: 100%;
+      }
+      .nf-top-gimmick__rhino {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .nf-top-gimmick__rhino--parent {
+        width: 65%;
+      }
+      .nf-top-gimmick__rhino--child {
+        width: 35%;
+        padding-top: 20%;
+      }
+      .nf-top-gimmick__rhino svg {
+        display: inline-block;
+        width: 100%;
+      }
+      .nf-top-gimmick__info-place {
+        font-size: 20px;
+      }
+      .nf-top-gimmick__game-info {
+        right: 20px;
+      }
+      .nf-top-gimmick__info-title {
+        font-size: 38px;
+      }
+      .nf-top-gimmick__info-copy {
+        font-size: 16px;
+      }
+      .nf-top-gimmick__info-copy br {
+        display: inline;
+      }
       .nf-top-gimmick__info-en-inner {
         padding-left: 20px;
+      }
+    }
+    @media ( max-width: 480px ) {
+      .nf-top-gimmick__rhino-wrap {
+        display: table;
+        width: 100%;
+        margin-top: 30px;
+      }
+      .nf-top-gimmick__rhino {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .nf-top-gimmick__rhino--parent {
+        width: 60%;
+      }
+      .nf-top-gimmick__rhino--child {
+        width: 40%;
+        padding-top: 10%;
+      }
+      .nf-top-gimmick__rhino svg {
+        width: 100%;
+      }
+      .nf-top-gimmick__game-info {
+        right: 10px;
+      }
+      .nf-top-gimmick__info-copy {
+        font-size: 14px;
+      }
+      .nf-top-gimmick__info-copy br {
+        display: inline;
+      }
+      .nf-top-gimmick__info-place {
+        font-size: 20px;
+      }
+      .nf-top-gimmick__info-title {
+        font-size: 30px;
+      }
+      .nf-top-gimmick__info-en-inner {
+        padding-left: 20px;
+      }
+      .nf-top-gimmick__info-en-time {
+        font-size: 14px;
+      }
+      .nf-top-gimmick__info-en-place {
+        font-size: 12px;
       }
     }
   </style>

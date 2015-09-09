@@ -43,19 +43,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   }
 
   paper-toolbar {
-    height: 48px;
-  }
-
-  /* Breakpoints */
-
-  /* Small */
-  @media (max-width: 600px) {
-
-    paper-material {
-      --menu-container-display: none;
-      width: 97.33%;
-    }
-
+    height: auto;
   }
 
   /* Material Design Adaptive Breakpoints */
@@ -109,8 +97,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <style scope="paper-toolbar">
   #topBar {
-    width: 940px;
-    height: 48px;
+    max-width: 940px;
+    height: auto;
     margin: 0 auto;
     padding: 0;
   }
