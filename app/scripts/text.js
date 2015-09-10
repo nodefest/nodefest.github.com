@@ -309,6 +309,12 @@
           thumb: './images/speakers/rvagg.jpg',
           desc: 'Rod Vagg is Chief Node Officer at NodeSource. Rod is known for his work across the Node.js ecosystem, including in the the Node.js databases community and for the creation of key NodeSchool workshoppers. He is passionate about Node.js and its future as a wide-spread, general-purpose and enterprise programming platform. This passion has lead to his involvement in io.js as a way to reinvigorate the core of Node.js and bring it in alignment with the future of JavaScript. Under the new converged Node.js Foundation, Rod represents the TSC (Technical Steering Committee) to the Foundation\'s board.'
         },
+        {
+          name: 'Mariko Kosaka',
+          twitter: 'kosamari',
+          thumb: './images/speakers/kosamari.jpg',
+          desc: 'Mariko Kosaka is an engineer who loves data and knitting. When she is not making software at Scripto, she uses code to help her design textiles & organize local javascrict meetup in New York City called BrooklynJS.'
+        },
       ]
     }
   };
