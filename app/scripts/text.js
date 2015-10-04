@@ -12,11 +12,43 @@
     SPONSORS: [
       // 左端から順に
       {
-        name:  'スポンサー募集中',
-        desc:  '「東京Node学園祭 2015」は2015年11月7日に開催される、Node.jsについての日本最大のカンファレンスです。 協賛を希望される方は、「<a href="https://docs.google.com/document/d/1dOl3jbuHrUclLFqIZBWytk2l-A84ZjSBoJk1Mr30918/edit">スポンサーシップのご案内</a>」をご確認の上、<a href="https://docs.google.com/forms/d/1fhgchPhfK1bBk_nGZLcAXK5mM4u6f1sQB28kyRAL_Ks/viewform">「東京Node学園祭 2015」 協賛申込書</a>」からお申込みください。',
-        thumb: './images/sponsors/dummy.png',
-        url:   'https://docs.google.com/forms/d/1fhgchPhfK1bBk_nGZLcAXK5mM4u6f1sQB28kyRAL_Ks/viewform'
+        name:  'Kaizen Platform, Inc.',
+        desc:  'Webサイト & Ad 最適化のSaaS "Kaizen Platform" を開発・運営する企業です。<br>Node.js はバックエンドのサーバーはもちろん、各種 JavaScript のビルド、CSS を含むアセットの管理などに多用しており、当社システムの基幹部分を支える重要なプラットフォームになっています。',
+        thumb: './images/sponsors/kaizenplatform.svg',
+        url:   'https://kaizenplatform.com/'
+      },
+
+      // 必ずKaizenが先頭！！
+      {
+        name:  '株式会社ドワンゴ',
+        desc:  '株式会社ドワンゴは、ゲームや音楽をはじめとするエンタテインメント分野において、次世代ネットワークコミュニケーションの創出を目指す、ネットワーク・エンタテインメント・カンパニーです。<br>約5,000万人の登録ユーザー数を誇る国内最大級の動画サイト「niconico（ニコニコ動画）」の運営をはじめ、モバイル向け音楽配信、ゲームソフト及びオンラインゲームの企画・開発・販売などを行っています。高度なネットワーク技術と独創的な発想を強みに、良質なコンテンツを様々なプラットフォームに提供しています。',
+        thumb: './images/sponsors/dwango.png',
+        url:   'http://dwango.co.jp/'
+      },
+      {
+        name:  'グリー株式会社',
+        desc:  'グリーは、ソーシャル・ネットワーキング・サービス（SNS）GREEを創業事業とし、世界初のモバイルソーシャルゲームを開発するなど、日本のモバイルインターネットサービスを牽引してきました。<br>現在は、ビジネスの軸をスマートデバイス向けにシフトしながら、ゲーム事業、コマース・ライフスタイル事業、コミュニティ・メディア事業、広告事業、投資事業を展開しており、「インターネットを通じて、世界をより良くする。」をミッションとした総合インターネット企業への進化を目指しています。',
+        thumb: './images/sponsors/gree.svg',
+        url:   'http://corp.gree.net/jp/ja/'
+      },
+      {
+        name:  '株式会社ディー・エヌ・エー',
+        desc:  '1999年に創業した株式会社ディー・エヌ・エー（以下DeNA）はeコマース、ソーシャルゲームを中心に、モバイルサービスに特化した事業展開を行っています。近年ではキュレーションサービスの展開や、自動車やヘルスケアなどリアル巨大産業への進出をしています。<br>Delight and Impact the World<br>私たちのサービスで世界中の人々を喜ばせたい、楽しませたいという思いを込めて、「Delight」という言葉と「DeNA」の共通の頭文字である「D」をデライト・マークにすることで表現しました。<br>日本だけでなく世界中の人々に親しんでもらえる、価値あるサービスを創造していきたい。世界中の人々に親しんでもらえるような手書き風の書体にしたデザインには、そんな私たちの願いを込めています。<br>世界トップレベルのモバイル・インターネットのノウハウを持つDeNAが、世界中のお客様のニーズを深く理解し、新たな価値あるサービスをスピーディーに作り上げ、喜びと驚きを届けていきたいと考えています。',
+        thumb: './images/sponsors/dena.svg',
+        url:   'https://dena.com/jp/'
+      },
+      {
+        name: '株式会社ピクセルグリッド',
+        desc: '株式会社ピクセルグリッドはJavaScriptの会社です。<br>メンバーの多くは技術書籍の著書があり、講演をこなすフロントエンド・エンジニア。フロントエンド技術に特化し、JavaScriptとHTML5などの新しい技術を使った制作を得意としています。<br>Single Page Applicationのフロントエンド設計・実装、大規模Webサイトの設計・テンプレート制作、スマートフォン用のWebサービス、Webサイトの制作など気軽にご相談ください。',
+        thumb: './images/sponsors/pxgrid.svg',
+        url:   'http://www.pxgrid.com/'
       }
+      // {
+      //   name:  'スポンサー募集中',
+      //   desc:  '「東京Node学園祭 2015」は2015年11月7日に開催される、Node.jsについての日本最大のカンファレンスです。 協賛を希望される方は、「<a href="https://docs.google.com/document/d/1dOl3jbuHrUclLFqIZBWytk2l-A84ZjSBoJk1Mr30918/edit">スポンサーシップのご案内</a>」をご確認の上、<a href="https://docs.google.com/forms/d/1fhgchPhfK1bBk_nGZLcAXK5mM4u6f1sQB28kyRAL_Ks/viewform">「東京Node学園祭 2015」 協賛申込書</a>」からお申込みください。',
+      //   thumb: './images/sponsors/dummy.png',
+      //   url:   'https://docs.google.com/forms/d/1fhgchPhfK1bBk_nGZLcAXK5mM4u6f1sQB28kyRAL_Ks/viewform'
+      // }
     ],
 
     SCHEDULE: {
