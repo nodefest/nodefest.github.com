@@ -317,9 +317,18 @@
     SPEAKERS: {
       DOMESTIC: [
         // 左端・上から順に
-        { name: 'なまえ', twitter: 'hogehoge', job: 'CEO', thumb: 'http://dummyimage.com/224', desc: 'にゃー' },
-        { name: 'なまえ', twitter: 'hogehoge', job: 'CEO', thumb: 'http://dummyimage.com/224', desc: 'ぬーん' },
-        { name: 'なまえ', twitter: 'hogehoge', job: 'CEO', thumb: 'http://dummyimage.com/224', desc: 'ぽえーん' }
+        {
+          name: '谷口 大樹',
+          twitter: 'kidach1',
+          thumb: './images/speakers/kidach1.png',
+          desc: '株式会社アカツキ所属。Node.jsとDvorakキーボードが好き。Node/socket.ioをバックエンドとしたゲームの開発、運用をしています。<br>最近の趣味はAndroidアプリ開発。ReactiveExtensionsのノウハウがいい感じに活かせて（RxJava/RxAndroid）楽しいです。'
+        },
+        {
+          name: 'Tomomi ❤ Imura',
+          twitter: 'girlie_mac',
+          thumb: './images/speakers/girlie_mac.jpg',
+          desc: '元々は Front-end Engineer なのですが、たまにブラウザを離れたところで JavaScript で面白いことをしています。最近は Raspberry Pi で Node.js を使って猫カメラを作って Hacker News のトップページになったり、ガジェット系番組に出たりして話題になったのでいい気になっています。<br>職業は、サンフランシスコでリアルタイムデータストリームを提供する PubNub というスタートアップの Sr. Developer Evangelist をやっています。日本語がちょっと適当なのでその分は猫画像で補いますのでよろしくね。'
+        }
       ],
       OVERSEAS: [
         // 左端・上から順に
