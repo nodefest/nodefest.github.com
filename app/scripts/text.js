@@ -188,22 +188,22 @@
           thumb: './images/speakers/dummy.png',
           title: 'NodeDiscussion',
           speakers: [
-            {
-              url: 'http://twitter.com/jacob',
-              name: '@jacob'
-            },
-            {
-              url: 'http://twitter.com/mikeal',
-              name: '@mikeal'
-            },
-            {
-              url: 'http://twitter.com/rvagg',
-              name: '@rvagg'
-            },
-            {
-              url: 'http://twitter.com/domenic',
-              name: '@domenic'
-            }
+            // {
+            //   url: 'http://twitter.com/jacob',
+            //   name: '@jacob'
+            // },
+            // {
+            //   url: 'http://twitter.com/mikeal',
+            //   name: '@mikeal'
+            // },
+            // {
+            //   url: 'http://twitter.com/rvagg',
+            //   name: '@rvagg'
+            // },
+            // {
+            //   url: 'http://twitter.com/domenic',
+            //   name: '@domenic'
+            // }
           ]
         },
         s4: {
