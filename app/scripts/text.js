@@ -135,14 +135,19 @@
           content: ['f2']
         },
         {
-          time: '17:45 - 18:45',
+          time: '17:45 - 18:05',
           type: 3,
           content: ['lt']
         },
         {
-          time: '18:45 - 18:55',
+          time: '18:05 - 18:45',
           type: 2,
           content: ['s17']
+        },
+        {
+          time: '18:45 - 18:55',
+          type: 2,
+          content: ['s18']
         },
         {
           time: '18:55 - 19:25',
@@ -223,8 +228,13 @@
         },
         s6: {
           thumb: './images/speakers/dummy.png',
-          title: '調整中',
-          speakers: []
+          title: 'ウェブ初心者が Electron でフロントエンド入門した話',
+          speakers: [
+            {
+              url: 'https://twitter.com/linda_pp',
+              name: '@Linda_pp'
+            }
+          ]
         },
         s7: {
           thumb: './images/speakers/dshaw.png',
@@ -238,8 +248,13 @@
         },
         s8: {
           thumb: './images/speakers/dummy.png',
-          title: '調整中',
-          speakers: []
+          title: '技術文章をソフトウェア開発する話',
+          speakers: [
+            {
+              url: 'https://twitter.com/azu_re',
+              name: '@azu_re'
+            }
+          ]
         },
         s9: {
           thumb: './images/speakers/maybekatz.jpg',
@@ -252,9 +267,14 @@
           ]
         },
         s10: {
-          thumb: './images/speakers/dummy.png',
-          title: '調整中',
-          speakers: []
+          thumb: './images/speakers/kidach1.png',
+          title: '大規模Node.jsを支えるロードバランスとオートスケールの独自実装',
+          speakers: [
+            {
+              url:  'http://twitter.com/kidach1',
+              name: '@kidach1'
+            }
+          ]
         },
         s11: {
           thumb: './images/speakers/kosamari.jpg',
@@ -268,30 +288,65 @@
         },
         s12: {
           thumb: './images/speakers/dummy.png',
-          title: '調整中',
-          speakers: []
+          title: 'Node.jsでのゲームサーバ開発 愛すべきバッドノウハウ3選',
+          speakers: [
+            {
+              url:  'http://twitter.com/qsona',
+              name: '@qsona'
+            }
+          ]
         },
         s13: {
-          thumb: './images/speakers/dummy.png',
-          title: '調整中',
-          speakers: []
+          thumb: './images/speakers/girlie_mac.jpg',
+          title: 'Hardware Hacking for JavaScript Developers',
+          speakers: [
+            {
+              url:  'http://twitter.com/girliemac',
+              name: '@girliemac'
+            }
+          ]
         },
         s14: {
           thumb: './images/speakers/dummy.png',
-          title: '調整中',
-          speakers: []
+          title: 'ESDoc - ES6時代のドキュメンテーションツール -',
+          speakers: [
+            {
+              url:  'http://twitter.com/h13i32maru',
+              name: '@h13i32maru'
+            }
+          ]
         },
         s15: {
           thumb: './images/speakers/dummy.png',
-          title: '調整中',
-          speakers: []
+          title: 'Node.jsの運用の中で見えてきた課題と対策 〜大規模プッシュ通知基盤Pusna-RSの事例紹介〜',
+          speakers: [
+            {
+              url:  '#!/schedule',
+              name: '伊藤 瑛'
+            }
+          ]
         },
         s16: {
           thumb: './images/speakers/dummy.png',
-          title: '調整中',
-          speakers: []
+          title: 'フロントエンドに秩序を取り戻す方法 〜はてなブログ編集画面をリニューアルするためにやったこと〜',
+          speakers: [
+            {
+              url:  'http://twitter.com/amagitakayosi',
+              name: '@amagitakayosi'
+            }
+          ]
         },
         s17: {
+          thumb: './images/speakers/dummy.png',
+          title: 'スポンサーズトーク',
+          speakers: [
+            // {
+            //   url: '',
+            //   name: ''
+            // }
+          ]
+        },
+        s18: {
           thumb: './images/speakers/yosuke_furukawa.jpg',
           title: 'Closing message',
           speakers: [
@@ -304,12 +359,10 @@
         lt: [
           // 上から順に
           // ここだけなぜこうなってるかって？聞くだけ野暮だぜ！
-          { title: 'LT1', 'twitter': 'hoge' },
-          { title: 'LT2', 'twitter': 'hoge' },
-          { title: 'LT3', 'twitter': 'hoge' },
-          { title: 'LT4', 'twitter': 'hoge' },
-          { title: 'LT5', 'twitter': 'hoge' },
-          { title: 'LT6', 'twitter': 'hoge' }
+          { title: 'Nodeを使って', name: '我妻謙樹', url: '#!/schedule' },
+          { title: 'electronでスマートホームを始めてみたら', name: 'がねこまさし', url: '#!/schedule' },
+          { title: 'Meteorでつくったアプリを運用してみた', name: '@besutome', url: 'http://twitter.com/besutome' },
+          { title: 'unassert: JavaScript でも契約による設計で堅牢なプログラミングを行う', name: '@t_wada', url: 'http://twitter.com/t_wada' }
         ]
       }
     },
