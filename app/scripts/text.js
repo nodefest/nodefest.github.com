@@ -267,7 +267,7 @@
           ]
         },
         s10: {
-          thumb: './images/speakers/dummy.png',
+          thumb: './images/speakers/kidach1.png',
           title: '大規模Node.jsを支えるロードバランスとオートスケールの独自実装',
           speakers: [
             {
@@ -297,7 +297,7 @@
           ]
         },
         s13: {
-          thumb: './images/speakers/dummy.png',
+          thumb: './images/speakers/girlie_mac.jpg',
           title: 'Hardware Hacking for JavaScript Developers',
           speakers: [
             {
