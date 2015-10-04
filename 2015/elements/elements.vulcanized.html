@@ -15894,6 +15894,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     .nf-sponsors__link {
       display: block;
       text-decoration: none;
+      background-color: #fff;
+      padding-left: 5px;
+      padding-right: 5px;
     }
 
     .nf-sponsor-description {
@@ -15908,6 +15911,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       background: rgba(97, 97, 97, 0.9);
       color: #FFFFFF;
       transition: all 0.5s;
+      pointer-events: none;
     }
     .nf-sponsor-description__heading {
       padding: 15px 0 10px;
@@ -16509,10 +16513,9 @@ Polymer({
           <template is="dom-if" if="{{row.isLT}}">
           <div class="nf-timetable__inner-heading">Lightning Talks</div>
           <ul class="nf-ul">
-            <li>調整中</li>
-            <!-- <template is="dom-repeat" items="{{row.content.0}}">
-            <li><span>{{item.title}}</span>, <a href$="{{_twitterUrl(item.twitter)}}">@<span>{{item.twitter}}</span></a></li>
-            </template> -->
+            <template is="dom-repeat" items="{{row.content.0}}">
+            <li><span>{{item.title}}</span>, <a href$="{{item.url}}"><span>{{item.name}}</span></a></li>
+            </template>
           </ul>
           </template>
         </div>
@@ -16543,8 +16546,7 @@ Polymer({
             });
           });
           this.timeTable = TIME_TABLE;
-        },
-        _twitterUrl: function(a) { return 'https://twitter.com/' + a; }
+        }
       });
     })();
   </script>

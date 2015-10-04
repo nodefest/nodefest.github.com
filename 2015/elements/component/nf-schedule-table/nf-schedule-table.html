@@ -158,10 +158,9 @@
           <template is="dom-if" if="{{row.isLT}}">
           <div class="nf-timetable__inner-heading">Lightning Talks</div>
           <ul class="nf-ul">
-            <li>調整中</li>
-            <!-- <template is="dom-repeat" items="{{row.content.0}}">
-            <li><span>{{item.title}}</span>, <a href$="{{_twitterUrl(item.twitter)}}">@<span>{{item.twitter}}</span></a></li>
-            </template> -->
+            <template is="dom-repeat" items="{{row.content.0}}">
+            <li><span>{{item.title}}</span>, <a href$="{{item.url}}"><span>{{item.name}}</span></a></li>
+            </template>
           </ul>
           </template>
         </div>
@@ -192,8 +191,7 @@
             });
           });
           this.timeTable = TIME_TABLE;
-        },
-        _twitterUrl: function(a) { return 'https://twitter.com/' + a; }
+        }
       });
     })();
   </script>
