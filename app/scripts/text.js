@@ -12,11 +12,37 @@
     SPONSORS: [
       // 左端から順に
       {
-        name:  'スポンサー募集中',
-        desc:  '「東京Node学園祭 2015」は2015年11月7日に開催される、Node.jsについての日本最大のカンファレンスです。 協賛を希望される方は、「<a href="https://docs.google.com/document/d/1dOl3jbuHrUclLFqIZBWytk2l-A84ZjSBoJk1Mr30918/edit">スポンサーシップのご案内</a>」をご確認の上、<a href="https://docs.google.com/forms/d/1fhgchPhfK1bBk_nGZLcAXK5mM4u6f1sQB28kyRAL_Ks/viewform">「東京Node学園祭 2015」 協賛申込書</a>」からお申込みください。',
-        thumb: './images/sponsors/dummy.png',
-        url:   'https://docs.google.com/forms/d/1fhgchPhfK1bBk_nGZLcAXK5mM4u6f1sQB28kyRAL_Ks/viewform'
+        name:  'Kaizen Platform, Inc.',
+        desc:  'Webサイト & Ad 最適化のSaaS "Kaizen Platform" を開発・運営する企業です。<br>Node.js はバックエンドのサーバーはもちろん、各種 JavaScript のビルド、CSS を含むアセットの管理などに多用しており、当社システムの基幹部分を支える重要なプラットフォームになっています。',
+        thumb: './images/sponsors/kaizenplatform.svg',
+        url:   'https://kaizenplatform.com/'
+      },
+
+      // 必ずKaizenが先頭！！
+      {
+        name:  '株式会社ドワンゴ',
+        desc:  '株式会社ドワンゴは、ゲームや音楽をはじめとするエンタテインメント分野において、次世代ネットワークコミュニケーションの創出を目指す、ネットワーク・エンタテインメント・カンパニーです。約5,000万人の登録ユーザー数を誇る国内最大級の動画サイト「niconico（ニコニコ動画）」の運営をはじめ、モバイル向け音楽配信、ゲームソフト及びオンラインゲームの企画・開発・販売などを行っています。高度なネットワーク技術と独創的な発想を強みに、良質なコンテンツを様々なプラットフォームに提供しています。',
+        thumb: './images/sponsors/dwango.png',
+        url:   'http://dwango.co.jp/'
+      },
+      {
+        name:  'グリー株式会社',
+        desc:  'グリーは、ソーシャル・ネットワーキング・サービス（SNS）GREEを創業事業とし、世界初のモバイルソーシャルゲームを開発するなど、日本のモバイルインターネットサービスを牽引してきました。現在は、ビジネスの軸をスマートデバイス向けにシフトしながら、ゲーム事業、コマース・ライフスタイル事業、コミュニティ・メディア事業、広告事業、投資事業を展開しており、「インターネットを通じて、世界をより良くする。」をミッションとした総合インターネット企業への進化を目指しています。',
+        thumb: './images/sponsors/gree.svg',
+        url:   'http://corp.gree.net/jp/ja/'
+      },
+      {
+        name:  '株式会社ディー・エヌ・エー',
+        desc:  '',
+        thumb: './images/sponsors/dena.svg',
+        url:   'https://dena.com/jp/'
       }
+      // {
+      //   name:  'スポンサー募集中',
+      //   desc:  '「東京Node学園祭 2015」は2015年11月7日に開催される、Node.jsについての日本最大のカンファレンスです。 協賛を希望される方は、「<a href="https://docs.google.com/document/d/1dOl3jbuHrUclLFqIZBWytk2l-A84ZjSBoJk1Mr30918/edit">スポンサーシップのご案内</a>」をご確認の上、<a href="https://docs.google.com/forms/d/1fhgchPhfK1bBk_nGZLcAXK5mM4u6f1sQB28kyRAL_Ks/viewform">「東京Node学園祭 2015」 協賛申込書</a>」からお申込みください。',
+      //   thumb: './images/sponsors/dummy.png',
+      //   url:   'https://docs.google.com/forms/d/1fhgchPhfK1bBk_nGZLcAXK5mM4u6f1sQB28kyRAL_Ks/viewform'
+      // }
     ],
 
     SCHEDULE: {
