@@ -408,7 +408,7 @@
           name: 'Mariko Kosaka',
           twitter: 'kosamari',
           thumb: './images/speakers/kosamari.jpg',
-          desc: 'Mariko Kosaka is an engineer who loves data and knitting. When she is not making software at Scripto, she uses code to help her design textiles & organize local javascript meetup in New York City called BrooklynJS.'
+          desc: 'Mariko Kosaka is an engineer who loves data and knitting. When she is not making software at Scripto, she uses code to help her design textiles & organize local JavaScript meetup in New York City called BrooklynJS.'
         },
       ]
     }
