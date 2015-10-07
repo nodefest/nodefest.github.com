@@ -209,7 +209,7 @@
         },
         s4: {
           thumb: './images/speakers/domenic.jpg',
-          title: '基調講演',
+          title: 'The State of JavaScript',
           speakers: [
             {
               url: 'http://twitter.com/domenic',
