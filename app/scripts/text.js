@@ -302,8 +302,8 @@
           title: 'Hardware Hacking for JavaScript Developers',
           speakers: [
             {
-              url:  'http://twitter.com/girliemac',
-              name: '@girliemac'
+              url:  'http://twitter.com/girlie_mac',
+              name: '@girlie_mac'
             }
           ]
         },
