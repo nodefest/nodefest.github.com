@@ -40,7 +40,7 @@
       display: block;
       text-decoration: none;
       background-color: #fff;
-      padding: 25px;
+      padding: 20px 30px;
     }
 
     .nf-sponsor-description {
@@ -71,6 +71,18 @@
     <h1 class="nf-sponsors__heading" data-en="Sponsors">スポンサー</h1>
     <div class="nf-sponsors__body">
       <ul class="nf-sponsors__bunners horizontal layout center-justified wrap">
+        <li class="nf-sponsors__bunner">
+          <a class="nf-sponsors__link" href$="{{vip.url}}">
+            <img src="{{vip.thumb}}" width="220" height="160" alt$="{{vip.name}}">
+          </a>
+          <div class="nf-sponsor-description">
+            <h2 class="nf-sponsor-description__heading">{{vip.name}}</h2>
+            <p class="nf-sponsor-description__txt" inner-h-t-m-l="{{vip.desc}}"></p>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="nf-sponsors__bunners horizontal layout center-justified wrap">
         <template is="dom-repeat" items="{{sponsors}}">
         <li class="nf-sponsors__bunner">
           <a class="nf-sponsors__link" href$="{{item.url}}">
@@ -91,9 +103,13 @@
         is: 'nf-sponsors',
         ready: function() {
           this.sponsors = [];
+          this.vip      = {};
         },
         fetch: function() {
-          this.sponsors = window.NF.TEXT.SPONSORS;
+          var sponsors = [].slice.call(window.NF.TEXT.SPONSORS);
+          // VIPなスポンサー
+          this.vip = sponsors.shift();
+          this.sponsors = sponsors;
         }
       });
     })();
