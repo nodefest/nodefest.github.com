@@ -6,6 +6,7 @@
   global.NF.TEXT = {
     NEWS: [
       // 上が新しいやつ
+      { date: '2015-10-08', text: '<a href="http://nodejs.connpass.com/event/20741/" target="_blank">参加者募集サイト</a>を公開しました' },
       { date: '2015-10-04', text: '<a href="#!/schedule">登壇者</a>が決定しました。' },
       { date: '2015-08-31', text: 'セッション・LT登壇希望者の募集を開始しました。' },
       { date: '2015-08-31', text: '公式サイトを本公開しました。' }
