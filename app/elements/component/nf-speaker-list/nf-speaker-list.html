@@ -44,12 +44,6 @@
       border: 4px solid #009688;
       border-radius: 135px;
     }
-    .nf-speaker__thumb:visited {
-      border-color: #4DB6AC;
-    }
-    .nf-speaker__thumb:hover {
-      border-color: #00796B;
-    }
     .nf-speaker__id {
       display: block;
       font-size: 18px;
@@ -111,10 +105,12 @@
       <div class="nf-speaker-list__item">
         <div class="nf-speaker">
           <div class="nf-speaker__link">
-            <a class="nf-speaker__thumb" href$="{{_twitterUrl(item.twitter)}}">
-              <img src$="{{item.thumb}}" width="135" height="135" alt$="{{item.twitter}}">
-            </a>
+            <span class="nf-speaker__thumb">
+              <img src$="{{item.thumb}}" width="135" height="135" alt$="{{item.name}}">
+            </span>
+            <template is="dom-if" if="{{item.twitter}}">
             <a class="nf-speaker__id" href$="{{_twitterUrl(item.twitter)}}">@<span>{{item.twitter}}</span></a>
+            </template>
           </div>
           <div class="nf-speaker__info">
             <p class="nf-speaker__name">{{item.name}}</p>

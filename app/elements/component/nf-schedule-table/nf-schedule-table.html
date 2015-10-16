@@ -159,7 +159,15 @@
           <div class="nf-timetable__inner-heading">Lightning Talks</div>
           <ul class="nf-ul">
             <template is="dom-repeat" items="{{row.content.0}}">
-            <li><span>{{item.title}}</span>, <a href$="{{item.url}}"><span>{{item.name}}</span></a></li>
+            <li>
+              <span>{{item.title}}</span>,
+              <template is="dom-if" if="{{item.url}}">
+              <a href$="{{item.url}}"><span>{{item.name}}</span></a>
+              </template>
+              <template is="dom-if" if="{{!item.url}}">
+              <span>{{item.name}}</span>
+              </template>
+            </li>
             </template>
           </ul>
           </template>
