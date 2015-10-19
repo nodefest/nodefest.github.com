@@ -297,7 +297,7 @@
         },
         s9: {
           thumb: './images/speakers/maybekatz.jpg',
-          title: '調整中',
+          title: '"npm": ">=3"',
           speakers: [
             {
               url: 'http://twitter.com/maybekatz',
