@@ -399,7 +399,6 @@
           // 上から順に
           // ここだけなぜこうなってるかって？聞くだけ野暮だぜ！
           { title: 'Nodeを使って', name: '我妻謙樹', url: '' },
-          { title: 'electronでスマートホームを始めてみたら', name: 'がねこまさし', url: '' },
           { title: 'Meteorでつくったアプリを運用してみた', name: '@besutome', url: 'http://twitter.com/besutome' },
           { title: 'unassert: JavaScript でも契約による設計で堅牢なプログラミングを行う', name: '@t_wada', url: 'http://twitter.com/t_wada' }
         ]
