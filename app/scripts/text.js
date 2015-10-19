@@ -257,7 +257,7 @@
         },
         s5: {
           thumb: './images/speakers/rvagg.jpg',
-          title: '調整中',
+          title: 'How did we get here?',
           speakers: [
             {
               url: 'http://twitter.com/rvagg',
