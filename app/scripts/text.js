@@ -277,7 +277,7 @@
         },
         s7: {
           thumb: './images/speakers/dshaw.png',
-          title: '調整中',
+          title: 'Node.js in the Enterprise',
           speakers: [
             {
               url: 'http://twitter.com/dshaw',
