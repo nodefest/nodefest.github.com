@@ -317,7 +317,7 @@
         },
         s11: {
           thumb: './images/speakers/kosamari.jpg',
-          title: '調整中',
+          title: 'Electroknit! - Pixel to sweater with Node.js',
           speakers: [
             {
               url: 'http://twitter.com/kosamari',
