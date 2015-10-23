@@ -85,13 +85,13 @@
       {
         name:  '株式会社LIG',
         desc:  '上野でウェブ制作を行うクリエイティブ集団です',
-        thumb: './images/sponsors/dummy.png',
+        thumb: './images/sponsors/lig.png',
         url:   'http://liginc.co.jp/'
       },
       {
         name:  'レバレジーズ株式会社',
         desc:  '『レバテック』は、エンジニア特化型の求人・案件紹介サービス「レバテックフリーランス」「レバテックキャリア」などを中心に、エンジニア総合支援サービスを行っております。<br>業界最大規模の案件数と、1.5万人の登録実績を基に、あなたに最適な求人・案件を業界特化のエージェントがご案内致します。',
-        thumb: './images/sponsors/dummy2.png',
+        thumb: './images/sponsors/leverages.png',
         url:   'http://leverages.jp/'
       }
       // {
