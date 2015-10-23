@@ -282,7 +282,7 @@
         },
         s5: {
           thumb: './images/speakers/rvagg.jpg',
-          title: '調整中',
+          title: 'How did we get here?',
           speakers: [
             {
               url: 'http://twitter.com/rvagg',
@@ -302,7 +302,7 @@
         },
         s7: {
           thumb: './images/speakers/dshaw.png',
-          title: '調整中',
+          title: 'Node.js in the Enterprise',
           speakers: [
             {
               url: 'http://twitter.com/dshaw',
@@ -342,7 +342,7 @@
         },
         s11: {
           thumb: './images/speakers/kosamari.jpg',
-          title: '調整中',
+          title: 'Electroknit! - Pixel to sweater with Node.js',
           speakers: [
             {
               url: 'http://twitter.com/kosamari',
