@@ -83,16 +83,29 @@
         url:   'http://recruit-tech.co.jp/'
       },
       {
-        name:  '株式会社LIG',
-        desc:  '上野でウェブ制作を行うクリエイティブ集団です',
-        thumb: './images/sponsors/lig.png',
-        url:   'http://liginc.co.jp/'
-      },
-      {
         name:  'レバレジーズ株式会社',
         desc:  '『レバテック』は、エンジニア特化型の求人・案件紹介サービス「レバテックフリーランス」「レバテックキャリア」などを中心に、エンジニア総合支援サービスを行っております。<br>業界最大規模の案件数と、1.5万人の登録実績を基に、あなたに最適な求人・案件を業界特化のエージェントがご案内致します。',
         thumb: './images/sponsors/leverages.png',
         url:   'http://leverages.jp/'
+      },
+      {
+        name:  'PayPal Pte.Ltd.',
+        desc:  'ペイパルは、いままでにないオンライン決済サービスでショッピングとビジネスの未来をカタチにするイノベーターです。時代のニーズに合わせた、よりかんたんで安心な決済サービスを提案し、世界中のショッピングとビジネスをシンプルに変えていきます。 ',
+        thumb: './images/sponsors/paypal.jpg',
+        url:   'https://www.paypal.com/jp/'
+      },
+      // この2社はいちばんさいご！
+      {
+        name:  '株式会社LIG',
+        desc:  '上野でウェブ制作を行うクリエイティブ集団です。',
+        thumb: './images/sponsors/lig.png',
+        url:   'http://liginc.co.jp/'
+      },
+      {
+        name:  'トゥギャッター',
+        desc:  'Togetter（トゥギャッター）は「まとめる。広げる。楽しむ。」をコンセプトに、ツイッター上のツイートをベースにしたキュレーションサービス。<br> まとめから生まれるコミュニケーションによって、更に加速的にコンテンツが流通するプラットフォームとなっています。',
+        thumb: './images/sponsors/togetter.svg',
+        url:   'http://togetter.com/'
       }
       // {
       //   name:  'スポンサー募集中',
