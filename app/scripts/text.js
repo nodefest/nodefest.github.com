@@ -312,7 +312,7 @@
         },
         s8: {
           thumb: './images/speakers/azu_re.png',
-          title: '技術文章をソフトウェア開発する話',
+          title: '技術文書をソフトウェア開発する話',
           speakers: [
             {
               url: 'https://twitter.com/azu_re',
