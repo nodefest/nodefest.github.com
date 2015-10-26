@@ -468,6 +468,12 @@
           twitter: 'azu_re',
           thumb: './images/speakers/azu_re.png',
           desc: 'ECMAScriptやJavaScriptを追っかけていて、JSer.infoというサイトをやっていたりします。<br>最近の趣味は技術書を書いていて、その中の文章やコードからどうやってtypoを減らすか考えることです。'
+        },
+        {
+          name: 'Linda_pp',
+          twitter: 'Linda_pp',
+          thumb: './images/speakers/linda_pp.jpg',
+          desc: '普段は組み込み寄りの仕事をしていまして、趣味では Vim プラグイン書いたり C++ でコンパイラを書いたりしてます。最近はちょっとしたきっかけで Electron アプリや web 周りの技術を触りだしています。'
         }
       ],
       OVERSEAS: [
