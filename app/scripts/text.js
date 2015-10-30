@@ -474,6 +474,12 @@
           twitter: 'Linda_pp',
           thumb: './images/speakers/linda_pp.jpg',
           desc: '普段は組み込み寄りの仕事をしていまして、趣味では Vim プラグイン書いたり C++ でコンパイラを書いたりしてます。最近はちょっとしたきっかけで Electron アプリや web 周りの技術を触りだしています。'
+        },
+        {
+          name: '森 久太郎',
+          twitter: 'qsona',
+          thumb: './images/speakers/qsona.jpg',
+          desc: '株式会社サイバーエージェント所属。<br>Node.jsでソーシャルゲームのサーバサイド開発をしており、Node.jsのプログラミングスタイルについて日々考え工夫しています。<br>趣味は将棋と音楽ゲーム。二人の子育てに奮闘中。'
         }
       ],
       OVERSEAS: [
