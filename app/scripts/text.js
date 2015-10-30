@@ -478,7 +478,7 @@
         {
           name: '森 久太郎',
           twitter: 'qsona',
-          thumb: './images/speakers/qsona.jpg',
+          thumb: './images/speakers/qsona.png',
           desc: '株式会社サイバーエージェント所属。<br>Node.jsでソーシャルゲームのサーバサイド開発をしており、Node.jsのプログラミングスタイルについて日々考え工夫しています。<br>趣味は将棋と音楽ゲーム。二人の子育てに奮闘中。'
         }
       ],
