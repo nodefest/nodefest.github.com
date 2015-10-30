@@ -94,6 +94,12 @@
         thumb: './images/sponsors/paypal.jpg',
         url:   'https://www.paypal.com/jp/'
       },
+      {
+        name:  'StrongLoop',
+        desc:  '我々、StrongLoopは、Nodejsに基づくソフトウエア・ソリューションを提供し、Nodejsを使ったソフトウエア開発に携わる企業とコミュニティの皆さんを支援することを理念としています。Nodejsを基盤とするオープン・ソース・ソフトウエアへの我々の貢献は、一企業として最大規模であり、Nodejsそのものの開発への参画によって得られる比類の無い技術力を活かして、LoopBack API フレームワークや、StrongLoop Arcを使ったソリューションの構築と監視などのStrongLoopの製品群を提供するだけでなく、技術サポート、コンサルティング、技術レーニングと技術力認定などの開発支援サービスも提供しています。',
+        thumb: './images/sponsors/strongloop.png',
+        url:   'http://strongloop.com'
+      },
       // この2社はいちばんさいご！
       {
         name:  '株式会社LIG',
