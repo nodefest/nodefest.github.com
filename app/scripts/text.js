@@ -467,13 +467,25 @@
           name: '伊藤 瑛',
           twitter: '',
           thumb: './images/speakers/akito0107.jpg',
-          desc: '2015年新卒で株式会社リクルートテクノロジーズに入社、Node製の大規模プッシュ通知基盤Pusna-RSの開発、運用をしています。<br>NodeはもとよりJavascriptをほとんど書いたことがない状態でプロジェクトに放り込まれ、日々、苦しみつつも楽しい毎日を送っています。<br>最近はkoaを使って面白便利なwebアプリを書くのにハマっています。'
+          desc: '2015年新卒で株式会社リクルートテクノロジーズに入社、Node製の大規模プッシュ通知基盤Pusna-RSの開発、運用をしています。<br>NodeはもとよりJavaScriptをほとんど書いたことがない状態でプロジェクトに放り込まれ、日々、苦しみつつも楽しい毎日を送っています。<br>最近はkoaを使って面白便利なwebアプリを書くのにハマっています。'
         },
         {
           name: 'azu',
           twitter: 'azu_re',
           thumb: './images/speakers/azu_re.png',
           desc: 'ECMAScriptやJavaScriptを追っかけていて、JSer.infoというサイトをやっていたりします。<br>最近の趣味は技術書を書いていて、その中の文章やコードからどうやってtypoを減らすか考えることです。'
+        },
+        {
+          name: 'Linda_pp',
+          twitter: 'Linda_pp',
+          thumb: './images/speakers/linda_pp.jpg',
+          desc: '普段は組み込み寄りの仕事をしていまして、趣味では Vim プラグイン書いたり C++ でコンパイラを書いたりしてます。最近はちょっとしたきっかけで Electron アプリや web 周りの技術を触りだしています。'
+        },
+        {
+          name: '森 久太郎',
+          twitter: 'qsona',
+          thumb: './images/speakers/qsona.png',
+          desc: '株式会社サイバーエージェント所属。<br>Node.jsでソーシャルゲームのサーバサイド開発をしており、Node.jsのプログラミングスタイルについて日々考え工夫しています。<br>趣味は将棋と音楽ゲーム。二人の子育てに奮闘中。'
         }
       ],
       OVERSEAS: [
