@@ -20,7 +20,7 @@ addEventListener('DOMContentLoaded', resolve);
 }
 }
 }());
-window.Polymer = {
+Polymer = {
 Settings: function () {
 var user = window.Polymer || {};
 location.search.slice(1).split('&').forEach(function (o) {
@@ -48,21 +48,15 @@ useNativeCustomElements: useNativeCustomElements
 (function () {
 var userPolymer = window.Polymer;
 window.Polymer = function (prototype) {
-if (typeof prototype === 'function') {
-prototype = prototype.prototype;
-}
-if (!prototype) {
-prototype = {};
-}
-var factory = desugar(prototype);
-prototype = factory.prototype;
+var ctor = desugar(prototype);
+prototype = ctor.prototype;
 var options = { prototype: prototype };
 if (prototype.extends) {
 options.extends = prototype.extends;
 }
 Polymer.telemetry._registrate(prototype);
 document.registerElement(prototype.is, options);
-return factory;
+return ctor;
 };
 var desugar = function (prototype) {
 var base = Polymer.Base;
@@ -139,8 +133,6 @@ _addFeature: function (feature) {
 this.extend(this, feature);
 },
 registerCallback: function () {
-this._desugarBehaviors();
-this._doBehavior('beforeRegister');
 this._registerFeatures();
 this._doBehavior('registered');
 },
@@ -246,7 +238,6 @@ lcModules[id.toLowerCase()] = this;
 }
 },
 import: function (id, selector) {
-if (id) {
 var m = findModule(id);
 if (!m) {
 forceDocumentUpgrade();
@@ -257,15 +248,15 @@ m = m.querySelector(selector);
 }
 return m;
 }
-}
 });
 var cePolyfill = window.CustomElements && !CustomElements.useNative;
 document.registerElement('dom-module', DomModule);
 function forceDocumentUpgrade() {
 if (cePolyfill) {
 var script = document._currentScript || document.currentScript;
-var doc = script && script.ownerDocument || document;
-if (doc) {
+var doc = script && script.ownerDocument;
+if (doc && !doc.__customElementsForceUpgraded) {
+doc.__customElementsForceUpgraded = true;
 CustomElements.upgradeAll(doc);
 }
 }
@@ -287,17 +278,11 @@ this.is = this.is.toLowerCase();
 });
 Polymer.Base._addFeature({
 behaviors: [],
-_desugarBehaviors: function () {
+_prepBehaviors: function () {
 if (this.behaviors.length) {
-this.behaviors = this._desugarSomeBehaviors(this.behaviors);
+this.behaviors = this._flattenBehaviorsList(this.behaviors);
 }
-},
-_desugarSomeBehaviors: function (behaviors) {
-behaviors = this._flattenBehaviorsList(behaviors);
-for (var i = behaviors.length - 1; i >= 0; i--) {
-this._mixinBehavior(behaviors[i]);
-}
-return behaviors;
+this._prepAllBehaviors(this.behaviors);
 },
 _flattenBehaviorsList: function (behaviors) {
 var flat = [];
@@ -311,6 +296,15 @@ this._warn(this._logf('_flattenBehaviorsList', 'behavior is null, check for miss
 }
 }, this);
 return flat;
+},
+_prepAllBehaviors: function (behaviors) {
+for (var i = behaviors.length - 1; i >= 0; i--) {
+this._mixinBehavior(behaviors[i]);
+}
+for (var i = 0, l = behaviors.length; i < l; i++) {
+this._prepBehavior(behaviors[i]);
+}
+this._prepBehavior(this);
 },
 _mixinBehavior: function (b) {
 Object.getOwnPropertyNames(b).forEach(function (n) {
@@ -334,15 +328,6 @@ this.copyOwnProperty(n, b, this);
 break;
 }
 }, this);
-},
-_prepBehaviors: function () {
-this._prepFlattenedBehaviors(this.behaviors);
-},
-_prepFlattenedBehaviors: function (behaviors) {
-for (var i = 0, l = behaviors.length; i < l; i++) {
-this._prepBehavior(behaviors[i]);
-}
-this._prepBehavior(this);
 },
 _doBehavior: function (name, args) {
 this.behaviors.forEach(function (b) {
@@ -576,7 +561,7 @@ debouncer.stop();
 }
 }
 });
-Polymer.version = '1.2.0';
+Polymer.version = '1.1.1';
 Polymer.Base._addFeature({
 _registerFeatures: function () {
 this._prepIs();
@@ -858,6 +843,61 @@ return currentValue === previousValue;
 };
 return new ArraySplice();
 }();
+Polymer.EventApi = function () {
+var Settings = Polymer.Settings;
+var EventApi = function (event) {
+this.event = event;
+};
+if (Settings.useShadow) {
+EventApi.prototype = {
+get rootTarget() {
+return this.event.path[0];
+},
+get localTarget() {
+return this.event.target;
+},
+get path() {
+return this.event.path;
+}
+};
+} else {
+EventApi.prototype = {
+get rootTarget() {
+return this.event.target;
+},
+get localTarget() {
+var current = this.event.currentTarget;
+var currentRoot = current && Polymer.dom(current).getOwnerRoot();
+var p$ = this.path;
+for (var i = 0; i < p$.length; i++) {
+if (Polymer.dom(p$[i]).getOwnerRoot() === currentRoot) {
+return p$[i];
+}
+}
+},
+get path() {
+if (!this.event._path) {
+var path = [];
+var o = this.rootTarget;
+while (o) {
+path.push(o);
+o = Polymer.dom(o).parentNode || o.host;
+}
+path.push(window);
+this.event._path = path;
+}
+return this.event._path;
+}
+};
+}
+var factory = function (event) {
+if (!event.__eventApi) {
+event.__eventApi = new EventApi(event);
+}
+return event.__eventApi;
+};
+return { factory: factory };
+}();
 Polymer.domInnerHTML = function () {
 var escapeAttrRegExp = /[&\u00A0"]/g;
 var escapeDataRegExp = /[&\u00A0<>]/g;
@@ -996,7 +1036,7 @@ insertBefore: function (node, ref_node) {
 return this._addNode(node, ref_node);
 },
 _addNode: function (node, ref_node) {
-this._removeNodeFromParent(node);
+this._removeNodeFromHost(node, true);
 var addedInsertionPoint;
 var root = this.getOwnerRoot();
 if (root) {
@@ -1028,7 +1068,6 @@ nativeAppendChild.call(container, node);
 if (addedInsertionPoint) {
 this._updateInsertionPoints(root.host);
 }
-this.notifyObserver();
 return node;
 },
 removeChild: function (node) {
@@ -1043,7 +1082,6 @@ removeFromComposedParent(container, node);
 nativeRemoveChild.call(container, node);
 }
 }
-this.notifyObserver();
 return node;
 },
 replaceChild: function (node, ref_node) {
@@ -1115,9 +1153,8 @@ return added;
 },
 _tryRemoveUndistributedNode: function (node) {
 if (this.node.shadyRoot) {
-var parent = getComposedParent(node);
-if (parent) {
-nativeRemoveChild.call(parent, node);
+if (node._composedParent) {
+nativeRemoveChild.call(node._composedParent, node);
 }
 return true;
 }
@@ -1136,13 +1173,6 @@ return Boolean(node._lightChildren !== undefined);
 _parentNeedsDistribution: function (parent) {
 return parent && parent.shadyRoot && hasInsertionPoint(parent.shadyRoot);
 },
-_removeNodeFromParent: function (node) {
-var parent = node._lightParent || node.parentNode;
-if (parent && hasDomApi(parent)) {
-factory(parent).notifyObserver();
-}
-this._removeNodeFromHost(node, true);
-},
 _removeNodeFromHost: function (node, ensureComposedRemoval) {
 var hostNeedsDist;
 var root;
@@ -1154,14 +1184,14 @@ if (root) {
 root.host._elementRemove(node);
 hostNeedsDist = this._removeDistributedChildren(root, node);
 }
-this._removeLogicalInfo(node, parent);
+this._removeLogicalInfo(node, node._lightParent);
 }
 this._removeOwnerShadyRoot(node);
 if (root && hostNeedsDist) {
 this._updateInsertionPoints(root.host);
 this._lazyDistribute(root.host);
 } else if (ensureComposedRemoval) {
-removeFromComposedParent(getComposedParent(node), node);
+removeFromComposedParent(node._composedParent, node);
 }
 },
 _removeDistributedChildren: function (root, container) {
@@ -1273,29 +1303,24 @@ getDistributedNodes: function () {
 return this.node._distributedNodes || [];
 },
 queryDistributedElements: function (selector) {
-var c$ = this.getEffectiveChildNodes();
+var c$ = this.childNodes;
 var list = [];
+this._distributedFilter(selector, c$, list);
 for (var i = 0, l = c$.length, c; i < l && (c = c$[i]); i++) {
-if (c.nodeType === Node.ELEMENT_NODE && matchesSelector.call(c, selector)) {
-list.push(c);
+if (c.localName === CONTENT) {
+this._distributedFilter(selector, factory(c).getDistributedNodes(), list);
 }
 }
 return list;
 },
-getEffectiveChildNodes: function () {
-var list = [];
-var c$ = this.childNodes;
-for (var i = 0, l = c$.length, c; i < l && (c = c$[i]); i++) {
-if (c.localName === CONTENT) {
-var d$ = factory(c).getDistributedNodes();
-for (var j = 0; j < d$.length; j++) {
-list.push(d$[j]);
-}
-} else {
-list.push(c);
+_distributedFilter: function (selector, list, results) {
+results = results || [];
+for (var i = 0, l = list.length, d; i < l && (d = list[i]); i++) {
+if (d.nodeType === Node.ELEMENT_NODE && d.localName !== CONTENT && matchesSelector.call(d, selector)) {
+results.push(d);
 }
 }
-return list;
+return results;
 },
 _clear: function () {
 while (this.childNodes.length) {
@@ -1339,24 +1364,36 @@ d.appendChild(nc);
 }
 }
 return n;
+}
+};
+Object.defineProperty(DomApi.prototype, 'classList', {
+get: function () {
+if (!this._classList) {
+this._classList = new DomApi.ClassList(this);
+}
+return this._classList;
 },
-observeNodes: function (callback) {
-if (callback) {
-if (!this.observer) {
-this.observer = this.node.localName === CONTENT ? new DomApi.DistributedNodesObserver(this) : new DomApi.EffectiveNodesObserver(this);
-}
-return this.observer.addListener(callback);
-}
+configurable: true
+});
+DomApi.ClassList = function (host) {
+this.domApi = host;
+this.node = host.node;
+};
+DomApi.ClassList.prototype = {
+add: function () {
+this.node.classList.add.apply(this.node.classList, arguments);
+this.domApi._distributeParent();
 },
-unobserveNodes: function (handle) {
-if (this.observer) {
-this.observer.removeListener(handle);
-}
+remove: function () {
+this.node.classList.remove.apply(this.node.classList, arguments);
+this.domApi._distributeParent();
 },
-notifyObserver: function () {
-if (this.observer) {
-this.observer.notify();
-}
+toggle: function () {
+this.node.classList.toggle.apply(this.node.classList, arguments);
+this.domApi._distributeParent();
+},
+contains: function () {
+return this.node.classList.contains.apply(this.node.classList, arguments);
 }
 };
 if (!Settings.useShadow) {
@@ -1378,7 +1415,7 @@ configurable: true
 },
 parentNode: {
 get: function () {
-return this.node._lightParent || getComposedParent(this.node);
+return this.node._lightParent || (this.node.__patched ? this.node._composedParent : this.node.parentNode);
 },
 configurable: true
 },
@@ -1500,18 +1537,6 @@ DomApi.prototype._getComposedInnerHTML = function () {
 return getInnerHTML(this.node, true);
 };
 } else {
-var forwardMethods = [
-'cloneNode',
-'appendChild',
-'insertBefore',
-'removeChild',
-'replaceChild'
-];
-forwardMethods.forEach(function (name) {
-DomApi.prototype[name] = function () {
-return this.node[name].apply(this.node, arguments);
-};
-});
 DomApi.prototype.querySelectorAll = function (selector) {
 return Array.prototype.slice.call(this.node.querySelectorAll(selector));
 };
@@ -1523,6 +1548,9 @@ return n;
 }
 n = n.parentNode;
 }
+};
+DomApi.prototype.cloneNode = function (deep) {
+return this.node.cloneNode(deep);
 };
 DomApi.prototype.importNode = function (externalNode, deep) {
 var doc = this.node instanceof Document ? this.node : this.node.ownerDocument;
@@ -1538,17 +1566,6 @@ return n$ ? Array.prototype.slice.call(n$) : [];
 };
 DomApi.prototype._distributeParent = function () {
 };
-var nativeForwards = [
-'appendChild',
-'insertBefore',
-'removeChild',
-'replaceChild'
-];
-nativeForwards.forEach(function (forward) {
-DomApi.prototype[forward] = function () {
-return this.node[forward].apply(this.node, arguments);
-};
-});
 Object.defineProperties(DomApi.prototype, {
 childNodes: {
 get: function () {
@@ -1581,7 +1598,7 @@ return this.node.innerHTML = value;
 configurable: true
 }
 });
-var forwardProperties = [
+var forwards = [
 'parentNode',
 'firstChild',
 'lastChild',
@@ -1592,7 +1609,7 @@ var forwardProperties = [
 'nextElementSibling',
 'previousElementSibling'
 ];
-forwardProperties.forEach(function (name) {
+forwards.forEach(function (name) {
 Object.defineProperty(DomApi.prototype, name, {
 get: function () {
 return this.node[name];
@@ -1602,17 +1619,13 @@ configurable: true
 });
 }
 var CONTENT = 'content';
-function factory(node, patch) {
+var factory = function (node, patch) {
 node = node || document;
 if (!node.__domApi) {
 node.__domApi = new DomApi(node, patch);
 }
 return node.__domApi;
-}
-;
-function hasDomApi(node) {
-return Boolean(node.__domApi);
-}
+};
 Polymer.dom = function (obj, patch) {
 if (obj instanceof Event) {
 return Polymer.EventApi.factory(obj);
@@ -1620,6 +1633,43 @@ return Polymer.EventApi.factory(obj);
 return factory(obj, patch);
 }
 };
+Polymer.Base.extend(Polymer.dom, {
+_flushGuard: 0,
+_FLUSH_MAX: 100,
+_needsTakeRecords: !Polymer.Settings.useNativeCustomElements,
+_debouncers: [],
+_finishDebouncer: null,
+flush: function () {
+for (var i = 0; i < this._debouncers.length; i++) {
+this._debouncers[i].complete();
+}
+if (this._finishDebouncer) {
+this._finishDebouncer.complete();
+}
+this._flushPolyfills();
+if (this._debouncers.length && this._flushGuard < this._FLUSH_MAX) {
+this._flushGuard++;
+this.flush();
+} else {
+if (this._flushGuard >= this._FLUSH_MAX) {
+console.warn('Polymer.dom.flush aborted. Flush may not be complete.');
+}
+this._flushGuard = 0;
+}
+},
+_flushPolyfills: function () {
+if (this._needsTakeRecords) {
+CustomElements.takeRecords();
+}
+},
+addDebouncer: function (debouncer) {
+this._debouncers.push(debouncer);
+this._finishDebouncer = Polymer.Debounce(this._finishDebouncer, this._finishFlush);
+},
+_finishFlush: function () {
+Polymer.dom._debouncers = [];
+}
+});
 function getLightChildren(node) {
 var children = node._lightChildren;
 return children ? children : node.childNodes;
@@ -1642,9 +1692,6 @@ node._composedChildren = null;
 } else {
 addNodeToComposedChildren(node, parent, children, i);
 }
-}
-function getComposedParent(node) {
-return node.__patched ? node._composedParent : node.parentNode;
 }
 function addNodeToComposedChildren(node, parent, children, i) {
 node._composedParent = parent;
@@ -1676,406 +1723,16 @@ var p = Element.prototype;
 var matchesSelector = p.matches || p.matchesSelector || p.mozMatchesSelector || p.msMatchesSelector || p.oMatchesSelector || p.webkitMatchesSelector;
 return {
 getLightChildren: getLightChildren,
-getComposedParent: getComposedParent,
 getComposedChildren: getComposedChildren,
 removeFromComposedParent: removeFromComposedParent,
 saveLightChildrenIfNeeded: saveLightChildrenIfNeeded,
 matchesSelector: matchesSelector,
 hasInsertionPoint: hasInsertionPoint,
 ctor: DomApi,
-factory: factory,
-hasDomApi: hasDomApi
+factory: factory
 };
 }();
-Polymer.Base.extend(Polymer.dom, {
-_flushGuard: 0,
-_FLUSH_MAX: 100,
-_needsTakeRecords: !Polymer.Settings.useNativeCustomElements,
-_debouncers: [],
-_staticFlushList: [],
-_finishDebouncer: null,
-flush: function () {
-this._flushGuard = 0;
-this._prepareFlush();
-while (this._debouncers.length && this._flushGuard < this._FLUSH_MAX) {
-for (var i = 0; i < this._debouncers.length; i++) {
-this._debouncers[i].complete();
-}
-if (this._finishDebouncer) {
-this._finishDebouncer.complete();
-}
-this._prepareFlush();
-this._flushGuard++;
-}
-if (this._flushGuard >= this._FLUSH_MAX) {
-console.warn('Polymer.dom.flush aborted. Flush may not be complete.');
-}
-},
-_prepareFlush: function () {
-if (this._needsTakeRecords) {
-CustomElements.takeRecords();
-}
-for (var i = 0; i < this._staticFlushList.length; i++) {
-this._staticFlushList[i]();
-}
-},
-addStaticFlush: function (fn) {
-this._staticFlushList.push(fn);
-},
-removeStaticFlush: function (fn) {
-var i = this._staticFlushList.indexOf(fn);
-if (i >= 0) {
-this._staticFlushList.splice(i, 1);
-}
-},
-addDebouncer: function (debouncer) {
-this._debouncers.push(debouncer);
-this._finishDebouncer = Polymer.Debounce(this._finishDebouncer, this._finishFlush);
-},
-_finishFlush: function () {
-Polymer.dom._debouncers = [];
-}
-});
-Polymer.EventApi = function () {
-'use strict';
-var DomApi = Polymer.DomApi.ctor;
-var Settings = Polymer.Settings;
-DomApi.Event = function (event) {
-this.event = event;
-};
-if (Settings.useShadow) {
-DomApi.Event.prototype = {
-get rootTarget() {
-return this.event.path[0];
-},
-get localTarget() {
-return this.event.target;
-},
-get path() {
-return this.event.path;
-}
-};
-} else {
-DomApi.Event.prototype = {
-get rootTarget() {
-return this.event.target;
-},
-get localTarget() {
-var current = this.event.currentTarget;
-var currentRoot = current && Polymer.dom(current).getOwnerRoot();
-var p$ = this.path;
-for (var i = 0; i < p$.length; i++) {
-if (Polymer.dom(p$[i]).getOwnerRoot() === currentRoot) {
-return p$[i];
-}
-}
-},
-get path() {
-if (!this.event._path) {
-var path = [];
-var o = this.rootTarget;
-while (o) {
-path.push(o);
-o = Polymer.dom(o).parentNode || o.host;
-}
-path.push(window);
-this.event._path = path;
-}
-return this.event._path;
-}
-};
-}
-var factory = function (event) {
-if (!event.__eventApi) {
-event.__eventApi = new DomApi.Event(event);
-}
-return event.__eventApi;
-};
-return { factory: factory };
-}();
 (function () {
-'use strict';
-var DomApi = Polymer.DomApi.ctor;
-Object.defineProperty(DomApi.prototype, 'classList', {
-get: function () {
-if (!this._classList) {
-this._classList = new DomApi.ClassList(this);
-}
-return this._classList;
-},
-configurable: true
-});
-DomApi.ClassList = function (host) {
-this.domApi = host;
-this.node = host.node;
-};
-DomApi.ClassList.prototype = {
-add: function () {
-this.node.classList.add.apply(this.node.classList, arguments);
-this.domApi._distributeParent();
-},
-remove: function () {
-this.node.classList.remove.apply(this.node.classList, arguments);
-this.domApi._distributeParent();
-},
-toggle: function () {
-this.node.classList.toggle.apply(this.node.classList, arguments);
-this.domApi._distributeParent();
-},
-contains: function () {
-return this.node.classList.contains.apply(this.node.classList, arguments);
-}
-};
-}());
-(function () {
-'use strict';
-var DomApi = Polymer.DomApi.ctor;
-var Settings = Polymer.Settings;
-var hasDomApi = Polymer.DomApi.hasDomApi;
-DomApi.EffectiveNodesObserver = function (domApi) {
-this.domApi = domApi;
-this.node = this.domApi.node;
-this._listeners = [];
-};
-DomApi.EffectiveNodesObserver.prototype = {
-addListener: function (callback) {
-if (!this._isSetup) {
-this._setup();
-this._isSetup = true;
-}
-var listener = {
-fn: callback,
-_nodes: []
-};
-this._listeners.push(listener);
-this._scheduleNotify();
-return listener;
-},
-removeListener: function (handle) {
-var i = this._listeners.indexOf(handle);
-if (i >= 0) {
-this._listeners.splice(i, 1);
-handle._nodes = [];
-}
-if (!this._hasListeners()) {
-this._cleanup();
-this._isSetup = false;
-}
-},
-_setup: function () {
-this._observeContentElements(this.domApi.childNodes);
-},
-_cleanup: function () {
-this._unobserveContentElements(this.domApi.childNodes);
-},
-_hasListeners: function () {
-return Boolean(this._listeners.length);
-},
-_scheduleNotify: function () {
-if (this._debouncer) {
-this._debouncer.stop();
-}
-this._debouncer = Polymer.Debounce(this._debouncer, this._notify);
-this._debouncer.context = this;
-Polymer.dom.addDebouncer(this._debouncer);
-},
-notify: function () {
-if (this._hasListeners()) {
-this._scheduleNotify();
-}
-},
-_notify: function (mxns) {
-this._beforeCallListeners();
-this._callListeners();
-},
-_beforeCallListeners: function () {
-this._updateContentElements();
-},
-_updateContentElements: function () {
-this._observeContentElements(this.domApi.childNodes);
-},
-_observeContentElements: function (elements) {
-for (var i = 0, n; i < elements.length && (n = elements[i]); i++) {
-if (this._isContent(n)) {
-n.__observeNodesMap = n.__observeNodesMap || new WeakMap();
-if (!n.__observeNodesMap.has(this)) {
-n.__observeNodesMap.set(this, this._observeContent(n));
-}
-}
-}
-},
-_observeContent: function (content) {
-var h = Polymer.dom(content).observeNodes(this._scheduleNotify.bind(this));
-h._avoidChangeCalculation = true;
-return h;
-},
-_unobserveContentElements: function (elements) {
-for (var i = 0, n, h; i < elements.length && (n = elements[i]); i++) {
-if (this._isContent(n)) {
-h = n.__observeNodesMap.get(this);
-if (h) {
-Polymer.dom(n).unobserveNodes(h);
-n.__observeNodesMap.delete(this);
-}
-}
-}
-},
-_isContent: function (node) {
-return node.localName === 'content';
-},
-_callListeners: function () {
-var o$ = this._listeners;
-var nodes = this._getEffectiveNodes();
-for (var i = 0, o; i < o$.length && (o = o$[i]); i++) {
-var info = this._generateListenerInfo(o, nodes);
-if (info || o._alwaysNotify) {
-this._callListener(o, info);
-}
-}
-},
-_getEffectiveNodes: function () {
-return this.domApi.getEffectiveChildNodes();
-},
-_generateListenerInfo: function (listener, newNodes) {
-if (listener._avoidChangeCalculation) {
-return true;
-}
-var oldNodes = listener._nodes;
-var info = {
-target: this.node,
-addedNodes: [],
-removedNodes: []
-};
-var splices = Polymer.ArraySplice.calculateSplices(newNodes, oldNodes);
-for (var i = 0, s; i < splices.length && (s = splices[i]); i++) {
-for (var j = 0, n; j < s.removed.length && (n = s.removed[j]); j++) {
-info.removedNodes.push(n);
-}
-}
-for (var i = 0, s; i < splices.length && (s = splices[i]); i++) {
-for (var j = s.index; j < s.index + s.addedCount; j++) {
-info.addedNodes.push(newNodes[j]);
-}
-}
-listener._nodes = newNodes;
-if (info.addedNodes.length || info.removedNodes.length) {
-return info;
-}
-},
-_callListener: function (listener, info) {
-return listener.fn.call(this.node, info);
-},
-enableShadowAttributeTracking: function () {
-}
-};
-if (Settings.useShadow) {
-var baseSetup = DomApi.EffectiveNodesObserver.prototype._setup;
-var baseCleanup = DomApi.EffectiveNodesObserver.prototype._cleanup;
-var beforeCallListeners = DomApi.EffectiveNodesObserver.prototype._beforeCallListeners;
-Polymer.Base.extend(DomApi.EffectiveNodesObserver.prototype, {
-_setup: function () {
-if (!this._observer) {
-var self = this;
-this._mutationHandler = function (mxns) {
-if (mxns && mxns.length) {
-self._scheduleNotify();
-}
-};
-this._observer = new MutationObserver(this._mutationHandler);
-this._boundFlush = this._flush.bind(this);
-Polymer.dom.addStaticFlush(this._boundFlush);
-this._observer.observe(this.node, { childList: true });
-}
-baseSetup.call(this);
-},
-_cleanup: function () {
-this._observer.disconnect();
-this._observer = null;
-this._mutationHandler = null;
-Polymer.dom.removeStaticFlush(this._boundFlush);
-baseCleanup.call(this);
-},
-_flush: function () {
-if (this._observer) {
-this._mutationHandler(this._observer.takeRecords());
-}
-},
-enableShadowAttributeTracking: function () {
-if (this._observer) {
-this._makeContentListenersAlwaysNotify();
-this._observer.disconnect();
-this._observer.observe(this.node, {
-childList: true,
-attributes: true,
-subtree: true
-});
-var root = this.domApi.getOwnerRoot();
-var host = root && root.host;
-if (host && Polymer.dom(host).observer) {
-Polymer.dom(host).observer.enableShadowAttributeTracking();
-}
-}
-},
-_makeContentListenersAlwaysNotify: function () {
-for (var i = 0, h; i < this._listeners.length; i++) {
-h = this._listeners[i];
-h._alwaysNotify = h._isContentListener;
-}
-}
-});
-}
-}());
-(function () {
-'use strict';
-var DomApi = Polymer.DomApi.ctor;
-var Settings = Polymer.Settings;
-DomApi.DistributedNodesObserver = function (domApi) {
-DomApi.EffectiveNodesObserver.call(this, domApi);
-};
-DomApi.DistributedNodesObserver.prototype = Object.create(DomApi.EffectiveNodesObserver.prototype);
-Polymer.Base.extend(DomApi.DistributedNodesObserver.prototype, {
-_setup: function () {
-},
-_cleanup: function () {
-},
-_beforeCallListeners: function () {
-},
-_getEffectiveNodes: function () {
-return this.domApi.getDistributedNodes();
-}
-});
-if (Settings.useShadow) {
-Polymer.Base.extend(DomApi.DistributedNodesObserver.prototype, {
-_setup: function () {
-if (!this._observer) {
-var root = this.domApi.getOwnerRoot();
-var host = root && root.host;
-if (host) {
-this._observer = Polymer.dom(host).observeNodes(this._scheduleNotify.bind(this));
-this._observer._isContentListener = true;
-if (this._hasAttrSelect()) {
-Polymer.dom(host).observer.enableShadowAttributeTracking();
-}
-}
-}
-},
-_hasAttrSelect: function () {
-var select = this.node.getAttribute('select');
-return select && select.match(/[[.]+/);
-},
-_cleanup: function () {
-var root = this.domApi.getOwnerRoot();
-var host = root && root.host;
-if (host) {
-Polymer.dom(host).unobserveNodes(this._observer);
-}
-this._observer = null;
-}
-});
-}
-}());
-(function () {
-var hasDomApi = Polymer.DomApi.hasDomApi;
 Polymer.Base._addFeature({
 _prepShady: function () {
 this._useContent = this._useContent || Boolean(this._template);
@@ -2146,7 +1803,6 @@ if (this._useContent) {
 this.shadyRoot._distributionClean = true;
 if (hasInsertionPoint(this.shadyRoot)) {
 this._composeTree();
-notifyContentObservers(this.shadyRoot);
 } else {
 if (!this.shadyRoot._hasDistributed) {
 this.textContent = '';
@@ -2156,9 +1812,6 @@ this.appendChild(this.shadyRoot);
 var children = this._composeNode(this);
 this._updateChildNodes(this, children);
 }
-}
-if (!this.shadyRoot._hasDistributed) {
-notifyInitialDistribution(this);
 }
 this.shadyRoot._hasDistributed = true;
 }
@@ -2258,9 +1911,7 @@ var composed = getComposedChildren(container);
 var splices = Polymer.ArraySplice.calculateSplices(children, composed);
 for (var i = 0, d = 0, s; i < splices.length && (s = splices[i]); i++) {
 for (var j = 0, n; j < s.removed.length && (n = s.removed[j]); j++) {
-if (getComposedParent(n) === container) {
 remove(n);
-}
 composed.splice(s.index + d, 1);
 }
 d -= s.addedCount;
@@ -2273,7 +1924,6 @@ insertBefore(container, n, next);
 composed.splice(j, 0, n);
 }
 }
-ensureComposedParent(container, children);
 },
 _matchesContentSelect: function (node, contentElement) {
 var select = contentElement.getAttribute('select');
@@ -2303,7 +1953,6 @@ var getLightChildren = Polymer.DomApi.getLightChildren;
 var matchesSelector = Polymer.DomApi.matchesSelector;
 var hasInsertionPoint = Polymer.DomApi.hasInsertionPoint;
 var getComposedChildren = Polymer.DomApi.getComposedChildren;
-var getComposedParent = Polymer.DomApi.getComposedParent;
 var removeFromComposedParent = Polymer.DomApi.removeFromComposedParent;
 function distributeNodeInto(child, insertionPoint) {
 insertionPoint._distributedNodes.push(child);
@@ -2357,10 +2006,8 @@ node._composedParent = null;
 nativeRemoveChild.call(parentNode, node);
 }
 }
-function ensureComposedParent(parent, children) {
-for (var i = 0, n; i < children.length; i++) {
-children[i]._composedParent = parent;
-}
+function getComposedParent(node) {
+return node.__patched ? node._composedParent : node.parentNode;
 }
 function getTopDistributingHost(host) {
 while (host && hostNeedsRedistribution(host)) {
@@ -2375,19 +2022,6 @@ c = c$[i];
 if (c.localName === 'content') {
 return host.domHost;
 }
-}
-}
-function notifyContentObservers(root) {
-for (var i = 0, c; i < root._insertionPoints.length; i++) {
-c = root._insertionPoints[i];
-if (hasDomApi(c)) {
-Polymer.dom(c).notifyObserver();
-}
-}
-}
-function notifyInitialDistribution(host) {
-if (hasDomApi(host)) {
-Polymer.dom(host).notifyObserver();
 }
 }
 var needsUpgrade = window.CustomElements && !CustomElements.useNative;
@@ -2456,66 +2090,22 @@ return list;
 _parseNodeAnnotations: function (node, list) {
 return node.nodeType === Node.TEXT_NODE ? this._parseTextNodeAnnotation(node, list) : this._parseElementAnnotations(node, list);
 },
-_bindingRegex: /([^{[]*)({{|\[\[)([^}\]]*)(?:]]|}})/g,
-_parseBindings: function (text) {
-var re = this._bindingRegex;
-var parts = [];
-var m, lastIndex;
-while ((m = re.exec(text)) !== null) {
-if (m[1]) {
-parts.push({ literal: m[1] });
+_testEscape: function (value) {
+var escape = value.slice(0, 2);
+if (escape === '{{' || escape === '[[') {
+return escape;
 }
-var mode = m[2][0];
-var value = m[3].trim();
-var negate = false;
-if (value[0] == '!') {
-negate = true;
-value = value.substring(1).trim();
-}
-var customEvent, notifyEvent, colon;
-if (mode == '{' && (colon = value.indexOf('::')) > 0) {
-notifyEvent = value.substring(colon + 2);
-value = value.substring(0, colon);
-customEvent = true;
-}
-parts.push({
-compoundIndex: parts.length,
-value: value,
-mode: mode,
-negate: negate,
-event: notifyEvent,
-customEvent: customEvent
-});
-lastIndex = re.lastIndex;
-}
-if (lastIndex && lastIndex < text.length) {
-var literal = text.substring(lastIndex);
-if (literal) {
-parts.push({ literal: literal });
-}
-}
-if (parts.length) {
-return parts;
-}
-},
-_literalFromParts: function (parts) {
-var s = '';
-for (var i = 0; i < parts.length; i++) {
-var literal = parts[i].literal;
-s += literal || '';
-}
-return s;
 },
 _parseTextNodeAnnotation: function (node, list) {
-var parts = this._parseBindings(node.textContent);
-if (parts) {
-node.textContent = this._literalFromParts(parts) || ' ';
+var v = node.textContent;
+var escape = this._testEscape(v);
+if (escape) {
+node.textContent = ' ';
 var annote = {
 bindings: [{
 kind: 'text',
-name: 'textContent',
-parts: parts,
-isCompound: parts.length !== 1
+mode: escape[0],
+value: v.slice(2, -2).trim()
 }]
 };
 list.push(annote);
@@ -2577,50 +2167,62 @@ index: index
 });
 },
 _parseNodeAttributeAnnotations: function (node, annotation) {
-var attrs = Array.prototype.slice.call(node.attributes);
-for (var i = attrs.length - 1, a; a = attrs[i]; i--) {
-var n = a.name;
-var v = a.value;
-var b;
-if (n.slice(0, 3) === 'on-') {
+for (var i = node.attributes.length - 1, a; a = node.attributes[i]; i--) {
+var n = a.name, v = a.value;
+if (n === 'id' && !this._testEscape(v)) {
+annotation.id = v;
+} else if (n.slice(0, 3) === 'on-') {
 node.removeAttribute(n);
 annotation.events.push({
 name: n.slice(3),
 value: v
 });
-} else if (b = this._parseNodeAttributeAnnotation(node, n, v)) {
+} else {
+var b = this._parseNodeAttributeAnnotation(node, n, v);
+if (b) {
 annotation.bindings.push(b);
-} else if (n === 'id') {
-annotation.id = v;
+}
 }
 }
 },
-_parseNodeAttributeAnnotation: function (node, name, value) {
-var parts = this._parseBindings(value);
-if (parts) {
-var origName = name;
+_parseNodeAttributeAnnotation: function (node, n, v) {
+var escape = this._testEscape(v);
+if (escape) {
+var customEvent;
+var name = n;
+var mode = escape[0];
+v = v.slice(2, -2).trim();
+var not = false;
+if (v[0] == '!') {
+v = v.substring(1);
+not = true;
+}
 var kind = 'property';
-if (name[name.length - 1] == '$') {
-name = name.slice(0, -1);
+if (n[n.length - 1] == '$') {
+name = n.slice(0, -1);
 kind = 'attribute';
 }
-var literal = this._literalFromParts(parts);
-if (literal && kind == 'attribute') {
-node.setAttribute(name, literal);
+var notifyEvent, colon;
+if (mode == '{' && (colon = v.indexOf('::')) > 0) {
+notifyEvent = v.substring(colon + 2);
+v = v.substring(0, colon);
+customEvent = true;
 }
-if (node.localName == 'input' && name == 'value') {
-node.setAttribute(origName, '');
+if (node.localName == 'input' && n == 'value') {
+node.setAttribute(n, '');
 }
-node.removeAttribute(origName);
+node.removeAttribute(n);
 if (kind === 'property') {
 name = Polymer.CaseMap.dashToCamelCase(name);
 }
 return {
 kind: kind,
+mode: mode,
 name: name,
-parts: parts,
-literal: literal,
-isCompound: parts.length !== 1
+value: v,
+negate: not,
+event: notifyEvent,
+customEvent: customEvent
 };
 }
 },
@@ -2697,11 +2299,7 @@ if (!this._template) {
 this._notes = [];
 } else {
 Polymer.Annotations.prepElement = this._prepElement.bind(this);
-if (this._template._content && this._template._content._notes) {
-this._notes = this._template._content._notes;
-} else {
 this._notes = Polymer.Annotations.parseAnnotations(this._template);
-}
 this._processAnnotations(this._notes);
 Polymer.Annotations.prepElement = null;
 }
@@ -2711,14 +2309,9 @@ for (var i = 0; i < notes.length; i++) {
 var note = notes[i];
 for (var j = 0; j < note.bindings.length; j++) {
 var b = note.bindings[j];
-for (var k = 0; k < b.parts.length; k++) {
-var p = b.parts[k];
-if (!p.literal) {
-p.signature = this._parseMethod(p.value);
-if (!p.signature) {
-p.model = this._modelForPath(p.value);
-}
-}
+b.signature = this._parseMethod(b.value);
+if (!b.signature) {
+b.model = this._modelForPath(b.value);
 }
 }
 if (note.templateContent) {
@@ -2729,12 +2322,10 @@ for (var prop in pp) {
 bindings.push({
 index: note.index,
 kind: 'property',
-name: '_parent_' + prop,
-parts: [{
 mode: '{',
+name: '_parent_' + prop,
 model: prop,
 value: prop
-}]
 });
 }
 note.bindings = note.bindings.concat(bindings);
@@ -2745,16 +2336,14 @@ _discoverTemplateParentProps: function (notes) {
 var pp = {};
 notes.forEach(function (n) {
 n.bindings.forEach(function (b) {
-b.parts.forEach(function (p) {
-if (p.signature) {
-var args = p.signature.args;
+if (b.signature) {
+var args = b.signature.args;
 for (var k = 0; k < args.length; k++) {
 pp[args[k].model] = true;
 }
 } else {
-pp[p.model] = true;
+pp[b.model] = true;
 }
-});
 });
 if (n.templateContent) {
 var tpp = n.templateContent._parentProps;
@@ -2774,43 +2363,15 @@ this._marshalAnnotatedNodes();
 this._marshalAnnotatedListeners();
 }
 },
-_configureAnnotationReferences: function (config) {
-var notes = this._notes;
-var nodes = this._nodes;
-for (var i = 0; i < notes.length; i++) {
-var note = notes[i];
-var node = nodes[i];
-this._configureTemplateContent(note, node);
-this._configureCompoundBindings(note, node);
-}
+_configureAnnotationReferences: function () {
+this._configureTemplateContent();
 },
-_configureTemplateContent: function (note, node) {
+_configureTemplateContent: function () {
+this._notes.forEach(function (note, i) {
 if (note.templateContent) {
-node._content = note.templateContent;
+this._nodes[i]._content = note.templateContent;
 }
-},
-_configureCompoundBindings: function (note, node) {
-var bindings = note.bindings;
-for (var i = 0; i < bindings.length; i++) {
-var binding = bindings[i];
-if (binding.isCompound) {
-var storage = node.__compoundStorage__ || (node.__compoundStorage__ = {});
-var parts = binding.parts;
-var literals = new Array(parts.length);
-for (var j = 0; j < parts.length; j++) {
-literals[j] = parts[j].literal;
-}
-var name = binding.name;
-storage[name] = literals;
-if (binding.literal && binding.kind == 'property') {
-if (node._configValue) {
-node._configValue(name, binding.literal);
-} else {
-node[name] = binding.literal;
-}
-}
-}
-}
+}, this);
 },
 _marshalIdNodes: function () {
 this.$ = {};
@@ -2855,15 +2416,7 @@ this.listen(node, name, listeners[key]);
 }
 },
 listen: function (node, eventName, methodName) {
-var handler = this._recallEventHandler(this, eventName, node, methodName);
-if (!handler) {
-handler = this._createEventHandler(node, eventName, methodName);
-}
-if (handler._listening) {
-return;
-}
-this._listen(node, eventName, handler);
-handler._listening = true;
+this._listen(node, eventName, this._createEventHandler(node, eventName, methodName));
 },
 _boundListenerKey: function (eventName, methodName) {
 return eventName + ':' + methodName;
@@ -2902,7 +2455,6 @@ host[methodName](e, e.detail);
 host._warn(host._logf('_createEventHandler', 'listener method `' + methodName + '` not defined'));
 }
 };
-handler._listening = false;
 this._recordEventHandler(host, eventName, node, methodName, handler);
 return handler;
 },
@@ -2910,7 +2462,6 @@ unlisten: function (node, eventName, methodName) {
 var handler = this._recallEventHandler(this, eventName, node, methodName);
 if (handler) {
 this._unlisten(node, eventName, handler);
-handler._listening = false;
 }
 },
 _listen: function (node, eventName, handler) {
@@ -3195,9 +2746,9 @@ gd = gobj[dep];
 if (gd && gd[name]) {
 gd[name] = (gd[name] || 1) - 1;
 gd._count = (gd._count || 1) - 1;
+}
 if (gd._count === 0) {
 node.removeEventListener(dep, this.handleNative);
-}
 }
 }
 }
@@ -3602,9 +3153,7 @@ this._callbacks.splice(0, len);
 this._lastVal += len;
 }
 };
-new window.MutationObserver(function () {
-Polymer.Async._atEndOfMicrotask();
-}).observe(Polymer.Async._twiddle, { characterData: true });
+new (window.MutationObserver || JsMutationObserver)(Polymer.Async._atEndOfMicrotask.bind(Polymer.Async)).observe(Polymer.Async._twiddle, { characterData: true });
 Polymer.Debounce = function () {
 var Async = Polymer.Async;
 var Debouncer = function (context) {
@@ -3686,32 +3235,6 @@ if (toElement) {
 Polymer.dom(toElement).setAttribute(name, '');
 }
 },
-getEffectiveChildNodes: function () {
-return Polymer.dom(this).getEffectiveChildNodes();
-},
-getEffectiveChildren: function () {
-var list = Polymer.dom(this).getEffectiveChildNodes();
-return list.filter(function (n) {
-return n.nodeType === Node.ELEMENT_NODE;
-});
-},
-getEffectiveTextContent: function () {
-var cn = this.getEffectiveChildNodes();
-var tc = [];
-for (var i = 0, c; c = cn[i]; i++) {
-if (c.nodeType !== Node.COMMENT_NODE) {
-tc.push(Polymer.dom(c).textContent);
-}
-}
-return tc.join('');
-},
-queryEffectiveChildren: function (slctr) {
-var e$ = Polymer.dom(this).queryDistributedElements(slctr);
-return e$ && e$[0];
-},
-queryAllEffectiveChildren: function (slctr) {
-return Polymer.dom(this).queryAllDistributedElements(slctr);
-},
 getContentChildNodes: function (slctr) {
 var content = Polymer.dom(this.root).querySelector(slctr || 'content');
 return content ? Polymer.dom(content).getDistributedNodes() : [];
@@ -3749,7 +3272,7 @@ if (index >= 0) {
 return path.splice(index, 1);
 }
 } else {
-var arr = this._get(path);
+var arr = this.get(path);
 index = arr.indexOf(item);
 if (index >= 0) {
 return this.splice(path, index, 1);
@@ -3786,12 +3309,6 @@ elt[n] = props[n];
 }
 }
 return elt;
-},
-isLightDescendant: function (node) {
-return this.contains(node) && Polymer.dom(this).getOwnerRoot() === Polymer.dom(node).getOwnerRoot();
-},
-isLocalDescendant: function (node) {
-return this.root === Polymer.dom(node).getOwnerRoot();
 }
 });
 Polymer.Bind = {
@@ -3931,7 +3448,7 @@ _notedListenerFactory: function (property, path, isStructured, bogusTest) {
 return function (e, target) {
 if (!bogusTest(e, target)) {
 if (e.detail && e.detail.path) {
-this._notifyPath(this._fixPath(path, property, e.detail.path), e.detail.value);
+this.notifyPath(this._fixPath(path, property, e.detail.path), e.detail.value);
 } else {
 var value = target[property];
 if (!isStructured) {
@@ -3957,16 +3474,16 @@ node.addEventListener(info.event, inst._notifyListener.bind(inst, info.changedFn
 };
 Polymer.Base.extend(Polymer.Bind, {
 _shouldAddListener: function (effect) {
-return effect.name && effect.kind != 'attribute' && effect.kind != 'text' && !effect.isCompound && effect.parts[0].mode === '{' && !effect.parts[0].negate;
+return effect.name && effect.mode === '{' && !effect.negate && effect.kind != 'attribute';
 },
 _annotationEffect: function (source, value, effect) {
 if (source != effect.value) {
-value = this._get(effect.value);
+value = this.get(effect.value);
 this.__data__[effect.value] = value;
 }
 var calc = effect.negate ? !value : value;
 if (!effect.customEvent || this._nodes[effect.index][effect.name] !== calc) {
-return this._applyEffectValue(effect, calc);
+return this._applyEffectValue(calc, effect);
 }
 },
 _reflectEffect: function (source) {
@@ -4004,7 +3521,7 @@ var args = Polymer.Bind._marshalArgs(this.__data__, effect, source, value);
 if (args) {
 var fn = this[effect.method];
 if (fn) {
-this.__setProperty(effect.name, fn.apply(this, args));
+this.__setProperty(effect.property, fn.apply(this, args));
 } else {
 this._warn(this._logf('_computeEffect', 'compute method `' + effect.method + '` not defined'));
 }
@@ -4020,7 +3537,7 @@ var computedvalue = fn.apply(computedHost, args);
 if (effect.negate) {
 computedvalue = !computedvalue;
 }
-this._applyEffectValue(effect, computedvalue);
+this._applyEffectValue(computedvalue, effect);
 }
 } else {
 computedHost._warn(computedHost._logf('_annotatedComputationEffect', 'compute method `' + effect.method + '` not defined'));
@@ -4036,7 +3553,7 @@ var v;
 if (arg.literal) {
 v = arg.value;
 } else if (arg.structured) {
-v = Polymer.Base._get(name, model);
+v = Polymer.Base.get(name, model);
 } else {
 v = model[name];
 }
@@ -4099,7 +3616,7 @@ this._addPropertyEffect(arg.model, 'compute', {
 method: sig.method,
 args: sig.args,
 trigger: arg,
-name: name
+property: name
 });
 }, this);
 },
@@ -4137,49 +3654,35 @@ this._addAnnotationEffect(binding, index);
 },
 _addAnnotationEffect: function (note, index) {
 if (Polymer.Bind._shouldAddListener(note)) {
-Polymer.Bind._addAnnotatedListener(this, index, note.name, note.parts[0].value, note.parts[0].event);
+Polymer.Bind._addAnnotatedListener(this, index, note.name, note.value, note.event);
 }
-for (var i = 0; i < note.parts.length; i++) {
-var part = note.parts[i];
-if (part.signature) {
-this._addAnnotatedComputationEffect(note, part, index);
-} else if (!part.literal) {
-this._addPropertyEffect(part.model, 'annotation', {
-kind: note.kind,
-index: index,
-name: note.name,
-value: part.value,
-isCompound: note.isCompound,
-compoundIndex: part.compoundIndex,
-event: part.event,
-customEvent: part.customEvent,
-negate: part.negate
-});
-}
+if (note.signature) {
+this._addAnnotatedComputationEffect(note, index);
+} else {
+note.index = index;
+this._addPropertyEffect(note.model, 'annotation', note);
 }
 },
-_addAnnotatedComputationEffect: function (note, part, index) {
-var sig = part.signature;
+_addAnnotatedComputationEffect: function (note, index) {
+var sig = note.signature;
 if (sig.static) {
-this.__addAnnotatedComputationEffect('__static__', index, note, part, null);
+this.__addAnnotatedComputationEffect('__static__', index, note, sig, null);
 } else {
 sig.args.forEach(function (arg) {
 if (!arg.literal) {
-this.__addAnnotatedComputationEffect(arg.model, index, note, part, arg);
+this.__addAnnotatedComputationEffect(arg.model, index, note, sig, arg);
 }
 }, this);
 }
 },
-__addAnnotatedComputationEffect: function (property, index, note, part, trigger) {
+__addAnnotatedComputationEffect: function (property, index, note, sig, trigger) {
 this._addPropertyEffect(property, 'annotatedComputation', {
 index: index,
-isCompound: note.isCompound,
-compoundIndex: part.compoundIndex,
 kind: note.kind,
-name: note.name,
-negate: part.negate,
-method: part.signature.method,
-args: part.signature.args,
+property: note.name,
+negate: note.negate,
+method: sig.method,
+args: sig.args,
 trigger: trigger
 });
 },
@@ -4248,14 +3751,9 @@ _marshalInstanceEffects: function () {
 Polymer.Bind.prepareInstance(this);
 Polymer.Bind.setupBindListeners(this);
 },
-_applyEffectValue: function (info, value) {
+_applyEffectValue: function (value, info) {
 var node = this._nodes[info.index];
-var property = info.name;
-if (info.isCompound) {
-var storage = node.__compoundStorage__[property];
-storage[info.compoundIndex] = value;
-value = storage.join('');
-}
+var property = info.property || info.name || 'textContent';
 if (info.kind == 'attribute') {
 this.serializeValueToAttribute(value, property, node);
 } else {
@@ -4335,10 +3833,10 @@ for (var p in config) {
 var fx = fx$[p];
 if (fx) {
 for (var i = 0, l = fx.length, x; i < l && (x = fx[i]); i++) {
-if (x.kind === 'annotation' && !x.isCompound) {
+if (x.kind === 'annotation') {
 var node = this._nodes[x.effect.index];
 if (node._configValue) {
-var value = p === x.effect.value ? config[p] : this._get(x.effect.value, config);
+var value = p === x.effect.value ? config[p] : this.get(x.effect.value, config);
 node._configValue(x.effect.name, value);
 }
 }
@@ -4378,23 +3876,17 @@ var h$ = this._handlers;
 for (var i = 0, l = h$.length, h; i < l && (h = h$[i]); i++) {
 h[0].call(this, h[1], h[2]);
 }
-this._handlers = [];
 }
 });
 (function () {
 'use strict';
 Polymer.Base._addFeature({
 notifyPath: function (path, value, fromAbove) {
-var info = {};
-path = this._get(path, this, info);
-this._notifyPath(info.path, value, fromAbove);
-},
-_notifyPath: function (path, value, fromAbove) {
 var old = this._propertySetter(path, value);
 if (old !== value && (old === old || value === value)) {
 this._pathEffector(path, value);
 if (!fromAbove) {
-this._notifyPathUp(path, value);
+this._notifyPath(path, value);
 }
 return true;
 }
@@ -4421,67 +3913,41 @@ var last = parts[parts.length - 1];
 if (parts.length > 1) {
 for (var i = 0; i < parts.length - 1; i++) {
 var part = parts[i];
-if (array && part[0] == '#') {
-prop = Polymer.Collection.get(array).getItem(part);
-} else {
 prop = prop[part];
-if (array && parseInt(part, 10) == part) {
+if (array && parseInt(part) == part) {
 parts[i] = Polymer.Collection.get(array).getKey(prop);
-}
 }
 if (!prop) {
 return;
 }
 array = Array.isArray(prop) ? prop : null;
 }
-if (array) {
+if (array && parseInt(last) == last) {
 var coll = Polymer.Collection.get(array);
-if (last[0] == '#') {
-var key = last;
-var old = coll.getItem(key);
-last = array.indexOf(old);
-coll.setItem(key, value);
-} else if (parseInt(last, 10) == last) {
 var old = prop[last];
 var key = coll.getKey(old);
 parts[i] = key;
 coll.setItem(key, value);
 }
-}
 prop[last] = value;
 if (!root) {
-this._notifyPath(parts.join('.'), value);
+this.notifyPath(parts.join('.'), value);
 }
 } else {
 prop[path] = value;
 }
 },
 get: function (path, root) {
-return this._get(path, root);
-},
-_get: function (path, root, info) {
 var prop = root || this;
 var parts = this._getPathParts(path);
-var array;
-for (var i = 0; i < parts.length; i++) {
+var last = parts.pop();
+while (parts.length) {
+prop = prop[parts.shift()];
 if (!prop) {
 return;
 }
-var part = parts[i];
-if (array && part[0] == '#') {
-prop = Polymer.Collection.get(array).getItem(part);
-} else {
-prop = prop[part];
-if (info && array && parseInt(part, 10) == part) {
-parts[i] = Polymer.Collection.get(array).getKey(prop);
 }
-}
-array = Array.isArray(prop) ? prop : null;
-}
-if (info) {
-info.path = parts.join('.');
-}
-return prop;
+return prop[last];
 },
 _pathEffector: function (path, value) {
 var model = this._modelForPath(path);
@@ -4533,7 +3999,7 @@ this._boundPaths = this._boundPaths || {};
 if (from) {
 this._boundPaths[to] = from;
 } else {
-this.unlinkPaths(to);
+this.unbindPath(to);
 }
 },
 unlinkPaths: function (path) {
@@ -4542,19 +4008,29 @@ delete this._boundPaths[path];
 }
 },
 _notifyBoundPaths: function (path, value) {
+var from, to;
 for (var a in this._boundPaths) {
 var b = this._boundPaths[a];
 if (path.indexOf(a + '.') == 0) {
-this.notifyPath(this._fixPath(b, a, path), value);
-} else if (path.indexOf(b + '.') == 0) {
-this.notifyPath(this._fixPath(a, b, path), value);
+from = a;
+to = b;
+break;
 }
+if (path.indexOf(b + '.') == 0) {
+from = b;
+to = a;
+break;
+}
+}
+if (from && to) {
+var p = this._fixPath(to, from, path);
+this.notifyPath(p, value);
 }
 },
 _fixPath: function (property, root, path) {
 return property + path.slice(root.length);
 },
-_notifyPathUp: function (path, value) {
+_notifyPath: function (path, value) {
 var rootName = this._modelForPath(path);
 var dashCaseName = Polymer.CaseMap.camelToDashCase(rootName);
 var eventName = dashCaseName + this._EVENT_CHANGED;
@@ -4568,62 +4044,47 @@ var dot = path.indexOf('.');
 return dot < 0 ? path : path.slice(0, dot);
 },
 _EVENT_CHANGED: '-changed',
-notifySplices: function (path, splices) {
-var info = {};
-var array = this._get(path, this, info);
-this._notifySplices(array, info.path, splices);
-},
-_notifySplices: function (array, path, splices) {
-var change = {
-keySplices: Polymer.Collection.applySplices(array, splices),
-indexSplices: splices
-};
-if (!array.hasOwnProperty('splices')) {
-Object.defineProperty(array, 'splices', {
-configurable: true,
-writable: true
-});
-}
-array.splices = change;
-this._notifyPath(path + '.splices', change);
-this._notifyPath(path + '.length', array.length);
-change.keySplices = null;
-change.indexSplices = null;
-},
 _notifySplice: function (array, path, index, added, removed) {
-this._notifySplices(array, path, [{
+var splices = [{
 index: index,
 addedCount: added,
 removed: removed,
 object: array,
 type: 'splice'
-}]);
+}];
+var change = {
+keySplices: Polymer.Collection.applySplices(array, splices),
+indexSplices: splices
+};
+this.set(path + '.splices', change);
+if (added != removed.length) {
+this.notifyPath(path + '.length', array.length);
+}
+change.keySplices = null;
+change.indexSplices = null;
 },
 push: function (path) {
-var info = {};
-var array = this._get(path, this, info);
+var array = this.get(path);
 var args = Array.prototype.slice.call(arguments, 1);
 var len = array.length;
 var ret = array.push.apply(array, args);
 if (args.length) {
-this._notifySplice(array, info.path, len, args.length, []);
+this._notifySplice(array, path, len, args.length, []);
 }
 return ret;
 },
 pop: function (path) {
-var info = {};
-var array = this._get(path, this, info);
+var array = this.get(path);
 var hadLength = Boolean(array.length);
 var args = Array.prototype.slice.call(arguments, 1);
 var ret = array.pop.apply(array, args);
 if (hadLength) {
-this._notifySplice(array, info.path, array.length, 0, [ret]);
+this._notifySplice(array, path, array.length, 0, [ret]);
 }
 return ret;
 },
 splice: function (path, start, deleteCount) {
-var info = {};
-var array = this._get(path, this, info);
+var array = this.get(path);
 if (start < 0) {
 start = array.length - Math.floor(-start);
 } else {
@@ -4636,49 +4097,28 @@ var args = Array.prototype.slice.call(arguments, 1);
 var ret = array.splice.apply(array, args);
 var addedCount = Math.max(args.length - 2, 0);
 if (addedCount || ret.length) {
-this._notifySplice(array, info.path, start, addedCount, ret);
+this._notifySplice(array, path, start, addedCount, ret);
 }
 return ret;
 },
 shift: function (path) {
-var info = {};
-var array = this._get(path, this, info);
+var array = this.get(path);
 var hadLength = Boolean(array.length);
 var args = Array.prototype.slice.call(arguments, 1);
 var ret = array.shift.apply(array, args);
 if (hadLength) {
-this._notifySplice(array, info.path, 0, 0, [ret]);
+this._notifySplice(array, path, 0, 0, [ret]);
 }
 return ret;
 },
 unshift: function (path) {
-var info = {};
-var array = this._get(path, this, info);
+var array = this.get(path);
 var args = Array.prototype.slice.call(arguments, 1);
 var ret = array.unshift.apply(array, args);
 if (args.length) {
-this._notifySplice(array, info.path, 0, args.length, []);
+this._notifySplice(array, path, 0, args.length, []);
 }
 return ret;
-},
-prepareModelNotifyPath: function (model) {
-this.mixin(model, {
-fire: Polymer.Base.fire,
-notifyPath: Polymer.Base.notifyPath,
-_get: Polymer.Base._get,
-_EVENT_CHANGED: Polymer.Base._EVENT_CHANGED,
-_notifyPath: Polymer.Base._notifyPath,
-_notifyPathUp: Polymer.Base._notifyPathUp,
-_pathEffector: Polymer.Base._pathEffector,
-_annotationPathEffect: Polymer.Base._annotationPathEffect,
-_complexObserverPathEffect: Polymer.Base._complexObserverPathEffect,
-_annotatedComputationPathEffect: Polymer.Base._annotatedComputationPathEffect,
-_computePathEffect: Polymer.Base._computePathEffect,
-_modelForPath: Polymer.Base._modelForPath,
-_pathMatchesEffect: Polymer.Base._pathMatchesEffect,
-_notifyBoundPaths: Polymer.Base._notifyBoundPaths,
-_getPathParts: Polymer.Base._getPathParts
-});
 }
 });
 }());
@@ -4812,7 +4252,7 @@ MIXIN_RULE: 1000
 OPEN_BRACE: '{',
 CLOSE_BRACE: '}',
 _rx: {
-comments: /\/\*[^*]*\*+([^\/*][^*]*\*+)*\//gim,
+comments: /\/\*[^*]*\*+([^/*][^*]*\*+)*\//gim,
 port: /@import[^;]*;/gim,
 customProp: /(?:^|[\s;])--[^;{]*?:[^{};]*?(?:[;\n]|$)/gim,
 mixinProp: /(?:^|[\s;])--[^;{]*?:[^{;]*?{[^}]*?}(?:[;\n]|$)?/gim,
@@ -4856,9 +4296,6 @@ clearStyleRules: function (style) {
 style.__cssRules = null;
 },
 forEachStyleRule: function (node, callback) {
-if (!node) {
-return;
-}
 var s = node.parsedSelector;
 var skipRules = false;
 if (node.type === this.ruleTypes.STYLE_RULE) {
@@ -4887,21 +4324,18 @@ afterNode = n$[n$.length - 1];
 target.insertBefore(style, afterNode && afterNode.nextSibling || target.firstChild);
 return style;
 },
-cssFromModules: function (moduleIds, warnIfNotFound) {
+cssFromModules: function (moduleIds) {
 var modules = moduleIds.trim().split(' ');
 var cssText = '';
 for (var i = 0; i < modules.length; i++) {
-cssText += this.cssFromModule(modules[i], warnIfNotFound);
+cssText += this.cssFromModule(modules[i]);
 }
 return cssText;
 },
-cssFromModule: function (moduleId, warnIfNotFound) {
+cssFromModule: function (moduleId) {
 var m = Polymer.DomModule.import(moduleId);
 if (m && !m._cssText) {
 m._cssText = this._cssFromElement(m);
-}
-if (!m && warnIfNotFound) {
-console.warn('Could not find style data in module named', moduleId);
 }
 return m && m._cssText || '';
 },
@@ -4916,12 +4350,12 @@ cssText += this._cssFromElement(e);
 } else {
 if (e.localName === 'style') {
 var include = e.getAttribute(this.INCLUDE_ATTR);
-if (include) {
-cssText += this.cssFromModules(include, true);
-}
 e = e.__appliedElement || e;
 e.parentNode.removeChild(e);
 cssText += this.resolveCss(e.textContent, element.ownerDocument);
+if (include) {
+cssText += this.cssFromModules(include);
+}
 } else if (e.import && e.import.body) {
 cssText += this.resolveCss(e.import.body.textContent, e.import);
 }
@@ -5858,20 +5292,15 @@ observer.observe(e, { childList: true });
 _apply: function () {
 var e = this.__appliedElement || this;
 if (this.include) {
-e.textContent = styleUtil.cssFromModules(this.include, true) + e.textContent;
+e.textContent += styleUtil.cssFromModules(this.include);
 }
-if (e.textContent) {
-styleUtil.forEachStyleRule(styleUtil.rulesForStyle(e), function (rule) {
+var rules = styleUtil.rulesForStyle(e);
+styleUtil.forEachStyleRule(rules, function (rule) {
 styleTransformer.documentRule(rule);
 });
-this._applyCustomProperties(e);
-}
-},
-_applyCustomProperties: function (element) {
 this._computeStyleProperties();
 var props = this._styleProperties;
-var rules = styleUtil.rulesForStyle(element);
-element.textContent = styleUtil.toCssText(rules, function (rule) {
+e.textContent = styleUtil.toCssText(rules, function (rule) {
 var css = rule.cssText = rule.parsedCssText;
 if (rule.propertyInfo && rule.propertyInfo.cssText) {
 css = cssParse.removeCustomPropAssignment(css);
@@ -5886,7 +5315,6 @@ properties: { __hideTemplateChildren__: { observer: '_showHideChildren' } },
 _instanceProps: Polymer.nob,
 _parentPropPrefix: '_parent_',
 templatize: function (template) {
-this._templatized = template;
 if (!template._content) {
 template._content = template.content;
 }
@@ -5897,12 +5325,12 @@ return;
 }
 var archetype = Object.create(Polymer.Base);
 this._customPrepAnnotations(archetype, template);
-this._prepParentProperties(archetype, template);
 archetype._prepEffects();
 this._customPrepEffects(archetype);
 archetype._prepBehaviors();
 archetype._prepBindings();
-archetype._notifyPathUp = this._notifyPathUpImpl;
+this._prepParentProperties(archetype, template);
+archetype._notifyPath = this._notifyPathImpl;
 archetype._scopeElementClass = this._scopeElementClassImpl;
 archetype.listen = this._listenImpl;
 archetype._showHideChildren = this._showHideChildrenImpl;
@@ -5984,7 +5412,6 @@ delete parentProps[prop];
 proto = archetype._parentPropProto = Object.create(null);
 if (template != this) {
 Polymer.Bind.prepareModel(proto);
-Polymer.Base.prepareModelNotifyPath(proto);
 }
 for (prop in parentProps) {
 var parentProp = this._parentPropPrefix + prop;
@@ -6003,7 +5430,6 @@ Polymer.Bind.prepareInstance(template);
 template._forwardParentProp = this._forwardParentProp.bind(this);
 }
 this._extendTemplate(template, proto);
-template._pathEffector = this._pathEffectorImpl.bind(this);
 }
 },
 _createForwardPropEffector: function (prop) {
@@ -6014,7 +5440,7 @@ this._forwardParentProp(prop, value);
 _createHostPropEffector: function (prop) {
 var prefix = this._parentPropPrefix;
 return function (source, value) {
-this.dataHost._templatized[prefix + prop] = value;
+this.dataHost[prefix + prop] = value;
 };
 },
 _createInstancePropEffector: function (prop) {
@@ -6040,23 +5466,22 @@ _forwardInstancePath: function (inst, path, value) {
 },
 _forwardInstanceProp: function (inst, prop, value) {
 },
-_notifyPathUpImpl: function (path, value) {
+_notifyPathImpl: function (path, value) {
 var dataHost = this.dataHost;
 var dot = path.indexOf('.');
 var root = dot < 0 ? path : path.slice(0, dot);
 dataHost._forwardInstancePath.call(dataHost, this, path, value);
 if (root in dataHost._parentProps) {
-dataHost._templatized.notifyPath(dataHost._parentPropPrefix + path, value);
+dataHost.notifyPath(dataHost._parentPropPrefix + path, value);
 }
 },
-_pathEffectorImpl: function (path, value, fromAbove) {
+_pathEffector: function (path, value, fromAbove) {
 if (this._forwardParentPath) {
 if (path.indexOf(this._parentPropPrefix) === 0) {
-var subPath = path.substring(this._parentPropPrefix.length);
-this._forwardParentPath(subPath, value);
+this._forwardParentPath(path.substring(8), value);
 }
 }
-Polymer.Base._pathEffector.call(this._templatized, path, value, fromAbove);
+Polymer.Base._pathEffector.apply(this, arguments);
 },
 _constructorImpl: function (model, host) {
 this._rootDataHost = host._getRootDataHost();
@@ -6099,9 +5524,8 @@ return host._scopeElementClass(node, value);
 stamp: function (model) {
 model = model || {};
 if (this._parentProps) {
-var templatized = this._templatized;
 for (var prop in this._parentProps) {
-model[prop] = templatized[this._parentPropPrefix + prop];
+model[prop] = this[this._parentPropPrefix + prop];
 }
 }
 return new this.ctor(model, this);
@@ -6158,10 +5582,9 @@ this.omap.set(item, key);
 } else {
 this.pmap[item] = key;
 }
-return '#' + key;
+return key;
 },
 removeKey: function (key) {
-key = this._parseKey(key);
 this._removeFromMap(this.store[key]);
 delete this.store[key];
 },
@@ -6178,29 +5601,16 @@ this.removeKey(key);
 return key;
 },
 getKey: function (item) {
-var key;
 if (item && typeof item == 'object') {
-key = this.omap.get(item);
+return this.omap.get(item);
 } else {
-key = this.pmap[item];
-}
-if (key != undefined) {
-return '#' + key;
+return this.pmap[item];
 }
 },
 getKeys: function () {
-return Object.keys(this.store).map(function (key) {
-return '#' + key;
-});
-},
-_parseKey: function (key) {
-if (key[0] == '#') {
-return key.slice(1);
-}
-throw new Error('unexpected key ' + key);
+return Object.keys(this.store);
 },
 setItem: function (key, item) {
-key = this._parseKey(key);
 var old = this.store[key];
 if (old) {
 this._removeFromMap(old);
@@ -6213,7 +5623,6 @@ this.pmap[item] = key;
 this.store[key] = item;
 },
 getItem: function (key) {
-key = this._parseKey(key);
 return this.store[key];
 },
 getItems: function () {
@@ -6607,7 +6016,7 @@ this.set('items.' + idx, value);
 },
 _forwardInstancePath: function (inst, path, value) {
 if (path.indexOf(this.as + '.') === 0) {
-this._notifyPath('items.' + inst.__key__ + '.' + path.slice(this.as.length + 1), value);
+this.notifyPath('items.' + inst.__key__ + '.' + path.slice(this.as.length + 1), value);
 }
 },
 _forwardParentProp: function (prop, value) {
@@ -6617,7 +6026,7 @@ inst.__setProperty(prop, value, true);
 },
 _forwardParentPath: function (path, value) {
 this._instances.forEach(function (inst) {
-inst._notifyPath(path, value, true);
+inst.notifyPath(path, value, true);
 }, this);
 },
 _forwardItemPath: function (path, value) {
@@ -6629,7 +6038,7 @@ var inst = this._instances[idx];
 if (inst) {
 if (dot >= 0) {
 path = this.as + '.' + path.substring(dot + 1);
-inst._notifyPath(path, value, true);
+inst.notifyPath(path, value, true);
 } else {
 inst.__setProperty(this.as, value, true);
 }
@@ -6681,7 +6090,6 @@ this.unlinkPaths('selected.' + i);
 }
 } else {
 this.unlinkPaths('selected');
-this.unlinkPaths('selectedItem');
 }
 if (this.multi) {
 if (!this.selected || this.selected.length) {
@@ -6725,7 +6133,7 @@ this.deselect(item);
 }
 } else {
 this.push('selected', item);
-var skey = this._selectedColl.getKey(item);
+skey = this._selectedColl.getKey(item);
 this.linkPaths('selected.' + skey, 'items.' + key);
 }
 } else {
@@ -6821,7 +6229,7 @@ this._instance[prop] = value;
 },
 _forwardParentPath: function (path, value) {
 if (this._instance) {
-this._instance._notifyPath(path, value, true);
+this._instance.notifyPath(path, value, true);
 }
 }
 });
@@ -6894,20 +6302,6 @@ this._insertChildren();
 this.fire('dom-change');
 }
 });</script>
-<!--
-The `<iron-flex-layout>` component provides simple ways to use [CSS flexible box layout](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes), also known as flexbox. This component provides two different ways to use flexbox:
-
-1. [Layout classes](https://github.com/PolymerElements/iron-flex-layout/tree/master/classes). The layout class stylesheet provides a simple set of class-based flexbox rules. Layout classes let you specify layout properties directly in markup.
-
-2. [Custom CSS mixins](https://github.com/PolymerElements/iron-flex-layout/blob/master/iron-flex-layout.html). The mixin stylesheet includes custom CSS mixins that can be applied inside a CSS rule using the `@apply` function.
-
-A complete [guide](https://elements.polymer-project.org/guides/flex-layout) to `<iron-flex-layout>` is available.
-
-@group Iron Elements
-@pseudoElement iron-flex-layout
-@demo demo/index.html
--->
-
 <style>
   /* IE 10 support for HTML5 hidden attr */
   [hidden] {
@@ -7260,7 +6654,6 @@ Or, in a Polymer element, you can include a meta in your template:
     // monostate data
     var metaDatas = {};
     var metaArrays = {};
-    var singleton = null;
 
     Polymer.IronMeta = Polymer({
 
@@ -7311,10 +6704,6 @@ Or, in a Polymer element, you can include a meta in your template:
           notify: true
         }
 
-      },
-
-      hostAttributes: {
-        hidden: true
       },
 
       /**
@@ -7410,13 +6799,6 @@ Or, in a Polymer element, you can include a meta in your template:
       }
 
     });
-
-    Polymer.IronMeta.getIronMeta = function getIronMeta() {
-       if (singleton === null) {
-         singleton = new Polymer.IronMeta();
-       }
-       return singleton;
-     };
 
     /**
     `iron-meta-query` can be used to access infomation stored in `iron-meta`.
@@ -7569,11 +6951,10 @@ Example of using an icon named `cherry` from a custom iconset with the ID `fruit
 
     <iron-icon icon="fruit:cherry"></iron-icon>
 
-See [iron-iconset](iron-iconset) and [iron-iconset-svg](iron-iconset-svg) for more information about
+See [iron-iconset](#iron-iconset) and [iron-iconset-svg](#iron-iconset-svg) for more information about
 how to create a custom iconset.
 
-See the [iron-icons demo](iron-icons?view=demo:demo/index.html) to see the icons available
-in the various iconsets.
+See [iron-icons](https://elements.polymer-project.org/elements/iron-icons?view=demo:demo/index.html) for the default set of icons.
 
 
 ### Styling
@@ -7584,8 +6965,6 @@ Custom property | Description | Default
 ----------------|-------------|----------
 `--iron-icon-width` | Width of the icon | `24px`
 `--iron-icon-height` | Height of the icon | `24px`
-`--iron-icon-fill-color` | Fill color of the svg icon | `currentcolor`
-`--iron-icon-stroke-color` | Stroke color of the svg icon | none
 
 @group Iron Elements
 @element iron-icon
@@ -7601,9 +6980,9 @@ Custom property | Description | Default
    * `iron-iconset-svg` element. Multiple icons should be given distinct id's.
    *
    * Using svg elements to create icons has a few advantages over traditional
-   * bitmap graphics like jpg or png. Icons that use svg are vector based so
-   * they are resolution independent and should look good on any device. They
-   * are stylable via css. Icons can be themed, colorized, and even animated.
+   * bitmap graphics like jpg or png. Icons that use svg are vector based so they
+   * are resolution independent and should look good on any device. They are
+   * stylable via css. Icons can be themed, colorized, and even animated.
    *
    * Example:
    *
@@ -7628,15 +7007,18 @@ Custom property | Description | Default
    *
    * @element iron-iconset-svg
    * @demo demo/index.html
-   * @implements {Polymer.Iconset}
    */
   Polymer({
+
     is: 'iron-iconset-svg',
 
     properties: {
 
       /**
        * The name of the iconset.
+       *
+       * @attribute name
+       * @type string
        */
       name: {
         type: String,
@@ -7645,16 +7027,16 @@ Custom property | Description | Default
 
       /**
        * The size of an individual icon. Note that icons must be square.
+       *
+       * @attribute iconSize
+       * @type number
+       * @default 24
        */
       size: {
         type: Number,
         value: 24
       }
 
-    },
-    
-    attached: function() {
-      this.style.display = 'none';
     },
 
     /**
@@ -7678,7 +7060,7 @@ Custom property | Description | Default
      * @method applyIcon
      * @param {Element} element Element to which the icon is applied.
      * @param {string} iconName Name of the icon to apply.
-     * @return {?Element} The svg element which renders the icon.
+     * @return {Element} The svg element which renders the icon.
      */
     applyIcon: function(element, iconName) {
       // insert svg element into shadow root, if it exists
@@ -7716,9 +7098,6 @@ Custom property | Description | Default
      */
     _nameChanged: function() {
       new Polymer.IronMeta({type: 'iconset', key: this.name, value: this});
-      this.async(function() {
-        this.fire('iron-iconset-added', this, {node: window});
-      });
     },
 
     /**
@@ -7759,15 +7138,13 @@ Custom property | Description | Default
      */
     _prepareSvgClone: function(sourceSvg, size) {
       if (sourceSvg) {
-        var content = sourceSvg.cloneNode(true),
-            svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-            viewBox = content.getAttribute('viewBox') || '0 0 ' + size + ' ' + size;
-        svg.setAttribute('viewBox', viewBox);
+        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('viewBox', ['0', '0', size, size].join(' '));
         svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
         // TODO(dfreedm): `pointer-events: none` works around https://crbug.com/370136
         // TODO(sjmiles): inline style may not be ideal, but avoids requiring a shadow-root
         svg.style.cssText = 'pointer-events: none; display: block; width: 100%; height: 100%;';
-        svg.appendChild(content).removeAttribute('id');
+        svg.appendChild(sourceSvg.cloneNode(true)).removeAttribute('id');
         return svg;
       }
       return null;
@@ -8619,7 +7996,7 @@ Examples:
      * the selected item or undefined if there is no selection.
      */
     get: function() {
-      return this.multi ? this.selection.slice() : this.selection[0];
+      return this.multi ? this.selection : this.selection[0];
     },
 
     /**
@@ -8705,39 +8082,14 @@ Examples:
   /** @polymerBehavior */
   Polymer.IronSelectableBehavior = {
 
-      /**
-       * Fired when iron-selector is activated (selected or deselected).
-       * It is fired before the selected items are changed.
-       * Cancel the event to abort selection.
-       *
-       * @event iron-activate
-       */
-
-      /**
-       * Fired when an item is selected
-       *
-       * @event iron-select
-       */
-
-      /**
-       * Fired when an item is deselected
-       *
-       * @event iron-deselect
-       */
-
-      /**
-       * Fired when the list of selectable items changes (e.g., items are
-       * added or removed). The detail of the event is a list of mutation
-       * records that describe what changed.
-       *
-       * @event iron-items-changed
-       */
-
     properties: {
 
       /**
        * If you want to use the attribute value of an element for `selected` instead of the index,
        * set this to the name of the attribute.
+       *
+       * @attribute attrForSelected
+       * @type {string}
        */
       attrForSelected: {
         type: String,
@@ -8746,6 +8098,9 @@ Examples:
 
       /**
        * Gets or sets the selected element. The default is to use the index of the item.
+       *
+       * @attribute selected
+       * @type {string}
        */
       selected: {
         type: String,
@@ -8754,6 +8109,9 @@ Examples:
 
       /**
        * Returns the currently selected item.
+       *
+       * @attribute selectedItem
+       * @type {Object}
        */
       selectedItem: {
         type: Object,
@@ -8765,6 +8123,10 @@ Examples:
        * The event that fires from items when they are selected. Selectable
        * will listen for this event from items and update the selection state.
        * Set to empty string to listen to no events.
+       *
+       * @attribute activateEvent
+       * @type {string}
+       * @default 'tap'
        */
       activateEvent: {
         type: String,
@@ -8773,13 +8135,19 @@ Examples:
       },
 
       /**
-       * This is a CSS selector string.  If this is set, only items that match the CSS selector
+       * This is a CSS selector sting.  If this is set, only items that matches the CSS selector
        * are selectable.
+       *
+       * @attribute selectable
+       * @type {string}
        */
       selectable: String,
 
       /**
        * The class to set on elements when selected.
+       *
+       * @attribute selectedClass
+       * @type {string}
        */
       selectedClass: {
         type: String,
@@ -8788,48 +8156,33 @@ Examples:
 
       /**
        * The attribute to set on elements when selected.
+       *
+       * @attribute selectedAttribute
+       * @type {string}
        */
       selectedAttribute: {
         type: String,
         value: null
-      },
-
-      /**
-       * The set of excluded elements where the key is the `localName`
-       * of the element that will be ignored from the item list.
-       *
-       * @type {object}
-       * @default {template: 1}
-       */
-      _excludedLocalNames: {
-        type: Object,
-        value: function() {
-          return {
-            'template': 1
-          };
-        }
       }
+
     },
 
     observers: [
       '_updateSelected(attrForSelected, selected)'
     ],
 
+    excludedLocalNames: {
+      'template': 1
+    },
+
     created: function() {
       this._bindFilterItem = this._filterItem.bind(this);
       this._selection = new Polymer.IronSelection(this._applySelection.bind(this));
-      // TODO(cdata): When polymer/polymer#2535 lands, we do not need to do this
-      // book keeping anymore:
-      this.__listeningForActivate = false;
     },
 
     attached: function() {
       this._observer = this._observeItems(this);
       this._contentObserver = this._observeContent(this);
-      if (!this.selectedItem && this.selected) {
-        this._updateSelected(this.attrForSelected,this.selected)
-      }
-      this._addListener(this.activateEvent);
     },
 
     detached: function() {
@@ -8896,17 +8249,13 @@ Examples:
     },
 
     _addListener: function(eventName) {
-      if (!this.isAttached || this.__listeningForActivate) {
-        return;
-      }
-
-      this.__listeningForActivate = true;
       this.listen(this, eventName, '_activateHandler');
     },
 
     _removeListener: function(eventName) {
-      this.unlisten(this, eventName, '_activateHandler');
-      this.__listeningForActivate = false;
+      // There is no unlisten yet...
+      // https://github.com/Polymer/polymer/issues/1639
+      //this.removeEventListener(eventName, this._bindActivateHandler);
     },
 
     _activateEventChanged: function(eventName, old) {
@@ -8923,7 +8272,7 @@ Examples:
     },
 
     _filterItem: function(node) {
-      return !this._excludedLocalNames[node.localName];
+      return !this.excludedLocalNames[node.localName];
     },
 
     _valueToItem: function(value) {
@@ -8982,15 +8331,7 @@ Examples:
 
     // observe items change under the given node.
     _observeItems: function(node) {
-      // TODO(cdata): Update this when we get distributed children changed.
-      var observer = new MutationObserver(function(mutations) {
-        // Let other interested parties know about the change so that
-        // we don't have to recreate mutation observers everywher.
-        this.fire('iron-items-changed', mutations, {
-          bubbles: false,
-          cancelable: false
-        });
-
+      var observer = new MutationObserver(function() {
         if (this.selected != null) {
           this._updateSelected();
         }
@@ -9003,6 +8344,11 @@ Examples:
     },
 
     _activateHandler: function(e) {
+      // TODO: remove this when https://github.com/Polymer/polymer/issues/1639 is fixed so we
+      // can just remove the old event listener.
+      if (e.type !== this.activateEvent) {
+        return;
+      }
       var t = e.target;
       var items = this.items;
       while (t && t != this) {
@@ -9107,7 +8453,6 @@ Example:
 
 </style>
 <!--
-Material design: [Cards](https://www.google.com/design/spec/components/cards.html)
 
 `paper-material` is a container that renders two shadows on top of each other to
 create the effect of a lifted piece of paper.
@@ -9119,6 +8464,7 @@ Example:
     </paper-material>
 
 @group Paper Elements
+@class paper-material
 @demo demo/index.html
 -->
 
@@ -9353,7 +8699,7 @@ Example:
      * `keys` property is pressed.
      *
      * @demo demo/index.html
-     * @polymerBehavior
+     * @polymerBehavior IronA11yKeysBehavior
      */
     Polymer.IronA11yKeysBehavior = {
       properties: {
@@ -9365,15 +8711,6 @@ Example:
           value: function() {
             return this;
           }
-        },
-
-        /**
-         * If true, this property will cause the implementing element to
-         * automatically stop propagation on any handled KeyboardEvents.
-         */
-        stopKeyboardEventPropagation: {
-          type: Boolean,
-          value: false
         },
 
         _boundKeyHandlers: {
@@ -9519,10 +8856,6 @@ Example:
       },
 
       _onKeyBindingEvent: function(keyBindings, event) {
-        if (this.stopKeyboardEventPropagation) {
-          event.stopPropagation();
-        }
-
         keyBindings.forEach(function(keyBinding) {
           var keyCombo = keyBinding[0];
           var handlerName = keyBinding[1];
@@ -9545,26 +8878,19 @@ Example:
   })();
 </script>
 <!--
-Material design: [Surface reaction](https://www.google.com/design/spec/animation/responsive-interaction.html#responsive-interaction-surface-reaction)
-
 `paper-ripple` provides a visual effect that other paper elements can
 use to simulate a rippling effect emanating from the point of contact.  The
 effect can be visualized as a concentric circle with motion.
 
 Example:
 
-    <div style="position:relative">
-      <paper-ripple></paper-ripple>
-    </div>
-
-Note, it's important that the parent container of the ripple be relative position, otherwise
-the ripple will emanate outside of the desired container.
+    <paper-ripple></paper-ripple>
 
 `paper-ripple` listens to "mousedown" and "mouseup" events so it would display ripple
 effect when touches on it.  You can also defeat the default behavior and
 manually route the down and up actions to the ripple element.  Note that it is
-important if you call `downAction()` you will have to make sure to call
-`upAction()` so that `paper-ripple` would end the animation loop.
+important if you call downAction() you will have to make sure to call
+upAction() so that `paper-ripple` would end the animation loop.
 
 Example:
 
@@ -9815,7 +9141,33 @@ Apply `circle` class to make the rippling effect within a circle.
       }
     },
 
+    _eventSourceIsPrimaryInput: function(event) {
+      event = event.detail.sourceEvent || event;
+
+      // Always true for non-mouse events....
+      if (!this._mouseEventRe.test(event.type)) {
+        return true;
+      }
+
+      // http://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/buttons
+      if ('buttons' in event) {
+        return event.buttons === 1;
+      }
+
+      // http://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/which
+      if (typeof event.which === 'number') {
+        return event.which < 2;
+      }
+
+      // http://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button
+      return event.button < 1;
+    },
+
     _downHandler: function(event) {
+      if (!this._eventSourceIsPrimaryInput(event)) {
+        return;
+      }
+
       this._setPointerDown(true);
       this._setPressed(true);
       this._setReceivedFocusFromKeyboard(false);
@@ -9897,152 +9249,24 @@ Apply `circle` class to make the rippling effect within a circle.
 </script>
 <script>
 
-  /**
-   * `Polymer.PaperRippleBehavior` dynamically implements a ripple
-   * when the element has focus via pointer or keyboard.
-   *
-   * NOTE: This behavior is intended to be used in conjunction with and after
-   * `Polymer.IronButtonState` and `Polymer.IronControlState`.
-   *
-   * @polymerBehavior Polymer.PaperRippleBehavior
-   */
-  Polymer.PaperRippleBehavior = {
-
-    properties: {
-      /**
-       * If true, the element will not produce a ripple effect when interacted
-       * with via the pointer.
-       */
-      noink: {
-        type: Boolean,
-        observer: '_noinkChanged'
-      },
-
-      /**
-       * @type {Element|undefined}
-       */
-      _rippleContainer: {
-        type: Object,
-      }
-    },
-
-    /**
-     * Ensures a `<paper-ripple>` element is available when the element is
-     * focused.
-     */
-    _buttonStateChanged: function() {
-      if (this.focused) {
-        this.ensureRipple();
-      }
-    },
-
-    /**
-     * In addition to the functionality provided in `IronButtonState`, ensures
-     * a ripple effect is created when the element is in a `pressed` state.
-     */
-    _downHandler: function(event) {
-      Polymer.IronButtonStateImpl._downHandler.call(this, event);
-      if (this.pressed) {
-        this.ensureRipple(event);
-      }
-    },
-
-    /**
-     * Ensures this element contains a ripple effect. For startup efficiency
-     * the ripple effect is dynamically on demand when needed.
-     * @param {!Event=} opt_triggeringEvent (optional) event that triggered the
-     * ripple.
-     */
-    ensureRipple: function(opt_triggeringEvent) {
-      if (!this.hasRipple()) {
-        this._ripple = this._createRipple();
-        this._ripple.noink = this.noink;
-        var rippleContainer = this._rippleContainer || this.root;
-        if (rippleContainer) {
-          Polymer.dom(rippleContainer).appendChild(this._ripple);
-        }
-        var domContainer = rippleContainer === this.shadyRoot ? this :
-          rippleContainer;
-        if (opt_triggeringEvent) {
-          var target = opt_triggeringEvent.target;
-          if (domContainer.contains(/** @type {Node} */(target))) {
-            this._ripple.uiDownAction(opt_triggeringEvent);
-          }
-        }
-      }
-    },
-
-    /**
-     * Returns the `<paper-ripple>` element used by this element to create
-     * ripple effects. The element's ripple is created on demand, when
-     * necessary, and calling this method will force the
-     * ripple to be created.
-     */
-    getRipple: function() {
-      this.ensureRipple();
-      return this._ripple;
-    },
-
-    /**
-     * Returns true if this element currently contains a ripple effect.
-     * @return {boolean}
-     */
-    hasRipple: function() {
-      return Boolean(this._ripple);
-    },
-
-    /**
-     * Create the element's ripple effect via creating a `<paper-ripple>`.
-     * Override this method to customize the ripple element.
-     * @return {!PaperRippleElement} Returns a `<paper-ripple>` element.
-     */
-    _createRipple: function() {
-      return /** @type {!PaperRippleElement} */ (
-          document.createElement('paper-ripple'));
-    },
-
-    _noinkChanged: function(noink) {
-      if (this.hasRipple()) {
-        this._ripple.noink = noink;
-      }
-    }
-
-  };
-
-</script>
-<script>
-
-  /** @polymerBehavior Polymer.PaperButtonBehavior */
+  /** @polymerBehavior */
   Polymer.PaperButtonBehaviorImpl = {
 
     properties: {
 
-      /**
-       * The z-depth of this element, from 0-5. Setting to 0 will remove the
-       * shadow, and each increasing number greater than 0 will be "deeper"
-       * than the last.
-       *
-       * @attribute elevation
-       * @type number
-       * @default 1
-       */
-      elevation: {
-        type: Number,
-        reflectToAttribute: true,
-        readOnly: true
+      _elevation: {
+        type: Number
       }
 
     },
 
     observers: [
-      '_calculateElevation(focused, disabled, active, pressed, receivedFocusFromKeyboard)',
-      '_computeKeyboardClass(receivedFocusFromKeyboard)'
+      '_calculateElevation(focused, disabled, active, pressed, receivedFocusFromKeyboard)'
     ],
 
     hostAttributes: {
       role: 'button',
-      tabindex: '0',
-      animated: true
+      tabindex: '0'
     },
 
     _calculateElevation: function() {
@@ -10054,52 +9278,21 @@ Apply `circle` class to make the rippling effect within a circle.
       } else if (this.receivedFocusFromKeyboard) {
         e = 3;
       }
-      this._setElevation(e);
-    },
-
-    _computeKeyboardClass: function(receivedFocusFromKeyboard) {
-      this.classList.toggle('keyboard-focus', receivedFocusFromKeyboard);
-    },
-
-    /**
-     * In addition to `IronButtonState` behavior, when space key goes down,
-     * create a ripple down effect.
-     *
-     * @param {!KeyboardEvent} event .
-     */
-    _spaceKeyDownHandler: function(event) {
-      Polymer.IronButtonStateImpl._spaceKeyDownHandler.call(this, event);
-      if (this.hasRipple()) {
-        this._ripple.uiDownAction();
-      }
-    },
-
-    /**
-     * In addition to `IronButtonState` behavior, when space key goes up,
-     * create a ripple up effect.
-     *
-     * @param {!KeyboardEvent} event .
-     */
-    _spaceKeyUpHandler: function(event) {
-      Polymer.IronButtonStateImpl._spaceKeyUpHandler.call(this, event);
-      if (this.hasRipple()) {
-        this._ripple.uiUpAction();
-      }
+      this._elevation = e;
     }
-
   };
 
   /** @polymerBehavior */
   Polymer.PaperButtonBehavior = [
     Polymer.IronButtonState,
     Polymer.IronControlState,
-    Polymer.PaperRippleBehavior,
     Polymer.PaperButtonBehaviorImpl
   ];
 
 </script>
 <!--
-Material design: [Buttons](https://www.google.com/design/spec/components/buttons.html)
+
+Material Design: <a href="http://www.google.com/design/spec/components/buttons.html">Buttons</a>
 
 `paper-button` is a button. When the user touches the button, a ripple effect emanates
 from the point of contact. It may be flat or raised. A raised button is styled with a
@@ -10107,10 +9300,10 @@ shadow.
 
 Example:
 
-    <paper-button>Flat button</paper-button>
-    <paper-button raised>Raised button</paper-button>
+    <paper-button>flat button</paper-button>
+    <paper-button raised>raised button</paper-button>
     <paper-button noink>No ripple effect</paper-button>
-    <paper-button toggles>Toggle-able button</paper-button>
+    <paper-button toggles>toggle-able button</paper-button>
 
 A button that has `toggles` true will remain `active` after being clicked (and
 will have an `active` attribute set). For more information, see the `Polymer.IronButtonState`
@@ -10128,32 +9321,29 @@ create a button with an icon and some text:
 
 Style the button with CSS as you would a normal DOM element.
 
-    paper-button.fancy {
-      background: green;
-      color: yellow;
-    }
-
-    paper-button.fancy:hover {
-      background: lime;
-    }
-
-    paper-button[disabled],
-    paper-button[toggles][active] {
-      background: red;
+    /* make #my-button green with yellow text */
+    #my-button {
+        background: green;
+        color: yellow;
     }
 
 By default, the ripple is the same color as the foreground at 25% opacity. You may
-customize the color using the `--paper-button-ink-color` custom property.
+customize the color using this selector:
+
+    /* make #my-button use a blue ripple instead of foreground color */
+    #my-button::shadow paper-ripple {
+      color: blue;
+    }
+
+The opacity of the ripple is not customizable via CSS.
 
 The following custom properties and mixins are also available for styling:
 
 Custom property | Description | Default
 ----------------|-------------|----------
-`--paper-button-ink-color` | Background color of the ripple | `Based on the button's color`
+`--paper-button-flat-focus-color` | Background color of a focused flat button | `--paper-grey-200`
 `--paper-button` | Mixin applied to the button | `{}`
-`--paper-button-disabled` | Mixin applied to the disabled button. Note that you can also use the `paper-button[disabled]` selector | `{}`
-`--paper-button-flat-keyboard-focus` | Mixin applied to a flat button after it's been focused using the keyboard | `{}`
-`--paper-button-raised-keyboard-focus` | Mixin applied to a raised button after it's been focused using the keyboard | `{}`
+`--paper-button-disabled` | Mixin applied to the disabled button | `{}`
 
 @demo demo/index.html
 -->
@@ -10266,30 +9456,6 @@ To change the panel container in different modes:
 @element paper-header-panel
 @demo demo/index.html
 @hero hero.svg
--->
-
-<!--
-The `<paper-styles>` component provides simple ways to use Material Design CSS styles
-in your application. The following imports are available:
-
-1. [color.html](https://github.com/PolymerElements/paper-styles/blob/master/color.html):
-a complete list of the colors defined in the Material Design [palette](https://www.google.com/design/spec/style/color.html)
-
-2. [default-theme.html](https://github.com/PolymerElements/paper-styles/blob/master/default-theme.html): text,
-background and accent colors that match the default Material Design theme
-
-3. [shadow.html](https://github.com/PolymerElements/paper-styles/blob/master/shadow.html): Material Design
-[elevation](https://www.google.com/design/spec/what-is-material/elevation-shadows.html) and shadow styles
-
-4. [typography.html](https://github.com/PolymerElements/paper-styles/blob/master/typography.html):
-Material Design [font](http://www.google.com/design/spec/style/typography.html#typography-styles) styles and sizes
-
-5. [demo-pages.html](https://github.com/PolymerElements/paper-styles/blob/master/demo-pages.html): generic styles
-used in the PolymerElements demo pages
-
-@group Iron Elements
-@pseudoElement paper-styles
-@demo demo/index.html
 -->
 
 <style is="custom-style">
@@ -10678,7 +9844,8 @@ used in the PolymerElements demo pages
       /* @apply(--paper-font-common-base) */
       font-family: 'Roboto', 'Noto', sans-serif;
       -webkit-font-smoothing: antialiased;
-
+      /* @apply(--paper-font-common-expensive-kerning); */
+      text-rendering: optimizeLegibility;
       /* @apply(--paper-font-common-nowrap); */
       white-space: nowrap;
       overflow: hidden;
@@ -10694,7 +9861,8 @@ used in the PolymerElements demo pages
       /* @apply(--paper-font-common-base) */
       font-family: 'Roboto', 'Noto', sans-serif;
       -webkit-font-smoothing: antialiased;
-
+      /* @apply(--paper-font-common-expensive-kerning); */
+      text-rendering: optimizeLegibility;
       /* @apply(--paper-font-common-nowrap); */
       white-space: nowrap;
       overflow: hidden;
@@ -10710,7 +9878,8 @@ used in the PolymerElements demo pages
       /* @apply(--paper-font-common-base) */
       font-family: 'Roboto', 'Noto', sans-serif;
       -webkit-font-smoothing: antialiased;
-
+      /* @apply(--paper-font-common-expensive-kerning); */
+      text-rendering: optimizeLegibility;
 
       font-size: 45px;
       font-weight: 400;
@@ -10722,7 +9891,8 @@ used in the PolymerElements demo pages
       /* @apply(--paper-font-common-base) */
       font-family: 'Roboto', 'Noto', sans-serif;
       -webkit-font-smoothing: antialiased;
-
+      /* @apply(--paper-font-common-expensive-kerning); */
+      text-rendering: optimizeLegibility;
 
       font-size: 34px;
       font-weight: 400;
@@ -10734,7 +9904,8 @@ used in the PolymerElements demo pages
       /* @apply(--paper-font-common-base) */
       font-family: 'Roboto', 'Noto', sans-serif;
       -webkit-font-smoothing: antialiased;
-
+      /* @apply(--paper-font-common-expensive-kerning); */
+      text-rendering: optimizeLegibility;
 
       font-size: 24px;
       font-weight: 400;
@@ -10746,7 +9917,8 @@ used in the PolymerElements demo pages
       /* @apply(--paper-font-common-base) */
       font-family: 'Roboto', 'Noto', sans-serif;
       -webkit-font-smoothing: antialiased;
-
+      /* @apply(--paper-font-common-expensive-kerning); */
+      text-rendering: optimizeLegibility;
       /* @apply(--paper-font-common-nowrap); */
       white-space: nowrap;
       overflow: hidden;
@@ -10761,7 +9933,8 @@ used in the PolymerElements demo pages
       /* @apply(--paper-font-common-base) */
       font-family: 'Roboto', 'Noto', sans-serif;
       -webkit-font-smoothing: antialiased;
-
+      /* @apply(--paper-font-common-expensive-kerning); */
+      text-rendering: optimizeLegibility;
 
       font-size: 16px;
       font-weight: 400;
@@ -10807,7 +9980,8 @@ used in the PolymerElements demo pages
       /* @apply(--paper-font-common-base) */
       font-family: 'Roboto', 'Noto', sans-serif;
       -webkit-font-smoothing: antialiased;
-
+      /* @apply(--paper-font-common-expensive-kerning); */
+      text-rendering: optimizeLegibility;
       /* @apply(--paper-font-common-nowrap); */
       white-space: nowrap;
       overflow: hidden;
@@ -10822,7 +9996,8 @@ used in the PolymerElements demo pages
       /* @apply(--paper-font-common-base) */
       font-family: 'Roboto', 'Noto', sans-serif;
       -webkit-font-smoothing: antialiased;
-
+      /* @apply(--paper-font-common-expensive-kerning); */
+      text-rendering: optimizeLegibility;
       /* @apply(--paper-font-common-nowrap); */
       white-space: nowrap;
       overflow: hidden;
@@ -10930,7 +10105,7 @@ be used as the label of the toolbar via `aria-labelledby`.
   /**
    * `Polymer.PaperInkyFocusBehavior` implements a ripple when the element has keyboard focus.
    *
-   * @polymerBehavior Polymer.PaperInkyFocusBehaviorImpl
+   * @polymerBehavior Polymer.PaperInkyFocusBehavior
    */
   Polymer.PaperInkyFocusBehaviorImpl = {
 
@@ -10939,20 +10114,11 @@ be used as the label of the toolbar via `aria-labelledby`.
     ],
 
     _focusedChanged: function(receivedFocusFromKeyboard) {
-      if (receivedFocusFromKeyboard) {
-        this.ensureRipple();
+      if (!this.$.ink) {
+        return;
       }
-      if (this.hasRipple()) {
-        this._ripple.holdDown = receivedFocusFromKeyboard;
-      }
-    },
 
-    _createRipple: function() {
-      var ripple = Polymer.PaperRippleBehavior._createRipple();
-      ripple.id = 'ink';
-      ripple.setAttribute('center', '');
-      ripple.classList.add('circle');
-      return ripple;
+      this.$.ink.holdDown = receivedFocusFromKeyboard;
     }
 
   };
@@ -10961,13 +10127,12 @@ be used as the label of the toolbar via `aria-labelledby`.
   Polymer.PaperInkyFocusBehavior = [
     Polymer.IronButtonState,
     Polymer.IronControlState,
-    Polymer.PaperRippleBehavior,
     Polymer.PaperInkyFocusBehaviorImpl
   ];
 
 </script>
 <!--
-Material design: [Icon toggles](https://www.google.com/design/spec/components/buttons.html#buttons-toggle-buttons)
+Material Design: <a href="http://www.google.com/design/spec/components/buttons.html">Buttons</a>
 
 `paper-icon-button` is a button with an image placed at the center. When the user touches
 the button, a ripple effect emanates from the center of the button.
@@ -10987,7 +10152,7 @@ Example:
     <paper-icon-button icon="favorite"></paper-icon-button>
     <paper-icon-button src="star.png"></paper-icon-button>
 
-### Styling
+###Styling
 
 Style the button with CSS as you would a normal DOM element. If you are using the icons
 provided by `iron-icons`, they will inherit the foreground color of the button.
@@ -10996,14 +10161,21 @@ provided by `iron-icons`, they will inherit the foreground color of the button.
     <paper-icon-button icon="favorite" style="color: red;"></paper-icon-button>
 
 By default, the ripple is the same color as the foreground at 25% opacity. You may
-customize the color using the `--paper-icon-button-ink-color` custom property.
+customize the color using this selector:
+
+    /* make #my-button use a blue ripple instead of foreground color */
+    #my-button::shadow #ripple {
+      color: blue;
+    }
+
+The opacity of the ripple is not customizable via CSS.
 
 The following custom properties and mixins are available for styling:
 
 Custom property | Description | Default
 ----------------|-------------|----------
-`--paper-icon-button-disabled-text` | The color of the disabled button | `--disabled-text-color`
-`--paper-icon-button-ink-color` | Selected/focus ripple color | `--primary-text-color`
+`--paper-icon-button-disabled-text` | The color of the disabled button | `--primary-text-color`
+`--paper-icon-button-ink-color` | Selected/focus ripple color | `--default-primary-color`
 `--paper-icon-button` | Mixin for a button | `{}`
 `--paper-icon-button-disabled` | Mixin for a disabled button | `{}`
 
@@ -11104,9 +10276,9 @@ Custom property | Description | Default
       var i = this.selectedValues.indexOf(value);
       var unselected = i < 0;
       if (unselected) {
-        this.push('selectedValues',value);
+        this.selectedValues.push(value);
       } else {
-        this.splice('selectedValues',i,1);
+        this.selectedValues.splice(i, 1);
       }
       this._selection.setItemSelected(this._valueToItem(value), unselected);
     }
@@ -11133,7 +10305,6 @@ Custom property | Description | Default
 
       /**
        * Returns the currently focused item.
-       * @type {?Object}
        */
       focusedItem: {
         observer: '_focusedItemChanged',
@@ -11162,58 +10333,17 @@ Custom property | Description | Default
 
     listeners: {
       'focus': '_onFocus',
-      'keydown': '_onKeydown',
-      'iron-items-changed': '_onIronItemsChanged'
+      'keydown': '_onKeydown'
     },
 
     keyBindings: {
       'up': '_onUpKey',
       'down': '_onDownKey',
       'esc': '_onEscKey',
+      'enter': '_onEnterKey',
       'shift+tab:keydown': '_onShiftTabDown'
     },
 
-    attached: function() {
-      this._resetTabindices();
-    },
-
-    /**
-     * Selects the given value. If the `multi` property is true, then the selected state of the
-     * `value` will be toggled; otherwise the `value` will be selected.
-     *
-     * @param {string} value the value to select.
-     */
-    select: function(value) {
-      if (this._defaultFocusAsync) {
-        this.cancelAsync(this._defaultFocusAsync);
-        this._defaultFocusAsync = null;
-      }
-      var item = this._valueToItem(value);
-      if (item && item.hasAttribute('disabled')) return;
-      this._setFocusedItem(item);
-      Polymer.IronMultiSelectableBehaviorImpl.select.apply(this, arguments);
-    },
-
-    /**
-     * Resets all tabindex attributes to the appropriate value based on the
-     * current selection state. The appropriate value is `0` (focusable) for
-     * the default selected item, and `-1` (not keyboard focusable) for all
-     * other items.
-     */
-    _resetTabindices: function() {
-      var selectedItem = this.multi ? (this.selectedItems && this.selectedItems[0]) : this.selectedItem;
-
-      this.items.forEach(function(item) {
-        item.setAttribute('tabindex', item === selectedItem ? '0' : '-1');
-      }, this);
-    },
-
-    /**
-     * Sets appropriate ARIA based on whether or not the menu is meant to be
-     * multi-selectable.
-     *
-     * @param {boolean} multi True if the menu should be multi-selectable.
-     */
     _updateMultiselectable: function(multi) {
       if (multi) {
         this.setAttribute('aria-multiselectable', 'true');
@@ -11222,104 +10352,7 @@ Custom property | Description | Default
       }
     },
 
-    /**
-     * Given a KeyboardEvent, this method will focus the appropriate item in the
-     * menu (if there is a relevant item, and it is possible to focus it).
-     *
-     * @param {KeyboardEvent} event A KeyboardEvent.
-     */
-    _focusWithKeyboardEvent: function(event) {
-      for (var i = 0, item; item = this.items[i]; i++) {
-        var attr = this.attrForItemTitle || 'textContent';
-        var title = item[attr] || item.getAttribute(attr);
-        if (title && title.trim().charAt(0).toLowerCase() === String.fromCharCode(event.keyCode).toLowerCase()) {
-          this._setFocusedItem(item);
-          break;
-        }
-      }
-    },
-
-    /**
-     * Focuses the previous item (relative to the currently focused item) in the
-     * menu.
-     */
-    _focusPrevious: function() {
-      var length = this.items.length;
-      var index = (Number(this.indexOf(this.focusedItem)) - 1 + length) % length;
-      this._setFocusedItem(this.items[index]);
-    },
-
-    /**
-     * Focuses the next item (relative to the currently focused item) in the
-     * menu.
-     */
-    _focusNext: function() {
-      var index = (Number(this.indexOf(this.focusedItem)) + 1) % this.items.length;
-      this._setFocusedItem(this.items[index]);
-    },
-
-    /**
-     * Mutates items in the menu based on provided selection details, so that
-     * all items correctly reflect selection state.
-     *
-     * @param {Element} item An item in the menu.
-     * @param {boolean} isSelected True if the item should be shown in a
-     * selected state, otherwise false.
-     */
-    _applySelection: function(item, isSelected) {
-      if (isSelected) {
-        item.setAttribute('aria-selected', 'true');
-      } else {
-        item.removeAttribute('aria-selected');
-      }
-
-      Polymer.IronSelectableBehavior._applySelection.apply(this, arguments);
-    },
-
-    /**
-     * Discretely updates tabindex values among menu items as the focused item
-     * changes.
-     *
-     * @param {Element} focusedItem The element that is currently focused.
-     * @param {?Element} old The last element that was considered focused, if
-     * applicable.
-     */
-    _focusedItemChanged: function(focusedItem, old) {
-      old && old.setAttribute('tabindex', '-1');
-      if (focusedItem) {
-        focusedItem.setAttribute('tabindex', '0');
-        focusedItem.focus();
-      }
-    },
-
-    /**
-     * A handler that responds to mutation changes related to the list of items
-     * in the menu.
-     *
-     * @param {CustomEvent} event An event containing mutation records as its
-     * detail.
-     */
-    _onIronItemsChanged: function(event) {
-      var mutations = event.detail;
-      var mutation;
-      var index;
-
-      for (index = 0; index < mutations.length; ++index) {
-        mutation = mutations[index];
-
-        if (mutation.addedNodes.length) {
-          this._resetTabindices();
-          break;
-        }
-      }
-    },
-
-    /**
-     * Handler that is called when a shift+tab keypress is detected by the menu.
-     *
-     * @param {CustomEvent} event A key combination event.
-     */
-    _onShiftTabDown: function(event) {
+    _onShiftTabDown: function() {
       var oldTabIndex;
 
       Polymer.IronMenuBehaviorImpl._shiftTabPressed = true;
@@ -11331,15 +10364,39 @@ Custom property | Description | Default
       this.async(function() {
         this.setAttribute('tabindex', oldTabIndex);
         Polymer.IronMenuBehaviorImpl._shiftTabPressed = false;
-      // NOTE(cdata): polymer/polymer#1305
+      // Note: polymer/polymer#1305
       }, 1);
     },
 
-    /**
-     * Handler that is called when the menu receives focus.
-     *
-     * @param {FocusEvent} event A focus event.
-     */
+    _applySelection: function(item, isSelected) {
+      if (isSelected) {
+        item.setAttribute('aria-selected', 'true');
+      } else {
+        item.removeAttribute('aria-selected');
+      }
+
+      Polymer.IronSelectableBehavior._applySelection.apply(this, arguments);
+    },
+
+    _focusedItemChanged: function(focusedItem, old) {
+      old && old.setAttribute('tabindex', '-1');
+      if (focusedItem) {
+        focusedItem.setAttribute('tabindex', '0');
+        focusedItem.focus();
+      }
+    },
+
+    select: function(value) {
+      if (this._defaultFocusAsync) {
+        this.cancelAsync(this._defaultFocusAsync);
+        this._defaultFocusAsync = null;
+      }
+      var item = this._valueToItem(value);
+      if (item && item.hasAttribute('disabled')) return;
+      this._setFocusedItem(item);
+      Polymer.IronMultiSelectableBehaviorImpl.select.apply(this, arguments);
+    },
+
     _onFocus: function(event) {
       if (Polymer.IronMenuBehaviorImpl._shiftTabPressed) {
         return;
@@ -11361,48 +10418,62 @@ Custom property | Description | Default
       }, 100);
     },
 
-    /**
-     * Handler that is called when the up key is pressed.
-     *
-     * @param {CustomEvent} event A key combination event.
-     */
-    _onUpKey: function(event) {
+    _onUpKey: function() {
       // up and down arrows moves the focus
       this._focusPrevious();
     },
 
-    /**
-     * Handler that is called when the down key is pressed.
-     *
-     * @param {CustomEvent} event A key combination event.
-     */
-    _onDownKey: function(event) {
+    _onDownKey: function() {
       this._focusNext();
     },
 
-    /**
-     * Handler that is called when the esc key is pressed.
-     *
-     * @param {CustomEvent} event A key combination event.
-     */
-    _onEscKey: function(event) {
+    _onEscKey: function() {
       // esc blurs the control
       this.focusedItem.blur();
     },
 
-    /**
-     * Handler that is called when a keydown event is detected.
-     *
-     * @param {KeyboardEvent} event A keyboard event.
-     */
+    _onEnterKey: function(event) {
+      // enter activates the item unless it is disabled
+      this._activateFocused(event.detail.keyboardEvent);
+    },
+
     _onKeydown: function(event) {
-      if (this.keyboardEventMatchesKeys(event, 'up down esc')) {
+      if (this.keyboardEventMatchesKeys(event, 'up down esc enter')) {
         return;
       }
 
       // all other keys focus the menu item starting with that character
       this._focusWithKeyboardEvent(event);
+    },
+
+    _focusWithKeyboardEvent: function(event) {
+      for (var i = 0, item; item = this.items[i]; i++) {
+        var attr = this.attrForItemTitle || 'textContent';
+        var title = item[attr] || item.getAttribute(attr);
+        if (title && title.trim().charAt(0).toLowerCase() === String.fromCharCode(event.keyCode).toLowerCase()) {
+          this._setFocusedItem(item);
+          break;
+        }
+      }
+    },
+
+    _activateFocused: function(event) {
+      if (!this.focusedItem.hasAttribute('disabled')) {
+        this._activateHandler(event);
+      }
+    },
+
+    _focusPrevious: function() {
+      var length = this.items.length;
+      var index = (Number(this.indexOf(this.focusedItem)) - 1 + length) % length;
+      this._setFocusedItem(this.items[index]);
+    },
+
+    _focusNext: function() {
+      var index = (Number(this.indexOf(this.focusedItem)) + 1) % this.items.length;
+      this._setFocusedItem(this.items[index]);
     }
+
   };
 
   Polymer.IronMenuBehaviorImpl._shiftTabPressed = false;
@@ -11434,13 +10505,11 @@ Custom property | Description | Default
     },
 
     _onUpKey: function(event) {
-      this.focusedItem.click();
-      event.detail.keyboardEvent.preventDefault();
+      this._activateFocused(event.detail.keyboardEvent);
     },
 
     _onDownKey: function(event) {
-      this.focusedItem.click();
-      event.detail.keyboardEvent.preventDefault();
+      this._activateFocused(event.detail.keyboardEvent);
     },
 
     _onLeftKey: function() {
@@ -11452,7 +10521,7 @@ Custom property | Description | Default
     },
 
     _onKeydown: function(event) {
-      if (this.keyboardEventMatchesKeys(event, 'up down left right esc')) {
+      if (this.keyboardEventMatchesKeys(event, 'up down left right esc enter')) {
         return;
       }
 
@@ -11494,8 +10563,6 @@ Custom property | Description | Default
 -->
 
 <!--
-Material design: [Tabs](https://www.google.com/design/spec/components/tabs.html)
-
 `paper-tabs` makes it easy to explore and switch between different views or functional aspects of
 an app, or to browse categorized data sets.
 
@@ -11835,7 +10902,7 @@ Dynamically loads the Google Maps JavaScript API, firing the `api-load` event wh
 
 Any number of components can use `<google-maps-api>` elements, and the library will only be loaded once.
 
-@summary Element wrapper around Google Maps API.
+@blurb Element wrapper around Google Maps API.
 
  */
   Polymer({
@@ -11869,6 +10936,15 @@ Any number of components can use `<google-maps-api>` elements, and the library w
       clientId: {
         type: String,
         value: ''
+      },
+
+      /**
+       * The libraries to load with this map. Defaults to "places". For more information
+       * see https://developers.google.com/maps/documentation/javascript/libraries.
+       */
+      libraries: {
+        type: String,
+        value: 'places'
       },
 
       /**
@@ -11914,15 +10990,13 @@ Any number of components can use `<google-maps-api>` elements, and the library w
       /** @private */
       libraryUrl: {
         type: String,
-        computed: '_computeUrl(mapsUrl, version, apiKey, clientId, language, signedIn)'
+        computed: '_computeUrl(mapsUrl, version, libraries, apiKey, clientId, language, signedIn)'
       }
     },
 
-    _computeUrl: function(mapsUrl, version, apiKey, clientId, language, signedIn) {
+    _computeUrl: function(mapsUrl, version, libraries, apiKey, clientId, language, signedIn) {
       var url = mapsUrl + '&v=' + version;
-
-      // Always load all Maps API libraries.
-      url += '&libraries=drawing,geometry,places,visualization';
+      url += "&libraries=" + libraries;
 
       if (apiKey && !clientId) {
         url += '&key=' + apiKey;
@@ -12127,8 +11201,7 @@ The `google-map` element renders a Google Map.
 
       vertical-align: middle;
 
-      fill: var(--iron-icon-fill-color, currentcolor);
-      stroke: var(--iron-icon-stroke-color, none);
+      fill: currentcolor;
 
       width: var(--iron-icon-width, 24px);
       height: var(--iron-icon-height, 24px);
@@ -12136,6 +11209,7 @@ The `google-map` element renders a Google Map.
   </style>
 
   <template>
+    <iron-meta id="meta" type="iconset"></iron-meta>
   </template>
 
   <script>
@@ -12172,15 +11246,7 @@ The `google-map` element renders a Google Map.
         src: {
           type: String,
           observer: '_srcChanged'
-        },
-
-        /**
-         * @type {!Polymer.IronMeta}
-         */
-        _meta: {
-          value: Polymer.Base.create('iron-meta', {type: 'iconset'})
         }
-
       },
 
       _DEFAULT_ICONSET: 'icons',
@@ -12204,13 +11270,12 @@ The `google-map` element renders a Google Map.
       _updateIcon: function() {
         if (this._usesIconset()) {
           if (this._iconsetName) {
-            this._iconset = /** @type {?Polymer.Iconset} */ (
-              this._meta.byKey(this._iconsetName));
+            this._iconset = this.$.meta.byKey(this._iconsetName);
             if (this._iconset) {
               this._iconset.applyIcon(this, this._iconName, this.theme);
-              this.unlisten(window, 'iron-iconset-added', '_updateIcon');
             } else {
-              this.listen(window, 'iron-iconset-added', '_updateIcon');
+              this._warn(this._logf('_updateIcon', 'could not find iconset `'
+                + this._iconsetName + '`, did you import the iconset?'));
             }
           }
         } else {
@@ -12843,38 +11908,37 @@ The `google-map` element renders a Google Map.
 
 </script>
 <dom-module id="paper-material" assetpath="../bower_components/paper-material/">
+  <style>
+    :host {
+      display: block;
+      position: relative;
+    }
+
+    :host([animated]) {
+      @apply(--shadow-transition);
+    }
+
+    :host([elevation="1"]) {
+      @apply(--shadow-elevation-2dp);
+    }
+
+    :host([elevation="2"]) {
+      @apply(--shadow-elevation-4dp);
+    }
+
+    :host([elevation="3"]) {
+      @apply(--shadow-elevation-6dp);
+    }
+
+    :host([elevation="4"]) {
+      @apply(--shadow-elevation-8dp);
+    }
+
+    :host([elevation="5"]) {
+      @apply(--shadow-elevation-16dp);
+    }
+  </style>
   <template>
-    <style>
-      :host {
-        display: block;
-        position: relative;
-      }
-
-      :host([animated]) {
-        @apply(--shadow-transition);
-      }
-
-      :host([elevation="1"]) {
-        @apply(--shadow-elevation-2dp);
-      }
-
-      :host([elevation="2"]) {
-        @apply(--shadow-elevation-4dp);
-      }
-
-      :host([elevation="3"]) {
-        @apply(--shadow-elevation-6dp);
-      }
-
-      :host([elevation="4"]) {
-        @apply(--shadow-elevation-8dp);
-      }
-
-      :host([elevation="5"]) {
-        @apply(--shadow-elevation-16dp);
-      }
-    </style>
-
     <content></content>
   </template>
 </dom-module>
@@ -12883,6 +11947,7 @@ The `google-map` element renders a Google Map.
     is: 'paper-material',
 
     properties: {
+
       /**
        * The z-depth of this element, from 0-5. Setting to 0 will remove the
        * shadow, and each increasing number greater than 0 will be "deeper"
@@ -12925,78 +11990,72 @@ The `google-map` element renders a Google Map.
   @param {Object} detail.node The animated node
   -->
 
+  <style>
+    :host {
+      display: block;
+      position: absolute;
+      border-radius: inherit;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    :host([animating]) {
+      /* This resolves a rendering issue in Chrome (as of 40) where the
+         ripple is not properly clipped by its parent (which may have
+         rounded corners). See: http://jsbin.com/temexa/4
+
+         Note: We only apply this style conditionally. Otherwise, the browser
+         will create a new compositing layer for every ripple element on the
+         page, and that would be bad. */
+      -webkit-transform: translate(0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    :host([noink]) {
+      pointer-events: none;
+    }
+
+    #background,
+    #waves,
+    .wave-container,
+    .wave {
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #background,
+    .wave {
+      opacity: 0;
+    }
+
+    #waves,
+    .wave {
+      overflow: hidden;
+    }
+
+    .wave-container,
+    .wave {
+      border-radius: 50%;
+    }
+
+    :host(.circle) #background,
+    :host(.circle) #waves {
+      border-radius: 50%;
+    }
+
+    :host(.circle) .wave-container {
+      overflow: hidden;
+    }
+
+  </style>
   <template>
-    <style>
-      :host {
-        display: block;
-        position: absolute;
-        border-radius: inherit;
-        overflow: hidden;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-
-        /* See PolymerElements/paper-behaviors/issues/34. On non-Chrome browsers,
-         * creating a node (with a position:absolute) in the middle of an event
-         * handler "interrupts" that event handler (which happens when the
-         * ripple is created on demand) */
-        pointer-events: none;
-      }
-
-      :host([animating]) {
-        /* This resolves a rendering issue in Chrome (as of 40) where the
-           ripple is not properly clipped by its parent (which may have
-           rounded corners). See: http://jsbin.com/temexa/4
-
-           Note: We only apply this style conditionally. Otherwise, the browser
-           will create a new compositing layer for every ripple element on the
-           page, and that would be bad. */
-        -webkit-transform: translate(0, 0);
-        transform: translate3d(0, 0, 0);
-      }
-
-      :host([noink]) {
-        pointer-events: none;
-      }
-
-      #background,
-      #waves,
-      .wave-container,
-      .wave {
-        pointer-events: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      #background,
-      .wave {
-        opacity: 0;
-      }
-
-      #waves,
-      .wave {
-        overflow: hidden;
-      }
-
-      .wave-container,
-      .wave {
-        border-radius: 50%;
-      }
-
-      :host(.circle) #background,
-      :host(.circle) #waves {
-        border-radius: 50%;
-      }
-
-      :host(.circle) .wave-container {
-        overflow: hidden;
-      }
-    </style>
-
     <div id="background"></div>
     <div id="waves"></div>
   </template>
@@ -13004,6 +12063,20 @@ The `google-map` element renders a Google Map.
 <script>
   (function() {
     var Utility = {
+      cssColorWithAlpha: function(cssColor, alpha) {
+        var parts = cssColor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+
+        if (typeof alpha == 'undefined') {
+          alpha = 1;
+        }
+
+        if (!parts) {
+          return 'rgba(255, 255, 255, ' + alpha + ')';
+        }
+
+        return 'rgba(' + parts[1] + ', ' + parts[2] + ', ' + parts[3] + ', ' + alpha + ')';
+      },
+
       distance: function(x1, y1, x2, y2) {
         var xDelta = (x1 - x2);
         var yDelta = (y1 - y2);
@@ -13011,8 +12084,13 @@ The `google-map` element renders a Google Map.
         return Math.sqrt(xDelta * xDelta + yDelta * yDelta);
       },
 
-      now: window.performance && window.performance.now ?
-          window.performance.now.bind(window.performance) : Date.now
+      now: (function() {
+        if (window.performance && window.performance.now) {
+          return window.performance.now.bind(window.performance);
+        }
+
+        return Date.now;
+      })()
     };
 
     /**
@@ -13380,17 +12458,6 @@ The `google-map` element renders a Google Map.
           observer: '_holdDownChanged'
         },
 
-        /**
-         * If true, the ripple will not generate a ripple effect
-         * via pointer interaction.
-         * Calling ripple's imperative api like `simulatedRipple` will
-         * still generate the ripple effect.
-         */
-        noink: {
-          type: Boolean,
-          value: false
-        },
-
         _animating: {
           type: Boolean
         },
@@ -13402,10 +12469,6 @@ The `google-map` element renders a Google Map.
           }
         }
       },
-
-      observers: [
-        '_noinkChanged(noink, isAttached)'
-      ],
 
       get target () {
         var ownerRoot = Polymer.dom(this).getOwnerRoot();
@@ -13427,13 +12490,12 @@ The `google-map` element renders a Google Map.
       },
 
       attached: function() {
-        this.listen(this.target, 'up', 'uiUpAction');
-        this.listen(this.target, 'down', 'uiDownAction');
-      },
+        this.listen(this.target, 'up', 'upAction');
+        this.listen(this.target, 'down', 'downAction');
 
-      detached: function() {
-        this.unlisten(this.target, 'up', 'uiUpAction');
-        this.unlisten(this.target, 'down', 'uiDownAction');
+        if (!this.target.hasAttribute('noink')) {
+          this.keyEventTarget = this.target;
+        }
       },
 
       get shouldKeepAnimating () {
@@ -13455,22 +12517,7 @@ The `google-map` element renders a Google Map.
         }, 1);
       },
 
-      /**
-       * Provokes a ripple down effect via a UI event,
-       * respecting the `noink` property.
-       * @param {Event=} event
-       */
-      uiDownAction: function(event) {
-        if (!this.noink) {
-          this.downAction(event);
-        }
-      },
-
-      /**
-       * Provokes a ripple down effect via a UI event,
-       * *not* respecting the `noink` property.
-       * @param {Event=} event
-       */
+      /** @param {Event=} event */
       downAction: function(event) {
         if (this.holdDown && this.ripples.length > 0) {
           return;
@@ -13485,22 +12532,7 @@ The `google-map` element renders a Google Map.
         }
       },
 
-      /**
-       * Provokes a ripple up effect via a UI event,
-       * respecting the `noink` property.
-       * @param {Event=} event
-       */
-      uiUpAction: function(event) {
-        if (!this.noink) {
-          this.upAction(event);
-        }
-      },
-
-      /**
-       * Provokes a ripple up effect via a UI event,
-       * *not* respecting the `noink` property.
-       * @param {Event=} event
-       */
+      /** @param {Event=} event */
       upAction: function(event) {
         if (this.holdDown) {
           return;
@@ -13573,99 +12605,100 @@ The `google-map` element renders a Google Map.
       },
 
       _onEnterKeydown: function() {
-        this.uiDownAction();
-        this.async(this.uiUpAction, 1);
+        this.downAction();
+        this.async(this.upAction, 1);
       },
 
       _onSpaceKeydown: function() {
-        this.uiDownAction();
+        this.downAction();
       },
 
       _onSpaceKeyup: function() {
-        this.uiUpAction();
+        this.upAction();
       },
 
-      // note: holdDown does not respect noink since it can be a focus based
-      // effect.
-      _holdDownChanged: function(newVal, oldVal) {
-        if (oldVal === undefined) {
-          return;
-        }
-        if (newVal) {
+      _holdDownChanged: function(holdDown) {
+        if (holdDown) {
           this.downAction();
         } else {
           this.upAction();
-        }
-      },
-
-      _noinkChanged: function(noink, attached) {
-        if (attached) {
-          this.keyEventTarget = noink ? this : this.target;
         }
       }
     });
   })();
 </script>
 <dom-module id="paper-button" assetpath="../bower_components/paper-button/">
-  <template strip-whitespace="">
 
-    <style include="paper-material">
-      :host {
-        display: inline-block;
-        position: relative;
-        box-sizing: border-box;
-        min-width: 5.14em;
-        margin: 0 0.29em;
-        background: transparent;
-        text-align: center;
-        font: inherit;
-        text-transform: uppercase;
-        outline-width: 0;
-        border-radius: 3px;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        -webkit-user-select: none;
-        user-select: none;
-        cursor: pointer;
-        z-index: 0;
-        padding: 0.7em 0.57em;
+  <style>
 
-        @apply(--paper-button);
-      }
+    :host {
+      display: inline-block;
+      position: relative;
+      box-sizing: border-box;
+      min-width: 5.14em;
+      margin: 0 0.29em;
+      background: transparent;
+      text-align: center;
+      font: inherit;
+      text-transform: uppercase;
+      outline: none;
+      border-radius: 3px;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
+      cursor: pointer;
+      z-index: 0;
 
-      :host([raised].keyboard-focus) {
-        font-weight: bold;
-        @apply(--paper-button-raised-keyboard-focus);
-      }
+      @apply(--paper-button);
+    }
 
-      :host(:not([raised]).keyboard-focus) {
-        font-weight: bold;
-        @apply(--paper-button-flat-keyboard-focus);
-      }
+    .keyboard-focus {
+      font-weight: bold;
+    }
 
-      :host([disabled]) {
-        background: #eaeaea;
-        color: #a8a8a8;
-        cursor: auto;
-        pointer-events: none;
+    :host([disabled]) {
+      background: #eaeaea;
+      color: #a8a8a8;
+      cursor: auto;
+      pointer-events: none;
 
-        @apply(--paper-button-disabled);
-      }
+      @apply(--paper-button-disabled);
+    }
 
-      paper-ripple {
-        color: var(--paper-button-ink-color);
-      }
+    :host([noink]) paper-ripple {
+      display: none;
+    }
 
-      :host > ::content * {
-        text-transform: inherit;
-      }
-    </style>
-    <content></content>
+    paper-material {
+      border-radius: inherit;
+    }
+
+    .content > ::content * {
+      text-transform: inherit;
+    }
+
+    .content {
+      padding: 0.7em 0.57em
+    }
+  </style>
+
+  <template>
+
+    <paper-ripple></paper-ripple>
+
+    <paper-material class$="[[_computeContentClass(receivedFocusFromKeyboard)]]" elevation="[[_elevation]]" animated="">
+      <content></content>
+    </paper-material>
+
   </template>
+
 </dom-module>
 
 <script>
+
   Polymer({
+
     is: 'paper-button',
 
     behaviors: [
@@ -13673,6 +12706,7 @@ The `google-map` element renders a Google Map.
     ],
 
     properties: {
+
       /**
        * If true, the button should be styled with a shadow.
        */
@@ -13686,12 +12720,21 @@ The `google-map` element renders a Google Map.
 
     _calculateElevation: function() {
       if (!this.raised) {
-        this.elevation = 0;
+        this._elevation = 0;
       } else {
         Polymer.PaperButtonBehaviorImpl._calculateElevation.apply(this);
       }
+    },
+
+    _computeContentClass: function(receivedFocusFromKeyboard) {
+      var className = 'content ';
+      if (receivedFocusFromKeyboard) {
+        className += ' keyboard-focus';
+      }
+      return className;
     }
   });
+
 </script>
 <dom-module id="paper-header-panel" assetpath="../bower_components/paper-header-panel/">
 
@@ -14390,101 +13433,91 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 </script>
 <dom-module id="paper-icon-button" assetpath="../bower_components/paper-icon-button/">
-  <template strip-whitespace="">
-    <style>
-      :host {
-        display: inline-block;
-        position: relative;
-        padding: 8px;
-        outline: none;
-        -webkit-tap-highlight-color: rgba(0,0,0,0);
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        cursor: pointer;
-        z-index: 0;
-        line-height: 1;
-        
-        width: 40px;
-        height: 40px;
+  <style>
 
-        /* Because of polymer/2558, this style has lower specificity than * */
-        box-sizing: border-box !important;
-        @apply(--paper-icon-button);
-      }
+    :host {
+      display: inline-block;
+      position: relative;
+      padding: 8px;
+      outline: none;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      cursor: pointer;
+      z-index: 0;
 
-      :host #ink {
-        color: var(--paper-icon-button-ink-color, --primary-text-color);
-        opacity: 0.6;
-      }
+      @apply(--paper-icon-button);
+    }
 
-      :host([disabled]) {
-        color: var(--paper-icon-button-disabled-text, --disabled-text-color);
-        pointer-events: none;
-        cursor: auto;
-        @apply(--paper-icon-button-disabled);
-      }
+    :host #ink {
+      color: var(--paper-icon-button-ink-color, --primary-text-color);
+      opacity: 0.6;
+    }
 
-      iron-icon {
-        --iron-icon-width: 100%;
-        --iron-icon-height: 100%;
-      }
-    </style>
+    :host([disabled]) {
+      color: var(--paper-icon-button-disabled-text, --disabled-text-color);
+      pointer-events: none;
+      cursor: auto;
+      @apply(--paper-icon-button-disabled);
+    }
+  </style>
+  <template>
+    <paper-ripple id="ink" class="circle" center=""></paper-ripple>
     <iron-icon id="icon" src="[[src]]" icon="[[icon]]" alt$="[[alt]]"></iron-icon>
   </template>
-
-  <script>
-    Polymer({
-      is: 'paper-icon-button',
-
-      hostAttributes: {
-        role: 'button',
-        tabindex: '0'
-      },
-
-      behaviors: [
-        Polymer.PaperInkyFocusBehavior
-      ],
-
-      properties: {
-        /**
-         * The URL of an image for the icon. If the src property is specified,
-         * the icon property should not be.
-         */
-        src: {
-          type: String
-        },
-
-        /**
-         * Specifies the icon name or index in the set of icons available in
-         * the icon's icon set. If the icon property is specified,
-         * the src property should not be.
-         */
-        icon: {
-          type: String
-        },
-
-        /**
-         * Specifies the alternate text for the button, for accessibility.
-         */
-        alt: {
-          type: String,
-          observer: "_altChanged"
-        }
-      },
-
-      _altChanged: function(newValue, oldValue) {
-        var label = this.getAttribute('aria-label');
-
-        // Don't stomp over a user-set aria-label.
-        if (!label || oldValue == label) {
-          this.setAttribute('aria-label', newValue);
-        }
-      }
-    });
-  </script>
 </dom-module>
+<script>
+  Polymer({
+    is: 'paper-icon-button',
+
+    hostAttributes: {
+      role: 'button',
+      tabindex: '0'
+    },
+
+    behaviors: [
+      Polymer.PaperInkyFocusBehavior
+    ],
+
+    properties: {
+      /**
+       * The URL of an image for the icon. If the src property is specified,
+       * the icon property should not be.
+       */
+      src: {
+        type: String
+      },
+
+      /**
+       * Specifies the icon name or index in the set of icons available in
+       * the icon's icon set. If the icon property is specified,
+       * the src property should not be.
+       */
+      icon: {
+        type: String
+      },
+
+      /**
+       * Specifies the alternate text for the button, for accessibility.
+       */
+      alt: {
+        type: String,
+        observer: "_altChanged"
+      }
+    },
+
+    _altChanged: function(newValue, oldValue) {
+      var label = this.getAttribute('aria-label');
+
+      // Don't stomp over a user-set aria-label.
+      if (!label || oldValue == label) {
+        this.setAttribute('aria-label', newValue);
+      }
+    }
+  });
+</script>
 <iron-iconset-svg name="paper-tabs" size="24">
 <svg><defs>
 <g id="chevron-left"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path></g>
@@ -14657,7 +13690,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     .not-visible {
       opacity: 0;
-      cursor: default;
     }
 
     paper-icon-button {
@@ -14705,9 +13737,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <template>
 
-    <paper-icon-button icon="paper-tabs:chevron-left" class$="[[_computeScrollButtonClass(_leftHidden, scrollable, hideScrollButtons)]]" on-up="_onScrollButtonUp" on-down="_onLeftScrollButtonDown" tabindex="-1"></paper-icon-button>
+    <paper-icon-button icon="paper-tabs:chevron-left" class$="[[_computeScrollButtonClass(_leftHidden, scrollable, hideScrollButtons)]]" on-up="_onScrollButtonUp" on-down="_onLeftScrollButtonDown"></paper-icon-button>
 
-    <div id="tabsContainer" class="flex" on-track="_scroll" on-down="_down">
+    <div id="tabsContainer" class="flex" on-scroll="_scroll">
 
       <div id="tabsContent" class$="[[_computeTabsContentClass(scrollable)]]">
 
@@ -14719,7 +13751,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     </div>
 
-    <paper-icon-button icon="paper-tabs:chevron-right" class$="[[_computeScrollButtonClass(_rightHidden, scrollable, hideScrollButtons)]]" on-up="_onScrollButtonUp" on-down="_onRightScrollButtonDown" tabindex="-1"></paper-icon-button>
+    <paper-icon-button icon="paper-tabs:chevron-right" class$="[[_computeScrollButtonClass(_rightHidden, scrollable, hideScrollButtons)]]" on-up="_onScrollButtonUp" on-down="_onRightScrollButtonDown"></paper-icon-button>
 
   </template>
 
@@ -14842,10 +13874,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       'iron-deselect': '_onIronDeselect'
     },
 
-    ready: function() {
-      this.setScrollDirection('y', this.$.tabsContainer);
-    },
-
     _computeScrollButtonClass: function(hideThisButton, scrollable, hideScrollButtons) {
       if (!scrollable || hideScrollButtons) {
         return 'hidden';
@@ -14900,43 +13928,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       );
     },
 
+    _scroll: function() {
+      var scrollLeft;
 
-    _scroll: function(e, detail) {
       if (!this.scrollable) {
         return;
       }
 
-      var ddx = (detail && -detail.ddx) || 0;
-      this._affectScroll(ddx);
-    },
-
-    _down: function(e) {
-      // go one beat async to defeat IronMenuBehavior
-      // autorefocus-on-no-selection timeout
-      this.async(function() {
-        if (this._defaultFocusAsync) {
-          this.cancelAsync(this._defaultFocusAsync);
-          this._defaultFocusAsync = null;
-        }
-      }, 1);
-    },
-
-    _affectScroll: function(dx) {
-      this.$.tabsContainer.scrollLeft += dx;
-
-      var scrollLeft = this.$.tabsContainer.scrollLeft;
+      scrollLeft = this.$.tabsContainer.scrollLeft;
 
       this._leftHidden = scrollLeft === 0;
       this._rightHidden = scrollLeft === this._tabContainerScrollSize;
     },
 
     _onLeftScrollButtonDown: function() {
-      this._scrollToLeft();
       this._holdJob = setInterval(this._scrollToLeft.bind(this), this._holdDelay);
     },
 
     _onRightScrollButtonDown: function() {
-      this._scrollToRight();
       this._holdJob = setInterval(this._scrollToRight.bind(this), this._holdDelay);
     },
 
@@ -14946,11 +13955,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
 
     _scrollToLeft: function() {
-      this._affectScroll(-this._step);
+      this.$.tabsContainer.scrollLeft -= this._step;
     },
 
     _scrollToRight: function() {
-      this._affectScroll(this._step);
+      this.$.tabsContainer.scrollLeft += this._step;
     },
 
     _tabChanged: function(tab, old) {

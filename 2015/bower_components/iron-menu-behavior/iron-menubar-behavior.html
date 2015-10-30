@@ -30,13 +30,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
 
     _onUpKey: function(event) {
-      this.focusedItem.click();
-      event.detail.keyboardEvent.preventDefault();
+      this._activateFocused(event.detail.keyboardEvent);
     },
 
     _onDownKey: function(event) {
-      this.focusedItem.click();
-      event.detail.keyboardEvent.preventDefault();
+      this._activateFocused(event.detail.keyboardEvent);
     },
 
     _onLeftKey: function() {
@@ -48,7 +46,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
 
     _onKeydown: function(event) {
-      if (this.keyboardEventMatchesKeys(event, 'up down left right esc')) {
+      if (this.keyboardEventMatchesKeys(event, 'up down left right esc enter')) {
         return;
       }
 

@@ -1,6 +1,6 @@
 {
   "name": "iron-menu-behavior",
-  "version": "1.0.5",
+  "version": "1.0.2",
   "description": "Provides accessible menu behavior",
   "authors": "The Polymer Authors",
   "keywords": [
@@ -9,10 +9,7 @@
     "behavior",
     "menu"
   ],
-  "main": [
-    "iron-menu-behavior.html",
-    "iron-menubar-behavior.html"
-  ],
+  "main": "iron-menu-behavior.html",
   "private": true,
   "repository": {
     "type": "git",

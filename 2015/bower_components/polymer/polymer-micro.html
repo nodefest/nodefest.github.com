@@ -20,7 +20,7 @@ addEventListener('DOMContentLoaded', resolve);
 }
 }
 }());
-window.Polymer = {
+Polymer = {
 Settings: function () {
 var user = window.Polymer || {};
 location.search.slice(1).split('&').forEach(function (o) {
@@ -48,21 +48,15 @@ useNativeCustomElements: useNativeCustomElements
 (function () {
 var userPolymer = window.Polymer;
 window.Polymer = function (prototype) {
-if (typeof prototype === 'function') {
-prototype = prototype.prototype;
-}
-if (!prototype) {
-prototype = {};
-}
-var factory = desugar(prototype);
-prototype = factory.prototype;
+var ctor = desugar(prototype);
+prototype = ctor.prototype;
 var options = { prototype: prototype };
 if (prototype.extends) {
 options.extends = prototype.extends;
 }
 Polymer.telemetry._registrate(prototype);
 document.registerElement(prototype.is, options);
-return factory;
+return ctor;
 };
 var desugar = function (prototype) {
 var base = Polymer.Base;
@@ -139,8 +133,6 @@ _addFeature: function (feature) {
 this.extend(this, feature);
 },
 registerCallback: function () {
-this._desugarBehaviors();
-this._doBehavior('beforeRegister');
 this._registerFeatures();
 this._doBehavior('registered');
 },
@@ -246,7 +238,6 @@ lcModules[id.toLowerCase()] = this;
 }
 },
 import: function (id, selector) {
-if (id) {
 var m = findModule(id);
 if (!m) {
 forceDocumentUpgrade();
@@ -257,15 +248,15 @@ m = m.querySelector(selector);
 }
 return m;
 }
-}
 });
 var cePolyfill = window.CustomElements && !CustomElements.useNative;
 document.registerElement('dom-module', DomModule);
 function forceDocumentUpgrade() {
 if (cePolyfill) {
 var script = document._currentScript || document.currentScript;
-var doc = script && script.ownerDocument || document;
-if (doc) {
+var doc = script && script.ownerDocument;
+if (doc && !doc.__customElementsForceUpgraded) {
+doc.__customElementsForceUpgraded = true;
 CustomElements.upgradeAll(doc);
 }
 }
@@ -287,17 +278,11 @@ this.is = this.is.toLowerCase();
 });
 Polymer.Base._addFeature({
 behaviors: [],
-_desugarBehaviors: function () {
+_prepBehaviors: function () {
 if (this.behaviors.length) {
-this.behaviors = this._desugarSomeBehaviors(this.behaviors);
+this.behaviors = this._flattenBehaviorsList(this.behaviors);
 }
-},
-_desugarSomeBehaviors: function (behaviors) {
-behaviors = this._flattenBehaviorsList(behaviors);
-for (var i = behaviors.length - 1; i >= 0; i--) {
-this._mixinBehavior(behaviors[i]);
-}
-return behaviors;
+this._prepAllBehaviors(this.behaviors);
 },
 _flattenBehaviorsList: function (behaviors) {
 var flat = [];
@@ -311,6 +296,15 @@ this._warn(this._logf('_flattenBehaviorsList', 'behavior is null, check for miss
 }
 }, this);
 return flat;
+},
+_prepAllBehaviors: function (behaviors) {
+for (var i = behaviors.length - 1; i >= 0; i--) {
+this._mixinBehavior(behaviors[i]);
+}
+for (var i = 0, l = behaviors.length; i < l; i++) {
+this._prepBehavior(behaviors[i]);
+}
+this._prepBehavior(this);
 },
 _mixinBehavior: function (b) {
 Object.getOwnPropertyNames(b).forEach(function (n) {
@@ -334,15 +328,6 @@ this.copyOwnProperty(n, b, this);
 break;
 }
 }, this);
-},
-_prepBehaviors: function () {
-this._prepFlattenedBehaviors(this.behaviors);
-},
-_prepFlattenedBehaviors: function (behaviors) {
-for (var i = 0, l = behaviors.length; i < l; i++) {
-this._prepBehavior(behaviors[i]);
-}
-this._prepBehavior(this);
 },
 _doBehavior: function (name, args) {
 this.behaviors.forEach(function (b) {
@@ -576,7 +561,7 @@ debouncer.stop();
 }
 }
 });
-Polymer.version = '1.2.0';
+Polymer.version = '1.1.1';
 Polymer.Base._addFeature({
 _registerFeatures: function () {
 this._prepIs();

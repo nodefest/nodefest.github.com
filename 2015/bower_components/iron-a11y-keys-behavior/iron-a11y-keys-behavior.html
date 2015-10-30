@@ -241,7 +241,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
      * `keys` property is pressed.
      *
      * @demo demo/index.html
-     * @polymerBehavior
+     * @polymerBehavior IronA11yKeysBehavior
      */
     Polymer.IronA11yKeysBehavior = {
       properties: {
@@ -253,15 +253,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           value: function() {
             return this;
           }
-        },
-
-        /**
-         * If true, this property will cause the implementing element to
-         * automatically stop propagation on any handled KeyboardEvents.
-         */
-        stopKeyboardEventPropagation: {
-          type: Boolean,
-          value: false
         },
 
         _boundKeyHandlers: {
@@ -407,10 +398,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
 
       _onKeyBindingEvent: function(keyBindings, event) {
-        if (this.stopKeyboardEventPropagation) {
-          event.stopPropagation();
-        }
-
         keyBindings.forEach(function(keyBinding) {
           var keyCombo = keyBinding[0];
           var handlerName = keyBinding[1];
