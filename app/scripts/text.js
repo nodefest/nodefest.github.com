@@ -357,7 +357,7 @@
           ]
         },
         s12: {
-          thumb: './images/speakers/qsona.png',
+          thumb: './images/speakers/qsona.jpg',
           title: 'Node.jsでのゲームサーバ開発 愛すべきバッドノウハウ3選',
           speakers: [
             {
@@ -484,7 +484,7 @@
         {
           name: '森 久太郎',
           twitter: 'qsona',
-          thumb: './images/speakers/qsona.png',
+          thumb: './images/speakers/qsona.jpg',
           desc: '株式会社サイバーエージェント所属。<br>Node.jsでソーシャルゲームのサーバサイド開発をしており、Node.jsのプログラミングスタイルについて日々考え工夫しています。<br>趣味は将棋と音楽ゲーム。二人の子育てに奮闘中。'
         }
       ],
