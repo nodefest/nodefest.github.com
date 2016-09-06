@@ -1,9 +1,10 @@
-var connect = require('connect');
+'use strict';
+const connect     = require('connect');
+const serveStatic = require('serve-static');
 
-var port = process.env.PORT || 3000;
-connect(
-  connect.basicAuth('node', 'fest2011'),
-  connect.static(__dirname)
-).listen(port);
+const app = connect();
+const port = process.env.PORT || 3000;
 
+app.use(serveStatic(__dirname));
+app.listen(port);
 console.log('Server running port %d', port);
