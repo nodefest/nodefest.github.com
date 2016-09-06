@@ -1,3 +1,5 @@
+@import "libs/reset";
+
 // Color
 $color-greymist: #BCBBA9;
 $color-deepnight: #00111C;
@@ -205,7 +207,7 @@ a {
     bottom: 0;
     right: 0;
     z-index: 1;
-    background-image: url('../img/texture2.png');
+    background-image: url('../img/texture.png');
     background-size: auto 22px;
     opacity: 0.25;
   }
@@ -875,6 +877,8 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
   &.-papers {
     background-image: url('../img/pic-cfp.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     &::after {
       background-color: rgba(darken($color-grass,15%),0.9);
       @supports (mix-blend-mode: multiply) {
@@ -885,6 +889,8 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
   &.-sponsors {
     background-image: url('../img/pic-cfs.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     &::after {
       background-color: rgba(darken($color-sea,15%), 0.9);
       @supports (mix-blend-mode: multiply) {
