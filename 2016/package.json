@@ -1,0 +1,36 @@
+{
+  "name": "nodeconf2016",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.13.2",
+    "browser-sync": "~2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "~3.1.0",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "~2.6.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-csscomb": "~3.0.7",
+    "gulp-hologram": "^1.2.0",
+    "gulp-imagemin": "~3.0.2",
+    "gulp-merge-media-queries": "~0.2.1",
+    "gulp-notify": "~2.2.0",
+    "gulp-plumber": "~1.1.0",
+    "gulp-postcss": "~6.1.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-stylelint": "~3.0.0",
+    "gulp-uglify": "~2.0.0",
+    "gulp-util": "~3.0.7"
+  }
+}
