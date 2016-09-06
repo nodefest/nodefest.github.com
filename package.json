@@ -1,8 +1,25 @@
 {
-    "name": "nodefest"
-  , "version": "0.0.1"
-  , "dependencies": {
-      "connect": "1.7.1"
-    , "socket.io": "*"
+  "name": "nodefest.github.com",
+  "version": "1.0.0",
+  "description": "Node学園祭公式サイトのリポジトリです。",
+  "main": "app.js",
+  "scripts": {
+    "server": "node ./app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodefest/nodefest.github.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodefest/nodefest.github.com/issues"
+  },
+  "homepage": "https://github.com/nodefest/nodefest.github.com#readme",
+  "devDependencies": {
+    "connect": "^3.4.1",
+    "serve-static": "^1.11.1"
   }
 }
