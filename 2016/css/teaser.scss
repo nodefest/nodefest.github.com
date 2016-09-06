@@ -434,9 +434,6 @@ $hex-image: $hex-canvas * $hex-ratio;
     .Hex {
       width: $hex-speakers-canvas + px;
     }
-    .Hex-outer {
-      padding-bottom: percentage($hex-ratio);
-    }
     .Hex-image {
       width: $hex-speakers-image + px;
       height: $hex-speakers-image + px;
@@ -448,9 +445,6 @@ $hex-image: $hex-canvas * $hex-ratio;
     $hex-speakers-image: $hex-speakers-canvas * $hex-ratio;
     .Hex {
       width: $hex-speakers-canvas + px;
-    }
-    .Hex-outer {
-      padding-bottom: percentage($hex-ratio);
     }
     .Hex-image {
       width: $hex-speakers-image + px;
@@ -494,7 +488,7 @@ $hex-image: $hex-canvas * $hex-ratio;
       }
     }
   }
-  @media (min-width: 590px) { // Minor Breakpoint
+  @media (min-width: 591px) { // Minor Breakpoint
     > * {
       &:nth-child(3n+1),
       &:nth-child(3n+3) {
@@ -506,7 +500,7 @@ $hex-image: $hex-canvas * $hex-ratio;
       }
     }
   }
-  @include over-md {
+  @media (min-width: 772px) {
     > * {
       &:nth-child(odd) {
         transform: translate(0%);
@@ -519,7 +513,7 @@ $hex-image: $hex-canvas * $hex-ratio;
       }
     }
   }
-  @media (min-width: 1132px) { // Minor Breakpoint
+  @media (min-width: 1134px) { // Minor Breakpoint
     > * {
       &:nth-child(3n+1),
       &:nth-child(3n+3) {
