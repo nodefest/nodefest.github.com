@@ -28,7 +28,6 @@
     "gulp-notify": "~2.2.0",
     "gulp-plumber": "~1.1.0",
     "gulp-postcss": "~6.1.1",
-    "gulp-ruby-sass": "^2.1.0",
     "gulp-sass": "^2.3.2",
     "gulp-stylelint": "~3.0.0",
     "gulp-uglify": "~2.0.0",

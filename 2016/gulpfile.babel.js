@@ -1,9 +1,9 @@
 import gulp from 'gulp';
-import sass from "gulp-ruby-sass";
-import util from "gulp-util";
-import plumber from "gulp-plumber";
-import autoprefixer from "gulp-autoprefixer";
-import cleancss from "gulp-clean-css";
+import sass from 'gulp-sass';
+import util from 'gulp-util';
+import plumber from 'gulp-plumber';
+import autoprefixer from 'gulp-autoprefixer';
+import cleancss from 'gulp-clean-css';
 
 const browserSync = require('browser-sync').create();
 const base_path = './',
@@ -13,7 +13,8 @@ const base_path = './',
       };
 
 gulp.task('css', () => {
-  return sass(paths.cssDir + '**/*.scss', { style: 'expanded' })
+  return gulp.src(paths.cssDir + '**/*.scss')
+      .pipe(sass({ style: 'expanded' }))
       .pipe(plumber((error) => {
         util.log(util.colors.red(error.message));
         gulp.task('css').emit('end');
