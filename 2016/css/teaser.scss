@@ -105,7 +105,7 @@ a {
   color: $color-sand;
   @include over-sm {
     margin-bottom: 2.5rem;
-    font-size: 4rem;
+    font-size: 3rem;
   }
   @include over-md {
     font-size: 4rem;
@@ -393,6 +393,9 @@ $hex-image: $hex-canvas * $hex-ratio;
   font-weight: 100;
   font-size: 1rem;
   @include over-sm {
+    font-size: 1.5rem;
+  }
+  @media (min-width: 590px) { // Minor Breakpoint
     font-size: 2rem;
   }
   @include over-md {
@@ -1170,6 +1173,45 @@ $hex-image: $hex-canvas * $hex-ratio;
 .organizer {}
 .organizer-name {
   text-align:left;
+}
+
+// Twitter
+.twitter {
+  > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    @include over-sm {
+      font-size: 2rem;
+    }
+    @include over-md {
+      font-size: 2rem;
+    }
+    &:hover {
+      text-decoration: none;
+      .twitter-icon {
+        transform: rotate(15deg);
+      }
+    }
+  }
+}
+.twitter-lead {
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0.064em;
+  font-weight: 100;
+  color: white;
+}
+.twitter-link {
+  margin-left: 1rem;
+}
+.twitter-icon {
+  width: 1.25em;
+  height: 1.25em;
+  fill: white;
+  vertical-align: -0.25em;
+  transition: transform 300ms ease;
 }
 
 // CoC
