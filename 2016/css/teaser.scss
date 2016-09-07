@@ -682,6 +682,9 @@ $hex-image: $hex-canvas * $hex-ratio;
       pointer-events: none;
     }
   }
+  .Hex-image {
+    filter: grayscale(100%);
+  }
   &.-workshop {
     //clear: both;
     //float: left;
@@ -972,23 +975,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   @include over-lg {
   }
 }
-.sponsors-grade {
-  margin-bottom: 0.5rem;
-  text-align: center;
-  line-height: 1;
-  text-align: center;
-  letter-spacing: 0.064em;
-  //font-weight: 100;
-  font-size: 1.5rem;
-  color: $color-sea;
-  color: $color-greymist;
-  @include over-sm {
-    font-size: 1.5rem;
-  }
-  @include over-md {
-    font-size: 2rem;
-  }
-}
 .sponsors-list {
   margin-bottom: 1rem;
   display: flex;
@@ -1032,24 +1018,25 @@ $hex-image: $hex-canvas * $hex-ratio;
   text-align: center;
 }
 .sponsor-name {
+  text-align:left;
+  font-weight: 700;
 }
 .sponsor-banner {
-  display: inline-block;
-  padding: 1rem;
-  > img {
-    max-width: 240px;
-  }
-  @include over-sm {
-    > img {
-      max-width: 360px;
-      max-height: 72px;
-    }
-  }
-  @include over-md {
-    > img {
-      max-width: 480px;
-      max-height: 96px;
-    }
+  position: relative;
+  border: 3px dashed $color-greymist;
+  width: 240px;
+  height: 160px;
+  color: $color-greymist;
+  &::after {
+    content: "Sponsor";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    line-height: 160px;
+    text-align: center;
+    text-transform: uppercase;
   }
 }
 
