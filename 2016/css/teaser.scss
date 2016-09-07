@@ -986,21 +986,24 @@ $hex-image: $hex-canvas * $hex-ratio;
   color: $color-sea;
   color: $color-greymist;
   @include over-sm {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
   @include over-md {
-    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
   }
 }
 .sponsors-list {
   margin-bottom: 1rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   @include over-md {
     margin-bottom: 1.5rem;
   }
 }
 .sponsors-lead {
+  margin-top: 2rem;
   margin-bottom: 1rem;
   line-height: $line-roomy;
   text-align: center;
@@ -1039,19 +1042,59 @@ $hex-image: $hex-canvas * $hex-ratio;
 .sponsor-banner {
   display: inline-block;
   padding: 1rem;
-  > img {
-    max-width: 240px;
+  &.-platinum {
+    > img {
+      max-width: 240px;
+    }
+  }
+  &.-gold {
+    > img {
+      max-width: 200px;
+    }
+  }
+  &.-silver {
+    > img {
+      max-width: 160px;
+    }
   }
   @include over-sm {
-    > img {
-      max-width: 360px;
-      max-height: 72px;
+    &.-platinum {
+      > img {
+        max-width: 360px;
+        max-height: 72px;
+      }
+    }
+    &.-gold {
+      > img {
+        max-width: 320px;
+        max-height: 60px;
+      }
+    }
+    &.-silver {
+      > img {
+        max-width: 240px;
+        max-height: 48px;
+      }
     }
   }
   @include over-md {
-    > img {
-      max-width: 480px;
-      max-height: 96px;
+    &.-platinum {
+      > img {
+        max-width: 480px;
+        max-height: 96px;
+      }
+    }
+    &.-gold {
+      > img {
+        max-width: 420px;
+        max-height: 80px;
+      }
+    }
+    &.-silver {
+      > img {
+        max-width: 360px;
+        max-height: 48px;
+      }
     }
   }
 }
