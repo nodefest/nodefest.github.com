@@ -682,6 +682,9 @@ $hex-image: $hex-canvas * $hex-ratio;
       pointer-events: none;
     }
   }
+  .Hex-image {
+    filter: grayscale(100%);
+  }
   &.-workshop {
     //clear: both;
     //float: left;
