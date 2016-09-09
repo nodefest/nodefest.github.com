@@ -13,5 +13,5 @@
 		}
 	],
 	"theme_color": "#ffffff",
-	"display": "standalone"
+	"display": "browser"
 }
