@@ -22,6 +22,7 @@
     "gulp-concat": "~2.6.0",
     "gulp-connect": "^5.0.0",
     "gulp-csscomb": "~3.0.7",
+    "gulp-ejs": "^2.2.0",
     "gulp-hologram": "^1.2.0",
     "gulp-imagemin": "~3.0.2",
     "gulp-merge-media-queries": "~0.2.1",
