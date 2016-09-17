@@ -17,24 +17,29 @@ const destPath = './';
 gulp.task('html', () => {
   return gulp
     .src(srcPaths.html)
-    .pipe(ejs({
-      msg: 'Hello Gulp!'
-    }, { ext: '.html' }))
     .pipe(plumber((error) => {
       util.log(util.colors.red(error.message));
       gulp.task('html').emit('end');
     }))
+    .pipe(ejs({
+      /**
+       * 全ページで共通して使いたい変数とかあれば
+       * ここでjsonとかぶっこめばいいけど
+       * たぶんない
+       *
+       */
+    }, { ext: '.html' }))
     .pipe(gulp.dest(destPath));
 });
 
 gulp.task('css', () => {
   return gulp
     .src(srcPaths.css)
-    .pipe(sass({ style: 'expanded' }))
     .pipe(plumber((error) => {
       util.log(util.colors.red(error.message));
       gulp.task('css').emit('end');
     }))
+    .pipe(sass({ style: 'expanded' }))
     .pipe(autoprefixer())
     .pipe(cleancss())
     .pipe(gulp.dest(destPath))
