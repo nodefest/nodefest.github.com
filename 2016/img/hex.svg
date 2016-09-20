@@ -1,0 +1,7 @@
+<svg height="0" width="0">
+<defs>
+  <clipPath id="cross">
+    <path d="M0 120v240l207.8 120 207.9-120V120L207.8 0"/><
+  </clipPath>
+</defs>
+</svg>
