@@ -1067,60 +1067,73 @@ $hex-image: $hex-canvas * $hex-ratio;
 .sponsor-name {
 }
 .sponsor-banner {
+  $sponsor-banner-platinum: 560px;
+  $sponsor-banner-gold: 480px;
+  $sponsor-banner-silver: 360px;
+  $sponsor-banner-media: 320px;
   display: inline-block;
   padding: 1rem;
   &.-platinum {
     > img {
-      max-width: 240px;
+      max-width: $sponsor-banner-platinum / 2;
     }
   }
   &.-gold {
     > img {
-      max-width: 200px;
+      max-width: $sponsor-banner-gold / 2;
     }
   }
   &.-silver {
     > img {
-      max-width: 160px;
+      max-width: $sponsor-banner-silver / 2;
+    }
+  }
+  &.-media {
+    > img {
+      max-width: $sponsor-banner-media / 2;
     }
   }
   @include over-sm {
     &.-platinum {
       > img {
-        max-width: 360px;
-        max-height: 72px;
+        max-width: $sponsor-banner-platinum / 1.25;
       }
     }
     &.-gold {
       > img {
-        max-width: 320px;
-        max-height: 60px;
+        max-width: $sponsor-banner-gold / 1.5;
       }
     }
     &.-silver {
       > img {
-        max-width: 240px;
-        max-height: 48px;
+        max-width: $sponsor-banner-silver / 1.75;
+      }
+    }
+    &.-media {
+      > img {
+        max-width: $sponsor-banner-media / 1.5;
       }
     }
   }
   @include over-md {
     &.-platinum {
       > img {
-        max-width: 480px;
-        max-height: 96px;
+        max-width: $sponsor-banner-platinum / 1.25;
       }
     }
     &.-gold {
       > img {
-        max-width: 420px;
-        max-height: 80px;
+        max-width: $sponsor-banner-gold / 1.5;
       }
     }
     &.-silver {
       > img {
-        max-width: 360px;
-        max-height: 48px;
+        max-width: $sponsor-banner-silver / 1.75;
+      }
+    }
+    &.-media {
+      > img {
+        max-width: $sponsor-banner-media / 1.5;
       }
     }
   }
