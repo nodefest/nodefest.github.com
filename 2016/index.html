@@ -22,63 +22,8 @@
     <meta name="msapplication-config" content="browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="main.css">
-    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDvBLklunoaVPhXh4b1jVcXoUclUlmtNiA&sensor=false&extension=.js'></script>
-    <script>
-      google.maps.event.addDomListener(window, 'load', init);
-      var map;
-      function init() {
-        var mapOptions = {
-          center: new google.maps.LatLng(35.659676,139.698486),
-          zoom: 16,
-          zoomControl: true,
-          zoomControlOptions: {
-            style: google.maps.ZoomControlStyle.LARGE,
-          },
-          disableDoubleClickZoom: true,
-          mapTypeControl: false,
-          scaleControl: true,
-          scrollwheel: false,
-          panControl: true,
-          streetViewControl: true,
-          draggable : true,
-          overviewMapControl: true,
-          overviewMapControlOptions: {
-            opened: false,
-          },
-          mapTypeId: google.maps.MapTypeId.ROADMAP,
-          styles: [{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#f7f1df"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"color":"#d0e3b4"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"geometry","stylers":[{"color":"#fbd3da"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#bde6ab"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffe15f"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#efd151"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"black"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"color":"#cfb2db"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#a2daf2"}]}],
-        }
-        var mapElement = document.getElementById('venue');
-        var map = new google.maps.Map(mapElement, mapOptions);
-        var locations = [
-          ['渋谷マークシティ', '東京都渋谷区道玄坂1-12-1 渋谷マークシティ13F', 'undefined', 'undefined', 'undefined', 35.658363,  139.698829, 'img/pin-conference.png'],['イベント&コミュニティスペース dots.', '東京都渋谷区宇田川町20-17 NOF渋谷公園通りビル 8F', 'undefined', 'undefined', 'undefined', 35.661232,  139.700330, 'img/pin-workshop.png']
-        ];
-        for (i = 0; i < locations.length; i++) {
-          if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
-          if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
-          if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
-          if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
-          if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = {
-            url: locations[i][7],
-            scaledSize: new google.maps.Size(32, 32)
-          };}
-          marker = new google.maps.Marker({
-            icon: markericon,
-            position: new google.maps.LatLng(locations[i][5], locations[i][6]),
-            map: map,
-            title: locations[i][0],
-            desc: description,
-            tel: telephone,
-            email: email,
-            web: web
-          });
-          link = '';     }
-
-      }
-    </script>
   </head>
   <body>
-
 <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <linearGradient id="cover-hex" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -160,7 +105,6 @@
 
   </div>
 </header>
-<!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1086 1254" class="mountain"><path d="M0 313.5L543 0l543 313.5v627L543 1254 0 940.5" fill="#61A347"/></svg>-->
 
 <div class="main">
 
@@ -642,7 +586,7 @@
       <li><a href="https://nodejs.org/en/" target="_blank">Node.js</a></li>
       <li><a href="http://nodefest.jp/2015/" target="_blank">Node Fest. 2015</a></li>
       <li><a href="http://nodejs.jp/" target="_blank">Node.js Japan User Group</a></li>
-      <li><a href="coc" target="_blank">Code of Conduct</a></li>
+      <li><a href="coc.html" target="_blank">Code of Conduct</a></li>
     </ul>
     <p class="copyright">© 2016 東京Node学園祭 実行委員会 | Node.js 日本ユーザグループ</p>
     <p class="createby">This Web site was created by @hiloki and PixelGrid, Inc.
@@ -650,6 +594,7 @@
   </div>
 </footer>
 
+<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDvBLklunoaVPhXh4b1jVcXoUclUlmtNiA&extension=.js'></script>
   <script src="main.js"></script>
   </body>
 </html>
