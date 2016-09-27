@@ -1,1 +1,1 @@
-console.log('WIP: main');
+!function r(n,e,o){function t(u,f){if(!e[u]){if(!n[u]){var c="function"==typeof require&&require;if(!f&&c)return c(u,!0);if(i)return i(u,!0);var a=new Error("Cannot find module '"+u+"'");throw a.code="MODULE_NOT_FOUND",a}var l=e[u]={exports:{}};n[u][0].call(l.exports,function(r){var e=n[u][1][r];return t(e?e:r)},l,l.exports,r,n,e,o)}return e[u].exports}for(var i="function"==typeof require&&require,u=0;u<o.length;u++)t(o[u]);return t}({1:[function(r,n,e){const o=location.pathname;console.log(o)},{}]},{},[1]);
