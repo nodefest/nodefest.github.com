@@ -72,14 +72,13 @@ body {
   background-color: $color-whitefog;
   color: $color-inky;
   overflow-x: hidden; // DEV
-  background-image: linear-gradient(150deg, $color-whitefog 0%, $color-greymist 50%, $color-inky 75%, $color-deepnight 100%),url('img/bg-shibuya2-color.jpg');
-  background-size: cover, cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-blend-mode: screen, normal;
-  background-attachment: fixed;
   @include over-md {
-
+    background-image: linear-gradient(150deg, $color-whitefog 0%, $color-greymist 50%, $color-inky 75%, $color-deepnight 100%),url('img/bg-shibuya2-color.jpg');
+    background-size: cover, cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-blend-mode: screen, normal;
+    background-attachment: fixed;
   }
 }
 
@@ -93,40 +92,40 @@ a {
 
 
 // Container
-.Container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: $width-gutter;
-  padding-right: $width-gutter;
-  max-width: $width-container;
-}
+//.Container {
+//  margin-left: auto;
+//  margin-right: auto;
+//  padding-left: $width-gutter;
+//  padding-right: $width-gutter;
+//  max-width: $width-container;
+//}
 
 // Section
-.Section {
-  margin-bottom: 4rem;
-  @include over-sm {
-    margin-bottom: 6rem;
-  }
-  @include over-md {
-  }
-}
-.Section-title {
-  margin-bottom: 1.5rem;
-  line-height: 1;
-  text-align: center;
-  letter-spacing: 0.064em;
-  font-weight: 100;
-  font-size: 3rem;
-  color: $color-sand;
-  @include over-sm {
-    margin-bottom: 2.5rem;
-    font-size: 3rem;
-  }
-  @include over-md {
-    font-size: 4rem;
-  }
-}
-.Section-body {}
+//.Section {
+//  margin-bottom: 4rem;
+//  @include over-sm {
+//    margin-bottom: 6rem;
+//  }
+//  @include over-md {
+//  }
+//}
+//.Section-title {
+//  margin-bottom: 1.5rem;
+//  line-height: 1;
+//  text-align: center;
+//  letter-spacing: 0.064em;
+//  font-weight: 100;
+//  font-size: 3rem;
+//  color: $color-sand;
+//  @include over-sm {
+//    margin-bottom: 2.5rem;
+//    font-size: 3rem;
+//  }
+//  @include over-md {
+//    font-size: 4rem;
+//  }
+//}
+//.Section-body {}
 
 // Button
 .Button {
@@ -232,13 +231,17 @@ $hex-image: $hex-canvas * $hex-ratio;
 
 // Global navigation
 .globalNav {
-  position: relative;
-  z-index: 1;
-  &.-index {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+  display: none;
+  @include over-md {
+    display: block;
+    position: relative;
+    z-index: 1;
+    &.-index {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
   }
 }
 .globalNav-list {
@@ -275,58 +278,84 @@ $hex-image: $hex-canvas * $hex-ratio;
 
 // Toppage Header
 .cover {
-  display: flex;
-  justify-content: top;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  min-height: 100vh;
+  overflow: hidden;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-image: linear-gradient(150deg, rgba($color-whitefog,0.5) 0%, rgba($color-greymist,0.5) 50%, rgba($color-inky,0.5) 75%, rgba($color-deepnight,0.5) 100%),url('img/bg-shibuya2-color.jpg');
+  background-size: cover, cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-blend-mode: screen, normal;
+  @include over-md {
+    overflow: visible;
+    display: flex;
+    justify-content: top;
+    align-items: center;
+    flex-direction: column;
+    background: none;
+    position: relative;
+    min-height: 100vh;
+  }
 }
+
 .cover-logo {
+  margin-bottom: 2rem;
   position: relative;
   z-index: 2;
   display: block;
   border: 5px solid $color-inky;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 8rem;
   padding: 8px;
   width: 224px;
   height: 224px;
   mix-blend-mode: multiply;
   @include over-md {
     border: 10px solid $color-inky;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 8rem;
+    margin: 8rem auto 0;
     padding: 16px;
     width: 448px;
     height: 448px;
   }
 }
 .cover-outline {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 2rem;
-  z-index: 1;
+  position: relative;
+  display: block;
+  &:before {
+    content: "あああ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 100%;
+    background-image: linear-gradient(135deg,$color-forest 0%, $color-grass 30%);
+    transform: translate(2rem,-4rem) rotate(45deg);
+    //mix-blend-mode: multiply;
+  }
   @include over-md {
-
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2rem;
+    z-index: 1;
+    &:before {
+      content: none;
+    }
   }
 }
 .cover-mountain {
-  display: none; // DEV
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  right: 0;
-  z-index: 1;
-  margin-left: 14rem;
-  margin-top: -24rem;
-  opacity: 0.925;
-  transform: translateX(-50%);
+  display: none;
   @include over-md {
     display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    right: 0;
+    z-index: 1;
+    margin-left: 14rem;
+    margin-top: -24rem;
+    opacity: 0.925;
+    transform: translateX(-50%);
     width: 160rem * $hex-ratio;
     height: 160rem;
   }
@@ -339,6 +368,8 @@ $hex-image: $hex-canvas * $hex-ratio;
   margin-right: auto;
   max-width: $width-container;
   text-align: center;
+  position: relative;
+  z-index: 1;
   @include over-md {
     text-align: right;
   }
@@ -361,7 +392,7 @@ $hex-image: $hex-canvas * $hex-ratio;
 }
 .outline-date,
 .outline-location {
-  margin-bottom: 0.5rem;
+  //margin-bottom: 0.5rem;
   font-weight: 100;
   font-size: 1rem;
   //@include over-sm {
@@ -374,7 +405,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .outline-name {
-  margin-bottom: 0.5rem;
+  //margin-bottom: 0.5rem;
   font-weight: 100;
   font-size: 2rem;
   //@include over-sm {
@@ -391,30 +422,34 @@ $hex-image: $hex-canvas * $hex-ratio;
 .about {
   position: relative;
   z-index: 1;
-  margin-top: 2rem;
-  margin-bottom: 4rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
   padding: 1rem;
+  background-image: linear-gradient(top,$color-grass 0%, $color-sand 60%, $color-whitefog 100%, rgba($color-whitefog,0) 100%);
   @include over-md {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
     padding: 0;
+    background: none;
   }
 }
 
 .about-mountain {
   display: none; // DEV
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  width: 240rem;
-  height: 240rem;
-  margin-left: 14rem;
-  margin-top: -12rem;
-  transform: translateX(-50%);
   @include over-md {
     display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    width: 240rem;
+    height: 240rem;
+    margin-left: 14rem;
+    margin-top: -12rem;
+    transform: translateX(-50%);
     width: 240rem * $hex-ratio;
     height: 240rem;
   }
@@ -463,30 +498,44 @@ $hex-image: $hex-canvas * $hex-ratio;
 }
 
 .tile {
-  position: relative;
-  z-index: 1;
   background-color: $color-whitefog;
   background-image: linear-gradient(top,
     rgba($color-whitefog,1) 0%,
-    rgba($color-whitefog,0.8) 20%,
+    rgba($color-whitefog,0.8) 10%,
     //rgba($color-whitefog,1) 25%,
     rgba($color-whitefog,0.75) 50%,
-    rgba($color-whitefog,0.8) 80%,
+    rgba($color-whitefog,0.8) 90%,
     rgba($color-whitefog,1) 100%
   ),
   url('img/bg-tile.svg');
   background-position: center top;
   background-size: auto, 64px auto;
+  @include over-md {
+    position: relative;
+    z-index: 1;
+    background-color: $color-whitefog;
+    background-image: linear-gradient(top,
+      rgba($color-whitefog,1) 0%,
+      rgba($color-whitefog,0.8) 20%,
+      //rgba($color-whitefog,1) 25%,
+      rgba($color-whitefog,0.75) 50%,
+      rgba($color-whitefog,0.8) 80%,
+      rgba($color-whitefog,1) 100%
+    ),
+    url('img/bg-tile.svg');
+    background-position: center top;
+    background-size: auto, 64px auto;
+  }
 }
 
 // Speakers
 .speakers {
-  position: relative;
-  z-index: 2;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
   $hex-speakers-canvas: 320;
   $hex-speakers-image: $hex-speakers-canvas * $hex-ratio;
+  position: relative;
+  z-index: 2;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   .Hex {
     width: $hex-speakers-canvas + px;
   }
@@ -497,43 +546,49 @@ $hex-image: $hex-canvas * $hex-ratio;
     width: $hex-speakers-image + px;
     height: $hex-speakers-image + px;
   }
+  @include over-md {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
   //@media (min-width: 590px) { // Minor Breakpoint
   //}
   //@media (min-width: 772px) { // Minor Breakpoint
   //}
 }
 .speakers-title {
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
   line-height: $line-flat;
   letter-spacing: 0.08em;
   text-align: center;
   text-transform: uppercase;
   font-weight: 100;
-  font-size: 1rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: $color-sunred;
   @include over-sm {
   }
   @media (min-width: 590px) { // Minor Breakpoint
   }
   @include over-md {
+    margin-bottom: 4rem;
     font-size: 4em;
   }
 }
 .speakers-list {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  flex-direction: column;
-  justify-content: center;
-  max-width: $width-container;
+  text-align: center;
   > * {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   @include over-md {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
+    max-width: $width-container;
+    > * {
+      margin-bottom: 2rem;
+    }
   }
 }
 .speaker {
@@ -560,6 +615,8 @@ $hex-image: $hex-canvas * $hex-ratio;
       }
     }
   }
+  @include over-md {
+  }
 }
 .speaker-info {
   //display: none; // DEV
@@ -577,7 +634,7 @@ $hex-image: $hex-canvas * $hex-ratio;
 }
 .speaker-name {
   letter-spacing: 0.064em;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 100;
   @include over-md {
     font-size: 1.75rem;
@@ -586,7 +643,7 @@ $hex-image: $hex-canvas * $hex-ratio;
 .speaker-links {
   letter-spacing: 0.064em;
   font-weight: 200;
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   @include over-md {
     font-size: 1rem;
   }
@@ -597,35 +654,42 @@ $hex-image: $hex-canvas * $hex-ratio;
 // Schedules
 .schedule {}
 .schedule-title {
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
   line-height: $line-flat;
   letter-spacing: 0.08em;
   text-align: center;
   text-transform: uppercase;
   font-weight: 100;
-  font-size: 1rem;
+  font-size: 2.5rem;
   color: $color-sunred;
   @include over-sm {
-    font-size: 1.5rem;
   }
   @media (min-width: 590px) { // Minor Breakpoint
-    font-size: 2rem;
   }
   @include over-md {
+    margin-bottom: 4rem;
     font-size: 4em;
   }
 }
 .schedule-body {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: $width-container;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  @include over-md {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    max-width: $width-container;
+  }
 }
 .schedule-section {
   margin-bottom: 2rem;
   background-color: $color-whitefog;
   border: 10px solid $color-creamhaze;
-  padding: 2rem;
+  padding: 1rem;
   box-shadow: 10px 10px 0 rgba($color-deepnight,0.25);
+  @include over-md {
+    padding: 2rem;
+  }
 }
 
 // Time table
@@ -633,54 +697,105 @@ $hex-image: $hex-canvas * $hex-ratio;
 .timetable-header,
 .timetable-row {
   display: flex;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  @include over-md {
+    font-size: 1.5rem;
+  }
 }
 .timetable-header {
+  padding-top: 1rem;
   position: relative;
   font-size: 1rem;
+  @include over-md {
+    padding-top: 2.5rem;
+    font-size: 1.5rem;
+  }
+}
+.timetable-venue {
+  box-sizing: border-box;
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  line-height: $line-flat;
+  letter-spacing: 0.08em;
+  text-align: center;
+  font-weight: 100;
+  font-size: 1rem;
+  color: $color-inky;
+  @include over-md {
+    top: -2rem;
+    left: 0rem;
+    padding: 1.5rem 1rem;
+    font-size: 3rem;
+  }
 }
 .timetable-day {
   box-sizing: border-box;
   position: absolute;
-  top: -2rem;
-  right: -2rem;
+  top: -1rem;
+  right: -1rem;
   z-index: 1;
   display: flex;
   justify-content: center;
-  padding: 1.5rem 1rem;
+  padding: 1rem;
   line-height: $line-flat;
   letter-spacing: 0.08em;
   text-align: center;
   text-transform: uppercase;
   font-weight: 100;
-  font-size: 3rem;
+  font-size: 1rem;
   color: $color-inky;
+  @include over-md {
+    top: -2rem;
+    right: -2rem;
+    padding: 1.5rem 1rem;
+    font-size: 3rem;
+  }
 }
 .timetable-corner {
   position: absolute;
   top: 0;
   right: 0;
   z-index: -1;
-  content: "";
-  width: 12rem;
-  height: 12rem * (104 / 181);
+  width: 6rem;
+  height: 6rem * (104 / 181);
+  @include over-md {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 12rem;
+    height: 12rem * (104 / 181);
+  }
 }
 .timetable-row {
   border-top: 2px solid $color-sand;
 }
 .timetable-caption,
 .timetable-time {
-  flex: 0 0 12rem;
-  padding: 1rem;
+  flex: 0 0 6rem;
+  padding: 0.5rem 1rem 0.5rem 0;
   font-weight: 700;
+  @include over-md {
+    flex: 0 0 12rem;
+    padding: 1rem;
+  }
 }
 .timetable-section,
 .timetable-content {
-  padding: 1rem;
+  padding: 0.5rem 0 0.5rem 1rem;
   flex: 1 1 100%;
-  display: flex;
-  > * {
+  @include over-md {
+    padding: 1rem;
     flex: 1 1 100%;
+    display: flex;
+    > * {
+      flex: 1 1 100%;
+    }
   }
 }
 
@@ -690,36 +805,48 @@ $hex-image: $hex-canvas * $hex-ratio;
   z-index: 2;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   max-width: $width-container;
+  @include over-md {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }
 .venue-title {
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
   line-height: $line-flat;
   letter-spacing: 0.08em;
   text-align: center;
   text-transform: uppercase;
   font-weight: 100;
-  font-size: 1rem;
+  font-size: 2.5rem;
   color: $color-sunred;
   @include over-sm {
-    font-size: 1.5rem;
   }
   @media (min-width: 590px) { // Minor Breakpoint
-    font-size: 2rem;
   }
   @include over-md {
+    margin-bottom: 4rem;
     font-size: 4em;
+  }
+}
+.venue-body {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  @include over-md {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    max-width: $width-container;
   }
 }
 .venue-map {
   display: block;
   overflow: hidden;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 1rem;
   max-width: $width-container;
-  height:448px;
+  height: 384px;
   background-color: $color-whitefog;
   border: 10px solid $color-creamhaze;
   box-shadow: 10px 10px 0 rgba($color-deepnight,0.25);
@@ -734,31 +861,41 @@ $hex-image: $hex-canvas * $hex-ratio;
   .gm-style-iw a {
     color: #4272db;
   }
+  @include over-md {
+    height:448px;
+  }
 }
 .venue-detail {
-  display: flex;
-  > * {
-    flex: 1 1 50%;
+  @include over-md {
+    display: flex;
+    > * {
+      flex: 1 1 50%;
+    }
   }
 }
 .venue-access {
   box-sizing: border-box;
-  padding: 2rem 1rem;
-  widtH: 50%;
-  &.-workshop {
-  }
-  &.-conference {
+  padding: 1rem 0;
+  @include over-md {
+    padding: 1rem;
   }
 }
 .venue-icon {
   width: auto;
   height: 1.5em;
   vertical-align: middle;
+  @include over-md {
+    height: 1.25em;
+  }
 }
 .venue-name {
   margin-bottom: 1rem;
-  font-size: 1.5rem;
-  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-weight: 100;
+  font-size: 1rem;
+  @include over-md {
+    font-size: 1.25rem;
+  }
 }
 .venue-address {}
 
@@ -768,16 +905,29 @@ $hex-image: $hex-canvas * $hex-ratio;
   overflow: hidden;
   position: relative;
   z-index: 2;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-  //background-color: rgba($color-sand,0.5);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: rgba($color-sand,0.5);
+  @include over-md {
+    background-color: transparent;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
 }
 .tickets-action {
   text-align: center;
+  padding: 1rem;
   .Button {
-    display: inline-block;
+    display: block;
     padding: 1em 2em;
-    font-size: 2.5rem;
+    font-size: 1.5em;
+  }
+  @include over-md {
+    padding: 0;
+    .Button {
+      padding: 1em 2em;
+      font-size: 2.5em;
+    }
   }
 }
 .tickets-body {
@@ -808,33 +958,34 @@ $hex-image: $hex-canvas * $hex-ratio;
 .sponsors {
   position: relative;
   z-index: 1;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
   background-color: white;
   color: $color-deepnight;
   //@include over-sm {
   //}
-  //@include over-md {
-  //}
+  @include over-md {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
   //@include over-lg {
   //}
 }
 .sponsors-title {
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
   line-height: $line-flat;
   letter-spacing: 0.08em;
   text-align: center;
   text-transform: uppercase;
   font-weight: 100;
-  font-size: 1rem;
+  font-size: 2.5rem;
   color: $color-sea;
   @include over-sm {
-    font-size: 1.5rem;
   }
   @media (min-width: 590px) { // Minor Breakpoint
-    font-size: 2rem;
   }
   @include over-md {
+    margin-bottom: 4rem;
     font-size: 4em;
   }
 }
