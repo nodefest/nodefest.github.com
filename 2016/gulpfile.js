@@ -1,11 +1,11 @@
 'use strict';
-import gulp from 'gulp';
-import util from 'gulp-util';
-import plumber from 'gulp-plumber';
-import ejs from 'gulp-ejs';
-import sass from 'gulp-sass';
-import autoprefixer from 'gulp-autoprefixer';
-import cleancss from 'gulp-clean-css';
+const gulp = require('gulp');
+const util = require('gulp-util');
+const plumber = require('gulp-plumber');
+const ejs = require('gulp-ejs');
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const cleancss = require('gulp-clean-css');
 
 const browserSync = require('browser-sync').create();
 const srcPaths = {
