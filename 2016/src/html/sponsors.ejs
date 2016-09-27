@@ -1,0 +1,109 @@
+<%
+var page = {
+  title: 'Sponsors'
+}
+%>
+<%- include('_layout/header', page) -%>
+
+<%- include('_partial/svg') -%>
+
+<%- include('_partial/navigation') -%>
+
+<div class="main">
+
+  <!-- TODO: いったん現状のものをペースト。追ってスポンサー企業概要を含めたリスト化-->
+  <section class="page sponsors">
+    <h2 class="page-title sponsors-title"><%= page.title %></h2>
+    <div class="page-body sponsors-body">
+      <div class="sponsors-section">
+        <h3 class="sponsors-grade">Platinum</h3>
+        <ul class="sponsors-list">
+          <li>
+            <div class="sponsor">
+              <a href="https://www.paypal.com/jp/webapps/mpp/merchant" target="_blank" class="sponsor-banner -platinum">
+                <img src="img/sponsors/paypal.png" alt="PayPal">
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="sponsors-section">
+        <h3 class="sponsors-grade">Gold</h3>
+        <ul class="sponsors-list">
+          <li>
+            <div class="sponsor">
+              <a href="http://dwango.co.jp/" target="_blank" class="sponsor-banner -gold">
+                <img src="img/sponsors/dwango.png" alt="株式会社ドワンゴ">
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="sponsor">
+              <a href="http://recruit-tech.co.jp/" target="_blank" class="sponsor-banner -gold">
+                <img src="img/sponsors/r-tech.png" alt="リクルートテクノロジーズ">
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="sponsor">
+              <a href="http://www.yahoo.co.jp/" target="_blank" class="sponsor-banner -gold">
+                <img src="img/sponsors/yahoo.png" alt="ヤフー株式会社">
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="sponsors-section">
+        <h3 class="sponsors-grade">Silver</h3>
+        <ul class="sponsors-list">
+          <li>
+            <div class="sponsor">
+              <a href="https://www.pxgrid.com/" target="_blank" class="sponsor-banner -silver">
+                <img src="img/sponsors/pxgrid.png" alt="株式会社ピクセルグリッド">
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="sponsor">
+              <a href="http://sphinx-software.jp/" target="_blank" class="sponsor-banner -silver">
+                <img src="img/sponsors/sphinx.png" alt="Sphinx有限会社">
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="sponsors-section">
+        <h3 class="sponsors-grade">Media</h3>
+        <ul class="sponsors-list">
+          <li>
+            <div class="sponsor">
+              <a href="https://www.theport.jp/" target="_blank" class="sponsor-banner -silver">
+                <img src="img/sponsors/theport.png" alt="ポート株式会社">
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!--<p class="sponsors-lead">協賛を希望される方は専用フォームよりお申し込みください。</p>-->
+      <!--<div class="sponsors-action">-->
+        <!--<a href="https://docs.google.com/forms/d/e/1FAIpQLSfNdD06sIUy5noreZ6yp_ZzMlAFoIRq51V1bFwtcuY4xh29Yw/viewform"-->
+           <!--class="Button -invert -cfs">Sponsorship</a>-->
+      <!--</div>-->
+
+    </div>
+
+    <!-- TODO: 最寄り駅情報や会場の外観情報など
+    <div class="page-section">
+      <h3 class="page-subhead"></h3>
+      <div class="page-sectionBody"></div>
+    </div>
+    -->
+
+  </section>
+
+</div>
+
+<%- include('_partial/tickets') -%>
+
+<%- include('_layout/footer') -%>

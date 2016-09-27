@@ -13,7 +13,7 @@ const uglify = require('gulp-uglify');
 
 const browserSync = require('browser-sync').create();
 const srcPaths = {
-        html: './src/html/*.ejs',
+        html: './src/html/**/*.ejs',
         js:   './src/js/main.js',
         css:  './src/scss/main.scss'
       };

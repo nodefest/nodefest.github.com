@@ -1,0 +1,66 @@
+<%- include('_layout/header', {
+title: 'Code of Conduct'
+}) -%>
+
+<%- include('_partial/svg') -%>
+
+<%- include('_partial/navigation') -%>
+
+<div class="main">
+
+  <div class="tile">
+
+    <div class="header-mountain">
+      <svg xmlns="http://www.w3.org/2000/svg" class="header-mountain-svg" fill="url(#header-hex)"><use xlink:href="#hex"></use></svg>
+    </div>
+
+    <section class="venue">
+      <h2 class="venue-title">Venue</h2>
+      <div class="venue-body">
+        <div class="venue-map" id="venue"></div>
+        <div class="venue-detail">
+          <section class="venue-access -workshop">
+            <h3 class="venue-name">
+              <img src="img/pin-workshop.png" class="venue-icon">
+              イベント&コミュニティスペース dots.
+            </h3>
+            <p class="venue-address">
+              <a href="#">
+                東京都渋谷区宇田川町20-17 NOF渋谷公園通りビル 8F
+              </a>
+            </p>
+          </section>
+          <section class="venue-access -conference">
+            <h3 class="venue-name">
+              <img src="img/pin-conference.png" class="venue-icon">
+              CyberAgent セミナールーム
+            </h3>
+            <p class="venue-address">
+              <a href="#">
+                東京都渋谷区道玄坂1-12-1 渋谷マークシティ13F
+              </a>
+            </p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Tickets -->
+  <section class="tickets">
+    <svg xmlns="http://www.w3.org/2000/svg" class="tickets-mountain" fill="url(#tickets-hex)"><use xlink:href="#hex"></use></svg>
+
+    <div class="tickets-body">
+      <div class="tickets-action">
+        <a href="#" class="Button -primary">
+          Get your tickets
+        </a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDvBLklunoaVPhXh4b1jVcXoUclUlmtNiA&extension=.js'></script>
+<%- include('_layout/footer') -%>

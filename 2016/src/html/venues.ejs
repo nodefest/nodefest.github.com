@@ -1,0 +1,60 @@
+<%
+var page = {
+  title: 'Venues'
+}
+%>
+<%- include('_layout/header', page) -%>
+
+<%- include('_partial/svg') -%>
+
+<%- include('_partial/navigation') -%>
+
+<div class="main">
+
+  <section class="page venue">
+    <h2 class="page-title venue-title"><%= page.title %></h2>
+
+    <div class="page-body venue-body">
+      <div class="venue-map" id="venue"></div>
+      <div class="venue-detail">
+        <section class="venue-access -workshop">
+          <h3 class="venue-name">
+            <img src="img/pin-workshop.png" class="venue-icon">
+            イベント&コミュニティスペース dots.
+          </h3>
+          <p class="venue-address">
+            <a href="#">
+              東京都渋谷区宇田川町20-17 NOF渋谷公園通りビル 8F
+            </a>
+          </p>
+        </section>
+        <section class="venue-access -conference">
+          <h3 class="venue-name">
+            <img src="img/pin-conference.png" class="venue-icon">
+            CyberAgent セミナールーム
+          </h3>
+          <p class="venue-address">
+            <a href="#">
+              東京都渋谷区道玄坂1-12-1 渋谷マークシティ13F
+            </a>
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <!-- TODO: 最寄り駅情報や会場の外観情報など
+    <div class="page-section">
+      <h3 class="page-subhead"></h3>
+      <div class="page-sectionBody"></div>
+    </div>
+    -->
+
+  </section>
+
+</div>
+
+<%- include('_partial/tickets') -%>
+
+<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDvBLklunoaVPhXh4b1jVcXoUclUlmtNiA&extension=.js'></script>
+
+<%- include('_layout/footer') -%>
