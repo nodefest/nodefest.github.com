@@ -29,7 +29,8 @@ gulp.task('html', () => {
        *
        */
     }, { ext: '.html' }))
-    .pipe(gulp.dest(destPath));
+    .pipe(gulp.dest(destPath))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('css', () => {
