@@ -6,10 +6,15 @@ const ejs = require('gulp-ejs');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cleancss = require('gulp-clean-css');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const uglify = require('gulp-uglify');
 
 const browserSync = require('browser-sync').create();
 const srcPaths = {
         html: './src/html/*.ejs',
+        js:   './src/js/main.js',
         css:  './src/scss/main.scss'
       };
 const destPath = './';
@@ -47,7 +52,23 @@ gulp.task('css', () => {
     .pipe(browserSync.stream());
 });
 
-gulp.task('server', ['html', 'css'], () => {
+gulp.task('js', () => {
+  return browserify({
+      entries: [srcPaths.js]
+    })
+    .bundle()
+    .pipe(plumber((error) => {
+      util.log(util.colors.red(error.message));
+      gulp.task('js').emit('end');
+    }))
+    .pipe(source('main.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest(destPath))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('server', ['html', 'css', 'js', 'watch'], () => {
   browserSync.init({
     port: 4000,
     server: {
@@ -57,9 +78,13 @@ gulp.task('server', ['html', 'css'], () => {
       port: 4001
     }
   });
-
-  gulp.watch(srcPaths.html, ['html']).on('change', browserSync.reload);
-  gulp.watch(srcPaths.css, ['css']).on('change', browserSync.reload);
 });
 
-gulp.task('default', ['html', 'css', 'server']);
+gulp.task('watch', () => {
+  gulp.watch(srcPaths.html, ['html']).on('change', browserSync.reload);
+  gulp.watch(srcPaths.css,  ['css']).on('change', browserSync.reload);
+  gulp.watch(srcPaths.js,   ['js']).on('change', browserSync.reload);
+});
+
+gulp.task('default', ['html', 'css', 'js', 'server']);
+gulp.task('dev', ['html', 'css', 'js', 'watch']);
