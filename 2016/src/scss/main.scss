@@ -108,6 +108,7 @@ body {
   ),
   url('img/bg-tile.svg');
   background-position: center top;
+  //background-size: auto, 64px auto;
   background-size: auto, 64px auto;
   @include over-md {
   }
@@ -224,6 +225,7 @@ $hex-image: $hex-canvas * $hex-ratio;
     top: 0;
     left: 0;
     right: 0;
+    z-index: -1;
     width: 100%;
     padding-top: percentage(740 / 1920);
     background-image: url('img/bg-header.png');
@@ -327,6 +329,10 @@ $hex-image: $hex-canvas * $hex-ratio;
   &.is-expand {
     display: block;
   }
+  &.is-embed { // dev
+    display: block;
+    position: relative;
+  }
   @include over-lg {
     display: block;
     padding: 0;
@@ -416,34 +422,106 @@ $hex-image: $hex-canvas * $hex-ratio;
   height: 2rem;
   fill: $color-inky;
 }
-// Toppage Header
-.cover {
-  overflow: hidden;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  background-image: linear-gradient(150deg, rgba($color-whitefog,0.5) 0%, rgba($color-greymist,0.5) 50%, rgba($color-inky,0.5) 75%, rgba($color-deepnight,0.5) 100%),url('img/bg-shibuya.jpg');
-  background-size: cover, cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-blend-mode: screen, normal;
+//// Toppage Header
+//.cover {
+//  overflow: hidden;
+//  padding-top: 2rem;
+//  padding-bottom: 2rem;
+//  background-image: linear-gradient(150deg, rgba($color-whitefog,0.5) 0%, rgba($color-greymist,0.5) 50%, rgba($color-inky,0.5) 75%, rgba($color-deepnight,0.5) 100%),url('img/bg-shibuya.jpg');
+//  background-size: cover, cover;
+//  background-position: center top;
+//  background-repeat: no-repeat;
+//  background-blend-mode: screen, normal;
+//  @include over-md {
+//    overflow: visible;
+//    display: flex;
+//    justify-content: top;
+//    align-items: center;
+//    flex-direction: column;
+//    background: none;
+//    position: relative;
+//    min-height: 100vh;
+//  }
+//}
+//
+//.cover-logo {
+//  margin-bottom: 2rem;
+//  position: relative;
+//  z-index: 2;
+//  display: block;
+//  border: 5px solid $color-inky;
+//  margin-left: auto;
+//  margin-right: auto;
+//  padding: 8px;
+//  width: 224px;
+//  height: 224px;
+//  mix-blend-mode: multiply;
+//  @include over-md {
+//    border: 10px solid $color-inky;
+//    margin: 8rem auto 0;
+//    padding: 16px;
+//    width: 448px;
+//    height: 448px;
+//  }
+//}
+//.cover-outline {
+//  position: relative;
+//  display: block;
+//  &:before {
+//    content: "";
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    width: 150%;
+//    padding-top: 100%;
+//    background-image: linear-gradient(135deg, rgba($color-deepnight,0.5) 0%, rgba($color-forest,0.925) 20%, $color-grass 40%);
+//    //transform: translate(2rem,-4rem) rotate(45deg);
+//    transform: translateY(-3rem) rotate(30deg) skew(-30deg);
+//    //mix-blend-mode: multiply;
+//  }
+//  @include over-md {
+//    position: absolute;
+//    left: 0;
+//    right: 0;
+//    bottom: 2rem;
+//    z-index: 1;
+//    &:before {
+//      content: none;
+//    }
+//  }
+//}
+//.cover-mountain {
+//  display: none;
+//  @include over-md {
+//    display: block;
+//    position: absolute;
+//    top: 100%;
+//    left: 50%;
+//    right: 0;
+//    z-index: 1;
+//    margin-left: 14rem;
+//    margin-top: -24rem;
+//    opacity: 0.925;
+//    transform: translateX(-50%);
+//    width: 160rem * $hex-ratio;
+//    height: 160rem;
+//  }
+//}
+
+.cover {}
+.cover-inner {
   @include over-md {
-    overflow: visible;
-    display: flex;
-    justify-content: top;
-    align-items: center;
-    flex-direction: column;
-    background: none;
-    position: relative;
-    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $width-container;
   }
 }
-
 .cover-logo {
-  margin-bottom: 2rem;
-  position: relative;
-  z-index: 2;
+  //margin-bottom: 2rem;
+  //position: relative;
+  //z-index: 2;
   display: block;
-  border: 5px solid $color-inky;
+  border: 5px solid $color-whitefog;
   margin-left: auto;
   margin-right: auto;
   padding: 8px;
@@ -456,49 +534,6 @@ $hex-image: $hex-canvas * $hex-ratio;
     padding: 16px;
     width: 448px;
     height: 448px;
-  }
-}
-.cover-outline {
-  position: relative;
-  display: block;
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 150%;
-    padding-top: 100%;
-    background-image: linear-gradient(135deg, rgba($color-deepnight,0.5) 0%, rgba($color-forest,0.925) 20%, $color-grass 40%);
-    //transform: translate(2rem,-4rem) rotate(45deg);
-    transform: translateY(-3rem) rotate(30deg) skew(-30deg);
-    //mix-blend-mode: multiply;
-  }
-  @include over-md {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 2rem;
-    z-index: 1;
-    &:before {
-      content: none;
-    }
-  }
-}
-.cover-mountain {
-  display: none;
-  @include over-md {
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    right: 0;
-    z-index: 1;
-    margin-left: 14rem;
-    margin-top: -24rem;
-    opacity: 0.925;
-    transform: translateX(-50%);
-    width: 160rem * $hex-ratio;
-    height: 160rem;
   }
 }
 
@@ -1470,27 +1505,11 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 
-
 // Ticktets
 .tickets {
   position: relative;
   //z-index: 2;
   padding: 3rem 1rem;
-  &:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    padding-top: percentage(740 / 1920);
-    background-image: url('img/bg-footer.png');
-    background-size: cover;
-  }
-  @include over-md {
-    padding: 6rem 0;
-    background-image: none;
-  }
 }
 .tickets-action {
   text-align: center;
@@ -1650,11 +1669,17 @@ $hex-image: $hex-canvas * $hex-ratio;
   flex-wrap: wrap;
   justify-content: center;
   > * {
+    float: 1 1 100%;
+    margin-top: 1rem;
     border: 1px solid $color-creamhaze;
     background-color: #FFFFFF;
   }
   @include over-md {
     margin-bottom: 1.5rem;
+    > * {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
   }
 }
 .sponsors-lead {
@@ -1862,15 +1887,15 @@ $hex-image: $hex-canvas * $hex-ratio;
   box-sizing: border-box;
   margin-left: 1rem;
   margin-right: 1rem;
+  margin-bottom: 1rem;
   padding: 1rem;
   background-color: $color-whitefog;
   border: 4px solid $color-sand;
-  @include over-md {
-  }
-  @include over-lg {
+  @include over-hg {
     border: 8px solid $color-sand;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2rem;
     padding: 2rem;
     max-width: $width-container;
   }
@@ -1890,15 +1915,19 @@ $hex-image: $hex-canvas * $hex-ratio;
 .coc-section {
   margin-left: 1rem;
   margin-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   p {
     margin-bottom: 1rem;
     &:last-child {
       margin-bottom: 0;
     }
   }
-  @include over-md {
+  @include over-lg {
     margin-left: auto;
     margin-right: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     max-width: $width-textblock;
   }
 }
@@ -1933,12 +1962,24 @@ $hex-image: $hex-canvas * $hex-ratio;
 // Footer
 .footer {
   position: relative;
-  overflow: hidden;
+  //overflow: hidden;
   //padding: 1em 0;
   color: $color-whitefog;
   font-size: 0.825rem;
   text-align: center;
   //background-color: $color-inky;
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    padding-top: percentage(740 / 1920);
+    background-image: url('img/bg-footer.png');
+    background-size: cover;
+  }
   @include over-md {
     //position: static;
     //padding-top: 0;
@@ -1949,11 +1990,11 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .contentinfo {
-  margin-top: -1px; // Fix gutter
   padding-top: 1rem;
   padding-bottom: 1rem;
   background-color: $color-shadow;
   @include over-md {
+    margin-top: 256px; // Fix gutter
     background-color: rgba($color-deepnight,0.9);
   }
 }
