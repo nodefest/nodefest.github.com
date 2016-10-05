@@ -112,6 +112,10 @@ body {
   background-size: auto, 64px auto;
   @include over-md {
   }
+
+  &.is-expand {
+    overflow: hidden;
+  }
 }
 
 a {
