@@ -1,0 +1,43 @@
+{
+  "douglascrockford": {
+    "time":    "00:00-00:00",
+    "room":    "AorB",
+    "title":   "Session title",
+    "summary": "Session summary"
+  },
+
+  "jasnell": {
+    "time":    "00:00-00:00",
+    "room":    "AorB",
+    "title":   "Session title",
+    "summary": "Session summary"
+  },
+
+  "bmeck": {
+    "time":    "00:00-00:00",
+    "room":    "AorB",
+    "title":   "Session title",
+    "summary": "Session summary"
+  },
+
+  "zcbenz": {
+    "time":    "00:00-00:00",
+    "room":    "AorB",
+    "title":   "Session title",
+    "summary": "Session summary"
+  },
+
+  "yoshuawuyts": {
+    "time":    "00:00-00:00",
+    "room":    "AorB",
+    "title":   "Session title",
+    "summary": "Session summary"
+  },
+
+  "mafintosh": {
+    "time":    "00:00-00:00",
+    "room":    "AorB",
+    "title":   "Session title",
+    "summary": "Session summary"
+  }
+}
