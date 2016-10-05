@@ -1,0 +1,33 @@
+{
+  "paypal": {
+    "name": "PayPal",
+    "url": "https://www.paypal.com/jp/webapps/mpp/merchant"
+  },
+
+  "dwango": {
+    "name": "株式会社ドワンゴ",
+    "url": "http://dwango.co.jp/"
+  },
+  "r-tech": {
+    "name": "リクルートテクノロジーズ",
+    "url": "http://recruit-tech.co.jp/"
+  },
+  "yahoo": {
+    "name": "ヤフー株式会社",
+    "url": "http://www.yahoo.co.jp/"
+  },
+
+  "pxgrid": {
+    "name": "株式会社ピクセルグリッド",
+    "url": "https://www.pxgrid.com/"
+  },
+  "sphinx": {
+    "name": "Sphinx有限会社",
+    "url": "http://sphinx-software.jp/"
+  },
+
+  "theport": {
+    "name": "ポート株式会社",
+    "url": "https://www.theport.jp/"
+  }
+}
