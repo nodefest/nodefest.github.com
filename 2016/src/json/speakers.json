@@ -1,0 +1,37 @@
+{
+  "douglascrockford": {
+    "name":    "Douglas Crockford",
+    "url":     "https://github.com/douglascrockford",
+    "twitter": ""
+  },
+
+  "jasnell": {
+    "name":    "James Snell",
+    "url":     "https://twitter.com/jasnell",
+    "twitter": "jasnell"
+  },
+
+  "bmeck": {
+    "name":    "Bradley Meck",
+    "url":     "https://twitter.com/bradleymeck",
+    "twitter": "bradleymeck"
+  },
+
+  "zcbenz": {
+    "name":    "Cheng Zhao",
+    "url":     "https://twitter.com/zcbenz",
+    "twitter": "zcbenz"
+  },
+
+  "yoshuawuyts": {
+    "name":    "Yoshua Wuyts",
+    "url":     "https://twitter.com/yoshuawuyts",
+    "twitter": "yoshuauyts"
+  },
+
+  "mafintosh": {
+    "name":    "Mathias Buus",
+    "url":     "https://twitter.com/mafintosh",
+    "twitter": "mafintosh"
+  }
+}

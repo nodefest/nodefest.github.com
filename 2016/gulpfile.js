@@ -1,4 +1,5 @@
 'use strict';
+const fs = require('fs');
 const gulp = require('gulp');
 const util = require('gulp-util');
 const plumber = require('gulp-plumber');
@@ -19,6 +20,14 @@ const srcPaths = {
       };
 const destPath = './';
 
+const json = {};
+fs.readdirSync('./src/json')
+  .map((fName) => { return fName.split('.json')[0]; })
+  .forEach((key) => {
+    Object.assign(json, { [key]: require(`./src/json/${key}.json`) });
+  });
+
+
 gulp.task('html', () => {
   return gulp
     .src(srcPaths.html)
@@ -26,14 +35,7 @@ gulp.task('html', () => {
       util.log(util.colors.red(error.message));
       gulp.task('html').emit('end');
     }))
-    .pipe(ejs({
-      /**
-       * 全ページで共通して使いたい変数とかあれば
-       * ここでjsonとかぶっこめばいいけど
-       * たぶんない
-       *
-       */
-    }, { ext: '.html' }))
+    .pipe(ejs(json, { ext: '.html' }))
     .pipe(gulp.dest(destPath))
     .pipe(browserSync.stream());
 });
