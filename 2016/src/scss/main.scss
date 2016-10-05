@@ -386,6 +386,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 200;
+  color: $color-inky;
   &:hover {
     background-color: $color-sand;
   }
@@ -394,7 +395,8 @@ $hex-image: $hex-canvas * $hex-ratio;
     border: 2px solid currentColor;
     color: $color-sunred;
   }
-  @include over-md {
+  @include over-lg {
+    color: $color-whitefog;
     &:hover {
       background-color: rgba($color-deepnight,0.5);
     }
