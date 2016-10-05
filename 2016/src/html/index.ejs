@@ -69,6 +69,7 @@ var page = {
       <% page.speakers.forEach(function(speaker) { %>
       <li>
         <%- include('_partial/speaker', { id: speaker }) -%>
+        <%- include('_partial/speaker-overlay', { id: speaker }) -%>
       </li>
       <% }); %>
     </ul>

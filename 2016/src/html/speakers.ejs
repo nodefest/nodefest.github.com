@@ -27,44 +27,13 @@ var page = {
         <% page.speakers.forEach(function(speaker) { %>
         <li>
           <%- include('_partial/speaker', { id: speaker }) -%>
+          <%- include('_partial/speaker-overlay', { id: speaker }) -%>
         </li>
         <% }); %>
       </ul>
     </div>
 
   </section>
-
-</div>
-
-<!-- Sessions -->
-<div class="overlay /is-expand"><!-- `is-expand`で開く -->
-  <div class="overlay-content">
-    <button class="overlay-button">
-      <svg xmlns="http://www.w3.org/2000/svg" class="overlay-icon"><use xlink:href="#close"></use></svg>
-    </button>
-    <!-- Session detail & Speaker info-->
-    <div class="session">
-      <div class="session-speaker">
-        <div class="session-speakerAvatar">
-          <img src="img/pic-jasnell.jpg">
-        </div>
-        <div class="session-speakerProfile">
-          <p class="session-speakerName">James Snell</p>
-          <div class="session-speakerBio">
-            <p>James M Snell is currently IBM's Technical Lead for Node.js and a member of the Node.js TSC and CTC. At IBM, he is responsible for coordinating the company's various contributions to Node.js. He has spent his 15+ years at the company dedicated to the development of Open Source and Open Standards.</p>
-          </div>
-        </div>
-      </div>
-      <div class="session-content">
-        <p class="session-time">14:00-14:30 Room A</p>
-        <h2 class="session-title">Node.js and Web Standards</h2>
-        <div class="session-summary">
-          <p>Node.js is, and has been, primarily a platform for Web application development. In this talk, James will discuss the evolution and future of support for Web Standards such as URL parsing and HTTP 2.0 in Node.js core.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
 
 </div>
 
