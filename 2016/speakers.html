@@ -28,6 +28,16 @@
 
 <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
+    <linearGradient id="mount-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3F6630"  stop-opacity="0.8"/>
+      <stop offset="30%" stop-color="#61A347"  stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#EADA96"/>
+      <stop offset="60%" stop-color="#EADA96"/>
+      <!--<stop offset="50%" stop-color="#61A347"/>-->
+      <!--<stop offset="0%" stop-color="#D75A43"/>-->
+      <!--<stop offset="50%" stop-color="#EADA96"/>-->
+    </linearGradient>
+
     <linearGradient id="cover-hex" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#3F6630"/>
       <stop offset="50%" stop-color="#F9E057"/>
@@ -80,6 +90,10 @@
 
     <symbol id="corner" viewBox="0 0 181 104">
       <path d="M0 0h181v104"/>
+    </symbol>
+
+    <symbol id="mountain" id="corner" viewBox="0 0 2560 1478">
+      <path d="M2560 1478V739L1280 0 0 739v739"/>
     </symbol>
 
     <symbol id="nav" viewBox="0 0 48 48">
@@ -259,11 +273,12 @@
 </div>
 
 <!-- Sessions -->
-<div class="overlay /is-expand">
+<div class="overlay /is-expand"><!-- `is-expand`で開く -->
   <div class="overlay-content">
     <button class="overlay-button">
       <svg xmlns="http://www.w3.org/2000/svg" class="overlay-icon"><use xlink:href="#close"></use></svg>
     </button>
+    <!-- Session detail & Speaker info-->
     <div class="session">
       <div class="session-speaker">
         <div class="session-speakerAvatar">

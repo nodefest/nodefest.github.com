@@ -1,5 +1,15 @@
 <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
+    <linearGradient id="mount-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3F6630"  stop-opacity="0.8"/>
+      <stop offset="30%" stop-color="#61A347"  stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#EADA96"/>
+      <stop offset="60%" stop-color="#EADA96"/>
+      <!--<stop offset="50%" stop-color="#61A347"/>-->
+      <!--<stop offset="0%" stop-color="#D75A43"/>-->
+      <!--<stop offset="50%" stop-color="#EADA96"/>-->
+    </linearGradient>
+
     <linearGradient id="cover-hex" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#3F6630"/>
       <stop offset="50%" stop-color="#F9E057"/>
@@ -54,6 +64,10 @@
       <path d="M0 0h181v104"/>
     </symbol>
 
+    <symbol id="mountain" id="corner" viewBox="0 0 2560 1478">
+      <path d="M2560 1478V739L1280 0 0 739v739"/>
+    </symbol>
+
     <symbol id="nav" viewBox="0 0 48 48">
       <g fill-rule="evenodd"><path d="M0 0h48v8H0zM0 20h48v8H0zM0 40h48v8H0z"/></g>
     </symbol>
@@ -92,11 +106,13 @@
   </head>
   <body>
 
+<div class="home">
+
 <div class="cover">
-  <header class="header cover-inner">
-    <!-- TODO: `.navigation`に`is-expand`で開く -->
+
+  <header class="header cover-header">
     <nav class="navigation /is-expand">
-      <ul class="navigation-list">
+      <ul class="navigation-list cover-navigationList">
         <li><a href="about.html" class="navigation-target">About</a></li>
         <li><a href="speakers.html" class="navigation-target">Speakers</a></li>
         <li><a href="schedule.html" class="navigation-target">Schedule</a></li>
@@ -113,477 +129,636 @@
     </button>
   </header>
 
-  <img src="img/logo-tnf-invert.svg" class="cover-logo">
+  <div class="cover-inner">
 
-  <div class="cover-outline">
-    <div class="outline">
-      <div class="outline-body">
-        <p class="outline-date">November 12 - 13, 2016</p>
-        <h1 class="outline-name">東京Node学園祭2016</h1>
-        <p class="outline-location">at dots. & SHIBUYA Markcity</p>
+    <img src="img/logo-tnf-invert.svg" class="cover-logo">
+
+    <div class="cover-outline">
+      <div class="outline">
+        <div class="outline-body">
+          <p class="outline-date">November 12 - 13, 2016</p>
+          <h1 class="outline-name">東京Node学園祭2016</h1>
+          <p class="outline-location">at dots. & SHIBUYA Markcity</p>
+        </div>
       </div>
     </div>
   </div>
 
+  <div class="home-intro">
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="home-mountain" fill="url(#mount-gradient)"><use xlink:href="#mountain"></use></svg>
+    <div class="intro">
+  <h2 class="intro-title">
+    年に一度、真剣に学んで楽しもう！<br/>
+    日本最大のNode.jsカンファレンス！
+  </h2>
+  <div class="intro-body">
+    <p>近年、Node.jsを利用する機会は飛躍的に増えています。クライアントサイドのビルドモジュールやAWS Lambda, WebSocket を使ったリアルタイムウェブアプリケーション、軽量エンジンであることを活かしたIoTでの利用、デスクトップアプリ等、適用範囲が増えています。また昨今のECMAScript 2016が仕様化されたこと、Node.jsとio.jsの分裂と統合等のドラマを経てより一層の注目が期待されます。</p>
+    <p>このたびNode.js日本ユーザグループは、ECMAScriptの仕様化団体の一人であり、JSONの開発者でもある Douglas Crockford 氏、WhatWG Social Activity WG の仕様化を進める一人であり、 Node.js core committer でもある James Snell 氏、 ECMAScript 仕様化団体の一人であり、 Node のモジュールエコシステムの今後の鍵を握る Bradley Meck 氏、デスクトップアプリ開発が可能な Electron の作者である Cheng Zhao 氏、 React/Redux をベースに次世代の フロントエンド開発フレームワークである choo の開発を進める Yoshua Wuyts 氏を迎えて2016年のNode学園祭を開催いたします。</p>
+  </div>
+</div>
+  </div>
 </div>
 
+<div class="main home-main">
 
+  <div class="home-speakers">
+    <h2 class="home-subhead">Featured Speakers</h2>
 
-
-
-<div class="main">
-
-  <section class="page schedule">
-    <h2 class="page-title schedule-title">Schedule</h2>
-
-    <div class="page-body schedule-body">
-      <div class="schedule-section" id="workshop">
-        <ul class="schedule-nav">
-          <li>
-            <a href="#workshop">Nov 12</a>
-          </li>
-          <li>
-            <a href="#conference">Nov 13</a>
-          </li>
-        </ul>
-
-        <div class="timetable -workshop">
-          <div class="timetable-caption">
-            <h3 class="timetable-title">
-              Workshop Day <span class="timetable-venue">at dots.</span>              </h3>
-            <p class="timetable-day">
-              Nov 12
+    <ul class="speakers-list">
+      <li>
+        <a href="#https://github.com/douglascrockford" class="speaker">
+          <div class="speaker-image">
+            <div class="Hex">
+              <div class="Hex-outer">
+                <div class="Hex-inner">
+                  <img src="img/pic-douglascrockford.jpg" class="Hex-image">
+                  <!--<img src="img/pic-douglascrockford.jpg" class="Hex-image">-->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="speaker-info">
+            <p class="speaker-name">
+              Douglas Crockford
+            </p>
+            <p class="speaker-links">
+              @douglascrockford
             </p>
           </div>
-          <div class="timetable-header">
-            <div class="timetable-time"></div>
-            <div class="timetable-section">
-              <p>Event space</p>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>09:00 - 10:00</p>
-            </div>
-            <div class="timetable-content">
-              <p>Opening</p>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>10:00 - 12:00</p>
-            </div>
-            <div class="timetable-content">
-              <p class="timetable-sessionTitle">Node School</p>
-              <p class="timetable-sessionTitle">Node Discussion</p>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>12:00 - 13:00</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionLunch">Lunch</p>
+        </a>
+      </li>
+      <li>
+        <a href="#https://twitter.com/jasnell" class="speaker">
+          <div class="speaker-image">
+            <div class="Hex">
+              <div class="Hex-outer">
+                <div class="Hex-inner">
+                  <img src="img/pic-jasnell.jpg" class="Hex-image">
+                </div>
               </div>
             </div>
           </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>13:00 - 15:00</p>
-            </div>
-            <div class="timetable-content">
-              <p class="timetable-sessionTitle">Node School</p>
-              <p class="timetable-sessionTitle">Braintree Workshop</p>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>15:00 - 17:00</p>
-            </div>
-            <div class="timetable-content">
-              <p class="timetable-sessionTitle">Node School</p>
-              <p class="timetable-sessionTitle">Code and Learn</p>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>17:00 - 18:00</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">Lightning Talks</p>
-                <ul class="timetable-lts">
-                  <li>
-                    <p class="timetable-ltsTitle">Node.js イベントループを調べてみた</p>
-                    <p class="timetable-ltsSpeaker">Tomo Masakura</p>
-                  </li>
-                  <li>
-                    <p class="timetable-ltsTitle">Electronで製造ラインアプリ開発</p>
-                    <p class="timetable-ltsSpeaker">fossamagna</p>
-                  </li>
-                  <li>
-                    <p class="timetable-ltsTitle">Node.jsに縁のない職場でNode.jsを使い始めるための戦術</p>
-                    <p class="timetable-ltsSpeaker">鈴木 勇</p>
-                  </li>
-                  <li>
-                    <p class="timetable-ltsTitle">Node.js × Babel で AWS Lambda アプリケーションを開発する</p>
-                    <p class="timetable-ltsSpeaker">hkusu</p>
-                  </li>
-                  <li>
-                    <p class="timetable-ltsTitle">Node.jsではじめるTDD</p>
-                    <p class="timetable-ltsSpeaker">伊藤 瑛</p>
-                  </li>
-                  <li>
-                    <p class="timetable-ltsTitle">Node.js with WebRTC DataChannel</p>
-                    <p class="timetable-ltsSpeaker">がねこまさし</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>18:00</p>
-            </div>
-            <div class="timetable-content">
-              <p>Closing</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="schedule-section" id="conference">
-        <ul class="schedule-nav">
-          <li>
-            <a href="#workshop">Nov 12</a>
-          </li>
-          <li>
-            <a href="#conference">Nov 13</a>
-          </li>
-        </ul>
-        <div class="timetable -conference">
-          <div class="timetable-caption">
-            <h3 class="timetable-title">
-              Conference Day <span class="timetable-venue">at Markcity</span>              </h3>
-            <p class="timetable-day">
-              Nov 13
+          <div class="speaker-info">
+            <p class="speaker-name">
+              James Snell
+            </p>
+            <p class="speaker-links">
+              @jasnell
             </p>
           </div>
-          <div class="timetable-header">
-            <div class="timetable-time"></div>
-            <div class="timetable-section">
-              <p>Room A</p>
-              <p>Room B</p>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>09:00 - 10:00</p>
-            </div>
-            <div class="timetable-content">
-              <p>Opening</p>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>10:00 - 10:05</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">Greeting, Notice</p>
-                <p class="timetable-sessionSpeaker">@yosuke_furukawa, @tito</p>
+        </a>
+      </li>
+      <li>
+        <a href="#https://twitter.com/bradleymeck" class="speaker">
+          <div class="speaker-image">
+            <div class="Hex">
+              <div class="Hex-outer">
+                <div class="Hex-inner">
+                  <img src="img/pic-bmeck.jpg" class="Hex-image">
+                </div>
               </div>
             </div>
           </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>10:05 - 10:20</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionBreak">Break</p>
+          <div class="speaker-info">
+            <p class="speaker-name">
+              Bradley Meck
+            </p>
+            <p class="speaker-links">
+              @bradleymeck
+            </p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="#https://twitter.com/zcbenz" class="speaker">
+          <div class="speaker-image">
+            <div class="Hex">
+              <div class="Hex-outer">
+                <div class="Hex-inner">
+                  <img src="img/pic-zcbenz.jpg" class="Hex-image">
+                </div>
               </div>
             </div>
           </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>10:20 - 10:50</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">Demystifying JavaScript Engines</p>
-                <p class="timetable-sessionSpeaker">Alejandro Oviedo</p>
-              </div>
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">Alt-Ctrl: Scream Into This Arduino</p>
-                <p class="timetable-sessionSpeaker">Rachel White</p>
+          <div class="speaker-info">
+            <p class="speaker-name">
+              Cheng Zhao
+            </p>
+            <p class="speaker-links">
+              @zcbenz
+            </p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="#https://twitter.com/yoshuawuyts" class="speaker">
+          <div class="speaker-image">
+            <div class="Hex">
+              <div class="Hex-outer">
+                <div class="Hex-inner">
+                  <img src="img/pic-yoshuawuyts.jpg" class="Hex-image">
+                </div>
               </div>
             </div>
           </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>10:50 - 11:20</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">Debugging Node.js Performance Issues in Production</p>
-                <p class="timetable-sessionSpeaker">Thomas Watson</p>
-              </div>
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">Famicom programming with JavaScript</p>
-                <p class="timetable-sessionSpeaker">Fritz Van Deventer</p>
+          <div class="speaker-info">
+            <p class="speaker-name">
+              Yoshua Wuyts
+            </p>
+            <p class="speaker-links">
+              @yoshuawuyts
+            </p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="#https://twitter.com/mafintosh" class="speaker">
+          <div class="speaker-image">
+            <div class="Hex">
+              <div class="Hex-outer">
+                <div class="Hex-inner">
+                  <img src="img/pic-mafintosh.jpg" class="Hex-image">
+                </div>
               </div>
             </div>
           </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>11:20 - 11:50</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">Cybozu社のエンジニアの育て方と開発環境（TBD）</p>
-                <p class="timetable-sessionSpeaker">Teppei Sato</p>
-              </div>
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">GraphQL for the RESTful crowd</p>
-                <p class="timetable-sessionSpeaker">Barak Chamo</p>
-              </div>
-            </div>
+          <div class="speaker-info">
+            <p class="speaker-name">
+              Mathias Buus
+            </p>
+            <p class="speaker-links">
+              @mafintosh
+            </p>
           </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>11:50 - 13:00</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionLunch">Lunch</p>
-              </div>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>13:00 - 13:45</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">Keynote</p>
-                <p class="timetable-sessionSpeaker">Douglas Crockford</p>
-              </div>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>13:45 - 14:00</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionBreak">Break</p>
-              </div>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>14:00 - 14:30</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">Node.js and Web Standards</p>
-                <p class="timetable-sessionSpeaker">James M Snell</p>
-              </div>
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">Why to Standardize your READMEs</p>
-                <p class="timetable-sessionSpeaker">Richard Littauer</p>
-              </div>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>14:30 - 15:00</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">The journey toward ES modules.</p>
-                <p class="timetable-sessionSpeaker">Bradley Farias</p>
-              </div>
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">Vue.js 2.0 サーバサイドレンダリング</p>
-                <p class="timetable-sessionSpeaker">Kazuya Kawaguchi</p>
-              </div>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>15:00 - 15:30</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">Putting TV on the Internet</p>
-                <p class="timetable-sessionSpeaker">Mathias Buus</p>
-              </div>
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">React + Reduxを使った大規模商用サービスの開発</p>
-                <p class="timetable-sessionSpeaker">yoshidan</p>
-              </div>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>15:30 - 15:45</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionBreak">Break</p>
-              </div>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>15:45 - 16:15</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">boarding the tiny framework train</p>
-                <p class="timetable-sessionSpeaker">Yoshua Wuyts</p>
-              </div>
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">リアルタイムデプロイサービスNow（仮）</p>
-                <p class="timetable-sessionSpeaker">Naoyuki Kanezawa</p>
-              </div>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>16:15 - 16:45</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">Electron</p>
-                <p class="timetable-sessionSpeaker">Cheng Zhao</p>
-              </div>
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">PostCSS: Build your own CSS processor</p>
-                <p class="timetable-sessionSpeaker">Masaaki Morishita</p>
-              </div>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>16:45 - 17:15</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">Effective Types</p>
-                <p class="timetable-sessionSpeaker">Rob Howard</p>
-              </div>
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">JavaScript による並列処理：共有メモリとロック</p>
-                <p class="timetable-sessionSpeaker">清水 智公</p>
-              </div>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>17:15 - 17:30</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionBreak">Break</p>
-              </div>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>17:30 - 18:00</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionSponsor">Sponsors Talk</p>
-              </div>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>18:00 - 18:30</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">Lightning Talks</p>
-                <ul class="timetable-lts">
-                  <li>
-                    <p class="timetable-ltsTitle">Introduction to Rakuten React kit</p>
-                    <p class="timetable-ltsSpeaker">Koji Hirano</p>
-                  </li>
-                  <li>
-                    <p class="timetable-ltsTitle">WebAssemblyに欠けている大事なもの</p>
-                    <p class="timetable-ltsSpeaker">Yoshiki Shibukawa</p>
-                  </li>
-                  <li>
-                    <p class="timetable-ltsTitle">ライブラリからツールへ - 汎用表明強化ツールとしての power-assert</p>
-                    <p class="timetable-ltsSpeaker">Takuto Wada</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>18:30 - 18:45</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionBreak">Break</p>
-              </div>
-            </div>
-          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
 
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>18:45 - 19:15</p>
-            </div>
-            <div class="timetable-content">
-              <div class="timetable-session">
-                <p class="timetable-sessionTitle">Lightning Talks</p>
-                <ul class="timetable-lts">
-                  <li>
-                    <p class="timetable-ltsTitle">How Do We Get Along With Static Types</p>
-                    <p class="timetable-ltsSpeaker">FUJI Goro</p>
-                  </li>
-                  <li>
-                    <p class="timetable-ltsTitle">Jasper - The Issue Reader for GitHub with Electron</p>
-                    <p class="timetable-ltsSpeaker">Ryo Maruyama</p>
-                  </li>
-                  <li>
-                    <p class="timetable-ltsTitle">RuntimeJS Playground</p>
-                    <p class="timetable-ltsSpeaker">Jacob Groundwater</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="timetable-row">
-            <div class="timetable-time">
-              <p>19:15 - </p>
-            </div>
-            <div class="timetable-content">
-              <p>Closing</p>
-            </div>
-          </div>
-        </div>
+  <!-- Schedule -->
+  <div class="home-schedule">
+    <h2 class="home-subhead">Schedule</h2>
+
+    <div class="home-scheduleSection">
+      <div class="timetable -workshop">
+  <div class="timetable-caption">
+    <h3 class="timetable-title">
+      Workshop Day <span class="timetable-venue">at dots.</span>              </h3>
+    <p class="timetable-day">
+      Nov 12
+    </p>
+  </div>
+  <div class="timetable-header">
+    <div class="timetable-time"></div>
+    <div class="timetable-section">
+      <p>Event space</p>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>09:00 - 10:00</p>
+    </div>
+    <div class="timetable-content">
+      <p>Opening</p>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>10:00 - 12:00</p>
+    </div>
+    <div class="timetable-content">
+      <p class="timetable-sessionTitle">Node School</p>
+      <p class="timetable-sessionTitle">Node Discussion</p>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>12:00 - 13:00</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionLunch">Lunch</p>
       </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>13:00 - 15:00</p>
+    </div>
+    <div class="timetable-content">
+      <p class="timetable-sessionTitle">Node School</p>
+      <p class="timetable-sessionTitle">Braintree Workshop</p>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>15:00 - 17:00</p>
+    </div>
+    <div class="timetable-content">
+      <p class="timetable-sessionTitle">Node School</p>
+      <p class="timetable-sessionTitle">Code and Learn</p>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>17:00 - 18:00</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Lightning Talks</p>
+        <ul class="timetable-lts">
+          <li>
+            <p class="timetable-ltsTitle">Node.js イベントループを調べてみた</p>
+            <p class="timetable-ltsSpeaker">Tomo Masakura</p>
+          </li>
+          <li>
+            <p class="timetable-ltsTitle">Electronで製造ラインアプリ開発</p>
+            <p class="timetable-ltsSpeaker">fossamagna</p>
+          </li>
+          <li>
+            <p class="timetable-ltsTitle">Node.jsに縁のない職場でNode.jsを使い始めるための戦術</p>
+            <p class="timetable-ltsSpeaker">鈴木 勇</p>
+          </li>
+          <li>
+            <p class="timetable-ltsTitle">Node.js × Babel で AWS Lambda アプリケーションを開発する</p>
+            <p class="timetable-ltsSpeaker">hkusu</p>
+          </li>
+          <li>
+            <p class="timetable-ltsTitle">Node.jsではじめるTDD</p>
+            <p class="timetable-ltsSpeaker">伊藤 瑛</p>
+          </li>
+          <li>
+            <p class="timetable-ltsTitle">Node.js with WebRTC DataChannel</p>
+            <p class="timetable-ltsSpeaker">がねこまさし</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>18:00</p>
+    </div>
+    <div class="timetable-content">
+      <p>Closing</p>
+    </div>
+  </div>
+</div>
 
     </div>
 
-    <div class="schedule-note">
+    <div class="home-scheduleSection">
+      <div class="timetable -conference">
+  <div class="timetable-caption">
+    <h3 class="timetable-title">
+      Conference Day <span class="timetable-venue">at Markcity</span>              </h3>
+    <p class="timetable-day">
+      Nov 13
+    </p>
+  </div>
+  <div class="timetable-header">
+    <div class="timetable-time"></div>
+    <div class="timetable-section">
+      <p>Room A</p>
+      <p>Room B</p>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>09:00 - 10:00</p>
+    </div>
+    <div class="timetable-content">
+      <p>Opening</p>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>10:00 - 10:05</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Greeting, Notice</p>
+        <p class="timetable-sessionSpeaker">@yosuke_furukawa, @tito</p>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>10:05 - 10:20</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionBreak">Break</p>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>10:20 - 10:50</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Demystifying JavaScript Engines</p>
+        <p class="timetable-sessionSpeaker">Alejandro Oviedo</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Alt-Ctrl: Scream Into This Arduino</p>
+        <p class="timetable-sessionSpeaker">Rachel White</p>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>10:50 - 11:20</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Debugging Node.js Performance Issues in Production</p>
+        <p class="timetable-sessionSpeaker">Thomas Watson</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Famicom programming with JavaScript</p>
+        <p class="timetable-sessionSpeaker">Fritz Van Deventer</p>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>11:20 - 11:50</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Cybozu社のエンジニアの育て方と開発環境（TBD）</p>
+        <p class="timetable-sessionSpeaker">Teppei Sato</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">GraphQL for the RESTful crowd</p>
+        <p class="timetable-sessionSpeaker">Barak Chamo</p>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>11:50 - 13:00</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionLunch">Lunch</p>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>13:00 - 13:45</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Keynote</p>
+        <p class="timetable-sessionSpeaker">Douglas Crockford</p>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>13:45 - 14:00</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionBreak">Break</p>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>14:00 - 14:30</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Node.js and Web Standards</p>
+        <p class="timetable-sessionSpeaker">James M Snell</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Why to Standardize your READMEs</p>
+        <p class="timetable-sessionSpeaker">Richard Littauer</p>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>14:30 - 15:00</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">The journey toward ES modules.</p>
+        <p class="timetable-sessionSpeaker">Bradley Farias</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Vue.js 2.0 サーバサイドレンダリング</p>
+        <p class="timetable-sessionSpeaker">Kazuya Kawaguchi</p>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>15:00 - 15:30</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Putting TV on the Internet</p>
+        <p class="timetable-sessionSpeaker">Mathias Buus</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">React + Reduxを使った大規模商用サービスの開発</p>
+        <p class="timetable-sessionSpeaker">yoshidan</p>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>15:30 - 15:45</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionBreak">Break</p>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>15:45 - 16:15</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">boarding the tiny framework train</p>
+        <p class="timetable-sessionSpeaker">Yoshua Wuyts</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">リアルタイムデプロイサービスNow（仮）</p>
+        <p class="timetable-sessionSpeaker">Naoyuki Kanezawa</p>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>16:15 - 16:45</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Electron</p>
+        <p class="timetable-sessionSpeaker">Cheng Zhao</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">PostCSS: Build your own CSS processor</p>
+        <p class="timetable-sessionSpeaker">Masaaki Morishita</p>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>16:45 - 17:15</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Effective Types</p>
+        <p class="timetable-sessionSpeaker">Rob Howard</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">JavaScript による並列処理：共有メモリとロック</p>
+        <p class="timetable-sessionSpeaker">清水 智公</p>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>17:15 - 17:30</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionBreak">Break</p>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>17:30 - 18:00</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionSponsor">Sponsors Talk</p>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>18:00 - 18:30</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Lightning Talks</p>
+        <ul class="timetable-lts">
+          <li>
+            <p class="timetable-ltsTitle">Introduction to Rakuten React kit</p>
+            <p class="timetable-ltsSpeaker">Koji Hirano</p>
+          </li>
+          <li>
+            <p class="timetable-ltsTitle">WebAssemblyに欠けている大事なもの</p>
+            <p class="timetable-ltsSpeaker">Yoshiki Shibukawa</p>
+          </li>
+          <li>
+            <p class="timetable-ltsTitle">ライブラリからツールへ - 汎用表明強化ツールとしての power-assert</p>
+            <p class="timetable-ltsSpeaker">Takuto Wada</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>18:30 - 18:45</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionBreak">Break</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>18:45 - 19:15</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Lightning Talks</p>
+        <ul class="timetable-lts">
+          <li>
+            <p class="timetable-ltsTitle">How Do We Get Along With Static Types</p>
+            <p class="timetable-ltsSpeaker">FUJI Goro</p>
+          </li>
+          <li>
+            <p class="timetable-ltsTitle">Jasper - The Issue Reader for GitHub with Electron</p>
+            <p class="timetable-ltsSpeaker">Ryo Maruyama</p>
+          </li>
+          <li>
+            <p class="timetable-ltsTitle">RuntimeJS Playground</p>
+            <p class="timetable-ltsSpeaker">Jacob Groundwater</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>19:15 - </p>
+    </div>
+    <div class="timetable-content">
+      <p>Closing</p>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <div class="home-scheduleNote">
       <p>※ セッションの内容／時間は変更になる可能性があります。</p>
       <p>※ セッションは日本語・英語で行われます。</p>
     </div>
+  </div>
 
-  </section>
+  <!-- Veunes -->
+  <div class="home-venues">
+    <h2 class="home-subhead">Venue</h2>
+    <div class="page-body venue-body">
+      <div class="venue-map" id="venue"></div>
+      <div class="venue-detail">
+        <section class="venue-access -workshop">
+          <h3 class="venue-name">
+            <img src="img/pin-workshop.png" class="venue-icon">
+            イベント&コミュニティスペース dots.
+          </h3>
+          <p class="venue-address">
+            <a href="#">
+              東京都渋谷区宇田川町20-17 NOF渋谷公園通りビル 8F
+            </a>
+          </p>
+        </section>
+        <section class="venue-access -conference">
+          <h3 class="venue-name">
+            <img src="img/pin-conference.png" class="venue-icon">
+            CyberAgent セミナールーム
+          </h3>
+          <p class="venue-address">
+            <a href="#">
+              東京都渋谷区道玄坂1-12-1 渋谷マークシティ13F
+            </a>
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
 
-</div>
-
-<!-- Tickets -->
+  <!-- Tickets -->
 <section class="tickets">
   <div class="tickets-body">
     <div class="tickets-action">
@@ -593,6 +768,90 @@
     </div>
   </div>
 </section>
+
+</div>
+
+<!-- Sponsors -->
+  <div class="home-sponsors">
+    <h2 class="home-subhead home-sponsorsSubhead">Sponsors</h2>
+    <div class="sponsors-section">
+      <h3 class="sponsors-grade">Platinum</h3>
+      <ul class="sponsors-list">
+        <li>
+          <div class="sponsor">
+            <a href="https://www.paypal.com/jp/webapps/mpp/merchant" target="_blank" class="sponsor-banner -platinum">
+              <img src="img/sponsors/paypal.png" alt="PayPal">
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="sponsors-section">
+      <h3 class="sponsors-grade">Gold</h3>
+      <ul class="sponsors-list">
+        <li>
+          <div class="sponsor">
+            <a href="http://dwango.co.jp/" target="_blank" class="sponsor-banner -gold">
+              <img src="img/sponsors/dwango.png" alt="株式会社ドワンゴ">
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="sponsor">
+            <a href="http://recruit-tech.co.jp/" target="_blank" class="sponsor-banner -gold">
+              <img src="img/sponsors/r-tech.png" alt="リクルートテクノロジーズ">
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="sponsor">
+            <a href="http://www.yahoo.co.jp/" target="_blank" class="sponsor-banner -gold">
+              <img src="img/sponsors/yahoo.png" alt="ヤフー株式会社">
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="sponsors-section">
+      <h3 class="sponsors-grade">Silver</h3>
+      <ul class="sponsors-list">
+        <li>
+          <div class="sponsor">
+            <a href="https://www.pxgrid.com/" target="_blank" class="sponsor-banner -silver">
+              <img src="img/sponsors/pxgrid.png" alt="株式会社ピクセルグリッド">
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="sponsor">
+            <a href="http://sphinx-software.jp/" target="_blank" class="sponsor-banner -silver">
+              <img src="img/sponsors/sphinx.png" alt="Sphinx有限会社">
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="sponsors-section">
+      <h3 class="sponsors-grade">Media</h3>
+      <ul class="sponsors-list">
+        <li>
+          <div class="sponsor">
+            <a href="https://www.theport.jp/" target="_blank" class="sponsor-banner -silver">
+              <img src="img/sponsors/theport.png" alt="ポート株式会社">
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!--<p class="sponsors-lead">協賛を希望される方は専用フォームよりお申し込みください。</p>-->
+    <!--<div class="sponsors-action">-->
+    <!--<a href="https://docs.google.com/forms/d/e/1FAIpQLSfNdD06sIUy5noreZ6yp_ZzMlAFoIRq51V1bFwtcuY4xh29Yw/viewform"-->
+    <!--class="Button -invert -cfs">Sponsorship</a>-->
+    <!--</div>-->
+  </div>
+
+</div>
 
 <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDvBLklunoaVPhXh4b1jVcXoUclUlmtNiA&extension=.js'></script>
 

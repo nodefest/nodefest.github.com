@@ -28,6 +28,16 @@
 
 <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
+    <linearGradient id="mount-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3F6630"  stop-opacity="0.8"/>
+      <stop offset="30%" stop-color="#61A347"  stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#EADA96"/>
+      <stop offset="60%" stop-color="#EADA96"/>
+      <!--<stop offset="50%" stop-color="#61A347"/>-->
+      <!--<stop offset="0%" stop-color="#D75A43"/>-->
+      <!--<stop offset="50%" stop-color="#EADA96"/>-->
+    </linearGradient>
+
     <linearGradient id="cover-hex" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#3F6630"/>
       <stop offset="50%" stop-color="#F9E057"/>
@@ -82,6 +92,10 @@
       <path d="M0 0h181v104"/>
     </symbol>
 
+    <symbol id="mountain" id="corner" viewBox="0 0 2560 1478">
+      <path d="M2560 1478V739L1280 0 0 739v739"/>
+    </symbol>
+
     <symbol id="nav" viewBox="0 0 48 48">
       <g fill-rule="evenodd"><path d="M0 0h48v8H0zM0 20h48v8H0zM0 40h48v8H0z"/></g>
     </symbol>
@@ -123,15 +137,15 @@
 
     <div class="page-body about-body">
       <div class="intro">
-        <h2 class="intro-title">
-          年に一度、真剣に学んで楽しもう！<br/>
-          日本最大のNode.jsカンファレンス！
-        </h2>
-        <div class="intro-body">
-          <p>近年、Node.jsを利用する機会は飛躍的に増えています。クライアントサイドのビルドモジュールやAWS Lambda, WebSocket を使ったリアルタイムウェブアプリケーション、軽量エンジンであることを活かしたIoTでの利用、デスクトップアプリ等、適用範囲が増えています。また昨今のECMAScript 2016が仕様化されたこと、Node.jsとio.jsの分裂と統合等のドラマを経てより一層の注目が期待されます。</p>
-          <p>このたびNode.js日本ユーザグループは、ECMAScriptの仕様化団体の一人であり、JSONの開発者でもある Douglas Crockford 氏、WhatWG Social Activity WG の仕様化を進める一人であり、 Node.js core committer でもある James Snell 氏、 ECMAScript 仕様化団体の一人であり、 Node のモジュールエコシステムの今後の鍵を握る Bradley Meck 氏、デスクトップアプリ開発が可能な Electron の作者である Cheng Zhao 氏、 React/Redux をベースに次世代の フロントエンド開発フレームワークである choo の開発を進める Yoshua Wuyts 氏を迎えて2016年のNode学園祭を開催いたします。</p>
-        </div>
-      </div>
+  <h2 class="intro-title">
+    年に一度、真剣に学んで楽しもう！<br/>
+    日本最大のNode.jsカンファレンス！
+  </h2>
+  <div class="intro-body">
+    <p>近年、Node.jsを利用する機会は飛躍的に増えています。クライアントサイドのビルドモジュールやAWS Lambda, WebSocket を使ったリアルタイムウェブアプリケーション、軽量エンジンであることを活かしたIoTでの利用、デスクトップアプリ等、適用範囲が増えています。また昨今のECMAScript 2016が仕様化されたこと、Node.jsとio.jsの分裂と統合等のドラマを経てより一層の注目が期待されます。</p>
+    <p>このたびNode.js日本ユーザグループは、ECMAScriptの仕様化団体の一人であり、JSONの開発者でもある Douglas Crockford 氏、WhatWG Social Activity WG の仕様化を進める一人であり、 Node.js core committer でもある James Snell 氏、 ECMAScript 仕様化団体の一人であり、 Node のモジュールエコシステムの今後の鍵を握る Bradley Meck 氏、デスクトップアプリ開発が可能な Electron の作者である Cheng Zhao 氏、 React/Redux をベースに次世代の フロントエンド開発フレームワークである choo の開発を進める Yoshua Wuyts 氏を迎えて2016年のNode学園祭を開催いたします。</p>
+  </div>
+</div>
     </div>
 
     <div class="page-section">

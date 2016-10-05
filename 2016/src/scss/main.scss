@@ -347,9 +347,9 @@ $hex-image: $hex-canvas * $hex-ratio;
   @include over-lg {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 2rem;
-    margin-bottom: 4rem;
-    padding: 0;
+    //margin-top: 2rem;
+    //margin-bottom: 4rem;
+    padding: 2rem 0 4rem 0;
     width: 75%;
     justify-content: space-between;
     align-items: center;
@@ -362,8 +362,9 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
   @include over-hg {
     flex-wrap: nowrap;
-    margin-top: 0;
-    margin-bottom: 0;
+    //margin-top: 0;
+    //margin-bottom: 0;
+    padding: 0;
     width: 100%;
     height: 5rem;
     font-size: 1rem;
@@ -508,33 +509,197 @@ $hex-image: $hex-canvas * $hex-ratio;
 //  }
 //}
 
-.cover {}
-.cover-inner {
+.cover {
+  background-image: url('img/bg-header-home.jpg');
+  background-size: cover;
+  @include over-md {
+    margin-bottom: 2rem;
+  }
+}
+.cover-header {
   @include over-md {
     margin-left: auto;
     margin-right: auto;
-    max-width: $width-container;
+    width: $width-container;
+    &:before {
+      content: none;
+    }
+  }
+}
+.cover-inner {
+  position: relative;
+  z-index: 10;
+  padding-top: 6rem;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    //padding-top: percentage(1280 / 1920);
+    //background-image: url('img/bg-header-home.png');
+    //background-size: cover;
+  }
+  @include over-md {
+    padding-top: 6rem;
+    //margin-left: auto;
+    //margin-right: auto;
+    //max-width: $width-container;
   }
 }
 .cover-logo {
-  //margin-bottom: 2rem;
-  //position: relative;
-  //z-index: 2;
   display: block;
   border: 5px solid $color-whitefog;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 3rem;
   padding: 8px;
   width: 224px;
   height: 224px;
-  mix-blend-mode: multiply;
+  //mix-blend-mode: hard-light;
   @include over-md {
-    border: 10px solid $color-inky;
-    margin: 8rem auto 0;
+    border: 10px solid $color-whitefog;
+    margin-bottom: 3rem;
     padding: 16px;
-    width: 448px;
-    height: 448px;
+    width: 384px;
+    height: 384px;
   }
+}
+.cover-outline {
+  margin-bottom: 3rem;
+}
+.cover-navigationList {
+  @include over-lg {
+    width: 100%;
+  }
+}
+
+// Home
+.home-intro {
+  position: relative;
+  z-index: 1;
+  background-color: $color-sand;
+  @include over-md {
+    background-color: transparent;
+    background: linear-gradient(top,rgba($color-sand,0),$color-sand);
+  }
+}
+.home-mountain {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 0;
+  z-index: -1;
+  width: 80rem;
+  height: 46.3125rem;
+  transform: translate3d(-36%,-48%,0);
+  @include over-md {
+    width: 160rem;
+    height: 92.625rem;
+    //opacity: 0.8;
+    transform: translate3d(-32%,-40%,0);
+  }
+}
+.home-main {
+  position: relative;
+  z-index: 1;
+  background-color: $color-whitefog;
+  background-image: linear-gradient(top,
+    rgba($color-sand,1) 0%,
+    rgba($color-whitefog,0.8) 5%,
+    rgba($color-whitefog,0.75) 50%,
+    rgba($color-sand,0.8) 90%,
+    rgba($color-sand,1) 100%
+  ),
+  url('img/bg-tile.svg');
+  background-position: center top;
+  //background-size: auto, 64px auto;
+  background-size: auto, 64px auto;
+  @include over-md {
+  }
+}
+.home-subhead {
+  margin-bottom: 1.5rem;
+  line-height: 4rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 1.5rem;
+  color: $color-sunred;
+  @media (max-width: 321px) { // Minor Breakpoint
+    font-size: 1em;
+  }
+  @include over-md {
+    margin-bottom: 4rem;
+    font-size: 3em;
+  }
+  @include over-lg {
+    margin-bottom: 6rem;
+    font-size: 4em;
+  }
+}
+.home-speakers,
+.home-schedule,
+.home-venues {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  @include over-md {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  @include over-hg {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+.home-scheduleSection {
+  margin: 0 1rem 2rem 1rem;
+  padding-top: 1rem;
+  @include over-md {
+    margin: 4rem auto 0 auto;
+    max-width: $width-container;
+  }
+}
+.home-scheduleNote {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 0.75rem;
+  @include over-md {
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $width-container;
+    font-size: 0.875rem;
+  }
+}
+.home-venues {
+  @include over-md {
+  }
+  @include over-hg {
+    margin-bottom: 64px;
+  }
+}
+.home-sponsors {
+  padding-top: 2rem ;
+  padding-bottom: 2rem;
+  background-color: $color-deepnight;
+  background-image: linear-gradient(top,$color-deepnight 0,$color-inky 100%);
+  color: $color-whitefog;
+  @include over-md {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  @include over-hg {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+.home-sponsorsSubhead {
+  color: inherit;
 }
 
 // Outline
@@ -547,6 +712,8 @@ $hex-image: $hex-canvas * $hex-ratio;
   position: relative;
   z-index: 1;
   @include over-md {
+    margin-bottom: 2rem;
+    padding-right: 2rem;
     text-align: right;
   }
 }
@@ -558,8 +725,8 @@ $hex-image: $hex-canvas * $hex-ratio;
   letter-spacing: 0.16em;
   color: $color-whitefog;
   @include over-md {
-    padding-top: 4rem;
-    height: 12rem;
+    //padding-top: 4rem;
+    //height: 12rem;
     line-height: 1;
   }
 }
@@ -577,6 +744,10 @@ $hex-image: $hex-canvas * $hex-ratio;
   //}
   @include over-md {
     margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  @include over-lg {
+    margin-bottom: 1rem;
     font-size: 2rem;
   }
 }
@@ -588,7 +759,15 @@ $hex-image: $hex-canvas * $hex-ratio;
   //}
   //@media (min-width: 590px) { // Minor Breakpoint
   //}
+  //@include over-md {
+  //  margin-bottom: 1rem;
+  //  font-size: 2.5rem;
+  //}
   @include over-md {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+  }
+  @include over-lg {
     margin-bottom: 1rem;
     font-size: 3.5rem;
   }
@@ -1113,11 +1292,8 @@ $hex-image: $hex-canvas * $hex-ratio;
   margin: 0 1rem 2rem 1rem;
   padding-top: 1rem;
   @include over-md {
-    margin: 0 auto 4rem auto;
+    margin: 4rem auto 0 auto;
     max-width: $width-container;
-  }
-  &:last-child {
-    margin-bottom: 0;
   }
 }
 .schedule-note {
@@ -1510,8 +1686,21 @@ $hex-image: $hex-canvas * $hex-ratio;
   position: relative;
   //z-index: 2;
   padding: 3rem 1rem;
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    padding-top: percentage(740 / 1920);
+    background-image: url('img/bg-footer.png');
+    background-size: cover;
+  }
 }
 .tickets-action {
+  margin-bottom: 1rem;
   text-align: center;
   .Button {
     display: block;
@@ -1519,6 +1708,7 @@ $hex-image: $hex-canvas * $hex-ratio;
     font-size: 1.5em;
   }
   @include over-md {
+    margin-bottom: 16rem;
     padding: 0;
     .Button {
       display: inline-block;
@@ -1665,20 +1855,20 @@ $hex-image: $hex-canvas * $hex-ratio;
 }
 .sponsors-list {
   margin-bottom: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   > * {
-    float: 1 1 100%;
     margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     border: 1px solid $color-creamhaze;
     background-color: #FFFFFF;
   }
   @include over-md {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-bottom: 1.5rem;
     > * {
-      margin-left: 1rem;
-      margin-right: 1rem;
+      //flex: 1 1 100%;
     }
   }
 }
@@ -1968,18 +2158,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   font-size: 0.825rem;
   text-align: center;
   //background-color: $color-inky;
-  &:before {
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    width: 100%;
-    padding-top: percentage(740 / 1920);
-    background-image: url('img/bg-footer.png');
-    background-size: cover;
-  }
   @include over-md {
     //position: static;
     //padding-top: 0;
@@ -1994,8 +2172,8 @@ $hex-image: $hex-canvas * $hex-ratio;
   padding-bottom: 1rem;
   background-color: $color-shadow;
   @include over-md {
-    margin-top: 256px; // Fix gutter
-    background-color: rgba($color-deepnight,0.9);
+    //margin-top: 256px; // Fix gutter
+    background-color: $color-deepnight;
   }
 }
 .contentinfo-inner {
