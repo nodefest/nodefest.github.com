@@ -1,42 +1,42 @@
 {
   "douglascrockford": {
     "name":    "Douglas Crockford",
-    "bio":   "",
+    "bio":     "TODO: だれかにもらう",
     "url":     "https://github.com/douglascrockford",
     "twitter": ""
   },
 
   "jasnell": {
     "name":    "James Snell",
-    "bio":   "",
+    "bio":   "James M Snell is currently IBM's Technical Lead for Node.js and a member of the Node.js TSC and CTC. At IBM, he is responsible for coordinating the company's various contributions to Node.js. He has spent his 15+ years at the company dedicated to the development of Open Source and Open Standards.",
     "url":     "https://twitter.com/jasnell",
     "twitter": "jasnell"
   },
 
   "bmeck": {
     "name":    "Bradley Meck",
-    "bio":   "",
+    "bio":     "Bradley is a senior software engineer at GoDaddy working remotely from Austin, Texas. He is a member of TC39 and an active member of the Node community. Debugging and parser tooling are some of his main interests for programming in his free time. The efforts to get Node to support ES Modules is largely being driven by Bradley with the help of other in the Node community.",
     "url":     "https://twitter.com/bradleymeck",
     "twitter": "bradleymeck"
   },
 
   "zcbenz": {
     "name":    "Cheng Zhao",
-    "bio":   "",
+    "bio":     "TODO: だれかにもらう",
     "url":     "https://twitter.com/zcbenz",
     "twitter": "zcbenz"
   },
 
   "yoshuawuyts": {
     "name":    "Yoshua Wuyts",
-    "bio":   "",
+    "bio":     "Yosh is a creative engineer who loves all things computer. He spends most of his days traveling around, and writing quality projects for both clients and for free. He's been an active member of the Node community for years and specializes in building tiny tools that make you squeal with excitement.",
     "url":     "https://twitter.com/yoshuawuyts",
     "twitter": "yoshuauyts"
   },
 
   "mafintosh": {
     "name":    "Mathias Buus",
-    "bio":   "",
+    "bio":     "Mathias is a non-profit Node.js hacker based in Copenhagen, Denmark. He works full time on open source and is part of the Dat project, http://dat-data.com trying to build open tools to help scientists share datasets. Currently he maintains more than 400 modules on npm including a bunch of P2P and mad science stuff.",
     "url":     "https://twitter.com/mafintosh",
     "twitter": "mafintosh"
   }
