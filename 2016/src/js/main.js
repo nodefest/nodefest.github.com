@@ -1,11 +1,11 @@
 var main = location.pathname.split('/2016')[1];
 
 var scripts = {
-  '/':              require('./index'),
-  '/index.html':    require('./index'),
-  '/venues.html':   require('./venues'),
-  '/speakers.html': require('./speakers')
+  '/':              require('./page/index'),
+  '/index.html':    require('./page/index'),
+  '/venues.html':   require('./page/venues'),
+  '/speakers.html': require('./page/speakers')
 };
 
 (scripts[main] || function() {})();
-require('./_navigation')();
+require('./module/navigation')();
