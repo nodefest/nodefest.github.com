@@ -7,6 +7,5 @@ var scripts = {
   '/speakers.html': require('./speakers')
 };
 
-console.info(main, scripts[main]);
 (scripts[main] || function() {})();
 require('./_navigation')();
