@@ -16,8 +16,24 @@ module.exports = function() {
     ev.preventDefault();
     var key = ev.currentTarget.getAttribute('data-key');
     var overlay = document.querySelector('.overlay[data-key="' + key + '"]');
+    var content = overlay.querySelector('.overlay-content');
+    var button  = overlay.querySelector('.overlay-button');
+
+    // アニメーションで制御するのでいったん全部消す
+    overlay.style.display = content.style.display = button.style.display = 'none';
+
+    // アニメーションしないならコレだけで良い
     body.classList.add('is-expand');
     overlay.classList.add('is-expand');
+
+    // アニメーション！
+    Velocity(overlay, 'fadeIn', { duration: 50 }).then(function() {
+      overlay.style.display = '';
+      Velocity(content, 'slideDown', { delay: 300, duration: 200 }).then(function() {
+        Velocity(button, 'fadeIn');
+      });
+    });
+
   }
 
   function _closeSpeaker(ev) {
