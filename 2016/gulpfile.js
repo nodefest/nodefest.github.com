@@ -91,7 +91,7 @@ gulp.task('server', ['html', 'css', 'js', 'watch'], () => {
 gulp.task('watch', () => {
   gulp.watch(`${srcDirs.html}/**/*.ejs`,  ['html']).on('change', browserSync.reload);
   gulp.watch(`${srcDirs.json}/**/*.json`, ['html']).on('change', browserSync.reload);
-  gulp.watch(`${srcDirs.css}/**/*.css`,   ['css']).on('change', browserSync.reload);
+  gulp.watch(`${srcDirs.css}/**/*.scss`,  ['css']).on('change', browserSync.reload);
   gulp.watch(`${srcDirs.js}/**/*.js`,     ['js']).on('change', browserSync.reload);
 });
 
