@@ -13,11 +13,17 @@ const buffer = require('vinyl-buffer');
 const uglify = require('gulp-uglify');
 
 const browserSync = require('browser-sync').create();
+const srcDirs = {
+  html: './src/html',
+  json: './src/json',
+  js:   './src/js',
+  css:  './src/scss'
+};
 const srcPaths = {
-        html: './src/html/*.ejs',
-        js:   './src/js/main.js',
-        css:  './src/scss/main.scss'
-      };
+  html: `${srcDirs.html}/*.ejs`,
+  js:   `${srcDirs.js}/main.js`,
+  css:  `${srcDirs.css}/main.scss`
+};
 const destPath = './';
 
 const json = {};
@@ -83,9 +89,10 @@ gulp.task('server', ['html', 'css', 'js', 'watch'], () => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch(srcPaths.html, ['html']).on('change', browserSync.reload);
-  gulp.watch(srcPaths.css,  ['css']).on('change', browserSync.reload);
-  gulp.watch(srcPaths.js,   ['js']).on('change', browserSync.reload);
+  gulp.watch(`${srcDirs.html}/**/*.ejs`,  ['html']).on('change', browserSync.reload);
+  gulp.watch(`${srcDirs.json}/**/*.json`, ['html']).on('change', browserSync.reload);
+  gulp.watch(`${srcDirs.css}/**/*.css`,   ['css']).on('change', browserSync.reload);
+  gulp.watch(`${srcDirs.js}/**/*.js`,     ['js']).on('change', browserSync.reload);
 });
 
 gulp.task('default', ['html', 'css', 'js', 'server']);
