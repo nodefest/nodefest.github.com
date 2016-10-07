@@ -19,6 +19,12 @@ module.exports = function() {
     var content = overlay.querySelector('.overlay-content');
     var button  = overlay.querySelector('.overlay-button');
 
+    // Twitterアカウントのところだったらばリンク開く
+    if (ev.target.className === 'speaker-links') {
+      window.open(ev.currentTarget.href);
+      return;
+    }
+
     // アニメーションで制御するのでいったん全部消す
     overlay.style.display = content.style.display = button.style.display = 'none';
 
