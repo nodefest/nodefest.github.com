@@ -89,7 +89,7 @@ body {
   color: $color-inky;
   overflow-x: hidden; // DEV
   background-color: $color-whitefog;
-  background-image: linear-gradient(top,
+  background-image: linear-gradient(to bottom,
     rgba($color-whitefog,1) 0%,
     rgba($color-whitefog,0.8) 10%,
     rgba($color-whitefog,0.75) 50%,
@@ -495,7 +495,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   background-color: $color-sand;
   @include over-md {
     background-color: transparent;
-    background: linear-gradient(top,rgba($color-sand,0),$color-sand);
+    background: linear-gradient(to bottom,rgba($color-sand,0),$color-sand);
   }
 }
 .home-mountain {
@@ -526,7 +526,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   position: relative;
   z-index: 1;
   background-color: $color-whitefog;
-  background-image: linear-gradient(top,
+  background-image: linear-gradient(to bottom,
     rgba($color-sand,1) 0%,
     rgba($color-whitefog,0.8) 5%,
     rgba($color-whitefog,0.75) 50%,
@@ -607,7 +607,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   padding-top: 2rem ;
   padding-bottom: 2rem;
   background-color: $color-deepnight;
-  background-image: linear-gradient(top,$color-deepnight 0,$color-inky 100%);
+  background-image: linear-gradient(to bottom,$color-deepnight 0,$color-inky 100%);
   color: $color-whitefog;
   @include over-md {
     padding-top: 3rem;
