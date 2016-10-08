@@ -696,11 +696,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 
-// About
-.about {
-
-}
-
 // Introduction
 .intro {
   box-sizing: border-box;
@@ -709,8 +704,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   padding: 1rem;
   background-color: $color-whitefog;
   border: 4px solid $color-sand;
-  @include over-md {
-  }
   @include over-lg {
     border: 8px solid $color-sand;
     margin-left: auto;
@@ -726,6 +719,9 @@ $hex-image: $hex-canvas * $hex-ratio;
   font-weight: 100;
   font-size: 1rem;
   color: $color-sunred;
+  @include below-sm {
+    font-size: 0.875rem;
+  }
   @include over-md {
     margin-bottom: 1rem;
     //line-height: $line-tight;
@@ -1329,6 +1325,10 @@ $hex-image: $hex-canvas * $hex-ratio;
   font-weight: 200;
   color: $color-inky;
   font-size: 0.875rem;
+  @include below-sm {
+    margin-top: 0.5rem;
+    display: block;
+  }
   @include over-md {
     font-size: 2rem;
   }
@@ -2029,10 +2029,23 @@ $hex-image: $hex-canvas * $hex-ratio;
   @include over-md {
     clear: both;
     float: left;
-  }
-  @include over-lg {
+    display: inline-block;
   }
 }
+.copyright-usergroup {
+  display: block;
+  margin-top: 0.5rem;
+  @include over-md {
+    display: inline-block;
+    &:before {
+      content: "";
+      border-left: 1px solid $color-whitefog;
+      margin-left: 0.5rem;
+      padding-left: 0.5rem;
+    }
+  }
+}
+
 .createby {
   font-size: 0.75rem;
   @include over-sm {

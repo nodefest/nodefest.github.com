@@ -4,7 +4,7 @@ module.exports = function() {
   var mapOptions = {
     center: new google.maps.LatLng(35.659676,139.698486),
     zoom: 16,
-    zoomControl: true,
+    zoomControl: false,
     zoomControlOptions: {
       style: google.maps.ZoomControlStyle.LARGE,
     },
