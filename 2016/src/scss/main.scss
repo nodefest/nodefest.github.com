@@ -1605,7 +1605,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   box-sizing: border-box;
   margin-left: 1rem;
   margin-right: 1rem;
-  padding: 1rem;
+  //padding: 1rem;
   background-color: $color-whitefog;
   border: 4px solid $color-sand;
   @include over-md {
@@ -1614,7 +1614,7 @@ $hex-image: $hex-canvas * $hex-ratio;
     border: 8px solid $color-sand;
     margin-left: auto;
     margin-right: auto;
-    padding: 2rem;
+    //padding: 2rem;
     max-width: $width-container;
   }
   .gm-style-iw * {
