@@ -1,43 +1,43 @@
 {
   "douglascrockford": {
-    "time":    "00:00-00:00",
-    "room":    "AorB",
-    "title":   "Session title",
-    "summary": "Session summary"
+    "time":    "13:00-13:45",
+    "room":    "A and B",
+    "title":   "Keynote",
+    "summary": "TODO: だれかにもらう"
   },
 
   "jasnell": {
-    "time":    "00:00-00:00",
-    "room":    "AorB",
-    "title":   "Session title",
-    "summary": "Session summary"
+    "time":    "14:00-14:30",
+    "room":    "A",
+    "title":   "Node.js and Web Standards",
+    "summary": "Node.js is, and has been, primarily a platform for Web application development. In this talk, James will discuss the evolution and future of support for Web Standards such as URL parsing and HTTP 2.0 in Node.js core."
   },
 
   "bmeck": {
-    "time":    "00:00-00:00",
-    "room":    "AorB",
-    "title":   "Session title",
-    "summary": "Session summary"
+    "time":    "14:30-15:00",
+    "room":    "A",
+    "title":   "The journey toward ES modules.",
+    "summary": "A look into how Node will be supporting ES modules. It should give insight into the problems and solutions for supporting expectations that Babel set; as well the talk should discuss what will break and how to be prepared for the future."
   },
 
   "zcbenz": {
-    "time":    "00:00-00:00",
-    "room":    "AorB",
-    "title":   "Session title",
-    "summary": "Session summary"
+    "time":    "16:15-16:45",
+    "room":    "A",
+    "title":   "Electron",
+    "summary": "TODO: だれかにもらう"
   },
 
   "yoshuawuyts": {
-    "time":    "00:00-00:00",
-    "room":    "AorB",
-    "title":   "Session title",
-    "summary": "Session summary"
+    "time":    "15:45-16:15",
+    "room":    "A",
+    "title":   "boarding the tiny framework train",
+    "summary": "Three years ago the frontend community was introduced to the exciting potential of building completely functional user interfaces. We're now in a world where functional programming is gradually becoming the norm, and we're shifting to solve problems that we didn't think about years ago.\nIn this talk Yosh will cover the bleeding edge of frontend development, and dive deep into Choo, a modular frontend framework designed specifically to solve today's challenges."
   },
 
   "mafintosh": {
-    "time":    "00:00-00:00",
-    "room":    "AorB",
-    "title":   "Session title",
-    "summary": "Session summary"
+    "time":    "15:00-15:30",
+    "room":    "A",
+    "title":   "Putting TV on the Internet",
+    "summary": "A journey into how we can start streaming live tv online through peer to peer networks using systems that become better the more people watch instead of crashing the stream. Using node.js and a bunch of node modules I'll show how everyone can start producing their own tv and start broadcasting it to the world."
   }
 }
