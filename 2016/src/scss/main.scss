@@ -429,91 +429,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   height: 2rem;
   fill: $color-inky;
 }
-//// Toppage Header
-//.cover {
-//  overflow: hidden;
-//  padding-top: 2rem;
-//  padding-bottom: 2rem;
-//  background-image: linear-gradient(150deg, rgba($color-whitefog,0.5) 0%, rgba($color-greymist,0.5) 50%, rgba($color-inky,0.5) 75%, rgba($color-deepnight,0.5) 100%),url('img/bg-shibuya.jpg');
-//  background-size: cover, cover;
-//  background-position: center top;
-//  background-repeat: no-repeat;
-//  background-blend-mode: screen, normal;
-//  @include over-md {
-//    overflow: visible;
-//    display: flex;
-//    justify-content: top;
-//    align-items: center;
-//    flex-direction: column;
-//    background: none;
-//    position: relative;
-//    min-height: 100vh;
-//  }
-//}
-//
-//.cover-logo {
-//  margin-bottom: 2rem;
-//  position: relative;
-//  z-index: 2;
-//  display: block;
-//  border: 5px solid $color-inky;
-//  margin-left: auto;
-//  margin-right: auto;
-//  padding: 8px;
-//  width: 224px;
-//  height: 224px;
-//  mix-blend-mode: multiply;
-//  @include over-md {
-//    border: 10px solid $color-inky;
-//    margin: 8rem auto 0;
-//    padding: 16px;
-//    width: 448px;
-//    height: 448px;
-//  }
-//}
-//.cover-outline {
-//  position: relative;
-//  display: block;
-//  &:before {
-//    content: "";
-//    position: absolute;
-//    top: 0;
-//    left: 0;
-//    width: 150%;
-//    padding-top: 100%;
-//    background-image: linear-gradient(135deg, rgba($color-deepnight,0.5) 0%, rgba($color-forest,0.925) 20%, $color-grass 40%);
-//    //transform: translate(2rem,-4rem) rotate(45deg);
-//    transform: translateY(-3rem) rotate(30deg) skew(-30deg);
-//    //mix-blend-mode: multiply;
-//  }
-//  @include over-md {
-//    position: absolute;
-//    left: 0;
-//    right: 0;
-//    bottom: 2rem;
-//    z-index: 1;
-//    &:before {
-//      content: none;
-//    }
-//  }
-//}
-//.cover-mountain {
-//  display: none;
-//  @include over-md {
-//    display: block;
-//    position: absolute;
-//    top: 100%;
-//    left: 50%;
-//    right: 0;
-//    z-index: 1;
-//    margin-left: 14rem;
-//    margin-top: -24rem;
-//    opacity: 0.925;
-//    transform: translateX(-50%);
-//    width: 160rem * $hex-ratio;
-//    height: 160rem;
-//  }
-//}
 
 .cover {
   background-image: url('img/bg-header-home.jpg');
@@ -523,6 +438,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .cover-header {
+  overflow-y: hidden;
   @include over-md {
     margin-left: auto;
     margin-right: auto;
@@ -593,17 +509,25 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .home-mountain {
+  display: none; // dev
+  $mountain-ratio: 0.57890625;
   position: absolute;
   top: 0;
   left: 50%;
   right: 0;
   z-index: -1;
   width: 80rem;
-  height: 46.3125rem;
+  height: 80rem * $mountain-ratio;
   transform: translate3d(-36%,-48%,0);
   @include over-md {
     width: 160rem;
-    height: 92.625rem;
+    height: 160rem * $mountain-ratio;
+    //opacity: 0.8;
+    transform: translate3d(-32%,-40%,0);
+  }
+  @include over-hg {
+    width: 192rem;
+    height: 192rem * $mountain-ratio;
     //opacity: 0.8;
     transform: translate3d(-32%,-40%,0);
   }
@@ -1941,6 +1865,13 @@ $hex-image: $hex-canvas * $hex-ratio;
   &.-media {
     > img {
       max-width: $sponsor-banner-media / 2;
+    }
+  }
+  @include under-sm {
+    &.-platinum {
+      > img {
+        max-width: 100%;
+      }
     }
   }
   @include over-sm {
