@@ -37,7 +37,7 @@ $screen-tablet: 768px;
 $screen-desktop: 992px;
 $screen-cinema: 1200px;
 
-@mixin under-sm {
+@mixin below-sm {
   @media (max-width: $screen-phone - 1px) {
     @content;
   }
@@ -1589,6 +1589,12 @@ $hex-image: $hex-canvas * $hex-ratio;
     padding: 1em 2em;
     font-size: 1.5em;
   }
+  @include below-sm {
+    .Button {
+      padding: 1em;
+      font-size: 1.25em;
+    }
+  }
   @include over-md {
     margin-bottom: 16rem;
     padding: 0;
@@ -1710,7 +1716,7 @@ $hex-image: $hex-canvas * $hex-ratio;
       max-width: $sponsor-banner-media / 2;
     }
   }
-  @include under-sm {
+  @include below-sm {
     &.-platinum {
       > img {
         max-width: 100%;
