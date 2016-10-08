@@ -14,7 +14,6 @@ var page = {
 
 <%- include('_partial/svg') -%>
 
-
 <div class="home">
 
   <div class="cover">
@@ -79,19 +78,23 @@ var page = {
     <div class="home-schedule">
       <h2 class="home-subhead">Schedule</h2>
 
-      <div class="home-scheduleSection">
-        <%- include('_partial/timetable-workshop') -%>
+      <div class="home-scheduleBody">
 
-      </div>
+        <div class="home-scheduleSection">
+          <%- include('_partial/timetable-workshop') -%>
 
-      <div class="home-scheduleSection">
-        <%- include('_partial/timetable-conference') -%>
+        </div>
 
-      </div>
+        <div class="home-scheduleSection">
+          <%- include('_partial/timetable-conference') -%>
 
-      <div class="home-scheduleNote">
-        <p>※ セッションの内容／時間は変更になる可能性があります。</p>
-        <p>※ セッションは日本語・英語で行われます。</p>
+        </div>
+
+        <div class="home-scheduleNote">
+          <p>※ セッションの内容／時間は変更になる可能性があります。</p>
+          <p>※ セッションは日本語・英語で行われます。</p>
+        </div>
+
       </div>
     </div>
 

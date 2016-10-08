@@ -279,6 +279,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   top: 0.5rem;
   width: 3rem;
   height: 3rem;
+  z-index: $z-header;
   // Reset button styles
   appearance: none;
   border: 0;
@@ -291,9 +292,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
   @include over-lg {
     display: none;
-  }
-  &.is-expand {
-
   }
 }
 .header-icon {
@@ -334,6 +332,10 @@ $hex-image: $hex-canvas * $hex-ratio;
 .navigation-list {
   padding: 4rem 1rem 1rem;
   background-color: $color-whitefog;
+  @include over-md {
+    padding-top: 6rem;
+    font-size: 1.25rem;
+  }
   @include over-lg {
     display: flex;
     flex-wrap: wrap;
@@ -402,6 +404,12 @@ $hex-image: $hex-canvas * $hex-ratio;
   appearance: none;
   border: 0;
   background: none;
+  @include over-md {
+    right: 1rem;
+    top: 1rem;
+    width: 4rem;
+    height: 4rem;
+  }
   @include over-lg {
     display: none;
   }
@@ -413,6 +421,10 @@ $hex-image: $hex-canvas * $hex-ratio;
   width: 2rem;
   height: 2rem;
   fill: $color-inky;
+  @include over-md {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 
 .cover {
@@ -423,14 +435,14 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .cover-header {
-  overflow-y: hidden;
+  z-index: $z-header;
+  &:before {
+    content: none;
+  }
   @include over-md {
     margin-left: auto;
     margin-right: auto;
     width: $width-container;
-    &:before {
-      content: none;
-    }
   }
 }
 .cover-inner {
@@ -445,15 +457,9 @@ $hex-image: $hex-canvas * $hex-ratio;
     right: 0;
     z-index: -1;
     width: 100%;
-    //padding-top: percentage(1280 / 1920);
-    //background-image: url('img/bg-header-home.png');
-    //background-size: cover;
   }
   @include over-md {
     padding-top: 6rem;
-    //margin-left: auto;
-    //margin-right: auto;
-    //max-width: $width-container;
   }
 }
 .cover-logo {
@@ -571,6 +577,15 @@ $hex-image: $hex-canvas * $hex-ratio;
   @include over-hg {
     padding-top: 4rem;
     padding-bottom: 4rem;
+  }
+}
+.home-scheduleBody {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  @include over-lg {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $width-container;
   }
 }
 .home-scheduleSection {
@@ -845,11 +860,15 @@ $hex-image: $hex-canvas * $hex-ratio;
     margin-right: auto;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     max-width: $width-container;
     > * {
       margin-top: 2rem;
+      text-align: center;
     }
+  }
+  @include over-lg {
+    justify-content: space-between;
   }
 }
 .speaker {
@@ -1161,15 +1180,19 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .schedule-body {
-  @include over-md {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  @include over-lg {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $width-container;
   }
 }
 .schedule-section {
-  margin: 0 1rem 2rem 1rem;
+  margin-bottom: 2rem;
   padding-top: 1rem;
   @include over-md {
-    margin: 4rem auto 0 auto;
-    max-width: $width-container;
+    margin-top: 4rem;
   }
 }
 .schedule-note {
@@ -1293,6 +1316,12 @@ $hex-image: $hex-canvas * $hex-ratio;
     display: block;
   }
   @include over-md {
+    margin-top: 0.5rem;
+    display: block;
+    font-size: 2rem;
+  }
+  @include over-lg {
+    display: inline-block;
     font-size: 2rem;
   }
 }
