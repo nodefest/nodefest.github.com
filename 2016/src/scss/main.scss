@@ -37,6 +37,10 @@ $screen-tablet: 768px;
 $screen-desktop: 992px;
 $screen-cinema: 1200px;
 
+// Z-index
+$z-header: 10;
+$z-overlay: 100;
+
 @mixin below-sm {
   @media (max-width: $screen-phone - 1px) {
     @content;
@@ -207,8 +211,6 @@ $hex-image: $hex-canvas * $hex-ratio;
 
 // Header
 .header {
-  //position: relative;
-  //z-index: 2;
   position: absolute;
   top: 0;
   left: 0;
@@ -228,15 +230,13 @@ $hex-image: $hex-canvas * $hex-ratio;
   @include over-md {
     position: static;
     padding-top: 0;
-    //background-image: none;
-    //background-color: $color-grass;
     color: $color-whitefog;
   }
 }
 .header-inner {
   @include over-md {
     position: relative;
-    z-index: 10;
+    z-index: $z-header;
     box-sizing: border-box;
     display: flex;
     margin-left: auto;
@@ -250,7 +250,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   position: absolute;
   left: 0.5rem;
   top: 0.5rem;
-  z-index: 1;
   > img {
     box-sizing: border-box;
     border: 1px solid $color-whitefog;
@@ -259,8 +258,6 @@ $hex-image: $hex-canvas * $hex-ratio;
     height: 48px;
   }
   @include over-md {
-    display: block;
-    position: absolute;
     left: 1rem;
     top: 1rem;
     > img {
@@ -280,7 +277,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   position: absolute;
   right: 0.5rem;
   top: 0.5rem;
-  z-index: 100;
   width: 3rem;
   height: 3rem;
   // Reset button styles
@@ -318,7 +314,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 10000;
+  z-index: $z-overlay;
   background-color: rgba($color-deepnight,0.925);
   &.is-expand {
     display: block;
@@ -399,7 +395,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   position: absolute;
   right: 0.5rem;
   top: 0.5rem;
-  z-index: 100;
   width: 3rem;
   height: 3rem;
   line-height: $line-flat;
@@ -440,7 +435,7 @@ $hex-image: $hex-canvas * $hex-ratio;
 }
 .cover-inner {
   position: relative;
-  z-index: 10;
+  z-index: 2;
   padding-top: 6rem;
   &:before {
     content: "";
@@ -627,13 +622,10 @@ $hex-image: $hex-canvas * $hex-ratio;
 
 // Outline
 .outline {
-  position: relative;
   margin-left: auto;
   margin-right: auto;
   max-width: $width-container;
   text-align: center;
-  position: relative;
-  z-index: 1;
   @include over-md {
     margin-bottom: 2rem;
     padding-right: 2rem;
@@ -642,14 +634,10 @@ $hex-image: $hex-canvas * $hex-ratio;
 }
 .outline-body {
   display: inline-block;
-  position: relative;
-  z-index: 1;
   text-align: center;
   letter-spacing: 0.16em;
   color: $color-whitefog;
   @include over-md {
-    //padding-top: 4rem;
-    //height: 12rem;
     line-height: 1;
   }
 }
@@ -658,13 +646,8 @@ $hex-image: $hex-canvas * $hex-ratio;
 }
 .outline-date,
 .outline-location {
-  //margin-bottom: 0.5rem;
   font-weight: 100;
   font-size: 1rem;
-  //@include over-sm {
-  //}
-  //@media (min-width: 590px) { // Minor Breakpoint
-  //}
   @include over-md {
     margin-bottom: 1rem;
     font-size: 1.5rem;
@@ -675,17 +658,8 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .outline-name {
-  //margin-bottom: 0.5rem;
   font-weight: 100;
   font-size: 2rem;
-  //@include over-sm {
-  //}
-  //@media (min-width: 590px) { // Minor Breakpoint
-  //}
-  //@include over-md {
-  //  margin-bottom: 1rem;
-  //  font-size: 2.5rem;
-  //}
   @include over-md {
     margin-bottom: 1rem;
     font-size: 2.5rem;
@@ -774,8 +748,6 @@ $hex-image: $hex-canvas * $hex-ratio;
 }
 
 .page {
-  position: relative;
-  z-index: 1;
   padding-top: 0;
   padding-bottom: 2rem;
   @include over-md {
@@ -813,8 +785,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .page-section {
-  position: relative;
-  z-index: 1;
   padding-top: 2rem;
   padding-bottom: 2rem;
   @include over-md {
@@ -908,13 +878,11 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .speaker-info {
-  //display: none; // DEV
   position: absolute;
   top: 50%;
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -969,13 +937,11 @@ $hex-image: $hex-canvas * $hex-ratio;
   display: inline-block;
 }
 .organizer-info {
-  //display: none; // DEV
   position: absolute;
   top: 50%;
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1008,7 +974,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 10000;
+  z-index: $z-overlay;
   background-color: rgba($color-deepnight,0.925);
   padding: 4rem 1rem 1rem;
   &.is-expand {
@@ -1035,7 +1001,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   position: absolute;
   right: 8px;
   top: 8px;
-  z-index: 101;
   width: 3rem;
   height: 3rem;
   fill: $color-inky;
@@ -1223,8 +1188,6 @@ $hex-image: $hex-canvas * $hex-ratio;
 
 // Time table
 .timetable {
-  position: relative;
-  z-index: 1;
   box-sizing: border-box;
   padding: 1rem;
   background-color: $color-whitefog;
@@ -1569,7 +1532,6 @@ $hex-image: $hex-canvas * $hex-ratio;
 // Ticktets
 .tickets {
   position: relative;
-  //z-index: 2;
   padding: 3rem 1rem;
   &:before {
     content: "";
