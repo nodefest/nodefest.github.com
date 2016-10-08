@@ -86,18 +86,8 @@ $screen-cinema: 1200px;
 body {
   line-height: $line-normal;
   font-family: $type-base;
-  background-color: $color-whitefog;
   color: $color-inky;
   overflow-x: hidden; // DEV
-  //@include over-md {
-  //  background-image: linear-gradient(150deg, $color-whitefog 0%, $color-greymist 50%, $color-inky 75%, $color-deepnight 100%),url('img/bg-shibuya.jpg');
-  //  background-size: cover, cover;
-  //  background-position: center top;
-  //  background-repeat: no-repeat;
-  //  background-blend-mode: screen, normal;
-  //  background-attachment: fixed;
-  //}
-
   background-color: $color-whitefog;
   background-image: linear-gradient(top,
     rgba($color-whitefog,1) 0%,
@@ -743,14 +733,6 @@ $hex-image: $hex-canvas * $hex-ratio;
     //line-height: $line-tight;
     font-size: 3rem;
   }
-  //@include over-lg {
-  //  margin-bottom: 6rem;
-  //  font-size: 4em;
-  //}
-  //@include over-hg {
-  //  margin-bottom: 8rem;
-  //  font-size: 6em;
-  //}
 }
 .intro-body {
   font-size: 0.875rem;
@@ -1248,30 +1230,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   padding: 1rem;
   background-color: $color-whitefog;
   border: 4px solid $color-sand;
-  //&:before {
-  //  content: "";
-  //  position: absolute;
-  //  top: -1rem;
-  //  left: -1rem;
-  //  bottom: 0px;
-  //  right: 0px;
-  //  z-index: -1;
-  //  border-left: 1px solid $color-creamhaze;
-  //  border-top: 1px solid $color-creamhaze;
-  //}
-  //&:after {
-  //  content: "";
-  //  position: absolute;
-  //  top: 0px;
-  //  left: 0px;
-  //  bottom: -1rem;
-  //  right: -1rem;
-  //  z-index: -1;
-  //  border-right: 1px solid $color-creamhaze;
-  //  border-bottom: 1px solid $color-creamhaze;
-  //}
   &.-workshop {
-    //border-color: $color-sunflower;
     &:before {
       border-left-color: rgba($color-sunflower, 0.5);
       border-top-color: $color-sunflower;
@@ -1285,7 +1244,6 @@ $hex-image: $hex-canvas * $hex-ratio;
     }
   }
   &.-conference {
-    //border-color: $color-grass;
     &:before {
       border-left-color: $color-leaf;
       border-top-color: $color-leaf;
@@ -1519,13 +1477,7 @@ $hex-image: $hex-canvas * $hex-ratio;
 .venue-map {
   display: block;
   overflow: hidden;
-  //margin: 0 auto 1rem;
-  //max-width: $width-container;
   height: 384px;
-  //background-color: $color-whitefog;
-  //border: 10px solid $color-creamhaze;
-  //box-shadow: 10px 10px 0 rgba($color-deepnight,0.25);
-
   box-sizing: border-box;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -1652,117 +1604,8 @@ $hex-image: $hex-canvas * $hex-ratio;
   margin-right: auto;
   max-width: $width-container;
 }
-.tickets-mountain {
-  //display: none; // DEV
-  //position: absolute;
-  //bottom: 10%;
-  //right: 0;
-  //z-index: -1;
-  ////width: 240rem;
-  ////height: 240rem;
-  //margin-right: 14rem;
-  //opacity: 0.8;
-  //transform: translateX(50%);
-  //@include over-md {
-  //  display: block;
-  //  width: 240rem * $hex-ratio;
-  //  height: 240rem;
-  //}
-}
 
 // Sponsors
-//.sponsors {
-//  position: relative;
-//  z-index: 1;
-//  padding-top: 2.5rem;
-//  padding-bottom: 2.5rem;
-//  background-color: white;
-//  color: $color-deepnight;
-//  //@include over-sm {
-//  //}
-//  @include over-md {
-//    padding-top: 4rem;
-//    padding-bottom: 4rem;
-//  }
-//  //@include over-lg {
-//  //}
-//}
-//.sponsors-title {
-//  margin-bottom: 2.5rem;
-//  line-height: $line-flat;
-//  letter-spacing: 0.08em;
-//  text-align: center;
-//  text-transform: uppercase;
-//  font-weight: 100;
-//  font-size: 2.5rem;
-//  color: $color-sea;
-//  @include over-sm {
-//  }
-//  @media (min-width: 590px) { // Minor Breakpoint
-//  }
-//  @include over-md {
-//    margin-bottom: 4rem;
-//    font-size: 4em;
-//  }
-//}
-//.sponsors-grade {
-//  margin-bottom: 0.5rem;
-//  text-align: center;
-//  line-height: 1;
-//  text-align: center;
-//  letter-spacing: 0.064em;
-//  font-size: 1.5rem;
-//  color: $color-greymist;
-//  @include over-sm {
-//    font-size: 1.25rem;
-//  }
-//  @include over-md {
-//    margin-bottom: 1rem;
-//    font-size: 1.5rem;
-//  }
-//}
-//.sponsors-list {
-//  margin-bottom: 1rem;
-//  display: flex;
-//  flex-wrap: wrap;
-//  justify-content: center;
-//  @include over-md {
-//    margin-bottom: 1.5rem;
-//  }
-//}
-//.sponsors-lead {
-//  margin-top: 2rem;
-//  margin-bottom: 1rem;
-//  line-height: $line-roomy;
-//  text-align: center;
-//  font-size: 0.875rem;
-//  @include over-sm {
-//    font-size: 1rem;
-//  }
-//  @include over-md {
-//    margin-bottom: 1.5rem;
-//  }
-//}
-//.sponsors-action {
-//  .Button {
-//    margin-left: auto;
-//    margin-right: auto;
-//    max-width: 240px;
-//    font-size: 1rem;
-//  }
-//  @include over-md {
-//    .Button {
-//      font-size: 1.5rem;
-//      max-width: 360px;
-//    }
-//  }
-//  @include over-lg {
-//    .Button {
-//      font-size: 2rem;
-//    }
-//  }
-//}
-
 .sponsors {
 }
 .sponsors-title {
