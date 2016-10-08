@@ -41,6 +41,12 @@ $screen-cinema: 1200px;
 $z-header: 10;
 $z-overlay: 100;
 
+// Banner
+$sponsor-banner-platinum: 560px;
+$sponsor-banner-gold: 480px;
+$sponsor-banner-silver: 360px;
+$sponsor-banner-media: 320px;
+
 @mixin below-sm {
   @media (max-width: $screen-phone - 1px) {
     @content;
@@ -589,7 +595,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .home-scheduleSection {
-  margin: 0 1rem 2rem 1rem;
+  margin: 0 0 2rem 0;
   padding-top: 1rem;
   @include over-md {
     margin: 4rem auto 0 auto;
@@ -732,33 +738,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
   @include over-md {
     font-size: 1rem;
-  }
-}
-
-.Section {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  @include over-md {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-}
-.Section-title {
-  margin-bottom: 2.5rem;
-  line-height: $line-flat;
-  letter-spacing: 0.08em;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 100;
-  font-size: 2.5rem;
-  color: $color-sand;
-  @include over-sm {
-  }
-  @media (min-width: 590px) { // Minor Breakpoint
-  }
-  @include over-md {
-    margin-bottom: 4rem;
-    font-size: 4em;
   }
 }
 
@@ -1420,7 +1399,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .timetable-sessionSpeaker {
-  font-size: 0.825rem;
+  font-size: 0.875rem;
   letter-spacing: 0.08em;
   font-weight: 100;
   @include over-md {
@@ -1447,7 +1426,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .timetable-ltsSpeaker {
-  font-size: 0.825rem;
+  font-size: 0.875rem;
   letter-spacing: 0.08em;
   font-weight: 100;
   @include over-md {
@@ -1608,7 +1587,11 @@ $hex-image: $hex-canvas * $hex-ratio;
 // Sponsors
 .sponsors {
 }
-.sponsors-title {
+.sponsors-section {
+  margin-bottom: 2.5rem;
+  @include over-md {
+    margin-bottom: 4rem;
+  }
 }
 .sponsors-grade {
   margin-bottom: 0.5rem;
@@ -1684,10 +1667,6 @@ $hex-image: $hex-canvas * $hex-ratio;
 .sponsor-name {
 }
 .sponsor-banner {
-  $sponsor-banner-platinum: 560px;
-  $sponsor-banner-gold: 480px;
-  $sponsor-banner-silver: 360px;
-  $sponsor-banner-media: 320px;
   display: inline-block;
   padding: 1rem;
   &.-platinum {
@@ -1763,6 +1742,235 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 
+// Sponsors w/ PR
+.prs {
+
+}
+.prs-section {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  @include over-md {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  @include over-hg {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $width-container;
+  }
+}
+.prs-grade {
+  margin-bottom: 2rem;
+  line-height: $line-flat;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 2rem;
+  color: $color-sunred;
+  @include over-sm {
+    margin-bottom: 2rem;
+  }
+  @include over-md {
+    margin-bottom: 4rem;
+    font-size: 4em;
+  }
+}
+.prs-list {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  > * {
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  @include over-md {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    > * {
+      margin-bottom: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    &.-gold,
+    &.-silver,
+    &.-media {
+      > * {
+        flex: 0 0 50%;
+      }
+    }
+  }
+  @include over-lg {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    > * {
+      margin-bottom: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    &.-silver {
+      > * {
+        flex: 0 0 33.3%;
+      }
+    }
+    &.-media {
+      > * {
+        flex: 0 0 25%;
+      }
+    }
+  }
+}
+
+.pr {
+  background-color: $color-creamhaze;
+  &.-platinum {
+    .pr-logo {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    .pr-name {
+      font-size: 1.5rem;
+    }
+    .pr-description {
+      font-size: 1.125rem;
+    }
+  }
+  &.-platinum {
+    .pr-logo {
+      img {
+        max-width: $sponsor-banner-platinum / 2
+      }
+    }
+  }
+  &.-gold {
+    .pr-logo {
+      img {
+        max-width: $sponsor-banner-gold / 2
+      }
+    }
+  }
+  &.-silver {
+    .pr-logo {
+      img {
+        max-width: $sponsor-banner-silver / 2
+      }
+    }
+    .pr-description {
+      font-size: 0.875rem;
+    }
+  }
+  &.-media {
+    .pr-logo {
+      img {
+        max-width: $sponsor-banner-media / 2
+      }
+    }
+    .pr-description {
+      font-size: 0.75rem;
+    }
+  }
+  @include over-md {
+    display: flex;
+    &.-platinum {
+      .pr-logo {
+        padding: 6rem 1rem;
+        flex: 0 0 50%;
+        background-color: white;
+        img {
+          max-width: $sponsor-banner-platinum / 1.5;
+        }
+      }
+      .pr-name {
+        font-size: 2rem;
+      }
+      .pr-body {
+        flex: 0 1 50%;
+      }
+    }
+    &.-gold,
+    &.-silver,
+    &.-media {
+      flex-direction: column;
+      min-height: 100%;
+      .pr-body {
+        flex: 1 0 auto;
+      }
+    }
+    &.-gold {
+      .pr-logo {
+        padding: 1.5rem 1rem;
+        img {
+          max-width: $sponsor-banner-gold / 1.5;
+        }
+      }
+    }
+    &.-silver {
+      .pr-logo {
+        img {
+          max-width: $sponsor-banner-silver / 1.5;
+        }
+      }
+      .pr-name {
+        font-size: 1.25rem;
+      }
+    }
+    &.-media {
+      .pr-logo {
+        img {
+          max-width: 100%;
+        }
+      }
+      .pr-name {
+        font-size: 1rem;
+      }
+    }
+  }
+  @include over-lg {
+    &.-platinum {
+      .pr-name {
+        font-size: 2rem;
+      }
+    }
+    &.-silver {
+      .pr-name {
+        font-size: 1.25rem;
+      }
+    }
+    &.-media {
+      .pr-name {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+.pr-logo {
+  box-sizing: border-box;
+  padding: 1rem;
+  background-color: white;
+  text-align: center;
+  img {
+    max-width: 100%;
+    vertical-align: middle;
+  }
+}
+.pr-body {
+  padding: 1rem;
+}
+.pr-name {
+  font-size: 1.5rem;
+}
+.pr-url {
+  margin-bottom: 1rem;
+  word-break: break-all;
+  font-size: 0.875rem;
+}
 
 // Organizers
 .organizers {
@@ -1935,7 +2143,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   //overflow: hidden;
   //padding: 1em 0;
   color: $color-whitefog;
-  font-size: 0.825rem;
+  font-size: 0.875rem;
   text-align: center;
   //background-color: $color-inky;
   @include over-md {
