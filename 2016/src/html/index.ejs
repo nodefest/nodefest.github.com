@@ -17,119 +17,119 @@ var page = {
 
 <div class="home">
 
-<div class="cover">
+  <div class="cover">
 
-  <header class="header cover-header">
-    <nav class="navigation">
-      <ul class="navigation-list cover-navigationList">
-        <li><a href="about.html" class="navigation-target">About</a></li>
-        <li><a href="speakers.html" class="navigation-target">Speakers</a></li>
-        <li><a href="schedule.html" class="navigation-target">Schedule</a></li>
-        <li><a href="venues.html" class="navigation-target">Venues</a></li>
-        <li><a href="sponsors.html" class="navigation-target">Sponsors</a></li>
-        <li><a href="#" class="navigation-target -button">Tickets</a></li>
-      </ul>
-      <button class="navigation-button">
-        <svg xmlns="http://www.w3.org/2000/svg" class="navigation-icon"><use xlink:href="#close"></use></svg>
+    <header class="header cover-header">
+      <nav class="navigation">
+        <ul class="navigation-list cover-navigationList">
+          <li><a href="about.html" class="navigation-target">About</a></li>
+          <li><a href="speakers.html" class="navigation-target">Speakers</a></li>
+          <li><a href="schedule.html" class="navigation-target">Schedule</a></li>
+          <li><a href="venues.html" class="navigation-target">Venues</a></li>
+          <li><a href="sponsors.html" class="navigation-target">Sponsors</a></li>
+          <li><a href="#" class="navigation-target -button">Tickets</a></li>
+        </ul>
+        <button class="navigation-button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="navigation-icon"><use xlink:href="#close"></use></svg>
+        </button>
+      </nav>
+      <button class="header-button">
+        <svg xmlns="http://www.w3.org/2000/svg" class="header-icon"><use xlink:href="#nav"></use></svg>
       </button>
-    </nav>
-    <button class="header-button">
-      <svg xmlns="http://www.w3.org/2000/svg" class="header-icon"><use xlink:href="#nav"></use></svg>
-    </button>
-  </header>
+    </header>
 
-  <div class="cover-inner">
+    <div class="cover-inner">
 
-    <img src="img/logo-tnf-invert.svg" class="cover-logo">
+      <img src="img/logo-tnf-invert.svg" class="cover-logo">
 
-    <div class="cover-outline">
-      <div class="outline">
-        <div class="outline-body">
-          <p class="outline-date">November 12 - 13, 2016</p>
-          <h1 class="outline-name">東京Node学園祭2016</h1>
-          <p class="outline-location">at dots. & SHIBUYA Markcity</p>
+      <div class="cover-outline">
+        <div class="outline">
+          <div class="outline-body">
+            <p class="outline-date">November 12 - 13, 2016</p>
+            <h1 class="outline-name">東京Node学園祭2016</h1>
+            <p class="outline-location">at dots. & SHIBUYA Markcity</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="home-intro">
+    <div class="home-intro">
 
-    <svg xmlns="http://www.w3.org/2000/svg" class="home-mountain" fill="url(#mount-gradient)"><use xlink:href="#mountain"></use></svg>
-    <%- include('_partial/intro') -%>
-  </div>
-</div>
-
-<div class="main home-main">
-
-  <div class="home-speakers">
-    <h2 class="home-subhead">Featured Speakers</h2>
-
-    <ul class="speakers-list">
-      <% page.speakers.forEach(function(speaker) { %>
-      <li>
-        <%- include('_partial/speaker', { id: speaker }) -%>
-        <%- include('_partial/speaker-overlay', { id: speaker }) -%>
-      </li>
-      <% }); %>
-    </ul>
-  </div>
-
-  <!-- Schedule -->
-  <div class="home-schedule">
-    <h2 class="home-subhead">Schedule</h2>
-
-    <div class="home-scheduleSection">
-      <%- include('_partial/timetable-workshop') -%>
-
-    </div>
-
-    <div class="home-scheduleSection">
-      <%- include('_partial/timetable-conference') -%>
-
-    </div>
-
-    <div class="home-scheduleNote">
-      <p>※ セッションの内容／時間は変更になる可能性があります。</p>
-      <p>※ セッションは日本語・英語で行われます。</p>
+      <svg xmlns="http://www.w3.org/2000/svg" class="home-mountain" fill="url(#mount-gradient)"><use xlink:href="#mountain"></use></svg>
+      <%- include('_partial/intro') -%>
     </div>
   </div>
 
-  <!-- Veunes -->
-  <div class="home-venues">
-    <h2 class="home-subhead">Venue</h2>
-    <div class="page-body venue-body">
-      <div class="venue-map" id="venue"></div>
-      <div class="venue-detail">
-        <section class="venue-access -workshop">
-          <h3 class="venue-name">
-            <img src="img/pin-workshop.png" class="venue-icon">
-            イベント&コミュニティスペース dots.
-          </h3>
-          <p class="venue-address">
-            <a href="#">
-              東京都渋谷区宇田川町20-17 NOF渋谷公園通りビル 8F
-            </a>
-          </p>
-        </section>
-        <section class="venue-access -conference">
-          <h3 class="venue-name">
-            <img src="img/pin-conference.png" class="venue-icon">
-            CyberAgent セミナールーム
-          </h3>
-          <p class="venue-address">
-            <a href="#">
-              東京都渋谷区道玄坂1-12-1 渋谷マークシティ13F
-            </a>
-          </p>
-        </section>
+  <div class="main home-main">
+
+    <div class="home-speakers">
+      <h2 class="home-subhead">Featured Speakers</h2>
+
+      <ul class="speakers-list">
+        <% page.speakers.forEach(function(speaker) { %>
+        <li>
+          <%- include('_partial/speaker', { id: speaker }) -%>
+          <%- include('_partial/speaker-overlay', { id: speaker }) -%>
+        </li>
+        <% }); %>
+      </ul>
+    </div>
+
+    <!-- Schedule -->
+    <div class="home-schedule">
+      <h2 class="home-subhead">Schedule</h2>
+
+      <div class="home-scheduleSection">
+        <%- include('_partial/timetable-workshop') -%>
+
+      </div>
+
+      <div class="home-scheduleSection">
+        <%- include('_partial/timetable-conference') -%>
+
+      </div>
+
+      <div class="home-scheduleNote">
+        <p>※ セッションの内容／時間は変更になる可能性があります。</p>
+        <p>※ セッションは日本語・英語で行われます。</p>
       </div>
     </div>
+
+    <!-- Veunes -->
+    <div class="home-venues">
+      <h2 class="home-subhead">Venue</h2>
+      <div class="page-body venue-body">
+        <div class="venue-map" id="venue"></div>
+        <div class="venue-detail">
+          <section class="venue-access -workshop">
+            <h3 class="venue-name">
+              <img src="img/pin-workshop.png" class="venue-icon">
+              イベント&コミュニティスペース dots.
+            </h3>
+            <p class="venue-address">
+              <a href="#">
+                東京都渋谷区宇田川町20-17 NOF渋谷公園通りビル 8F
+              </a>
+            </p>
+          </section>
+          <section class="venue-access -conference">
+            <h3 class="venue-name">
+              <img src="img/pin-conference.png" class="venue-icon">
+              CyberAgent セミナールーム
+            </h3>
+            <p class="venue-address">
+              <a href="#">
+                東京都渋谷区道玄坂1-12-1 渋谷マークシティ13F
+              </a>
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <%- include('_partial/tickets') -%>
+
   </div>
-
-  <%- include('_partial/tickets') -%>
-
-</div>
 
 <!-- Sponsors -->
   <div class="home-sponsors">
