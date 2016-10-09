@@ -585,6 +585,33 @@ $hex-image: $hex-canvas * $hex-ratio;
     padding-bottom: 4rem;
   }
 }
+
+.home-speakersAction {
+  margin: 2.5rem 2rem 0 2rem;
+  text-align: center;
+  .Button {
+    display: block;
+    padding: 1em 2em;
+    font-size: 1.5em;
+  }
+  @include below-sm {
+    .Button {
+      padding: 1em;
+      font-size: 1em;
+    }
+  }
+  @include over-md {
+    margin-top: 4rem;
+    //margin-bottom: 16rem;
+    //padding: 0;
+    .Button {
+      display: inline-block;
+      padding: 1em 2em;
+      font-size: 2em;
+    }
+  }
+}
+
 .home-scheduleBody {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -895,14 +922,14 @@ $hex-image: $hex-canvas * $hex-ratio;
     font-size: 1.75rem;
   }
 }
-.speaker-links {
-  letter-spacing: 0.064em;
-  font-weight: 200;
-  font-size: 1.25rem;
-  @include over-md {
-    font-size: 1rem;
-  }
-}
+//.speaker-links {
+//  letter-spacing: 0.064em;
+//  font-weight: 200;
+//  font-size: 1.25rem;
+//  @include over-md {
+//    font-size: 1rem;
+//  }
+//}
 
 // Organizer
 .organizer {
@@ -1056,28 +1083,33 @@ $hex-image: $hex-canvas * $hex-ratio;
 
 // Session
 .session {
-  background-color: $color-sand;
 }
 .session-speaker {
   //margin-bottom: 1rem;
   background-color: $color-whitefog;
+  @media (min-width: 640px) {
+    display: flex;
+  }
 }
 .session-speakerAvatar {
-  img {
-    max-width: 100%;
-  }
-  @include over-md {
-    float: left;
-    img {
-      width: 320px;
-      height: 320px;
-    }
+  width: 100%;
+  padding-top: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  @media (min-width: 640px) {
+    flex: 0 0 320px;
+    width: 320px;
+    min-height: 320px;
+    padding-top: 0;
   }
 }
 .session-speakerProfile {
   padding: 1rem;
-  @include over-md {
+  @media (min-width: 640px) {
     overflow: hidden;
+    padding: 1.5rem 2rem 2rem 2rem;
+    text-align: left;
   }
 }
 .session-speakerName {
@@ -1086,21 +1118,28 @@ $hex-image: $hex-canvas * $hex-ratio;
   font-size: 2rem;
   font-weight: 100;
   letter-spacing: 0.08em;
+  @media (min-width: 640px) {
+    text-align: left;
+  }
 }
 .session-speakerBio {
   font-size: 0.875rem;
+  text-align: left;
 }
 .session-content {
   padding: 1rem;
   background-color: $color-sand;
-  @include over-md {
+  @media (min-width: 640px) {
+    clear: both;
+    padding: 2rem;
     overflow: hidden;
   }
 }
 .session-time {
+  margin-bottom: 0.5rem;
   font-size: 0.875rem;
-  font-weight: 400;
-  @include over-md {
+  font-weight: 700;
+  @media (min-width: 640px) {
     //padding: 1rem;
   }
 }
@@ -1108,9 +1147,11 @@ $hex-image: $hex-canvas * $hex-ratio;
   margin-bottom: 1rem;
   line-height: $line-tight;
   font-size: 1.5rem;
+  color: $color-sunred;
 }
 .session-summary {
   font-size: 1rem;
+  text-align: left;
 }
 
 // Schedules

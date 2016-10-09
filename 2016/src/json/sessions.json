@@ -3,7 +3,7 @@
     "time":    "13:00-13:45",
     "room":    "A and B",
     "title":   "Keynote",
-    "summary": "TODO: だれかにもらう"
+    "summary": "TBA"
   },
 
   "jasnell": {
@@ -24,7 +24,7 @@
     "time":    "16:15-16:45",
     "room":    "A",
     "title":   "Electron",
-    "summary": "TODO: だれかにもらう"
+    "summary": "TBA"
   },
 
   "yoshuawuyts": {
@@ -39,5 +39,89 @@
     "room":    "A",
     "title":   "Putting TV on the Internet",
     "summary": "A journey into how we can start streaming live tv online through peer to peer networks using systems that become better the more people watch instead of crashing the stream. Using node.js and a bunch of node modules I'll show how everyone can start producing their own tv and start broadcasting it to the world."
+  },
+
+  "a0viedo": {
+    "time":    "10:30 - 11:00",
+    "room":    "A",
+    "title":   "Demystifying JavaScript Engines",
+    "summary": "How a JavaScript engine works? What are its basic components? How to measure its performance? What is JIT compilation? Stigmatization: is JavaScript fast enough? are some of the questions I think we currently fail to answer in a, somewhat, short and direct way."
+  },
+
+  "watson": {
+    "time":    "11:00 - 11:30",
+    "room":    "A",
+    "title":   "Build your own JavaScript powered radio",
+    "summary": "Node.js doesn’t require much to get started building apps. You can easily create a simple HTTP server, query a database and respond to client requests. But as with any other platform, sooner or later you’ll run into issues like scalability, memory leaks, or requests that take forever to complete.This talk covers the top Node.js performance issues, and will guide you through how to solve them."
+  },
+
+  "fritzvd": {
+    "time":    "11:00 - 11:30",
+    "room":    "B",
+    "title":   "Famicom programming with JavaScript",
+    "summary": "The Famicom / NES is one of those devices that took the world (and especially Japan) by force. It brought a home computer in so many homes. The characters of the popular games are known to everyone. Programming for the Famicom is fun and very educational. And best of all, you can use JavaScript. I will showcase some of the things you can do with JavaScript to program for the NES."
+  },
+
+  "teppeis": {
+    "time":    "11:30 - 12:00",
+    "room":    "A",
+    "title":   "Cybozu社のエンジニアの育て方と開発環境（仮）",
+    "summary": "東京だけでなく大阪、ベトナム、上海など多拠点に分かれて製品開発を行っているサイボウズ。さらに在宅勤務のメンバーもいるなかで、開発チームではどのようにコミュニケーションし、仕事を進めているのか。サイボウズ 執行役員 開発本部長 佐藤より試行錯誤した経験をもとに解説します。"
+  },
+
+  "BarakChamo": {
+    "time":    "11:30 - 12:00",
+    "room":    "B",
+    "title":   "GraphQL for the RESTful crowd",
+    "summary": "GraphQL brought along a paradigm shift in the way we think about data transfer between the front- and back-ends of applications. We are no longer restricted by imperative data structures and communicating our data requirements implicitly. Instead, by declaring the graph-form of our data model, we are able to request data in it’s object form in a JSON-like syntax that shares structure between response and request.GraphQL, along with Relay, makes the development an application, multiple applications, and multiple versions of those, a breeze. No longer do we have to maintain v1, v3 and v100 or our APIs to make sure all legacy versions are supported.For those of us that are used to relational databases and RESTful APIs GraphQL can seem daunting and quite a leap from the model we are used to. The good news is that if you use any kind of ORM or defined any form of model to your data, you’re already halfway thorough to the graph! Looking at an example REST API, we’ll go through the steps of converting both the server and the client to GraphQL - understanding along the way what are the similarities and differences in application design, both on the front-end and the back-end."
+  },
+
+  "bahmutov": {
+    "time":    "16:45 - 17:15",
+    "room":    "A",
+    "title":   "Browser is the new server",
+    "summary": "We see the great technology unification, with the boundary between the server and the client (browser) becoming blurrier every day. Who has time and budget to write separate code bases? In this presentation I will show the ultimate combination of NPM's two most popular packages: Browserify and Express; and their product that allows to move the complete server to run inside the browser's ServiceWorker. It is like server-side rendering but inside your browser, and even runs when JavaScript is disabled!"
+  },
+
+  "RichardLitt": {
+    "time":    "14:00 - 14:30",
+    "room":    "B",
+    "title":   "Why to Standardize your READMEs",
+    "summary": "If no one downloads or uses your npm module, you might need better documentation. Your README.md is the first access point for your code: I'll talk about how to use the standard-readme specification to make sure your readmes are high quality, and how the spec (which I developed) is already being used by over a hundred repositories to stop bikeshedding and save time. I'll demo a standard-readme generator and a linter, to help you write your readme. I'll also show how search can be improved by grabbing terms from the description and background, and highlight a bunch of cool ways having standard readme benefits the community as a whole."
+  },
+
+  "kazupon": {
+    "time":    "14:30 - 15:00",
+    "room":    "B",
+    "title":   "Vue.js 2.0 サーバサイドレンダリング",
+    "summary": "Vue.js 2.0 では、Virtual-DOM の採用により、レンダリングシステムが刷新されました。それに伴い、Vue のリアクティブシステムの組合せ & 最適化によるレンダリングの高速化、テンプレートベースによる宣言的なレンダリングと JSX また HyperScript による命令的なレンダリング両方をサポートする柔軟性、クロスプラットフォーム化、サーバサイドレンダリングが可能になりました。本発表では、Vue.js 2.0 のレンダリングシステムについてひと通り説明し、その後 Node.js に最適化されたサーバサイドレンダリングについて詳細に解説することで Vue.js 2.0 を利用した Isomorphic なアプリケーション構築への手助けになるような発表を考えています。"
+  },
+
+  "yoshidan": {
+    "time":    "15:00 - 15:30",
+    "room":    "B",
+    "title":   "React + Reduxを使った大規模商用サービスの開発",
+    "summary": "React + Reduxを使って、商用サービスのWEB版を全面的にSPA＋SSRで開発しました。React + Reduxに興味がある方や、これからReact + Reduxを使いプロダクション向けのサービス開発を考えている方々に、開発時に得られた知見や苦労したところなどを共有したいと思います。"
+  },
+
+  "nkzawa": {
+    "time":    "15:45 - 16:15",
+    "room":    "B",
+    "title":   "リアルタイムデプロイサービスNow（仮）",
+    "summary": "Zeit, IncのデプロイサービスであるNowと、Node.JSに関連するOSSプロタクトの紹介や取り組みについて話します。"
+  },
+
+  "morishitter": {
+    "time":    "16:15 - 16:45",
+    "room":    "B",
+    "title":   "PostCSS: Build your own CSS processor",
+    "summary": "複雑化する昨今のWebフロントエンド開発において、CSSでは今何が起こっているのか。本セッションではNode.js製のCSS変換ツールであるPostCSSについて説明します。PostCSSとは何かというところから、作られた経緯、AutoprefixerやStylelint等のPostCSS製ツールの紹介します。またPostCSSのAPIについて説明し、実際にCSSを変換するプログラムの書き方を述べます。"
+  },
+
+  "chikoski": {
+    "time":    "16:45 - 17:15",
+    "room":    "B",
+    "title":   "JavaScript による並列処理：共有メモリとロック",
+    "summary": "JavaScript のプログラムはメインスレッドという時間軸を、いかに効率良く、譲り合って使うかが勝負でした。非同期呼び出しとコールバック関数は、譲り合いを行うための手段として必要となりましたが、それはプログラムの凝集度を下げ、見づらいコードが多く作られる原因ともなりました。Promise などの導入によってコードの見づらさという問題は顕現されていますが、メインスレッドを譲り合って使うというモデルは変わっていません。JavaScriptの処理系は、その実行スピードを向上させ続けてきましたが、その改善にも限界があります。そこで必要とされるのが並列処理です。これはメインスレッド以外にも処理の主体を用意し、それらが協調して仕事をなすことで、全体の処理時間を短縮することを目的としています。JavaScript では Worker を利用することで、ある程度の並列処理が可能です。しかし Worker は処理の大規模なデータの受け渡しに問題があり利用局面に制限がありました。そんなJavaScript の並列処理も状況が変わりつつあります。1番の大きな変化は、共有メモリの導入です。SharedArrayBuffer と呼ばれるAPIによって実現される共有メモリによって、Worker とのデータのやり取りの効率は格段に向上します。一方、共有メモリの登場によって、これまで JavaScript のプログラムには縁の薄かったバグも生まれるようになります。この講演では、SharedArrayBufferを中心にJavaScriptにおける並列処理とその問題について紹介します。"
   }
 }

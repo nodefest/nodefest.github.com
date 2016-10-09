@@ -1,43 +1,128 @@
 {
   "douglascrockford": {
     "name":    "Douglas Crockford",
-    "bio":     "TODO: だれかにもらう",
-    "url":     "https://github.com/douglascrockford",
-    "twitter": ""
+    "bio":     "Douglas Crockford was born in Frostbite Falls, Minnesota, but left when he was only six months old because it was just too damn cold. He turned his back on a promising career in television when he discovered computers. He has worked in learning systems, small business systems, office automation, games, interactive music, multimedia, location-based entertainment, social systems, and programming languages. He is the inventor of Tilton, the ugliest programming language that was not specifically designed to be an ugly programming language. He is best known for having discovered that there are good parts in JavaScript. This was an important and unexpected discovery. He also discovered the JSON Data Interchange Format, the world’s most loved data format. And he works at PayPal.",
+    "twitter": "",
+    "github": "douglascrockford"
   },
 
   "jasnell": {
     "name":    "James Snell",
     "bio":   "James M Snell is currently IBM's Technical Lead for Node.js and a member of the Node.js TSC and CTC. At IBM, he is responsible for coordinating the company's various contributions to Node.js. He has spent his 15+ years at the company dedicated to the development of Open Source and Open Standards.",
-    "url":     "https://twitter.com/jasnell",
+    "github": "",
     "twitter": "jasnell"
   },
 
   "bmeck": {
-    "name":    "Bradley Meck",
+    "name":    "Bradley Farias",
     "bio":     "Bradley is a senior software engineer at GoDaddy working remotely from Austin, Texas. He is a member of TC39 and an active member of the Node community. Debugging and parser tooling are some of his main interests for programming in his free time. The efforts to get Node to support ES Modules is largely being driven by Bradley with the help of other in the Node community.",
-    "url":     "https://twitter.com/bradleymeck",
+    "github": "bmeck",
     "twitter": "bradleymeck"
   },
 
   "zcbenz": {
     "name":    "Cheng Zhao",
-    "bio":     "TODO: だれかにもらう",
-    "url":     "https://twitter.com/zcbenz",
+    "bio":     "TBA",
+    "github": "zcbenz",
     "twitter": "zcbenz"
   },
 
   "yoshuawuyts": {
     "name":    "Yoshua Wuyts",
     "bio":     "Yosh is a creative engineer who loves all things computer. He spends most of his days traveling around, and writing quality projects for both clients and for free. He's been an active member of the Node community for years and specializes in building tiny tools that make you squeal with excitement.",
-    "url":     "https://twitter.com/yoshuawuyts",
-    "twitter": "yoshuauyts"
+    "github": "yoshuawuyts",
+    "twitter": "yoshuawuyts"
   },
 
   "mafintosh": {
     "name":    "Mathias Buus",
     "bio":     "Mathias is a non-profit Node.js hacker based in Copenhagen, Denmark. He works full time on open source and is part of the Dat project, http://dat-data.com trying to build open tools to help scientists share datasets. Currently he maintains more than 400 modules on npm including a bunch of P2P and mad science stuff.",
-    "url":     "https://twitter.com/mafintosh",
+    "github": "mafintosh",
     "twitter": "mafintosh"
+  },
+
+  "a0viedo": {
+    "name":    "Alejandro Oviedo",
+    "bio":     "Alejandro is a developer who loves learning new things. He is passionate about education, electronics, open-source, and community-driven events. These days, he also helps organize NodeConf Argentina and a local Node.js meetup.NodeSchool, NodeBots and the Node.js meetup at Buenos Aires.",
+    "github": "a0viedo",
+    "twitter": "a0viedo"
+  },
+
+  "watson": {
+    "name":    "Thomas Watson",
+    "bio":     "Thomas Watson is an open source Node.js hacker out of Copenhagen, Denmark. He is a member of the Node.js Diagnostics Working Group and is the Node.js Lead at Opbeat - a JavaScript performance analysis and monitoring startup. He maintains over a 100 open source projects, enjoys working with mad science and implementing network protocols in JavaScript.",
+    "github": "watson",
+    "twitter": ""
+  },
+
+  "teppeis": {
+    "name":    "Teppei Sato",
+    "bio":     "1982年新潟県生まれ。東京工業大学卒業後、2007年サイボウズに入社。大規模向けグループウェアのガルーン、国際版ワークフローのApprovalFlowの開発を担当したのち、次世代グループウェアのプロトタイプの開発に従事。その後、データベースソフトであるkintoneの開発に携わる。サイボウズ株式会社 執行役員・グローバル開発本部長。",
+    "github": "teppeis",
+    "twitter": "teppeis"
+  },
+
+  "bahmutov": {
+    "name":    "Gleb Bahmutov",
+    "bio":     "Gleb Bahmutov is JavaScript ninja, image processing expert and software quality fanatic. After receiving a PhD in computer science from Purdue University, Gleb worked on laser scanners, 3D reconstruction, and panorama-based virtual tours at EveryScape. Later Gleb switched to writing browser data visualization software at MathWorks. After a year, Gleb went back to the startup environment and developed software quality analysis tools at uTest (now Applause). Today Gleb is developing real-time financial analysis tools at Kensho. He blogs about software development topics at http://glebbahmutov.com/blog/ and links his projects at http://glebbahmutov.com/. You can follow him and his work @bahmutov",
+    "github": "bahmutov",
+    "twitter": ""
+  },
+
+  "fritzvd": {
+    "name":    "Fritz Van Deventer",
+    "bio":     "I'm Fritz. I love dipping my toes in all kinds of things as a creator of digital and analogue things. With the band Cheeses of Mexico that means: music and videos, as well as games. As a developer it means creating Flood simulation models at www.3di.nu. As a hobbyist it means working in the wee hours of night developing stuff for the Famicom/NES, or making sourdough bread. I teach programming at a technical college in Arnhem",
+    "github": "fritzvd",
+    "twitter": ""
+  },
+
+  "BarakChamo": {
+    "name":    "Barak Chamo",
+    "bio":     "Barak is a London-based software engineer, entrepreneur, tech speaker, and writer. He’s passionate about emerging web technologies, great online user experiences and building great products faster and better. He’s now consulting startups in London, co-building early stage startups.",
+    "github": "BarakChamo",
+    "twitter": ""
+  },
+
+  "RichardLitt": {
+    "name":    "Richard Littauer",
+    "bio":     "Richard Littauer is a member of Protocol Labs, busy building a better, decentralized, and permanent internet. He is dedicated to community infrastructure, and has run several NodeSchools in the developing and development world, spoken at meetups from New York to Svalbard, and spends a lot of this time making sure that docs are maintained and relevant. He likes books a lot, too.",
+    "github": "RichardLitt",
+    "twitter": ""
+  },
+
+  "kazupon": {
+    "name":    "Kazuya Kawaguchi",
+    "bio":     "株式会社 CUUSOO SYSTEM CTO。Vue.js コアチームメンバーとして積極的に活動中。日本 Vue.js ユーザーグループ [vuejs-jp](https://github.com/vuejs-jp/home) の代表でありユーザーコミュニティの活動も進めている。最近は自称 emojineer として emoji を使ったソフトウェア開発プロセスにも関心がある。",
+    "github": "kazupon",
+    "twitter": ""
+  },
+
+  "yoshidan": {
+    "name":    "Naohiro Yoshida",
+    "bio":     "株式会社リクルートテクノロジーズ所属。直近1年ほどは飲食関連事業で、アーキテクトしてSpring BootやNode.jsでのサービス開発を推進しています。",
+    "github": "",
+    "twitter": ""
+  },
+
+  "nkzawa": {
+    "name":    "Naoyuki Kanezawa",
+    "bio":     "Socket.IOのコミッターの活動を経て、創業メンバーの一人としてZeitに参加。Node.JS、JavaScriptを中心としたOSS全般に関心があります。",
+    "github": "nkzawa",
+    "twitter": "nkzawa"
+  },
+
+  "morishitter": {
+    "name":    "Masaaki Morishita",
+    "bio":     "Increments株式会社所属のフロントエンドエンジニア。UIの実装やCSS設計が得意領域。開発当初からPostCSSを追いかけており、Stylefmt等いくつかCSS周辺ツールを開発している。",
+    "github": "morishitter",
+    "twitter": "morishitter_"
+  },
+
+  "chikoski": {
+    "name":    "Noritada Shimizu",
+    "bio":     "一般社団法人Mozilla Japanテクニカルマーケティング。2001年慶應義塾大学政策・メディア研究科修士課程修了。大学在学中よりWeb開発を行う。慶應義塾インフォメーションテクノロジセンタ、嘉悦大学情報メディアセンターを経て、2013年より Mozilla Japan に参加。現在はFirefox OS / Firefox アプリ開発と開発者ツールを中心にMozilla のテクノロジ、および Web 標準技術の普及活動に従事する。",
+    "github": "",
+    "twitter": "chikoski"
   }
 }
+
