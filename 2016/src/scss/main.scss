@@ -874,6 +874,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   margin-top: -1rem;
   text-align: center;
   > * {
+    display: inline-block;
     margin-top: 1rem;
   }
   @include over-md {
@@ -910,6 +911,7 @@ $hex-image: $hex-canvas * $hex-ratio;
       background-image: linear-gradient(-140deg, rgba($color-sand,0.5) 0%, rgba($color-sunred,0.8) 100%);
       transform-origin: 50% 0;
       transform: rotate(-30deg) scaleX(1.5);
+      transition: transform 300ms ease-out;
     }
     @supports (mix-blend-mode: multiply) {
       &::after {
@@ -918,31 +920,63 @@ $hex-image: $hex-canvas * $hex-ratio;
       }
     }
   }
+  &:hover {
+    .speaker-name {
+      transform: translateY(-3rem);
+    }
+    .speaker-session {
+      opacity: 1;
+      transform: translateY(-3rem);
+    }
+    .Hex-inner {
+      &::after {
+        transform: rotate(0deg) scaleX(1.5);
+      }
+    }
+  }
 }
 .speaker-info {
   position: absolute;
-  top: 50%;
+  top: 66.7%;
   left: 0;
   bottom: 0;
   right: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   color: $color-whitefog;
 }
 .speaker-name {
   letter-spacing: 0.064em;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 100;
+  transition: transform 300ms ease-out;
+  transform: translateY(0);
   @include over-md {
-    font-size: 1.75rem;
+    //font-size: 1.75rem;
   }
+}
+.speaker-session {
+  letter-spacing: 0.064em;
+  font-weight: 200;
+  font-size: 1rem;
+  transition: all 300ms ease-out;
+  transform: translateY(0);
+  opacity: 0;
+  @include over-md {
+    //font-size: 1rem;
+  }
+}
+
+// About
+.about-organizer {
+  text-align: center;
 }
 
 // Organizer
 .organizer {
-  display: block;
+  display: inline-block;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -958,11 +992,26 @@ $hex-image: $hex-canvas * $hex-ratio;
       background-image: linear-gradient(-140deg, rgba($color-leaf,0.5) 0%, rgba($color-grass,0.8) 100%);
       transform-origin: 50% 0;
       transform: rotate(-30deg) scaleX(1.5);
+      transition: transform 300ms ease-out;
     }
     @supports (mix-blend-mode: multiply) {
       &::after {
         background-image: linear-gradient(-140deg, $color-leaf 0%, $color-grass 100%);
         mix-blend-mode: multiply;
+      }
+    }
+  }
+  &:hover {
+    .organizer-name {
+      transform: translateY(-3rem);
+    }
+    .organizer-id {
+      opacity: 1;
+      transform: translateY(-3rem);
+    }
+    .Hex-inner {
+      &::after {
+        transform: rotate(0deg) scaleX(1.5);
       }
     }
   }
@@ -986,6 +1035,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   letter-spacing: 0.064em;
   font-size: 1.5rem;
   font-weight: 100;
+  transition: transform 300ms ease-out;
   @include over-md {
     font-size: 1.75rem;
   }
@@ -994,6 +1044,8 @@ $hex-image: $hex-canvas * $hex-ratio;
   letter-spacing: 0.064em;
   font-weight: 200;
   font-size: 1.25rem;
+  transition: all 300ms ease-out;
+  opacity: 0;
   @include over-md {
     font-size: 1rem;
   }

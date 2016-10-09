@@ -1,4 +1,7 @@
-<% var speaker = speakers[id] %>
+<%
+var speaker = speakers[id];
+var session = sessions[id];
+%>
 <a href="<%= speaker.url %>" class="speaker" data-key="<%= id %>">
   <div class="speaker-image">
     <div class="Hex">
@@ -12,6 +15,9 @@
   <div class="speaker-info">
     <p class="speaker-name">
       <%= speaker.name %>
+    </p>
+    <p class="speaker-session">
+      <%= session.title %>
     </p>
   </div>
 </a>
