@@ -1372,7 +1372,6 @@ $hex-image: $hex-canvas * $hex-ratio;
     }
   }
 }
-.timetable-caption,
 .timetable-header,
 .timetable-row {
   display: flex;
@@ -1383,17 +1382,11 @@ $hex-image: $hex-canvas * $hex-ratio;
 }
 .timetable-caption {
   box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
   margin-bottom: 0.25rem;
   padding: 1rem;
   background-color: $color-creamhaze;
   @include over-md {
     margin-bottom: 1rem;
-    justify-content: space-between;
-    flex-direction: row;
   }
 }
 .timetable-header {
@@ -1416,6 +1409,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   font-weight: 400;
   color: $color-inky;
   font-size: 1.25rem;
+  text-align: center;
   @include over-md {
     font-size: 3rem;
   }
@@ -1426,15 +1420,12 @@ $hex-image: $hex-canvas * $hex-ratio;
   font-size: 0.875rem;
   @include below-sm {
     margin-top: 0.5rem;
-    display: block;
   }
   @include over-md {
     margin-top: 0.5rem;
-    display: block;
     font-size: 2rem;
   }
   @include over-lg {
-    display: inline-block;
     font-size: 2rem;
   }
 }
