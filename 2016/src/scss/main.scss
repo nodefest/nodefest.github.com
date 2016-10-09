@@ -468,6 +468,7 @@ $hex-image: $hex-canvas * $hex-ratio;
 }
 
 .cover {
+  background-color: $color-forest;
   background-image: url('img/bg-header-home.jpg');
   background-size: cover;
   @include over-md {
@@ -1737,6 +1738,7 @@ $hex-image: $hex-canvas * $hex-ratio;
     > * {
       box-sizing: border-box;
       flex: 0 0 50%;
+      max-width: 50%;
       padding-left: 1rem;
       padding-right: 1rem;
     }
@@ -1982,11 +1984,17 @@ $hex-image: $hex-canvas * $hex-ratio;
       padding-left: 1rem;
       padding-right: 1rem;
     }
+    &.-platinum {
+      > * {
+        width: 100%;
+      }
+    }
     &.-gold,
     &.-silver,
     &.-media {
       > * {
         flex: 0 0 50%;
+        max-width: 50%;
       }
     }
   }
@@ -2003,11 +2011,13 @@ $hex-image: $hex-canvas * $hex-ratio;
     &.-silver {
       > * {
         flex: 0 0 33.3%;
+        max-width: 33.3%;
       }
     }
     &.-media {
       > * {
         flex: 0 0 25%;
+        max-width: 25%;
       }
     }
   }
@@ -2062,11 +2072,21 @@ $hex-image: $hex-canvas * $hex-ratio;
     }
   }
   @include over-md {
-    display: flex;
     &.-platinum {
+      background-color: white;
+      margin-left: auto;
+      margin-right: auto;
+      width: $width-textblock;
+      //@include clearfix;
+      //> * {
+      //  width: 50%;
+      //}
       .pr-logo {
+        //float: left;
+        box-sizing: border-box;
         padding: 6rem 1rem;
-        flex: 0 0 50%;
+        //flex: 0 1 50%;
+        //min-width: 50%;
         background-color: white;
         img {
           max-width: $sponsor-banner-platinum / 1.5;
@@ -2076,7 +2096,9 @@ $hex-image: $hex-canvas * $hex-ratio;
         font-size: 2rem;
       }
       .pr-body {
-        flex: 0 1 50%;
+        //float: right;
+        box-sizing: border-box;
+        background-color: $color-creamhaze;
       }
     }
     &.-gold,
@@ -2325,26 +2347,15 @@ $hex-image: $hex-canvas * $hex-ratio;
 // Footer
 .footer {
   position: relative;
-  //overflow: hidden;
-  //padding: 1em 0;
   color: $color-whitefog;
   font-size: 0.875rem;
   text-align: center;
-  //background-color: $color-inky;
-  @include over-md {
-    //position: static;
-    //padding-top: 0;
-    //background-image: none;
-    //background-color: $color-grass;
-  }
-  @include over-lg {
-  }
 }
 .contentinfo {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
   background-color: $color-deepnight;
   @include over-md {
+    padding: 1rem;
     background-color: $color-deepnight;
   }
 }
