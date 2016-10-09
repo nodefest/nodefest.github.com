@@ -50,7 +50,7 @@ function _handleClick(ev) {
 
 function _scrollByHash(hash) {
   var destEl = document.getElementById(hash.slice(1))
-  destEl && this._scrollTo(0, destEl.offsetTop, this.options)
+  destEl && this._scrollTo(0, destEl.getBoundingClientRect().top, this.options)
 }
 
 function _scrollTo(x, y, options) {
