@@ -509,7 +509,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .home-mountain {
-  //display: none; // dev
   $mountain-ratio: 0.57890625;
   position: absolute;
   top: 0;
@@ -522,13 +521,11 @@ $hex-image: $hex-canvas * $hex-ratio;
   @include over-md {
     width: 160rem;
     height: 160rem * $mountain-ratio;
-    //opacity: 0.8;
     transform: translate3d(-32%,-40%,0);
   }
   @include over-hg {
     width: 192rem;
     height: 192rem * $mountain-ratio;
-    //opacity: 0.8;
     transform: translate3d(-32%,-40%,0);
   }
 }
@@ -1105,6 +1102,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .session-speakerProfile {
+  flex: 0 1 100%;
   padding: 1rem;
   @media (min-width: 640px) {
     overflow: hidden;
@@ -1125,6 +1123,37 @@ $hex-image: $hex-canvas * $hex-ratio;
 .session-speakerBio {
   font-size: 0.875rem;
   text-align: left;
+}
+.session-speakerLinks {
+  margin-bottom: -0.5rem;
+  text-align: center;
+  > li {
+    display: inline-block;
+    > a {
+      display: block;
+      padding: 0.5rem;
+      text-align: center;
+      > img {
+        vertical-align: middle;
+      }
+    }
+  }
+  @media (min-width: 640px) {
+    margin-top: 0.5rem;
+    text-align: right;
+    > li {
+      display: inline-block;
+      margin-left: 0.5rem;
+      > a {
+        display: block;
+        padding: 0;
+        width: 2rem;
+        height: 2rem;
+        vertical-align: middle;
+        text-align: center;
+      }
+    }
+  }
 }
 .session-content {
   padding: 1rem;

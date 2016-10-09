@@ -19,6 +19,22 @@
           <div class="session-speakerBio">
             <p><%= speaker.bio %></p>
           </div>
+          <ul class="session-speakerLinks">
+            <% if (speaker.twitter) { %>
+            <li>
+              <a href="https://twitter.com/<%= speaker.twitter %>">
+                <img src="img/ico-twitter.svg" width="32" height="32" alt="Twitter: @<%= speaker.twitter %>">
+              </a>
+            </li>
+            <% } %>
+            <% if (speaker.github) { %>
+            <li>
+              <a href="https://github.com/<%= speaker.github %>">
+                <img src="img/ico-github.svg" width="32" height="32" alt="GitHub: @<%= speaker.github %>">
+              </a>
+            </li>
+            <% } %>
+          </ul>
         </div>
       </div>
       <div class="session-content">
