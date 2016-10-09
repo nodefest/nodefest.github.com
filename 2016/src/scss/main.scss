@@ -1077,7 +1077,6 @@ $hex-image: $hex-canvas * $hex-ratio;
     padding: 1rem;
     &.is-expand {
       display: flex;
-      justify-content: center;
       align-items: center;
     }
   }
