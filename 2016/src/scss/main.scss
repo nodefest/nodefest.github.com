@@ -206,8 +206,6 @@ a {
     text-decoration: none;
   }
   @include over-sm {
-    //display: inline-block;
-    //width: 15em;
     font-size: 1.6rem;
   }
 }
@@ -234,7 +232,6 @@ $hex-image: $hex-canvas * $hex-ratio;
 .Hex-inner {
   width: auto;
   height: 100%;
-  //overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -379,8 +376,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   @include over-lg {
     display: flex;
     flex-wrap: wrap;
-    //margin-top: 2rem;
-    //margin-bottom: 4rem;
     padding: 2rem 0 4rem 0;
     width: 75%;
     justify-content: space-between;
@@ -394,8 +389,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
   @include over-hg {
     flex-wrap: nowrap;
-    //margin-top: 0;
-    //margin-bottom: 0;
     padding: 0;
     width: 100%;
     height: 5rem;
@@ -512,7 +505,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   padding: 8px;
   width: 224px;
   height: 224px;
-  //mix-blend-mode: hard-light;
   @include over-md {
     border: 10px solid $color-whitefog;
     margin-bottom: 3rem;
@@ -577,7 +569,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   ),
   url('img/bg-tile.svg');
   background-position: center top;
-  //background-size: auto, 64px auto;
   background-size: auto, 64px auto;
   @include over-md {
   }
@@ -634,8 +625,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
   @include over-md {
     margin-top: 4rem;
-    //margin-bottom: 16rem;
-    //padding: 0;
     .Button {
       display: inline-block;
       padding: 1em 2em;
@@ -675,8 +664,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .home-venues {
-  @include over-md {
-  }
   @include over-hg {
     margin-bottom: 64px;
   }
@@ -778,12 +765,10 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
   @include over-md {
     margin-bottom: 1rem;
-    //line-height: $line-tight;
     font-size: 2rem;
   }
   @include over-lg {
     margin-bottom: 1.5rem;
-    //line-height: $line-tight;
     font-size: 3rem;
   }
 }
@@ -954,14 +939,6 @@ $hex-image: $hex-canvas * $hex-ratio;
     font-size: 1.75rem;
   }
 }
-//.speaker-links {
-//  letter-spacing: 0.064em;
-//  font-weight: 200;
-//  font-size: 1.25rem;
-//  @include over-md {
-//    font-size: 1rem;
-//  }
-//}
 
 // Organizer
 .organizer {
