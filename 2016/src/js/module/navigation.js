@@ -20,8 +20,13 @@ module.exports = function() {
     // DOCUMENT_POSITION_FOLLOWING OR
     // DOCUMENT_POSITION_PRECEDING & DOCUMENT_POSITION_CONTAINED_BY
     var pos = list.compareDocumentPosition(ev.target);
-    if ( pos === 4 || pos === 10) {
+    if (pos === 4 || pos === 10) {
       ev.preventDefault();
+      body.classList.remove('is-expand');
+      navigation.classList.remove('is-expand');
+    }
+    // aタグは通す
+    if (ev.target.tagName.toLowerCase() === 'a') {
       body.classList.remove('is-expand');
       navigation.classList.remove('is-expand');
     }
