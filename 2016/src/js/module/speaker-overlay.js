@@ -20,20 +20,21 @@ module.exports = function() {
     var button  = overlay.querySelector('.overlay-button');
 
     // アニメーションで制御するのでいったん全部消す
-    overlay.style.display = content.style.display = button.style.display = 'none';
+    // TODO: IE11で表示できていなにので、いったんアニメーションは切る
+    // overlay.style.display = content.style.display = button.style.display = 'none';
 
     // アニメーションしないならコレだけで良い
     body.classList.add('is-expand');
     overlay.classList.add('is-expand');
 
     // アニメーション！
-    Velocity(overlay, 'fadeIn', { duration: 50 }).then(function() {
-      // コレはdisplay: flexなので戻さないと崩れる
-      overlay.style.display = '';
-      Velocity(content, 'fadeIn', { delay: 100, duration: 600 }).then(function() {
-        Velocity(button, 'fadeIn');
-      });
-    });
+    // Velocity(overlay, 'fadeIn', { duration: 50 }).then(function() {
+    //   // コレはdisplay: flexなので戻さないと崩れる
+    //   overlay.style.display = '';
+    //   Velocity(content, 'fadeIn', { delay: 100, duration: 600 }).then(function() {
+    //     Velocity(button, 'fadeIn');
+    //   });
+    // });
 
   }
 
