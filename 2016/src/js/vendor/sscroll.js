@@ -38,7 +38,7 @@ function _checkHash() {
 }
 
 function _modifyHash(hash) {
-  history.replaceState(null, null, hash)
+  history.pushState(null, null, hash)
 }
 
 function _handleClick(ev) {
