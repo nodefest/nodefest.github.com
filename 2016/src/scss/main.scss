@@ -148,8 +148,14 @@ a {
     border-color: $color-sunred;
     background-color: $color-sunred;
     font-weight: 400;
+    box-shadow: 2px 2px 0 0 rgba($color-shadow, 0.25);
+    transition: all 150ms ease-in;
     &:hover {
       background-color: mix($color-sunred,$color-whitefog,75%);
+    }
+    &:active {
+      transform: translate(2px, 2px);
+      box-shadow: 0 0 0 0 rgba($color-whitefog, 0.75);
     }
   }
   &.-workshop {
@@ -157,13 +163,13 @@ a {
     background-color: $color-sunflower;
     font-weight: 400;
     color: $color-inky;
-    box-shadow: 0 4px 0 0 rgba($color-sunflower, 0.75);
+    box-shadow: 2px 2px 0 0 rgba($color-shadow, 0.5);
     transition: all 150ms ease-in;
     &:hover {
       background-color: $color-whitefog;
     }
     &:active {
-      transform: translate(0, 2px);
+      transform: translate(2px, 2px);
       box-shadow: 0 0 0 0 rgba($color-whitefog, 0.75);
     }
   }
@@ -172,13 +178,13 @@ a {
     background-color: $color-leaf;
     font-weight: 400;
     color: $color-inky;
-    box-shadow: 0 4px 0 0 rgba($color-leaf, 0.75);
+    box-shadow: 2px 2px 0 0 rgba($color-shadow, 0.5);
     transition: all 150ms ease-in;
     &:hover {
       background-color: $color-whitefog;
     }
     &:active {
-      transform: translate(0, 2px);
+      transform: translate(2px, 2px);
       box-shadow: 0 0 0 0 rgba($color-whitefog, 0.75);
     }
   }
