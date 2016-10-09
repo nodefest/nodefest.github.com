@@ -28,8 +28,9 @@ module.exports = function() {
 
     // アニメーション！
     Velocity(overlay, 'fadeIn', { duration: 50 }).then(function() {
+      // コレはdisplay: flexなので戻さないと崩れる
       overlay.style.display = '';
-      Velocity(content, 'slideDown', { delay: 300, duration: 200 }).then(function() {
+      Velocity(content, 'fadeIn', { delay: 300, duration: 300 }).then(function() {
         Velocity(button, 'fadeIn');
       });
     });
