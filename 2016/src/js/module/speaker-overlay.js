@@ -19,12 +19,6 @@ module.exports = function() {
     var content = overlay.querySelector('.overlay-content');
     var button  = overlay.querySelector('.overlay-button');
 
-    // Twitterアカウントのところだったらばリンク開く
-    if (ev.target.className === 'speaker-links') {
-      window.open(ev.currentTarget.href);
-      return;
-    }
-
     // アニメーションで制御するのでいったん全部消す
     overlay.style.display = content.style.display = button.style.display = 'none';
 
@@ -43,12 +37,16 @@ module.exports = function() {
   }
 
   function _closeSpeaker(ev) {
-    ev.preventDefault();
     var overlay = ev.currentTarget;
     var session = overlay.querySelector('.session');
 
-    // DOCUMENT_POSITION_FOLLOWING OR DOCUMENT_POSITION_CONTAINED_BY
-    if (session.compareDocumentPosition(ev.target) !== 20) {
+    if (
+      // DOCUMENT_POSITION_FOLLOWING OR DOCUMENT_POSITION_CONTAINED_BY
+      session.compareDocumentPosition(ev.target) !== 20 &&
+      // リンクは通ってよい
+      ev.target.tagName.toLowerCase() !== 'a'
+    ) {
+      ev.preventDefault();
       body.classList.remove('is-expand');
       overlay.classList.remove('is-expand');
     }
