@@ -33,64 +33,7 @@
       <stop offset="30%" stop-color="#61A347"  stop-opacity="0.9"/>
       <stop offset="50%" stop-color="#EADA96"/>
       <stop offset="60%" stop-color="#EADA96"/>
-      <!--<stop offset="50%" stop-color="#61A347"/>-->
-      <!--<stop offset="0%" stop-color="#D75A43"/>-->
-      <!--<stop offset="50%" stop-color="#EADA96"/>-->
     </linearGradient>
-
-    <linearGradient id="cover-hex" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#3F6630"/>
-      <stop offset="50%" stop-color="#F9E057"/>
-      <!--<stop offset="50%" stop-color="#61A347"/>-->
-      <!--<stop offset="0%" stop-color="#D75A43"/>-->
-      <!--<stop offset="50%" stop-color="#EADA96"/>-->
-    </linearGradient>
-
-    <linearGradient id="about-hex" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#61A347"  stop-opacity="0.9"/>
-      <!--<stop offset="10%"x stop-color="#EADA96"/>-->
-      <!--<stop offset="20%" stop-color="#EADA96"/>-->
-      <!--<stop offset="50%" stop-color="#EADA96"/>-->
-      <!--<stop offset="100%" stop-color="#EADA96"  stop-opacity="0"/>-->
-      <stop offset="10%" stop-color="#EADA96"/>
-      <stop offset="20%" stop-color="#FFFEF7"/>
-      <stop offset="50%" stop-color="#FFFEF7"/>
-      <stop offset="100%" stop-color="#FFFEF7"  stop-opacity="0"/>
-    </linearGradient>
-
-    <linearGradient id="tickets-hex" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="80%" stop-color="#80BD01"/>
-      <stop offset="100%" stop-color="#61A347"/>
-    </linearGradient>
-
-    <linearGradient id="header-hex" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="80%" stop-color="#80BD01"/>
-      <stop offset="100%" stop-color="#61A347"/>
-      <!--<stop offset="80%" stop-color="#FFFEF7"/>-->
-      <!--<stop offset="100%" stop-color="#EADA96"/>-->
-    </linearGradient>
-
-    <linearGradient id="color-conference" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#80BD01"/>
-      <stop offset="100%" stop-color="#61A347"/>
-    </linearGradient>
-
-    <linearGradient id="color-workshop" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#F9E057"/>
-      <stop offset="100%" stop-color="#EADA96"/>
-    </linearGradient>
-
-    <symbol id="hex" viewBox="0 0 1086 1254">
-      <path d="M0 313.5L543 0l543 313.5v627L543 1254 0 940.5"/>
-    </symbol>
-
-    <symbol id="pin" viewBox="0 0 181 210">
-      <path d="M90.5 0L181 52.25 90.5 209 0 52.25"/>
-    </symbol>
-
-    <symbol id="corner" viewBox="0 0 181 104">
-      <path d="M0 0h181v104"/>
-    </symbol>
 
     <symbol id="mountain" id="corner" viewBox="0 0 2560 1478">
       <path d="M2560 1478V739L1280 0 0 739v739"/>
@@ -117,7 +60,7 @@
         <li><a href="schedule.html" class="navigation-target">Schedule</a></li>
         <li><a href="venues.html" class="navigation-target">Venues</a></li>
         <li><a href="sponsors.html" class="navigation-target">Sponsors</a></li>
-        <li><a href="#" class="navigation-target -button">Tickets</a></li>
+        <li><a href="#tickets" class="navigation-target -button">Tickets</a></li>
       </ul>
       <button class="navigation-button">
         <svg xmlns="http://www.w3.org/2000/svg" class="navigation-icon"><use xlink:href="#close"></use></svg>
@@ -174,12 +117,27 @@
 </div>
 
 <!-- Tickets -->
-<section class="tickets">
+<section class="tickets" id="tickets">
+  <header class="tickets-header">
+    <h3 class="tickets-title">Get your tickets</h3>
+    <div class="tickets-note">
+      <p>それぞれの日程ごとにお申し込みください。</p>
+    </div>
+  </header>
   <div class="tickets-body">
     <div class="tickets-action">
-      <a href="#" class="Button -primary">
-        Get your tickets
-      </a>
+      <div class="tickets-button">
+        <a href="https://eventdots.jp/event/602440" class="Button -workshop" target="_blank">
+          Get 1st Day Ticket
+          <span class="tickets-buttonLead">Nov 12</span>
+        </a>
+      </div>
+      <div class="tickets-button">
+        <a href="http://nodejs.connpass.com/event/42182" class="Button -conference" target="_blank">
+          Get 2nd Day Ticket
+          <span class="tickets-buttonLead">Nov 13</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
