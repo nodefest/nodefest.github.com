@@ -1,0 +1,84 @@
+<%
+var page = {
+  title: 'About',
+  members: [
+    'tito',
+    'watilde',
+    'vanx2',
+    'kysnm',
+    'leader22',
+    'nobisuke',
+    'sotayamashita',
+    'tako_black',
+    'martin',
+    'axross',
+    'ledsun',
+    'tgfjt',
+    'hiloki',
+  ]
+}
+%>
+<%- include('_layout/header', page) -%>
+
+<%- include('_partial/svg') -%>
+
+<%- include('_partial/navigation') -%>
+
+<div class="main">
+
+  <section class="page about">
+    <h2 class="page-title about-title"><%= page.title %></h2>
+
+    <div class="page-body about-body">
+      <%- include('_partial/intro') -%>
+    </div>
+
+    <div class="page-section">
+      <h3 class="page-subhead">Organizer</h3>
+      <div class="page-sectionBody">
+        <div class="about-organizer">
+          <a href="https://twitter.com/yosuke_furukawa" target="_blank" class="organizer">
+            <div class="organizer-image">
+              <div class="Hex">
+                <div class="Hex-outer">
+                  <div class="Hex-inner">
+                    <img src="img/pic-yosuke.jpg" class="Hex-image">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="organizer-info">
+              <p class="organizer-name">
+                Yosuke Furukawa
+              </p>
+              <p class="organizer-id">
+                @yosuke_furukawa
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-section">
+      <h3 class="page-subhead">Team</h3>
+      <div class="page-sectionBody">
+        <ul class="team">
+          <% page.members.forEach(function(id) { %>
+          <li>
+            <div class="team-member">
+              <p class="team-memberName"><a href="https://twitter.com/<%= members[id].url %>" target="_blank"><%= id %></a></p>
+            </div>
+          </li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+</div>
+
+<%- include('_partial/tickets') -%>
+
+<%- include('_layout/footer') -%>

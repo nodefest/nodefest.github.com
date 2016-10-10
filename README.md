@@ -7,7 +7,7 @@ Node学園祭公式サイトのリポジトリです。
 ## 開発
 ```sh
 npm i
-npm run server
+npm start
 ```
 
 これでサーバーが立ち上がり、プレビューはできます。

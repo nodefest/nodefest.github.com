@@ -1,0 +1,195 @@
+<%
+var page = {
+  speakers: [
+    'douglascrockford',
+    'jasnell',
+    'bmeck',
+    'zcbenz',
+    'yoshuawuyts',
+    'mafintosh'
+  ]
+}
+%>
+<%- include('_layout/header') -%>
+
+<%- include('_partial/svg') -%>
+
+<div class="home">
+
+  <div class="cover">
+
+    <header class="header cover-header">
+      <nav class="navigation">
+        <ul class="navigation-list cover-navigationList">
+          <li><a href="about.html" class="navigation-target">About</a></li>
+          <li><a href="speakers.html" class="navigation-target">Speakers</a></li>
+          <li><a href="schedule.html" class="navigation-target">Schedule</a></li>
+          <li><a href="venues.html" class="navigation-target">Venues</a></li>
+          <li><a href="sponsors.html" class="navigation-target">Sponsors</a></li>
+          <li><a href="#tickets" class="navigation-target -button">Tickets</a></li>
+        </ul>
+        <button class="navigation-button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="navigation-icon"><use xlink:href="#close"></use></svg>
+        </button>
+      </nav>
+      <button class="header-button">
+        <svg xmlns="http://www.w3.org/2000/svg" class="header-icon"><use xlink:href="#nav"></use></svg>
+      </button>
+    </header>
+
+    <div class="cover-inner">
+
+      <img src="img/logo-tnf-invert.svg" class="cover-logo">
+
+      <div class="cover-outline">
+        <div class="outline">
+          <div class="outline-body">
+            <p class="outline-date">November 12 - 13, 2016</p>
+            <h1 class="outline-name">東京Node学園祭2016</h1>
+            <p class="outline-location">at dots. &amp; SHIBUYA Markcity</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-intro">
+
+      <svg xmlns="http://www.w3.org/2000/svg" class="home-mountain" fill="url(#mount-gradient)"><use xlink:href="#mountain"></use></svg>
+      <%- include('_partial/intro') -%>
+    </div>
+  </div>
+
+  <div class="main home-main">
+
+    <div class="home-speakers">
+      <h2 class="home-subhead">Featured Speakers</h2>
+
+      <ul class="speakers-list">
+        <% page.speakers.forEach(function(speaker) { %>
+        <li>
+          <%- include('_partial/speaker', { id: speaker }) -%>
+          <%- include('_partial/speaker-overlay', { id: speaker }) -%>
+        </li>
+        <% }); %>
+      </ul>
+      <div class="home-speakersAction">
+        <a href="speakers.html" class="Button -primary">
+          Check All Speakers
+        </a>
+      </div>
+    </div>
+
+    <!-- Schedule -->
+    <div class="home-schedule">
+      <h2 class="home-subhead">Schedule</h2>
+
+      <div class="home-scheduleBody">
+
+        <div class="home-scheduleSection">
+          <%- include('_partial/timetable-workshop') -%>
+
+        </div>
+
+        <div class="home-scheduleSection">
+          <%- include('_partial/timetable-conference') -%>
+
+        </div>
+
+        <div class="home-scheduleNote">
+          <p>※ セッションの内容／時間は変更になる可能性があります。</p>
+          <p>※ セッションは日本語・英語で行われます。</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Veunes -->
+    <div class="home-venues">
+      <h2 class="home-subhead">Venue</h2>
+      <div class="page-body venue-body">
+        <%- include('_partial/venue-map') -%>
+      </div>
+    </div>
+
+    <%- include('_partial/tickets') -%>
+
+  </div>
+
+<!-- Sponsors -->
+  <div class="home-sponsors">
+    <h2 class="home-subhead home-sponsorsSubhead">Sponsors</h2>
+    <div class="sponsors-section">
+      <h3 class="sponsors-grade">Platinum</h3>
+      <ul class="sponsors-list">
+        <li>
+          <%- include('./_partial/sponsor', { id: 'paypal', grade: 'platinum' }) %>
+        </li>
+      </ul>
+    </div>
+    <div class="sponsors-section">
+      <h3 class="sponsors-grade">Gold</h3>
+      <ul class="sponsors-list">
+        <li>
+          <%- include('./_partial/sponsor', { id: 'dwango', grade: 'gold' }) %>
+        </li>
+        <li>
+          <%- include('./_partial/sponsor', { id: 'r-tech', grade: 'gold' }) %>
+        </li>
+        <li>
+          <%- include('./_partial/sponsor', { id: 'yahoo', grade: 'gold' }) %>
+        </li>
+      </ul>
+    </div>
+    <div class="sponsors-section">
+      <h3 class="sponsors-grade">Silver</h3>
+      <ul class="sponsors-list">
+        <li>
+          <%- include('./_partial/sponsor', { id: 'pxgrid', grade: 'silver' }) %>
+        </li>
+        <li>
+          <%- include('./_partial/sponsor', { id: 'sphinx', grade: 'silver' }) %>
+        </li>
+        <li>
+          <%- include('./_partial/sponsor', { id: 'cyberagent', grade: 'silver' }) %>
+        </li>
+        <li>
+          <%- include('./_partial/sponsor', { id: 'opt', grade: 'silver' }) %>
+        </li>
+        <li>
+          <%- include('./_partial/sponsor', { id: 'uniba', grade: 'silver' }) %>
+        </li>
+        <li>
+          <%- include('./_partial/sponsor', { id: 'nifty', grade: 'silver' }) %>
+        </li>
+      </ul>
+    </div>
+    <div class="sponsors-section">
+      <h3 class="sponsors-grade">Media</h3>
+      <ul class="sponsors-list">
+        <li>
+          <%- include('./_partial/sponsor', { id: 'theport', grade: 'media' }) %>
+        </li>
+        <li>
+          <%- include('./_partial/sponsor', { id: 'qrio', grade: 'media' }) %>
+        </li>
+        <li>
+          <%- include('./_partial/sponsor', { id: 'goodpatch', grade: 'media' }) %>
+        </li>
+        <li>
+          <%- include('./_partial/sponsor', { id: 'lig', grade: 'media' }) %>
+        </li>
+      </ul>
+    </div>
+
+    <!--<p class="sponsors-lead">協賛を希望される方は専用フォームよりお申し込みください。</p>-->
+    <!--<div class="sponsors-action">-->
+    <!--<a href="https://docs.google.com/forms/d/e/1FAIpQLSfNdD06sIUy5noreZ6yp_ZzMlAFoIRq51V1bFwtcuY4xh29Yw/viewform"-->
+    <!--class="Button -invert -cfs">Sponsorship</a>-->
+    <!--</div>-->
+  </div>
+
+</div>
+
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDvBLklunoaVPhXh4b1jVcXoUclUlmtNiA&extension=.js"></script>
+
+<%- include('_layout/footer') -%>

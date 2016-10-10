@@ -1,0 +1,15 @@
+<% var sponsor = sponsors[id]; %>
+<div class="pr -<%= grade %>">
+  <div class="pr-logo">
+    <a href="<%= sponsor.url %>" target="_blank"><img src="img/sponsors/<%= id %>.png"></a>
+  </div>
+  <div class="pr-body">
+    <p class="pr-name"><%= sponsor.name %></p>
+    <p class="pr-url">
+      <a href="<%= sponsor.url %>" target="_blank"><%= sponsor.url %></a>
+    </p>
+    <div class="pr-description">
+      <p><%= sponsor.pr %></p>
+    </div>
+  </div>
+</div>
