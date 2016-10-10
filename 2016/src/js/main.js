@@ -4,6 +4,7 @@
  * ここでPolyfill的に使う・・。
  *
  */
+require('es6-promise').polyfill(); // for IE!!!
 require('./vendor/velocity');
 
 // 幅狭い画面で動くやつ
