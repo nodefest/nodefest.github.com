@@ -8,12 +8,10 @@
     <button class="overlay-button">
       <svg xmlns="http://www.w3.org/2000/svg" class="overlay-icon"><use xlink:href="#close"></use></svg>
     </button>
-    <!-- Session detail & Speaker info-->
+
     <div class="session">
       <div class="session-speaker">
-        <div class="session-speakerAvatar" style="background-image:url(img/speakers/pic-<%= id %>.jpg");">
-          <!--<img src="img/speakers/pic-<%= id %>.jpg">-->
-        </div>
+        <div class="session-speakerAvatar" style="background-image:url(img/speakers/pic-<%= id %>.jpg);"></div>
         <div class="session-speakerProfile">
           <p class="session-speakerName"><%= speaker.name %></p>
           <div class="session-speakerBio">
@@ -37,6 +35,7 @@
           </ul>
         </div>
       </div>
+
       <div class="session-content">
         <p class="session-time"><%= session.time %> Room <%= session.room %></p>
         <h2 class="session-title"><%= session.title %></h2>
