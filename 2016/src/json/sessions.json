@@ -23,8 +23,8 @@
   "zcbenz": {
     "time":    "16:15-16:45",
     "room":    "A",
-    "title":   "Electron",
-    "summary": "TBA"
+    "title":   "The Evolution of Electron",
+    "summary": "I'll talk about how we tried various methods to develop Atom editor with web techniques in early days, and why we ended up creating Electron, I'll also show the current state of Electron and what it will be in future."
   },
 
   "yoshuawuyts": {
