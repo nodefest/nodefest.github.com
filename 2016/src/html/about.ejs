@@ -67,7 +67,7 @@ var page = {
           <% page.members.forEach(function(id) { %>
           <li>
             <div class="team-member">
-              <p class="team-memberName"><a href="https://twitter.com/<%= members[id].url %>" target="_blank"><%= id %></a></p>
+              <p class="team-memberName"><a href="<%= members[id].url %>" target="_blank"><%= id %></a></p>
             </div>
           </li>
           <% }) %>
