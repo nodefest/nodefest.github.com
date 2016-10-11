@@ -1396,14 +1396,11 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .timetable-header {
-  //padding-top: 1rem;
   justify-content: center;
   position: relative;
   font-size: 1rem;
   padding: 0.5rem 0;
-  //background-color: $color-creamhaze;
   @include over-md {
-    //padding: 0.5rem 1rem;
     font-size: 1.5rem;
   }
 }
@@ -1567,36 +1564,37 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 // Venue
-.venue {}
-.venue-title {  }
 .venue-body {
-  //padding-left: 1rem;
-  //padding-right: 1rem;
-  //@include over-md {
-  //  margin-left: auto;
-  //  margin-right: auto;
-  //  padding: 0;
-  //  max-width: $width-container;
-  //}
+  margin-left: 1rem;
+  margin-right: 1rem;
+  @include over-lg {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $width-container;
+  }
+}
+.venue-link {
+  margin-bottom: 0.5rem;
+  text-align: right;
+}
+.venue-linkIcon {
+  margin-right: 0.25em;
+  vertical-align: middle;
+  img {
+    width: 1em;
+    height: 1em;
+  }
 }
 .venue-map {
   display: block;
   overflow: hidden;
   height: 384px;
   box-sizing: border-box;
-  margin-left: 1rem;
-  margin-right: 1rem;
   //padding: 1rem;
   background-color: $color-whitefog;
   border: 4px solid $color-sand;
-  @include over-md {
-  }
   @include over-lg {
     border: 8px solid $color-sand;
-    margin-left: auto;
-    margin-right: auto;
-    //padding: 2rem;
-    max-width: $width-container;
   }
   .gm-style-iw * {
     display: block;
@@ -1614,13 +1612,8 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .venue-detail {
-  margin-left: 1rem;
-  margin-right: 1rem;
   @include over-md {
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: $width-container;
     > * {
       flex: 1 1 50%;
     }
@@ -1631,8 +1624,11 @@ $hex-image: $hex-canvas * $hex-ratio;
   padding-top: 1rem;
   padding-bottom: 1rem;
   @include over-md {
-    padding: 1rem;
   }
+}
+.venue-station {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
 }
 .venue-icon {
   width: auto;
@@ -1663,6 +1659,13 @@ $hex-image: $hex-canvas * $hex-ratio;
       border-bottom: 4px solid $color-sand;
     }
   }
+  @include over-md {
+    font-size: 1rem;
+  }
+}
+.venue-note {
+  margin-top: 1rem;
+  font-size: 0.875rem;
   @include over-md {
     font-size: 1rem;
   }
@@ -2458,4 +2461,13 @@ $hex-image: $hex-canvas * $hex-ratio;
 
 .u-em {
   color: $color-sunred;
+}
+
+.u-link {
+  text-decoration: none;
+  border-bottom: 4px solid $color-creamhaze;
+  transition: all 150ms ease-out;
+  &:hover {
+    border-bottom: 4px solid $color-sand;
+  }
 }
