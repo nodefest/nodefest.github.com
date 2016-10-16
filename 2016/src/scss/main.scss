@@ -1727,7 +1727,7 @@ $hex-image: $hex-canvas * $hex-ratio;
 .tickets {
   position: relative;
   //margin-bottom: 1rem;
-  padding: 3rem 1rem 6rem 1rem;
+  padding: 2rem 0 4rem 0;
   &:before {
     content: "";
     position: absolute;
@@ -1741,15 +1741,14 @@ $hex-image: $hex-canvas * $hex-ratio;
     background-size: cover;
   }
   @include over-md {
-    padding-bottom: 16rem;
-    //margin-bottom: 16rem;
+    padding: 2rem 1rem 12rem;
   }
 }
 .tickets-header {
   margin-bottom: 1.25rem;
 }
 .tickets-title {
-  line-height: $line-flat;
+  line-height: normal;
   letter-spacing: 0.08em;
   text-align: center;
   text-transform: uppercase;
@@ -1827,6 +1826,14 @@ $hex-image: $hex-canvas * $hex-ratio;
   padding: 1rem;
   background-color: $color-whitefog;
   border: 4px solid $color-sand;
+  @include below-sm {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  @include over-sm {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
   @include over-hg {
     border: 8px solid $color-sand;
     margin-left: auto;
