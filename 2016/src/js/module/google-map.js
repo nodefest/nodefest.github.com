@@ -104,15 +104,15 @@ var initialize = function() {
     {
       title: '渋谷マークシティ',
       desc:  '東京都渋谷区道玄坂1-12-1 渋谷マークシティ13F',
-      lat:   35.658363,
-      lng:   139.698829,
+      lat:   35.658354,
+      lng:   139.698819,
       icon:  'img/pin-conference.png'
     },
     {
       title: 'イベント&コミュニティスペース dots.',
       desc:  '東京都渋谷区宇田川町20-17 NOF渋谷公園通りビル 8F',
       lat:   35.661232,
-      lng:   139.700330,
+      lng:   139.700351,
       icon:  'img/pin-workshop.png'
     }
   ].forEach(function(locate) {
