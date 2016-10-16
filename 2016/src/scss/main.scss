@@ -469,10 +469,14 @@ $hex-image: $hex-canvas * $hex-ratio;
 
 .cover {
   background-color: $color-forest;
-  background-image: url('img/bg-header-home.jpg');
-  background-size: cover;
+  background-image: url('img/bg-header-home-sm.jpg');
+  background-size: 142% auto;
+  background-position: center top;
+  background-repeat: no-repeat;
   @include over-md {
     margin-bottom: 2rem;
+    background-image: url('img/bg-header-home.jpg');
+    background-size: cover;
   }
 }
 .cover-header {
