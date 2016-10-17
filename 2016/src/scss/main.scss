@@ -195,6 +195,11 @@ a {
     text-decoration: line-through;
     &:hover {
       text-decoration: line-through;
+      background-color: $color-greymist;
+    }
+    &:active {
+      transform: translate(0,0);
+      box-shadow: 2px 2px 0 0 rgba($color-shadow, 0.5);
     }
   }
   &.-invert {
@@ -1766,6 +1771,9 @@ $hex-image: $hex-canvas * $hex-ratio;
   text-align: center;
   color: $color-inky;
   font-size: 0.875rem;
+  p {
+    margin-top: 1rem;
+  }
   @include over-md {
     font-size: 1rem;
   }
