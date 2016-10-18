@@ -123,5 +123,12 @@
     "room":    "B",
     "title":   "JavaScript による並列処理：共有メモリとロック",
     "summary": "JavaScript のプログラムはメインスレッドという時間軸を、いかに効率良く、譲り合って使うかが勝負でした。非同期呼び出しとコールバック関数は、譲り合いを行うための手段として必要となりましたが、それはプログラムの凝集度を下げ、見づらいコードが多く作られる原因ともなりました。Promise などの導入によってコードの見づらさという問題は顕現されていますが、メインスレッドを譲り合って使うというモデルは変わっていません。JavaScriptの処理系は、その実行スピードを向上させ続けてきましたが、その改善にも限界があります。そこで必要とされるのが並列処理です。これはメインスレッド以外にも処理の主体を用意し、それらが協調して仕事をなすことで、全体の処理時間を短縮することを目的としています。JavaScript では Worker を利用することで、ある程度の並列処理が可能です。しかし Worker は処理の大規模なデータの受け渡しに問題があり利用局面に制限がありました。そんなJavaScript の並列処理も状況が変わりつつあります。1番の大きな変化は、共有メモリの導入です。SharedArrayBuffer と呼ばれるAPIによって実現される共有メモリによって、Worker とのデータのやり取りの効率は格段に向上します。一方、共有メモリの登場によって、これまで JavaScript のプログラムには縁の薄かったバグも生まれるようになります。この講演では、SharedArrayBufferを中心にJavaScriptにおける並列処理とその問題について紹介します。"
+  },
+
+  "lrlna": {
+    "time":    "10:30 - 11:00",
+    "room":    "B",
+    "title":   "Building Interactive npm Command Line Modules",
+    "summary": "Here you are coding away, when you realize you’re in desperate need of a quick shell script to get your project cleaned up. You’re standing at a fork in the road: Bash or Node? You choose the road less travelled by (for some reason) — Node. Congratulations on this decision. You’ve written it, you may have published it, and it certainly works. But what now? Is this all a command line module Node is good for: a project clean up and some data manipulation?<br/>Let’s take it a step further. Let’s make a command line module that’s more than just your compiling script. Irina is, of course, talking about making it more interactive.<br/>In this talk Irina wants to take you on an adventure that will require cunning, bravery, and maybe some magic. She will walk through obtaining and parsing data, using Node’s process functions, and finally improving your module’s user experience."
   }
 }

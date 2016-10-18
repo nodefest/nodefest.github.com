@@ -123,6 +123,13 @@
     "bio":     "一般社団法人Mozilla Japanテクニカルマーケティング。2001年慶應義塾大学政策・メディア研究科修士課程修了。大学在学中よりWeb開発を行う。慶應義塾インフォメーションテクノロジセンタ、嘉悦大学情報メディアセンターを経て、2013年より Mozilla Japan に参加。現在はFirefox OS / Firefox アプリ開発と開発者ツールを中心にMozilla のテクノロジ、および Web 標準技術の普及活動に従事する。",
     "github": "",
     "twitter": "chikoski"
+  },
+
+  "lrlna": {
+    "name":    "Irina Shestak",
+    "bio":     "Irina is a London via Vancouver software developer. She spends quite a bit of their time exploring the outdoors, gushing over trains, and reading some Beatniks.",
+    "github": "lrlna",
+    "twitter": "_lrlna"
   }
 }
 
