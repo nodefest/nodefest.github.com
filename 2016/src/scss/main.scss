@@ -273,12 +273,19 @@ $hex-image: $hex-canvas * $hex-ratio;
     width: 100%;
     padding-top: percentage(740 / 1920);
     background-image: url('img/bg-header.png');
+    background-repeat: no-repeat;
     background-size: cover;
   }
   @include over-md {
     position: static;
     padding-top: 0;
     color: $color-whitefog;
+  }
+  @media (min-width: 1600px) {
+    &:before {
+      max-width: 1600px;
+      background-size: contain;
+    }
   }
 }
 .header-inner {
@@ -479,7 +486,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   background-position: center top;
   background-repeat: no-repeat;
   @include over-md {
-    margin-bottom: 2rem;
     background-image: url('img/bg-header-home.jpg');
     background-size: cover;
   }
@@ -569,6 +575,9 @@ $hex-image: $hex-canvas * $hex-ratio;
   @include over-hg {
     width: 192rem;
     height: 192rem * $mountain-ratio;
+  }
+  @media (min-width: 1600px) {
+    left: 48%;
     transform: translate3d(-32%,-40%,0);
   }
 }
@@ -624,7 +633,18 @@ $hex-image: $hex-canvas * $hex-ratio;
     padding-bottom: 4rem;
   }
 }
-
+.home-speakers {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  @include over-md {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  @include over-hg {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
 .home-speakersAction {
   margin: 2.5rem 2rem 0 2rem;
   text-align: center;
@@ -1743,10 +1763,19 @@ $hex-image: $hex-canvas * $hex-ratio;
     width: 100%;
     padding-top: percentage(740 / 1920);
     background-image: url('img/bg-tickets.png');
+    background-repeat: no-repeat;
     background-size: cover;
   }
   @include over-md {
     padding: 2rem 1rem 12rem;
+  }
+  @media (min-width: 1920px) {
+    &:before {
+      top: 0;
+      left: auto;
+      max-width: 1920px;
+      background-size: contain;
+    }
   }
 }
 .tickets-header {
