@@ -725,12 +725,12 @@ $hex-image: $hex-canvas * $hex-ratio;
 }
 
 .press {
+  position: relative;
+  z-index: 1;
   padding-top: 1rem ;
   padding-bottom: 1rem;
   background-color: $color-deepnight;
   color: $color-whitefog;
-  @include over-md {
-  }
   @include over-hg {
     padding-top: 2rem;
     padding-bottom: 2rem;
