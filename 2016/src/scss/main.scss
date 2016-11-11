@@ -886,12 +886,6 @@ $hex-image: $hex-canvas * $hex-ratio;
       text-decoration: underline;
     }
   }
-  @include over-md {
-    font-size: 1rem;
-  }
-  @include over-lg {
-    font-size: 1.5rem;
-  }
 }
 .intro-twitterIcon {
   width: 1.5em;
