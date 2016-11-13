@@ -52,7 +52,7 @@
     "time":    "11:00 - 11:30",
     "room":    "A",
     "title":   "Debugging Node.js Performance Issues in Production",
-    "summary": ""
+    "summary": "Node.js doesn’t require much to get started building apps. You can easily create a simple HTTP server, query a database and respond to client requests. But as with any other platform, sooner or later you’ll run into issues like scalability, memory leaks, or requests that take forever to complete.\nThis talk covers the top Node.js performance issues, and will guide you through how to solve them."
   },
 
   "fritzvd": {
