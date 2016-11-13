@@ -1636,6 +1636,13 @@ $hex-image: $hex-canvas * $hex-ratio;
     font-size: 1rem;
   }
 }
+.timetable-sessionNote {
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  @include over-md {
+    font-size: 1rem;
+  }
+}
 .timetable-lts {
   > * {
     margin-top: 0.5rem;
@@ -2604,3 +2611,4 @@ $hex-image: $hex-canvas * $hex-ratio;
     border-bottom: 4px solid $color-sunred;
   }
 }
+
