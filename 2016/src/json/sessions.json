@@ -51,8 +51,8 @@
   "watson": {
     "time":    "11:00 - 11:30",
     "room":    "A",
-    "title":   "Build your own JavaScript powered radio",
-    "summary": "Capture and transmit radio waves using software (and just a tiny bit of hardware). This talk is about SDR (Software Defined Radio) and how you can listen to and transcode the radio spectrum using Node.js. It allows you to interact with other radio powered devices, listen in on the data being transmitted between your cellphone and the cell-tower, intercept commercial and private airplane communication and much, much more."
+    "title":   "Debugging Node.js Performance Issues in Production",
+    "summary": ""
   },
 
   "fritzvd": {
