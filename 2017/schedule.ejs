@@ -1,0 +1,59 @@
+<%
+var page = {
+  title: 'Schedule'
+}
+%>
+<%- include('_layout/header', page) -%>
+
+<%- include('_partial/svg') -%>
+
+<%- include('_partial/navigation') -%>
+
+<div class="main">
+
+  <section class="page schedule">
+    <h2 class="page-title schedule-title"><%= page.title %></h2>
+
+    <div class="page-body schedule-body">
+      <div class="schedule-section" id="workshop">
+        <ul class="schedule-nav">
+          <li>
+            <a href="#workshop">Nov 12</a>
+          </li>
+          <li>
+            <a href="#conference">Nov 13</a>
+          </li>
+        </ul>
+
+        <%- include('_partial/timetable-workshop') -%>
+
+      </div>
+
+      <div class="schedule-section" id="conference">
+        <ul class="schedule-nav">
+          <li>
+            <a href="#workshop">Nov 12</a>
+          </li>
+          <li>
+            <a href="#conference">Nov 13</a>
+          </li>
+        </ul>
+
+        <%- include('_partial/timetable-conference') -%>
+
+      </div>
+
+    </div>
+
+    <div class="schedule-note">
+      <p>※ セッションの内容／時間は変更になる可能性があります。</p>
+      <p>※ セッションは日本語・英語で行われます。</p>
+    </div>
+
+  </section>
+
+</div>
+
+<%- include('_partial/tickets') -%>
+
+<%- include('_layout/footer') -%>

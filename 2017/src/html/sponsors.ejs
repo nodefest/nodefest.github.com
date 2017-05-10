@@ -1,0 +1,99 @@
+<%
+var page = {
+  title: 'Sponsors'
+}
+%>
+<%- include('_layout/header', page) -%>
+
+<%- include('_partial/svg') -%>
+
+<%- include('_partial/navigation') -%>
+
+<div class="main">
+
+  <!-- TODO: いったん現状のものをペースト。追ってスポンサー企業概要を含めたリスト化-->
+  <section class="page sponsors">
+    <h2 class="page-title sponsors-title"><%= page.title %></h2>
+    <div class="page-body sponsors-body">
+
+      <div class="prs">
+        <div class="prs-section Section">
+          <h3 class="prs-grade Section-title">Platinum</h3>
+          <ul class="prs-list -platinum">
+            <li>
+              <%- include('./_partial/sponsor-pr', { id: 'paypal', grade: 'platinum' }) %>
+            </li>
+          </ul>
+        </div>
+
+        <div class="prs-section">
+          <h3 class="prs-grade">Gold</h3>
+          <ul class="prs-list -gold">
+            <li>
+              <%- include('./_partial/sponsor-pr', { id: 'dwango', grade: 'gold' }) %>
+            </li>
+            <li>
+              <%- include('./_partial/sponsor-pr', { id: 'r-tech', grade: 'gold' }) %>
+            </li>
+            <li>
+              <%- include('./_partial/sponsor-pr', { id: 'yahoo', grade: 'gold' }) %>
+            </li>
+          </ul>
+        </div>
+        <div class="prs-section">
+          <h3 class="prs-grade">Silver</h3>
+          <ul class="prs-list -silver">
+            <li>
+              <%- include('./_partial/sponsor-pr', { id: 'pxgrid', grade: 'silver' }) %>
+            </li>
+            <li>
+              <%- include('./_partial/sponsor-pr', { id: 'sphinx', grade: 'silver' }) %>
+            </li>
+            <li>
+              <%- include('./_partial/sponsor-pr', { id: 'cyberagent', grade: 'silver' }) %>
+            </li>
+            <li>
+              <%- include('./_partial/sponsor-pr', { id: 'opt', grade: 'silver' }) %>
+            </li>
+            <li>
+              <%- include('./_partial/sponsor-pr', { id: 'uniba', grade: 'silver' }) %>
+            </li>
+            <li>
+              <%- include('./_partial/sponsor-pr', { id: 'nifty', grade: 'silver' }) %>
+            </li>
+            <li>
+              <%- include('./_partial/sponsor-pr', { id: 'rakuten', grade: 'silver' }) %>
+            </li>
+          </ul>
+        </div>
+        <div class="prs-section">
+          <h3 class="prs-grade">Media</h3>
+          <ul class="prs-list -media">
+            <li>
+              <%- include('./_partial/sponsor-pr', { id: 'theport', grade: 'media' }) %>
+            </li>
+            <li>
+              <%- include('./_partial/sponsor-pr', { id: 'qrio', grade: 'media' }) %>
+            </li>
+            <li>
+              <%- include('./_partial/sponsor-pr', { id: 'goodpatch', grade: 'media' }) %>
+            </li>
+            <li>
+              <%- include('./_partial/sponsor-pr', { id: 'lig', grade: 'media' }) %>
+            </li>
+            <li>
+              <%- include('./_partial/sponsor-pr', { id: 'togetter', grade: 'media' }) %>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+<%- include('_partial/tickets') -%>
+
+<%- include('_layout/footer') -%>
