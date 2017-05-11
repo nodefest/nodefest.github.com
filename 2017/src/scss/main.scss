@@ -16,6 +16,7 @@ $color-sand: #EADA96;
 $color-sunflower: #F9E057;
 $color-inky: #263238;
 $color-shadow: #1C2226;
+$color-jsyellow: #F7DF1E;
 
 // Type
 $type-base: -apple-system, Helvetica Neue, Hiragino Sans,"游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;;
@@ -124,6 +125,10 @@ a {
   &:hover {
     text-decoration: none;
   }
+}
+
+strong {
+  font-weight: bold;
 }
 
 // Button
@@ -587,15 +592,16 @@ $hex-image: $hex-canvas * $hex-ratio;
   background-color: $color-whitefog;
   background-image: linear-gradient(to bottom,
     rgba($color-sand,1) 0%,
-    rgba($color-whitefog,0.8) 5%,
-    rgba($color-whitefog,0.75) 50%,
+    rgba($color-sand,0.9) 5%,
+    rgba($color-sand,0.75) 50%,
     rgba($color-sand,0.8) 90%,
-    rgba($color-sand,1) 100%
+    rgba($color-whitefog,1) 100%
   ),
   url('img/bg-tile.svg');
   background-position: center top;
   background-size: auto, 64px auto;
   @include over-md {
+    margin-top: 2rem;
   }
 }
 .home-subhead {
@@ -787,7 +793,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   display: inline-block;
   text-align: center;
   letter-spacing: 0.16em;
-  color: $color-whitefog;
+  color: $color-deepnight;
   @include over-md {
     line-height: 1;
   }
@@ -902,7 +908,7 @@ $hex-image: $hex-canvas * $hex-ratio;
     padding-bottom: 4rem;
   }
   @include over-hg {
-    padding-top: 8rem;
+    padding-top: 16rem;
     padding-bottom: 8rem;
   }
 }
@@ -1847,8 +1853,9 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .tickets-action {
-  @include over-lg {
+  @include over-md {
     display: flex;
+    justify-content: center;
     margin-left: -1rem;
     margin-right: -1rem;
     > * {
@@ -1866,17 +1873,16 @@ $hex-image: $hex-canvas * $hex-ratio;
   .Button {
     display: block;
     padding: 1em;
-    font-size: 1.5em;
+    font-size: 1em;
   }
   @include below-sm {
     .Button {
       padding: 1em;
-      font-size: 1.25em;
     }
   }
   @include over-md {
     .Button {
-      padding: 1em;
+      padding: 0.5em 1em;
       font-size: 2em;
     }
   }
@@ -1896,8 +1902,8 @@ $hex-image: $hex-canvas * $hex-ratio;
   background-color: $color-whitefog;
   border: 4px solid $color-sand;
   @include below-sm {
-    margin-left: 0;
-    margin-right: 0;
+    //margin-left: 0;
+    //margin-right: 0;
   }
   @include over-sm {
     margin-left: 1rem;
@@ -2599,8 +2605,16 @@ $hex-image: $hex-canvas * $hex-ratio;
   @include visuallyHidden;
 }
 
+.u-tac {
+  text-align: center;
+}
+
 .u-em {
   color: $color-sunred;
+}
+
+.u-small {
+  font-size: 0.75em;
 }
 
 .u-link {

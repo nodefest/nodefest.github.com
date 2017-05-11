@@ -2,7 +2,7 @@ var initialize = function() {
 
   var mapElement = document.getElementById('venue');
   var mapOptions = {
-    center: new google.maps.LatLng(35.659676,139.698486),
+    center: new google.maps.LatLng(35.695863, 139.740915),
     zoom: 16,
     zoomControl: false,
     zoomControlOptions: {
@@ -102,18 +102,11 @@ var initialize = function() {
 
   [
     {
-      title: '渋谷マークシティ',
-      desc:  '東京都渋谷区道玄坂1-12-1 渋谷マークシティ13F',
-      lat:   35.658354,
-      lng:   139.698819,
+      title: '法政大学 富士見ゲート',
+      desc:  '東京都千代田区富士見2-17-1',
+      lat:   35.695863,
+      lng:   139.740915,
       icon:  'img/pin-conference.png'
-    },
-    {
-      title: 'イベント&コミュニティスペース dots.',
-      desc:  '東京都渋谷区宇田川町20-17 NOF渋谷公園通りビル 8F',
-      lat:   35.661232,
-      lng:   139.700351,
-      icon:  'img/pin-workshop.png'
     }
   ].forEach(function(locate) {
     new google.maps.Marker({
