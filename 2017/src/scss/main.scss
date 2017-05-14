@@ -98,12 +98,11 @@ body {
   line-height: $line-normal;
   font-family: $type-base;
   color: $color-inky;
-  //overflow-x: hidden; // DEV
   background-color: $color-whitefog;
   background-image: linear-gradient(to bottom,
-    rgba($color-whitefog,1) 0%,
-    rgba($color-whitefog,0.8) 10%,
-    rgba($color-whitefog,0.75) 50%,
+    rgba($color-sand,1) 0%,
+    rgba($color-sand,0.8) 10%,
+    rgba($color-sand,0.75) 50%,
     rgba($color-sand,0.8) 90%,
     rgba($color-sand,1) 100%
   ),
@@ -595,7 +594,7 @@ $hex-image: $hex-canvas * $hex-ratio;
     rgba($color-sand,0.9) 5%,
     rgba($color-sand,0.75) 50%,
     rgba($color-sand,0.8) 90%,
-    rgba($color-whitefog,1) 100%
+    rgba($color-sand,1) 100%
   ),
   url('img/bg-tile.svg');
   background-position: center top;
@@ -920,7 +919,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   text-transform: uppercase;
   font-weight: 100;
   font-size: 1.5rem;
-  color: $color-sand;
+  color: $color-sunred;
   @media (max-width: 321px) { // Minor Breakpoint
     font-size: 1em;
   }
