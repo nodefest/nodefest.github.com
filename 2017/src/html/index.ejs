@@ -1,0 +1,62 @@
+<%- include('_layout/header') -%>
+
+<%- include('_partial/svg') -%>
+
+<div class="home">
+
+  <div class="cover">
+
+    <div class="cover-inner">
+
+      <img src="img/logo-tnf-invert.svg" class="cover-logo">
+
+      <div class="cover-outline">
+        <div class="outline">
+          <div class="outline-body">
+            <p class="outline-date">25-26th November <small class="u-small">(TBD)</small></p>
+            <h1 class="outline-name">東京Node学園祭2017</h1>
+            <p class="outline-location">at Fujimi Gate, Hosei University</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-intro">
+
+      <svg xmlns="http://www.w3.org/2000/svg" class="home-mountain" fill="url(#mount-gradient)"><use xlink:href="#mountain"></use></svg>
+      <%- include('_partial/intro') -%>
+    </div>
+  </div>
+
+  <div class="main home-main">
+
+    <!-- Veunes -->
+    <div class="home-venues">
+      <h2 class="home-subhead">Venue</h2>
+      <div class="page-body venue-body">
+        <div class="venue-map" id="venue"></div>
+        <div class="venue-detail">
+          <section class="venue-access u-tac">
+            <h3 class="venue-name">
+              <img src="img/pin-conference.png" class="venue-icon">
+              法政大学 富士見ゲート
+            </h3>
+            <p class="venue-address">
+              <a href="https://www.google.co.jp/maps/place/%E6%B3%95%E6%94%BF%E5%A4%A7%E5%AD%A6%E5%AF%8C%E5%A3%AB%E8%A6%8B%E3%82%B2%E3%83%BC%E3%83%88/@35.6958983,139.7408933,15z/data=!4m5!3m4!1s0x0:0xe1a94981b929a231!8m2!3d35.6958983!4d139.7408933?shorturl=1" target="_blank" rel="noopener">
+                東京都千代田区富士見2-17-1
+              </a>
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <%- include('_partial/tickets') -%>
+
+  </div>
+
+</aside>
+
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDvBLklunoaVPhXh4b1jVcXoUclUlmtNiA&extension=.js"></script>
+
+<%- include('_layout/footer') -%>
