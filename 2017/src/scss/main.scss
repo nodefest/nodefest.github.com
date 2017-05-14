@@ -5,6 +5,7 @@ $color-whitefog: #FFFEF7;
 $color-creamhaze: #EEEDDB;
 $color-moss: #455439;
 $color-greymist: #BCBBA9;
+$color-night: #2d293e;
 $color-deepnight: #00111C;
 $color-sunred: #D75A43;
 $color-leaf: #80BD01;
@@ -97,7 +98,7 @@ $sponsor-banner-media: 320px;
 body {
   line-height: $line-normal;
   font-family: $type-base;
-  color: $color-inky;
+  color: $color-night;
   background-color: $color-whitefog;
   background-image: linear-gradient(to bottom,
     rgba($color-sand,1) 0%,
@@ -792,7 +793,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   display: inline-block;
   text-align: center;
   letter-spacing: 0.16em;
-  color: $color-deepnight;
+  color: $color-night;
   @include over-md {
     line-height: 1;
   }
@@ -1835,7 +1836,7 @@ $hex-image: $hex-canvas * $hex-ratio;
 .tickets-note {
   margin-top: 1rem;
   text-align: center;
-  color: $color-inky;
+  //color: $color-inky;
   font-size: 0.875rem;
   p {
     margin-top: 1rem;
