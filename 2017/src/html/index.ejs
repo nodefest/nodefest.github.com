@@ -13,7 +13,7 @@
       <div class="cover-outline">
         <div class="outline">
           <div class="outline-body">
-            <p class="outline-date">25-26th November <small class="u-small">(TBD)</small></p>
+            <p class="outline-date">25-26th November</p>
             <h1 class="outline-name">東京Node学園祭2017</h1>
             <p class="outline-location">at Fujimi Gate, Hosei University</p>
           </div>
@@ -53,6 +53,41 @@
 
     <%- include('_partial/tickets') -%>
 
+  <!-- Sponsors -->
+  <div class="home-sponsors">
+    <h2 class="home-subhead home-sponsorsSubhead">Sponsors</h2>
+    <div class="sponsors-section">
+      <h3 class="sponsors-grade">Gold</h3>
+      <ul class="sponsors-list">
+        <li>
+          <%- include('./_partial/sponsor', { id: 'dwango', grade: 'gold' }) %>
+        </li>
+        <li>
+          <%- include('./_partial/sponsor', { id: 'r-tech', grade: 'gold' }) %>
+        </li>
+        <li>
+          <%- include('./_partial/sponsor', { id: 'mercari', grade: 'gold' }) %>
+        </li>
+      </ul>
+    </div>
+    <div class="sponsors-section">
+      <h3 class="sponsors-grade">Silver</h3>
+      <ul class="sponsors-list">
+        <li>
+          <%- include('./_partial/sponsor', { id: 'pxgrid', grade: 'silver' }) %>
+        </li>
+        <li>
+          <%- include('./_partial/sponsor', { id: 'cyberagent', grade: 'silver' }) %>
+        </li>
+      </ul>
+    </div>
+    <div class="sponsors-body">
+      <div class="sponsors-button">
+        <a href="https://docs.google.com/forms/d/1idEahSnv4xGEJbYhh1KpxvmsozbcTicHyEXUUqJMj4Q/viewform" class="Button -sponsors" target="_blank">
+          Join us as a sponsor
+        </a>
+      </div>
+    </div>
   </div>
 
 </aside>
