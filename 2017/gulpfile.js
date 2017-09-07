@@ -41,7 +41,7 @@ gulp.task('html', () => {
       util.log(util.colors.red(error.message));
       gulp.task('html').emit('end');
     }))
-    .pipe(ejs(json, { ext: '.html' }))
+    .pipe(ejs(json, {}, { ext: '.html' }))
     .pipe(gulp.dest(destPath))
     .pipe(browserSync.stream());
 });
