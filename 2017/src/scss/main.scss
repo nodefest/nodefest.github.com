@@ -1804,7 +1804,6 @@ $hex-image: $hex-canvas * $hex-ratio;
 // Ticktets
 .tickets {
   position: relative;
-  //margin-bottom: 1rem;
   padding: 2rem 0 4rem 0;
   &:before {
     content: "";
@@ -1851,7 +1850,6 @@ $hex-image: $hex-canvas * $hex-ratio;
 .tickets-note {
   margin-top: 1rem;
   text-align: center;
-  //color: $color-inky;
   font-size: 0.875rem;
   p {
     margin-top: 1rem;
@@ -1869,14 +1867,9 @@ $hex-image: $hex-canvas * $hex-ratio;
 }
 .tickets-action {
   @include over-md {
-    display: flex;
-    justify-content: center;
-    margin-left: -1rem;
-    margin-right: -1rem;
+    margin-bottom: 1rem;
     > * {
       box-sizing: border-box;
-      flex: 0 0 50%;
-      max-width: 50%;
       padding-left: 1rem;
       padding-right: 1rem;
     }
@@ -1886,7 +1879,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   margin-top: 1rem;
   text-align: center;
   .Button {
-    display: block;
     padding: 1em;
     font-size: 1em;
   }
@@ -1897,6 +1889,9 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
   @include over-md {
     .Button {
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
       padding: 0.5em 1em;
       font-size: 2em;
     }
@@ -1996,22 +1991,18 @@ $hex-image: $hex-canvas * $hex-ratio;
   margin-top: 1rem;
   text-align: center;
   .Button {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 240px;
-    display: block;
+    margin-left: 1rem;
+    margin-right: 1rem;
     padding: 1em;
     font-size: 1em;
   }
-  @include below-sm {
-    .Button {
-      padding: 1em;
-    }
-  }
   @include over-md {
     .Button {
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
       padding: 0.5em 1em;
-      max-width: 500px;
+      //max-width: 500px;
       font-size: 2em;
     }
   }
