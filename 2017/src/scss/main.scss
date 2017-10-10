@@ -48,7 +48,7 @@ $sponsor-banner-platinum: 560px;
 $sponsor-banner-gold: 480px;
 $sponsor-banner-silver: 360px;
 $sponsor-banner-bronze: 320px;
-$sponsor-banner-others: 300px;
+$sponsor-banner-venue: 300px;
 
 @mixin below-sm {
   @media (max-width: $screen-phone - 1px) {
@@ -2057,9 +2057,9 @@ $hex-image: $hex-canvas * $hex-ratio;
       max-width: $sponsor-banner-bronze / 2;
     }
   }
-  &.-others {
+  &.-venue {
     > img {
-      max-width: $sponsor-banner-others / 2;
+      max-width: $sponsor-banner-venue / 2;
     }
   }
   @include below-sm {
@@ -2090,9 +2090,9 @@ $hex-image: $hex-canvas * $hex-ratio;
         max-width: $sponsor-banner-bronze / 1.5;
       }
     }
-    &.-others {
+    &.-venue {
       > img {
-        max-width: $sponsor-banner-others / 1.5;
+        max-width: $sponsor-banner-venue / 1.5;
       }
     }
   }
@@ -2117,9 +2117,9 @@ $hex-image: $hex-canvas * $hex-ratio;
         max-width: $sponsor-banner-bronze / 1.5;
       }
     }
-    &.-others {
+    &.-venue {
       > img {
-        max-width: $sponsor-banner-others / 1.5;
+        max-width: $sponsor-banner-venue / 1.5;
       }
     }
   }
@@ -2188,7 +2188,7 @@ $hex-image: $hex-canvas * $hex-ratio;
     &.-gold,
     &.-silver,
     &.-bronze,
-    &.-others {
+    &.-venue {
       > * {
         flex: 0 0 50%;
         max-width: 50%;
@@ -2217,7 +2217,7 @@ $hex-image: $hex-canvas * $hex-ratio;
         max-width: 25%;
       }
     }
-    &.-others {
+    &.-venue {
       > * {
         flex: 0 0 25%;
         max-width: 25%;
@@ -2274,10 +2274,10 @@ $hex-image: $hex-canvas * $hex-ratio;
       font-size: 0.75rem;
     }
   }
-  &.-others {
+  &.-venue {
     .pr-logo {
       img {
-        max-width: $sponsor-banner-others / 2
+        max-width: $sponsor-banner-venue / 2
       }
     }
     .pr-description {
@@ -2317,7 +2317,7 @@ $hex-image: $hex-canvas * $hex-ratio;
     &.-gold,
     &.-silver,
     &.-bronze,
-    &.-others {
+    &.-venue {
       flex-direction: column;
       min-height: 100%;
       .pr-body {
@@ -2352,7 +2352,7 @@ $hex-image: $hex-canvas * $hex-ratio;
         font-size: 1rem;
       }
     }
-    &.-others {
+    &.-venue {
       .pr-logo {
         img {
           max-width: 100%;
@@ -2379,7 +2379,7 @@ $hex-image: $hex-canvas * $hex-ratio;
         font-size: 1.25rem;
       }
     }
-    &.-others {
+    &.-venue {
       .pr-name {
         font-size: 1.25rem;
       }
