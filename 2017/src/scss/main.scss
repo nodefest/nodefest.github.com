@@ -48,6 +48,7 @@ $sponsor-banner-platinum: 560px;
 $sponsor-banner-gold: 480px;
 $sponsor-banner-silver: 360px;
 $sponsor-banner-bronze: 320px;
+$sponsor-banner-others: 300px;
 
 @mixin below-sm {
   @media (max-width: $screen-phone - 1px) {
@@ -2056,6 +2057,11 @@ $hex-image: $hex-canvas * $hex-ratio;
       max-width: $sponsor-banner-bronze / 2;
     }
   }
+  &.-others {
+    > img {
+      max-width: $sponsor-banner-others / 2;
+    }
+  }
   @include below-sm {
     &.-platinum {
       > img {
@@ -2084,6 +2090,11 @@ $hex-image: $hex-canvas * $hex-ratio;
         max-width: $sponsor-banner-bronze / 1.5;
       }
     }
+    &.-others {
+      > img {
+        max-width: $sponsor-banner-others / 1.5;
+      }
+    }
   }
   @include over-md {
     &.-platinum {
@@ -2104,6 +2115,11 @@ $hex-image: $hex-canvas * $hex-ratio;
     &.-bronze {
       > img {
         max-width: $sponsor-banner-bronze / 1.5;
+      }
+    }
+    &.-others {
+      > img {
+        max-width: $sponsor-banner-others / 1.5;
       }
     }
   }
@@ -2171,7 +2187,8 @@ $hex-image: $hex-canvas * $hex-ratio;
     }
     &.-gold,
     &.-silver,
-    &.-bronze {
+    &.-bronze,
+    &.-others {
       > * {
         flex: 0 0 50%;
         max-width: 50%;
@@ -2195,6 +2212,12 @@ $hex-image: $hex-canvas * $hex-ratio;
       }
     }
     &.-bronze {
+      > * {
+        flex: 0 0 25%;
+        max-width: 25%;
+      }
+    }
+    &.-others {
       > * {
         flex: 0 0 25%;
         max-width: 25%;
@@ -2251,6 +2274,16 @@ $hex-image: $hex-canvas * $hex-ratio;
       font-size: 0.75rem;
     }
   }
+  &.-others {
+    .pr-logo {
+      img {
+        max-width: $sponsor-banner-others / 2
+      }
+    }
+    .pr-description {
+      font-size: 0.75rem;
+    }
+  }
   @include over-md {
     &.-platinum {
       background-color: white;
@@ -2283,7 +2316,8 @@ $hex-image: $hex-canvas * $hex-ratio;
     }
     &.-gold,
     &.-silver,
-    &.-bronze {
+    &.-bronze,
+    &.-others {
       flex-direction: column;
       min-height: 100%;
       .pr-body {
@@ -2318,6 +2352,16 @@ $hex-image: $hex-canvas * $hex-ratio;
         font-size: 1rem;
       }
     }
+    &.-others {
+      .pr-logo {
+        img {
+          max-width: 100%;
+        }
+      }
+      .pr-name {
+        font-size: 1rem;
+      }
+    }
   }
   @include over-lg {
     &.-platinum {
@@ -2331,6 +2375,11 @@ $hex-image: $hex-canvas * $hex-ratio;
       }
     }
     &.-bronze {
+      .pr-name {
+        font-size: 1.25rem;
+      }
+    }
+    &.-others {
       .pr-name {
         font-size: 1.25rem;
       }
