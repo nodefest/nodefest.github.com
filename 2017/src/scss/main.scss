@@ -214,6 +214,7 @@ strong {
     background-color: $color-greymist;
     color: $color-deepnight;
     text-decoration: line-through;
+    pointer-events: none;
     &:hover {
       text-decoration: line-through;
       background-color: $color-greymist;
