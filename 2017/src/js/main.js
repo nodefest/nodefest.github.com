@@ -8,6 +8,8 @@ require('es6-promise').polyfill(); // for IE!!!
 require('./vendor/velocity');
 
 // 幅狭い画面で動くやつ
+require('./module/navigation')();
+// するするスクロール
 new (require('./vendor/sscroll'))();
 
 var main = location.pathname.split('/2017')[1];
