@@ -1621,6 +1621,8 @@ $hex-image: $hex-canvas * $hex-ratio;
     flex: 1 1 100%;
     padding-left: 1rem;
     padding-right: 1rem;
+    width: 0;
+    word-wrap: break-word;
     & + * {
       margin-top: -10px;
       margin-bottom: -10px;
@@ -2707,4 +2709,3 @@ $hex-image: $hex-canvas * $hex-ratio;
     border-bottom: 4px solid $color-sunred;
   }
 }
-
