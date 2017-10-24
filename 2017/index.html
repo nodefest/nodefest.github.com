@@ -54,8 +54,11 @@
     <header class="header cover-header">
       <nav class="navigation">
         <ul class="navigation-list cover-navigationList">
-          <li><a href="schedule.html" class="navigation-target">Schedule</a></li>
+                    <li><a href="schedule.html" class="navigation-target">Schedule</a></li>
+          <li><a href="venues.html" class="navigation-target">Venues</a></li>
+          <li><a href="sponsors.html" class="navigation-target">Sponsors</a></li>
           <li><a href="about-us.html" class="navigation-target">About us</a></li>
+          <li><a href="#tickets" class="navigation-target -button">Tickets</a></li>
         </ul>
         <button class="navigation-button">
           <svg xmlns="http://www.w3.org/2000/svg" class="navigation-icon"><use xlink:href="#close"></use></svg>
@@ -104,60 +107,653 @@
 
   <div class="main home-main">
 
-    <!-- Veunes -->
-    <div class="home-venues">
-      <h2 class="home-subhead">Venue (Day 1)</h2>
-      <div class="page-body venue-body">
-        <div class="venue-map" id="venue-day1"></div>
-        <div class="venue-detail">
-          <section class="venue-access u-tac">
-            <h3 class="venue-name">
-              <img src="img/pin-conference.png" class="venue-icon">
-              法政大学 富士見ゲート / Hosei University Fujimi Gate
-            </h3>
-            <p class="venue-address">
-              <a href="https://www.google.co.jp/maps/place/%E6%B3%95%E6%94%BF%E5%A4%A7%E5%AD%A6%E5%AF%8C%E5%A3%AB%E8%A6%8B%E3%82%B2%E3%83%BC%E3%83%88/@35.6958983,139.7408933,15z/data=!4m5!3m4!1s0x0:0xe1a94981b929a231!8m2!3d35.6958983!4d139.7408933?shorturl=1" target="_blank" rel="noopener">
-                東京都千代田区富士見2-17-1
-              </a>
-            </p>
-          </section>
-        </div>
-      </div>
+    <!-- Schedule -->
+    <div class="home-schedule">
+      <h2 class="home-subhead">Schedule</h2>
 
-      <h2 class="home-subhead">Venue (Day 2)</h2>
-      <div class="page-body venue-body">
-        <div class="venue-map" id="venue-day2"></div>
-        <div class="venue-detail">
-          <section class="venue-access u-tac">
-            <h3 class="venue-name">
-              <img src="img/pin-conference.png" class="venue-icon">
-              リクルートテクノロジーズ グラントウキョウサウスタワー 41F / Recruit Technologies GranTokyo South Tower 41F
-            </h3>
-            <p class="venue-address">
-              <a href="https://www.google.com/maps/place/%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%88%E3%82%A6%E3%82%AD%E3%83%A7%E3%82%A6+%E3%82%B5%E3%82%A6%E3%82%B9%E3%82%BF%E3%83%AF%E3%83%BC/@35.678634,139.767373,16z/data=!4m5!3m4!1s0x0:0xf8d9490ce543b963!8m2!3d35.6786335!4d139.7673744?shorturl=1" target="_blank" rel="noopener">
-                東京都千代田区丸の内1-9-2 グラントウキョウサウスタワー 41階 (受付2階)
-              </a>
-            </p>
-          </section>
-        </div>
+      <div class="home-scheduleBody">
+
+        <div class="home-scheduleSection">
+          <div class="timetable -conference">
+  <div class="timetable-caption">
+    <h3 class="timetable-title">
+      Nov 25 <span class="timetable-venue">at Fujimi Gate Hosei University</span>
+    </h3>
+  </div>
+  <div class="timetable-header">
+    <div class="timetable-time"></div>
+    <div class="timetable-section">
+      <p>G403</p>
+      <p>G402</p>
+      <p>G401</p>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>12:00 - 13:00</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Open</p>
+        <p class="timetable-sessionSpeaker">-</p>
       </div>
     </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>13:00 - 13:15</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Opening talk</p>
+        <p class="timetable-sessionSpeaker">Yosuke</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>13:15 - 13:45</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Node.js at Alibaba</p>
+        <p class="timetable-sessionSpeaker">Joyee Cheung</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Source to Binary - journey of V8 javascript engine</p>
+        <p class="timetable-sessionSpeaker">青野健利 a.k.a brn</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Alt-Ctrl: Scream Into this Arduino!</p>
+        <p class="timetable-sessionSpeaker">Rachel White</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>13:45 - 14:15</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Open Source Governance Models: From BDFL to Consensus Seeking</p>
+        <p class="timetable-sessionSpeaker">Myles Borins</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Make you a React: How to build your own JavaScript framework.</p>
+        <p class="timetable-sessionSpeaker">Jorge Bucaran</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Node.js Production Checklist</p>
+        <p class="timetable-sessionSpeaker">Gergely Nemeth</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>14:15 - 14:45</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">The JavaScript Engine in Node.js: TurboFan and Ignition</p>
+        <p class="timetable-sessionSpeaker">Franziska Hinkelmann</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Node.js x Chrome headless で、お手軽WebRTC MCU</p>
+        <p class="timetable-sessionSpeaker">がねこまさし</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">WebAssembly and the Future of the Web</p>
+        <p class="timetable-sessionSpeaker">Athan Reines</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>14:45 - 15:00</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionBreak">Break</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>15:00 - 15:30</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">標準化ってなに？ Webプラットフォーム/ESNextを作る方法 -What is standardization? How to create Web Platform / ESNext -</p>
+        <p class="timetable-sessionSpeaker">Mariko Kosaka</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">ReactNativeアプリでE2Eテストを回してみた</p>
+        <p class="timetable-sessionSpeaker">れこ</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">No REST for the weary... Introducing GraphQL</p>
+        <p class="timetable-sessionSpeaker">Sia Karamalegos</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>15:30 - 16:00</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Building on Bitcoin with Bcoin and Node.js</p>
+        <p class="timetable-sessionSpeaker">Christopher "JJ" Jeffrey</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">今さら聞けないSPAのCORS対策の話</p>
+        <p class="timetable-sessionSpeaker">杉浦颯太</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">A Toy Robot and a Functional Pattern</p>
+        <p class="timetable-sessionSpeaker">Rob Howard</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>16:00 - 16:30</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Native ES Module - something almost, but not quite entirely unlike CommonJS</p>
+        <p class="timetable-sessionSpeaker">Gil Tayar</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">サーバサイドエンジニアがJavaScriptを書いてTradingViewを導入した話</p>
+        <p class="timetable-sessionSpeaker">谷口 英</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Quantum Computing in Node</p>
+        <p class="timetable-sessionSpeaker">Nick Doiron (ニック・ドレン)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>16:30 - 16:45</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionBreak">Break</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>16:45 - 17:15</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Sponsor's talk</p>
+        <p class="timetable-sessionSpeaker">-</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>17:15 - 17:30</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionBreak">Break</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>17:30 - 17:40</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Angular Universal</p>
+        <p class="timetable-sessionSpeaker">Suguru Inatomi</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>17:40 - 17:50</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">2017版、React、Lambda、S3で始めるモダンなユーザーデータ可視化ツール</p>
+        <p class="timetable-sessionSpeaker">向山 裕介</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>17:50 -  18:00</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">How TypeScript can simplify design decision</p>
+        <p class="timetable-sessionSpeaker">Hyunje Jun</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>18:00 - 18:10</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Introduction to Visual Regression Testing</p>
+        <p class="timetable-sessionSpeaker">Yusuke Kurami</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>18:10 - 18:20</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Whose Community?</p>
+        <p class="timetable-sessionSpeaker">ちゃんとく / Yuka Tokuyama</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>18:30 - 18:40</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Day1 Closing talk</p>
+        <p class="timetable-sessionSpeaker">Yosuke</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>19:00 - 21:00</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">After party</p>
+        <p class="timetable-sessionSpeaker">-</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+        </div>
+
+        <div class="home-scheduleSection">
+          <div class="timetable -workshop">
+  <div class="timetable-caption">
+    <h3 class="timetable-title">
+      Nov 26 <span class="timetable-venue">at Recruit Technologies</span>
+    </h3>
+  </div>
+  <div class="timetable-header">
+    <div class="timetable-time"></div>
+    <div class="timetable-section">
+      <p>Academy</p>
+      <p>SkyRoom A</p>
+      <p>SkyRoom B & C</p>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>10:00 - 10:30</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Open</p>
+        <p class="timetable-sessionSpeaker"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>10:30 - 10:45</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Opening talk</p>
+        <p class="timetable-sessionSpeaker">Yosuke</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>10:45 - 12:45</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Node Discussion</p>
+        <p class="timetable-sessionSpeaker">Yosuke</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">NodeSchool</p>
+        <p class="timetable-sessionSpeaker">-</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Workshop</p>
+        <p class="timetable-sessionSpeaker">-</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>12:45 - 13:45</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Lunch!!</p>
+        <p class="timetable-sessionSpeaker"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>13:45 - 14:15</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Sharing is Caring… At Scale!</p>
+        <p class="timetable-sessionSpeaker">Sarah Saltrick Meyer</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">NodeSchool</p>
+        <p class="timetable-sessionSpeaker">-</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Workshop</p>
+        <p class="timetable-sessionSpeaker">-</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>14:15 - 14:45</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">data sketches: A Visualization a Month</p>
+        <p class="timetable-sessionSpeaker">Shirley Wu</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">NodeSchool</p>
+        <p class="timetable-sessionSpeaker">-</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Workshop</p>
+        <p class="timetable-sessionSpeaker">-</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>14:45 - 15:15</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Real-world applications of hash functions</p>
+        <p class="timetable-sessionSpeaker">Emil Bay</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">NodeSchool</p>
+        <p class="timetable-sessionSpeaker">-</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Workshop</p>
+        <p class="timetable-sessionSpeaker">-</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>15:15 - 15:45</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">JSON Schema Centralized Design</p>
+        <p class="timetable-sessionSpeaker">Hikaru TAKEMURA</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">NodeSchool</p>
+        <p class="timetable-sessionSpeaker">-</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Workshop</p>
+        <p class="timetable-sessionSpeaker">-</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>15:45 - 16:00</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionBreak">Break</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>16:00 - 18:00</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Code And Learn</p>
+        <p class="timetable-sessionSpeaker">Yosuke</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">NodeSchool</p>
+        <p class="timetable-sessionSpeaker">-</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Data Visualization Workshop</p>
+        <p class="timetable-sessionSpeaker">Shriley Wu</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>18:00 - 18:15</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionBreak">Break</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>18:15 - 18:25</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Self Driving Kit using Android and Node.JS</p>
+        <p class="timetable-sessionSpeaker">ABHISHEK GOSWAMI</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>18:25 - 18:35</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">react & express で職場の会議室予約システム作った話</p>
+        <p class="timetable-sessionSpeaker">Takuya Endo</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>18:35 - 18:45</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Node.js × AWS Lambda アプリケーション開発Tips</p>
+        <p class="timetable-sessionSpeaker">hkusu(Hiroyuki Kusu)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>18:45 - 18:55</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">レスポンシブから逆戻り！？Webサービスのマルチデバイス対応方法</p>
+        <p class="timetable-sessionSpeaker">小田島 太郎</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>19:00 - 19:10</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Day2 Closing Talk (Kanpai!)</p>
+        <p class="timetable-sessionSpeaker">Yosuke</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>19:15 - 21:15</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">After party</p>
+        <p class="timetable-sessionSpeaker">-</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+        </div>
+
+        <div class="home-scheduleNote">
+          <p>※ セッションの内容／時間は変更になる可能性があります。</p>
+          <p>※ セッションは日本語・英語で行われます。</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Veunes -->
+    <div class="home-venues">
+      <h2 class="home-subhead">Venue</h2>
+
+      <div class="page-body venue-body">
+        <div class="venue-section">
+  <h3 class="venue-subhead page-subhead">Nov 25</h3>
+  <div class="venue-map" id="venue-day1"></div>
+  <div class="venue-detail">
+    <section class="venue-access u-tac">
+      <h3 class="venue-name">
+        <img src="img/pin-conference.png" class="venue-icon">
+        法政大学 富士見ゲート / Hosei University Fujimi Gate
+      </h3>
+      <p class="venue-address">
+        <a href="https://www.google.co.jp/maps/place/%E6%B3%95%E6%94%BF%E5%A4%A7%E5%AD%A6%E5%AF%8C%E5%A3%AB%E8%A6%8B%E3%82%B2%E3%83%BC%E3%83%88/@35.6958983,139.7408933,15z/data=!4m5!3m4!1s0x0:0xe1a94981b929a231!8m2!3d35.6958983!4d139.7408933?shorturl=1" target="_blank" rel="noopener">
+        <span class="venue-linkIcon">
+      <img src="img/ico-map.svg" width="16" height="16" alt="">
+    </span> 東京都千代田区富士見2-17-1
+        </a>
+      </p>
+    </section>
+  </div>
+</div>
+
+<div class="venue-section">
+  <h3 class="venue-subhead page-subhead">Nov 26</h3>
+  <div class="venue-map" id="venue-day2"></div>
+  <div class="venue-detail">
+    <section class="venue-access u-tac">
+      <h3 class="venue-name">
+        <img src="img/pin-interactive.png" class="venue-icon">
+        リクルートテクノロジーズ グラントウキョウサウスタワー 41F / Recruit Technologies Gran Tokyo South Tower 41F
+      </h3>
+      <p class="venue-address">
+        <a href="https://www.google.com/maps/place/%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%88%E3%82%A6%E3%82%AD%E3%83%A7%E3%82%A6+%E3%82%B5%E3%82%A6%E3%82%B9%E3%82%BF%E3%83%AF%E3%83%BC/@35.678634,139.767373,16z/data=!4m5!3m4!1s0x0:0xf8d9490ce543b963!8m2!3d35.6786335!4d139.7673744?shorturl=1" target="_blank" rel="noopener">
+        <span class="venue-linkIcon">
+      <img src="img/ico-map.svg" width="16" height="16" alt="">
+    </span> 東京都千代田区丸の内1-9-2 グラントウキョウサウスタワー 41階 (受付2階)
+        </a>
+      </p>
+    </section>
+  </div>
+
+</div>
+
+      </div>
+    </div>
+
   </div>
 
   <!-- Tickets -->
 <section class="tickets" id="tickets">
   <div class="tickets-inner">
     <header class="tickets-header">
-      <h3 class="tickets-title">Tickets</h3>
+      <h3 class="tickets-title">Get your tickets</h3>
       <div class="tickets-note">
-        <p>参加申し込みは10月25日頃を開始予定です。</p>
+        <p>それぞれの日程ごとにお申し込みください。</p>
       </div>
     </header>
     <div class="tickets-body">
       <div class="tickets-action">
         <div class="tickets-button">
-          <a href="#" class="Button -workshop is-disabled" target="_blank">
-            Get Your Ticket
+          <a href="http://nodejs.connpass.com/event/69736/" class="Button -conference" target="_blank">
+            Get 1st Day Ticket
+            <span class="tickets-buttonLead">Nov 25</span>
+          </a>
+        </div>
+        <div class="tickets-button">
+          <a href="http://nodejs.connpass.com/event/70304" class="Button -interactive" target="_blank">
+            Get 2nd Day Ticket
+            <span class="tickets-buttonLead">Nov 26</span>
           </a>
         </div>
       </div>
@@ -170,7 +766,7 @@
     <h2 class="home-subhead home-sponsorsSubhead">Sponsors</h2>
     <div class="sponsors-section">
       <h3 class="sponsors-grade">Gold</h3>
-      <ul class="sponsors-list">
+      <ul class="sponsors-list -gold">
         <li>
           
 <div class="sponsor">
@@ -220,7 +816,7 @@
     </div>
     <div class="sponsors-section">
       <h3 class="sponsors-grade">Silver</h3>
-      <ul class="sponsors-list">
+      <ul class="sponsors-list -silver">
         <li>
           
 <div class="sponsor">
@@ -279,7 +875,7 @@
     </div>
     <div class="sponsors-section">
       <h3 class="sponsors-grade">Venue</h3>
-      <ul class="sponsors-list">
+      <ul class="sponsors-list -venue">
         <li>
           
 <div class="sponsor">

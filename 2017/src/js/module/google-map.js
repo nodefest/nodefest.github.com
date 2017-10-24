@@ -12,11 +12,11 @@ var initialize = function() {
       desc:  '東京都千代田区丸の内1-9-2 グラントウキョウサウスタワー 41階 (受付2階)',
       lat:   35.678634,
       lng:   139.767373,
-      icon:  'img/pin-conference.png'
+      icon:  'img/pin-interactive.png'
   };
   var $venueDay1 = document.getElementById('venue-day1');
   var $venueDay2 = document.getElementById('venue-day2');
-  var createMapOptions = function (position) { 
+  var createMapOptions = function (position) {
     return ({
       center: new google.maps.LatLng(position.lat, position.lng),
       zoom: 16,
