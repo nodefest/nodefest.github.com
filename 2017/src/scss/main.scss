@@ -1971,6 +1971,26 @@ $hex-image: $hex-canvas * $hex-ratio;
     border: 1px solid $color-creamhaze;
     background-color: #FFFFFF;
   }
+  &.-gold {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &.-silver {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &.-bronze {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &.-venue {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   @include over-md {
     display: flex;
     flex-wrap: wrap;
