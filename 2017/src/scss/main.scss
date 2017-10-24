@@ -1870,10 +1870,14 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .tickets-action {
-  @include over-md {
-    margin-bottom: 1rem;
+  @include over-lg {
+    display: flex;
+    margin-left: -1rem;
+    margin-right: -1rem;
     > * {
       box-sizing: border-box;
+      flex: 0 0 50%;
+      max-width: 50%;
       padding-left: 1rem;
       padding-right: 1rem;
     }
