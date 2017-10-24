@@ -374,7 +374,7 @@ $hex-image: $hex-canvas * $hex-ratio;
 .header-icon {
   width: 32px;
   height: 32px;
-  fill: $color-sand;
+  fill: $color-whitefog;
   @include over-md {
     width: 3rem;
     height: 3rem;
@@ -819,8 +819,7 @@ $hex-image: $hex-canvas * $hex-ratio;
 .outline-date {
   text-transform: uppercase;
 }
-.outline-date,
-.outline-location {
+.outline-date {
   font-weight: 100;
   font-size: 1rem;
   @include over-md {
@@ -926,7 +925,7 @@ $hex-image: $hex-canvas * $hex-ratio;
     padding-bottom: 4rem;
   }
   @include over-hg {
-    padding-top: 16rem;
+    padding-top: 12rem;
     padding-bottom: 8rem;
   }
 }
@@ -1721,7 +1720,7 @@ $hex-image: $hex-canvas * $hex-ratio;
   line-height: $line-tight;
   text-align: center;
   text-transform: uppercase;
-  font-weight: 100;
+  font-weight: 200;
   font-size: 1.5rem;
   color: $color-inky;
   @include over-md {
