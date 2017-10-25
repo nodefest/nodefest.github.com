@@ -164,7 +164,7 @@ strong {
       box-shadow: 0 0 0 0 rgba($color-whitefog, 0.75);
     }
   }
-  &.-workshop {
+  &.-interactive {
     border: 4px solid $color-whitefog;
     background-color: $color-sunflower;
     font-weight: 400;
@@ -374,7 +374,7 @@ $hex-image: $hex-canvas * $hex-ratio;
 .header-icon {
   width: 32px;
   height: 32px;
-  fill: $color-sand;
+  fill: $color-whitefog;
   @include over-md {
     width: 3rem;
     height: 3rem;
@@ -722,6 +722,7 @@ $hex-image: $hex-canvas * $hex-ratio;
     font-size: 0.875rem;
   }
 }
+
 .home-venues {
   @include over-hg {
     margin-bottom: 64px;
@@ -818,8 +819,7 @@ $hex-image: $hex-canvas * $hex-ratio;
 .outline-date {
   text-transform: uppercase;
 }
-.outline-date,
-.outline-location {
+.outline-date {
   font-weight: 100;
   font-size: 1rem;
   @include over-md {
@@ -925,7 +925,7 @@ $hex-image: $hex-canvas * $hex-ratio;
     padding-bottom: 4rem;
   }
   @include over-hg {
-    padding-top: 16rem;
+    padding-top: 12rem;
     padding-bottom: 8rem;
   }
 }
@@ -1707,6 +1707,32 @@ $hex-image: $hex-canvas * $hex-ratio;
     max-width: $width-container;
   }
 }
+.venue-section {
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  @include over-md {
+    margin-top: 4rem;
+  }
+}
+.venue-subhead {
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.08em;
+  line-height: $line-tight;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 1.5rem;
+  color: $color-inky;
+  @include over-md {
+    font-size: 2em;
+  }
+  @include over-lg {
+    margin-bottom: 3rem;
+  }
+  @include over-hg {
+    font-size: 3em;
+  }
+}
 .venue-link {
   margin-bottom: 0.5rem;
   text-align: right;
@@ -1870,10 +1896,14 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 .tickets-action {
-  @include over-md {
-    margin-bottom: 1rem;
+  @include over-lg {
+    display: flex;
+    margin-left: -1rem;
+    margin-right: -1rem;
     > * {
       box-sizing: border-box;
+      flex: 0 0 50%;
+      max-width: 50%;
       padding-left: 1rem;
       padding-right: 1rem;
     }
@@ -1966,6 +1996,26 @@ $hex-image: $hex-canvas * $hex-ratio;
     margin-right: 1rem;
     border: 1px solid $color-creamhaze;
     background-color: #FFFFFF;
+  }
+  &.-gold {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &.-silver {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &.-bronze {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &.-venue {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
   }
   @include over-md {
     display: flex;

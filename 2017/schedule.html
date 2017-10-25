@@ -51,12 +51,22 @@
 
 <header id="header" class="header">
   <div class="header-inner">
-    <a href="./" class="header-logo"><img src="img/logo-tnf-invert.svg" alt="東京Node学園祭2016"></a>
+    <a href="./" class="header-logo"><img src="img/logo-tnf-invert.svg" alt="東京Node学園祭2017"></a>
     <nav class="navigation">
       <ul class="navigation-list">
-        <li><a href="schedule.html" class="navigation-target">Schedule</a></li>
+                <li><a href="schedule.html" class="navigation-target">Schedule</a></li>
+        <li><a href="venues.html" class="navigation-target">Venues</a></li>
+        <li><a href="sponsors.html" class="navigation-target">Sponsors</a></li>
         <li><a href="about-us.html" class="navigation-target">About us</a></li>
+        <li><a href="#tickets" class="navigation-target -button">Tickets</a></li>
       </ul>
+      <button class="navigation-button">
+        <svg xmlns="http://www.w3.org/2000/svg" class="navigation-icon"><use xlink:href="#close"></use></svg>
+      </button>
+    </nav>
+    <button class="header-button">
+      <svg xmlns="http://www.w3.org/2000/svg" class="header-icon"><use xlink:href="#nav"></use></svg>
+    </button>
   </div>
 </header>
 
@@ -659,16 +669,23 @@
 <section class="tickets" id="tickets">
   <div class="tickets-inner">
     <header class="tickets-header">
-      <h3 class="tickets-title">Tickets</h3>
+      <h3 class="tickets-title">Get your tickets</h3>
       <div class="tickets-note">
-        <p>参加申し込みは10月25日頃を開始予定です。</p>
+        <p>それぞれの日程ごとにお申し込みください。</p>
       </div>
     </header>
     <div class="tickets-body">
       <div class="tickets-action">
         <div class="tickets-button">
-          <a href="#" class="Button -workshop is-disabled" target="_blank">
-            Get Your Ticket
+          <a href="http://nodejs.connpass.com/event/69736/" class="Button -conference" target="_blank">
+            Get 1st Day Ticket
+            <span class="tickets-buttonLead">Nov 25</span>
+          </a>
+        </div>
+        <div class="tickets-button">
+          <a href="http://nodejs.connpass.com/event/70304" class="Button -interactive" target="_blank">
+            Get 2nd Day Ticket
+            <span class="tickets-buttonLead">Nov 26</span>
           </a>
         </div>
       </div>

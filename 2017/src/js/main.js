@@ -15,7 +15,8 @@ new (require('./vendor/sscroll'))();
 var main = location.pathname.split('/2017')[1];
 var scripts = {
   '/':              require('./page/index'),
-  '/index.html':    require('./page/index')
+  '/index.html':    require('./page/index'),
+  '/venues.html':   require('./page/venues')
 };
 
 (scripts[main] || function() {})();
