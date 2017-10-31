@@ -12,7 +12,7 @@ require('./module/navigation')();
 // するするスクロール
 new (require('./vendor/sscroll'))();
 
-var main = location.pathname.split('/2016')[1];
+var main = location.pathname.split('/2017')[1];
 var scripts = {
   '/':              require('./page/index'),
   '/index.html':    require('./page/index'),
