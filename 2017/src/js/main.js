@@ -17,7 +17,8 @@ var scripts = {
   '/':              require('./page/index'),
   '/index.html':    require('./page/index'),
   '/venues.html':   require('./page/venues'),
-  '/speakers.html': require('./page/speakers')
+  '/speakers.html': require('./page/speakers'),
+  '/schedule.html': require('./page/schedule')
 };
 
 (scripts[main] || function() {})();

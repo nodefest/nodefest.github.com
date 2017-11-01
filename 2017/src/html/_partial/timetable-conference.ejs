@@ -1,3 +1,13 @@
+<%
+var overlaySpeakers = [
+  'joyee',
+  'brn',
+  'rachel'
+]
+%>
+<% overlaySpeakers.forEach(function(speaker) { %>
+<%- include('../_partial/speaker-overlay', { id: speaker }) -%>
+<% }); %>
 <div class="timetable -conference">
   <div class="timetable-caption">
     <h3 class="timetable-title">
@@ -44,15 +54,15 @@
     <div class="timetable-content">
       <div class="timetable-session">
         <p class="timetable-sessionTitle">Node.js at Alibaba</p>
-        <p class="timetable-sessionSpeaker">Joyee Cheung</p>
+        <p class="timetable-sessionSpeaker"><a data-key="joyee" class="speaker">Joyee Cheung</a></p>
       </div>
       <div class="timetable-session">
         <p class="timetable-sessionTitle">Source to Binary - journey of V8 javascript engine</p>
-        <p class="timetable-sessionSpeaker">青野健利 a.k.a brn</p>
+        <p class="timetable-sessionSpeaker"><a data-key="brn" class="speaker">青野健利 a.k.a brn</a></p>
       </div>
       <div class="timetable-session">
         <p class="timetable-sessionTitle">Alt-Ctrl: Scream Into this Arduino!</p>
-        <p class="timetable-sessionSpeaker">Rachel White</p>
+        <p class="timetable-sessionSpeaker"><a data-key="rachel" class="speaker">Rachel White</a></p>
       </div>
     </div>
   </div>
