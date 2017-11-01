@@ -1031,6 +1031,8 @@ $hex-image: $hex-canvas * $hex-ratio;
   display: block;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+
   .Hex-inner {
     overflow: hidden;
     &::after {
