@@ -37,7 +37,7 @@
       </div>
 
       <div class="session-content">
-        <p class="session-time">Nov 13, <%= session.time %> Room <%= session.room %></p>
+        <p class="session-time"><%= session.day %>, <%= session.time %> <%= session.room %></p>
         <h2 class="session-title"><%= session.title %></h2>
         <div class="session-summary">
           <p><%= session.summary %></p>

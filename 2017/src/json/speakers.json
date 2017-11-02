@@ -16,6 +16,120 @@
     "bio": "Rachel is currently a Technical Evangelist at Microsoft, but is also a self-taught programmer & occasional artist. She is currently working on multiple video game projects, a VR cat cafe, and thinking about what IoT devices she can build for her two black cats. Her other interests include glitch art, 80s horror, and indie games. Her aesthetic is fog machines, laser lights, and broken VHS tapes.",
     "github": "rachelnicole",
     "twitter": "ohhoe"
+  },
+  "myles": {
+    "name": "Myles Borins",
+    "bio": "Myles Borins is a developer, musician, artist, and inventor\nhe works for Google as a developer advocate serving the Node.js ecosystem\nhe graduated with a Master of Music Science and Technology from c.c.r.m.a.\na.k.a the center for computer research in music and acoustics ",
+    "github": "MylesBorins",
+    "twitter": "MylesBorins"
+  },
+  "jbucaran": {
+    "name": "Jorge Bucaran",
+    "bio": "Software Engineer in Japan. I am a #JavaScript type of person.",
+    "github": "JorgeBucaran",
+    "twitter": "JorgeBucaran"
+  },
+  "gergely": {
+    "name": "Gergely Nemeth",
+    "bio": "Software engineer, specialized in Node.js, now leading RisingStack, the Node.js company. Organiser of NodeConf Budapest and various meetups.",
+    "github": "gergelyke",
+    "twitter": "nthgergo"
+  },
+  "fhinkel": {
+    "name": "Franziska Hinkelmann",
+    "bio": "Franziska has a Ph.D. in mathematics and is a software engineer on Google’s V8 team. She's an expert on ES6 performance and a Node.js core collaborator. When she's not working hard on making JavaScript and Node faster, she's probably out horseback riding.",
+    "github": "fhinkel",
+    "twitter": "fhinkel"
+  },
+  "ganeko": {
+    "name": "がねこまさし",
+    "bio": "WebRTCを活かすにはサーバー側の仕組みも不可欠です。手軽にサーバーを構築できる環境として、node.jsの世界に足を踏み入れました。\nWebRTC Meetup Tokyo および WebRTC Beginners Tokyo のスタッフ、HTML5Experts.jpにてWebRTC関連の記事も掲載しています。\nインフォコム株式会社所属",
+    "github": "mganeko",
+    "twitter": "massie_g"
+  },
+  "kgryte": {
+    "name": "Athan Reines",
+    "bio": "Athan Reines is a full-stack engineer and data scientist. He has a PhD in Physics, where he used machine learning and time series analytics to probe biological systems at the nanoscale. He currently works full-time on open source projects to facilitate numeric computing in Node.js and JavaScript. For his latest open source project, see stdlib, a standard library for Node.js and Javascript: https://github.com/stdlib-js/stdlib.",
+    "github": "kgryte",
+    "twitter": "kgryte"
+  },
+  "kosamari": {
+    "name": "Mariko Kosaka",
+    "bio": "Mariko Kosaka is an engineer who loves data and knitting. When she is not making software at Scripto, she uses code to help her design textiles & organize local JavaScript meetup in New York City called BrooklynJS.",
+    "github": "kosamari",
+    "twitter": "kosamari"
+  },
+  "leko": {
+    "name": "れこ",
+    "bio": "前職にてEC系のバックヤードのシステム開発をするPHP・Rubyエンジニア、チームリーダーを経て、現在は株式会社キュアアップという、JavaScript一本で医療機器アプリケーションを作成しているスタートアップのシステムエンジニアやってます。\nもともとJavaScriptが好きで、趣味のプログラムはだいたいjsで書いてます\n好きな言葉は「実質Universal」、気になるクラスはIntersectionObserver。",
+    "github": "leko",
+    "twitter": "L_e_k_o"
+  },
+  "sia": {
+    "name": "Sia Karamalegos",
+    "bio": "Sia Karamalegos is the founder and lead developer for Clio + Calliope Web Development. She has over 15 years of experience in technology, strategy, project management, and operations from small startups to large corporations across multiple industries, especially high-tech and education. She leverages her depth of experience with software engineering to build high-value applications.\n\nIn both 2015 and 2016, Sia was recognized in the Silicon Bayou 100, the 100 most influential and active people in tech and entrepreneurship in Louisiana. She graduated from Texas A&M University with a BS in chemical engineering and received her MBA from Harvard Business School.",
+    "github": "siakaramalegos",
+    "twitter": "thegreengreek"
+  },
+  "chris": {
+    "name": "Christopher 'JJ' Jeffrey",
+    "bio": "JJ is the CTO of Purse.io and Lead Developer of Bcoin, the first node.js fullnode implementation of bitcoin. JJ has been working in the bitcoin industry for many years, and is a technical expert when it comes to the bitcoin protocol. He also held a previous position at BitPay.",
+    "github": "chjj",
+    "twitter": "_chjj"
+  },
+  "sota": {
+    "name": "杉浦 颯太",
+    "bio": "Software Engineer@Mercari, Inc. JavaScript lover.",
+    "github": "sota1235",
+    "twitter": "sota1235"
+  },
+  "rob": {
+    "name": "Rob Howard",
+    "bio": "Rob is a web developer who switches between Haskell, JavaScript and PureScript at Ambiata, living in sunny Sydney, Australia. He spends his days immersed in functional programming and static type-checking. Having made a career using and mixing the nice parts from different programming languages, he'd like nothing better than to help different programming communities to learn more from each other.\n\nIf you're a fan of essay-length tweet threads, he's on Twitter (and most other things) as @damncabbage, and posts his talks and articles on http://robhoward.id.au.",
+    "github": "robhoward",
+    "twitter": "damncabbage"
+  },
+  "gil": {
+    "name": "Gil Tayar",
+    "bio": "From the olden days of DOS, to the stratospheric architectures of Wix, Gil was, is, and always will be, a software developer. He has in the past co-founded WebCollage, survived the bubble collapse of 2000, and worked on various big cloudy projects at Wix. His current passion is teaching software, yet he still doesn't know whether static languages or dynamic languages are the best.",
+    "github": "giltayar",
+    "twitter": "giltayar"
+  },
+  "horobi": {
+    "name": "谷口 英",
+    "bio": "芸大卒のなんちゃってエンジニア。現在はZaifという暗号通貨取引サイトの中の人。",
+    "github": "Akira-Taniguchi",
+    "twitter": "horobi_gengar"
+  },
+  "nick": {
+    "name": "Nick Doiron",
+    "bio": "Nick is a full-stack web developer and mapmaker. In the past he has developed open source software with One Laptop per Child, Code for America, the Museum of Modern Art. Recently he is adding Arabic and Maldivian language support to OpenStreetMap libraries.",
+    "github": "mapmeld",
+    "twitter": "mapmeld"
+  },
+  "sarah": {
+    "name": "Sarah Saltrick Meyer",
+    "bio": "Nick is a full-stack web developer and mapmaker. In the past he has developed open source software with One Laptop per Child, Code for America, the Museum of Modern Art. Recently he is adding Arabic and Maldivian language support to OpenStreetMap libraries.",
+    "github": "sarmeyer",
+    "twitter": "meyerini"
+  },
+  "sxywu": {
+    "name": "Shirley Wu",
+    "bio": "Sharing code is hard. And it’s even harder when you have hundreds of developers! At BuzzFeed, we’ve built a library of shared components to support our busy engineers and high-traffic site. We already knew how to build a useful styleguide - but now we were sharing not just SCSS, but templates, JavaScript, analytics, icons, and more! We needed designers and developers across multiple teams to choose consistency over control. When should a component be shared? What standards should a shared component meet? How can we gain the benefit of each others’ work without stepping on each other’s toes? These are the answers we’ve come to.",
+    "github": "sxywu",
+    "twitter": "sxywu"
+  },
+  "emil": {
+    "name": "Emil Bay",
+    "bio": "Emil Bay is a 24 year old hacker from Denmark. He used to study maths, but quickly dropped out to work on software. He has worked at a HPC lab, a agency and a newspaper as data journalist. He is now working on the AgTech startup CommodiTrader.",
+    "github": "emilbayes",
+    "twitter": "emilbayes"
+  },
+  "pika": {
+    "name": "Hikaru TAKEMURA",
+    "bio": "TBA",
+    "github": "pika-shi",
+    "twitter": "pika_shi"
   }
 }
 
