@@ -11,7 +11,7 @@
     "time": "13:15 - 13:45",
     "room": "G402",
     "title": "Source to Binary - journey of V8 javascript engine",
-    "summary": "Explain V8 how to execute and optimize javascript.\n\nnodV8がjavascriptをどのように実行・最適化するかを説明します。)"
+    "summary": "Explain V8 how to execute and optimize javascript.\n\nV8がjavascriptをどのように実行・最適化するかを説明します。)"
   },
   "rachel": {
     "day": "Nov 25",

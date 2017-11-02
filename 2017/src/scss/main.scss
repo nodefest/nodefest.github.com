@@ -1650,6 +1650,15 @@ $hex-image: $hex-canvas * $hex-ratio;
     }
   }
 }
+.timetable-session {
+  > a {
+    display: block;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
 .timetable-sessionTitle {
   font-weight: 700;
   @include over-md {
