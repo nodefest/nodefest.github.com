@@ -109,13 +109,13 @@
   },
   "sarah": {
     "name": "Sarah Saltrick Meyer",
-    "bio": "Nick is a full-stack web developer and mapmaker. In the past he has developed open source software with One Laptop per Child, Code for America, the Museum of Modern Art. Recently he is adding Arabic and Maldivian language support to OpenStreetMap libraries.",
+    "bio": "I'm a native New Yorker who's spent her whole career doing web development for startups in the New York-Boston corridor. I like good websites, reading books, and my cat Petra.",
     "github": "sarmeyer",
     "twitter": "meyerini"
   },
   "sxywu": {
     "name": "Shirley Wu",
-    "bio": "Sharing code is hard. And it’s even harder when you have hundreds of developers! At BuzzFeed, we’ve built a library of shared components to support our busy engineers and high-traffic site. We already knew how to build a useful styleguide - but now we were sharing not just SCSS, but templates, JavaScript, analytics, icons, and more! We needed designers and developers across multiple teams to choose consistency over control. When should a component be shared? What standards should a shared component meet? How can we gain the benefit of each others’ work without stepping on each other’s toes? These are the answers we’ve come to.",
+    "bio": "Shirley Wu (twitter.com/sxywu) is a freelance software engineer specializing in data visualization.  Her most recent projects include Explore Adventure (explore-adventure.com), An Interactive Visualization of Every Line in Hamilton (polygraph.cool/hamilton), The Political Brain (politics.andyourbrain.com/debate), and Putting Emojis on the President's Face (sxywu.com/obamas).  She is one-half of data sketch|es (datasketch.es) and co-organizer for the Bay Area D3.js User Group as well as the annual d3.unconf.",
     "github": "sxywu",
     "twitter": "sxywu"
   },
@@ -132,4 +132,3 @@
     "twitter": "pika_shi"
   }
 }
-
