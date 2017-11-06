@@ -16,7 +16,9 @@ var main = location.pathname.split('/2017')[1];
 var scripts = {
   '/':              require('./page/index'),
   '/index.html':    require('./page/index'),
-  '/venues.html':   require('./page/venues')
+  '/venues.html':   require('./page/venues'),
+  '/speakers.html': require('./page/speakers'),
+  '/schedule.html': require('./page/schedule')
 };
 
 (scripts[main] || function() {})();

@@ -1031,6 +1031,8 @@ $hex-image: $hex-canvas * $hex-ratio;
   display: block;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+
   .Hex-inner {
     overflow: hidden;
     &::after {
@@ -1645,6 +1647,15 @@ $hex-image: $hex-canvas * $hex-ratio;
         padding-bottom: 10px;
         border-left: 2px solid $color-sand;
       }
+    }
+  }
+}
+.timetable-session {
+  > a {
+    display: block;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
     }
   }
 }
