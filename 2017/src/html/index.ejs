@@ -187,12 +187,13 @@ var page = {
         </li>
       </ul>
     </div>
-    <div class="sponsors-body">
-      <div class="sponsors-button">
-        <a href="https://docs.google.com/forms/d/1idEahSnv4xGEJbYhh1KpxvmsozbcTicHyEXUUqJMj4Q/viewform" class="Button -sponsors" target="_blank">
-          Join us as a sponsor
-        </a>
-      </div>
+    <div class="sponsors-section">
+      <h3 class="sponsors-grade">Sticker</h3>
+      <ul class="sponsors-list -venue">
+        <li>
+          <%- include('./_partial/sponsor', { id: 'stickermule', grade: 'sticker' }) %>
+        </li>
+      </ul>
     </div>
   </div>
 

@@ -49,6 +49,7 @@ $sponsor-banner-gold: 480px;
 $sponsor-banner-silver: 360px;
 $sponsor-banner-bronze: 320px;
 $sponsor-banner-venue: 300px;
+$sponsor-banner-sticker: 300px;
 
 @mixin below-sm {
   @media (max-width: $screen-phone - 1px) {
@@ -2018,12 +2019,9 @@ $hex-image: $hex-canvas * $hex-ratio;
     margin-left: auto;
     margin-right: auto;
   }
-  &.-bronze {
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  &.-venue {
+  &.-bronze,
+  &.-venue,
+  &.-sticker {
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
@@ -2126,6 +2124,11 @@ $hex-image: $hex-canvas * $hex-ratio;
       max-width: $sponsor-banner-venue / 2;
     }
   }
+  &.-sticker {
+    > img {
+      max-width: $sponsor-banner-sticker / 2;
+    }
+  }
   @include below-sm {
     &.-platinum {
       > img {
@@ -2159,6 +2162,11 @@ $hex-image: $hex-canvas * $hex-ratio;
         max-width: $sponsor-banner-venue / 1.5;
       }
     }
+    &.-sticker {
+      > img {
+        max-width: $sponsor-banner-sticker / 1.5;
+      }
+    }
   }
   @include over-md {
     &.-platinum {
@@ -2184,6 +2192,11 @@ $hex-image: $hex-canvas * $hex-ratio;
     &.-venue {
       > img {
         max-width: $sponsor-banner-venue / 1.5;
+      }
+    }
+    &.-sticker {
+      > img {
+        max-width: $sponsor-banner-sticker / 1.5;
       }
     }
   }
@@ -2269,22 +2282,12 @@ $hex-image: $hex-canvas * $hex-ratio;
       padding-left: 1rem;
       padding-right: 1rem;
     }
-    &.-silver {
+    &.-silver,
+    &.-bronze,
+    &.-venue {
       > * {
         flex: 0 0 33.3%;
         max-width: 33.3%;
-      }
-    }
-    &.-bronze {
-      > * {
-        flex: 0 0 25%;
-        max-width: 25%;
-      }
-    }
-    &.-venue {
-      > * {
-        flex: 0 0 25%;
-        max-width: 25%;
       }
     }
   }
