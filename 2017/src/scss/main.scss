@@ -1395,15 +1395,12 @@ $hex-image: $hex-canvas * $hex-ratio;
       text-transform: uppercase;
       text-align: center;
       font-size: 1em;
-      //background-color: $color-sand;
       &[href="#workshop"] {
-        //background-color: $color-sunflower;
         &:hover {
           border-bottom: 4px solid $color-sunflower;
         }
       }
       &[href="#conference"] {
-        //background-color: $color-leaf;
         &:hover {
           border-bottom: 4px solid $color-leaf;
         }
@@ -1441,6 +1438,71 @@ $hex-image: $hex-canvas * $hex-ratio;
     margin-top: 4rem;
   }
 }
+.schedule-subsection {
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+  padding: 1rem;
+  //background-color: $color-sand;
+  @include over-md {
+    padding: 2rem;
+    max-width: $width-container;
+    &:before {
+      top: -1.5rem;
+      left: -1.5rem;
+      border-left-width: 2px;
+      border-top-width: 2px;
+    }
+    &:after {
+      bottom: -1.5rem;
+      right: -1.5rem;
+      border-right-width: 2px;
+      border-bottom-width: 2px;
+    }
+  }
+  @include over-md {
+    margin-top: 2rem;
+  }
+}
+.schedule-subsectionHead {
+  margin-bottom: 1rem;
+  letter-spacing: 0.08em;
+  line-height: $line-tight;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 2rem;
+  color: $color-inky;
+  @include over-md {
+    font-size: 3em;
+  }
+  @include over-lg {
+    margin-bottom: 2rem;
+  }
+  @include over-hg {
+    font-size: 3em;
+  }
+}
+.schedule-subsectionText {
+  font-size: 0.825rem;
+  > * {
+    margin-bottom: 1em;
+  }
+  dl {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  dt {
+    flex: 0 0 3em;
+    font-weight: 700;
+  }
+  dd {
+    flex: 1 0 calc(100% - 3em);
+  }
+  @include over-md {
+    font-size: 1rem;
+  }
+}
+
 .schedule-note {
   margin-top: 0.5rem;
   margin-left: 1rem;
