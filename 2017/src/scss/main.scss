@@ -277,6 +277,8 @@ $hex-image: $hex-canvas * $hex-ratio;
   width: $hex-image + px;
   height: $hex-image + px;
   transform: translateX(($hex-image - $hex-canvas)/2 * -1px);
+  filter: brightness(75%) grayscale(100%) sepia(50%);
+  transition: 300ms filter ease-out;
 }
 
 // Header
@@ -1066,6 +1068,9 @@ $hex-image: $hex-canvas * $hex-ratio;
       &::after {
         transform: rotate(0deg) scaleX(1.5);
       }
+    }
+    .Hex-image {
+      filter: brightness(75%) grayscale(10%) sepia(0%)
     }
   }
 }
