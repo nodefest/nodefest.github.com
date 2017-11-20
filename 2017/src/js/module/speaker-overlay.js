@@ -12,12 +12,26 @@ module.exports = function() {
   });
   document.addEventListener('keydown', _closeSpeakerByEsc, false);
 
-  function _openSpeaker(ev) {
+  // パーマリンク化
+  document.addEventListener('DOMContentLoaded', function (ev) {
+    var hash = window.location.hash;
+    if (!hash) return;
+    _openSpeaker(ev, hash.substr(1));
+  });
+
+  function _openSpeaker(ev, hash) {
     ev.preventDefault();
-    var key = ev.currentTarget.getAttribute('data-key');
+    var key = hash || ev.currentTarget.getAttribute('data-key');
     var overlay = document.querySelector('.overlay[data-key="' + key + '"]');
+
+    // コンテンツがない場合は何もしない
+    if (!overlay) return;
+
     var content = overlay.querySelector('.overlay-content');
     var button  = overlay.querySelector('.overlay-button');
+
+    // パーマリンクの生成
+    window.location.hash = key;
 
     // アニメーションで制御するのでいったん全部消す
     overlay.style.display = content.style.display = button.style.display = 'none';
