@@ -1,29 +1,41 @@
 module.exports = function() {
-
-  var body = document.body;
   var opener = [].slice.call(document.querySelectorAll('.speaker'));
   var closer = [].slice.call(document.querySelectorAll('.overlay'));
 
   opener.forEach(function(el) {
-    el.addEventListener('click', _openSpeaker, false);
+    el.addEventListener('click', function(ev) {
+      ev.preventDefault();
+      var key = ev.currentTarget.getAttribute('data-key');
+      _openSpeaker(key);
+    }, false);
   });
   closer.forEach(function(el) {
     el.addEventListener('click', _closeSpeaker, false);
   });
   document.addEventListener('keydown', _closeSpeakerByEsc, false);
 
-  function _openSpeaker(ev) {
-    ev.preventDefault();
-    var key = ev.currentTarget.getAttribute('data-key');
+  // パーマリンクがあればそれを開こうとする
+  var hash = location.hash;
+  if (!hash) return;
+  _openSpeaker(hash.substr(1));
+
+
+  function _openSpeaker(key) {
     var overlay = document.querySelector('.overlay[data-key="' + key + '"]');
+    // コンテンツがない場合は何もしない
+    if (!overlay) return;
+
     var content = overlay.querySelector('.overlay-content');
     var button  = overlay.querySelector('.overlay-button');
+
+    // パーマリンクの生成
+    location.hash = key;
 
     // アニメーションで制御するのでいったん全部消す
     overlay.style.display = content.style.display = button.style.display = 'none';
 
     // アニメーションしないならコレだけで良い
-    body.classList.add('is-expand');
+    document.body.classList.add('is-expand');
     overlay.classList.add('is-expand');
 
     // アニメーション！
@@ -48,8 +60,9 @@ module.exports = function() {
       ev.target.tagName.toLowerCase() !== 'a'
     ) {
       ev.preventDefault();
-      body.classList.remove('is-expand');
+      document.body.classList.remove('is-expand');
       overlay.classList.remove('is-expand');
+      location.hash = '!';
     }
   }
 
@@ -60,8 +73,8 @@ module.exports = function() {
     var overlay = document.querySelector('.overlay.is-expand');
     if (overlay === null) { return; }
 
-    body.classList.remove('is-expand');
+    document.body.classList.remove('is-expand');
     overlay.classList.remove('is-expand');
+    location.hash = '!';
   }
-
 };
