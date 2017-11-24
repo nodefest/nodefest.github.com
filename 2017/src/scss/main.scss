@@ -1756,6 +1756,14 @@ $hex-image: $hex-canvas * $hex-ratio;
     font-size: 1rem;
   }
 }
+.timetable-sessionNotice {
+  padding-top: 0.5rem;
+  padding-bottom:: 0.5rem;
+  font-size: 0.75rem;
+  color: $color-alert;
+  text-decoration: none;
+}
+
 .timetable-lts {
   > * {
     margin-top: 0.5rem;
