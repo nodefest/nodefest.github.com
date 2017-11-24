@@ -83,12 +83,12 @@
     "title": "No REST for the weary... Introducing GraphQL",
     "summary": "RESTful APIs can make fetching data pretty hairy sometimes, but fetching data doesn’t have to be so difficult. Enter GraphQL… the query language where you can ask for exactly what you need with a single HTTP request. Come learn what all the buzz is about!\nWhat is GraphQL? How does it differ from REST? In this session, I’ll answer these questions as well as give you an overview of the ecosystem. Of course, an introduction would not be complete without a demonstration of how to use GraphQL, including queries, resolving, integrating into a front-end app, and more!\nYou’ll get the most out of this session if you’re familiar with JavaScript and ES6 syntax. You’ll get all the fancy concepts you need through code examples. The last part of the demo will show integration with a React app, but it’s not critical that you know React to learn the fundamentals of GraphQL from this session."
   },
-  "chris": {
+  "yosuke": {
     "day": "Nov 25",
     "time": "15:30 - 16:00",
     "room": "G403",
-    "title": "Building on Bitcoin with Bcoin and Node.js",
-    "summary": "Give an in-depth breakdown of Bcoin, a fullnode implementation of bitcoin rewritten from scratch in node.js. Used in production for big businesses already, Bcoin is a great way for novice and intermediate JS devs to quickly grasp the complex way bitcoin functions, and start building. "
+    "title": "Turbo Boost Next Node.js",
+    "summary": "Node.js v8, v9 で追加された新しいJavaScriptエンジンのv8、 http2 の内容をデモとベンチマーク結果付きで紹介させていただきます。また、v10以降で入るかもしれない Worker の話も一緒に話します。"
   },
   "sota": {
     "day": "Nov 25",

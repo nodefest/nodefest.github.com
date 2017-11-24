@@ -71,11 +71,11 @@
     "github": "siakaramalegos",
     "twitter": "thegreengreek"
   },
-  "chris": {
-    "name": "Christopher 'JJ' Jeffrey",
-    "bio": "JJ is the CTO of Purse.io and Lead Developer of Bcoin, the first node.js fullnode implementation of bitcoin. JJ has been working in the bitcoin industry for many years, and is a technical expert when it comes to the bitcoin protocol. He also held a previous position at BitPay.",
-    "github": "chjj",
-    "twitter": "_chjj"
+  "yosuke": {
+    "name": "Yosuke Furukawa",
+    "bio": "㈱リクルートテクノロジーズ所属。Node.js日本ユーザーグループ代表であり、大人気イベント「東京Node学園」の主催者。HTML5expertsにも選ばれている。",
+    "github": "yosuke-furukawa",
+    "twitter": "yosuke_furukawa"
   },
   "sota": {
     "name": "杉浦 颯太",
