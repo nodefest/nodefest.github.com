@@ -12,7 +12,7 @@ var overlaySpeakers = [
   'kosamari',
   'leko',
   'sia',
-  'chris',
+  'yosuke',
   'sota',
   'rob',
   'gil',
@@ -24,10 +24,17 @@ var overlaySpeakers = [
 <%- include('../_partial/speaker-overlay', { id: speaker }) -%>
 <% }); %>
 <div class="timetable -conference">
+
   <div class="timetable-caption">
     <h3 class="timetable-title">
       Nov 25 <span class="timetable-venue">at Fujimi Gate Hosei University</span>
     </h3>
+  </div>
+
+  <div class="timetable-notice">
+    <p>
+      25日に登壇予定の Christopher 'JJ' Jeffrey がキャンセルとなりました。代替として、Yosuke Furukawa によるセッションに変更いたします。
+    </p>
   </div>
   <div class="timetable-header">
     <div class="timetable-time"></div>
@@ -183,10 +190,15 @@ var overlaySpeakers = [
     </div>
     <div class="timetable-content">
       <div class="timetable-session">
-        <a data-key="chris" class="speaker">
-          <p class="timetable-sessionTitle">Building on Bitcoin with Bcoin and Node.js</p>
-          <p class="timetable-sessionSpeaker">Christopher "JJ" Jeffrey</p>
+        <a data-key="yosuke" class="speaker">
+          <p class="timetable-sessionTitle">Turbo Boost Next Node.js</p>
+          <p class="timetable-sessionSpeaker">Yosuke Furukawa</p>
         </a>
+        <div class="timetable-sessionNotice">
+          <p>
+            予定していたChristopher 'JJ' Jeffrey のセッションはキャンセルとなりました。
+          </p>
+        </div>
       </div>
       <div class="timetable-session">
         <a data-key="sota" class="speaker">
