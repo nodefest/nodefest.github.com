@@ -19,6 +19,8 @@ $color-inky: #263238;
 $color-shadow: #1C2226;
 $color-jsyellow: #F7DF1E;
 
+$color-alert: $color-sunred;
+
 // Type
 $type-base: -apple-system, Helvetica Neue, Hiragino Sans,"游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;;
 $line-flat: 1;
@@ -1589,6 +1591,15 @@ $hex-image: $hex-canvas * $hex-ratio;
     margin-bottom: 1rem;
   }
 }
+.timetable-notice {
+  padding-top: 0.5rem;
+  padding-bottom:: 0.5rem;
+  font-size: 0.75rem;
+  color: $color-alert;
+  @include over-md {
+    font-size: 0.825rem;
+  }
+}
 .timetable-header {
   justify-content: center;
   position: relative;
@@ -1666,7 +1677,6 @@ $hex-image: $hex-canvas * $hex-ratio;
     text-align: left;
     font-size: 1rem;
     background-color: transparent;
-    color: $color-sunred;
   }
 }
 .timetable-section {
