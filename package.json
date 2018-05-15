@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/nodefest/nodefest.github.com#readme",
   "devDependencies": {
-    "connect": "^3.4.1",
-    "serve-static": "^1.11.1"
+    "connect": "^3.6.6",
+    "serve-static": "^1.13.2"
   }
 }
