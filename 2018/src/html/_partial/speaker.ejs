@@ -1,0 +1,23 @@
+<%
+var speaker = speakers[id];
+var session = sessions[id];
+%>
+<a class="speaker" data-key="<%= id %>">
+  <div class="speaker-image">
+    <div class="Hex">
+      <div class="Hex-outer">
+        <div class="Hex-inner">
+          <img src="img/speakers/pic-<%= id %>.jpg" class="Hex-image">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="speaker-info">
+    <p class="speaker-name">
+      <%= speaker.name %>
+    </p>
+    <p class="speaker-session">
+      <%= session.title %>
+    </p>
+  </div>
+</a>

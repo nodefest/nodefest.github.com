@@ -1,0 +1,50 @@
+<%
+  var speaker = speakers[id];
+  var session = sessions[id];
+  var _enableBr = function(str) { return str.replace(/\n/g, '<br>'); };
+%>
+<div class="overlay" data-key="<%= id %>">
+  <div class="overlay-content">
+
+    <button class="overlay-button">
+      <svg xmlns="http://www.w3.org/2000/svg" class="overlay-icon"><use xlink:href="#close"></use></svg>
+    </button>
+
+    <div class="session">
+      <div class="session-speaker">
+        <div class="session-speakerAvatar" style="background-image:url(img/speakers/pic-<%= id %>.jpg);"></div>
+        <div class="session-speakerProfile">
+          <p class="session-speakerName"><%= speaker.name %></p>
+          <div class="session-speakerBio">
+            <p><%- _enableBr(speaker.bio) %></p>
+          </div>
+          <ul class="session-speakerLinks">
+            <% if (speaker.twitter) { %>
+            <li>
+              <a href="https://twitter.com/<%= speaker.twitter %>">
+                <img src="img/ico-twitter.svg" width="32" height="32" alt="Twitter: @<%= speaker.twitter %>">
+              </a>
+            </li>
+            <% } %>
+            <% if (speaker.github) { %>
+            <li>
+              <a href="https://github.com/<%= speaker.github %>">
+                <img src="img/ico-github.svg" width="32" height="32" alt="GitHub: @<%= speaker.github %>">
+              </a>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+
+      <div class="session-content">
+        <p class="session-time"><%= session.day %>, <%= session.time %> <%= session.room %></p>
+        <h2 class="session-title"><%= session.title %></h2>
+        <div class="session-summary">
+          <p><%- _enableBr(session.summary) %></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
