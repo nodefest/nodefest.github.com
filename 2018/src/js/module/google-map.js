@@ -1,21 +1,13 @@
 var initialize = function() {
 
-  var venueDay1 = {
-      title: '法政大学 富士見ゲート',
-      desc:  '東京都千代田区富士見2-17-1',
+  var venue = {
+      title: 'TODO',
+      desc: 'TODO',
       lat:   35.695863,
       lng:   139.740915,
       icon:  'img/pin-conference.png'
   };
-  var venueDay2 = {
-      title: 'リクルートテクノロジーズ グラントウキョウサウスタワー 41F',
-      desc:  '東京都千代田区丸の内1-9-2 グラントウキョウサウスタワー 41階 (受付2階)',
-      lat:   35.678634,
-      lng:   139.767373,
-      icon:  'img/pin-interactive.png'
-  };
-  var $venueDay1 = document.getElementById('venue-day1');
-  var $venueDay2 = document.getElementById('venue-day2');
+  var $venue = document.getElementById('venue');
   var createMapOptions = function (position) {
     return ({
       center: new google.maps.LatLng(position.lat, position.lng),
@@ -115,13 +107,8 @@ var initialize = function() {
     });
   };
 
-
-  var venueDay1Map = new google.maps.Map($venueDay1, createMapOptions(venueDay1));
-  var venueDay2Map = new google.maps.Map($venueDay2, createMapOptions(venueDay2));
-
   [
-    { locate: venueDay1, map: venueDay1Map },
-    { locate: venueDay2, map: venueDay2Map },
+    { locate: venue, map: new google.maps.Map($venue, createMapOptions(venue)) },
   ].forEach(function(venue) {
     new google.maps.Marker({
       map: venue.map,

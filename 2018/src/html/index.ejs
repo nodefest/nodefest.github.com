@@ -1,15 +1,3 @@
-<%
-var page = {
-  speakers: [
-    'myles',
-    'kosamari',
-    'joyee',
-    'rachel',
-    'fhinkel',
-    'sarah'
-  ]
-}
-%>
 <%- include('_layout/header') -%>
 
 <%- include('_partial/svg') -%>
@@ -17,24 +5,6 @@ var page = {
 <div class="home">
 
   <div class="cover">
-    <header class="header cover-header">
-      <nav class="navigation">
-        <ul class="navigation-list cover-navigationList">
-          <li><a href="speakers.html" class="navigation-target">Speakers</a></li>
-          <li><a href="schedule.html" class="navigation-target">Schedule</a></li>
-          <li><a href="venues.html" class="navigation-target">Venues</a></li>
-          <li><a href="sponsors.html" class="navigation-target">Sponsors</a></li>
-          <li><a href="about-us.html" class="navigation-target">About us</a></li>
-          <li><a href="#tickets" class="navigation-target -button">Tickets</a></li>
-        </ul>
-        <button class="navigation-button">
-          <svg xmlns="http://www.w3.org/2000/svg" class="navigation-icon"><use xlink:href="#close"></use></svg>
-        </button>
-      </nav>
-      <button class="header-button">
-        <svg xmlns="http://www.w3.org/2000/svg" class="header-icon"><use xlink:href="#nav"></use></svg>
-      </button>
-    </header>
 
     <div class="cover-inner">
 
@@ -43,7 +13,7 @@ var page = {
       <div class="cover-outline">
         <div class="outline">
           <div class="outline-body">
-            <p class="outline-date">25-26th November</p>
+            <p class="outline-date">17-18th November</p>
             <h1 class="outline-name">東京Node学園祭2018</h1>
           </div>
         </div>
@@ -59,50 +29,6 @@ var page = {
 
   <div class="main home-main">
 
-    <!-- Speakers -->
-    <div class="home-speakers">
-      <h2 class="home-subhead">Featured Speakers</h2>
-
-      <ul class="speakers-list">
-        <% page.speakers.forEach(function(speaker) { %>
-        <li>
-          <%- include('_partial/speaker', { id: speaker }) -%>
-          <%- include('_partial/speaker-overlay', { id: speaker }) -%>
-        </li>
-        <% }); %>
-      </ul>
-      <div class="home-speakersAction">
-        <a href="speakers.html" class="Button -primary">
-          Check All Speakers
-        </a>
-      </div>
-    </div>
-
-    <!-- Schedule -->
-    <div class="home-schedule">
-      <h2 class="home-subhead">Schedule</h2>
-
-      <div class="home-scheduleBody">
-
-        <div class="home-scheduleSection">
-          <%- include('_partial/timetable-conference') -%>
-
-        </div>
-
-        <div class="home-scheduleSection">
-          <%- include('_partial/timetable-interactive') -%>
-
-        </div>
-
-        <div class="home-scheduleNote">
-          <p>※ セッションの内容／時間は変更になる可能性があります。</p>
-          <p>※ セッションは日本語・英語で行われます。</p>
-          <p>※ 26日のNode School, Workshopにはご自身のマシンをご用意ください。</p>
-        </div>
-
-      </div>
-    </div>
-
     <!-- Veunes -->
     <div class="home-venues">
       <h2 class="home-subhead">Venue</h2>
@@ -113,84 +39,6 @@ var page = {
       </div>
     </div>
 
-  </div>
-
-  <%- include('_partial/tickets') -%>
-
-  <!-- Sponsors -->
-  <div class="home-sponsors">
-    <h2 class="home-subhead home-sponsorsSubhead">Sponsors</h2>
-    <div class="sponsors-section">
-      <h3 class="sponsors-grade">Gold</h3>
-      <ul class="sponsors-list -gold">
-        <li>
-          <%- include('./_partial/sponsor', { id: 'dwango', grade: 'gold' }) %>
-        </li>
-        <li>
-          <%- include('./_partial/sponsor', { id: 'r-tech', grade: 'gold' }) %>
-        </li>
-        <li>
-          <%- include('./_partial/sponsor', { id: 'mercari', grade: 'gold' }) %>
-        </li>
-        <li>
-          <%- include('./_partial/sponsor', { id: 'yahoo', grade: 'gold' }) %>
-        </li>
-        <li>
-          <%- include('./_partial/sponsor', { id: 'nissan', grade: 'gold' }) %>
-        </li>
-        <li>
-          <%- include('./_partial/sponsor', { id: 'auth0', grade: 'gold' }) %>
-        </li>
-      </ul>
-    </div>
-    <div class="sponsors-section">
-      <h3 class="sponsors-grade">Silver</h3>
-      <ul class="sponsors-list -silver">
-        <li>
-          <%- include('./_partial/sponsor', { id: 'pxgrid', grade: 'silver' }) %>
-        </li>
-        <li>
-          <%- include('./_partial/sponsor', { id: 'cyberagent', grade: 'silver' }) %>
-        </li>
-        <li>
-          <%- include('./_partial/sponsor', { id: 'tsukuruba', grade: 'silver' }) %>
-        </li>
-        <li>
-          <%- include('./_partial/sponsor', { id: 'freee', grade: 'silver' }) %>
-        </li>
-        <li>
-          <%- include('./_partial/sponsor', { id: 'cybozu', grade: 'silver' }) %>
-        </li>
-        <li>
-          <%- include('./_partial/sponsor', { id: 'supership', grade: 'silver' }) %>
-        </li>
-        <li>
-          <%- include('./_partial/sponsor', { id: 'r-life', grade: 'silver' }) %>
-        </li>
-        <li>
-          <%- include('./_partial/sponsor', { id: 'gms', grade: 'silver' }) %>
-        </li>
-        <li>
-          <%- include('./_partial/sponsor', { id: 'wizcorp', grade: 'silver' }) %>
-        </li>
-      </ul>
-    </div>
-    <div class="sponsors-section">
-      <h3 class="sponsors-grade">Bronze</h3>
-      <ul class="sponsors-list -venue">
-        <li>
-          <%- include('./_partial/sponsor', { id: 'sphinx', grade: 'bronze' }) %>
-        </li>
-      </ul>
-    </div>
-    <div class="sponsors-section">
-      <h3 class="sponsors-grade">Venue</h3>
-      <ul class="sponsors-list -venue">
-        <li>
-          <%- include('./_partial/sponsor', { id: 'hosei', grade: 'venue' }) %>
-        </li>
-      </ul>
-    </div>
   </div>
 
 </div>

@@ -6,6 +6,10 @@ module.exports = function() {
   var navigation = document.querySelector('.navigation');
   var list = document.querySelector('.navigation-list');
 
+  if (!(opener && closer && navigation && list)) {
+    return;
+  }
+
   opener.addEventListener('click', _openNav, false);
   closer.addEventListener('click', _closeNav, false);
   document.addEventListener('keydown', _closeNavByEsc, false);
