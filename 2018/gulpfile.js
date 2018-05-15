@@ -17,21 +17,20 @@ const srcDirs = {
   html: './src/html',
   json: './src/json',
   js:   './src/js',
-  css:  './src/scss'
+  css:  './src/scss',
 };
 const srcPaths = {
   html: `${srcDirs.html}/*.ejs`,
   js:   `${srcDirs.js}/main.js`,
-  css:  `${srcDirs.css}/main.scss`
+  css:  `${srcDirs.css}/main.scss`,
 };
 const destPath = './';
 
-const json = {};
-fs.readdirSync('./src/json')
-  .map((fName) => { return fName.split('.json')[0]; })
-  .forEach((key) => {
-    Object.assign(json, { [key]: require(`./src/json/${key}.json`) });
-  });
+const json = fs.readdirSync('./src/json')
+  .map(fName => fName.split('.json')[0])
+  .reduce((cur, acc) => {
+    return Object.assign(cur, { [acc]: require(`./src/json/${acc}.json`) });
+  }, {});
 
 
 gulp.task('html', () => {
