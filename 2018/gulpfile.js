@@ -79,7 +79,7 @@ gulp.task('watch', () => {
   gulp.watch(`${srcDirs.js}/**/*.js`,     ['js']);
 });
 
-gulp.task('clean', del.bind(null, ['./*.html']));
+gulp.task('clean', del.bind(null, ['./*.html', './*.ejs']));
 
 gulp.task('dev', ['build', 'watch']);
 gulp.task('build', ['clean', 'html', 'css', 'js']);
