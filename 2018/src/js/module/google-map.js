@@ -1,11 +1,9 @@
 var initialize = function() {
 
   var venue = {
-      title: 'TODO',
-      desc: 'TODO',
-      lat:   35.695863,
-      lng:   139.740915,
-      icon:  'img/pin-conference.png'
+      lat: 35.6795212,
+      lng: 139.734909,
+      icon: 'img/pin-conference.png'
   };
   var $venue = document.getElementById('venue');
   var createMapOptions = function (position) {
