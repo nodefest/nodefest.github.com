@@ -1,0 +1,254 @@
+<%
+var overlaySpeakers = [
+  'sarah',
+  'sxywu',
+  'emil',
+  'pika'
+]
+%>
+<% overlaySpeakers.forEach(function(speaker) { %>
+<%- include('../_partial/speaker-overlay', { id: speaker }) -%>
+<% }); %>
+<div class="timetable -workshop">
+  <div class="timetable-caption">
+    <h3 class="timetable-title">
+      Nov 26 <span class="timetable-venue">at Recruit Technologies</span>
+    </h3>
+  </div>
+  <div class="timetable-header">
+    <div class="timetable-time"></div>
+    <div class="timetable-section">
+      <p>Academy</p>
+      <p>SkyRoom A</p>
+      <p>SkyRoom B & C</p>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>10:00 - 10:30</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Open</p>
+        <p class="timetable-sessionSpeaker"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>10:30 - 10:45</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Opening talk</p>
+        <p class="timetable-sessionSpeaker">Yosuke</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>10:45 - 12:45</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Node Discussion</p>
+        <p class="timetable-sessionSpeaker">Yosuke</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">NodeSchool</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Angular2+ Authentication Tutorial with Auth0</p>
+        <p class="timetable-sessionSpeaker">Hideya Furuta from Auth0</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>12:45 - 13:45</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Lunch!!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>13:45 - 14:15</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <a data-key="sarah" class="speaker">
+          <p class="timetable-sessionTitle">Sharing is Caring… At Scale!</p>
+          <p class="timetable-sessionSpeaker">Sarah Saltrick Meyer</p>
+        </a>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">NodeSchool</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">LINE Bot Handson</p>
+        <p class="timetable-sessionSpeaker">n0bisuke</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>14:15 - 14:45</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <a data-key="sxywu" class="speaker">
+          <p class="timetable-sessionTitle">data sketches: A Visualization a Month</p>
+          <p class="timetable-sessionSpeaker">Shirley Wu</p>
+        </a>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">NodeSchool</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">LINE Bot Handson</p>
+        <p class="timetable-sessionSpeaker">by n0bisuke</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>14:45 - 15:15</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <a data-key="emil" class="speaker">
+          <p class="timetable-sessionTitle">Real-world applications of hash functions</p>
+          <p class="timetable-sessionSpeaker">Emil Bay</p>
+        </a>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">NodeSchool</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">LINE Bot Handson</p>
+        <p class="timetable-sessionSpeaker">by n0bisuke</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>15:15 - 15:45</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <a data-key="pika" class="speaker">
+          <p class="timetable-sessionTitle">JSON Schema Centralized Design</p>
+          <p class="timetable-sessionSpeaker">Hikaru TAKEMURA</p>
+        </a>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">NodeSchool</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">LINE Bot Handson</p>
+        <p class="timetable-sessionSpeaker">by n0bisuke</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>15:45 - 16:00</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionBreak">Break</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>16:00 - 18:00</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Code And Learn</p>
+        <p class="timetable-sessionSpeaker">Yosuke</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">NodeSchool</p>
+        <p class="timetable-sessionSpeaker">-</p>
+      </div>
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Data Visualization Workshop</p>
+        <p class="timetable-sessionSpeaker">Shirley Wu</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>18:00 - 18:15</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionBreak">Break</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>18:15 - 18:55</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Lightning Talks</p>
+        <ul class="timetable-lts">
+          <li>
+            <p class="timetable-ltsTitle">Self Driving Kit using Android and Node.JS</p>
+            <p class="timetable-ltsSpeaker">ABHISHEK GOSWAMI</p>
+          </li>
+          <li>
+            <p class="timetable-ltsTitle">Node.js × AWS Lambda アプリケーション開発Tips</p>
+            <p class="timetable-ltsSpeaker">hkusu(Hiroyuki Kusu)</p>
+          </li>
+          <li>
+            <p class="timetable-ltsTitle">レスポンシブから逆戻り！？Webサービスのマルチデバイス対応方法</p>
+            <p class="timetable-ltsSpeaker">小田島 太郎</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>19:00 - 19:10</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">Day2 Closing Talk (Kanpai!)</p>
+        <p class="timetable-sessionSpeaker">Yosuke</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timetable-row">
+    <div class="timetable-time">
+      <p>19:15 - 21:15</p>
+    </div>
+    <div class="timetable-content">
+      <div class="timetable-session">
+        <p class="timetable-sessionTitle">After party</p>
+      </div>
+    </div>
+  </div>
+</div>

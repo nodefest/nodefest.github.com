@@ -1,0 +1,58 @@
+<%
+var page = {
+  title: 'Speakers',
+  speakers: [
+    'joyee',
+    'brn',
+    'rachel',
+    'myles',
+    'jbucaran',
+    'gergely',
+    'fhinkel',
+    'ganeko',
+    'kgryte',
+    'kosamari',
+    'leko',
+    'sia',
+    'yosuke',
+    'sota',
+    'rob',
+    'gil',
+    'horobi',
+    'nick',
+    'sarah',
+    'sxywu',
+    'emil',
+    'pika'
+  ]
+}
+%>
+<%- include('_layout/header', page) -%>
+
+<%- include('_partial/svg') -%>
+
+<%- include('_partial/navigation') -%>
+
+<div class="main">
+
+  <section class="page speakers">
+    <h2 class="page-title speakers-title"><%= page.title %></h2>
+
+    <div class="page-body speakers-body">
+      <ul class="speakers-list">
+        <% page.speakers.forEach(function(speaker) { %>
+        <li>
+          <%- include('_partial/speaker', { id: speaker }) -%>
+          <%- include('_partial/speaker-overlay', { id: speaker }) -%>
+        </li>
+        <% }); %>
+      </ul>
+    </div>
+
+  </section>
+
+</div>
+
+<%- include('_partial/tickets') -%>
+
+<%- include('_layout/footer') -%>

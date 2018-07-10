@@ -1,0 +1,47 @@
+<%- include('_layout/header') -%>
+
+<%- include('_partial/svg') -%>
+
+<div class="home">
+
+  <div class="cover">
+
+    <div class="cover-inner">
+
+      <img src="img/logo-tnf-invert.svg" class="cover-logo">
+
+      <div class="cover-outline">
+        <div class="outline">
+          <div class="outline-body">
+            <p class="outline-date">23-24th November</p>
+            <h1 class="outline-name">東京Node学園祭2018</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-intro">
+
+      <svg xmlns="http://www.w3.org/2000/svg" class="home-mountain" fill="url(#mount-gradient)"><use xlink:href="#mountain"></use></svg>
+      <%- include('_partial/intro') -%>
+    </div>
+  </div>
+
+  <div class="main home-main">
+
+    <div class="home-venues">
+      <h2 class="home-subhead">Venue</h2>
+      <div class="page-body venue-body">
+        <%- include('_partial/venue-map') -%>
+      </div>
+    </div>
+
+  </div>
+
+  </div>
+
+</div>
+
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDvBLklunoaVPhXh4b1jVcXoUclUlmtNiA&extension=.js"></script>
+
+<%- include('_layout/footer') -%>

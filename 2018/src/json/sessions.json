@@ -1,0 +1,156 @@
+{
+  "joyee": {
+    "day": "Nov 25",
+    "time": "13:15 - 13:45",
+    "room": "G403",
+    "title": "Node.js at Alibaba",
+    "summary": "In this talk I will cover the story of Node.js at Alibaba, our effort to unify the Node.js development practices across the Alibaba group, and how Node.js applications in Alibaba deal with the challenges of our Double 11 sales. I will also talk about the open source Node.js projects from Alibaba (including egg.js and cnpm, two enterprise-facing projects born out of the unique environment of China), the public cnpm registry, and the Chinese Node.js developer community."
+  },
+  "brn": {
+    "day": "Nov 25",
+    "time": "13:15 - 13:45",
+    "room": "G402",
+    "title": "Source to Binary - journey of V8 javascript engine",
+    "summary": "Explain V8 how to execute and optimize javascript.\nV8がjavascriptをどのように実行・最適化するかを説明します。"
+  },
+  "rachel": {
+    "day": "Nov 25",
+    "time": "13:15 - 13:45",
+    "room": "G401",
+    "title": "Alt-Ctrl: Scream Into this Arduino!",
+    "summary": "When you think about bots, the first thing that pops into your mind is probably cute little robots (as it should be)-- but did you know there's a whole world out there of modules that can allow you to control items through various means of interaction? Accelerometers, capacitive touch, light, sound, and more! Learn about different modules that you may not have used before and see how easily they integrate with an microcontroller through wiring diagrams and code examples. Find out about the emerging occurrences of Biohacking-- especially RFID implants, which I will show via my own chip implanted into my hand. Experience live demos of how some of these work, try them out yourself through a little audience participation, and walk away with a new exciting perspective on fun ways you can get creative with your own hardware projects."
+  },
+  "myles": {
+    "day": "Nov 25",
+    "time": "13:45 - 14:15",
+    "room": "G403",
+    "title": "Open Source Governance Models: From BDFL to Consensus Seeking",
+    "summary": "Prior to the fork Node.js was run using a Benevolent Dictator for Life model. After merging with io.js the project adopted a consensus seeking model for landing all changes and governance.\nThe project has seen a resurgence in contribution in the new model, but it is not without it's own problems. The sessions will examine the reality of these different models and lessons learned."
+  },
+  "jbucaran": {
+    "day": "Nov 25",
+    "time": "13:45 - 14:15",
+    "room": "G402",
+    "title": "Make you a React: How to build your own JavaScript framework.",
+    "summary": "Have you ever wondered what's going on under the hood of a JavaScript framework? In this talk I'll walk you through creating your own view library à la React, including a Virtual DOM, diff algorithm and original state management architecture."
+  },
+  "gergely": {
+    "day": "Nov 25",
+    "time": "13:45 - 14:15",
+    "room": "G401",
+    "title": "Node.js Production Checklist",
+    "summary": "At RisingStack, we have helped enterprises to sucessfully adopt Node.js in the past years. During this period, we have seen a lot of anti-patterns and war stories. Also, we came up with a list of best practices on how to run Node.js applications in production successfully.\nThis talk addresses both operational, performance and security best practices."
+  },
+  "fhinkel": {
+    "day": "Nov 25",
+    "time": "14:15 - 14:45",
+    "room": "G403",
+    "title": "The JavaScript Engine in Node.js: TurboFan and Ignition",
+    "summary": "V8 is the JavaScript engine in Node.js. Since Node 8.3, we use V8’s new compiler pipeline with TurboFan and Ignition. How can V8 be so fast and how does a Just-in-time compiler work?\nWe’ll look at basic and not-so-basic concepts of V8 and discuss what TurboFan, the optimizing compiler, means for Node.js performance. You’ll learn how to write code that’s fast with the new compiler pipeline. "
+  },
+  "ganeko": {
+    "day": "Nov 25",
+    "time": "14:15 - 14:45",
+    "room": "G402",
+    "title": "Node.js x Chrome headless で、お手軽WebRTC MCU",
+    "summary": "Node.js x Chrome headless で、お手軽WebRTC MCU"
+  },
+  "kgryte": {
+    "day": "Nov 25",
+    "time": "14:15 - 14:45",
+    "room": "G401",
+    "title": "WebAssembly and the Future of the Web",
+    "summary": "WebAssembly has generated a significant amount of buzz since being first introduced and subsequently reaching cross-browser consensus. Several in the Node community have talked about WebAssembly allowing Node.js to fulfill the promise of the JVM, providing an efficient compile-to target with a single runtime. While WebAssembly is a significant development and will certainly affect how Node.js developers build their applications, some clarity is needed in helping developers better understand the implications WebAssembly will have on application development. To this end, this talk will inform developers as to what WebAssembly is and is not, help them understand why they should even care about WebAssembly in the first place, and enable them to make informed decisions when choosing whether to implement functionality in WebAssembly or as a Node.js add-on."
+  },
+  "kosamari": {
+    "day": "Nov 25",
+    "time": "15:00 - 15:30",
+    "room": "G403",
+    "title": "標準化ってなに？ Webプラットフォーム/ESNextを作る方法",
+    "summary": "TBA"
+  },
+  "leko": {
+    "day": "Nov 25",
+    "time": "15:00 - 15:30",
+    "room": "G402",
+    "title": "ReactNativeアプリでE2Eテストを回してみた",
+    "summary": "2018年、ReactNative(以下RN)はネイティブアプリを開発する上で重要なポジションを築き始めていると思います。\nRNはiOS/Androidなどのマルチプラットフォーム間の差異をかなり吸収してくれるものの、UIやE2Eテストの領域において未だサポートが弱いのが現状です。\nきちんと依存性の切り分けをしてあれば、ユニットテストはNode環境でごく自然に書くことができますが、ネイティブの機能やUIに踏み込むと、Nodeの環境では非常にテストしにくい現状があります。\nユニットテストでは可視化できない（しにくい）テストケースでバグを見逃したり、ビュー層までユニットテストを入れてコンポーネントのテストの維持コストに疲弊したり。\n結局アプリの挙動確認には、結局人の力でのデバッグ・動作確認しているチームも多いと思います。\nでも人力の確認で、慣れや焦りによる見落とし、見てさえいれば気づけた問題をテスト観点の漏れによって見逃してしまったり、と言った経験はありませんでしょうか。\nテスターやデバッガーのリソースを確保できない小さな開発チームにおいて、いかに検証コストを抑えつつテストを回すか？という視点から、実務のRNのプロジェクトにE2EのテストツールAppiumを用いてテストを組み込む過程、テストを回した結果のノウハウをお伝えできればと思います。"
+  },
+  "sia": {
+    "day": "Nov 25",
+    "time": "15:00 - 15:30",
+    "room": "G401",
+    "title": "No REST for the weary... Introducing GraphQL",
+    "summary": "RESTful APIs can make fetching data pretty hairy sometimes, but fetching data doesn’t have to be so difficult. Enter GraphQL… the query language where you can ask for exactly what you need with a single HTTP request. Come learn what all the buzz is about!\nWhat is GraphQL? How does it differ from REST? In this session, I’ll answer these questions as well as give you an overview of the ecosystem. Of course, an introduction would not be complete without a demonstration of how to use GraphQL, including queries, resolving, integrating into a front-end app, and more!\nYou’ll get the most out of this session if you’re familiar with JavaScript and ES6 syntax. You’ll get all the fancy concepts you need through code examples. The last part of the demo will show integration with a React app, but it’s not critical that you know React to learn the fundamentals of GraphQL from this session."
+  },
+  "yosuke": {
+    "day": "Nov 25",
+    "time": "15:30 - 16:00",
+    "room": "G403",
+    "title": "Turbo Boost Next Node.js",
+    "summary": "Node.js v8, v9 で追加された新しいJavaScriptエンジンのv8、 http2 の内容をデモとベンチマーク結果付きで紹介させていただきます。また、v10以降で入るかもしれない Worker の話も一緒に話します。"
+  },
+  "sota": {
+    "day": "Nov 25",
+    "time": "15:30 - 16:00",
+    "room": "G402",
+    "title": "今さら聞けないSPAのCORS対策の話",
+    "summary": "ここ2, 3年でJavaScriptのパラダイムは大きく変わってきました。そして今なお変化と進化を続けています。それに合わせてWeb Applicationを作るアーキテクチャの選択肢も大きく変わってきました。\nこのトークではJavaScriptエンジニアであれば一度は夢見るSPAを実装する際、避けては通れないCORS対策の話をします。\nまた、実際に私がSPA用APIを実装した際に直面した問題をケーススタディ形式でお話したいと思います。"
+  },
+  "rob": {
+    "day": "Nov 25",
+    "time": "15:30 - 16:00",
+    "room": "G401",
+    "title": "A Toy Robot and a Functional Pattern",
+    "summary": "A Functional Programming-inspired pattern to separate instructions and interpretations.\n関数型プログラミングにインスピレーションを得た模様は、命令と解釈を分離します。\n\nWe can learn a lot of useful code patterns from Functional Programming. One of them is splitting up some of our code into separate 'instructions' and 'interpreters'. By keeping them distinct, we can more easily re-use our code, and make it easier to test. This talk will show you how to use this technique: we'll start with simple examples, dig into real-world libraries like 'redux-saga' and 'fluture', and finally drive the wheels of a toy robot."
+  },
+  "gil": {
+    "day": "Nov 25",
+    "time": "16:00 - 16:30",
+    "room": "G403",
+    "title": "Native ES Module - something almost, but not quite entirely unlike CommonJS",
+    "summary": "CommonJS, along with the npm registry, has become the de-facto standard in Frontend and NodeJS development today. But Native ES Modules are coming to NodeJS and the browser. On the surface, they look incredibly similar to CommonJS modules, but the differences are important.In this talk I will describe these differences, the consequences of these differences, and how to start preparing for the new world of Native ES Modules.\nWhy is this talk important? Because Native ES Modules _are_ coming. And everybody will be talking about them in 2018. And we need to be prepared, for it _is_ going to be a difficult transition, because the differences are subtle and they bite."
+  },
+  "horobi": {
+    "day": "Nov 25",
+    "time": "16:00 - 16:30",
+    "room": "G402",
+    "title": "サーバサイドエンジニアがJavaScriptを書いてTradingViewを導入した話",
+    "summary": "普段メインはPythonで仕事をしているエンジニアがフロントをECMA5でJavaScriptを書いてTradingViewを導入した話になります。実装方法や苦労した点や今後の展開を共有し、今後TradingViewの導入を考えている方に対して実になるような話をしようと思います。"
+  },
+  "nick": {
+    "day": "Nov 25",
+    "time": "16:00 - 16:30",
+    "room": "G401",
+    "title": "Quantum Computing in Node",
+    "summary": "The first quantum computers and virtual machines are coming online and available to the public. Today they have only up to 30 'qubits', but as these machines get more powerful, they can quickly solve problems in chemistry and break AES and RSA encryption much faster than classical computers.\nScientists at IBM and Rigetti Computing have made two competing APIs and libraries to program their machines in a language similar to assembly. I developed a Node module (jsQuil) for building and testing these programs.\nThis talk will cover three points:\n- What quantum computers will be online in 2018?\n- What are the advantages of a quantum computer?\n- How do we design a module (jsQuil) and think about quantum computing in JavaScript?"
+  },
+  "sarah": {
+    "day": "Nov 26",
+    "time": "NAME",
+    "room": "Academy",
+    "title": "Sharing is Caring… At Scale!",
+    "summary": "Sharing code is hard. And it’s even harder when you have hundreds of developers! At BuzzFeed, we’ve built a library of shared components to support our busy engineers and high-traffic site. We already knew how to build a useful styleguide - but now we were sharing not just SCSS, but templates, JavaScript, analytics, icons, and more! We needed designers and developers across multiple teams to choose consistency over control. When should a component be shared? What standards should a shared component meet? How can we gain the benefit of each others’ work without stepping on each other’s toes? These are the answers we’ve come to."
+  },
+  "sxywu": {
+    "day": "Nov 26",
+    "time": "NAME",
+    "room": "Academy",
+    "title": "data sketches: A Visualization a Month",
+    "summary": "Data sketches (www.datasketch.es) is a collaboration between Nadieh Bremer and Shirley Wu, where they choose a topic each month and visualize it by the end of the month.  They also document their data gathering, sketching, and coding processes, the mistakes they made and the technical challenges they overcame.  In this talk, Shirley will take the audience through the lessons she's learned creating twelve full-fledged visualizations from scratch. She hopes that by sharing her whole process, that it will inspire others to create their own unique and compelling visualizations."
+  },
+  "emil": {
+    "day": "Nov 26",
+    "time": "NAME",
+    "room": "Academy",
+    "title": "Real-world applications of hash functions",
+    "summary": "Hash functions are regarded as an advanced topic, and designing one from scratch takes a PhD in Computer Science. However, everyone is using hash functions in their daily work, whether they know it or not.\n\nIn this talk I will showcase how anyone can take advantage of the properties of hash functions, without knowing the mathematics or implementation details, to build exciting applications that only hash functions allow. I will cover how to build a deduplicating file uploader, document similarity search engine and combat online voting fraud. All in pure Javascript, with a sprinkle of WASM for blazing fast performance, and heaps of demos so everyone can follow along."
+  },
+  "pika": {
+    "day": "Nov 26",
+    "time": "NAME",
+    "room": "Academy",
+    "title": "JSON Schema Centralized Design",
+    "summary": "JS 開発において，JSON Schema を中心に据えることで，品質や保守性を向上させるアプローチについてお話しします．\n\n- RAML との連携により実装･仕様間の同期をおこなう\n- FlowType との連携により動的チェックだけでなく静的チェックもおこなう\n\nメンテナンスは基本的に JSON Schema のみ．これを本発表では JSON Schema 中心設計と呼びます．"
+  }
+}

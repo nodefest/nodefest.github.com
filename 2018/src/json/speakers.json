@@ -1,0 +1,134 @@
+{
+  "joyee": {
+    "name": "Joyee Cheung",
+    "bio": "I'm a developer at Alibaba Cloud working on alinode, an application management solution for Node.js, which provides services for Node.js application monitoring, profiling, alerting, security warning .etc, and has been used both inside and outside the Alibaba Group. We also help to improve the Node.js developer experience on the Alibaba Cloud.\nIn my free time, I am also a Node.js core collaborator, making contributions to the Node.js core and other related projects.",
+    "github": "joyeecheung",
+    "twitter": "JoyeeCheung"
+  },
+  "brn": {
+    "name": "青野 健利",
+    "bio": "株式会社サイバーエージェント・アドテクスタジオで主にフロントエンドを担当しています。\n言語はjavascript以外にもC++・Rust等も好きです。趣味でV8エンジンのコードを追っています。",
+    "github": "brn",
+    "twitter": "brn227"
+  },
+  "rachel": {
+    "name": "Rachel White",
+    "bio": "Rachel is currently a Technical Evangelist at Microsoft, but is also a self-taught programmer & occasional artist. She is currently working on multiple video game projects, a VR cat cafe, and thinking about what IoT devices she can build for her two black cats. Her other interests include glitch art, 80s horror, and indie games. Her aesthetic is fog machines, laser lights, and broken VHS tapes.",
+    "github": "rachelnicole",
+    "twitter": "ohhoe"
+  },
+  "myles": {
+    "name": "Myles Borins",
+    "bio": "Myles Borins is a developer, musician, artist, and inventor\nhe works for Google as a developer advocate serving the Node.js ecosystem\nhe graduated with a Master of Music Science and Technology from c.c.r.m.a.\na.k.a the center for computer research in music and acoustics ",
+    "github": "MylesBorins",
+    "twitter": "MylesBorins"
+  },
+  "jbucaran": {
+    "name": "Jorge Bucaran",
+    "bio": "Software Engineer in Japan. I am a #JavaScript type of person.",
+    "github": "JorgeBucaran",
+    "twitter": "JorgeBucaran"
+  },
+  "gergely": {
+    "name": "Gergely Nemeth",
+    "bio": "Software engineer, specialized in Node.js, now leading RisingStack, the Node.js company. Organiser of NodeConf Budapest and various meetups.",
+    "github": "gergelyke",
+    "twitter": "nthgergo"
+  },
+  "fhinkel": {
+    "name": "Franziska Hinkelmann",
+    "bio": "Franziska has a Ph.D. in mathematics and is a software engineer on Google’s V8 team. She's an expert on ES6 performance and a Node.js core collaborator. When she's not working hard on making JavaScript and Node faster, she's probably out horseback riding.",
+    "github": "fhinkel",
+    "twitter": "fhinkel"
+  },
+  "ganeko": {
+    "name": "がねこまさし",
+    "bio": "WebRTCを活かすにはサーバー側の仕組みも不可欠です。手軽にサーバーを構築できる環境として、node.jsの世界に足を踏み入れました。\nWebRTC Meetup Tokyo および WebRTC Beginners Tokyo のスタッフ、HTML5Experts.jpにてWebRTC関連の記事も掲載しています。\nインフォコム株式会社所属",
+    "github": "mganeko",
+    "twitter": "massie_g"
+  },
+  "kgryte": {
+    "name": "Athan Reines",
+    "bio": "Athan Reines is a full-stack engineer and data scientist. He has a PhD in Physics, where he used machine learning and time series analytics to probe biological systems at the nanoscale. He currently works full-time on open source projects to facilitate numeric computing in Node.js and JavaScript. For his latest open source project, see stdlib, a standard library for Node.js and Javascript: https://github.com/stdlib-js/stdlib.",
+    "github": "kgryte",
+    "twitter": "kgryte"
+  },
+  "kosamari": {
+    "name": "Mariko Kosaka",
+    "bio": "Mariko Kosaka is an engineer who loves data and knitting. When she is not making software at Scripto, she uses code to help her design textiles & organize local JavaScript meetup in New York City called BrooklynJS.",
+    "github": "kosamari",
+    "twitter": "kosamari"
+  },
+  "leko": {
+    "name": "れこ",
+    "bio": "前職にてEC系のバックヤードのシステム開発をするPHP・Rubyエンジニア、チームリーダーを経て、現在は株式会社キュアアップという、JavaScript一本で医療機器アプリケーションを作成しているスタートアップのシステムエンジニアやってます。\nもともとJavaScriptが好きで、趣味のプログラムはだいたいjsで書いてます\n好きな言葉は「実質Universal」、気になるクラスはIntersectionObserver。",
+    "github": "leko",
+    "twitter": "L_e_k_o"
+  },
+  "sia": {
+    "name": "Sia Karamalegos",
+    "bio": "Sia Karamalegos is the founder and lead developer for Clio + Calliope Web Development. She has over 15 years of experience in technology, strategy, project management, and operations from small startups to large corporations across multiple industries, especially high-tech and education. She leverages her depth of experience with software engineering to build high-value applications.\n\nIn both 2015 and 2016, Sia was recognized in the Silicon Bayou 100, the 100 most influential and active people in tech and entrepreneurship in Louisiana. She graduated from Texas A&M University with a BS in chemical engineering and received her MBA from Harvard Business School.",
+    "github": "siakaramalegos",
+    "twitter": "thegreengreek"
+  },
+  "yosuke": {
+    "name": "Yosuke Furukawa",
+    "bio": "㈱リクルートテクノロジーズ所属。Node.js日本ユーザーグループ代表であり、大人気イベント「東京Node学園」の主催者。HTML5expertsにも選ばれている。",
+    "github": "yosuke-furukawa",
+    "twitter": "yosuke_furukawa"
+  },
+  "sota": {
+    "name": "杉浦 颯太",
+    "bio": "Software Engineer@Mercari, Inc. JavaScript lover.",
+    "github": "sota1235",
+    "twitter": "sota1235"
+  },
+  "rob": {
+    "name": "Rob Howard",
+    "bio": "Rob is a web developer who switches between Haskell, JavaScript and PureScript at Ambiata, living in sunny Sydney, Australia. He spends his days immersed in functional programming and static type-checking. Having made a career using and mixing the nice parts from different programming languages, he'd like nothing better than to help different programming communities to learn more from each other.\n\nIf you're a fan of essay-length tweet threads, he's on Twitter (and most other things) as @damncabbage, and posts his talks and articles on http://robhoward.id.au.",
+    "github": "robhoward",
+    "twitter": "damncabbage"
+  },
+  "gil": {
+    "name": "Gil Tayar",
+    "bio": "From the olden days of DOS, to the stratospheric architectures of Wix, Gil was, is, and always will be, a software developer. He has in the past co-founded WebCollage, survived the bubble collapse of 2000, and worked on various big cloudy projects at Wix. His current passion is teaching software, yet he still doesn't know whether static languages or dynamic languages are the best.",
+    "github": "giltayar",
+    "twitter": "giltayar"
+  },
+  "horobi": {
+    "name": "谷口 英",
+    "bio": "芸大卒のなんちゃってエンジニア。現在はZaifという暗号通貨取引サイトの中の人。",
+    "github": "Akira-Taniguchi",
+    "twitter": "horobi_gengar"
+  },
+  "nick": {
+    "name": "Nick Doiron",
+    "bio": "Nick is a full-stack web developer and mapmaker. In the past he has developed open source software with One Laptop per Child, Code for America, the Museum of Modern Art. Recently he is adding Arabic and Maldivian language support to OpenStreetMap libraries.",
+    "github": "mapmeld",
+    "twitter": "mapmeld"
+  },
+  "sarah": {
+    "name": "Sarah Saltrick Meyer",
+    "bio": "I'm a native New Yorker who's spent her whole career doing web development for startups in the New York-Boston corridor. I like good websites, reading books, and my cat Petra.",
+    "github": "sarmeyer",
+    "twitter": "meyerini"
+  },
+  "sxywu": {
+    "name": "Shirley Wu",
+    "bio": "Shirley Wu (twitter.com/sxywu) is a freelance software engineer specializing in data visualization.  Her most recent projects include Explore Adventure (explore-adventure.com), An Interactive Visualization of Every Line in Hamilton (polygraph.cool/hamilton), The Political Brain (politics.andyourbrain.com/debate), and Putting Emojis on the President's Face (sxywu.com/obamas).  She is one-half of data sketch|es (datasketch.es) and co-organizer for the Bay Area D3.js User Group as well as the annual d3.unconf.",
+    "github": "sxywu",
+    "twitter": "sxywu"
+  },
+  "emil": {
+    "name": "Emil Bay",
+    "bio": "Emil Bay is a 24 year old hacker from Denmark. He used to study maths, but quickly dropped out to work on software. He has worked at a HPC lab, a agency and a newspaper as data journalist. He is now working on the AgTech startup CommodiTrader.",
+    "github": "emilbayes",
+    "twitter": "emilbayes"
+  },
+  "pika": {
+    "name": "Hikaru Takemura",
+    "bio": "2015年12月に株式会社FOLIOを共同創業しました。FOLIOではJS、趣味ではiOSをメインに開発しています。",
+    "github": "pika-shi",
+    "twitter": "pika_shi"
+  }
+}
