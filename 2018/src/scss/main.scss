@@ -1927,6 +1927,130 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
 }
 
+// CFP
+.cfp {
+  position: relative;
+  padding: 2rem 0 4rem 0;
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    padding-top: percentage(740 / 1920);
+    background-image: url('img/bg-tickets.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  @include over-md {
+    padding: 2rem 1rem 12rem;
+  }
+  @media (min-width: 1920px) {
+    &:before {
+      top: 0;
+      left: auto;
+      max-width: 1920px;
+      background-size: contain;
+    }
+  }
+}
+.cfp-header {
+  margin-bottom: 1.25rem;
+}
+.cfp-title {
+  line-height: normal;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 2rem;
+  color: $color-sunred;
+  @include over-sm {
+  }
+  @include over-md {
+    font-size: 4em;
+  }
+}
+.cfp-note {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  p {
+    margin-top: 1rem;
+  }
+  @include over-md {
+    font-size: 1rem;
+  }
+}
+.cfp-body {
+  @include over-lg {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $width-container;
+  }
+}
+.cfp-action {
+  @include over-lg {
+    display: flex;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    > * {
+      box-sizing: border-box;
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+}
+.cfp-button {
+  margin-top: 1rem;
+  text-align: center;
+  .Button {
+    padding: 1em;
+    font-size: 1em;
+  }
+  @include below-sm {
+    .Button {
+      padding: 1em;
+    }
+  }
+  @include over-md {
+    .Button {
+      padding: 0.5em 1em;
+      font-size: 2em;
+    }
+  }
+}
+
+.cfp-inner {
+  box-sizing: border-box;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: $color-whitefog;
+  border: 4px solid $color-sand;
+  @include below-sm {
+    //margin-left: 0;
+    //margin-right: 0;
+  }
+  @include over-sm {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  @include over-hg {
+    border: 8px solid $color-sand;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    max-width: $width-container;
+  }
+}
+
 // Ticktets
 .tickets {
   position: relative;
