@@ -1,3 +1,15 @@
+<%
+var page = {
+  speakers: [
+    'ben',
+    'anna',
+    'rachel',
+    'daniel',
+    'fedor',
+    'shuhei',
+  ]
+}
+%>
 <%- include('_layout/header') -%>
 
 <%- include('_partial/svg') -%>
@@ -28,6 +40,18 @@
   </div>
 
   <div class="main home-main">
+
+    <div class="home-speakers">
+      <h2 class="home-subhead">Featured Speakers</h2>
+
+      <ul class="speakers-list">
+        <% page.speakers.forEach(function(speaker) { %>
+        <li>
+          <%- include('_partial/speaker', { id: speaker }) -%>
+        </li>
+        <% }); %>
+      </ul>
+    </div>
 
     <div class="home-venues">
       <h2 class="home-subhead">Venue</h2>
