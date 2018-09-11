@@ -18,5 +18,9 @@
   "fedor": {
     "name": "Fedor Indutny",
     "bio": "Clicked \"Fork\" button on a node.js repo few years ago. Node.js TSC emeritus member, software engineer at PayPal."
+  },
+  "shuhei": {
+    "name": "飯塚 修平",
+    "bio": "2014 年より Google 合同会社 UX エンジニア。2017 年東京大学工学系研究科 博士課程修了。博士（工学）。機械学習とウェブの融合がもたらす、新たなユーザ体験の創出に向けて研究および制作活動を行っている。"
   }
 }
