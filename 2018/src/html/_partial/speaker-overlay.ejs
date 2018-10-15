@@ -15,9 +15,22 @@
         <div class="session-speakerAvatar" style="background-image:url(img/speakers/pic-<%= id %>.jpg);"></div>
         <div class="session-speakerProfile">
           <p class="session-speakerName"><%= speaker.name %></p>
-          <div class="session-speakerBio">
-            <p><%- _enableBr(speaker.bio) %></p>
-          </div>
+          <%-
+          if (speaker.biography) {
+            %>
+            <div class="session-speakerBio" lang="en">
+              <p><%- _enableBr(speaker.biography) %></p>
+            </div>
+            <%-
+          }
+          if (speaker['自己紹介']) {
+            %>
+            <div class="session-speakerBio" lang="ja">
+              <p><%- _enableBr(speaker['自己紹介']) %></p>
+            </div>
+            <%-
+          }
+          %>
           <ul class="session-speakerLinks">
             <% if (speaker.twitter) { %>
             <li>
