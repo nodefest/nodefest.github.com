@@ -1,191 +1,205 @@
 {
   "ohhoe": {
+    "氏名": "ホワイト　レイチェル",
     "姓": "ホワイト",
     "名": "レイチェル",
+    "name": "Rachel White",
     "surname": "White",
     "firstName": "Rachel",
     "github": "",
     "twitter": "ohhoe",
-    "biography": "Rachel White is a technologist, artist, and pretend-cyborg who is currently a Developer Experience Lead, member of the Node.js Community Committee, and co-host of the Changelog podcast JSParty. She is interested in new uses for old hardware, useless robots, VR/AR/MR, and bots. She has spoken internationally about Node.js, JavaScript, Creative Coding, IoT, Artificial Intelligence, NodeBots, and hardware. She's a previous artist in residence at Pioneer Works where she worked on a series that visualized what modern cybernetic augmentation could look like with todays hardware and special effects makeup. Her other interests include glitch art, 80s horror, and indie games. Her aesthetic is fog machines, laser lights, and broken VHS tapes.",
-    "name": "Rachel White",
-    "氏名": "ホワイト　レイチェル"
+    "biography": "Rachel White is a technologist, artist, and pretend-cyborg who is currently a Developer Experience Lead, member of the Node.js Community Committee, and co-host of the Changelog podcast JSParty. She is interested in new uses for old hardware, useless robots, VR/AR/MR, and bots. She has spoken internationally about Node.js, JavaScript, Creative Coding, IoT, Artificial Intelligence, NodeBots, and hardware. She's a previous artist in residence at Pioneer Works where she worked on a series that visualized what modern cybernetic augmentation could look like with todays hardware and special effects makeup. Her other interests include glitch art, 80s horror, and indie games. Her aesthetic is fog machines, laser lights, and broken VHS tapes."
   },
   "cjihrig": {
+    "氏名": "イーリッグ　コリン",
     "姓": "イーリッグ",
     "名": "コリン",
+    "name": "Colin Ihrig",
     "surname": "Ihrig",
     "firstName": "Colin",
     "github": "",
     "twitter": "cjihrig",
-    "biography": "Colin Ihrig is a member of the Node.js Core Technical Committee, a libuv collaborator, and a hapi.js core team member. Colin is the author of Pro Node.js for Developers, and co-author of Full Stack JavaScript Development with MEAN.",
-    "name": "Colin Ihrig",
-    "氏名": "イーリッグ　コリン"
+    "biography": "Colin Ihrig is a member of the Node.js Core Technical Committee, a libuv collaborator, and a hapi.js core team member. Colin is the author of Pro Node.js for Developers, and co-author of Full Stack JavaScript Development with MEAN."
   },
   "gioyik": {
+    "氏名": "ゴンゴラ　ジョバンニ",
     "姓": "ゴンゴラ",
     "名": "ジョバンニ",
+    "name": "Giovanny Gongora",
     "surname": "Gongora",
     "firstName": "Giovanny",
     "github": "",
     "twitter": "gioyik",
-    "biography": "Support Engineer at NodeSource. At NodeSource I spend time working on products, giving talks and fixing other companies issues related to Node.js. I created my own lisp based language, a modern CSS framework and a ton of C libs because I enjoy learning and having fun during the process. Previously worked at Mozilla porting Firefox OS to ARM devices, building IoT tools for web developers and speaking about Rust, Node.js and embedded OS development.",
-    "name": "Giovanny Gongora",
-    "氏名": "ゴンゴラ　ジョバンニ"
+    "biography": "Support Engineer at NodeSource. At NodeSource I spend time working on products, giving talks and fixing other companies issues related to Node.js. I created my own lisp based language, a modern CSS framework and a ton of C libs because I enjoy learning and having fun during the process. Previously worked at Mozilla porting Firefox OS to ARM devices, building IoT tools for web developers and speaking about Rust, Node.js and embedded OS development."
   },
   "mafintosh": {
+    "氏名": "ブース　マティアス",
     "姓": "ブース",
     "名": "マティアス",
+    "name": "Mathias Buus",
     "surname": "Buus",
     "firstName": "Mathias",
     "nickName": "mafintosh",
     "github": "",
     "twitter": "mafintosh",
-    "biography": "Mathias Buus is a self taught JavaScript hacker from Copenhagen that has been working with Node.js since the 0.2 days. Mathias likes to work with P2P and distributed systems and is the author of more than 650 modules on npm. He is also the Chief of Research at Beaker leading the technical work on the Dat protocol.",
-    "name": "Mathias Buus",
-    "氏名": "ブース　マティアス"
+    "biography": "Mathias Buus is a self taught JavaScript hacker from Copenhagen that has been working with Node.js since the 0.2 days. Mathias likes to work with P2P and distributed systems and is the author of more than 650 modules on npm. He is also the Chief of Research at Beaker leading the technical work on the Dat protocol."
   },
   "jimpick": {
+    "氏名": "ピック　ジム",
     "姓": "ピック",
     "名": "ジム",
+    "name": "Jim Pick",
     "surname": "Pick",
     "firstName": "Jim",
     "github": "",
     "twitter": "jimpick",
-    "biography": "Jim is a software developer based in Vancouver, Canada. In the past year, he has worked for both the Dat Project and Protocol Labs (IPFS). He is also a co-host of the DatCast podcast. Over the years, Jim has been involved in many open source communities, including the Debian project, the Linux kernel, and Node.js. 簡単な日本語なら話せます。",
-    "name": "Jim Pick",
-    "氏名": "ピック　ジム"
+    "biography": "Jim is a software developer based in Vancouver, Canada. In the past year, he has worked for both the Dat Project and Protocol Labs (IPFS). He is also a co-host of the DatCast podcast. Over the years, Jim has been involved in many open source communities, including the Debian project, the Linux kernel, and Node.js. 簡単な日本語なら話せます。"
   },
   "poledesfetes": {
+    "氏名": "デェ・デュルクハイム　フラディミル",
     "姓": "デェ・デュルクハイム",
     "名": "フラディミル",
+    "name": "Vladimir de Turckheim",
     "surname": "de Turckheim",
     "firstName": "Vladimir",
     "github": "",
     "twitter": "poledesfetes",
-    "biography": "Vladimir is an active contributor of the Node.js project especially in the Security Working Group. He has been leading the ecosystem security initiative in the WG. He has been publishing multiple articles regarding Node.js security and performance.",
-    "name": "Vladimir de Turckheim",
-    "氏名": "デェ・デュルクハイム　フラディミル"
+    "biography": "Vladimir is an active contributor of the Node.js project especially in the Security Working Group. He has been leading the ecosystem security initiative in the WG. He has been publishing multiple articles regarding Node.js security and performance."
   },
   "PalmaSwell": {
+    "氏名": "パルマ　マウリチオ",
     "姓": "パルマ",
     "名": "マウリチオ",
+    "name": "Mauricio Palma",
     "surname": "Palma",
     "firstName": "Mauricio",
     "github": "",
     "twitter": "PalmaSwell",
-    "biography": "A self-educated UI Developer working at SinnerSchrader.  As part of the product engineering team, he works as a proxy between the design and engineering teams. You’ll find him in that sweet spot where art meets science. Using technology to craft user-centric experiences. \n\nHe’s currently also leading the educational program module 'Modern Software Development' at SinnerSchrader. \n\nHe is also the co-founder of Woodlike Ocean and an engaged social entrepreneur.",
-    "name": "Mauricio Palma",
-    "氏名": "パルマ　マウリチオ"
+    "biography": "A self-educated UI Developer working at SinnerSchrader.  As part of the product engineering team, he works as a proxy between the design and engineering teams. You’ll find him in that sweet spot where art meets science. Using technology to craft user-centric experiences. \n\nHe’s currently also leading the educational program module 'Modern Software Development' at SinnerSchrader. \n\nHe is also the co-founder of Woodlike Ocean and an engaged social entrepreneur."
   },
   "leichtgewicht": {
+    "氏名": "ハイデッガー　マルティン",
     "姓": "ハイデッガー",
     "名": "マルティン",
+    "name": "Martin Heidegger",
     "surname": "Heidegger",
     "firstName": "Martin",
     "github": "",
     "twitter": "leichtgewicht",
-    "biography": "Martin has been freelance OSS developer from Austria living in Osaka, Japan for many years. For several years now he focuses on Node.js as his main development platform and is an active member of the Osakan developer community.",
-    "name": "Martin Heidegger",
-    "氏名": "ハイデッガー　マルティン"
+    "biography": "Martin has been freelance OSS developer from Austria living in Osaka, Japan for many years. For several years now he focuses on Node.js as his main development platform and is an active member of the Osakan developer community."
   },
   "sitnikcode": {
+    "氏名": "シットニック　アンドレイ",
     "姓": "シットニック",
     "名": "アンドレイ",
+    "name": "Andrey Sitnik",
     "surname": "Sitnik",
     "firstName": "Andrey",
     "github": "",
     "twitter": "sitnikcode",
-    "biography": "The creator of PostCSS and Autoprefixer. Space enthusiast from Russia.",
-    "name": "Andrey Sitnik",
-    "氏名": "シットニック　アンドレイ"
+    "biography": "The creator of PostCSS and Autoprefixer. Space enthusiast from Russia."
   },
   "addaleax": {
+    "氏名": "ヘニングセン　アンナ",
     "姓": "ヘニングセン",
     "名": "アンナ",
+    "name": "Anna Henningsen",
     "surname": "Henningsen",
     "firstName": "Anna",
     "github": "",
     "twitter": "addaleax",
-    "biography": "Over the last 2 and a half years, Anna has been one of the most active contributors to Node.js core. Currently pursuing a Master’s degree in mathematics in Germany, she is fueled by a passion for Node and its community.",
-    "name": "Anna Henningsen",
-    "氏名": "ヘニングセン　アンナ"
+    "biography": "Over the last 2 and a half years, Anna has been one of the most active contributors to Node.js core. Currently pursuing a Master’s degree in mathematics in Germany, she is fueled by a passion for Node and its community."
   },
   "littledan": {
+    "氏名": "エーレンベルグ　ダニエル",
     "姓": "エーレンベルグ",
     "名": "ダニエル",
+    "name": "Daniel Ehrenberg",
     "surname": "Ehrenberg",
     "firstName": "Daniel",
     "github": "",
     "twitter": "littledan",
-    "biography": "Daniel Ehrenberg is a TC39 delegate who works for Igalia, a Galician free software consultancy. He lives in Catalunya.",
-    "name": "Daniel Ehrenberg",
-    "氏名": "エーレンベルグ　ダニエル"
+    "biography": "Daniel Ehrenberg is a TC39 delegate who works for Igalia, a Galician free software consultancy. He lives in Catalunya."
   },
   "indutny": {
+    "氏名": "インデュトニ　フョダル",
     "姓": "インデュトニ",
     "名": "フョダル",
+    "name": "Fedor Indutny",
     "surname": "Indutny",
     "firstName": "Fedor",
     "github": "",
     "twitter": "indutny",
-    "biography": "Clicked \"Fork\" button on a node.js repo few years ago. Node.js TSC emeritus member, software engineer at PayPal.",
-    "name": "Fedor Indutny",
-    "氏名": "インデュトニ　フョダル"
+    "biography": "Clicked \"Fork\" button on a node.js repo few years ago. Node.js TSC emeritus member, software engineer at PayPal."
   },
   "kgryte": {
+    "氏名": "レーヌス　イーサン",
     "姓": "レーヌス",
     "名": "イーサン",
+    "name": "Athan Reines",
     "surname": "Reines",
     "firstName": "Athan",
     "github": "",
     "twitter": "kgryte",
-    "biography": "Athan Reines is a full-stack engineer and data scientist. He has a PhD in Physics, where he used machine learning and time series analytics to probe biological systems at the nanoscale. He currently works full-time on open source projects to facilitate numerical and scientific computing in Node.js and JavaScript. For his latest open source project, see stdlib, a standard library for Node.js and Javascript: https://github.com/stdlib-js/stdlib.",
-    "name": "Athan Reines",
-    "氏名": "レーヌス　イーサン"
+    "biography": "Athan Reines is a full-stack engineer and data scientist. He has a PhD in Physics, where he used machine learning and time series analytics to probe biological systems at the nanoscale. He currently works full-time on open source projects to facilitate numerical and scientific computing in Node.js and JavaScript. For his latest open source project, see stdlib, a standard library for Node.js and Javascript: https://github.com/stdlib-js/stdlib."
   },
   "tushuhei": {
+    "氏名": "飯塚　修平",
     "姓": "飯塚",
     "名": "修平",
     "自己紹介": "2014 年より Google 合同会社 UX エンジニア。2017 年東京大学工学系研究科 博士課程修了。博士（工学）。機械学習とウェブの融合がもたらす、新たなユーザ体験の創出に向けて研究および制作活動を行っている。",
+    "name": "Shuhei Iitsuka",
     "surname": "Iitsuka",
     "firstName": "Shuhei",
     "github": "",
-    "twitter": "tushuhei",
-    "name": "Shuhei Iitsuka",
-    "氏名": "飯塚　修平"
+    "twitter": "tushuhei"
   },
   "massie_g": {
+    "氏名": "がねこまさし",
+    "姓": "",
+    "名": "",
     "自己紹介": "WebRTC/WebVR のようなブラウザの最新機能をを活かすにはサーバー側の仕組みも不可欠です。手軽にサーバーを構築できる環境として、node.js の世界に足を踏み入れました。\nWebRTC Meetup Tokyo および WebRTC Beginners Tokyo のスタッフ、HTML5Experts.jp にて WebRTC 関連の記事も掲載しています。\nインフォコム株式会社所属\n",
+    "name": "Masashi Ganeko",
     "surname": "Ganeko",
     "firstName": "Masashi",
     "nickName": "がねこまさし",
     "github": "",
-    "twitter": "massie_g",
-    "name": "Masashi Ganeko",
-    "氏名": "がねこまさし"
+    "twitter": "massie_g"
   },
   "sota1235": {
+    "氏名": "杉浦　颯太",
     "姓": "杉浦",
     "名": "颯太",
     "自己紹介": "2017年1月メルカリに入社。最初の 3ヶ月間は US チームに所属し、US メルカリの成長に尽力。2017年4月より JP チームに異動し、昨年7月にリリースされたメルカリチャンネルのチームに立ち上げ当初から参画。Backend エンジニアとして開発を行う。今年の7月より Web の Rearchitect チームに異動。念願のJavaScriptエンジニアとして日々開発中。",
+    "name": "Sota Sugiura",
     "surname": "Sugiura",
     "firstName": "Sota",
     "nickName": "",
     "github": "",
     "twitter": "sota1235",
-    "biography": "Sota Sugiura joined Mercari in January 2017. For his first three months, he belonged to the US team in Tokyo and contributed to the US application’s growth. In April 2017, he moved from Mercari US to Mercari JP, where he helped plan Mercari Channel, which was released last July, from the initial stages. As a backend engineer, he is involved in development. In July of this year, he moved to the Web Re-architecture Team. He spends his days fulfilling his dream of developing as a JavaScript engineer.",
-    "name": "Sota Sugiura",
-    "氏名": "杉浦　颯太"
+    "biography": "Sota Sugiura joined Mercari in January 2017. For his first three months, he belonged to the US team in Tokyo and contributed to the US application’s growth. In April 2017, he moved from Mercari US to Mercari JP, where he helped plan Mercari Channel, which was released last July, from the initial stages. As a backend engineer, he is involved in development. In July of this year, he moved to the Web Re-architecture Team. He spends his days fulfilling his dream of developing as a JavaScript engineer."
   },
   "james_k_nelson": {
+    "氏名": "ネルソン　ジェームス・ケイ",
     "姓": "ネルソン",
     "名": "ジェームス・ケイ",
+    "name": "James K Nelson",
     "surname": "Nelson",
     "firstName": "James K",
     "github": "",
     "twitter": "james_k_nelson",
-    "biography": "Hi! I've been playing with JavaScript for over half my life, and I'm building Frontend Armory to help share what I've learned in the process!",
-    "name": "James K Nelson",
-    "氏名": "ネルソン　ジェームス・ケイ"
+    "biography": "Hi! I've been playing with JavaScript for over half my life, and I'm building Frontend Armory to help share what I've learned in the process!"
+  },
+  "t_wada": {
+    "氏名": "和田　卓人",
+    "姓": "和田",
+    "名": "卓人",
+    "自己紹介": "タワーズ・クエスト株式会社 取締役社長、プログラマ、テスト駆動開発者 学生時代にソフトウェア工学を学び、オブジェクト指向分析/設計に傾倒する。 その後様々な縁に導かれソフトウェアパターンやXP（eXtreme Programming）を実践する人たちと出会い、後のテスト駆動開発（TDD）の誕生を知る。 テスト駆動開発に「完璧主義の呪い（完璧な設計を得るまではコードを書けないし良いシステムも出来ないという強迫観念）」を解いてもらってからは、 文章や講演、ハンズオンイベントなどを通じてテスト駆動開発を広めようと努力している。 『プログラマが知るべき97のこと』（オライリージャパン、2010）監修。『SQLアンチパターン』（オライリージャパン、2013）監訳。『テスト駆動開発』（オーム社、2017）翻訳。",
+    "name": "Takuto Wada",
+    "surname": "Wada",
+    "firstName": "Takuto",
+    "nickName": "",
+    "github": "",
+    "twitter": "t_wada"
   }
 }
