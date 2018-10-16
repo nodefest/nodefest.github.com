@@ -80,7 +80,7 @@ function downloadAndReplaceImage (speaker) {
       return speaker;
     })
     .catch(error => {
-      console.warn(`Error downloading ${speaker.twitter}: ${error.stack}`);
+      console.warn(`Error downloading ${speaker.twitter} from ${speaker.photo}: ${error.stack}`);
       return speaker;
     })
 }
