@@ -201,5 +201,29 @@
     "nickName": "",
     "github": "",
     "twitter": "t_wada"
+  },
+  "vwxyutarooo": {
+    "氏名": "宮崎　優太郎",
+    "姓": "宮崎",
+    "名": "優太郎",
+    "自己紹介": "Vue.js や React を中心に SPA 開発をしています。現在はメルカリという会社のフロントエンドエンジニアです。",
+    "name": "Yutaro Miyazaki",
+    "surname": "Miyazaki",
+    "firstName": "Yutaro",
+    "nickName": "",
+    "github": "",
+    "twitter": "vwxyutarooo"
+  },
+  "lulzneko": {
+    "氏名": "lulzneko",
+    "姓": "",
+    "名": "",
+    "自己紹介": "新しい技術を見つけては試すことが大好きで技術を試すためには目的を選ばない、IT好きで葉巻好き酒好きなだけの猫。\n\nサーバレスはアイデアを素早く形にできるアーキテクチャとして大のお気に入り。何かを作る時もサーバーレスでいけるかを最初に考える。\n\nウェブサービスやアプリの開発だけでなく Raspberry Pi などの電子工作や Slack などのチャットボットなどと、いろいろと手を出す。",
+    "name": "lulzneko",
+    "surname": "",
+    "firstName": "",
+    "nickName": "lulzneko",
+    "github": "",
+    "twitter": "lulzneko"
   }
 }
