@@ -1,0 +1,76 @@
+<%
+var page = {
+  title: 'Schedule'
+}
+%>
+<%- include('_layout/header', page) -%>
+
+<%- include('_partial/svg') -%>
+
+<%- include('_partial/navigation') -%>
+
+<div class="main">
+
+  <section class="page schedule">
+    <h2 class="page-title schedule-title"><%= page.title %></h2>
+
+    <div class="page-body schedule-body">
+      <div class="schedule-section" id="conference">
+        <ul class="schedule-nav">
+          <li>
+            <a href="#conference">Nov 25</a>
+          </li>
+          <li>
+            <a href="#interactive">Nov 26</a>
+          </li>
+        </ul>
+
+        <%- include('_partial/timetable-conference') -%>
+        <div class="schedule-subsection" id="afterparty">
+          <h3 class="schedule-subsectionHead">After Party</h3>
+          <div class="schedule-subsectionText">
+            <p>11/25(土)の夜は、freee様のオフィスでパーティを開催します。<br/>
+              豪華なディナーを楽しみつつ、プログラミングやWeb技術を用いたライブ演奏、DJパフォーマンスをご覧になれます。<br/>
+              ぜひご参加ください！</p>
+            <dl>
+              <dt>会場:</dt>
+              <dd>freee株式会社 (東京都品川区西五反田2-8-1 五反田ファーストビル 9F)</dd>
+              <dt>時刻:</dt>
+              <dd>20:00 〜 23:00</dd>
+              <dt>出演:</dt>
+              <dd>g200kg / らぞーな / サスカッチ & sugai / polamjag / tanitta / stefafafan / amagitakayosi</dd>
+            </dl>
+            <p>パーティ会場への移動に貸切バスを用意しています。<br/>
+              Closing Talkの終了次第バスの搭乗を開始しますので、スタッフの案内に従って移動してください。<br/>
+              （バスの席数には限りがあるため、人数が多い場合は乗車できない場合があります）</p>
+          </div>
+        </div>
+
+      </div>
+
+    <div class="page-body schedule-body">
+      <div class="schedule-section" id="interactive">
+        <ul class="schedule-nav">
+          <li>
+            <a href="#conference">Nov 25</a>
+          </li>
+          <li>
+            <a href="#interactive">Nov 26</a>
+          </li>
+        </ul>
+
+        <%- include('_partial/timetable-interactive') -%>
+      </div>
+      <div class="schedule-note">
+        <p>※ セッションの内容／時間は変更になる可能性があります。</p>
+        <p>※ セッションは日本語・英語で行われます。</p>
+        <p>※ 26日のNode School, Workshopにはご自身のマシンをご用意ください。</p>
+      </div>
+    </div>
+
+
+  </section>
+
+</div>
+
+<%- include('_layout/footer') -%>

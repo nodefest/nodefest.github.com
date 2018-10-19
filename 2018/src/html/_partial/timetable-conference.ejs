@@ -1,28 +1,3 @@
-<%
-var overlaySpeakers = [
-  'joyee',
-  'brn',
-  'rachel',
-  'myles',
-  'jbucaran',
-  'gergely',
-  'fhinkel',
-  'ganeko',
-  'kgryte',
-  'kosamari',
-  'leko',
-  'sia',
-  'yosuke',
-  'sota',
-  'rob',
-  'gil',
-  'horobi',
-  'nick'
-]
-%>
-<% overlaySpeakers.forEach(function(speaker) { %>
-<%- include('../_partial/speaker-overlay', { id: speaker }) -%>
-<% }); %>
 <div class="timetable -conference">
 
   <div class="timetable-caption">

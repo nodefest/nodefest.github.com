@@ -21,6 +21,7 @@ var page = {
       <nav class="navigation">
         <ul class="navigation-list cover-navigationList">
           <li><a href="speakers.html" class="navigation-target">Speakers</a></li>
+          <li><a href="schedules.html" class="navigation-target">Schedules</a></li>
           <li><a href="venues.html" class="navigation-target">Venues</a></li>
           <li><a href="sponsors.html" class="navigation-target">Sponsors</a></li>
         </ul>
@@ -71,6 +72,31 @@ var page = {
         <a href="speakers.html" class="Button -primary">
           Check All Speakers
         </a>
+      </div>
+    </div>
+
+    <!-- Schedule -->
+    <div class="home-schedule">
+      <h2 class="home-subhead">Schedule</h2>
+
+      <div class="home-scheduleBody">
+
+        <div class="home-scheduleSection">
+          <%- include('_partial/timetable-conference') -%>
+
+        </div>
+
+        <div class="home-scheduleSection">
+          <%- include('_partial/timetable-interactive') -%>
+
+        </div>
+
+        <div class="home-scheduleNote">
+          <p>※ セッションの内容／時間は変更になる可能性があります。</p>
+          <p>※ セッションは日本語・英語で行われます。</p>
+          <p>※ 26日のNode School, Workshopにはご自身のマシンをご用意ください。</p>
+        </div>
+
       </div>
     </div>
 
