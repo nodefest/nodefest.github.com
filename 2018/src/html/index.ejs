@@ -1,6 +1,12 @@
 <%
 var page = {
-  speakers: Object.keys(speakers)
+  speakers: [
+    'addaleax',
+    'ohhoe',
+    'littledan',
+    'indutny',
+    'tushuhei',
+  ]
 }
 %>
 <%- include('_layout/header') -%>
@@ -10,6 +16,22 @@ var page = {
 <div class="home">
 
   <div class="cover">
+
+    <header class="header cover-header">
+      <nav class="navigation">
+        <ul class="navigation-list cover-navigationList">
+          <li><a href="speakers.html" class="navigation-target">Speakers</a></li>
+          <li><a href="venues.html" class="navigation-target">Venues</a></li>
+          <li><a href="sponsors.html" class="navigation-target">Sponsors</a></li>
+        </ul>
+        <button class="navigation-button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="navigation-icon"><use xlink:href="#close"></use></svg>
+        </button>
+      </nav>
+      <button class="header-button">
+        <svg xmlns="http://www.w3.org/2000/svg" class="header-icon"><use xlink:href="#nav"></use></svg>
+      </button>
+    </header>
 
     <div class="cover-inner">
 
@@ -41,9 +63,15 @@ var page = {
         <% page.speakers.forEach(function(speaker) { %>
         <li>
           <%- include('_partial/speaker', { id: speaker }) -%>
+          <%- include('_partial/speaker-overlay', { id: speaker }) -%>
         </li>
         <% }); %>
       </ul>
+      <div class="home-speakersAction">
+        <a href="speakers.html" class="Button -primary">
+          Check All Speakers
+        </a>
+      </div>
     </div>
 
     <div class="home-venues">
