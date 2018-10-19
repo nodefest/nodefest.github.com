@@ -63,9 +63,15 @@ var page = {
         <% page.speakers.forEach(function(speaker) { %>
         <li>
           <%- include('_partial/speaker', { id: speaker }) -%>
+          <%- include('_partial/speaker-overlay', { id: speaker }) -%>
         </li>
         <% }); %>
       </ul>
+      <div class="home-speakersAction">
+        <a href="speakers.html" class="Button -primary">
+          Check All Speakers
+        </a>
+      </div>
     </div>
 
     <div class="home-venues">
