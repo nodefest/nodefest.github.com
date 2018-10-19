@@ -16,8 +16,8 @@ var main = location.pathname.split('/2018')[1];
 var scripts = {
   '/':              require('./page/index'),
   '/index.html':    require('./page/index'),
-  // '/venues.html':   require('./page/venues'),
-  // '/speakers.html': require('./page/speakers'),
+  '/venues.html':   require('./page/venues'),
+  '/speakers.html': require('./page/speakers'),
   // '/schedule.html': require('./page/schedule')
 };
 
