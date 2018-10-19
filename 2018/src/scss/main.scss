@@ -1478,11 +1478,17 @@ $hex-image: $hex-canvas * $hex-ratio;
   flex: flex-shrink;
   font-weight: 300;
   font-size: 3em;
+  @media (max-width: 640px) {
+    font-size: 6vw;
+  }
 }
 .confcal-date {
   flex: flex-shrink;
   font-size: 1.2rem;
   line-height: $line-tight;
+  @media (max-width: 640px) {
+    font-size: 6vw;
+  }
 }
 a.confcal-button-inactive {
   cursor: pointer!important;
