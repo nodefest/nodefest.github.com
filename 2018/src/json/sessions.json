@@ -1,2 +1,500 @@
 {
+  "day1": {
+    "head": [
+      "17 S01 (Room A) 144人",
+      "17 S02 (Room B) 144人",
+      "17 S05 (Room E) 54人"
+    ],
+    "body": [
+      {
+        "time": "10:00-10:30",
+        "sessions": [
+          {
+            "speaker": "entrance",
+            "title": "",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "10:30-10:45",
+        "sessions": [
+          {
+            "speaker": "announcement",
+            "title": "",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "10:45-11:15",
+        "sessions": [
+          {
+            "speaker": "Rachel White",
+            "title": "Look What You MIDI Me Do!",
+            "isLT": false
+          },
+          {
+            "speaker": "飯塚修平",
+            "title": "Javascript で機械学習はじめよう",
+            "isLT": false
+          },
+          {
+            "speaker": "Vladimir de Turckheim",
+            "title": "How I made critical code run much faster",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "11:15-11:45",
+        "sessions": [
+          {
+            "speaker": "Anna Henningsen",
+            "title": "Node.js: The Road to Workers",
+            "isLT": false
+          },
+          {
+            "speaker": "がねこまさし",
+            "title": "Node.jsでつくるNode.js ミニインタープリター＆コンパイラー　\nBuild Node.js mini-interpreter and mini-compiler",
+            "isLT": false
+          },
+          {
+            "speaker": "Mauricio Palma",
+            "title": "Accessibility vs latest Web APIs.\nCan’t we just get along?",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "11:45-13:00",
+        "sessions": [
+          {
+            "speaker": "lunch",
+            "title": "",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "13:00-13:30",
+        "sessions": [
+          {
+            "speaker": "Daniel Ehrenberg",
+            "title": "JavaScript Class Features: A case study in TC39",
+            "isLT": false
+          },
+          {
+            "speaker": "Daiki Arai",
+            "title": "Diagnoses your Node.js app",
+            "isLT": false
+          },
+          {
+            "speaker": "Martin Heidegger",
+            "title": "A trillion points with Node.js",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "13:30-14:00",
+        "sessions": [
+          {
+            "speaker": "Fedor Indutny",
+            "title": "Secret talk about vulnerability in Node",
+            "isLT": false
+          },
+          {
+            "speaker": "seya",
+            "title": "State of SEO for SPA",
+            "isLT": false
+          },
+          {
+            "speaker": "James K Nelson",
+            "title": "Navi: painless routing for React",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "14:00-14:15",
+        "sessions": [
+          {
+            "speaker": "break",
+            "title": "",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "14:15-14:45",
+        "sessions": [
+          {
+            "speaker": "Colin Ihrig",
+            "title": "libuv: What's a Unicorn Velociraptor?",
+            "isLT": false
+          },
+          {
+            "speaker": "辻 健人",
+            "title": "React におけるパフォーマンスチューニング",
+            "isLT": false
+          },
+          {
+            "speaker": "Daiki Yokoi",
+            "title": "Node.jsアプリの開発をモダン化するために取り組んできたこと",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "14:45-15:15",
+        "sessions": [
+          {
+            "speaker": "Giovanny Gongora",
+            "title": "Leak Hunting: Finding and debugging\na memory leak in Node.js",
+            "isLT": false
+          },
+          {
+            "speaker": "榊原昌彦",
+            "title": "WebアプリをNativeアプリにする Capacitor が広げるWebの可能性",
+            "isLT": false
+          },
+          {
+            "speaker": "Koji Hirano",
+            "title": "ブロックチェーンアプリケーション開発でのJavascriptの話（仮）",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "15:15-15:30",
+        "sessions": [
+          {
+            "speaker": "break",
+            "title": "",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "15:30-16:00",
+        "sessions": [
+          {
+            "speaker": "Mathias Buus",
+            "title": "Offline-First Colloborative Data Structures",
+            "isLT": false
+          },
+          {
+            "speaker": "鈴木亮太",
+            "title": "実践GraphQL for クライアント側",
+            "isLT": false
+          },
+          {
+            "speaker": "今村謙士",
+            "title": "Angular Universal on Google App Engine",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "16:00-16:30",
+        "sessions": [
+          {
+            "speaker": "Jim Pick",
+            "title": "Visualizing the Decentralized Web",
+            "isLT": false
+          },
+          {
+            "speaker": "飯塚 大貴",
+            "title": "Service Workerを用いたキャッシング戦略 〜Wikiアプリケーションを例に〜",
+            "isLT": false
+          },
+          {
+            "speaker": "宮崎優太郎",
+            "title": "React + Apollo Client (GraphQL) により変化するアプリケーション設計",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "16:30-16:45",
+        "sessions": [
+          {
+            "speaker": "break",
+            "title": "",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "16:45-17:15",
+        "sessions": [
+          {
+            "speaker": "Athan Reines",
+            "title": "Real-Time Machine Learning in JavaScript",
+            "isLT": false
+          },
+          {
+            "speaker": "Masato Ohba",
+            "title": "貢献できるOSSの見つけ方 -完全版- / How to find \"Good First Issues\"",
+            "isLT": false
+          },
+          {
+            "speaker": "N/A",
+            "title": "",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "17:15-17:45",
+        "sessions": [
+          {
+            "speaker": "Stephanie Nemeth",
+            "title": "Haute Codeture",
+            "isLT": false
+          },
+          {
+            "speaker": "lulzneko",
+            "title": "Vue.js/Nuxt.js で 実現できた PWA の リアルタイム動画ラップ・バトル・アプリ",
+            "isLT": false
+          },
+          {
+            "speaker": "N/A",
+            "title": "",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "17:45-18:00",
+        "sessions": [
+          {
+            "speaker": "会場をA/Bに統合",
+            "title": "",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "18:00-18:30",
+        "sessions": [
+          {
+            "speaker": "スポンサートーク",
+            "title": "",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "18:30-18:45",
+        "sessions": [
+          {
+            "speaker": "break",
+            "title": "",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "18:45-19:45",
+        "sessions": [
+          {
+            "talks": [
+              {
+                "speaker": "小田島 太郎",
+                "title": "おまいらちゃんとリソース解放してますか"
+              },
+              {
+                "speaker": "へっぽこまるこ",
+                "title": "食べたいIoT"
+              },
+              {
+                "speaker": "Andrey Sitnik",
+                "title": "What developers can learn from Soviet space program failures"
+              },
+              {
+                "speaker": "Takuto Wada",
+                "title": "power-assert 2"
+              },
+              {
+                "speaker": "Sota Sugiura",
+                "title": "How to choose the best npm library?"
+              }
+            ],
+            "title": "LT (一人10分)",
+            "isLT": true
+          }
+        ]
+      },
+      {
+        "time": "19:45-20:15",
+        "sessions": [
+          {
+            "speaker": "ready for party",
+            "title": "",
+            "isLT": false
+          }
+        ]
+      },
+      {
+        "time": "20:15-22:00",
+        "sessions": [
+          {
+            "speaker": "party",
+            "title": "",
+            "isLT": false
+          }
+        ]
+      }
+    ]
+  },
+  "day2": {
+    "head": [
+      "",
+      "17 S01 (Room A) 144人",
+      "17 S02 (Room B) 144人",
+      "17 S03 (Room C) 48人",
+      "17 S04 (Room D) 48人",
+      "17 S05 (Room E) 54人"
+    ],
+    "body": [
+      [
+        "10:00-10:30",
+        "entrance",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "10:30-11:00",
+        "Node/JS Discussion",
+        "Node School - nobisuke",
+        "Collaboration Space",
+        "Building a Hardware Workshop - Chan Toku",
+        ""
+      ],
+      [
+        "11:00-11:30",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "11:30-12:00",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "12:00-13:00",
+        "Lunch",
+        "",
+        "",
+        "",
+        "Lunch"
+      ],
+      [
+        "13:00-13:30",
+        "Code And Learn - hiroppy",
+        "",
+        "",
+        "",
+        "Building a Compiler Workshop - Rob Howard"
+      ],
+      [
+        "13:30-14:00",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "14:00-14:30",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "14:30-15:00",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "15:00-15:30",
+        "JavaScript TodoMVC Workshop - Yosuke Furukawa",
+        "",
+        "",
+        "React Workshop - Yan Fan",
+        "DAT Workshop - Martin Heidegger"
+      ],
+      [
+        "15:30-16:00",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "16:00-16:30",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "16:30-17:00",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "17:00-17:30",
+        "LT\nServerless in Scala on Node.js:\nGet Fast and Productive - TATSUNO Yasuhiro\n私の生活を変えたHeadless Chrome - 大島光貴\nDeploy TypeScript with CodePipeline in Lambda - 石川 将吾",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "17:30-18:00",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "18:00-18:15",
+        "ready for party",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "18:15-20:00",
+        "Party",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  }
 }
