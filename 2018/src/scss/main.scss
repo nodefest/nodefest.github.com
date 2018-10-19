@@ -277,7 +277,6 @@ $hex-image: $hex-canvas * $hex-ratio;
 }
 .Hex-image {
   width: $hex-image + px;
-  height: $hex-image + px;
   transform: translateX(($hex-image - $hex-canvas)/2 * -1px);
   filter: brightness(75%) grayscale(100%) sepia(50%);
   transition: 300ms filter ease-out;
@@ -1002,7 +1001,6 @@ $hex-image: $hex-canvas * $hex-ratio;
   }
   .Hex-image {
     width: $hex-speakers-image + px;
-    height: $hex-speakers-image + px;
   }
 }
 .speakers-title {}
