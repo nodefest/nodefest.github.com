@@ -21,6 +21,7 @@ var page = {
       <nav class="navigation">
         <ul class="navigation-list cover-navigationList">
           <li><a href="speakers.html" class="navigation-target">Speakers</a></li>
+          <li><a href="#schedules" class="navigation-target">Schedules</a></li>
           <li><a href="venues.html" class="navigation-target">Venues</a></li>
           <li><a href="sponsors.html" class="navigation-target">Sponsors</a></li>
         </ul>
@@ -74,6 +75,8 @@ var page = {
       </div>
     </div>
 
+    <%- include('_partial/schedules') -%>
+
     <div class="home-venues">
       <h2 class="home-subhead">Venue</h2>
       <div class="page-body venue-body">
@@ -82,8 +85,6 @@ var page = {
     </div>
 
   </div>
-
-  <%# include('_partial/cfp') -%>
 
   <div class="home-sponsors">
     <h2 class="home-subhead home-sponsorsSubhead">Sponsors</h2>
