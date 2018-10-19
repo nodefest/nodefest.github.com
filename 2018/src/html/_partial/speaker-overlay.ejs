@@ -52,7 +52,7 @@
       for (const entry of entries) {
         %>
         <div class="session-content">
-          <p class="session-time"><%= momentTz(entry.data.start).tz(entry.timeZone).format('MMM. DD, H:mm') %> - <%= momentTz(entry.data.end).tz('Asia/Tokyo').format('H:mm') %>, <%= entry.room %></p>
+          <p class="session-time"><%= momentTz(entry.data.start).tz(entry.timeZone).format('MMM. DD, H:mm') %> - <%= momentTz(entry.data.end).tz(entry.timeZone).format('H:mm') %>, <%= entry.room %></p>
           <h2 class="session-title"><%= entry.data.summary %></h2>
           <% if (entry.data.description) { %>
           <div class="session-summary">
