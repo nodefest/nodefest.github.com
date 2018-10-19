@@ -1,6 +1,5 @@
 <%
 var speaker = speakers[id];
-var session = sessions[id];
 %>
 <a class="speaker" data-key="<%= id %>">
   <div class="speaker-image">
@@ -16,10 +15,5 @@ var session = sessions[id];
     <p class="speaker-name">
       <%= speaker.name %>
     </p>
-    <% if (session) { %>
-    <p class="speaker-session">
-      <%= session.title %>
-    </p>
-    <% } %>
   </div>
 </a>
