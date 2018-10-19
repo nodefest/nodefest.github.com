@@ -17,10 +17,12 @@ var page = {
 
     <div class="page-body speakers-body">
       <ul class="speakers-list">
-        <% page.speakers.forEach(function(speaker) { %>
+        <%
+        page.speakers.forEach(function(id) {
+          const speaker = speakers[id]
+        %>
         <li>
-          <%- include('_partial/speaker', { id: speaker }) -%>
-          <%- include('_partial/speaker-overlay', { id: speaker }) -%>
+          <%- include('_partial/speaker', { id }) -%>
         </li>
         <% }); %>
       </ul>

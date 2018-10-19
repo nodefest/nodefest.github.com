@@ -1,3 +1,5 @@
+var hashChange = require('./hashChange')
+
 function SScroll(options) {
   options = options || {}
   this.options = {
@@ -8,49 +10,32 @@ function SScroll(options) {
   }
 
   // こっそりhashが書き換えられないならやめておく
-  if (!history.replaceState) { return }
-
-  this._bindEvent()
-  this._checkHash()
+  if (history.replaceState) {
+    hashChange.addListener(this._scrollByHash.bind(this))
+  }
   return this
 }
 
 SScroll.prototype = {
   constructor:   SScroll,
-  _bindEvent:    _bindEvent,
-  _checkHash:    _checkHash,
-  _handleClick:  _handleClick,
   _scrollByHash: _scrollByHash,
   _scrollTo:     _scrollTo,
   _modifyHash:   _modifyHash
-}
-
-function _bindEvent() {
-  var $a = document.getElementsByTagName('a')
-  ;[].forEach.call($a, function(el) {
-    var isInPage = el.origin + el.pathname === location.origin + location.pathname
-    isInPage && el.addEventListener('click', this._handleClick.bind(this), false)
-  }, this)
-}
-
-function _checkHash() {
-  this._scrollByHash(location.hash)
 }
 
 function _modifyHash(hash) {
   history.pushState(null, null, hash)
 }
 
-function _handleClick(ev) {
-  ev.preventDefault()
-  var hash = ev.currentTarget.hash
-  this._scrollByHash(hash)
-  this._modifyHash(hash)
-}
-
 function _scrollByHash(hash) {
   var destEl = document.getElementById(hash.slice(1))
-  destEl && this._scrollTo(0, destEl.getBoundingClientRect().top, this.options)
+  if (!destEl) {
+    return
+  }
+  if (destEl.classList.contains('sscroll-ignore')) {
+    return
+  }
+  this._scrollTo(0, destEl.getBoundingClientRect().top, this.options)
 }
 
 function _scrollTo(x, y, options) {

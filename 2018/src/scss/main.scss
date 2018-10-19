@@ -28,6 +28,9 @@ $line-normal: 1.618;
 $line-tight: 1.618 * 0.8;
 $line-roomy: 1.618 * 1.2;
 
+// Table
+$border-normal: 2px solid $color-sand;
+
 // Width
 $width-header: 96rem;
 $width-container: 64rem;
@@ -1386,130 +1389,156 @@ $hex-image: $hex-canvas * $hex-ratio;
   font-size: 1rem;
   text-align: left;
 }
-
-// Schedules
-.schedule {}
-.schedule-title {}
-.schedule-nav {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
-  > * {
-    a {
-      display: inline;
-      padding: 0.5rem 0.25rem;
-      text-decoration: none;
-      text-transform: uppercase;
-      text-align: center;
-      font-size: 1em;
-      &[href="#workshop"] {
-        &:hover {
-          border-bottom: 4px solid $color-sunflower;
-        }
-      }
-      &[href="#conference"] {
-        &:hover {
-          border-bottom: 4px solid $color-leaf;
-        }
-      }
-    }
-    & + * {
-      border-left: 1px solid $color-creamhaze;
-      margin-left: 1rem;
-      padding-left: 1rem;
-    }
+.confcal {
+  position: relative;
+  font-size: 1rem;
+  max-width: $width-container;
+  background-color: $color-whitefog;
+  user-select: none;
+  th {
+    padding: 0.5rem;
   }
-  @include over-lg {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1rem;
-    max-width: $width-container;
-    a {
-      font-size: 1.5em;
-    }
+  td, th {
+    vertical-align: middle;
+    text-align: left;
+    white-space: nowrap;
+    border-bottom: $border-normal;
   }
-}
-.schedule-body {
-  margin-left: 1rem;
-  margin-right: 1rem;
-  @include over-lg {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: $width-container;
+  table {
+    table-layout: fixed;
   }
-}
-.schedule-section {
-  margin-bottom: 2rem;
-  padding-top: 1rem;
-  @include over-md {
-    margin-top: 4rem;
+  thead th {
+    text-align: center;
+    text-transform: uppercase;
+    border-right: none;
   }
-}
-.schedule-subsection {
-  margin-bottom: 2rem;
+  tbody td {
+    border-right: $border-normal;
+  }
+  thead tr {
+    height: 3rem;
+  }
+  h3 {
+    min-width: 10rem;
+    font-size: 1.2rem;
+    white-space: wrap;
+    display: inline-block;
+    overflow: hidden;
+    line-height: $line-tight;
+    padding: 0;
+    margin: 0;
+  }
   box-sizing: border-box;
-  padding: 1rem;
-  //background-color: $color-sand;
-  @include over-md {
-    padding: 2rem;
-    max-width: $width-container;
-    &:before {
-      top: -1.5rem;
-      left: -1.5rem;
-      border-left-width: 2px;
-      border-top-width: 2px;
-    }
-    &:after {
-      bottom: -1.5rem;
-      right: -1.5rem;
-      border-right-width: 2px;
-      border-bottom-width: 2px;
-    }
-  }
-  @include over-md {
-    margin-top: 2rem;
-  }
+  border: 4px solid $color-sand;
 }
-.schedule-subsectionHead {
-  margin-bottom: 1rem;
+.confcal-text {
+  line-height: $line-tight;
+  display: block;
+  padding: 0.5rem 1.5rem 0.5rem 1rem;
+}
+.confcal-byline {
+  line-height: $line-tight;
+  font-size: 0.875rem;
   letter-spacing: 0.08em;
+  font-weight: 100;
+}
+.confcal-header {
+  margin: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 6rem;
+  border: 4px solid $color-grass;
+}
+.confcal-button {
+  align-self: stretch;
+  flex-direction: column;
+  flex: 1;
+  display: flex;
+  justify-content: center;
   line-height: $line-tight;
   text-align: center;
-  text-transform: uppercase;
-  font-weight: 100;
-  font-size: 2rem;
-  color: $color-inky;
-  @include over-md {
-    font-size: 3em;
-  }
-  @include over-lg {
-    margin-bottom: 2rem;
-  }
-  @include over-hg {
-    font-size: 3em;
+  &.confcal-button-active, &.confcal-button-inactive:hover {
+    text-decoration: none;
+    background-color: $color-grass;
+    color: $color-forest;
+    .confcal-buttonTitle {
+      color: $color-forest;
+    }
   }
 }
-.schedule-subsectionText {
-  font-size: 0.825rem;
-  > * {
-    margin-bottom: 1em;
-  }
-  dl {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  dt {
-    flex: 0 0 3em;
+.confcal-button-active {
+  .confcal-buttonTitle {
     font-weight: 700;
   }
-  dd {
-    flex: 1 0 calc(100% - 3em);
-  }
-  @include over-md {
-    font-size: 1rem;
-  }
+}
+.confcal-buttonTitle {
+  line-height: 0.9em;
+  padding-bottom: 0.2em;
+  flex: flex-shrink;
+  font-weight: 300;
+  font-size: 3em;
+}
+.confcal-date {
+  flex: flex-shrink;
+  font-size: 1.2rem;
+  line-height: $line-tight;
+}
+a.confcal-button-inactive {
+  cursor: pointer!important;
+  text-decoration: none;
+  color: $color-grass;
 }
 
+.confcal-title {
+  font-weight: 700;
+}
+.confcal-slot {
+  background-color: $color-whitefog;
+  height: 3rem; // Same height for all rows to make them scrollable
+}
+.confcal-slot-by {
+  height: 5.2rem;
+}
+.confcal-slot-break {
+  height: 2rem;
+  background-color: $color-creamhaze;
+}
+.confcal-entry-break {
+  background-color: $color-creamhaze;
+}
+.confcal-slots {
+  width: 7rem;
+  left: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  th {
+    border-left: $border-normal;
+    line-height: $line-flat;
+    font-weight: 400;
+    font-size: 0.875rem;
+    text-align: center;
+    vertical-align: middle;
+    background-color: $color-whitefog;
+  }
+}
+.confcal-box {
+  position: absolute;
+  left: 7rem + 2rem;
+  right: 2rem;
+  overflow: scroll;
+}
+.confcal-rooms {
+  margin-bottom: 1rem;
+}
+
+.schedule-body {
+  @include over-lg {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $width-container;
+  }
+}
 .schedule-note {
   margin-top: 0.5rem;
   margin-left: 1rem;
@@ -1521,276 +1550,6 @@ $hex-image: $hex-canvas * $hex-ratio;
     margin-right: auto;
     max-width: $width-container;
     font-size: 0.875rem;
-  }
-}
-
-// Time table
-.timetable {
-  box-sizing: border-box;
-  padding: 1rem;
-  background-color: $color-whitefog;
-  border: 4px solid $color-sand;
-  &.-workshop {
-    &:before {
-      border-left-color: rgba($color-sunflower, 0.5);
-      border-top-color: $color-sunflower;
-    }
-    &:after {
-      border-right-color: $color-sunflower;
-      border-bottom-color: $color-sunflower;
-    }
-    .timetable-caption {
-      background-color: $color-sunflower;
-    }
-  }
-  &.-conference {
-    &:before {
-      border-left-color: $color-leaf;
-      border-top-color: $color-leaf;
-    }
-    &:after {
-      border-right-color: $color-leaf;
-      border-bottom-color: $color-leaf;
-    }
-    .timetable-caption {
-      background-color: $color-leaf;
-    }
-  }
-  @include over-md {
-    border: 8px solid $color-sand;
-    padding: 2rem;
-    max-width: $width-container;
-    &:before {
-      top: -1.5rem;
-      left: -1.5rem;
-      border-left-width: 2px;
-      border-top-width: 2px;
-    }
-    &:after {
-      bottom: -1.5rem;
-      right: -1.5rem;
-      border-right-width: 2px;
-      border-bottom-width: 2px;
-    }
-  }
-}
-.timetable-header,
-.timetable-row {
-  display: flex;
-  font-size: 1rem;
-  @include over-md {
-    font-size: 1.5rem;
-  }
-}
-.timetable-caption {
-  box-sizing: border-box;
-  margin-bottom: 0.25rem;
-  padding: 1rem;
-  background-color: $color-creamhaze;
-  @include over-md {
-    margin-bottom: 1rem;
-  }
-}
-.timetable-notice {
-  padding-top: 0.5rem;
-  padding-bottom:: 0.5rem;
-  font-size: 0.75rem;
-  color: $color-alert;
-  @include over-md {
-    font-size: 0.825rem;
-  }
-}
-.timetable-header {
-  justify-content: center;
-  position: relative;
-  font-size: 1rem;
-  padding: 0.5rem 0;
-  @include over-md {
-    font-size: 1.5rem;
-  }
-}
-.timetable-title {
-  box-sizing: border-box;
-  line-height: $line-flat;
-  letter-spacing: 0.08em;
-  text-align: center;
-  font-weight: 400;
-  color: $color-inky;
-  font-size: 1.25rem;
-  text-align: center;
-  @include over-md {
-    font-size: 3rem;
-  }
-}
-.timetable-venue {
-  font-weight: 200;
-  color: $color-inky;
-  font-size: 0.875rem;
-  @include below-sm {
-    margin-top: 0.5rem;
-  }
-  @include over-md {
-    margin-top: 0.5rem;
-    font-size: 2rem;
-  }
-  @include over-lg {
-    font-size: 2rem;
-  }
-}
-.timetable-day {
-  box-sizing: border-box;
-  margin-top: 0.5rem;
-  line-height: $line-flat;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 1rem;
-  color: $color-inky;
-  @include over-md {
-    margin-top: 0;
-    font-size: 3rem;
-  }
-}
-.timetable-row {
-  flex-direction: column;
-  border-top: 2px solid $color-sand;
-  padding: 0 0 0.5rem 0;
-  @include over-md {
-    flex-direction: row;
-    align-items: center;
-    padding: 0.5rem 1rem;
-  }
-}
-//.timetable-caption,
-.timetable-time {
-  margin-bottom: 0.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  line-height: $line-flat;
-  font-weight: 400;
-  font-size: 0.875rem;
-  text-align: center;
-  background-color: $color-creamhaze;
-  @include over-md {
-    flex: 0 0 8rem;
-    margin-bottom: 0;
-    text-align: left;
-    font-size: 1rem;
-    background-color: transparent;
-  }
-}
-.timetable-section {
-  text-align: center;
-  flex: 1 1 100%;
-  display: flex;
-  > * {
-    flex: 1 1 100%;
-  }
-  @include over-md {
-    flex: 1 1 100%;
-    display: flex;
-    > * {
-      flex: 1 1 100%;
-    }
-  }
-}
-.timetable-content {
-  display: flex;
-  > * {
-    flex: 1 1 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    width: 0;
-    word-wrap: break-word;
-    & + * {
-      margin-top: -10px;
-      margin-bottom: -10px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      border-left: 1px solid $color-creamhaze;
-    }
-  }
-  @include over-md {
-    flex: 1 1 100%;
-    display: flex;
-    > * {
-      flex: 1 1 100%;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      & + * {
-        margin-top: -10px;
-        margin-bottom: -10px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        border-left: 2px solid $color-sand;
-      }
-    }
-  }
-}
-.timetable-session {
-  > a {
-    display: block;
-    text-decoration: underline;
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}
-.timetable-sessionTitle {
-  font-weight: 700;
-  @include over-md {
-  }
-}
-.timetable-sessionSpeaker {
-  font-size: 0.875rem;
-  letter-spacing: 0.08em;
-  font-weight: 100;
-  @include over-md {
-    font-size: 1rem;
-  }
-}
-.timetable-sessionNote {
-  font-size: 0.875rem;
-  letter-spacing: 0.08em;
-  @include over-md {
-    font-size: 1rem;
-  }
-}
-.timetable-sessionNotice {
-  padding-top: 0.5rem;
-  padding-bottom:: 0.5rem;
-  font-size: 0.75rem;
-  color: $color-alert;
-  text-decoration: none;
-}
-
-.timetable-lts {
-  > * {
-    margin-top: 0.5rem;
-  }
-  @include over-md {
-    > * {
-      margin-top: 0.25rem;
-    }
-  }
-}
-.timetable-ltsTitle {
-  font-size: 0.875rem;
-  color: mix($color-inky,white,80%);
-  @include over-md {
-    display: inline-block;
-    font-weight: 700;
-    font-size: 1rem;
-  }
-}
-.timetable-ltsSpeaker {
-  font-size: 0.875rem;
-  letter-spacing: 0.08em;
-  font-weight: 100;
-  @include over-md {
-    display: inline-block;
-    margin-left: 0.5rem;
-    font-size: 1rem;
   }
 }
 // Venue

@@ -1,0 +1,30 @@
+<%
+var page = {
+  title: 'Schedule'
+}
+%>
+<%- include('_layout/header', page) -%>
+
+<%- include('_partial/svg') -%>
+
+<%- include('_partial/navigation') -%>
+
+<div class="main">
+
+  <section class="page schedule">
+    <h2 class="page-title schedule-title"><%= page.title %></h2>
+    <%
+    for (const calName in calendar ) {
+      const cal = calendar[calName]
+      %>
+      <div class="page-body schedule-body sscroll-ignore" id="<%- calName %>">
+      <%- include('_partial/confcal', { cal }) -%>
+      </div>
+      <%
+    }
+    %>
+  </section>
+</div>
+
+
+<%- include('_layout/footer') -%>
