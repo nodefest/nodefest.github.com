@@ -201,5 +201,88 @@
     "nickName": "",
     "github": "",
     "twitter": "t_wada"
+  },
+  "vwxyutarooo": {
+    "氏名": "宮崎　優太郎",
+    "姓": "宮崎",
+    "名": "優太郎",
+    "自己紹介": "Vue.js や React を中心に SPA 開発をしています。現在はメルカリという会社のフロントエンドエンジニアです。",
+    "name": "Yutaro Miyazaki",
+    "surname": "Miyazaki",
+    "firstName": "Yutaro",
+    "nickName": "",
+    "github": "",
+    "twitter": "vwxyutarooo"
+  },
+  "lulzneko": {
+    "氏名": "lulzneko",
+    "姓": "",
+    "名": "",
+    "自己紹介": "新しい技術を見つけては試すことが大好きで技術を試すためには目的を選ばない、IT好きで葉巻好き酒好きなだけの猫。\n\nサーバレスはアイデアを素早く形にできるアーキテクチャとして大のお気に入り。何かを作る時もサーバーレスでいけるかを最初に考える。\n\nウェブサービスやアプリの開発だけでなく Raspberry Pi などの電子工作や Slack などのチャットボットなどと、いろいろと手を出す。",
+    "name": "lulzneko",
+    "surname": "",
+    "firstName": "",
+    "nickName": "lulzneko",
+    "github": "",
+    "twitter": "lulzneko"
+  },
+  "damncabbage": {
+    "氏名": "ハウワード　ロッブ",
+    "姓": "ハウワード",
+    "名": "ロッブ",
+    "name": "Rob Howard",
+    "surname": "Howard",
+    "firstName": "Rob",
+    "nickName": "",
+    "github": "",
+    "twitter": "damncabbage",
+    "biography": "Rob is a web developer who switches between Haskell, JavaScript and PureScript at Ambiata, living in sunny Sydney, Australia. He spends his days immersed in functional programming and static type-checking. Having made a career using and mixing the nice parts from different programming languages, he'd like nothing better than to help different programming communities to learn more from each other.\n\nIf you're a fan of essay-length tweet threads, he's on Twitter (and most other things) as @damncabbage, and posts his talks and articles on http://robhoward.id.au."
+  },
+  "rdlabo": {
+    "氏名": "榊原　昌彦",
+    "姓": "榊原",
+    "名": "昌彦",
+    "自己紹介": "Ionic Japan Users Group 代表、Ionic Framework コントリビューター、一般社団法人リレーションデザイン研究所代表など。著書「Ionicで作るモバイルアプリ制作入門」。",
+    "name": "Masahiko Sakakibara",
+    "surname": "Sakakibara",
+    "firstName": "Masahiko",
+    "github": "",
+    "twitter": "rdlabo"
+  },
+  "sekikazu01": {
+    "氏名": "seya",
+    "姓": "",
+    "名": "",
+    "自己紹介": "株式会社ビズリーチで主にフロントエンドをやっています。最近の趣味は GraphQL です。",
+    "name": "seya",
+    "surname": "",
+    "firstName": "",
+    "nickName": "seya",
+    "github": "",
+    "twitter": "sekikazu01"
+  },
+  "hrnkoji": {
+    "氏名": "Koji Hirano",
+    "姓": "",
+    "名": "",
+    "自己紹介": "合同会社 DMM.com ブロックチェーン研究室 フロントエンドエンジニア",
+    "name": "Koji Hirano",
+    "surname": "Hirano",
+    "firstName": "Koji",
+    "nickName": "",
+    "github": "",
+    "twitter": "hrnkoji"
+  },
+  "tokutoku393": {
+    "氏名": "徳山　由佳",
+    "姓": "徳山",
+    "名": "由佳",
+    "自己紹介": "dotstudio株式会社のエンジニア兼テクニカルライター。現職はハードウェア寄り、前職は自社Web開発，前前職は受託Web開発。ハードウェアのプロトタイプやWeb連携をサクッとやれるのでNode.jsだいしゅき。「Node女学園」をたまに開催。",
+    "name": "Tokuyama Yuka",
+    "surname": "Yuka",
+    "firstName": "Tokuyama",
+    "nickName": "chantoku",
+    "github": "tokutoku393",
+    "twitter": "tokutoku393"
   }
 }
