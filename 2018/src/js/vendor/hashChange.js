@@ -1,7 +1,10 @@
-var hash = document.location.hash
+var hash = document.location.hash || ''
 var listeners = []
 
 function set (newHash) {
+  if (!newHash) {
+    newHash = ''
+  }
   var oldHash = hash
   if (oldHash === newHash) {
     return

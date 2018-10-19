@@ -22,7 +22,7 @@ var page = {
           const speaker = speakers[id]
         %>
         <li>
-          <%- include('_partial/speaker', { id }) -%>
+          <%- include('_partial/speaker', { id, link: false }) -%>
         </li>
         <% }); %>
       </ul>

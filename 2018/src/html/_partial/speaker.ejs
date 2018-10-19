@@ -12,10 +12,15 @@ var entries = Object.values(calendar).reduce((entries, cal) => {
       }
     }
   }
-  return entries
+  return entr
 }, []);
+
+let href = `#speaker-${id}`
+if (link) {
+  href = `speakers.html${href}`
+}
 %>
-<a class="speaker" href="#speaker-<%= id %>">
+<a class="speaker" href="<%= href %>">
   <div class="speaker-image">
     <div class="Hex">
       <div class="Hex-outer">
@@ -34,8 +39,12 @@ var entries = Object.values(calendar).reduce((entries, cal) => {
     </p>
   </div>
 </a>
-<%- include('speaker-overlay', {
-  entries,
-  speaker,
-  overlayId: `speaker-${id}`
-}) -%>
+<%
+if (!link) {
+  %><%- include('speaker-overlay', {
+    entries,
+    speaker,
+    overlayId: `speaker-${id}`
+  }) -%><%
+}
+%>
