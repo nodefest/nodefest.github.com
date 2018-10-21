@@ -77,7 +77,7 @@ async function downloadAndReplaceImage (speaker, formerSpeaker) {
   try {
     fs.accessSync(filePath)
     hasImage = true
-    if (formerSpeaker.photo === speaker.photo || !isEmpty.test(speaker.photo) || !isEmpty.test(formerSpeaker.photo)) {
+    if (formerSpeaker.photo === speaker.photo || isEmpty.test(speaker.photo)) {
       console.log(`Already downloaded: ${speaker.id}'s image!`)
       return
     }
