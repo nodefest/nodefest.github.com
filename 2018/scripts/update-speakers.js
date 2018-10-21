@@ -8,12 +8,19 @@ const sharp = require('sharp');
 
 const DOCS_LINK = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSqG4M_25FXRd5oiGOvueDE4HUnJzI8k-eeTlSHAyzUYvlb_8PN_nLIz3tklnfnDNydsxP7KMPsEOhj/pub?gid=2105877456&single=true&output=csv';
 const JSON_PATH = path.normalize(`${__dirname}/../src/json/speakers.json`);
+const isEmpty = /^(\s*)$/;
 
 (async function main() {
+
+  let previousData = {}
+  try {
+    previousData = JSON.parse(fs.readFileSync(JSON_PATH, 'utf8'))
+  } catch (e) {}
+  
   const speakers = await fetchSpeakers(DOCS_LINK);
 
-  await downloadAndReplaceImages(speakers);
-  Object.values(speakers).forEach(speaker => delete speaker.photo);
+  await downloadAndReplaceImages(speakers, previousData);
+  Object.values(speakers);
 
   fs.writeFileSync(
     JSON_PATH,
@@ -48,13 +55,13 @@ async function fetchSpeakers (url) {
       data.name = data.name || data.nickName || data['氏名'];
       data['氏名'] = data['氏名'] || data.nickName || data.name;
 
-      if (!data.twitter) {
-        console.log(`Received entry without twitter account (O_O): ${data.name}`);
+      if (!data.id) {
+        console.log(`Received entry without id (O_O): ${data.name}`);
         return;
       }
 
-      allSpeakers[data.twitter] = data;
-      console.log(`Received: ${data.twitter}`);
+      allSpeakers[data.id] = data;
+      console.log(`Received: ${data.id}`);
     });
 
     parser.on('end', () => {
@@ -64,19 +71,37 @@ async function fetchSpeakers (url) {
   });
 }
 
-async function downloadAndReplaceImage (speaker) {
-  console.log(`Started downloading: ${speaker.twitter} image`);
-  const res = await fetch(speaker.photo);
-  const imgBuffer = await res.buffer();
-  await sharp(imgBuffer)
-      .resize(512, 512, { fit: 'outside', withoutEnlargement: true })
-      .toFile(`${__dirname}/../img/speakers/pic-${speaker.twitter}.jpg`);
+async function downloadAndReplaceImage (speaker, formerSpeaker) {
+  const filePath = path.normalize(`${__dirname}/../img/speakers/pic-${speaker.id}.jpg`)
+  let hasImage = false
+  try {
+    fs.accessSync(filePath)
+    hasImage = true
+    if (formerSpeaker.photo === speaker.photo || !isEmpty.test(speaker.photo) || !isEmpty.test(formerSpeaker.photo)) {
+      console.log(`Already downloaded: ${speaker.id}'s image!`)
+      return
+    }
+  } catch (e) {}
+  console.log(`Started downloading: ${speaker.id} image`);
+  try {
+    let res = await fetch(speaker.photo);
+    const imgBuffer = await res.buffer();
+      await sharp(imgBuffer)
+          .resize(512, 512, { fit: 'outside', withoutEnlargement: true })
+          .toFile(filePath);
 
-  console.log(`Downloaded: ${speaker.twitter} - file`);
+    console.log(`Downloaded: ${speaker.id} - file`);
+  } catch (e) {
+    if (hasImage) {
+      console.warn(`Downloading of new image for ${speaker.id} didnt work: ${err}`)
+    } else {
+      throw new Error(`Can not download ${speaker.id}'s image: ${err}`)
+    }
+  }
 }
 
-async function downloadAndReplaceImages (speakers) {
-  await Promise.all(Object.values(speakers).map(downloadAndReplaceImage));
+async function downloadAndReplaceImages (speakers, originalData) {
+  await Promise.all(Object.values(speakers).map(speaker => downloadAndReplaceImage(speaker, originalData[speaker.id] || {})));
   console.log('All Images done');
 }
 
