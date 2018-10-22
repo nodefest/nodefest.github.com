@@ -1,0 +1,182 @@
+<%
+const slots = cal.toSlots()
+const slotClasses = new Map()
+
+function hasDetails (entry) {
+  return !!(entry.id && (entry.description || (entry.person && Object.values(speakers).find(speaker => isSpeakerForEntry(entry, speaker)))))
+}
+
+for (const room in cal.rooms) {
+  const entries = cal.rooms[room]
+  for (const entry of entries) {
+    if (hasDetails(entry)) {
+      %><%- include('speaker-overlay', {
+        entries: [{
+          data: entry,
+          timeZone: cal.googleObject.timeZone,
+          room
+        }],
+        speaker: Object.values(speakers).find(speaker => isSpeakerForEntry(entry, speaker)),
+        overlayId: `${cal.title.toLowerCase()}-${entry.id}`
+      }) -%><%
+    }
+  }
+}
+
+function hasBy (slot) {
+  if (slot.entry && slot.entry.person) {
+    return true
+  }
+  if (slot.entries) {
+    for (const slotEntry of Object.values(slot.entries)) {
+      if (slotEntry.person) {
+        return true
+      }
+    }
+  }
+  return false
+}
+
+function hasOnlyBreaks (slot) {
+  if (slot.entry && slot.entry.summary !== null) {
+    return false
+  }
+  if (slot.entries) {
+    for (const slotEntry of Object.values(slot.entries)) {
+      if (slotEntry.summary !== null) {
+        return false
+      }
+    }
+  }
+  return true
+}
+
+let slotNr = 0
+for (const slot of slots.slots) {
+  let classes = ['confcal-slot', `confcal-slot-${slotNr++}`]
+  if (hasBy(slot)) {
+    classes.push('confcal-slot-by')
+  }
+  if (hasOnlyBreaks(slot)) {
+    classes.push('confcal-slot-break')
+  }
+  slotClasses.set(slot, classes.join(' '))
+}
+
+function hh (time) {
+  return momentTz(time).tz(slots.tz).format('H:mm')
+}
+
+function renderRoom (slotEntry) {
+  if (!slotEntry || !slotEntry.summary) {
+    return ''
+  }
+  let entry = `<h3 class="confcal-title">${slotEntry.summary.replace(/\n/mg, '<br>')}</h3>`
+  if (slotEntry.person) {
+    entry = `${entry}
+      <div class="confcal-byline">by <span class="confcal-person">${slotEntry.person}</span></div>`
+  }
+  if (hasDetails(slotEntry)) {
+    return `<a class="confcal-text" href="#${cal.title.toLowerCase()}-${slotEntry.id}">${entry}</a>`
+  }
+  return `<div class="confcal-text">${entry}</div>`
+}
+
+function renderMultiSlot (slotEntry) {
+  if (!slotEntry) {
+    return ''
+  }
+  const classes = ['confcal-entry']
+  let rowSpan = ''
+  if (slotEntry.rowSpan > 1) {
+    rowSpan = ` rowspan="${slotEntry.rowSpan}"`
+  }
+  let colSpan = ''
+  if (slotEntry.colSpan > 1) {
+    colSpan = ` colspan="${slotEntry.colSpan}"`
+  }
+  const entry = renderRoom(slotEntry)
+  if (entry === '') {
+    classes.push('confcal-entry-break')
+  }
+  return `
+  <td ${rowSpan} ${colSpan} class="${classes.join(' ')}">${entry}</td>`
+}
+
+function mergeBreaks (rooms, slotEntries) {
+  let lastEntry
+  let list = []
+  for (const room of rooms) {
+    const slotEntry = slotEntries[room]
+    if (!slotEntry) {
+      lastEntry = null
+      continue
+    }
+    if (lastEntry && lastEntry.summary === null && slotEntry.summary === null) {
+      lastEntry.colSpan++
+      continue
+    }
+    slotEntry.colSpan = 1
+    lastEntry = slotEntry
+    list.push(slotEntry)
+  }
+  return list
+}
+
+function renderSlot (slot) {
+  if (slot.entries) {
+    return mergeBreaks(slots.rooms, slot.entries).map(slotEntry => renderMultiSlot(slotEntry)).join('')
+  }
+  let roomData
+  let roomClass
+  if (slot.entry) {
+    roomData = renderRoom(slot.entry)
+    roomClass = 'confcall-entry-room'
+  } else {
+    roomData = '&nbsp;'
+    roomClass = 'confcall-entry-break'
+  }
+  return `
+    <td colspan="${slots.rooms.length}" class="confcal-entry confcal-entry-fullsize ${roomClass}">${roomData}</td>`
+}
+
+function headerButton (forTitle, date) {
+  if (cal.title === forTitle) {
+    return `<div class="confcal-button confcal-button-active">
+      <span class="confcal-date">${date}</span>
+      <h1 class="confcal-buttonTitle">${forTitle}</h1>
+    </div>`
+  }
+  return `<a class="confcal-button confcal-button-inactive" href="#${forTitle.toLowerCase()}">
+    <span class="confcal-date">${date}</span>
+    <span class="confcal-buttonTitle">${forTitle}</span>
+  </a>`
+}
+
+%><%- `
+<div class="confcal">
+  <div class="confcal-header">
+    ${headerButton('Conference', 'Nov 23')}
+    ${headerButton('Interactive', 'Nov 24')}
+  </div>
+  <div class="confcal-box">
+    <table class="confcal-rooms">
+      <thead>
+        <tr>${slots.rooms.map((room, index) => `
+          <th class="confcal-room confcal-room-${index}">${room}</th>
+        `).join('')}
+        </tr>
+      </thead>
+      <tbody>${slots.slots.map((slot, index) => `
+        <tr class="${slotClasses.get(slot)}">${renderSlot(slot)}</tr>`).join('')}
+      </tbody>
+    </table>
+  </div>
+  <table class="confcal-slots">
+    <thead><tr><td class="confcal-corner">&nbsp;</td></tr></thead>
+    <tbody>${slots.slots.map(slot => `
+      <tr class="${slotClasses.get(slot)}"><th><span class="confcal-time confcal-time-start">${hh(slot.start)}</span> - <span class="confcal-time confcal-time-end">${hh(slot.end)}</span></th></tr>`).join('')}
+    </tbody>
+  </table>
+</div>
+`-%>

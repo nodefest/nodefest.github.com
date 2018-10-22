@@ -10,15 +10,17 @@ require('./vendor/velocity');
 // 幅狭い画面で動くやつ
 require('./module/navigation')();
 // するするスクロール
-new (require('./vendor/sscroll'))();
+require('./vendor/hashChange').initElements();
+var scroll = new (require('./vendor/sscroll'))();
 
-var main = location.pathname.split('/2018')[1];
+
+var main = location.pathname.split('/2018')[1].toLowerCase();
 var scripts = {
   '/':              require('./page/index'),
   '/index.html':    require('./page/index'),
   '/venues.html':   require('./page/venues'),
   '/speakers.html': require('./page/speakers'),
-  // '/schedule.html': require('./page/schedule')
+  '/schedule.html': require('./page/schedule'),
 };
 
-(scripts[main] || function() {})();
+(scripts[main] || function() {})({ scroll: scroll });
