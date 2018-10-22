@@ -91,7 +91,7 @@ async function downloadAndReplaceImage (speaker, formerSpeaker) {
           .toFile(filePath);
 
     console.log(`Downloaded: ${speaker.id} - file`);
-  } catch (e) {
+  } catch (err) {
     if (hasImage) {
       console.warn(`Downloading of new image for ${speaker.id} didnt work: ${err}`)
     } else {
