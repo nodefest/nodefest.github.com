@@ -17,7 +17,9 @@ var entries = Object.values(calendar).reduce((entries, cal) => {
               data: Object.assign(
                 Object.assign({}, subEntry),
                 {
-                  summary: `${entry.summary}: ${subEntry.summary}`
+                  summary: `${entry.summary}: ${subEntry.summary}`,
+                  start: entry.start,
+                  end: entry.end
                 }
               ),
               timeZone: cal.googleObject.timeZone,
