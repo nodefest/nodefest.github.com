@@ -1,8 +1,7 @@
 <%
-  var speaker = speakers[id] || {};
   var _enableBr = function(str) { return str.replace(/\n/g, '<br>'); };
 %>
-<div class="overlay" data-key="<%= id %>">
+<div class="overlay" data-key="<%- overlayId %>">
   <div class="overlay-content">
 
     <button class="overlay-button">
@@ -10,22 +9,38 @@
     </button>
 
     <div class="session">
+      <% if (speaker) { %>
       <div class="session-speaker">
-        <div class="session-speakerAvatar" style="background-image:url(img/speakers/pic-<%= id %>.jpg);"></div>
+        <div class="session-speakerAvatar" style="background-image:url(img/speakers/pic-<%= speaker.id %>.jpg);"></div>
         <div class="session-speakerProfile">
           <p class="session-speakerName"><%= speaker.name %></p>
-          <div class="session-speakerBio">
-            <p><%- _enableBr(speaker.biography || speaker['自己紹介']) %></p>
-          </div>
+          <%
+          if (speaker.biography) {
+            %>
+            <div class="session-speakerBio" lang="en">
+              <p><%- _enableBr(speaker.biography) %></p>
+            </div>
+            <%
+          }
+          if (speaker['自己紹介']) {
+            %>
+            <div class="session-speakerBio" lang="ja">
+              <p><%- _enableBr(speaker['自己紹介']) %></p>
+            </div>
+            <%
+          }
+          %>
           <ul class="session-speakerLinks">
-            <% if (speaker.twitter) { %>
+            <%
+             if (speaker.twitter) { %>
             <li>
               <a href="https://twitter.com/<%= speaker.twitter %>">
                 <img src="img/ico-twitter.svg" width="32" height="32" alt="Twitter: @<%= speaker.twitter %>">
               </a>
             </li>
-            <% } %>
-            <% if (speaker.github) { %>
+            <%
+             }
+             if (speaker.github) { %>
             <li>
               <a href="https://github.com/<%= speaker.github %>">
                 <img src="img/ico-github.svg" width="32" height="32" alt="GitHub: @<%= speaker.github %>">
@@ -35,6 +50,22 @@
           </ul>
         </div>
       </div>
+      <%
+      }
+      for (const entry of entries) {
+        %>
+        <div class="session-content">
+          <p class="session-time"><%= momentTz(entry.data.start).tz(entry.timeZone).format('MMM. DD, H:mm') %> - <%= momentTz(entry.data.end).tz(entry.timeZone).format('H:mm') %>, <%= entry.room %></p>
+          <h2 class="session-title"><%= entry.data.summary %></h2>
+          <% if (entry.data.description) { %>
+          <div class="session-summary">
+            <p><%- _enableBr(entry.data.description) %></p>
+          </div>
+          <% } %>
+        </div>
+        <%
+      }
+      %>
     </div>
 
   </div>

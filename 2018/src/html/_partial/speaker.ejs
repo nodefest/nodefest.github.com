@@ -1,8 +1,26 @@
 <%
 var speaker = speakers[id];
-var session = sessions[id];
+var entries = Object.values(calendar).reduce((entries, cal) => {
+  for (const room in cal.rooms) {
+    for (const entry of cal.rooms[room]) {
+      if (isSpeakerForEntry(entry, speaker)) {
+        entries.push({
+          data: entry,
+          timeZone: cal.googleObject.timeZone,
+          room
+        })
+      }
+    }
+  }
+  return entries;
+}, []);
+
+let href = `#speaker-${id}`
+if (link) {
+  href = `speakers.html${href}`
+}
 %>
-<a class="speaker" data-key="<%= id %>">
+<a class="speaker" href="<%= href %>">
   <div class="speaker-image">
     <div class="Hex">
       <div class="Hex-outer">
@@ -16,10 +34,17 @@ var session = sessions[id];
     <p class="speaker-name">
       <%= speaker.name %>
     </p>
-    <% if (session) { %>
     <p class="speaker-session">
-      <%= session.title %>
+      <%- entries.map(entry => entry.data.summary).join('<br/>') %>
     </p>
-    <% } %>
   </div>
 </a>
+<%
+if (!link) {
+  %><%- include('speaker-overlay', {
+    entries,
+    speaker,
+    overlayId: `speaker-${id}`
+  }) -%><%
+}
+%>

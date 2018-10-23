@@ -1,5 +1,5 @@
 'use strict';
-const fs = require('fs');
+const fse = require('fse');
 const gulp = require('gulp');
 const util = require('gulp-util');
 const plumber = require('gulp-plumber');
@@ -12,12 +12,14 @@ const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const uglify = require('gulp-uglify');
 const del = require('del');
+const confCal = require('conf-cal');
 
 const srcDirs = {
   html: './src/html',
   json: './src/json',
   js:   './src/js',
   css:  './src/scss',
+  confcal: './src/confcal',
 };
 const srcPaths = {
   html: `${srcDirs.html}/*.ejs`,
@@ -26,30 +28,88 @@ const srcPaths = {
 };
 const destPath = './';
 
-const json = fs.readdirSync('./src/json')
-  .map(fName => fName.split('.json')[0])
-  .reduce((cur, acc) => {
-    return Object.assign(cur, { [acc]: require(`./src/json/${acc}.json`) });
-  }, {});
+function readSchedule () {
+  const calendar = {};
+  return fse.readdir(`${__dirname}/src/confcal`)
+    .then(fNames =>
+      fNames.map(fName => {
+        const parts = /^([^.]*).confcal$/.exec(fName);
+        if (parts) {
+          return parts[1];
+        }
+      }).filter(Boolean)
+    )
+    .then(days => Promise.all(days.map(day => {
+      const filePath = `${__dirname}/src/confcal/${day}.confcal`;
+      return fse.readFile(filePath, 'utf8')
+        .then(data => confCal({
+          apiKey: process.env.GOOGLE_API_KEY,
+          cache: `${__dirname}/src/confcal/geo.cache`
+        }, data))
+        .then(data => {
+          data.day = day;
+          return data;
+        })
+        .catch(error => {
+          error.message = `Error reading ${filePath}: ${error.message}`;
+          return Promise.reject(error);
+        })
+    })))
+    .then(cals => {
+      for (const cal of cals.sort((a, b) => a.date > b.date)) {
+        calendar[cal.day] = cal;
+      }
+    })
+    .then(() => calendar)
+}
 
+function readJsonsTo (allData) {
+  return fse.readdir(`${__dirname}/src/json`)
+    .then(fNames => fNames.map(fName => fName.split('.json')[0]))
+    .then(names => Promise.all(
+      names.map(name => {
+        const filePath = `${__dirname}/src/json/${name}.json`;
+        return fse.readFile(filePath, 'utf8')
+          .then(data => JSON.parse(data))
+          .then(data => allData[name] = data)
+          .catch(err => Promise.reject(new Error(`Error reading ${filePath}: ${err.message}`)));
+      })
+    ))
+}
 
-gulp.task('html', () => {
-  return gulp
+function readData () {
+  const allData = {
+    momentTz: require('moment-timezone'),
+    isSpeakerForEntry (entry, speaker) {
+      return entry.person === speaker.name || entry.person === speaker['氏名'] || entry.person === speaker.nickName
+    }
+
+  };
+  return Promise.all([
+      readSchedule().then(calendar => allData.calendar = calendar),
+      readJsonsTo(allData)
+    ])
+    .then(() => allData);
+}
+
+gulp.task('html', () => readData().then(data => new Promise((resolve, reject) => {
+  const stream = gulp
     .src(srcPaths.html)
     .pipe(plumber((error) => {
       util.log(util.colors.red(error.message));
-      gulp.task('html').emit('end');
+      resolve();
     }))
-    .pipe(ejs(json, {}, { ext: '.html' }))
+    .pipe(ejs(data, {}, { ext: '.html' }))
     .pipe(gulp.dest(destPath));
-});
+  stream.on('end', () => resolve());
+})));
 
 gulp.task('css', () => {
   return gulp
     .src(srcPaths.css)
     .pipe(plumber((error) => {
       util.log(util.colors.red(error.message));
-      gulp.task('css').emit('end');
+      // gulp.task('css').emit('end');
     }))
     .pipe(sass({ style: 'expanded' }))
     .pipe(autoprefixer())
@@ -75,6 +135,7 @@ gulp.task('js', () => {
 gulp.task('watch', () => {
   gulp.watch(`${srcDirs.html}/**/*.ejs`,  ['html']);
   gulp.watch(`${srcDirs.json}/**/*.json`, ['html']);
+  gulp.watch(`${srcDirs.confcal}/**/*.confcal`, ['html']);
   gulp.watch(`${srcDirs.css}/**/*.scss`,  ['css']);
   gulp.watch(`${srcDirs.js}/**/*.js`,     ['js']);
 });
