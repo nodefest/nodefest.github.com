@@ -11,7 +11,7 @@
     <div class="session">
       <% if (speaker) { %>
       <div class="session-speaker">
-        <div class="session-speakerAvatar" style="background-image:url(img/speakers/pic-<%= speaker.twitter %>.jpg);"></div>
+        <div class="session-speakerAvatar" style="background-image:url(img/speakers/pic-<%= speaker.id %>.jpg);"></div>
         <div class="session-speakerProfile">
           <p class="session-speakerName"><%= speaker.name %></p>
           <%
@@ -31,12 +31,15 @@
           }
           %>
           <ul class="session-speakerLinks">
+            <%
+             if (speaker.twitter) { %>
             <li>
               <a href="https://twitter.com/<%= speaker.twitter %>">
                 <img src="img/ico-twitter.svg" width="32" height="32" alt="Twitter: @<%= speaker.twitter %>">
               </a>
             </li>
             <%
+             }
              if (speaker.github) { %>
             <li>
               <a href="https://github.com/<%= speaker.github %>">
