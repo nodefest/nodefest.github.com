@@ -10,6 +10,23 @@ var entries = Object.values(calendar).reduce((entries, cal) => {
           room
         })
       }
+      if (entry.entries) {
+        for (let subEntry of entry.entries) {
+          if (isSpeakerForEntry(subEntry, speaker)){
+            subEntry = {
+              data: Object.assign(
+                Object.assign({}, subEntry),
+                {
+                  summary: `${entry.summary}: ${subEntry.summary}`
+                }
+              ),
+              timeZone: cal.googleObject.timeZone,
+              room
+            }
+            entries.push(subEntry)
+          }
+        }
+      }
     }
   }
   return entries;
