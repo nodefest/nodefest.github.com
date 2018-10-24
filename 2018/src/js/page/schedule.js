@@ -73,6 +73,13 @@ module.exports = function() {
     screens.forEach(function (screen) {
       var box = screen.querySelector('.confcal-box')
       screen.addEventListener('mousedown', function (ev) {
+        var node = ev.target;
+        while (node !== document.body && node !== box) {
+          node = node.parentNode;
+        }
+        if (node === document.body) {
+          return; // Not a child
+        }
         moving = {
           mouse: {
             x: ev.pageX,
