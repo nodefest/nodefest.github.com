@@ -61,7 +61,27 @@
           <div class="session-summary">
             <p><%- _enableBr(entry.data.description) %></p>
           </div>
-          <% } %>
+          <%
+            }
+            if (entry.data.entries) {
+              %>
+          <ul>
+            <%
+              for (const subEntry of entry.data.entries) {
+                const speaker = Object.values(speakers).find(speaker => isSpeakerForEntry(subEntry, speaker))
+                let byLine = ''
+                if (speaker) {
+                  byLine = ` by <a href="speakers.html#speaker-${speaker.id}">${speaker.name}</a>`
+                } else if (subEntry.person) {
+                  byLine = ` by ${subEntry.person}`
+                }
+                %><li>"<%= subEntry.summary %>"<%- byLine %></li><%
+              }
+            %>
+          </ul>
+              <%
+            }
+          %>
         </div>
         <%
       }

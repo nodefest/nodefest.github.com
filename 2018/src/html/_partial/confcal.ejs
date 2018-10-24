@@ -3,7 +3,13 @@ const slots = cal.toSlots()
 const slotClasses = new Map()
 
 function hasDetails (entry) {
-  return !!(entry.id && (entry.description || (entry.person && Object.values(speakers).find(speaker => isSpeakerForEntry(entry, speaker)))))
+  return !!(
+    entry.id
+    && (
+      entry.description
+      || (entry.person && Object.values(speakers).find(speaker => isSpeakerForEntry(entry, speaker))
+      || entry.entries
+    )))
 }
 
 for (const room in cal.rooms) {
