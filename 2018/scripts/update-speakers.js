@@ -50,6 +50,7 @@ async function fetchSpeakers (url) {
     parser.on('data', data => {
       data = removeEmptyFields(data);
       data = removeKeySecondLine(data);
+      data = trimFields(data);
 
       data.name = combineNames(data.firstName, data.surname, ' ');
       data['氏名'] = combineNames(data['姓'], data['名'], '　');
@@ -104,6 +105,17 @@ async function downloadAndReplaceImage (speaker, formerSpeaker) {
 async function downloadAndReplaceImages (speakers, originalData) {
   await Promise.all(Object.values(speakers).map(speaker => downloadAndReplaceImage(speaker, originalData[speaker.id] || {})));
   console.log('All Images done');
+}
+
+function trimFields (data) {
+  for (const key in data) {
+    let value = data[key];
+    if (typeof value === 'string') {
+      value = value.trim().replace(/^ ‏+| ‏+$/ig, '');
+      data[key] = value;
+    }
+  }
+  return data;
 }
 
 function removeEmptyFields (data) {
