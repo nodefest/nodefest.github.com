@@ -1,7 +1,77 @@
 <%
+function getFirstEntry (speaker) {
+  for (const calName in calendar) {
+    const cal = calendar[calName]
+    let roomNr = 0
+    for (const room in cal.rooms) {
+      roomNr += 1
+      const entries = cal.rooms[room]
+      for (const entry of entries) {
+        if (isSpeakerForEntry(entry, speaker)) {
+          return {
+            speaker,
+            roomNr,
+            calName,
+            entry
+          }
+        }
+        if (entry.entries) {
+          let entryNr = 0
+          for (const subEntry of entry.entries) {
+            entryNr += 1
+            if (isSpeakerForEntry(subEntry, speaker)) {
+              return {
+                speaker,
+                roomNr,
+                calName,
+                entry,
+                subEntry,
+                entryNr
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  return null
+}
+function sortSpeakers (a, b) {
+  
+  // Featured speakers first
+  if (a.featured && b.featured) return a.index - b.index // Keep sorting as is for featured speakers
+  if (a.featured && !b.featured) return -1
+  if (b.featured && !a.featured) return 1
+
+  const aEntry = getFirstEntry(a)
+  const bEntry = getFirstEntry(b)
+  
+  // Speakers without entry go to the bottom
+  if (aEntry && !bEntry) return -1
+  if (bEntry && !aEntry) return 1
+  if (!aEntry && !bEntry) return 0 // Can't check at greater detail
+
+  // Speakers in lightning talk sessions go to bottom
+  if (!aEntry.subEntry && bEntry.subEntry) return -1
+  if (!bEntry.subEntry && aEntry.subEntry) return 1
+
+  if (aEntry.entry !== bEntry.entry) {
+    const aTime = new Date(aEntry.entry.start)
+    const bTime = new Date(bEntry.entry.start)
+    if (aTime.getTime() !== bTime.getTime()) {
+      // Earlier first!
+      return aTime.getTime() - bTime.getTime()
+    }
+    // First room first.
+    return aEntry.roomNr - bEntry.roomNr
+  }
+
+  // Lightning talks that are in same entry
+  return aEntry.entryNr - bEntry.entryNr
+}
 var page = {
   title: 'Speakers',
-  speakers: Object.keys(speakers),
+  speakers: Object.values(speakers).map((speaker, index) => Object.assign(Object.assign({}, speaker), {index})).sort(sortSpeakers)
 }
 %>
 <%- include('_layout/header', page) -%>
@@ -18,13 +88,14 @@ var page = {
     <div class="page-body speakers-body">
       <ul class="speakers-list">
         <%
-        page.speakers.forEach(function(id) {
-          const speaker = speakers[id]
-        %>
+          for (const speaker of page.speakers) {
+          %>
         <li>
-          <%- include('_partial/speaker', { id, link: false }) -%>
+          <%- include('_partial/speaker', { id: speaker.id, link: false }) -%>
         </li>
-        <% }); %>
+        <%
+          }
+          %>
       </ul>
     </div>
 
