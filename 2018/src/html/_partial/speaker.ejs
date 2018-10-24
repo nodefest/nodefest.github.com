@@ -34,6 +34,10 @@ var entries = Object.values(calendar).reduce((entries, cal) => {
   return entries;
 }, []);
 
+if (entries.length === 0) {
+  console.log(`Warning: no entry found for speaker ${id}`)
+}
+
 let href = `#speaker-${id}`
 if (link) {
   href = `speakers.html${href}`
