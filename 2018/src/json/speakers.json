@@ -535,5 +535,19 @@
     "github": "",
     "twitter": "hepppook",
     "photo": "https://pbs.twimg.com/profile_images/1033740679216685056/5zgwBx83_400x400.jpg"
+  },
+  "yanarchy": {
+    "氏名": "Yan Fan",
+    "姓": "",
+    "名": "",
+    "id": "yanarchy",
+    "name": "Yan Fan",
+    "surname": "Fan",
+    "firstName": "Yan",
+    "nickName": "",
+    "github": "yanarchy",
+    "twitter": "yanarchy",
+    "photo": "https://raw.githubusercontent.com/nodefest/nodefest.github.com/908b232ae5a8d5a93c106f43c2774208b3923766/2018/img/speakers/pic-yanarchy.jpg",
+    "biography": "Yan Fan is co-founder and CTO of Code Chrysalis. Prior, she has worked as an engineer at Ayasdi, an instructor for a prep programming course run by a leading Silicon Valley bootcamp, and CTO of a coding bootcamp in Jordan. Before she embarked on her career in tech, she worked in commodities trading. She holds degrees in Economics and Arabic from Dartmouth College."
   }
 }
