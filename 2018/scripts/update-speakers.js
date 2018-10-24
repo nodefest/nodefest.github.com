@@ -109,8 +109,11 @@ async function downloadAndReplaceImages (speakers, originalData) {
 function removeEmptyFields (data) {
   for (const key in data) {
     const value = data[key];
-    if (/^\s*-\s*$/.test(value)) {
+    if (/^(\s*-\s*|FALSE)$/.test(value)) {
       delete data[key];
+    }
+    if (/^TRUE$/.test(value)) {
+      data[key] = true;
     }
   }
   return data;

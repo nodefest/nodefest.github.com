@@ -1,4 +1,18 @@
 {
+  "addaleax": {
+    "氏名": "ヘニングセン　アンナ",
+    "姓": "ヘニングセン",
+    "名": "アンナ",
+    "id": "addaleax",
+    "name": "Anna Henningsen",
+    "surname": "Henningsen",
+    "firstName": "Anna",
+    "github": "",
+    "twitter": "addaleax",
+    "photo": "https://addaleax.net/addaleax.jpg",
+    "biography": "Over the last 2 and a half years, Anna has been one of the most active contributors to Node.js core. Currently pursuing a Master’s degree in mathematics in Germany, she is fueled by a passion for Node and its community.",
+    "featured": true
+  },
   "ohhoe": {
     "氏名": "ホワイト　レイチェル",
     "姓": "ホワイト",
@@ -10,7 +24,50 @@
     "github": "",
     "twitter": "ohhoe",
     "photo": "https://pbs.twimg.com/profile_images/952990113696542720/lzkzYJGR_400x400.jpg",
-    "biography": "Rachel White is a technologist, artist, and pretend-cyborg who is currently a Developer Experience Lead, member of the Node.js Community Committee, and co-host of the Changelog podcast JSParty. She is interested in new uses for old hardware, useless robots, VR/AR/MR, and bots. She has spoken internationally about Node.js, JavaScript, Creative Coding, IoT, Artificial Intelligence, NodeBots, and hardware. She's a previous artist in residence at Pioneer Works where she worked on a series that visualized what modern cybernetic augmentation could look like with todays hardware and special effects makeup. Her other interests include glitch art, 80s horror, and indie games. Her aesthetic is fog machines, laser lights, and broken VHS tapes."
+    "biography": "Rachel White is a technologist, artist, and pretend-cyborg who is currently a Developer Experience Lead, member of the Node.js Community Committee, and co-host of the Changelog podcast JSParty. She is interested in new uses for old hardware, useless robots, VR/AR/MR, and bots. She has spoken internationally about Node.js, JavaScript, Creative Coding, IoT, Artificial Intelligence, NodeBots, and hardware. She's a previous artist in residence at Pioneer Works where she worked on a series that visualized what modern cybernetic augmentation could look like with todays hardware and special effects makeup. Her other interests include glitch art, 80s horror, and indie games. Her aesthetic is fog machines, laser lights, and broken VHS tapes.",
+    "featured": true
+  },
+  "littledan": {
+    "氏名": "エーレンベルグ　ダニエル",
+    "姓": "エーレンベルグ",
+    "名": "ダニエル",
+    "id": "littledan",
+    "name": "Daniel Ehrenberg",
+    "surname": "Ehrenberg",
+    "firstName": "Daniel",
+    "github": "",
+    "twitter": "littledan",
+    "photo": "https://pbs.twimg.com/profile_images/946010891706929152/Shd7izoA_400x400.jpg",
+    "biography": "Daniel Ehrenberg is a TC39 delegate who works for Igalia, a Galician free software consultancy. He lives in Catalunya.",
+    "featured": true
+  },
+  "indutny": {
+    "氏名": "インデュトニ　フョダル",
+    "姓": "インデュトニ",
+    "名": "フョダル",
+    "id": "indutny",
+    "name": "Fedor Indutny",
+    "surname": "Indutny",
+    "firstName": "Fedor",
+    "github": "",
+    "twitter": "indutny",
+    "photo": "https://avatars1.githubusercontent.com/u/238531?s=400&u=602d6ef0c20b1aaded9562d805368f5cab9bb601&v=4",
+    "biography": "Clicked \"Fork\" button on a node.js repo few years ago. Node.js TSC emeritus member, software engineer at PayPal.",
+    "featured": true
+  },
+  "tushuhei": {
+    "氏名": "飯塚　修平",
+    "姓": "飯塚",
+    "名": "修平",
+    "id": "tushuhei",
+    "自己紹介": "2014 年より Google 合同会社 UX エンジニア。2017 年東京大学工学系研究科 博士課程修了。博士（工学）。機械学習とウェブの融合がもたらす、新たなユーザ体験の創出に向けて研究および制作活動を行っている。",
+    "name": "Shuhei Iitsuka",
+    "surname": "Iitsuka",
+    "firstName": "Shuhei",
+    "github": "",
+    "twitter": "tushuhei",
+    "photo": "https://tushuhei.com/static/images/shuhei.png",
+    "featured": true
   },
   "cjihrig": {
     "氏名": "イーリッグ　コリン",
@@ -131,45 +188,6 @@
     "photo": "https://manabiya.tech/images/presenter/yasuhiro_tatsuno.jpg",
     "biography": "A developer and product manager at Kurusugawa Computer Inc., working on SaaS for machine learning."
   },
-  "addaleax": {
-    "氏名": "ヘニングセン　アンナ",
-    "姓": "ヘニングセン",
-    "名": "アンナ",
-    "id": "addaleax",
-    "name": "Anna Henningsen",
-    "surname": "Henningsen",
-    "firstName": "Anna",
-    "github": "",
-    "twitter": "addaleax",
-    "photo": "https://addaleax.net/addaleax.jpg",
-    "biography": "Over the last 2 and a half years, Anna has been one of the most active contributors to Node.js core. Currently pursuing a Master’s degree in mathematics in Germany, she is fueled by a passion for Node and its community."
-  },
-  "littledan": {
-    "氏名": "エーレンベルグ　ダニエル",
-    "姓": "エーレンベルグ",
-    "名": "ダニエル",
-    "id": "littledan",
-    "name": "Daniel Ehrenberg",
-    "surname": "Ehrenberg",
-    "firstName": "Daniel",
-    "github": "",
-    "twitter": "littledan",
-    "photo": "https://pbs.twimg.com/profile_images/946010891706929152/Shd7izoA_400x400.jpg",
-    "biography": "Daniel Ehrenberg is a TC39 delegate who works for Igalia, a Galician free software consultancy. He lives in Catalunya."
-  },
-  "indutny": {
-    "氏名": "インデュトニ　フョダル",
-    "姓": "インデュトニ",
-    "名": "フョダル",
-    "id": "indutny",
-    "name": "Fedor Indutny",
-    "surname": "Indutny",
-    "firstName": "Fedor",
-    "github": "",
-    "twitter": "indutny",
-    "photo": "https://avatars1.githubusercontent.com/u/238531?s=400&u=602d6ef0c20b1aaded9562d805368f5cab9bb601&v=4",
-    "biography": "Clicked \"Fork\" button on a node.js repo few years ago. Node.js TSC emeritus member, software engineer at PayPal."
-  },
   "kgryte": {
     "氏名": "レーヌス　イーサン",
     "姓": "レーヌス",
@@ -182,19 +200,6 @@
     "twitter": "kgryte",
     "photo": "https://avatars3.githubusercontent.com/u/2643044",
     "biography": "Athan Reines is a full-stack engineer and data scientist. He has a PhD in Physics, where he used machine learning and time series analytics to probe biological systems at the nanoscale. He currently works full-time on open source projects to facilitate numerical and scientific computing in Node.js and JavaScript. For his latest open source project, see stdlib, a standard library for Node.js and Javascript: https://github.com/stdlib-js/stdlib."
-  },
-  "tushuhei": {
-    "氏名": "飯塚　修平",
-    "姓": "飯塚",
-    "名": "修平",
-    "id": "tushuhei",
-    "自己紹介": "2014 年より Google 合同会社 UX エンジニア。2017 年東京大学工学系研究科 博士課程修了。博士（工学）。機械学習とウェブの融合がもたらす、新たなユーザ体験の創出に向けて研究および制作活動を行っている。",
-    "name": "Shuhei Iitsuka",
-    "surname": "Iitsuka",
-    "firstName": "Shuhei",
-    "github": "",
-    "twitter": "tushuhei",
-    "photo": "https://tushuhei.com/static/images/shuhei.png"
   },
   "massie_g": {
     "氏名": "がねこまさし",
