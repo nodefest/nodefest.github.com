@@ -199,7 +199,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     また、キャッシュされたリソース間でのバージョンの不整合を防ぐ仕組みや、これらの有効期限の設定など、\
     運用において気を付けている事柄と対応についても共有します。
 
-16:45-17:15 貢献できるOSSの見つけ方 -完全版- by Masato Ohba
+16:45-17:15 貢献できるOSSの見つけ方 -完結編- by Masato Ohba
 
     OSSに貢献したいがどこから始めればよいのかわからない方、およびTypeScript, React, Next.js, GraphQL\
     などを用いたweb applicationの開発に関心のある方。
