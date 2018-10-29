@@ -562,5 +562,20 @@
     "github": "",
     "twitter": "sin_ikkyu",
     "photo": "https://drive.google.com/uc?export=download&id=0B5DyL39llQvoN1AycmNJZkM3bm9Ca1ZPSHMyUWk3aF84YTVB"
+  },
+  "sannekalkman": {
+    "氏名": "カルクマン　サンナ",
+    "姓": "カルクマン",
+    "名": "サンナ",
+    "id": "sannekalkman",
+    "name": "Sanne Kalkman",
+    "surname": "Kalkman",
+    "firstName": "Sanne",
+    "nickName": "",
+    "github": "sannek",
+    "twitter": "sannekalkman",
+    "photo": "https://avatars3.githubusercontent.com/u/17491062?s=400&v=4",
+    "biography": "Sanne is a former teacher turned (mostly self-taught) software engineer. Currently, she works at TELE2 in Amsterdam, building applications that help her colleagues keep an eye on anything network-related. When she's not coding, you'll probably find her either 25 browser tabs deep into a new CS topic, or behind her sewing machine.",
+    "featured": ""
   }
 }
