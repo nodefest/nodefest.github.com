@@ -41,20 +41,6 @@
     "biography": "Daniel Ehrenberg is a TC39 delegate who works for Igalia, a Galician free software consultancy. He lives in Catalunya.",
     "featured": true
   },
-  "indutny": {
-    "氏名": "インデュトニ　フョダル",
-    "姓": "インデュトニ",
-    "名": "フョダル",
-    "id": "indutny",
-    "name": "Fedor Indutny",
-    "surname": "Indutny",
-    "firstName": "Fedor",
-    "github": "",
-    "twitter": "indutny",
-    "photo": "https://avatars1.githubusercontent.com/u/238531?s=400&u=602d6ef0c20b1aaded9562d805368f5cab9bb601&v=4",
-    "biography": "Clicked \"Fork\" button on a node.js repo few years ago. Node.js TSC emeritus member, software engineer at PayPal.",
-    "featured": true
-  },
   "tushuhei": {
     "氏名": "飯塚　修平",
     "姓": "飯塚",
