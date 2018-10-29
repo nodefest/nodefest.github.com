@@ -563,15 +563,16 @@
     "photo": "https://avatars3.githubusercontent.com/u/11780786",
     "氏名": "Daiki Arai"
   },
-  "sinikkyu": {
-    "氏名": "石川 将吾",
+  "sin_ikkyu": {
+    "氏名": "石川　将吾",
     "姓": "石川",
     "名": "将吾",
-    "id": "sinikkyu",
-    "自己紹介": "AWSに関わるDevOpsを担当しており、TypeScriptを用いたLambdaの開発、CodePipelineを利用したデプロイフローの構築をしております。",
+    "id": "sin_ikkyu",
+    "自己紹介": "AWSに関わるDevOpsを担当しておりTypeScriptを用いたLambdaの開発、CodePipelineを利用した、デプロイフローの構築をしております。",
     "name": "Shogo Ishikawa",
     "surname": "Ishikawa",
     "firstName": "Shogo",
+    "nickName": "ishikawa",
     "github": "",
     "twitter": "sin_ikkyu",
     "photo": "https://drive.google.com/uc?export=download&id=0B5DyL39llQvoN1AycmNJZkM3bm9Ca1ZPSHMyUWk3aF84YTVB"
