@@ -43,8 +43,10 @@ module.exports = {
       isInPage && el.addEventListener('click', _handleClick.bind(this), false)
     }, this)
   },
-  addListener: function (onChange) {
+  addListener: function (onChange, skipImmediateTrigger) {
     listeners.push(onChange)
-    onChange(hash)
+    if (!skipImmediateTrigger) {
+      onChange(hash)
+    }
   }
 }

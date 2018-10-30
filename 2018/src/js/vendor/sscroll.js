@@ -11,7 +11,7 @@ function SScroll(options) {
 
   // こっそりhashが書き換えられないならやめておく
   if (history.replaceState) {
-    hashChange.addListener(this._scrollByHash.bind(this))
+    hashChange.addListener(this._scrollByHash.bind(this), true)
   }
   return this
 }
@@ -28,7 +28,11 @@ function _modifyHash(hash) {
 }
 
 function _scrollByHash(hash) {
-  var destEl = document.getElementById(hash.slice(1))
+  hash = hash.slice(1).trim()
+  if (hash === '') {
+    return
+  }
+  var destEl = document.getElementById(hash)
   if (!destEl) {
     return
   }
