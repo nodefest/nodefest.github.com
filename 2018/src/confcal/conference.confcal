@@ -36,10 +36,23 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     we'll see how these proposals work in detail, the process that got them there, and how you can get
     involved. TC39 needs your help to build features like these and the future of JavaScript.
 
-13:30-14:00 Secret talk about vulnerability in Node by Fedor Indutny
+13:30-14:00 Who Takes Out Your Trash by Sanne Kalkmann
 
-    I'd like to share the methodology of discovering the vulnerability that isn't yet fixed, but was
-    recently reported.
+    In our daily development lives, most of us don’t have to worry about unused objects gathering cobwebs
+    and filling up the memory. All we need to know is that our language has a garbage collector that
+    just comes by and makes our trash disappear. Somehow it figures out what should stay and what can go,
+    our program can keep going without running out of space, and we don’t have to do a thing.
+
+    It is not in fact magic that takes care of the garbage, and this talk will show you how it’s done.
+    First, we’ll explore how two of the most common garbage collection algorithms, reference counting and
+    tracing, figure out what is ready to be collected. Next, we’ll see how we could get the garbage truck
+    out of the way faster by using a generational algorithm, and finally we’ll have a brief look at how
+    Python’s garbage collection works.
+
+    This friendly introduction to taking out the trash gives an overview of important aspects of garbage
+    collection algorithms. It is specifically meant to be accessible developers of all levels and you’ll
+    walk away with an understanding of and appreciation for all the hard work that goes on behind the
+    scenes.
 
 14:15-14:45 libuv: What's a Unicorn Velociraptor? by Colin Ihrig
 

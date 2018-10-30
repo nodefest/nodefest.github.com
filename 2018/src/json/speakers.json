@@ -41,20 +41,6 @@
     "biography": "Daniel Ehrenberg is a TC39 delegate who works for Igalia, a Galician free software consultancy. He lives in Catalunya.",
     "featured": true
   },
-  "indutny": {
-    "氏名": "インデュトニ　フョダル",
-    "姓": "インデュトニ",
-    "名": "フョダル",
-    "id": "indutny",
-    "name": "Fedor Indutny",
-    "surname": "Indutny",
-    "firstName": "Fedor",
-    "github": "",
-    "twitter": "indutny",
-    "photo": "https://avatars1.githubusercontent.com/u/238531?s=400&u=602d6ef0c20b1aaded9562d805368f5cab9bb601&v=4",
-    "biography": "Clicked \"Fork\" button on a node.js repo few years ago. Node.js TSC emeritus member, software engineer at PayPal.",
-    "featured": true
-  },
   "tushuhei": {
     "氏名": "飯塚　修平",
     "姓": "飯塚",
@@ -576,5 +562,20 @@
     "github": "",
     "twitter": "sin_ikkyu",
     "photo": "https://drive.google.com/uc?export=download&id=0B5DyL39llQvoN1AycmNJZkM3bm9Ca1ZPSHMyUWk3aF84YTVB"
+  },
+  "sannekalkman": {
+    "氏名": "カルクマン　サンナ",
+    "姓": "カルクマン",
+    "名": "サンナ",
+    "id": "sannekalkman",
+    "name": "Sanne Kalkman",
+    "surname": "Kalkman",
+    "firstName": "Sanne",
+    "nickName": "",
+    "github": "sannek",
+    "twitter": "sannekalkman",
+    "photo": "https://raw.githubusercontent.com/nodefest/nodefest.github.com/03cf8c45b5fc570563fa8c9ea79c68812cf6dd0e/2018/img/speakers/pic-sannekalkman.jpg",
+    "biography": "Sanne is a former teacher turned (mostly self-taught) software engineer. Currently, she works at TELE2 in Amsterdam, building applications that help her colleagues keep an eye on anything network-related. When she's not coding, you'll probably find her either 25 browser tabs deep into a new CS topic, or behind her sewing machine.",
+    "featured": ""
   }
 }
