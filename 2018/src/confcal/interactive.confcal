@@ -24,7 +24,34 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 15:00-17:00 Workshop: React by Yan Fan
 
 [Room E]
-10:30-11:40 Workshop: DAT Workshop by Martin Heidegger
+10:30-11:40 ワークショップ: 分散ストレージ体験 by ハイデッガー　マルティン
+
+    [English follows]
+
+    このワークショップは日本語で行われます。
+
+    分散ストレージは面白いの新しいデータ保存とデータ使う方法です。DAT というプロジェクトはよく出来ている
+    Node.js 版があるので私たちは DAT を使って分散ストレージを体験できます。このワークショップでは DAT
+    ストレージを用意します。ツールとコードを使いながら分散ストレージの面白いところを体験します。
+
+    ゴール：
+    ・ DAT を使ってホームページを作って公開する。
+    ・ その ホームページを Beaker Browser で見てやりとりする。
+    ・ Node.js を使って DAT をリモートプロゼスでやりとりする。
+
+    (This workshop will be presented in japanese. All documents will be provided
+    in english/japanese and you can ask questions in english.)
+
+    Distributed storages are a new and exciting way to store and work with data.
+    The DAT project has an excellent Node.js implementation which allows us try and
+    practice this new technology. In this short workshop we will learn to create a DAT
+    storage both with tools and code and work with the data stored in a DAT storage.
+
+    Study goals:
+    ・ Creating and sharing a DAT homepage
+    ・ Interact with that Homepage in Beaker-Browser
+    ・ Processing DAT remotely using Node.js
+
 13:00-15:00 Workshop: Building a Small Compiler in JavaScript by Rob Howard
 
     "Compilers" are usually-mysterious things that a lot of us actually use and rely on from day to day, eg. the JavaScript V8 compiler, the TypeScript compiler, or the Clang+LLVM compilers. Digging into how these work can be satisfying (like sleuthing a good puzzle); but some of the ways we implement them can appear in other forms, such as when validating user input, transforming big structures, or when separating side-effects from business logic.
