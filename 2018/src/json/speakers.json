@@ -66,7 +66,8 @@
     "github": "",
     "twitter": "cjihrig",
     "photo": "https://avatars2.githubusercontent.com/u/2512748",
-    "biography": "Colin Ihrig is a member of the Node.js Core Technical Committee, a libuv collaborator, and a hapi.js core team member. Colin is the author of Pro Node.js for Developers, and co-author of Full Stack JavaScript Development with MEAN."
+    "biography": "Colin Ihrig is a member of the Node.js Core Technical Committee, a libuv collaborator, and a hapi.js core team member. Colin is the author of Pro Node.js for Developers, and co-author of Full Stack JavaScript Development with MEAN.",
+    "featured": true
   },
   "gioyik": {
     "氏名": "ゴンゴラ　ジョバンニ",
@@ -93,7 +94,8 @@
     "github": "",
     "twitter": "mafintosh",
     "photo": "https://github.com/mafintosh.png",
-    "biography": "Mathias Buus is a self taught JavaScript hacker from Copenhagen that has been working with Node.js since the 0.2 days. Mathias likes to work with P2P and distributed systems and is the author of more than 650 modules on npm. He is also the Chief of Research at Beaker leading the technical work on the Dat protocol."
+    "biography": "Mathias Buus is a self taught JavaScript hacker from Copenhagen that has been working with Node.js since the 0.2 days. Mathias likes to work with P2P and distributed systems and is the author of more than 650 modules on npm. He is also the Chief of Research at Beaker leading the technical work on the Dat protocol.",
+    "featured": true
   },
   "jimpick": {
     "氏名": "ピック　ジム",
