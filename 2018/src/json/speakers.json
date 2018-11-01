@@ -579,5 +579,20 @@
     "photo": "https://raw.githubusercontent.com/nodefest/nodefest.github.com/03cf8c45b5fc570563fa8c9ea79c68812cf6dd0e/2018/img/speakers/pic-sannekalkman.jpg",
     "biography": "Sanne is a former teacher turned (mostly self-taught) software engineer. Currently, she works at TELE2 in Amsterdam, building applications that help her colleagues keep an eye on anything network-related. When she's not coding, you'll probably find her either 25 browser tabs deep into a new CS topic, or behind her sewing machine.",
     "featured": ""
+  },
+  "sangwhanmoon": {
+    "氏名": "ムーン　サンワン",
+    "姓": "ムーン",
+    "名": "サンワン",
+    "id": "sangwhanmoon",
+    "name": "Sangwhan Moon",
+    "surname": "Moon",
+    "firstName": "Sangwhan",
+    "nickName": "",
+    "github": "cynthia",
+    "twitter": "sangwhanmoon",
+    "photo": "https://pbs.twimg.com/profile_images/896656760638906368/BDnJz08D_400x400.jpg",
+    "biography": "Sangwhan is the director of engineering at a startup specializing in computer vision called Odd Concepts. He has more than 10 years of experience in web standards, and has been an editor of multiple W3C standards and now is an elected member of the W3C Technical Architecture Group.",
+    "featured": ""
   }
 }
