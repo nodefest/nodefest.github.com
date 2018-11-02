@@ -201,8 +201,14 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 
 16:45-17:15 貢献できるOSSの見つけ方 -完結編- by Masato Ohba
 
-    OSSに貢献したいがどこから始めればよいのかわからない方、およびTypeScript, React, Next.js, GraphQL\
-    などを用いたweb applicationの開発に関心のある方。
+    Contributionを期待するメンテナと、OSSに貢献したいがどうしたら良いかわからない大多数のエンジニア。
+    この期待値のギャップと、貢献したいが誰が何を求めているのかわからないという情報の不透明性を\
+    Contribution Accessibilityと本トークでは呼び、解決したい課題と位置づけます。
+    Contribution Accessibilityを解消する一助として開発した goofi というツールをご紹介します。
+    また、同ツールはTypeScript, React, Next.js, GraphQLなどのJavaScript周辺技術を使用しているため、\
+    これらの技術要素の選定理由や使用しての所感・考察もお伝えします。
+    上記課題はスピーカー自身が感じていたものでもありました。そのためスピーカー自身が同ツールを利用して実際に\
+    contributionすることができるようになった例についてお話します。
 
 17:15-17:45 Vue.js/Nuxt.js で 実現できた PWA の リアルタイム動画ラップ・バトル・アプリ by lulzneko
 
