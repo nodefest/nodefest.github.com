@@ -30,14 +30,14 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 
     このワークショップは日本語で行われます。
 
-    分散ストレージは面白いの新しいデータ保存とデータ使う方法です。DAT というプロジェクトはよく出来ている
-    Node.js 版があるので私たちは DAT を使って分散ストレージを体験できます。このワークショップでは DAT
-    ストレージを用意します。ツールとコードを使いながら分散ストレージの面白いところを体験します。
+    分散ストレージは面白いの新しいデータ保存とデータ使う方法です。DAT というプロジェクトには、よくできた
+    Node.js 版があります。この DAT を使って分散ストレージを体験することができます。このワークショップでは
+    DATストレージを用意しています。ツールとコードを使いながら分散ストレージの面白いところを体験してください。
 
-    ゴール：
-    ・ DAT を使ってホームページを作って公開する。
-    ・ その ホームページを Beaker Browser で見てやりとりする。
-    ・ Node.js を使って DAT をリモートプロゼスでやりとりする。
+    ワークショップのゴール：
+    ・ DAT を使ってホームページを作り、公開する。
+    ・ その ホームページを Beaker Browser で見てみる。
+    ・ Node.js を使って DAT をリモートプロセスする。
 
     (This workshop will be presented in japanese. All documents will be provided
     in english/japanese and you can ask questions in english.)
