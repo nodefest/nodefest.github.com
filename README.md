@@ -2,6 +2,8 @@
 
 これは、[東京Node学園祭公式サイト](https://nodefest.jp)のリポジトリです。
 
+**Pull Requestはもちろん歓迎です**が、[Slackのチャンネル](https://iojs-jp-slack.herokuapp.com/) でお声がけいただけるとさらに嬉しいです！
+
 ## リポジトリの歩き方
 
 - GitHub Pagesでホストされています
@@ -26,5 +28,3 @@ cssやjsの開発は、各年度ディレクトリ配下で個別に用意して
     - feat/201x-foo
   - patch/foo
 ```
-
-Pull Requestはもちろん歓迎ですが、[Slackのチャンネル](https://iojs-jp-slack.herokuapp.com/)でお声がけいただけるとさらに嬉しいです！
