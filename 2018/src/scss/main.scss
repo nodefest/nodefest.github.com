@@ -1006,6 +1006,8 @@ $hex-image: $hex-canvas * $hex-ratio;
   .Hex-image {
     width: $hex-speakers-image + px;
     height: $hex-speakers-image + px;
+    object-fit: cover;
+    object-position: top;
   }
 }
 .speakers-title {}
