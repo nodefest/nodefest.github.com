@@ -1,5 +1,5 @@
 <%
-  var _enableBr = function(str) { return str.replace(/\n/g, '<br>'); };
+  var _enableBr = function(str) { return str.replace(/\n{2}|\n(?=\u30FB)/g, '<br>'); };
 %>
 <div class="overlay" data-key="<%- overlayId %>">
   <div class="overlay-content">
