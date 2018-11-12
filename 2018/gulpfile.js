@@ -13,6 +13,7 @@ const buffer = require('vinyl-buffer');
 const uglify = require('gulp-uglify');
 const del = require('del');
 const confCal = require('conf-cal');
+const confCalToCSV = require('conf-cal/toTranslationCSV')
 
 const srcDirs = {
   html: './src/html',
@@ -48,7 +49,14 @@ function readSchedule () {
         }, data))
         .then(data => {
           data.day = day;
-          return data;
+          Object.values(data.entries).forEach(entry => {
+            entry.timeZone = data.googleObject.timeZone;
+            if (entry.parentId) {
+              entry.parent = data.entries[entry.parentId]
+            }
+          })
+          return fse.writeFile(`${__dirname}/src/confcal/${day}.csv`, confCalToCSV(data))
+            .then(() => data);
         })
         .catch(error => {
           error.message = `Error reading ${filePath}: ${error.message}`;
@@ -79,11 +87,7 @@ function readJsonsTo (allData) {
 
 function readData () {
   const allData = {
-    momentTz: require('moment-timezone'),
-    isSpeakerForEntry (entry, speaker) {
-      return entry.person === speaker.name || entry.person === speaker['氏名'] || entry.person === speaker.nickName
-    }
-
+    momentTz: require('moment-timezone')
   };
   return Promise.all([
       readSchedule().then(calendar => allData.calendar = calendar),

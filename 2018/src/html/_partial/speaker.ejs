@@ -1,37 +1,7 @@
 <%
 var speaker = speakers[id];
 var entries = Object.values(calendar).reduce((entries, cal) => {
-  for (const room in cal.rooms) {
-    for (const entry of cal.rooms[room]) {
-      if (isSpeakerForEntry(entry, speaker)) {
-        entries.push({
-          data: entry,
-          timeZone: cal.googleObject.timeZone,
-          room
-        })
-      }
-      if (entry.entries) {
-        for (let subEntry of entry.entries) {
-          if (isSpeakerForEntry(subEntry, speaker)){
-            subEntry = {
-              data: Object.assign(
-                Object.assign({}, subEntry),
-                {
-                  summary: `${entry.summary}: ${subEntry.summary}`,
-                  start: entry.start,
-                  end: entry.end
-                }
-              ),
-              timeZone: cal.googleObject.timeZone,
-              room
-            }
-            entries.push(subEntry)
-          }
-        }
-      }
-    }
-  }
-  return entries;
+  return entries.concat(cal.persons[id] || []);
 }, []);
 
 if (entries.length === 0) {
@@ -58,7 +28,7 @@ if (link) {
       <%= speaker.name %>
     </p>
     <p class="speaker-session">
-      <%- entries.map(entry => entry.data.summary).join('<br/>') %>
+      <%- entries.map(entry => entry.summary).join('<br/>') %>
     </p>
   </div>
 </a>

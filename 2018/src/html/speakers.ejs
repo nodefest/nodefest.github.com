@@ -7,7 +7,7 @@ function getFirstEntry (speaker) {
       roomNr += 1
       const entries = cal.rooms[room]
       for (const entry of entries) {
-        if (isSpeakerForEntry(entry, speaker)) {
+        if (entry.person === speaker.id) {
           return {
             speaker,
             roomNr,
@@ -19,7 +19,7 @@ function getFirstEntry (speaker) {
           let entryNr = 0
           for (const subEntry of entry.entries) {
             entryNr += 1
-            if (isSpeakerForEntry(subEntry, speaker)) {
+            if (subEntry.person === speaker.id) {
               return {
                 speaker,
                 roomNr,

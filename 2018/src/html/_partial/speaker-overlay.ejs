@@ -13,7 +13,7 @@
       <div class="session-speaker">
         <div class="session-speakerAvatar" style="background-image:url(img/speakers/pic-<%= speaker.id %>.jpg);"></div>
         <div class="session-speakerProfile">
-          <p class="session-speakerName"><%= speaker.name %></p>
+          <p class="session-speakerName"><%- speaker.name %></p>
           <%
           if (speaker.biography) {
             %>
@@ -53,27 +53,28 @@
       <%
       }
       for (const entry of entries) {
+        const timeEntry = entry.parent || entry
         %>
         <div class="session-content">
-          <p class="session-time"><%= momentTz(entry.data.start).tz(entry.timeZone).format('MMM. DD, H:mm') %> - <%= momentTz(entry.data.end).tz(entry.timeZone).format('H:mm') %>, <%= entry.room %></p>
-          <h2 class="session-title"><%= entry.data.summary %></h2>
-          <% if (entry.data.description) { %>
+          <p class="session-time"><%= momentTz(timeEntry.start).tz(timeEntry.timeZone).format('MMM. DD, H:mm') %> - <%= momentTz(timeEntry.end).tz(timeEntry.timeZone).format('H:mm') %>, <%= timeEntry.room %></p>
+          <h2 class="session-title"><%= (entry.parent ? `${entry.parent.summary}: ` : '') + entry.summary %></h2>
+          <% if (entry.description) { %>
           <div class="session-summary">
-            <p><%- _enableBr(entry.data.description) %></p>
+            <p><%- _enableBr(entry.description) %></p>
           </div>
           <%
             }
-            if (entry.data.entries) {
+            if (entry.entries) {
               %>
           <ul>
             <%
-              for (const subEntry of entry.data.entries) {
-                const speaker = Object.values(speakers).find(speaker => isSpeakerForEntry(subEntry, speaker))
+              for (const subEntry of entry.entries) {
+                const subSpeaker = speakers[subEntry.person]
                 let byLine = ''
-                if (speaker) {
-                  byLine = ` by <a href="speakers.html#speaker-${speaker.id}">${speaker.name}</a>`
+                if (subSpeaker) {
+                  byLine = ` by <a href="speakers.html#speaker-${subSpeaker.id}">${subSpeaker.name}</a>`
                 } else if (subEntry.person) {
-                  byLine = ` by ${subEntry.person}`
+                  byLine = ` by @${subEntry.person}`
                 }
                 %><li>"<%= subEntry.summary %>"<%- byLine %></li><%
               }
