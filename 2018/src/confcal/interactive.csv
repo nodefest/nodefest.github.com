@@ -1,0 +1,49 @@
+Doors Open - summary,Doors Open
+Node/JS Discussion - summary,Node/JS Discussion
+Node/W3C Discussion - summary,Node/W3C Discussion
+#1 by about_hiroppy - summary,Code And Learn
+Lightning Talks - summary,Lightning Talks
+After Party - summary,After Party
+#1 by n0bisuke - summary,NodeSchool
+Collaboration Space - summary,Collaboration Space
+#1 by tokutoku393 - summary,Workshop: Building hardware
+#1 by yanarchy - summary,Workshop: React
+#1 by leichtgewicht - summary,ワークショップ: 分散ストレージ体験
+#1 by leichtgewicht - description,"(English follows)
+
+このワークショップは日本語で行われます。
+
+分散ストレージはデータ保存やデータ利用に関するエキサイティングで新たな方法です。DAT プロジェクトのよく出来た
+Node.js 版ライブラリを利用することで、私たちは DAT を使った分散ストレージを体験できます。このワークショップではツールやコードを用いた
+DAT ストレージ作成を通じて、分散ストレージの面白さを学ぶことができます。
+
+ワークショップのゴール：
+・ DAT を使ってホームページを作って公開する。
+・ その ホームページを Beaker Browser で見てやりとりする。
+・ Node.js を使って DAT をリモートプロセスでやりとりする。
+
+(This workshop will be presented in japanese. All documents will be provided
+in english/japanese and you can ask questions in english.)
+
+Distributed storages are a new and exciting way to store and work with data.
+The DAT project has an excellent Node.js implementation which allows us try and
+practice this new technology. In this short workshop we will learn to create a DAT
+storage both with tools and code and work with the data stored in a DAT storage.
+
+Study goals:
+・ Creating and sharing a DAT homepage
+・ Interact with that Homepage in Beaker-Browser
+・ Processing DAT remotely using Node.js"
+#1 by damncabbage - summary,Workshop: Building a Small Compiler in JavaScript
+#1 by damncabbage - description,"""Compilers"" are usually-mysterious things that a lot of us actually use and rely on from day to day, eg. the JavaScript V8 compiler, the TypeScript compiler, or the Clang+LLVM compilers. Digging into how these work can be satisfying (like sleuthing a good puzzle); but some of the ways we implement them can appear in other forms, such as when validating user input, transforming big structures, or when separating side-effects from business logic.
+
+This workshop is comprised of a short talk that introduces the main parts of a compiler, followed by an at-your-own-pace tour through building a little one of your own. We'll start with a simple language that compiles to JavaScript.
+
+We'll be stepping through:
+
+・ Tokenising (taking a string and turning it into a bunch of symbols),
+・ Token Parsing (taking these symbols and turning it into a representation of a program), and
+・ Code Generating (taking that representation and turning it into, in this case, JavaScript).
+
+This workshop is for people who are already somewhat familiar with JavaScript (just the language itself, not any particular library or framework). To get started, you only need the workshop git repository (TBA), a Terminal / Console, Node.js 8+, and a text editor of your choice."
+#1 by yosuke_furukawa - summary,Workshop: JavaScript TodoMVC

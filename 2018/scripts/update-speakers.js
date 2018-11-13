@@ -52,11 +52,6 @@ async function fetchSpeakers (url) {
       data = removeKeySecondLine(data);
       data = trimFields(data);
 
-      data.name = combineNames(data.firstName, data.surname, ' ');
-      data['氏名'] = combineNames(data['姓'], data['名'], '　');
-      data.name = data.name || data.nickName || data['氏名'];
-      data['氏名'] = data['氏名'] || data.nickName || data.name;
-
       if (!data.id) {
         console.log(`Received entry without id (O_O): ${data.name}`);
         return;

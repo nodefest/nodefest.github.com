@@ -7,22 +7,19 @@ function hasDetails (entry) {
     entry.id
     && (
       entry.description
-      || (entry.person && Object.values(speakers).find(speaker => isSpeakerForEntry(entry, speaker))
+      || speakers[entry.person]
       || entry.entries
-    )))
+    ))
 }
 
 for (const room in cal.rooms) {
   const entries = cal.rooms[room]
   for (const entry of entries) {
+    const speaker = speakers[entry.person]
     if (hasDetails(entry)) {
       %><%- include('speaker-overlay', {
-        entries: [{
-          data: entry,
-          timeZone: cal.googleObject.timeZone,
-          room
-        }],
-        speaker: Object.values(speakers).find(speaker => isSpeakerForEntry(entry, speaker)),
+        entries: [entry],
+        speaker,
         overlayId: `${cal.title.toLowerCase()}-${entry.id}`
       }) -%><%
     }
@@ -79,8 +76,9 @@ function renderRoom (slotEntry) {
   }
   let entry = `<h3 class="confcal-title">${slotEntry.summary.replace(/\n/mg, '<br>')}</h3>`
   if (slotEntry.person) {
+    const speaker = speakers[slotEntry.person]
     entry = `${entry}
-      <div class="confcal-byline">by <span class="confcal-person">${slotEntry.person}</span></div>`
+      <div class="confcal-byline">by <span class="confcal-person">${speaker && speaker.name || `@${slotEntry.person}`}</span></div>`
   }
   if (hasDetails(slotEntry)) {
     return `<a class="confcal-text" href="#${cal.title.toLowerCase()}-${slotEntry.id}">${entry}</a>`

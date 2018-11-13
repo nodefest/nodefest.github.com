@@ -5,7 +5,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 [Room A]
 10:00-10:30 Doors Open
 10:30-10:45 Keynote
-10:45-11:15 Look What You MIDI Me Do! by Rachel White
+10:45-11:15 Look What You MIDI Me Do! by ohhoe in en
 
     Who loves pushing buttons? You? And you over there?
     And the person behind you? Oh wait, everyone loves it?!!?
@@ -21,7 +21,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     No problem when you throw a little Web Audio API in the mix.
     Let’s dive in and find out how!
 
-11:15-11:45 Node.js: The Road to Workers by Anna Henningsen
+11:15-11:45 Node.js: The Road to Workers by addaleax in en
 
     Workers, and threading support in general, have been one of the most frequently requested features
     for Node.js over the last years. Finally, the finishing line is in sight and we’re pretty excited
@@ -29,14 +29,14 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     use cases & alternatives, our roadmap, and the technical and social challenges that we had to
     overcome to make it happen!
 
-13:00-13:30 JavaScript Class Features: A case study in TC39 by Daniel Ehrenberg
+13:00-13:30 JavaScript Class Features: A case study in TC39 by littledan in en
 
     ES6 classes were intentionally minimal, containing only public method declarations. Now, TC39 is
     considering adding several other features to classes: private, fields, and decorators. In this talk,
     we'll see how these proposals work in detail, the process that got them there, and how you can get
     involved. TC39 needs your help to build features like these and the future of JavaScript.
 
-13:30-14:00 Who Takes Out Your Trash by Sanne Kalkman
+13:30-14:00 Who Takes Out Your Trash by sannekalkman in en
 
     In our daily development lives, most of us don’t have to worry about unused objects gathering cobwebs
     and filling up the memory. All we need to know is that our language has a garbage collector that
@@ -54,13 +54,13 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     walk away with an understanding of and appreciation for all the hard work that goes on behind the
     scenes.
 
-14:15-14:45 libuv: What's a Unicorn Velociraptor? by Colin Ihrig
+14:15-14:45 libuv: What's a Unicorn Velociraptor? by cjihrig in en
 
     libuv is what gives Node.js its event loop and cross-platform asynchronous I/O capabilities. This
     talk explains what libuv is all about, and how it's used by Node.js. This talk also looks at recent
     development efforts in the libuv project.
 
-14:45-15:15 Leak Hunting: Finding and debugging a memory leak in Node.js by Giovanny Gongora
+14:45-15:15 Leak Hunting: Finding and debugging a memory leak in Node.js by gioyik in en
 
     Performance metrics? Response time higher? Memory leak? We would walk through different memory leak
     situations to identify and analyze patterns that produce an increase of memory, CPU usage, and the
@@ -72,7 +72,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     fixing the memory leak. In the end, we'll be able to use the right tools to monitor, understand,
     and debug the memory consumption of a Node.js application on time.
 
-15:30-16:00 Offline-First Collaborative Data Structures by Mathias Buus
+15:30-16:00 Offline-First Collaborative Data Structures by mafintosh in en
 
     The web is growing bigger and bigger every year.
     With the increasing rise of the mobile internet and
@@ -92,7 +92,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     Expect modules you can use *today* to start implmenting great
     collaborative offline-first applications and plenty of demos.
 
-16:00-16:30 Visualizing the Decentralized Web by Jim Pick
+16:00-16:30 Visualizing the Decentralized Web by jimpick in en
 
     A new generation of peer-to-peer protocols is coming to the web. Browsers will soon be able
     to talk directly to each other, without the need for centralized servers. Exciting new
@@ -100,7 +100,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     personal data. See how IPFS, the Dat Protocol and Secure Scuttlebutt work. This presentation
     will use interactive visualizations to demonstrate core concepts.
 
-16:45-17:15 Real-Time Machine Learning in JavaScript by Athan Reines
+16:45-17:15 Real-Time Machine Learning in JavaScript by kgryte in en
 
     Real-time machine learning is a collection of statistical methods to obtain insights from
     continuous data streams. In this talk, I'll provide an overview of real-time machine learning
@@ -110,7 +110,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     computations. I'll conclude by discussing best-practices and common pitfalls encountered when
     using machine learning algorithms within JavaScript environments.
 
-17:15-17:45 Haute Codeture by Stephanie Nemeth
+17:15-17:45 Haute Codeture by stephaniecodes in en
 
     What if, instead going for practicality, we used IoT to create fleeting moments of interaction
     and beauty? What would happen if others could interact with my clothing via a web app? I’ll
@@ -119,15 +119,15 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 
 18:00-18:30 Sponsor Talk
 18:30-19:45 Lightning Talks
-    - おまいらちゃんとリソース解放してますか by 小田島　太郎
-    - 食べたいIoT by へっぽこまるこ
-    - What developers can learn from Soviet space program failures by Andrey Sitnik
-    - power-assert 2 by Takuto Wada
-    - How to choose the best npm library? by Sota Sugiura
+    - おまいらちゃんとリソース解放してますか by shimataro999
+    - 食べたいIoT by hepppook
+    - What developers can learn from Soviet space program failures by sitnikcode in en
+    - power-assert 2 by t_wada
+    - How to choose the best npm library? by sota1235
 20:15-22:00 After Party
 
 [Room B]
-10:45-11:15 Javascript で機械学習はじめよう by 飯塚　修平
+10:45-11:15 Javascript で機械学習はじめよう by tushuhei
 
     Javascript で機械学習する時代が本格的にやってきた。
     機械学習プロジェクトとなると、今までは Python や R などのプログラミング言語で記述することが多かった。\
@@ -139,14 +139,14 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     このセッションでは、Javascript で機械学習することの意味、そして TensorFlow.js を用いてウェブアプリケーションを\
     構築する方法について実例を交えながら解説したいと思う。
 
-11:15-11:45 Node.jsでつくるNode.js ミニインタープリター＆コンパイラー by がねこまさし
+11:15-11:45 Node.jsでつくるNode.js ミニインタープリター＆コンパイラー by massie_g
 
     「RubyでつくるRuby ゼロから学びなおすプログラミング言語入門」という書籍に感銘を受けて、自分でもミニ Node.js
     インタープリターを作ってみました。それを通して変数や関数のスコープについてより深く理解することができました。
 
     さらに以前から気になっていたLLVMを使って、バイナリを生成するミニコンパイラにもチャレンジしています。
 
-13:00-13:30 Diagnose your Node.js app by Daiki Arai
+13:00-13:30 Diagnose your Node.js app by darai_0512
 
     想定対象者: Node.js初学者（≠プログラミング初心者）から中級者まで
 
@@ -159,11 +159,11 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     ・ Tracing: 非同期APIのライフタイムや各種パフォーマンスの可視化
     ・ Profiling: stack profilerを利用した改善
     ・ Analysis: あえてアプリケーションをクラッシュさせて指標を得るpost-mortemの考え方\
-        などの観点で、実際にコードを診断してみます。
+    などの観点で、実際にコードを診断してみます。
 
     Node.jsではどのような診断方法が用意・検討されているのか、最新動向を追ってみます。
 
-13:30-14:00 State of SEO for SPA by seya
+13:30-14:00 State of SEO for SPA by sekikazu01
 
     SPAを作る人ならきっと向き合ったことがあるであろう課題、SEO対策。
 
@@ -173,12 +173,12 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     このトークでは「SEO対策」とは具体的になにを指すのか、SPAでSEO対策をする際の打ち手やそれぞれのメリット・\
     デメリットはなにかを解説します。
 
-14:15-14:45 React におけるパフォーマンスチューニング by 辻　健人
+14:15-14:45 React におけるパフォーマンスチューニング by maxmellon_9039
 
     React で作成された大規模SPAにおいて，再レンダリングの最適化をはじめとした パフォーマンスチューニング 
     や ボトルネックの発見方法，具体的な改善事例について
 
-14:45-15:15 WebアプリをNativeアプリにする Capacitor が広げるWebの可能性 by 榊原　昌彦
+14:45-15:15 WebアプリをNativeアプリにする Capacitor が広げるWebの可能性 by rdlabo
 
     iOS/Androidアプリ開発でHTML5アプリが候補にあがると必ず言われる「でも、遅いでしょ？」。Webの進化はすでにそれ\
     を過去のものに変えようとしており、自由度が高く表現豊かなアプリをつくることができます。アプリ人材の不足が叫ばれますが、\
@@ -186,7 +186,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 
     このセッションでは、HTML5アプリの歴史と技術、パフォーマンスと「今」を整理します。
 
-15:30-16:00 実践GraphQL for クライアント側 by 鈴木　亮太
+15:30-16:00 実践GraphQL for クライアント側 by 4245Ryomt
 
     最近よく話題にあがるgraphqlを業務で使っているのでその話をしようと思います。
     graphqlは我々の持っていたどんな課題を解決してくれると望んで採用したのか？
@@ -194,7 +194,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     graphqlを利用するクライアントサイド側からの視点強めで話をしていきたいと思います。
     話題のelmだったのでその話も少し添えて
 
-16:00-16:30 Service Workerを用いたキャッシング戦略 〜Wikiアプリケーションを例に〜 by 飯塚　大貴
+16:00-16:30 Service Workerを用いたキャッシング戦略 〜Wikiアプリケーションを例に〜 by daizplus
 
     ユーザーによってコンテンツが頻繁に更新されるようなウェブサービスにService Workerを導入して、\
     ローカルに持てるリソースを徐々に増やし活用していく取り組みについてお話します。Nota Inc.で開発・運営する
@@ -212,7 +212,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     また、キャッシュされたリソース間でのバージョンの不整合を防ぐ仕組みや、これらの有効期限の設定など、\
     運用において気を付けている事柄と対応についても共有します。
 
-16:45-17:15 貢献できるOSSの見つけ方 -完結編- by Masato Ohba
+16:45-17:15 貢献できるOSSの見つけ方 -完結編- by ohbarye
 
     Contributionを期待するメンテナと、OSSに貢献したいがどうしたら良いかわからない大多数のエンジニア。
     この期待値のギャップと、貢献したいが誰が何を求めているのかわからないという情報の不透明性を\
@@ -250,7 +250,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 10:45-17:45 無限LT部屋
 
 [Room E]
-10:45-11:15 How I made critical code run much faster by Vladimir de Turckheim
+10:45-11:15 How I made critical code run much faster by poledesfetes in en
 
     I have this critical piece of code. It has to run fast otherwise my clients complain.
     Also it is synchronous so I want it to have a small impact on the performance of the
@@ -258,7 +258,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 
     This is the story of how I spent a week to gain microseconds in some very critical piece of code.
 
-11:15-11:45 Accessibility vs latest Web APIs. Can’t we just get along? by Mauricio Palma
+11:15-11:45 Accessibility vs latest Web APIs. Can’t we just get along? by PalmaSwell in en
 
     Unfortunately, we still treat accessibility in the same way we deal with front-end
     development for older browsers, something to be done at the end. What if I tell you that
@@ -267,13 +267,13 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     In this talk, you'll learn how to combine Web APIs such as Speech Recognition and Geolocation,
     with performant Javascript techniques to create empathic user interfaces.
 
-13:00-13:30 A trillion points with Node.js by Martin Heidegger
+13:00-13:30 A trillion points with Node.js by leichtgewicht
 
     I will be presenting our progress of using DAT to create a open-source visualization system for
     very large point-cloud data sets. This visualization system is entirely built on JavaScript and
     can enable new ways how we share and use data.
 
-13:30-14:00 Navi: painless routing for React by James K Nelson
+13:30-14:00 Navi: painless routing for React by james_k_nelson in en
 
     Navi is a new kind of router: as your app's URL changes, it starts fetching the new URL's content,
     and then it *waits*. It then renders the page *once the content has loaded*.
@@ -285,7 +285,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 
     In this talk, I'll introduce Navi, and use it to live code a static website with create-react-app.
 
-14:15-14:45 Node.jsアプリの開発をモダン化するために取り組んできたこと by Daiki Yokoi
+14:15-14:45 Node.jsアプリの開発をモダン化するために取り組んできたこと by daikiyokoi
 
     ビットバンク株式会社では仮想通貨取引所 bitbank.cc を開発・運営しております。
     お客様や取引量の増加に伴い、サーバーサイドアプリケーションの要求水準も高まるばかりです。
@@ -293,11 +293,11 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     （ローカル開発環境の刷新、TypeScriptの採用と新規フレームワークの導入、AWSのインフラ構成変更など）について、\
     背景や実際の進め方を踏まえてお話をさせて頂くことで、開発手法や環境構築に悩んでいる人の助けになれればと思います。
 
-14:45-15:15 ブロックチェーンアプリケーション開発でのJavascriptの話（仮） by Koji Hirano
+14:45-15:15 ブロックチェーンアプリケーション開発でのJavascriptの話（仮） by hrnkoji
 
     ブロックチェーンアプリケーション、DApps開発（Ethereum）をする上でのJavascript、フロントエンドの話
 
-15:30-16:00 Angular Universal on Google App Engine by 今村　謙士
+15:30-16:00 Angular Universal on Google App Engine by kimamula
 
     今年の6月からNode.jsがサポートされたGoogle App Engine Standard Environmentで、Angularアプリケーションをserver-side
     rendering (SSR)した事例についてご紹介します。
@@ -309,7 +309,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 
     また、Angular Universalでは未提供の、必要なリソースをHTTP/2 Server Pushする機能を独自に実装し（ようとし）たお話もする予定です。
 
-16:00-16:30 React + Apollo Client (GraphQL) により変化するアプリケーション設計 by 宮崎　優太郎
+16:00-16:30 React + Apollo Client (GraphQL) により変化するアプリケーション設計 by vwxyutarooo
 
     GraphQL を利用した Web アプリケーション開発において、Apollo Client を導入することによりクライアントの設計は大きく変化します。\
     コードはより容易に簡素化され、関心事の分離という観点からも GraphQL を導入するメリットをより大きくしてくれます。 

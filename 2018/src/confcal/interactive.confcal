@@ -6,11 +6,11 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 10:00-10:30 Doors Open
 10:30-11:45 Node/JS Discussion
 13:00-15:00 Node/W3C Discussion
-15:00-17:00 Code And Learn by hiroppy
+15:00-17:00 Code And Learn by about_hiroppy
 17:00-18:00 Lightning Talks
-    - Serverless in Scala on Node.js: Get Fast and Productive by Yasuhiro Tatsuno
-    - 私の生活を変えたHeadless Chrome by 大島　光貴
-    - Deploy TypeScript with CodePipeline in Fargate by 石川　将吾
+    - Serverless in Scala on Node.js: Get Fast and Productive by smogami
+    - 私の生活を変えたHeadless Chrome by sbntaminif
+    - Deploy TypeScript with CodePipeline in Fargate by sin_ikkyu
 18:15-20:00 After Party
 
 [Room B]
@@ -20,11 +20,11 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 10:30-17:00 Collaboration Space
 
 [Room D]
-10:30-15:00 Workshop: Building hardware by Tokuyama Yuka
-15:00-17:00 Workshop: React by Yan Fan
+10:30-15:00 Workshop: Building hardware by tokutoku393
+15:00-17:00 Workshop: React by yanarchy in en
 
 [Room E]
-10:30-11:40 ワークショップ: 分散ストレージ体験 by ハイデッガー　マルティン
+10:30-11:40 ワークショップ: 分散ストレージ体験 by leichtgewicht
 
     (English follows)
 
@@ -52,7 +52,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     ・ Interact with that Homepage in Beaker-Browser
     ・ Processing DAT remotely using Node.js
 
-13:00-15:00 Workshop: Building a Small Compiler in JavaScript by Rob Howard
+13:00-15:00 Workshop: Building a Small Compiler in JavaScript by damncabbage in en
 
     "Compilers" are usually-mysterious things that a lot of us actually use and rely on from day to day, eg. the JavaScript V8 compiler, the TypeScript compiler, or the Clang+LLVM compilers. Digging into how these work can be satisfying (like sleuthing a good puzzle); but some of the ways we implement them can appear in other forms, such as when validating user input, transforming big structures, or when separating side-effects from business logic.
 
@@ -66,4 +66,4 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 
     This workshop is for people who are already somewhat familiar with JavaScript (just the language itself, not any particular library or framework). To get started, you only need the workshop git repository (TBA), a Terminal / Console, Node.js 8+, and a text editor of your choice.
 
-15:00-17:00 Workshop: JavaScript TodoMVC by Yosuke Furukawa
+15:00-17:00 Workshop: JavaScript TodoMVC by yosuke_furukawa
