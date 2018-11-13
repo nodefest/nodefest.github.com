@@ -21,7 +21,20 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 
 [Room D]
 10:30-15:00 Workshop: Building hardware by tokutoku393
-15:00-17:00 Workshop: React by yanarchy in en
+15:00-17:00 Workshop: Hands-On React by yanarchy in en
+
+    An accelerated workshop to get your hands dirty with React. We'll cover the following topics:
+
+    ・ Difference between framework and a library
+    ・ What's special about React?
+    ・ Non-React things like Babel and transpilation
+    ・ React components & JSX
+    ・ React component Lifecycle
+    ・ State management
+    ・ React patterns
+    ・ State vs stateless components
+
+    This workshop is best for developers who have never used React or have only used it a little and want to gain deeper understanding.
 
 [Room E]
 10:30-11:40 ワークショップ: 分散ストレージ体験 by leichtgewicht
