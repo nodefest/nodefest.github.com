@@ -1,60 +1,21 @@
 Doors Open - summary,Doors Open
 Keynote - summary,Keynote
 #1 by ohhoe - summary,Look What You MIDI Me Do!
-#1 by ohhoe - description,"Who loves pushing buttons? You? And you over there?
-And the person behind you? Oh wait, everyone loves it?!!?
-Of course they do, a button is irresistible.
-Now… what if I told you that you could hook up a LOT of
-buttons to your computer… and use it to do wild things with the web? I’m glad you’re listening!
-Let’s take a journey into the Web MIDI api where the possibilities of the web aren’t just at
-your keyboard fingertips anymore, they’re literally any MIDI compatible controller you have connected!
-Want to make glitchy audio responsive visuals with WebGL shaders?
-Rad, we can do that.
-
-Want to create custom beats and have those input as a drum machine?
-No problem when you throw a little Web Audio API in the mix.
-Let’s dive in and find out how!"
+#1 by ohhoe - description,"Who loves pushing buttons? You? And you over there? And the person behind you? Oh wait, everyone loves it?!!? Of course they do, a button is irresistible. Now… what if I told you that you could hook up a LOT of buttons to your computer… and use it to do wild things with the web? I’m glad you’re listening! Let’s take a journey into the Web MIDI api where the possibilities of the web aren’t just at your keyboard fingertips anymore, they’re literally any MIDI compatible controller you have connected! Want to make glitchy audio responsive visuals with WebGL shaders? Rad, we can do that. Want to create custom beats and have those input as a drum machine? No problem when you throw a little Web Audio API in the mix. Let’s dive in and find out how!"
 #1 by addaleax - summary,Node.js: The Road to Workers
-#1 by addaleax - description,"Workers, and threading support in general, have been one of the most frequently requested features
-for Node.js over the last years. Finally, the finishing line is in sight and we’re pretty excited
-to have experimental support available! This talk will tell you everything around the API, features,
-use cases & alternatives, our roadmap, and the technical and social challenges that we had to
-overcome to make it happen!"
+#1 by addaleax - description,"Workers, and threading support in general, have been one of the most frequently requested features for Node.js over the last years. Finally, the finishing line is in sight and we’re pretty excited to have experimental support available! This talk will tell you everything around the API, features, use cases & alternatives, our roadmap, and the technical and social challenges that we had to overcome to make it happen!"
 #1 by littledan - summary,JavaScript Class Features: A case study in TC39
-#1 by littledan - description,"ES6 classes were intentionally minimal, containing only public method declarations. Now, TC39 is
-considering adding several other features to classes: private, fields, and decorators. In this talk,
-we'll see how these proposals work in detail, the process that got them there, and how you can get
-involved. TC39 needs your help to build features like these and the future of JavaScript."
+#1 by littledan - description,"ES6 classes were intentionally minimal, containing only public method declarations. Now, TC39 is considering adding several other features to classes: private, fields, and decorators. In this talk, we'll see how these proposals work in detail, the process that got them there, and how you can get involved. TC39 needs your help to build features like these and the future of JavaScript."
 #1 by sannekalkman - summary,Who Takes Out Your Trash
-#1 by sannekalkman - description,"In our daily development lives, most of us don’t have to worry about unused objects gathering cobwebs
-and filling up the memory. All we need to know is that our language has a garbage collector that
-just comes by and makes our trash disappear. Somehow it figures out what should stay and what can go,
-our program can keep going without running out of space, and we don’t have to do a thing.
+#1 by sannekalkman - description,"In our daily development lives, most of us don’t have to worry about unused objects gathering cobwebs and filling up the memory. All we need to know is that our language has a garbage collector that just comes by and makes our trash disappear. Somehow it figures out what should stay and what can go, our program can keep going without running out of space, and we don’t have to do a thing.
 
-It is not in fact magic that takes care of the garbage, and this talk will show you how it’s done.
-First, we’ll explore how two of the most common garbage collection algorithms, reference counting and
-tracing, figure out what is ready to be collected. Next, we’ll see how we could get the garbage truck
-out of the way faster by using a generational algorithm, and finally we’ll have a brief look at how
-Python’s garbage collection works.
+It is not in fact magic that takes care of the garbage, and this talk will show you how it’s done. First, we’ll explore how two of the most common garbage collection algorithms, reference counting and tracing, figure out what is ready to be collected. Next, we’ll see how we could get the garbage truck out of the way faster by using a generational algorithm, and finally we’ll have a brief look at how Python’s garbage collection works.
 
-This friendly introduction to taking out the trash gives an overview of important aspects of garbage
-collection algorithms. It is specifically meant to be accessible developers of all levels and you’ll
-walk away with an understanding of and appreciation for all the hard work that goes on behind the
-scenes."
+This friendly introduction to taking out the trash gives an overview of important aspects of garbage collection algorithms. It is specifically meant to be accessible developers of all levels and you’ll walk away with an understanding of and appreciation for all the hard work that goes on behind the scenes."
 #1 by cjihrig - summary,libuv: What's a Unicorn Velociraptor?
-#1 by cjihrig - description,"libuv is what gives Node.js its event loop and cross-platform asynchronous I/O capabilities. This
-talk explains what libuv is all about, and how it's used by Node.js. This talk also looks at recent
-development efforts in the libuv project."
+#1 by cjihrig - description,"libuv is what gives Node.js its event loop and cross-platform asynchronous I/O capabilities. This talk explains what libuv is all about, and how it's used by Node.js. This talk also looks at recent development efforts in the libuv project."
 #1 by gioyik - summary,Leak Hunting: Finding and debugging a memory leak in Node.js
-#1 by gioyik - description,"Performance metrics? Response time higher? Memory leak? We would walk through different memory leak
-situations to identify and analyze patterns that produce an increase of memory, CPU usage, and the
-load average over time, without any apparent reason. We'll start talking about taking the time to
-set up a proper test environment to repeat the exact same conditions as in production. Then we'll
-discuss how to access Node.js memory using V8 Inspector & Chrome Dev Tools, create a dump of the
-heap memory for the inspected application, with a lot of details about the memory usage, watching
-memory allocation in real time and finally a compilation of best practices about how we could end
-fixing the memory leak. In the end, we'll be able to use the right tools to monitor, understand,
-and debug the memory consumption of a Node.js application on time."
+#1 by gioyik - description,"Performance metrics? Response time higher? Memory leak? We would walk through different memory leak situations to identify and analyze patterns that produce an increase of memory, CPU usage, and the load average over time, without any apparent reason. We'll start talking about taking the time to set up a proper test environment to repeat the exact same conditions as in production. Then we'll discuss how to access Node.js memory using V8 Inspector & Chrome Dev Tools, create a dump of the heap memory for the inspected application, with a lot of details about the memory usage, watching memory allocation in real time and finally a compilation of best practices about how we could end fixing the memory leak. In the end, we'll be able to use the right tools to monitor, understand, and debug the memory consumption of a Node.js application on time."
 #1 by mafintosh - summary,Offline-First Collaborative Data Structures
 #1 by mafintosh - description,"The web is growing bigger and bigger every year.
 With the increasing rise of the mobile internet and
@@ -74,61 +35,47 @@ is the future of the offline-first internet.
 Expect modules you can use *today* to start implmenting great
 collaborative offline-first applications and plenty of demos."
 #1 by jimpick - summary,Visualizing the Decentralized Web
-#1 by jimpick - description,"A new generation of peer-to-peer protocols is coming to the web. Browsers will soon be able
-to talk directly to each other, without the need for centralized servers. Exciting new
-applications and social networks are being created which put people back in control of their
-personal data. See how IPFS, the Dat Protocol and Secure Scuttlebutt work. This presentation
-will use interactive visualizations to demonstrate core concepts."
+#1 by jimpick - description,"A new generation of peer-to-peer protocols is coming to the web. Browsers will soon be able to talk directly to each other, without the need for centralized servers. Exciting new applications and social networks are being created which put people back in control of their personal data. See how IPFS, the Dat Protocol and Secure Scuttlebutt work. This presentation will use interactive visualizations to demonstrate core concepts."
 #1 by kgryte - summary,Real-Time Machine Learning in JavaScript
-#1 by kgryte - description,"Real-time machine learning is a collection of statistical methods to obtain insights from
-continuous data streams. In this talk, I'll provide an overview of real-time machine learning
-algorithms and discuss how these algorithms can be implemented and used in JavaScript. I'll
-highlight why running these algorithms in JavaScript has several advantages compared to languages
-traditionally used for numerical computing, including the ability to perform client-side
-computations. I'll conclude by discussing best-practices and common pitfalls encountered when
-using machine learning algorithms within JavaScript environments."
+#1 by kgryte - description,"Real-time machine learning is a collection of statistical methods to obtain insights from continuous data streams. In this talk, I'll provide an overview of real-time machine learning algorithms and discuss how these algorithms can be implemented and used in JavaScript. I'll highlight why running these algorithms in JavaScript has several advantages compared to languages traditionally used for numerical computing, including the ability to perform client-side computations. I'll conclude by discussing best-practices and common pitfalls encountered when using machine learning algorithms within JavaScript environments."
 #1 by stephaniecodes - summary,Haute Codeture
-#1 by stephaniecodes - description,"What if, instead going for practicality, we used IoT to create fleeting moments of interaction
-and beauty? What would happen if others could interact with my clothing via a web app? I’ll
-share my story of how I got started with hardware and how it’s evolved into using fashion to
-create interactive, artistic experiences with strangers."
+#1 by stephaniecodes - description,"What if, instead going for practicality, we used IoT to create fleeting moments of interaction and beauty? What would happen if others could interact with my clothing via a web app? I’ll share my story of how I got started with hardware and how it’s evolved into using fashion to create interactive, artistic experiences with strangers."
 Sponsor Talk - summary,Sponsor Talk
 Lightning Talks - summary,Lightning Talks
 After Party - summary,After Party
 #1 by tushuhei - summary,Javascript で機械学習はじめよう
 #1 by tushuhei - description,"Javascript で機械学習する時代が本格的にやってきた。
-機械学習プロジェクトとなると、今までは Python や R などのプログラミング言語で記述することが多かった。 しかし、最近 TensorFlow.js をはじめとする 機械学習のための Javascript ライブラリが登場しはじめたことにより、 その状況は変わりつつある。Javascript で機械学習を記述することによって、 ウェブサーバとの通信を必要としないウェブブラウザ上での学習・推論や、クライアントの GPU の活用など、 さまざまなメリットを享受できる。
-
-このセッションでは、Javascript で機械学習することの意味、そして TensorFlow.js を用いてウェブアプリケーションを 構築する方法について実例を交えながら解説したいと思う。"
+機械学習プロジェクトとなると、今までは Python や R などのプログラミング言語で記述することが多かった。しかし、最近 TensorFlow.js をはじめとする 機械学習のための Javascript ライブラリが登場しはじめたことにより、その状況は変わりつつある。Javascript で機械学習を記述することによって、ウェブサーバとの通信を必要としないウェブブラウザ上での学習・推論や、クライアントの GPU の活用など、さまざまなメリットを享受できる。
+このセッションでは、Javascript で機械学習することの意味、そして TensorFlow.js を用いてウェブアプリケーションを構築する方法について実例を交えながら解説したいと思う。"
 #1 by massie_g - summary,Node.jsでつくるNode.js ミニインタープリター＆コンパイラー
-#1 by massie_g - description,"「RubyでつくるRuby ゼロから学びなおすプログラミング言語入門」という書籍に感銘を受けて、自分でもミニ Node.js
-インタープリターを作ってみました。それを通して変数や関数のスコープについてより深く理解することができました。
+#1 by massie_g - description,"「RubyでつくるRuby ゼロから学びなおすプログラミング言語入門」という書籍に感銘を受けて、自分でもミニNode.js インタープリターを作ってみました。それを通して変数や関数のスコープについてより深く理解することができました。
+さらに以前から気になっていたLLVMを使って、バイナリを生成するミニコンパイラにもチャレンジしています。
 
-さらに以前から気になっていたLLVMを使って、バイナリを生成するミニコンパイラにもチャレンジしています。"
+こちらの記事をベースに、発表にまとめる予定です。
+https://qiita.com/massie_g/items/3ee11c105b4458686bc1"
 #1 by darai_0512 - summary,Diagnose your Node.js app
 #1 by darai_0512 - description,"想定対象者: Node.js初学者（≠プログラミング初心者）から中級者まで
 
 このセッションでは、コアAPIの視点からNode.jsの特性について整理し、自身のコードの診断できるようになることを目指します。
 
-初学者にとって問題の原因がNode.jsなのかv8なのか、あるいはlibuvかOSか、切り分けだけでも大変です。 前半はコアAPIがどのように実装されているのかを理解し、切り分けのための土地勘を養います。
+初学者にとって問題の原因がNode.jsなのかv8なのか、あるいはlibuvかOSか、切り分けだけでも大変です。前半はコアAPIがどのように実装されているのかを理解し、切り分けのための土地勘を養います。
 
 後半では
 ・ Tracing: 非同期APIのライフタイムや各種パフォーマンスの可視化
 ・ Profiling: stack profilerを利用した改善
-・ Analysis: あえてアプリケーションをクラッシュさせて指標を得るpost-mortemの考え方 などの観点で、実際にコードを診断してみます。
-
+・ Analysis: あえてアプリケーションをクラッシュさせて指標を得るpost-mortemの考え方などの観点で、実際にコードを診断してみます。
 Node.jsではどのような診断方法が用意・検討されているのか、最新動向を追ってみます。"
 #1 by sekikazu01 - summary,State of SEO for SPA
 #1 by sekikazu01 - description,"SPAを作る人ならきっと向き合ったことがあるであろう課題、SEO対策。
 
-昨年からPrerenderなどそれ専用のソリューションが出たり、Gatsbyjsなどの静的サイトジェネレータの隆盛もあり、 取れる打ち手が増えてきましたが、世間には未だに曖昧な論拠に基づいた「SSR必要論」ないし「SSR不要論」が溢れています。
+昨年からPrerenderなどそれ専用のソリューションが出たり、Gatsbyjsなどの静的サイトジェネレータの隆盛もあり、取れる打ち手が増えてきましたが、世間には未だに曖昧な論拠に基づいた「SSR必要論」ないし「SSR不要論」が溢れています。
 
-このトークでは「SEO対策」とは具体的になにを指すのか、SPAでSEO対策をする際の打ち手やそれぞれのメリット・ デメリットはなにかを解説します。"
+このトークでは「SEO対策」とは具体的になにを指すのか、SPAでSEO対策をする際の打ち手やそれぞれのメリット・デメリットはなにかを解説します。"
 #1 by maxmellon_9039 - summary,React におけるパフォーマンスチューニング
 #1 by maxmellon_9039 - description,"React で作成された大規模SPAにおいて，再レンダリングの最適化をはじめとした パフォーマンスチューニング
 や ボトルネックの発見方法，具体的な改善事例について"
 #1 by rdlabo - summary,WebアプリをNativeアプリにする Capacitor が広げるWebの可能性
-#1 by rdlabo - description,"iOS/Androidアプリ開発でHTML5アプリが候補にあがると必ず言われる「でも、遅いでしょ？」。Webの進化はすでにそれ を過去のものに変えようとしており、自由度が高く表現豊かなアプリをつくることができます。アプリ人材の不足が叫ばれますが、 フロントエンド界隈には多くの潜在人材がいます。
+#1 by rdlabo - description,"iOS/Androidアプリ開発でHTML5アプリが候補にあがると必ず言われる「でも、遅いでしょ？」。Webの進化はすでにそれを過去のものに変えようとしており、自由度が高く表現豊かなアプリをつくることができます。アプリ人材の不足が叫ばれますが、フロントエンド界隈には多くの潜在人材がいます。
 
 このセッションでは、HTML5アプリの歴史と技術、パフォーマンスと「今」を整理します。"
 #1 by 4245Ryomt - summary,実践GraphQL for クライアント側
@@ -138,78 +85,64 @@ graphqlは我々の持っていたどんな課題を解決してくれると望�
 graphqlを利用するクライアントサイド側からの視点強めで話をしていきたいと思います。
 話題のelmだったのでその話も少し添えて"
 #1 by daizplus - summary,Service Workerを用いたキャッシング戦略 〜Wikiアプリケーションを例に〜
-#1 by daizplus - description,"ユーザーによってコンテンツが頻繁に更新されるようなウェブサービスにService Workerを導入して、 ローカルに持てるリソースを徐々に増やし活用していく取り組みについてお話します。Nota Inc.で開発・運営する
-Scrapbox という、サーバーサイドにNode.js (Express, Socket.IO)、クライアントサイドにReactを 使用したフルJavaScript実装なWikiアプリでの具体例を示しつつ、他のサービスでも汎用的に採用できる キャッシング戦略を紹介します。
+#1 by daizplus - description,"ユーザーによってコンテンツが頻繁に更新されるようなウェブサービスにService Workerを導入して、ローカルに持てるリソースを徐々に増やし活用していく取り組みについてお話します。Nota Inc.で開発・運営する
+Scrapbox という、サーバーサイドにNode.js (Express, Socket.IO)、クライアントサイドにReactを使用したフルJavaScript実装なWikiアプリでの具体例を示しつつ、他のサービスでも汎用的に採用できるキャッシング戦略を紹介します。
 
-ネットワーク接続状況に依らずに記事ページの表示や編集を可能にすることを目指して私達が選択した、以下 のような手法を取り上げる予定です。
+ネットワーク接続状況に依らずに記事ページの表示や編集を可能にすることを目指して私達が選択した、以下のような手法を取り上げる予定です。
 ・ Single Page Application として全ページで共通に使われる、最初のhtmlのキャッシュ
 ・ ホワイトリスト方式での静的リソースのキャッシュ
 ・ リンクをmouseoverした際のページコンテンツのprefetch
 ・ ページコンテンツのキャッシュに関する検討中のアイデアなど
 
-また、キャッシュされたリソース間でのバージョンの不整合を防ぐ仕組みや、これらの有効期限の設定など、 運用において気を付けている事柄と対応についても共有します。"
+また、キャッシュされたリソース間でのバージョンの不整合を防ぐ仕組みや、これらの有効期限の設定など、運用において気を付けている事柄と対応についても共有します。"
 #1 by ohbarye - summary,貢献できるOSSの見つけ方 -完結編-
 #1 by ohbarye - description,"Contributionを期待するメンテナと、OSSに貢献したいがどうしたら良いかわからない大多数のエンジニア。
-この期待値のギャップと、貢献したいが誰が何を求めているのかわからないという情報の不透明性を Contribution Accessibilityと本トークでは呼び、解決したい課題と位置づけます。
+この期待値のギャップと、貢献したいが誰が何を求めているのかわからないという情報の不透明性をContribution Accessibilityと本トークでは呼び、解決したい課題と位置づけます。
 Contribution Accessibilityを解消する一助として開発した goofi というツールをご紹介します。
-また、同ツールはTypeScript, React, Next.js, GraphQLなどのJavaScript周辺技術を使用しているため、 これらの技術要素の選定理由や使用しての所感・考察もお伝えします。
-上記課題はスピーカー自身が感じていたものでもありました。そのためスピーカー自身が同ツールを利用して実際に contributionすることができるようになった例についてお話します。"
+また、同ツールはTypeScript, React, Next.js, GraphQLなどのJavaScript周辺技術を使用しているため、これらの技術要素の選定理由や使用しての所感・考察もお伝えします。
+上記課題はスピーカー自身が感じていたものでもありました。そのためスピーカー自身が同ツールを利用して実際にcontributionすることができるようになった例についてお話します。"
 #1 by lulzneko - summary,Vue.js/Nuxt.js で 実現できた PWA の リアルタイム動画ラップ・バトル・アプリ
-#1 by lulzneko - description,"スマートフォンやタブレット向けのモバイルアプリは PWA (Progressive Web Apps) による Web 技術を使った 形態が期待されてきています。
-私たちは、全国規模で行われるモバイル・アプリ開発ハッカソンの予選で、あえてPWAアーキテクチャにこだわって 開発し優秀賞を受賞しました。
-わずか 24時間という開発期間で、リアルタイムな動画配信を使ったラップのバトルと観戦が同時に行え、観戦者がリ アルタイムにフィードバック・エフェクトを返せるアプリを、通常５人チームのところ ３人の少人数で作り上げています。
-モバイルアプリのハッカソンとしてネイティブ系開発チームが並み居る中で、唯一 PWA を 武器に戦い 受賞できたのは、 Vue.js/Nuxt.js の 活用があったからといって過言ではないでしょう。
+#1 by lulzneko - description,"スマートフォンやタブレット向けのモバイルアプリは PWA (Progressive Web Apps) による Web 技術を使った形態が期待されてきています。
+私たちは、全国規模で行われるモバイル・アプリ開発ハッカソンの予選で、あえてPWAアーキテクチャにこだわって開発し優秀賞を受賞しました。
+わずか 24時間という開発期間で、リアルタイムな動画配信を使ったラップのバトルと観戦が同時に行え、観戦者がリアルタイムにフィードバック・エフェクトを返せるアプリを、通常５人チームのところ ３人の少人数で作り上げています。
+モバイルアプリのハッカソンとしてネイティブ系開発チームが並み居る中で、唯一 PWA を 武器に戦い 受賞できたのは、Vue.js/Nuxt.js の 活用があったからといって過言ではないでしょう。
 また PWA は CI/CD と 相性が良く Agile プラクティスの常にアクセス可能なプロトタイプ環境の提供が行いやすいです。
 そして この特性と、Vue.js/Nuxt.js の Web Components による相乗効果が、開発の高速化と品質の向上をもたらします。
 このように、スマホ・アプリ開発においても Vue.js/Nuxt.js は 非常に強力に機能します。
-本セッションでは Vue.js/Nuxt.js で PWA の リアルタイム動画ラップ・バトル・アプリ を いかにして作り上げたのか、 どのように活用したのか、Vue.js/Nuxt.js の 技術を、デモを交えて ご紹介します。
-・PWA(Progressive Web Apps) の 概要
-・Vue.js/Nuxt.js を 使った PWA な モバイルアプリ の 開発手法
-・GitHub、CircleCI、GitHuba Pages を 使った 常にアクセス可能なプロトタイプ環境を持つ PWA アプリ開発環境"
+本セッションでは Vue.js/Nuxt.js で PWA の リアルタイム動画ラップ・バトル・アプリ を いかにして作り上げたのか、どのように活用したのか、Vue.js/Nuxt.js の 技術を、デモを交えて ご紹介します。
+・ PWA(Progressive Web Apps) の 概要
+・ Vue.js/Nuxt.js を 使った PWA な モバイルアプリ の 開発手法
+・ GitHub、CircleCI、GitHuba Pages を 使った 常にアクセス可能なプロトタイプ環境を持つ PWA アプリ開発環境"
 "JSなんでもお悩み相談室
 JS Discussion Space - summary","JSなんでもお悩み相談室
 JS Discussion Space"
 無限LT部屋 - summary,無限LT部屋
 #1 by poledesfetes - summary,How I made critical code run much faster
-#1 by poledesfetes - description,"I have this critical piece of code. It has to run fast otherwise my clients complain.
-Also it is synchronous so I want it to have a small impact on the performance of the
-applications.
-
-This is the story of how I spent a week to gain microseconds in some very critical piece of code."
+#1 by poledesfetes - description,I have this critical piece of code. It has to run fast otherwise my clients complain. Also it is synchronous so I want it to have a small impact on the performance of the applications. This is the story of how I spent a week to gain microseconds in some very critical piece of code.
 #1 by PalmaSwell - summary,Accessibility vs latest Web APIs. Can’t we just get along?
-#1 by PalmaSwell - description,"Unfortunately, we still treat accessibility in the same way we deal with front-end
-development for older browsers, something to be done at the end. What if I tell you that
-we can use the latest Web APIs and still offer an inclusive and accessible experience.
+#1 by PalmaSwell - description,"Unfortunately, we still treat accessibility in the same way we deal with front-end development for older browsers, something to be done at the end. What if I tell you that we can use the latest Web APIs and still offer an inclusive and accessible experience.
 
-In this talk, you'll learn how to combine Web APIs such as Speech Recognition and Geolocation,
-with performant Javascript techniques to create empathic user interfaces."
+In this talk, you'll learn how to combine Web APIs such as Speech Recognition and Geolocation, with performant Javascript techniques to create empathic user interfaces."
 #1 by leichtgewicht - summary,A trillion points with Node.js
-#1 by leichtgewicht - description,"I will be presenting our progress of using DAT to create a open-source visualization system for
-very large point-cloud data sets. This visualization system is entirely built on JavaScript and
-can enable new ways how we share and use data."
+#1 by leichtgewicht - description,I will be presenting our progress of using DAT to create a open-source visualization system for very large point-cloud data sets. This visualization system is entirely built on JavaScript and can enable new ways how we share and use data.
 #1 by james_k_nelson - summary,Navi: painless routing for React
-#1 by james_k_nelson - description,"Navi is a new kind of router: as your app's URL changes, it starts fetching the new URL's content,
-and then it *waits*. It then renders the page *once the content has loaded*.
+#1 by james_k_nelson - description,"Navi is a new kind of router: as your app's URL changes, it starts fetching the new URL's content, and then it *waits*. It then renders the page *once the content has loaded*.
 
-Delayed rendering makes routing simpler. Instead of manually managing component state and loading
-spinners, you just assign URLs to content using `async`/`await` and `import()`. Navi does the
-rest -- it fetches your content, manages your page's `&lt;title&gt;` and scroll position, and even
-warns you about broken links!
+Delayed rendering makes routing simpler. Instead of manually managing component state and loading spinners, you just assign URLs to content using `async`/`await` and `import()`. Navi does the rest -- it fetches your content, manages your page's `&lt;title&gt;` and scroll position, and even warns you about broken links!
 
 In this talk, I'll introduce Navi, and use it to live code a static website with create-react-app."
 #1 by daikiyokoi - summary,Node.jsアプリの開発をモダン化するために取り組んできたこと
 #1 by daikiyokoi - description,"ビットバンク株式会社では仮想通貨取引所 bitbank.cc を開発・運営しております。
 お客様や取引量の増加に伴い、サーバーサイドアプリケーションの要求水準も高まるばかりです。
-このトークでは超少人数でメンテされていたNode.jsバージョン6のアプリケーションの開発をモダン化する過程での取り組み （ローカル開発環境の刷新、TypeScriptの採用と新規フレームワークの導入、AWSのインフラ構成変更など）について、 背景や実際の進め方を踏まえてお話をさせて頂くことで、開発手法や環境構築に悩んでいる人の助けになれればと思います。"
+このトークでは超少人数でメンテされていたNode.jsバージョン6のアプリケーションの開発をモダン化する過程での取り組み（ローカル開発環境の刷新、TypeScriptの採用と新規フレームワークの導入、AWSのインフラ構成変更など）について、背景や実際の進め方を踏まえてお話をさせて頂くことで、開発手法や環境構築に悩んでいる人の助けになれればと思います。"
 #1 by hrnkoji - summary,ブロックチェーンアプリケーション開発でのJavascriptの話（仮）
 #1 by hrnkoji - description,ブロックチェーンアプリケーション、DApps開発（Ethereum）をする上でのJavascript、フロントエンドの話
 #1 by kimamula - summary,Angular Universal on Google App Engine
-#1 by kimamula - description,"今年の6月からNode.jsがサポートされたGoogle App Engine Standard Environmentで、Angularアプリケーションをserver-side
-rendering (SSR)した事例についてご紹介します。
+#1 by kimamula - description,"今年の6月からNode.jsがサポートされたGoogle App Engine Standard Environmentで、Angularアプリケーションをserver-side rendering (SSR)した事例についてご紹介します。
 
-Angular UniversalはAngularでSSRを可能にするためのプロジェクトであり、今回のアプリケーションはこのプロジェクトが 提供するツールを利用しています。現時点で公式ドキュメントがあまり充実していないため、実際にアプリケーション開発を進める中で 得られた知見を共有することで、その部分を補ればと思います。たとえば、開発中にローカルでファイルをwatchしながらSSRする方法や、 サーバサイドで取得した状態をクライアントサイドに伝播する方法などが含まれます。
+Angular UniversalはAngularでSSRを可能にするためのプロジェクトであり、今回のアプリケーションはこのプロジェクトが提供するツールを利用しています。現時点で公式ドキュメントがあまり充実していないため、実際にアプリケーション開発を進める中で得られた知見を共有することで、その部分を補ればと思います。たとえば、開発中にローカルでファイルをwatchしながらSSRする方法や、サーバサイドで取得した状態をクライアントサイドに伝播する方法などが含まれます。
 
 また、Angular Universalでは未提供の、必要なリソースをHTTP/2 Server Pushする機能を独自に実装し（ようとし）たお話もする予定です。"
 #1 by vwxyutarooo - summary,React + Apollo Client (GraphQL) により変化するアプリケーション設計
-#1 by vwxyutarooo - description,"GraphQL を利用した Web アプリケーション開発において、Apollo Client を導入することによりクライアントの設計は大きく変化します。 コードはより容易に簡素化され、関心事の分離という観点からも GraphQL を導入するメリットをより大きくしてくれます。
+#1 by vwxyutarooo - description,"GraphQL を利用した Web アプリケーション開発において、Apollo Client を導入することによりクライアントの設計は大きく変化します。コードはより容易に簡素化され、関心事の分離という観点からも GraphQL を導入するメリットをより大きくしてくれます。
 このトークでは Apollo についてや、それによってどのようにクライアントの設計が変わってくるのかという話をしたいと思います。"

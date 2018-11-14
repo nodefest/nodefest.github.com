@@ -7,69 +7,69 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 10:30-10:45 Keynote
 10:45-11:15 Look What You MIDI Me Do! by ohhoe in en
 
-    Who loves pushing buttons? You? And you over there?
-    And the person behind you? Oh wait, everyone loves it?!!?
-    Of course they do, a button is irresistible.
-    Now… what if I told you that you could hook up a LOT of
-    buttons to your computer… and use it to do wild things with the web? I’m glad you’re listening!
-    Let’s take a journey into the Web MIDI api where the possibilities of the web aren’t just at
-    your keyboard fingertips anymore, they’re literally any MIDI compatible controller you have connected!
-    Want to make glitchy audio responsive visuals with WebGL shaders?
-    Rad, we can do that.
-
-    Want to create custom beats and have those input as a drum machine?
-    No problem when you throw a little Web Audio API in the mix.
+    Who loves pushing buttons? You? And you over there? \
+    And the person behind you? Oh wait, everyone loves it?!!? \
+    Of course they do, a button is irresistible. \
+    Now… what if I told you that you could hook up a LOT of \
+    buttons to your computer… and use it to do wild things with the web? I’m glad you’re listening! \
+    Let’s take a journey into the Web MIDI api where the possibilities of the web aren’t just at \
+    your keyboard fingertips anymore, they’re literally any MIDI compatible controller you have connected! \
+    Want to make glitchy audio responsive visuals with WebGL shaders? \
+    Rad, we can do that. \
+    \
+    Want to create custom beats and have those input as a drum machine? \
+    No problem when you throw a little Web Audio API in the mix. \
     Let’s dive in and find out how!
 
 11:15-11:45 Node.js: The Road to Workers by addaleax in en
 
-    Workers, and threading support in general, have been one of the most frequently requested features
-    for Node.js over the last years. Finally, the finishing line is in sight and we’re pretty excited
-    to have experimental support available! This talk will tell you everything around the API, features,
-    use cases & alternatives, our roadmap, and the technical and social challenges that we had to
+    Workers, and threading support in general, have been one of the most frequently requested features \
+    for Node.js over the last years. Finally, the finishing line is in sight and we’re pretty excited \
+    to have experimental support available! This talk will tell you everything around the API, features, \
+    use cases & alternatives, our roadmap, and the technical and social challenges that we had to \
     overcome to make it happen!
 
 13:00-13:30 JavaScript Class Features: A case study in TC39 by littledan in en
 
-    ES6 classes were intentionally minimal, containing only public method declarations. Now, TC39 is
-    considering adding several other features to classes: private, fields, and decorators. In this talk,
-    we'll see how these proposals work in detail, the process that got them there, and how you can get
+    ES6 classes were intentionally minimal, containing only public method declarations. Now, TC39 is \
+    considering adding several other features to classes: private, fields, and decorators. In this talk, \
+    we'll see how these proposals work in detail, the process that got them there, and how you can get \
     involved. TC39 needs your help to build features like these and the future of JavaScript.
 
 13:30-14:00 Who Takes Out Your Trash by sannekalkman in en
 
-    In our daily development lives, most of us don’t have to worry about unused objects gathering cobwebs
-    and filling up the memory. All we need to know is that our language has a garbage collector that
-    just comes by and makes our trash disappear. Somehow it figures out what should stay and what can go,
+
+    In our daily development lives, most of us don’t have to worry about unused objects gathering cobwebs \
+    and filling up the memory. All we need to know is that our language has a garbage collector that \
+    just comes by and makes our trash disappear. Somehow it figures out what should stay and what can go, \
     our program can keep going without running out of space, and we don’t have to do a thing.
 
-    It is not in fact magic that takes care of the garbage, and this talk will show you how it’s done.
-    First, we’ll explore how two of the most common garbage collection algorithms, reference counting and
-    tracing, figure out what is ready to be collected. Next, we’ll see how we could get the garbage truck
-    out of the way faster by using a generational algorithm, and finally we’ll have a brief look at how
+    It is not in fact magic that takes care of the garbage, and this talk will show you how it’s done. \
+    First, we’ll explore how two of the most common garbage collection algorithms, reference counting and \
+    tracing, figure out what is ready to be collected. Next, we’ll see how we could get the garbage truck \
+    out of the way faster by using a generational algorithm, and finally we’ll have a brief look at how \
     Python’s garbage collection works.
 
-    This friendly introduction to taking out the trash gives an overview of important aspects of garbage
-    collection algorithms. It is specifically meant to be accessible developers of all levels and you’ll
-    walk away with an understanding of and appreciation for all the hard work that goes on behind the
-    scenes.
+    This friendly introduction to taking out the trash gives an overview of important aspects of garbage \
+    collection algorithms. It is specifically meant to be accessible developers of all levels and you’ll \
+    walk away with an understanding of and appreciation for all the hard work that goes on behind the scenes.
 
 14:15-14:45 libuv: What's a Unicorn Velociraptor? by cjihrig in en
 
-    libuv is what gives Node.js its event loop and cross-platform asynchronous I/O capabilities. This
-    talk explains what libuv is all about, and how it's used by Node.js. This talk also looks at recent
+    libuv is what gives Node.js its event loop and cross-platform asynchronous I/O capabilities. This \
+    talk explains what libuv is all about, and how it's used by Node.js. This talk also looks at recent \
     development efforts in the libuv project.
 
 14:45-15:15 Leak Hunting: Finding and debugging a memory leak in Node.js by gioyik in en
 
-    Performance metrics? Response time higher? Memory leak? We would walk through different memory leak
-    situations to identify and analyze patterns that produce an increase of memory, CPU usage, and the
-    load average over time, without any apparent reason. We'll start talking about taking the time to
-    set up a proper test environment to repeat the exact same conditions as in production. Then we'll
-    discuss how to access Node.js memory using V8 Inspector & Chrome Dev Tools, create a dump of the
-    heap memory for the inspected application, with a lot of details about the memory usage, watching
-    memory allocation in real time and finally a compilation of best practices about how we could end
-    fixing the memory leak. In the end, we'll be able to use the right tools to monitor, understand,
+    Performance metrics? Response time higher? Memory leak? We would walk through different memory leak \
+    situations to identify and analyze patterns that produce an increase of memory, CPU usage, and the \
+    load average over time, without any apparent reason. We'll start talking about taking the time to \
+    set up a proper test environment to repeat the exact same conditions as in production. Then we'll \
+    discuss how to access Node.js memory using V8 Inspector & Chrome Dev Tools, create a dump of the \
+    heap memory for the inspected application, with a lot of details about the memory usage, watching \
+    memory allocation in real time and finally a compilation of best practices about how we could end \
+    fixing the memory leak. In the end, we'll be able to use the right tools to monitor, understand, \
     and debug the memory consumption of a Node.js application on time.
 
 15:30-16:00 Offline-First Collaborative Data Structures by mafintosh in en
@@ -94,36 +94,70 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 
 16:00-16:30 Visualizing the Decentralized Web by jimpick in en
 
-    A new generation of peer-to-peer protocols is coming to the web. Browsers will soon be able
-    to talk directly to each other, without the need for centralized servers. Exciting new
-    applications and social networks are being created which put people back in control of their
-    personal data. See how IPFS, the Dat Protocol and Secure Scuttlebutt work. This presentation
+    A new generation of peer-to-peer protocols is coming to the web. Browsers will soon be able \
+    to talk directly to each other, without the need for centralized servers. Exciting new \
+    applications and social networks are being created which put people back in control of their \
+    personal data. See how IPFS, the Dat Protocol and Secure Scuttlebutt work. This presentation \
     will use interactive visualizations to demonstrate core concepts.
 
 16:45-17:15 Real-Time Machine Learning in JavaScript by kgryte in en
 
-    Real-time machine learning is a collection of statistical methods to obtain insights from
-    continuous data streams. In this talk, I'll provide an overview of real-time machine learning
-    algorithms and discuss how these algorithms can be implemented and used in JavaScript. I'll
-    highlight why running these algorithms in JavaScript has several advantages compared to languages
-    traditionally used for numerical computing, including the ability to perform client-side
-    computations. I'll conclude by discussing best-practices and common pitfalls encountered when
+    Real-time machine learning is a collection of statistical methods to obtain insights from \
+    continuous data streams. In this talk, I'll provide an overview of real-time machine learning \
+    algorithms and discuss how these algorithms can be implemented and used in JavaScript. I'll \
+    highlight why running these algorithms in JavaScript has several advantages compared to languages \
+    traditionally used for numerical computing, including the ability to perform client-side \
+    computations. I'll conclude by discussing best-practices and common pitfalls encountered when \
     using machine learning algorithms within JavaScript environments.
 
 17:15-17:45 Haute Codeture by stephaniecodes in en
 
-    What if, instead going for practicality, we used IoT to create fleeting moments of interaction
-    and beauty? What would happen if others could interact with my clothing via a web app? I’ll
-    share my story of how I got started with hardware and how it’s evolved into using fashion to
+    What if, instead going for practicality, we used IoT to create fleeting moments of interaction \
+    and beauty? What would happen if others could interact with my clothing via a web app? I’ll \
+    share my story of how I got started with hardware and how it’s evolved into using fashion to \
     create interactive, artistic experiences with strangers.
 
 18:00-18:30 Sponsor Talk
 18:30-19:45 Lightning Talks
     - おまいらちゃんとリソース解放してますか by shimataro999
+
+        使わなくなったリソースはどうしていますか？
+
+        GCが解放してくれるのはメモリだけ。ファイルディスクリプタやコネクションといったリソースは自動的には解放されないので、
+        LAMPの感覚で「システムが解放してくれるからいいや😄」と思っていると、あとでえらい目に遭います。n
+        しかも、多分テスト環境ではなかなか気づけません。
+
+        でも…「いつ」「どこで」「どのように」解放すればいいのか、あまり知られていません。
+        すぐに解放するならともかく、ある程度使いまわしたいときはどうすればいいのでしょうか。
+
+        そんな悩みを解決する、実践向けの内容です。
+
     - 食べたいIoT by hepppook
+
+        node.jsに手伝ってもらってリアルアンパンマンを作成したお話です
+
     - What developers can learn from Soviet space program failures by sitnikcode in en
+
+        Space industry is very similiar to software development. Human mistakes, big project with lack \
+        of communications, insane complexity. So there are a lot of things, which we can learn from \
+        them: not blame users, but change UI; report about issues in open source libraries; use linters. \
+        Especially, when all these best practices are wrapped in funny and real stories.
+
     - power-assert 2 by t_wada
+
+        power-assert は、テストコードを書き始めやすく、かつ投資として無駄にしないために、覚えることを極端に減らし、\
+        インターフェイスを安定させ、ツールの進化を落ち着かせようという思想のもと開発されました。おかげさまで power-assert \
+        は多くの現場でお使い頂けるまでになりました。ただ、リリースから年月を経て、Breaking Change 無しでは導入や解決が難しい\
+        機能や課題も出てきました。この LT では power-assert 2 で取り組む目標、解決案の取捨選択とその背景の思想、\
+        バージョニングへの姿勢などを話します。
+
     - How to choose the best npm library? by sota1235
+
+        How do you decide to choose the best npm library for your production app?
+        There are so many concerns such as the quality of code, the scale of community and interface. Not \
+        using npm library also can be one of the choices.
+        In this talk, I'll talk about the way to choose the BEST npm library for my team.
+
 20:15-22:00 After Party
 
 [Room B]
@@ -135,16 +169,17 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     その状況は変わりつつある。Javascript で機械学習を記述することによって、\
     ウェブサーバとの通信を必要としないウェブブラウザ上での学習・推論や、クライアントの GPU の活用など、\
     さまざまなメリットを享受できる。
-    
     このセッションでは、Javascript で機械学習することの意味、そして TensorFlow.js を用いてウェブアプリケーションを\
     構築する方法について実例を交えながら解説したいと思う。
 
 11:15-11:45 Node.jsでつくるNode.js ミニインタープリター＆コンパイラー by massie_g
 
-    「RubyでつくるRuby ゼロから学びなおすプログラミング言語入門」という書籍に感銘を受けて、自分でもミニ Node.js
+    「RubyでつくるRuby ゼロから学びなおすプログラミング言語入門」という書籍に感銘を受けて、自分でもミニNode.js \
     インタープリターを作ってみました。それを通して変数や関数のスコープについてより深く理解することができました。
-
     さらに以前から気になっていたLLVMを使って、バイナリを生成するミニコンパイラにもチャレンジしています。
+
+    こちらの記事をベースに、発表にまとめる予定です。
+    https://qiita.com/massie_g/items/3ee11c105b4458686bc1
 
 13:00-13:30 Diagnose your Node.js app by darai_0512
 
@@ -160,7 +195,6 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     ・ Profiling: stack profilerを利用した改善
     ・ Analysis: あえてアプリケーションをクラッシュさせて指標を得るpost-mortemの考え方\
     などの観点で、実際にコードを診断してみます。
-
     Node.jsではどのような診断方法が用意・検討されているのか、最新動向を追ってみます。
 
 13:30-14:00 State of SEO for SPA by sekikazu01
@@ -238,9 +272,9 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     このように、スマホ・アプリ開発においても Vue.js/Nuxt.js は 非常に強力に機能します。
     本セッションでは Vue.js/Nuxt.js で PWA の リアルタイム動画ラップ・バトル・アプリ を いかにして作り上げたのか、\
     どのように活用したのか、Vue.js/Nuxt.js の 技術を、デモを交えて ご紹介します。
-    ・PWA(Progressive Web Apps) の 概要
-    ・Vue.js/Nuxt.js を 使った PWA な モバイルアプリ の 開発手法
-    ・GitHub、CircleCI、GitHuba Pages を 使った 常にアクセス可能なプロトタイプ環境を持つ PWA アプリ開発環境
+    ・ PWA(Progressive Web Apps) の 概要
+    ・ Vue.js/Nuxt.js を 使った PWA な モバイルアプリ の 開発手法
+    ・ GitHub、CircleCI、GitHuba Pages を 使った 常にアクセス可能なプロトタイプ環境を持つ PWA アプリ開発環境
 
 [Room C]
 10:45-17:45 JSなんでもお悩み相談室
@@ -252,35 +286,33 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 [Room E]
 10:45-11:15 How I made critical code run much faster by poledesfetes in en
 
-    I have this critical piece of code. It has to run fast otherwise my clients complain.
-    Also it is synchronous so I want it to have a small impact on the performance of the
-    applications.
-
+    I have this critical piece of code. It has to run fast otherwise my clients complain. \
+    Also it is synchronous so I want it to have a small impact on the performance of the applications. \
     This is the story of how I spent a week to gain microseconds in some very critical piece of code.
 
 11:15-11:45 Accessibility vs latest Web APIs. Can’t we just get along? by PalmaSwell in en
 
-    Unfortunately, we still treat accessibility in the same way we deal with front-end
-    development for older browsers, something to be done at the end. What if I tell you that
+    Unfortunately, we still treat accessibility in the same way we deal with front-end \
+    development for older browsers, something to be done at the end. What if I tell you that \
     we can use the latest Web APIs and still offer an inclusive and accessible experience.
 
-    In this talk, you'll learn how to combine Web APIs such as Speech Recognition and Geolocation,
+    In this talk, you'll learn how to combine Web APIs such as Speech Recognition and Geolocation, \
     with performant Javascript techniques to create empathic user interfaces.
 
 13:00-13:30 A trillion points with Node.js by leichtgewicht
 
-    I will be presenting our progress of using DAT to create a open-source visualization system for
-    very large point-cloud data sets. This visualization system is entirely built on JavaScript and
+    I will be presenting our progress of using DAT to create a open-source visualization system for \
+    very large point-cloud data sets. This visualization system is entirely built on JavaScript and \
     can enable new ways how we share and use data.
 
 13:30-14:00 Navi: painless routing for React by james_k_nelson in en
 
-    Navi is a new kind of router: as your app's URL changes, it starts fetching the new URL's content,
+    Navi is a new kind of router: as your app's URL changes, it starts fetching the new URL's content, \
     and then it *waits*. It then renders the page *once the content has loaded*.
 
-    Delayed rendering makes routing simpler. Instead of manually managing component state and loading
-    spinners, you just assign URLs to content using `async`/`await` and `import()`. Navi does the
-    rest -- it fetches your content, manages your page's `&lt;title&gt;` and scroll position, and even
+    Delayed rendering makes routing simpler. Instead of manually managing component state and loading \
+    spinners, you just assign URLs to content using `async`/`await` and `import()`. Navi does the \
+    rest -- it fetches your content, manages your page's `&lt;title&gt;` and scroll position, and even \
     warns you about broken links!
 
     In this talk, I'll introduce Navi, and use it to live code a static website with create-react-app.
@@ -299,7 +331,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 
 15:30-16:00 Angular Universal on Google App Engine by kimamula
 
-    今年の6月からNode.jsがサポートされたGoogle App Engine Standard Environmentで、Angularアプリケーションをserver-side
+    今年の6月からNode.jsがサポートされたGoogle App Engine Standard Environmentで、Angularアプリケーションをserver-side \
     rendering (SSR)した事例についてご紹介します。
     
     Angular UniversalはAngularでSSRを可能にするためのプロジェクトであり、今回のアプリケーションはこのプロジェクトが\

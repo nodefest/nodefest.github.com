@@ -37,10 +37,7 @@ DAT ストレージ作成を通じて、分散ストレージの面白さを学�
 (This workshop will be presented in japanese. All documents will be provided
 in english/japanese and you can ask questions in english.)
 
-Distributed storages are a new and exciting way to store and work with data.
-The DAT project has an excellent Node.js implementation which allows us try and
-practice this new technology. In this short workshop we will learn to create a DAT
-storage both with tools and code and work with the data stored in a DAT storage.
+Distributed storages are a new and exciting way to store and work with data. The DAT project has an excellent Node.js implementation which allows us try and practice this new technology. In this short workshop we will learn to create a DAT storage both with tools and code and work with the data stored in a DAT storage.
 
 Study goals:
 ・ Creating and sharing a DAT homepage
