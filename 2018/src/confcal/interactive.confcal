@@ -3,13 +3,13 @@ on 2018/11/24
 at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 
 [Room A]
-10:00-10:30 Doors Open
-10:30-11:45 Node/JS Discussion
-13:00-15:00 Node/W3C Discussion
-15:00-17:00 Code And Learn by about_hiroppy
-17:00-18:00 Lightning Talks
+10:00-10:30 Doors Open in en
+10:30-11:45 Node/JS Discussion in en
+13:00-15:00 Node/W3C Discussion in en
+15:00-17:00 Code And Learn by about_hiroppy in en
+17:00-18:00 Lightning Talks in en
 
-    - Serverless in Scala on Node.js: Get Fast and Productive by smogami
+    - Serverless in Scala on Node.js: Get Fast and Productive by smogami in en
 
         FaaS (Function as a Service) is attracting attension since it may reduce operational \
         cost dramatically and simplify server architecture.
@@ -25,7 +25,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
         ・ Benefits of choosing Node.js as FaaS runtime
         ・ Benefits and how-to of using JS alternatives (Scala.js as an example)
 
-    - 私の生活を変えたHeadless Chrome by sbntaminif
+    - 私の生活を変えたHeadless Chrome by sbntaminif in ja
 
         Headless Chromeはそのほとんどの記事がテスト自動化になっており、そのためのツールという印象が強いと\
         思います。このLTでは実際に私の私生活でHeadless Chromeを使用しているところをお話しし、Headless \
@@ -36,16 +36,16 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
         TypeScriptを用いたLambda開発をすることのメリットと、DevOpsの観点から、これのデプロイに関して\
         CodePinelineとCodeBuildを用いてサーバレスに行う方法について発表します。
 
-18:15-20:00 After Party
+18:15-20:00 After Party in en
 
 [Room B]
-10:30-17:00 NodeSchool by n0bisuke
+10:30-17:00 NodeSchool by n0bisuke in en
 
 [Room C]
-10:30-17:00 Collaboration Space
+10:30-17:00 Collaboration Space in en
 
 [Room D]
-10:30-15:00 Workshop: Building hardware by tokutoku393
+10:30-15:00 Workshop: Building hardware by tokutoku393 in en
 15:00-17:00 Workshop: Hands-On React by yanarchy in en
 
     An accelerated workshop to get your hands dirty with React. We'll cover the following topics:
@@ -65,8 +65,6 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 [Room E]
 10:30-11:40 ワークショップ: 分散ストレージ体験 by leichtgewicht
 
-    (English follows)
-
     このワークショップは日本語で行われます。
 
     分散ストレージはデータ保存やデータ利用に関するエキサイティングで新たな方法です。DAT プロジェクトのよく出来た
@@ -77,19 +75,6 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     ・ DAT を使ってホームページを作って公開する。
     ・ その ホームページを Beaker Browser で見てやりとりする。
     ・ Node.js を使って DAT をリモートプロセスでやりとりする。
-
-    (This workshop will be presented in japanese. All documents will be provided
-    in english/japanese and you can ask questions in english.)
-
-    Distributed storages are a new and exciting way to store and work with data. \
-    The DAT project has an excellent Node.js implementation which allows us try and \
-    practice this new technology. In this short workshop we will learn to create a DAT \
-    storage both with tools and code and work with the data stored in a DAT storage.
-
-    Study goals:
-    ・ Creating and sharing a DAT homepage
-    ・ Interact with that Homepage in Beaker-Browser
-    ・ Processing DAT remotely using Node.js
 
 13:00-15:00 Workshop: Building a Small Compiler in JavaScript by damncabbage in en
 
@@ -115,4 +100,4 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     need the workshop git repository (TBA), a Terminal / Console, Node.js 8+, and a text \
     editor of your choice.
 
-15:00-17:00 Workshop: JavaScript TodoMVC by yosuke_furukawa
+15:00-17:00 Workshop: JavaScript TodoMVC by yosuke_furukawa in en

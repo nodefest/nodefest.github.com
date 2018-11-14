@@ -1,13 +1,36 @@
-Doors Open - summary,Doors Open
-Node/JS Discussion - summary,Node/JS Discussion
-Node/W3C Discussion - summary,Node/W3C Discussion
-#1 by about_hiroppy - summary,Code And Learn
-Lightning Talks - summary,Lightning Talks
-After Party - summary,After Party
-#1 by n0bisuke - summary,NodeSchool
-Collaboration Space - summary,Collaboration Space
-#1 by tokutoku393 - summary,Workshop: Building hardware
-#1 by yanarchy - summary,Workshop: Hands-On React
+key,source,ja,en
+Doors Open - summary,Doors Open,,Doors Open
+Node/JS Discussion - summary,Node/JS Discussion,,Node/JS Discussion
+Node/W3C Discussion - summary,Node/W3C Discussion,,Node/W3C Discussion
+#1 by about_hiroppy - summary,Code And Learn,,Code And Learn
+Lightning Talks - summary,Lightning Talks,,Lightning Talks
+#1 by smogami - summary,Serverless in Scala on Node.js: Get Fast and Productive,,Serverless in Scala on Node.js: Get Fast and Productive
+#1 by smogami - description,"FaaS (Function as a Service) is attracting attension since it may reduce operational cost dramatically and simplify server architecture.
+As skilled Java/Scala developers, my team want to write ""functions"" in Scala, not in JS/Python.
+However, FaaS runs code on ephemeral containers, so running functions on JVM (Java VM) may suffer from slow startup.
+
+So... our team approached a problem differently: Writing in Scala and generaing JS for Node.js. It goes successfull and we want to share our experiences.
+
+This talk will cover:
+・ Benefits of choosing Node.js as FaaS runtime
+・ Benefits and how-to of using JS alternatives (Scala.js as an example)",,"FaaS (Function as a Service) is attracting attension since it may reduce operational cost dramatically and simplify server architecture.
+As skilled Java/Scala developers, my team want to write ""functions"" in Scala, not in JS/Python.
+However, FaaS runs code on ephemeral containers, so running functions on JVM (Java VM) may suffer from slow startup.
+
+So... our team approached a problem differently: Writing in Scala and generaing JS for Node.js. It goes successfull and we want to share our experiences.
+
+This talk will cover:
+・ Benefits of choosing Node.js as FaaS runtime
+・ Benefits and how-to of using JS alternatives (Scala.js as an example)"
+#1 by sbntaminif - summary,私の生活を変えたHeadless Chrome,私の生活を変えたHeadless Chrome,
+#1 by sbntaminif - description,Headless Chromeはそのほとんどの記事がテスト自動化になっており、そのためのツールという印象が強いと思います。このLTでは実際に私の私生活でHeadless Chromeを使用しているところをお話しし、Headless Chromeの魅力を短い時間で存分に語りたいと思います。,Headless Chromeはそのほとんどの記事がテスト自動化になっており、そのためのツールという印象が強いと思います。このLTでは実際に私の私生活でHeadless Chromeを使用しているところをお話しし、Headless Chromeの魅力を短い時間で存分に語りたいと思います。,
+#1 by sin_ikkyu - summary,Deploy TypeScript with CodePipeline in Fargate,Deploy TypeScript with CodePipeline in Fargate,
+#1 by sin_ikkyu - description,TypeScriptを用いたLambda開発をすることのメリットと、DevOpsの観点から、これのデプロイに関してCodePinelineとCodeBuildを用いてサーバレスに行う方法について発表します。,TypeScriptを用いたLambda開発をすることのメリットと、DevOpsの観点から、これのデプロイに関してCodePinelineとCodeBuildを用いてサーバレスに行う方法について発表します。,
+After Party - summary,After Party,,After Party
+#1 by n0bisuke - summary,NodeSchool,,NodeSchool
+Collaboration Space - summary,Collaboration Space,,Collaboration Space
+#1 by tokutoku393 - summary,Workshop: Building hardware,,Workshop: Building hardware
+#1 by yanarchy - summary,Workshop: Hands-On React,,Workshop: Hands-On React
 #1 by yanarchy - description,"An accelerated workshop to get your hands dirty with React. We'll cover the following topics:
 
 ・ Difference between framework and a library
@@ -19,11 +42,20 @@ Collaboration Space - summary,Collaboration Space
 ・ React patterns
 ・ State vs stateless components
 
-This workshop is best for developers who have never used React or have only used it a little and want to gain deeper understanding."
-#1 by leichtgewicht - summary,ワークショップ: 分散ストレージ体験
-#1 by leichtgewicht - description,"(English follows)
+This workshop is best for developers who have never used React or have only used it a little and want to gain deeper understanding.",,"An accelerated workshop to get your hands dirty with React. We'll cover the following topics:
 
-このワークショップは日本語で行われます。
+・ Difference between framework and a library
+・ What's special about React?
+・ Non-React things like Babel and transpilation
+・ React components & JSX
+・ React component Lifecycle
+・ State management
+・ React patterns
+・ State vs stateless components
+
+This workshop is best for developers who have never used React or have only used it a little and want to gain deeper understanding."
+#1 by leichtgewicht - summary,ワークショップ: 分散ストレージ体験,ワークショップ: 分散ストレージ体験,
+#1 by leichtgewicht - description,"このワークショップは日本語で行われます。
 
 分散ストレージはデータ保存やデータ利用に関するエキサイティングで新たな方法です。DAT プロジェクトのよく出来た
 Node.js 版ライブラリを利用することで、私たちは DAT を使った分散ストレージを体験できます。このワークショップではツールやコードを用いた
@@ -32,18 +64,17 @@ DAT ストレージ作成を通じて、分散ストレージの面白さを学�
 ワークショップのゴール：
 ・ DAT を使ってホームページを作って公開する。
 ・ その ホームページを Beaker Browser で見てやりとりする。
-・ Node.js を使って DAT をリモートプロセスでやりとりする。
+・ Node.js を使って DAT をリモートプロセスでやりとりする。","このワークショップは日本語で行われます。
 
-(This workshop will be presented in japanese. All documents will be provided
-in english/japanese and you can ask questions in english.)
+分散ストレージはデータ保存やデータ利用に関するエキサイティングで新たな方法です。DAT プロジェクトのよく出来た
+Node.js 版ライブラリを利用することで、私たちは DAT を使った分散ストレージを体験できます。このワークショップではツールやコードを用いた
+DAT ストレージ作成を通じて、分散ストレージの面白さを学ぶことができます。
 
-Distributed storages are a new and exciting way to store and work with data. The DAT project has an excellent Node.js implementation which allows us try and practice this new technology. In this short workshop we will learn to create a DAT storage both with tools and code and work with the data stored in a DAT storage.
-
-Study goals:
-・ Creating and sharing a DAT homepage
-・ Interact with that Homepage in Beaker-Browser
-・ Processing DAT remotely using Node.js"
-#1 by damncabbage - summary,Workshop: Building a Small Compiler in JavaScript
+ワークショップのゴール：
+・ DAT を使ってホームページを作って公開する。
+・ その ホームページを Beaker Browser で見てやりとりする。
+・ Node.js を使って DAT をリモートプロセスでやりとりする。",
+#1 by damncabbage - summary,Workshop: Building a Small Compiler in JavaScript,,Workshop: Building a Small Compiler in JavaScript
 #1 by damncabbage - description,"""Compilers"" are usually-mysterious things that a lot of us actually use and rely on from day to day, eg. the JavaScript V8 compiler, the TypeScript compiler, or the Clang+LLVM compilers. Digging into how these work can be satisfying (like sleuthing a good puzzle); but some of the ways we implement them can appear in other forms, such as when validating user input, transforming big structures, or when separating side-effects from business logic.
 
 This workshop is comprised of a short talk that introduces the main parts of a compiler, followed by an at-your-own-pace tour through building a little one of your own. We'll start with a simple language that compiles to JavaScript.
@@ -54,5 +85,15 @@ We'll be stepping through:
 ・ Token Parsing (taking these symbols and turning it into a representation of a program), and
 ・ Code Generating (taking that representation and turning it into, in this case, JavaScript).
 
+This workshop is for people who are already somewhat familiar with JavaScript (just the language itself, not any particular library or framework). To get started, you only need the workshop git repository (TBA), a Terminal / Console, Node.js 8+, and a text editor of your choice.",,"""Compilers"" are usually-mysterious things that a lot of us actually use and rely on from day to day, eg. the JavaScript V8 compiler, the TypeScript compiler, or the Clang+LLVM compilers. Digging into how these work can be satisfying (like sleuthing a good puzzle); but some of the ways we implement them can appear in other forms, such as when validating user input, transforming big structures, or when separating side-effects from business logic.
+
+This workshop is comprised of a short talk that introduces the main parts of a compiler, followed by an at-your-own-pace tour through building a little one of your own. We'll start with a simple language that compiles to JavaScript.
+
+We'll be stepping through:
+
+・ Tokenising (taking a string and turning it into a bunch of symbols),
+・ Token Parsing (taking these symbols and turning it into a representation of a program), and
+・ Code Generating (taking that representation and turning it into, in this case, JavaScript).
+
 This workshop is for people who are already somewhat familiar with JavaScript (just the language itself, not any particular library or framework). To get started, you only need the workshop git repository (TBA), a Terminal / Console, Node.js 8+, and a text editor of your choice."
-#1 by yosuke_furukawa - summary,Workshop: JavaScript TodoMVC
+#1 by yosuke_furukawa - summary,Workshop: JavaScript TodoMVC,,Workshop: JavaScript TodoMVC

@@ -55,7 +55,7 @@ function readSchedule () {
               entry.parent = data.entries[entry.parentId]
             }
           })
-          return fse.writeFile(`${__dirname}/src/confcal/${day}.csv`, confCalToCSV(data))
+          return fse.writeFile(`${__dirname}/src/confcal/${day}.csv`, confCalToCSV(data, 'ja', { header: true }))
             .then(() => data);
         })
         .catch(error => {

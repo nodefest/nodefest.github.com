@@ -3,8 +3,8 @@ on 2018/11/23
 at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 
 [Room A]
-10:00-10:30 Doors Open
-10:30-10:45 Keynote
+10:00-10:30 Doors Open in en
+10:30-10:45 Keynote in en
 10:45-11:15 Look What You MIDI Me Do! by ohhoe in en
 
     Who loves pushing buttons? You? And you over there? \
@@ -117,8 +117,8 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     share my story of how I got started with hardware and how it’s evolved into using fashion to \
     create interactive, artistic experiences with strangers.
 
-18:00-18:30 Sponsor Talk
-18:30-19:45 Lightning Talks
+18:00-18:30 Sponsor Talk in en
+18:30-19:45 Lightning Talks in en
     - おまいらちゃんとリソース解放してますか by shimataro999
 
         使わなくなったリソースはどうしていますか？
@@ -151,14 +151,14 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
         機能や課題も出てきました。この LT では power-assert 2 で取り組む目標、解決案の取捨選択とその背景の思想、\
         バージョニングへの姿勢などを話します。
 
-    - How to choose the best npm library? by sota1235
+    - How to choose the best npm library? by sota1235 in en
 
         How do you decide to choose the best npm library for your production app?
         There are so many concerns such as the quality of code, the scale of community and interface. Not \
         using npm library also can be one of the choices.
         In this talk, I'll talk about the way to choose the BEST npm library for my team.
 
-20:15-22:00 After Party
+20:15-22:00 After Party in en
 
 [Room B]
 10:45-11:15 Javascript で機械学習はじめよう by tushuhei
@@ -278,7 +278,6 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 
 [Room C]
 10:45-17:45 JSなんでもお悩み相談室
-    JS Discussion Space
 
 [Room D]
 10:45-17:45 無限LT部屋
@@ -299,7 +298,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     In this talk, you'll learn how to combine Web APIs such as Speech Recognition and Geolocation, \
     with performant Javascript techniques to create empathic user interfaces.
 
-13:00-13:30 A trillion points with Node.js by leichtgewicht
+13:00-13:30 A trillion points with Node.js by leichtgewicht in en
 
     I will be presenting our progress of using DAT to create a open-source visualization system for \
     very large point-cloud data sets. This visualization system is entirely built on JavaScript and \
