@@ -11,7 +11,9 @@ require('./vendor/velocity');
 require('./module/navigation')();
 // するするスクロール
 require('./vendor/hashChange').initElements();
-var scroll = new (require('./vendor/sscroll'))();
+document.addEventListener('DOMContentLoaded', function () {
+  new (require('./vendor/sscroll'))();
+});
 
 
 var main = location.pathname.split('/2018')[1].toLowerCase();
@@ -23,4 +25,4 @@ var scripts = {
   '/schedule.html': require('./page/schedule'),
 };
 
-(scripts[main] || function() {})({ scroll: scroll });
+(scripts[main] || function() {})({});
