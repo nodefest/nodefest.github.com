@@ -1,12 +1,12 @@
 var hash = document.location.hash || ''
 var listeners = []
 
-function set (newHash) {
+function set (newHash, force) {
   if (!newHash) {
     newHash = ''
   }
   var oldHash = hash
-  if (oldHash === newHash) {
+  if (oldHash === newHash && !force) {
     return
   }
   hash = newHash
@@ -26,7 +26,7 @@ window.addEventListener('hashchange', function () {
 
 function _handleClick(ev) {
   ev.preventDefault()
-  set(ev.currentTarget.hash)
+  set(ev.currentTarget.hash, true)
 }
 
 function _updateLocationHash(newHash) {
