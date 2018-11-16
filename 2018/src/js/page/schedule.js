@@ -30,7 +30,7 @@ module.exports = function() {
     var screen;
     screens
       .filter(function (otherScreen) {
-        if (otherScreen.id === screenID) {
+        if (otherScreen.id === 'tab-' + screenID) {
           screen = otherScreen;
           return false;
         }

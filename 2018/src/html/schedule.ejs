@@ -17,7 +17,7 @@ var page = {
     for (const calName in calendar ) {
       const cal = calendar[calName]
       %>
-      <div class="page-body schedule-body sscroll-ignore" id="<%- calName %>">
+      <div class="page-body schedule-body sscroll-ignore" id="tab-<%- calName %>">
       <%- include('_partial/confcal', { cal }) -%>
       </div>
       <%
