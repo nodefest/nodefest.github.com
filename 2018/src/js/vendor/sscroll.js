@@ -27,7 +27,7 @@ function _modifyHash(hash) {
   history.pushState(null, null, hash)
 }
 
-function _scrollByHash(hash) {
+function _scrollByHash(hash, oldHash) {
   hash = hash.slice(1).trim()
   if (hash === '') {
     return
@@ -37,6 +37,10 @@ function _scrollByHash(hash) {
     return
   }
   if (destEl.classList.contains('sscroll-ignore')) {
+    return
+  }
+  if (oldHash === null) {
+    window.scrollTo(0, destEl.getBoundingClientRect().top)
     return
   }
   this._scrollTo(0, destEl.getBoundingClientRect().top, this.options)
