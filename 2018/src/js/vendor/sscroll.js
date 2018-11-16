@@ -9,11 +9,7 @@ function SScroll(options) {
     easing:   options.easing   || function (t) { return t*(2-t) }
   }
 
-  // こっそりhashが書き換えられないならやめておく
-  if (history.replaceState) {
-    hashChange.addListener(this._scrollByHash.bind(this), true)
-  }
-  return this
+  hashChange.addListener(this._scrollByHash.bind(this))
 }
 
 SScroll.prototype = {
