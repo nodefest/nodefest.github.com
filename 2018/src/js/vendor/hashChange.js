@@ -46,7 +46,7 @@ module.exports = {
   addListener: function (onChange, skipImmediateTrigger) {
     listeners.push(onChange)
     if (!skipImmediateTrigger) {
-      onChange(hash)
+      onChange(hash, null)
     }
   }
 }
