@@ -32,7 +32,7 @@ function _scrollByHash(hash) {
   if (hash === '') {
     return
   }
-  var destEl = document.getElementById(hash)
+  var destEl = document.getElementById('scroll-' + hash)
   if (!destEl) {
     return
   }
