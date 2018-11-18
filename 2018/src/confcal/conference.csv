@@ -244,7 +244,7 @@ In this talk, I'll introduce Navi, and use it to live code a static website with
 このトークでは超少人数でメンテされていたNode.jsバージョン6のアプリケーションの開発をモダン化する過程での取り組み（ローカル開発環境の刷新、TypeScriptの採用と新規フレームワークの導入、AWSのインフラ構成変更など）について、背景や実際の進め方を踏まえてお話をさせて頂くことで、開発手法や環境構築に悩んでいる人の助けになれればと思います。","ビットバンク株式会社では仮想通貨取引所 bitbank.cc を開発・運営しております。
 お客様や取引量の増加に伴い、サーバーサイドアプリケーションの要求水準も高まるばかりです。
 このトークでは超少人数でメンテされていたNode.jsバージョン6のアプリケーションの開発をモダン化する過程での取り組み（ローカル開発環境の刷新、TypeScriptの採用と新規フレームワークの導入、AWSのインフラ構成変更など）について、背景や実際の進め方を踏まえてお話をさせて頂くことで、開発手法や環境構築に悩んでいる人の助けになれればと思います。",
-#1 by hrnkoji - summary,ブロックチェーンアプリケーション開発でのJavascriptの話（仮）,ブロックチェーンアプリケーション開発でのJavascriptの話（仮）,
+#1 by hrnkoji - summary,ブロックチェーンアプリケーション開発でのJavascriptの話,ブロックチェーンアプリケーション開発でのJavascriptの話,
 #1 by hrnkoji - description,ブロックチェーンアプリケーション、DApps開発（Ethereum）をする上でのJavascript、フロントエンドの話,ブロックチェーンアプリケーション、DApps開発（Ethereum）をする上でのJavascript、フロントエンドの話,
 #1 by kimamula - summary,Angular Universal on Google App Engine,Angular Universal on Google App Engine,
 #1 by kimamula - description,"今年の6月からNode.jsがサポートされたGoogle App Engine Standard Environmentで、Angularアプリケーションをserver-side rendering (SSR)した事例についてご紹介します。
