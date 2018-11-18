@@ -185,7 +185,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 
     想定対象者: Node.js初学者（≠プログラミング初心者）から中級者まで
 
-    このセッションでは、コアAPIの視点からNode.jsの特性について整理し、自身のコードの診断できるようになることを目指します。
+    このセッションでは、コアAPIの視点からNode.jsの特性について整理し、自身のコードの診断ができるようになることを目指します。
 
     初学者にとって問題の原因がNode.jsなのかv8なのか、あるいはlibuvかOSか、切り分けだけでも大変です。\
     前半はコアAPIがどのように実装されているのかを理解し、切り分けのための土地勘を養います。
@@ -193,7 +193,7 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     後半では
     ・ Tracing: 非同期APIのライフタイムや各種パフォーマンスの可視化
     ・ Profiling: stack profilerを利用した改善
-    ・ Analysis: あえてアプリケーションをクラッシュさせて指標を得るpost-mortemの考え方\
+    ・ Analysis: あえてアプリケーションをクラッシュさせて指標を得るpost-mortemの考え方
     などの観点で、実際にコードを診断してみます。
     Node.jsではどのような診断方法が用意・検討されているのか、最新動向を追ってみます。
 
