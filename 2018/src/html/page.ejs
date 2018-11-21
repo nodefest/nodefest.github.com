@@ -21,16 +21,26 @@ var page = {
                     <% for (const room in cal.rooms) {
                             const entries = cal.rooms[room]%>
                     <% for (const entry of entries) {
-                        const speaker = speakers[entry.person] %>
+                        const speaker = speakers[entry.person]
+                        %>
                     <li>
                         <%- room-%>
-                        <%-
-                         entry.start-%>
+                        <%-entry.start-%>
                         <hr/>
                         <%- entry.summary -%>
                         <%- entry.description -%>
                         <hr/>
+                        <% if(entry.person){%>
+                            <img src="img/speakers/pic-<%=entry.person%>.jpg"/>
+                        <%}%>
+                        <% for (const biography in speaker) {
+                            const bio = speaker.biography %>
+                            <% if(speaker){%>
+                                <%- bio-%>
+                            <%}%>
+                            <%} %>
                     </li>
+                   
                     <% } %>
                     <% }%>
                 </ul>
