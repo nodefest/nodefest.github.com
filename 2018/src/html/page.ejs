@@ -27,8 +27,8 @@ var page = {
                         <%- room-%>
                         <%-entry.start-%>
                         <hr/>
-                        <%- entry.summary -%>
-                        <%- entry.description -%>
+                        <h3><%= entry.summary %></h3>
+                        <p><%= entry.description %></p>
                         <hr/>
                         <% if(entry.person){%>
                             <img src="img/speakers/pic-<%=entry.person%>.jpg"/>
@@ -36,7 +36,7 @@ var page = {
                         <% if (speaker) {
                             const bio = speaker.biography %>
                             <% if(speaker){%>
-                                <%- bio-%>
+                                <p><%= bio %></p>
                             <%}%>
                             <%} %>
                     </li>
