@@ -5,21 +5,25 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 [Room A]
 10:00-10:30 Doors Open in en
 10:30-10:45 Keynote in en
-10:45-11:15 Look What You MIDI Me Do! by ohhoe in en
+10:45-11:15 Offline-First Collaborative Data Structures by mafintosh in en
 
-    Who loves pushing buttons? You? And you over there? \
-    And the person behind you? Oh wait, everyone loves it?!!? \
-    Of course they do, a button is irresistible. \
-    Now… what if I told you that you could hook up a LOT of \
-    buttons to your computer… and use it to do wild things with the web? I’m glad you’re listening! \
-    Let’s take a journey into the Web MIDI api where the possibilities of the web aren’t just at \
-    your keyboard fingertips anymore, they’re literally any MIDI compatible controller you have connected! \
-    Want to make glitchy audio responsive visuals with WebGL shaders? \
-    Rad, we can do that. \
-    \
-    Want to create custom beats and have those input as a drum machine? \
-    No problem when you throw a little Web Audio API in the mix. \
-    Let’s dive in and find out how!
+    The web is growing bigger and bigger every year.
+    With the increasing rise of the mobile internet and
+    with users in places that have spotty or slow internet
+    we've have seen an increased interest in making things work
+    offline, without degrading user experience.
+
+    This talk is a hands-on talk about a series of data structures
+    that allow you to build complex websites that work offline and p2p,
+    whilst still allowing you to build collaborative applictions, such as
+    chat applications, shared TODO lists and more.
+
+    I'll be talking about cool new data structures such as the HAMT
+    (Hash Array Mapped Trie) on top of append-only logs and why this
+    is the future of the offline-first internet.
+
+    Expect modules you can use *today* to start implmenting great
+    collaborative offline-first applications and plenty of demos.
 
 11:15-11:45 Node.js: The Road to Workers by addaleax in en
 
@@ -72,25 +76,21 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     fixing the memory leak. In the end, we'll be able to use the right tools to monitor, understand, \
     and debug the memory consumption of a Node.js application on time.
 
-15:30-16:00 Offline-First Collaborative Data Structures by mafintosh in en
+15:30-16:00 Look What You MIDI Me Do! by ohhoe in en
 
-    The web is growing bigger and bigger every year.
-    With the increasing rise of the mobile internet and
-    with users in places that have spotty or slow internet
-    we've have seen an increased interest in making things work
-    offline, without degrading user experience.
-
-    This talk is a hands-on talk about a series of data structures
-    that allow you to build complex websites that work offline and p2p,
-    whilst still allowing you to build collaborative applictions, such as
-    chat applications, shared TODO lists and more.
-
-    I'll be talking about cool new data structures such as the HAMT
-    (Hash Array Mapped Trie) on top of append-only logs and why this
-    is the future of the offline-first internet.
-
-    Expect modules you can use *today* to start implmenting great
-    collaborative offline-first applications and plenty of demos.
+    Who loves pushing buttons? You? And you over there? \
+    And the person behind you? Oh wait, everyone loves it?!!? \
+    Of course they do, a button is irresistible. \
+    Now… what if I told you that you could hook up a LOT of \
+    buttons to your computer… and use it to do wild things with the web? I’m glad you’re listening! \
+    Let’s take a journey into the Web MIDI api where the possibilities of the web aren’t just at \
+    your keyboard fingertips anymore, they’re literally any MIDI compatible controller you have connected! \
+    Want to make glitchy audio responsive visuals with WebGL shaders? \
+    Rad, we can do that. \
+    \
+    Want to create custom beats and have those input as a drum machine? \
+    No problem when you throw a little Web Audio API in the mix. \
+    Let’s dive in and find out how!
 
 16:00-16:30 Visualizing the Decentralized Web by jimpick in en
 
