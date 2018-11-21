@@ -38,10 +38,8 @@ JavaScriptで開発できるマイコンボード「obniz」を使って、ハ�
 手軽にモノを動かす体験ができるので、ハードウェア初心者の方もぜひ参加してください。",
 #1 by Node-RED User Group Japan - summary,Workshop: Node-REDで楽しくIoT体験,Workshop: Node-REDで楽しくIoT体験,
 #1 by Node-RED User Group Japan - description,"このワークショップは日本語で行われます。
-npmから手軽にインストールできるNode-REDを使って、実際にノートPCからハードウェアを制御してIoT体験します。ぜひ動かす面白さを体験してください～！ノートPCなしでも体験できるデモ機も準備する予定です。お楽しみに！
-これにしたいです！遅くなりごめんなさい。","このワークショップは日本語で行われます。
-npmから手軽にインストールできるNode-REDを使って、実際にノートPCからハードウェアを制御してIoT体験します。ぜひ動かす面白さを体験してください～！ノートPCなしでも体験できるデモ機も準備する予定です。お楽しみに！
-これにしたいです！遅くなりごめんなさい。",
+npmから手軽にインストールできるNode-REDを使って、実際にノートPCからハードウェアを制御してIoT体験します。ぜひ動かす面白さを体験してください～！ノートPCなしでも体験できるデモ機も準備する予定です。お楽しみに！","このワークショップは日本語で行われます。
+npmから手軽にインストールできるNode-REDを使って、実際にノートPCからハードウェアを制御してIoT体験します。ぜひ動かす面白さを体験してください～！ノートPCなしでも体験できるデモ機も準備する予定です。お楽しみに！",
 #1 by yanarchy - summary,Workshop: Hands-On React,,Workshop: Hands-On React
 #1 by yanarchy - description,"An accelerated workshop to get your hands dirty with React. We'll cover the following topics:
 
@@ -66,7 +64,7 @@ This workshop is best for developers who have never used React or have only used
 ・ State vs stateless components
 
 This workshop is best for developers who have never used React or have only used it a little and want to gain deeper understanding."
-#1 by leichtgewicht - summary,Workshop: 分散ストレージ体験,Workshop: 分散ストレージ体験,
+#1 by leichtgewicht - summary,ワークショップ: 分散ストレージ体験,ワークショップ: 分散ストレージ体験,
 #1 by leichtgewicht - description,"このワークショップは日本語で行われます。
 
 分散ストレージはデータ保存やデータ利用に関するエキサイティングで新たな方法です。DAT プロジェクトのよく出来た
