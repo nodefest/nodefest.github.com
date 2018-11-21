@@ -33,7 +33,7 @@ var page = {
                         <% if(entry.person){%>
                             <img src="img/speakers/pic-<%=entry.person%>.jpg"/>
                         <%}%>
-                        <% for (const biography in speaker) {
+                        <% if (speaker) {
                             const bio = speaker.biography %>
                             <% if(speaker){%>
                                 <%- bio-%>
