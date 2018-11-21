@@ -51,7 +51,17 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
 10:30-17:00 Collaboration Space in en
 
 [Room D]
-10:30-15:00 Workshop: Building hardware by tokutoku393 in en
+10:30-11:45 Workshop: JavaScriptでハードウェア開発やってみよう by tokutoku393
+
+    このワークショップは日本語で行われます。
+    JavaScriptで開発できるマイコンボード「obniz」を使って、ハードウェアとWebの連携を試してみるハンズオンです！
+    手軽にモノを動かす体験ができるので、ハードウェア初心者の方もぜひ参加してください。
+
+13:00-15:00 Workshop: Node-REDで楽しくIoT体験 by Node-RED User Group Japan
+
+    このワークショップは日本語で行われます。
+    npmから手軽にインストールできるNode-REDを使って、実際にノートPCからハードウェアを制御してIoT体験します。ぜひ動かす面白さを体験してください～！ノートPCなしでも体験できるデモ機も準備する予定です。お楽しみに！
+
 15:00-17:00 Workshop: Hands-On React by yanarchy in en
 
     An accelerated workshop to get your hands dirty with React. We'll cover the following topics:
