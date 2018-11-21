@@ -24,8 +24,14 @@ var page = {
                         const speaker = speakers[entry.person]
                         %>
                     <li>
-                        <%- room-%>
-                        <%-entry.start-%>
+                        <%
+                        const slots = cal.toSlots()
+                        const slotClasses = new Map()
+                        function hh (time) {
+                            return momentTz(time).tz(slots.tz).format('H:mm')
+                        }
+                        %>
+                        <p><%=`${room} ${hh(entry.start)} - ${hh(entry.end)}`%></p>
                         <hr/>
                         <h3><%= entry.summary %></h3>
                         <p><%= entry.description %></p>
@@ -45,6 +51,7 @@ var page = {
                     <% }%>
                 </ul>
                 <% }%>
+                
             </div>
 </body>
 </html>
