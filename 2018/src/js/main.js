@@ -23,6 +23,7 @@ var scripts = {
   '/venues.html':   require('./page/venues'),
   '/speakers.html': require('./page/speakers'),
   '/schedule.html': require('./page/schedule'),
+  '/room.html': require('./page/room'),
 };
 
 (scripts[main] || function() {})({});
