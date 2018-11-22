@@ -30,7 +30,7 @@ function toggle (node, clazz, flag) {
 }
 
 module.exports = function () {
-    var overview = document.getElementById('rooms')
+    var overview = document.getElementById('rooms-container')
     var timeNode = document.getElementById('room-time')
     var rooms = [].slice.call(document.querySelectorAll('.room-list'))
     var allParts = rooms.concat(overview)
