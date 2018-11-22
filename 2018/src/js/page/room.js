@@ -2,6 +2,9 @@ var hashChange = require('../vendor/hashChange');
 var momentTz = require('moment-timezone');
 
 function replaceFlag (oldNode, newNode, flag) {
+    if (oldNode === newNode) {
+        return
+    }
     oldNode && oldNode.classList.remove(flag)
     newNode && newNode.classList.add(flag)
     return newNode
