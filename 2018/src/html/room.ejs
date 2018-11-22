@@ -48,7 +48,7 @@ var page = {
                             return momentTz(time).tz(slots.tz).format('H:mm')
                         }
                         %>
-                    <li data-start="<%= momentTz(entry.start) %>">
+                    <li data-start="<%= momentTz(entry.start).tz('Asia/Tokyo').toISOString() %>">
                         <p><%=`${room} ${hh(entry.start)} - ${hh(entry.end)}`%></p>
                         <hr/>
                         <h3><%= entry.summary %></h3>
