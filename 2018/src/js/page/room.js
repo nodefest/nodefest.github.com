@@ -124,7 +124,7 @@ module.exports = function () {
             }
         }
         var nextSibling = findNode(/^li$/ig, current, function (curr) { return curr.nextSibling })
-        var prevSibling = findNode(/^li$/ig, current, function (curr) { return curr.prevSibling })
+        var prevSibling = findNode(/^li$/ig, current, function (curr) { return curr.previousSibling })
         selectedRoom.allEntries.forEach(function (entryNode) {
             toggle(entryNode, 'room-entry-current', entryNode === current)
             toggle(entryNode, 'room-entry-after', entryNode === nextSibling)
