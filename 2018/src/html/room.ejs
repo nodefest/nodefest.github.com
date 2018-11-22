@@ -71,7 +71,7 @@ var page = {
                         <p><%= entry.description %></p>
                         <hr/>
                         <% if(entry.person){%>
-                            <img src="img/speakers/pic-<%=entry.person%>.jpg"/>
+                            <div class="room-image" style="background-image:url(img/speakers/pic-<%=entry.person%>.jpg);"></div>
                         <%}%>
                         <% if (speaker) {
                             const bio = speaker.biography %>
