@@ -57,9 +57,10 @@ function itemFooter () {
                 var count = 0.
                 for (const room in cal.rooms) {
                     const entries = cal.rooms[room]
+                    const firstEntry = entries[0]
                     %>
                 <ul id="list-<%= calName + '-' + count %>" class="room-list">
-                    <li class="room-entry-closed room-entry-notstarted">Closed</li>
+                    <li class="room-entry-closed room-entry-notstarted">This rooms opens at <%= hh(firstEntry.start) %></li>
                     <%
                     var formerEnd;
                     for (const entry of entries) {
@@ -89,7 +90,7 @@ function itemFooter () {
                         formerEnd = entry.end
                     }
                 %>  
-                    <li class="room-entry-closed room-entry-finished">Closed</li>
+                    <li class="room-entry-closed room-entry-finished">This room closes at <%= hh(formerEnd) %>. Thank you for joining us today!</li>
                 </ul><%
                     count += 1
                 }
