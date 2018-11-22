@@ -114,7 +114,7 @@ module.exports = function () {
             current = selectedRoom.before
         } else {
             selectedRoom.entries.forEach(function (entryNode) {
-                var isAfter = compareHmm(entryNode.start, now) < 0
+                var isAfter = compareHmm(entryNode.start, now) <= 0
                 if (isAfter && !current) {
                     current = entryNode
                 }
