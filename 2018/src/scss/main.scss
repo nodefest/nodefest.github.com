@@ -2744,8 +2744,7 @@ a.confcal-button-inactive {
 }
 
 .room-list {
-  display: flex;
-  flex-direction: column;
+  display: block;
   position: absolute;
   top: 0;
   left:0;
@@ -2755,15 +2754,29 @@ a.confcal-button-inactive {
   li {
     display: none;
     &.room-entry-before, &.room-entry-after, &.room-entry-current {
-      display: flex;
+      display: block;
       overflow: hidden;
       position: relative;
+      width: 100%
     }
-  }  
+  }
+}
+
+.room-entry-before,.room-entry-after {
+  height: 16%;
+  background: #1da1f2;
 }
 
 .room-entry-current {
-  flex-grow: 8;
+  height: 68%;
+}
+.room-before-start, .room-after-finish {
+  .room-entry-before,.room-entry-after {
+    height: 24%;
+  }
+  .room-entry-current {
+    height: 76%;
+  }
 }
 
 .room-entry-before {
@@ -2778,9 +2791,6 @@ a.confcal-button-inactive {
   // transition: .3s ease;
   // background-color:#b3b3b3;
   // z-index: 1;
-}
-.room-entry-before,.room-entry-after {
-  flex: 1;
 }
 
 #room-time-container {
