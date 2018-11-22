@@ -1,13 +1,32 @@
 var hashChange = require('../vendor/hashChange');
 var momentTz = require('moment-timezone');
 
-function replaceFlag (oldNode, newNode, flag) {
-    if (oldNode === newNode) {
-        return
+function compareHmm (time, now) {
+    if (time.hours() === now.hours()) {
+        if (time.minutes() === now.minutes()) {
+            return 0
+        }
+        if (time.minutes() < now.minutes()) {
+            return -1
+        }
+        return 1
     }
-    oldNode && oldNode.classList.remove(flag)
-    newNode && newNode.classList.add(flag)
-    return newNode
+    if (time.hours() < now.hours()) {
+        return -1
+    }
+    return 1
+}
+
+function toggle (node, clazz, flag) {
+    if (flag) {
+        if (!node.classList.contains(clazz)) {
+            node.classList.add(clazz)
+        }
+    } else {
+        if (node.classList.contains(clazz)) {
+            node.classList.remove(clazz)
+        }
+    }
 }
 
 module.exports = function () {
@@ -22,6 +41,8 @@ module.exports = function () {
         entries.forEach(function (entryNode) {
             var start = entryNode.attributes['data-start']
             entryNode.start = momentTz(start.value).tz('Asia/Tokyo')
+            var end = entryNode.attributes['data-end']
+            entryNode.end = momentTz(end.value).tz('Asia/Tokyo')
         })
 
         return {
@@ -57,9 +78,11 @@ module.exports = function () {
         })
     })
 
-    var before
-    var after
-    var current
+    function updateTime (time) {
+        if (time !== timeNode.innerText) {
+            timeNode.innerText = time
+        }
+    }
 
     function render () {
         var now = momentTz(Date.now()).tz('Asia/Tokyo')
@@ -69,30 +92,48 @@ module.exports = function () {
         if (minute) {
             now.minutes(minute)
         }
-        timeNode.innerText = now.format('HH:mm')
+        updateTime(now.format('HH:mm'))
         if (!selectedRoom) {
             return
         }
-        var newBefore
-        var newCurrent = selectedRoom.first
-        var newAfter = selectedRoom.entries[0]
+        var beforeStart = true
+        var previous
+        var before
+        var after
+        var current
         selectedRoom.entries.forEach(function (entryNode) {
-            var isBefore = entryNode.start.hours() < now.hours() ||
-                entryNode.start.hours() === now.hours() && entryNode.start.minutes() < now.minutes()
-            if (isBefore) {
-                newBefore = newCurrent
-                newCurrent = entryNode
-                newAfter = null
-            } else if(!newAfter) {
-                newAfter = entryNode
+            var isBefore = compareHmm(entryNode.end, now) === -1
+            var isAfter = compareHmm(entryNode.start, now) === 1
+            // console.log(entryNode.start.format('HH:mm'), now.format('HH:mm'), entryNode.end.format('HH:mm'), isBefore, isAfter)
+            var isCurrent = !isBefore && !isAfter
+            if (isCurrent || isBefore) {
+                beforeStart = false
             }
+            if (isCurrent) {
+                before = previous
+                current = entryNode
+            }
+            if (isAfter && !after) {
+                after = entryNode
+            }
+            previous = entryNode
+            return isCurrent
         })
-        if (!newAfter) {
-            newAfter = selectedRoom.last
+        var afterFinish = !current && !beforeStart
+        if (afterFinish) {
+            before = previous
         }
-        current = replaceFlag(current, newCurrent, 'room-entry-current')
-        before = replaceFlag(before, newBefore, 'room-entry-before')
-        after = replaceFlag(after, newAfter, 'room-entry-after')
+        selectedRoom.entries.forEach(function (entryNode) {
+            toggle(entryNode, 'room-entry-current', entryNode === current)
+            toggle(entryNode, 'room-entry-after', entryNode === after)
+            toggle(entryNode, 'room-entry-before', entryNode === before)
+        })
+        toggle(selectedRoom.first, 'room-entry-current', beforeStart)
+        toggle(selectedRoom.first, 'room-entry-before', selectedRoom.entries[0].classList.contains('room-entry-current'))
+        toggle(selectedRoom.last, 'room-entry-current', afterFinish)
+        toggle(selectedRoom.last, 'room-entry-after', selectedRoom.entries[selectedRoom.entries.length - 1].classList.contains('room-entry-current'))
+        toggle(selectedRoom.node, 'room-before-start', beforeStart)
+        toggle(selectedRoom.node, 'room-after-finish', afterFinish)
     }
     render()
     setInterval(render, 100)

@@ -53,10 +53,16 @@ var page = {
                             return momentTz(time).tz(slots.tz).format('H:mm')
                         }
                         if (formerEnd && entry.start > formerEnd) { %>
-                    <li data-start="<%= momentTz(formerEnd).tz('Asia/Tokyo').toISOString() %>">Break</li><%
+                    <li
+                        data-start="<%= momentTz(formerEnd).tz('Asia/Tokyo').toISOString() %>"
+                        data-end="<%= momentTz(entry.start).tz('Asia/Tokyo').toISOString() %>"
+                    >Break</li><%
                         }
                         %>
-                    <li data-start="<%= momentTz(entry.start).tz('Asia/Tokyo').toISOString() %>">
+                    <li
+                        data-start="<%= momentTz(entry.start).tz('Asia/Tokyo').toISOString() %>"
+                        data-end="<%= momentTz(entry.end).tz('Asia/Tokyo').toISOString() %>"
+                    >
                         <p><%=`${room} ${hh(entry.start)} - ${hh(entry.end)}`%></p>
                         <hr/>
                         <h3><%= entry.summary %></h3>
