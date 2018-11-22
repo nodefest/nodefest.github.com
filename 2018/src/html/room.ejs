@@ -14,23 +14,41 @@ var page = {
     <title>Document</title>
 </head>
 <body>
-        <div><% for (const calName in calendar ) {
-                      const cal = calendar[calName]
-                      %>
-                <ul>
-                    <% for (const room in cal.rooms) {
-                            const entries = cal.rooms[room]%>
+        <div id="rooms">
+            <h1>Rooms</h1>
+            <ul id="rooms">
+            <%
+            for (const calName in calendar ) {
+                const cal = calendar[calName]
+                var count = 0
+                for (const room in cal.rooms) {
+                    const entries = cal.rooms[room]
+                    %>
+                <li><a href="#<%= calName %>-<%= count %>"><%= calName %> - <%= room %></a></li><%
+                    count += 1
+                }
+            }
+            %>
+            </ul>
+        </div>
+        <div>
+            <%
+            for (const calName in calendar ) {
+                const cal = calendar[calName]
+                var count = 0.
+                for (const room in cal.rooms) {
+                    const entries = cal.rooms[room]
+                    %>
+                <ul id="list-<%= calName + '-' + count %>" class="room-list">
                     <% for (const entry of entries) {
                         const speaker = speakers[entry.person]
-                        %>
-                    <li>
-                        <%
                         const slots = cal.toSlots()
                         const slotClasses = new Map()
                         function hh (time) {
                             return momentTz(time).tz(slots.tz).format('H:mm')
                         }
                         %>
+                    <li data-start="<%= momentTz(entry.start) %>">
                         <p><%=`${room} ${hh(entry.start)} - ${hh(entry.end)}`%></p>
                         <hr/>
                         <h3><%= entry.summary %></h3>
@@ -45,14 +63,15 @@ var page = {
                                 <p><%= bio %></p>
                             <%}%>
                             <%} %>
-                    </li>
-                   
-                    <% } %>
-                    <% }%>
-                </ul>
-                <% }%>
-                
+                    </li><%
+                    }
+                %>
+                </ul><%
+                    count += 1
+                }
+            }%>    
             </div>
-</body>
+    </body>
+  <script src="main.js"></script>
 </html>
 
