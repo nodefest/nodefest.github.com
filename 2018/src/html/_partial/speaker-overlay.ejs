@@ -15,6 +15,7 @@
         <div class="session-speakerProfile">
           <p class="session-speakerName"><%- speaker.name %></p>
           <%
+          var translations = translations.speaker[speaker.id] || {}
           if (speaker.biography) {
             %>
             <div class="session-speakerBio" lang="en">
@@ -22,10 +23,14 @@
             </div>
             <%
           }
-          if (speaker['自己紹介']) {
+          var jaBio = speaker['自己紹介'] || translations.ja
+          if (jaBio) {
+            if (speaker.biography) {
+              %><hr /><%
+            }
             %>
             <div class="session-speakerBio" lang="ja">
-              <p><%- _enableBr(speaker['自己紹介']) %></p>
+              <p><%- _enableBr(jaBio) %></p>
             </div>
             <%
           }

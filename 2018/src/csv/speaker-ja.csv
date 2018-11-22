@@ -1,0 +1,123 @@
+"key","source","en","ja","submitted-in"
+"addaleax","Over the last 2 and a half years, Anna has been one of the most active contributors to Node.js core. Currently pursuing a Master’s degree in mathematics in Germany, she is fueled by a passion for Node and its community.","Over the last 2 and a half years, Anna has been one of the most active contributors to Node.js core. Currently pursuing a Master’s degree in mathematics in Germany, she is fueled by a passion for Node and its community.","この2年半にわたり、アンナはNode.js のコアに最も活動的な貢献者の一人です。現在ドイツで数学の修士号を追求している彼女は、Nodeとそのコミュニティのための情熱により支えられています。","en"
+"ohhoe","Rachel White is a technologist, artist, and pretend-cyborg who is currently a Developer Experience Lead, member of the Node.js Community Committee, and co-host of the Changelog podcast JSParty. She is interested in new uses for old hardware, useless robots, VR/AR/MR, and bots. She has spoken internationally about Node.js, JavaScript, Creative Coding, IoT, Artificial Intelligence, NodeBots, and hardware. She's a previous artist in residence at Pioneer Works where she worked on a series that visualized what modern cybernetic augmentation could look like with todays hardware and special effects makeup. Her other interests include glitch art, 80s horror, and indie games. Her aesthetic is fog machines, laser lights, and broken VHS tapes.","Rachel White is a technologist, artist, and pretend-cyborg who is currently a Developer Experience Lead, member of the Node.js Community Committee, and co-host of the Changelog podcast JSParty. She is interested in new uses for old hardware, useless robots, VR/AR/MR, and bots. She has spoken internationally about Node.js, JavaScript, Creative Coding, IoT, Artificial Intelligence, NodeBots, and hardware. She's a previous artist in residence at Pioneer Works where she worked on a series that visualized what modern cybernetic augmentation could look like with todays hardware and special effects makeup. Her other interests include glitch art, 80s horror, and indie games. Her aesthetic is fog machines, laser lights, and broken VHS tapes.","レイチェル・ホワイトは技術者・芸術家で、現在、開発者の経験、Node.js コミュニティ委員会のメンバーでChangelog podcast JSParty の共催者でサイボーグのふりをしています。
+古いハードウェア、役に立たないロボット、VR/AR/MR、そしてロボットの新しい使用方法に興味があります。彼女は国際的にNode.js、JavaScript、創造的なコーディング、IoT、人工知能、NodeBots、およびハードウェアについて話してきました。彼女は以前Pioneer Worksの邸宅に住んでいたアーティストで、今日のハードウェアと特殊効果のメイクを現代のサイバネティック増強がどのように見えるかを視覚化したシリーズに取り組んでいます。彼女のその他趣味はグリッチ アート、80 年代ホラーとインディー系のゲームです。彼女の美学は、霧のマシン、レーザー ライト、および壊れたVHS テープです。","en"
+"littledan","Daniel Ehrenberg is a TC39 delegate who works for Igalia, a Galician free software consultancy. He lives in Catalunya.","Daniel Ehrenberg is a TC39 delegate who works for Igalia, a Galician free software consultancy. He lives in Catalunya.","ダニエル ・ エーレンベルクは、Igaliaのために働くTC39の代表で、ガリシア人のフリーソフトウェアコンサルタントです。カタルーニャに住んでいます。","en"
+"tushuhei","2014 年より Google 合同会社 UX エンジニア。2017 年東京大学工学系研究科 博士課程修了。博士（工学）。機械学習とウェブの融合がもたらす、新たなユーザ体験の創出に向けて研究および制作活動を行っている。","2014 年より Google 合同会社 UX エンジニア。2017 年東京大学工学系研究科 博士課程修了。博士（工学）。機械学習とウェブの融合がもたらす、新たなユーザ体験の創出に向けて研究および制作活動を行っている。","2014 年より Google 合同会社 UX エンジニア。2017 年東京大学工学系研究科 博士課程修了。博士（工学）。機械学習とウェブの融合がもたらす、新たなユーザ体験の創出に向けて研究および制作活動を行っている。","ja"
+"cjihrig","Colin Ihrig is a member of the Node.js Core Technical Committee, a libuv collaborator, and a hapi.js core team member. Colin is the author of Pro Node.js for Developers, and co-author of Full Stack JavaScript Development with MEAN.","Colin Ihrig is a member of the Node.js Core Technical Committee, a libuv collaborator, and a hapi.js core team member. Colin is the author of Pro Node.js for Developers, and co-author of Full Stack JavaScript Development with MEAN.","コリン・イーリッグはhapi.jsのコアチームメンバー、libuvコラボレーター、Node.js コア技術委員会のメンバーです。コリンは、「Pro Node.js for Developers」の著者であり「Full Stack JavaScript Development with MEAN」の共著者です。","en"
+"gioyik","Support Engineer at NodeSource. At NodeSource I spend time working on products, giving talks and fixing other companies issues related to Node.js. I created my own lisp based language, a modern CSS framework and a ton of C libs because I enjoy learning and having fun during the process. Previously worked at Mozilla porting Firefox OS to ARM devices, building IoT tools for web developers and speaking about Rust, Node.js and embedded OS development.","Support Engineer at NodeSource. At NodeSource I spend time working on products, giving talks and fixing other companies issues related to Node.js. I created my own lisp based language, a modern CSS framework and a ton of C libs because I enjoy learning and having fun during the process. Previously worked at Mozilla porting Firefox OS to ARM devices, building IoT tools for web developers and speaking about Rust, Node.js and embedded OS development.","NodeSourceでエンジニアをサポートしましょう。
+ NodeSourceで私の取りくんでいるプロダクトは、協議を与え、他社のNode.jsに関連する問題を解決しています。
+私は学習とその過程を楽しむために、私自身のlisp、モダンなCSSのフレームワークとたくさんのCライブラリを作成しました。以前はMozilla で、ARM デバイスへのFirefox OSの移植、web開発者のためのIoT ツールの構築、RUST、Node.js と組み込み OS 開発について話すことをしていました。","en"
+"mafintosh","Mathias Buus is a self taught JavaScript hacker from Copenhagen that has been working with Node.js since the 0.2 days. Mathias likes to work with P2P and distributed systems and is the author of more than 650 modules on npm. He is also the Chief of Research at Beaker leading the technical work on the Dat protocol.","Mathias Buus is a self taught JavaScript hacker from Copenhagen that has been working with Node.js since the 0.2 days. Mathias likes to work with P2P and distributed systems and is the author of more than 650 modules on npm. He is also the Chief of Research at Beaker leading the technical work on the Dat protocol.","ブース・マティアスさんはコペンハーゲンからの JavaScript ハッカーです。独学で Javascript を学んで Node.js 0.2 日以来取り組んでいます。マティアスは、P2P および分散システムと連携するが好きで、650 以上の NPM モジュールの作者です。彼は Beaker の研究長として Dat プロトコルの開発を率いています。","en"
+"jimpick","Jim is a software developer based in Vancouver, Canada. In the past year, he has worked for both the Dat Project and Protocol Labs (IPFS). He is also a co-host of the DatCast podcast. Over the years, Jim has been involved in many open source communities, including the Debian project, the Linux kernel, and Node.js. 簡単な日本語なら話せます。","Jim is a software developer based in Vancouver, Canada. In the past year, he has worked for both the Dat Project and Protocol Labs (IPFS). He is also a co-host of the DatCast podcast. Over the years, Jim has been involved in many open source communities, including the Debian project, the Linux kernel, and Node.js. 簡単な日本語なら話せます。","ジムはカナダのバンクーバーを拠点におくソフトウェア開発者です。昨年、彼はDat プロジェクトと Protocol Labs（IPFS) の両方で働いていました。彼はDatCast ポッドキャストの共同主催者でもあります。ジムは数年以上にわたって、Debian project、the Linux Kernel、Node.jsを含めた多くのオープンソースコミュニティに関わってきました。簡単な日本語なら話せます。","en"
+"poledesfetes","Vladimir is an active contributor of the Node.js project especially in the Security Working Group. He has been leading the ecosystem security initiative in the WG. He has been publishing multiple articles regarding Node.js security and performance.","Vladimir is an active contributor of the Node.js project especially in the Security Working Group. He has been leading the ecosystem security initiative in the WG. He has been publishing multiple articles regarding Node.js security and performance.","ウラジミールは特にセキュリティワーキンググループ内のNode.jsプロジェクトの活動的な貢献者です。彼はWGでエコシステムセキュリティイニシアティブをけん引しています。彼はNode.jsのセキュリティとパフォーマンスに関する複数の記事を公開しています。","en"
+"PalmaSwell","A self-educated UI Developer working at SinnerSchrader.  As part of the product engineering team, he works as a proxy between the design and engineering teams. You’ll find him in that sweet spot where art meets science. Using technology to craft user-centric experiences. 
+
+He’s currently also leading the educational program module 'Modern Software Development' at SinnerSchrader. 
+
+He is also the co-founder of Woodlike Ocean and an engaged social entrepreneur.","A self-educated UI Developer working at SinnerSchrader.  As part of the product engineering team, he works as a proxy between the design and engineering teams. You’ll find him in that sweet spot where art meets science. Using technology to craft user-centric experiences. 
+
+He’s currently also leading the educational program module 'Modern Software Development' at SinnerSchrader. 
+
+He is also the co-founder of Woodlike Ocean and an engaged social entrepreneur.","SinnerSchrader に勤務する独学UI開発者。 製品エンジニアリングチームの一部として、彼はデザインとエンジニア リングチーム間のプロキシとして働いています。彼は、芸術と科学が出会うそのスイートスポットで見つけます。クラフト ユーザー中心のエクスペリエンスに技術を使用しています。 
+
+彼は現在、SinnerSchrader で教育プログラムモジュール「Modern Software Development」もリードしています。
+
+彼はまた、Woodlike Oceanの共同創設者であり携わっている社会起業家です。","en"
+"leichtgewicht","Martin has been freelance OSS developer from Austria living in Osaka, Japan for many years. For several years now he focuses on Node.js as his main development platform and is an active member of the Osakan developer community.","Martin has been freelance OSS developer from Austria living in Osaka, Japan for many years. For several years now he focuses on Node.js as his main development platform and is an active member of the Osakan developer community.","マルティンはオーストリアから 8 年間大阪に住んでいるのフリランス OSS 開発者です。 Node.js はもう数年間メーン開発プラットフォームとして利用しているし大阪の開発者コミュニティを積極的に貢献しています。","en"
+"sitnikcode","The creator of PostCSS and Autoprefixer. Space enthusiast from Russia.","The creator of PostCSS and Autoprefixer. Space enthusiast from Russia.","PostCSS と Autoprefixer の作者です。ロシアからの宇宙オタク。","en"
+"smogami","A developer and product manager at Kurusugawa Computer Inc., working on SaaS for machine learning.","A developer and product manager at Kurusugawa Computer Inc., working on SaaS for machine learning.","有限会社 来栖川電算のプロダクトマネジャーや開発者です。機械学習の SaaS を開発しています。","en"
+"kgryte","Athan Reines is a full-stack engineer and data scientist. He has a PhD in Physics, where he used machine learning and time series analytics to probe biological systems at the nanoscale. He currently works full-time on open source projects to facilitate numerical and scientific computing in Node.js and JavaScript. For his latest open source project, see stdlib, a standard library for Node.js and Javascript: https://github.com/stdlib-js/stdlib.","Athan Reines is a full-stack engineer and data scientist. He has a PhD in Physics, where he used machine learning and time series analytics to probe biological systems at the nanoscale. He currently works full-time on open source projects to facilitate numerical and scientific computing in Node.js and JavaScript. For his latest open source project, see stdlib, a standard library for Node.js and Javascript: https://github.com/stdlib-js/stdlib.","アサン・リニーズはフルスタックのエンジニアおよびデータの科学者です。彼は、物理学、ナノスケールでの生物学的システムを調査する機械学習と時系列解析の博士号を取得しています。彼は現在フルタイム数値と科学的コンピューティング Node.js とJavaScriptの設定を容易にするオープンソースプロジェクトで働いています。彼の最新のオープンソースプロジェクト、標準ライブラリ、標準ライブラリ Node.js と Javascriptについてはこちらから参照してください。: https://github.com/stdlib-js/stdlib。","en"
+"massie_g","WebRTC/WebVR のようなブラウザの最新機能をを活かすにはサーバー側の仕組みも不可欠です。手軽にサーバーを構築できる環境として、node.js の世界に足を踏み入れました。
+WebRTC Meetup Tokyo および WebRTC Beginners Tokyo のスタッフ、HTML5Experts.jp にて WebRTC 関連の記事も掲載しています。
+インフォコム株式会社所属
+","WebRTC/WebVR のようなブラウザの最新機能をを活かすにはサーバー側の仕組みも不可欠です。手軽にサーバーを構築できる環境として、node.js の世界に足を踏み入れました。
+WebRTC Meetup Tokyo および WebRTC Beginners Tokyo のスタッフ、HTML5Experts.jp にて WebRTC 関連の記事も掲載しています。
+インフォコム株式会社所属
+","WebRTC/WebVR のようなブラウザの最新機能をを活かすにはサーバー側の仕組みも不可欠です。手軽にサーバーを構築できる環境として、node.js の世界に足を踏み入れました。
+WebRTC Meetup Tokyo および WebRTC Beginners Tokyo のスタッフ、HTML5Experts.jp にて WebRTC 関連の記事も掲載しています。
+インフォコム株式会社所属
+","ja"
+"sota1235","2017年1月メルカリに入社。最初の 3ヶ月間は US チームに所属し、US メルカリの成長に尽力。2017年4月より JP チームに異動し、昨年7月にリリースされたメルカリチャンネルのチームに立ち上げ当初から参画。Backend エンジニアとして開発を行う。今年の7月より Web の Rearchitect チームに異動。念願のJavaScriptエンジニアとして日々開発中。","Sota Sugiura joined Mercari in January 2017. For his first three months, he belonged to the US team in Tokyo and contributed to the US application’s growth. In April 2017, he moved from Mercari US to Mercari JP, where he helped plan Mercari Channel, which was released last July, from the initial stages. As a backend engineer, he is involved in development. In July of this year, he moved to the Web Re-architecture Team. He spends his days fulfilling his dream of developing as a JavaScript engineer.","2017年1月メルカリに入社。最初の 3ヶ月間は US チームに所属し、US メルカリの成長に尽力。2017年4月より JP チームに異動し、昨年7月にリリースされたメルカリチャンネルのチームに立ち上げ当初から参画。Backend エンジニアとして開発を行う。今年の7月より Web の Rearchitect チームに異動。念願のJavaScriptエンジニアとして日々開発中。","ja"
+"james_k_nelson","Hi! I've been playing with JavaScript for over half my life, and I'm building Frontend Armory to help share what I've learned in the process!","Hi! I've been playing with JavaScript for over half my life, and I'm building Frontend Armory to help share what I've learned in the process!","こんにちは！私は人生の半分以上をJavaScriptと遊び、そのプロセスで学んだことを分かち合うためにフロントエンドの武器庫を構築しています！","en"
+"t_wada","タワーズ・クエスト株式会社 取締役社長、プログラマ、テスト駆動開発者 学生時代にソフトウェア工学を学び、オブジェクト指向分析/設計に傾倒する。 その後様々な縁に導かれソフトウェアパターンやXP（eXtreme Programming）を実践する人たちと出会い、後のテスト駆動開発（TDD）の誕生を知る。 テスト駆動開発に「完璧主義の呪い（完璧な設計を得るまではコードを書けないし良いシステムも出来ないという強迫観念）」を解いてもらってからは、 文章や講演、ハンズオンイベントなどを通じてテスト駆動開発を広めようと努力している。 『プログラマが知るべき97のこと』（オライリージャパン、2010）監修。『SQLアンチパターン』（オライリージャパン、2013）監訳。『テスト駆動開発』（オーム社、2017）翻訳。","タワーズ・クエスト株式会社 取締役社長、プログラマ、テスト駆動開発者 学生時代にソフトウェア工学を学び、オブジェクト指向分析/設計に傾倒する。 その後様々な縁に導かれソフトウェアパターンやXP（eXtreme Programming）を実践する人たちと出会い、後のテスト駆動開発（TDD）の誕生を知る。 テスト駆動開発に「完璧主義の呪い（完璧な設計を得るまではコードを書けないし良いシステムも出来ないという強迫観念）」を解いてもらってからは、 文章や講演、ハンズオンイベントなどを通じてテスト駆動開発を広めようと努力している。 『プログラマが知るべき97のこと』（オライリージャパン、2010）監修。『SQLアンチパターン』（オライリージャパン、2013）監訳。『テスト駆動開発』（オーム社、2017）翻訳。","タワーズ・クエスト株式会社 取締役社長、プログラマ、テスト駆動開発者 学生時代にソフトウェア工学を学び、オブジェクト指向分析/設計に傾倒する。 その後様々な縁に導かれソフトウェアパターンやXP（eXtreme Programming）を実践する人たちと出会い、後のテスト駆動開発（TDD）の誕生を知る。 テスト駆動開発に「完璧主義の呪い（完璧な設計を得るまではコードを書けないし良いシステムも出来ないという強迫観念）」を解いてもらってからは、 文章や講演、ハンズオンイベントなどを通じてテスト駆動開発を広めようと努力している。 『プログラマが知るべき97のこと』（オライリージャパン、2010）監修。『SQLアンチパターン』（オライリージャパン、2013）監訳。『テスト駆動開発』（オーム社、2017）翻訳。","ja"
+"vwxyutarooo","Vue.js や React を中心に SPA 開発をしています。現在はメルカリという会社のフロントエンドエンジニアです。","Vue.js や React を中心に SPA 開発をしています。現在はメルカリという会社のフロントエンドエンジニアです。","Vue.js や React を中心に SPA 開発をしています。現在はメルカリという会社のフロントエンドエンジニアです。","ja"
+"yosuke_furukawa","㈱リクルートテクノロジーズ所属。Node.js日本ユーザーグループ代表であり、大人気イベント「東京Node学園」の主催者。HTML5expertsにも選ばれている。","㈱リクルートテクノロジーズ所属。Node.js日本ユーザーグループ代表であり、大人気イベント「東京Node学園」の主催者。HTML5expertsにも選ばれている。","㈱リクルートテクノロジーズ所属。Node.js日本ユーザーグループ代表であり、大人気イベント「東京Node学園」の主催者。HTML5expertsにも選ばれている。","ja"
+"lulzneko","新しい技術を見つけては試すことが大好きで技術を試すためには目的を選ばない、IT好きで葉巻好き酒好きなだけの猫。
+
+サーバレスはアイデアを素早く形にできるアーキテクチャとして大のお気に入り。何かを作る時もサーバーレスでいけるかを最初に考える。
+
+ウェブサービスやアプリの開発だけでなく Raspberry Pi などの電子工作や Slack などのチャットボットなどと、いろいろと手を出す。","新しい技術を見つけては試すことが大好きで技術を試すためには目的を選ばない、IT好きで葉巻好き酒好きなだけの猫。
+
+サーバレスはアイデアを素早く形にできるアーキテクチャとして大のお気に入り。何かを作る時もサーバーレスでいけるかを最初に考える。
+
+ウェブサービスやアプリの開発だけでなく Raspberry Pi などの電子工作や Slack などのチャットボットなどと、いろいろと手を出す。","新しい技術を見つけては試すことが大好きで技術を試すためには目的を選ばない、IT好きで葉巻好き酒好きなだけの猫。
+
+サーバレスはアイデアを素早く形にできるアーキテクチャとして大のお気に入り。何かを作る時もサーバーレスでいけるかを最初に考える。
+
+ウェブサービスやアプリの開発だけでなく Raspberry Pi などの電子工作や Slack などのチャットボットなどと、いろいろと手を出す。","ja"
+"damncabbage","Rob is a web developer from sunny Australia, who currently switches between JavaScript, Elixir, Ruby and Haskell. Having so far made a career from learning and mixing the nice parts from different programming languages, he wants nothing more than to help different programming communities to learn more from each other and become more welcoming for newcomers.
+
+If you're a fan of essay-length tweet threads, he's on Twitter (and most other things) as @damncabbage.","Rob is a web developer from sunny Australia, who currently switches between JavaScript, Elixir, Ruby and Haskell. Having so far made a career from learning and mixing the nice parts from different programming languages, he wants nothing more than to help different programming communities to learn more from each other and become more welcoming for newcomers.
+
+If you're a fan of essay-length tweet threads, he's on Twitter (and most other things) as @damncabbage.","ロブは現在 JavaScript、Elixir、Ruby、Haskell を切り替えている、日当たり良好なオーストラリアからの web開発者です。今までのところ、ラーニングや異なるプログラミング言語から良い部分を混ぜたり、学ぶことからキャリアを形成し、
+彼は違うプログラミングコミュニティがもっと互いから学ぶことを手助けし、より新来者に歓迎的になることを手伝う以上のことに望むことはありません。
+
+もしあなたが、エッセイくらいの長さのツイートスレッドのファンなら、彼は Twitter (およびほとんどの他のもの) に @damncabbage として居ます。","en"
+"rdlabo","Ionic Japan Users Group 代表、Ionic Framework コントリビューター、一般社団法人リレーションデザイン研究所代表など。著書「Ionicで作るモバイルアプリ制作入門」。","Ionic Japan Users Group 代表、Ionic Framework コントリビューター、一般社団法人リレーションデザイン研究所代表など。著書「Ionicで作るモバイルアプリ制作入門」。","Ionic Japan Users Group 代表、Ionic Framework コントリビューター、一般社団法人リレーションデザイン研究所代表など。著書「Ionicで作るモバイルアプリ制作入門」。","ja"
+"sekikazu01","株式会社ビズリーチで主にフロントエンドをやっています。最近の趣味は GraphQL です。","株式会社ビズリーチで主にフロントエンドをやっています。最近の趣味は GraphQL です。","株式会社ビズリーチで主にフロントエンドをやっています。最近の趣味は GraphQL です。","ja"
+"maxmellon_9039","学生時代から趣味，アルバイトで React に触れてきた，2018年4月にリクルートテクノロジーズに新卒入社し，大規模 SPA のパフォーマンスチューニングなどで貢献している","学生時代から趣味，アルバイトで React に触れてきた，2018年4月にリクルートテクノロジーズに新卒入社し，大規模 SPA のパフォーマンスチューニングなどで貢献している","学生時代から趣味，アルバイトで React に触れてきた，2018年4月にリクルートテクノロジーズに新卒入社し，大規模 SPA のパフォーマンスチューニングなどで貢献している","ja"
+"4245Ryomt","Fringe81 でエンジニアをしています。メインはフロントエンドでelmを書いています。","Fringe81 でエンジニアをしています。メインはフロントエンドでelmを書いています。","Fringe81 でエンジニアをしています。メインはフロントエンドでelmを書いています。","ja"
+"hrnkoji","合同会社 DMM.com ブロックチェーン研究室 フロントエンドエンジニア","合同会社 DMM.com ブロックチェーン研究室 フロントエンドエンジニア","合同会社 DMM.com ブロックチェーン研究室 フロントエンドエンジニア","ja"
+"tokutoku393","dotstudio株式会社のエンジニア兼テクニカルライター。現職はハードウェア寄り、前職は自社Web開発，前前職は受託Web開発。ハードウェアのプロトタイプやWeb連携をサクッとやれるのでNode.jsだいしゅき。「Node女学園」をたまに開催。","dotstudio株式会社のエンジニア兼テクニカルライター。現職はハードウェア寄り、前職は自社Web開発，前前職は受託Web開発。ハードウェアのプロトタイプやWeb連携をサクッとやれるのでNode.jsだいしゅき。「Node女学園」をたまに開催。","dotstudio株式会社のエンジニア兼テクニカルライター。現職はハードウェア寄り、前職は自社Web開発，前前職は受託Web開発。ハードウェアのプロトタイプやWeb連携をサクッとやれるのでNode.jsだいしゅき。「Node女学園」をたまに開催。","ja"
+"about_hiroppy","株式会社ドワンゴで働くWebエンジニア。
+Node.js/Babel/Stylelintのメンバー及びコラボレーター。","株式会社ドワンゴで働くWebエンジニア。
+Node.js/Babel/Stylelintのメンバー及びコラボレーター。","株式会社ドワンゴで働くWebエンジニア。
+Node.js/Babel/Stylelintのメンバー及びコラボレーター。","ja"
+"ohbarye","Quipperで教育サービス「スタディサプリ」の開発・運用をしています。Ruby on Rails による Web application、mobile application 向け API 開発、Single Page Application 開発が主な業務内容です。
+
+また、Engineering Manager Meetup というイベントを主催しています。
+","Masato Ohba is currently an engineering manager at Quipper and works for StudySapuri, which is one of the most popular education services in Japan. He mainly develops web applications with Ruby on Rails and single page applications written in React.
+
+Besides his work, he recently started organizing an event and a community named Engineering Manager Meetup.","Quipperで教育サービス「スタディサプリ」の開発・運用をしています。Ruby on Rails による Web application、mobile application 向け API 開発、Single Page Application 開発が主な業務内容です。
+
+また、Engineering Manager Meetup というイベントを主催しています。
+","ja"
+"stephaniecodes","Stephanie is a developer living in Berlin. She is works at Microsoft and co-organizes the Stupid Hackathon Amsterdam. She enjoys experimenting with hardware and LEDs to make beautiful, useless things.","Stephanie is a developer living in Berlin. She is works at Microsoft and co-organizes the Stupid Hackathon Amsterdam. She enjoys experimenting with hardware and LEDs to make beautiful, useless things.","Stephanie はベルリンに住む開発者です。Microsoft で働き、アムステルダムでおもしろいハッカソンを運営しています。ハードウェアとLEDを使って役に立たない美しいものを作って楽しんでいます。","en"
+"shimataro999","ウェブリオ株式会社 京都支社長。
+フロントエンド、サーバサイド、DB、ネットワーク、インフラまでいろいろやる何でも屋さん。
+最近はもっぱらNode.jsをいじっています。","ウェブリオ株式会社 京都支社長。
+フロントエンド、サーバサイド、DB、ネットワーク、インフラまでいろいろやる何でも屋さん。
+最近はもっぱらNode.jsをいじっています。","ウェブリオ株式会社 京都支社長。
+フロントエンド、サーバサイド、DB、ネットワーク、インフラまでいろいろやる何でも屋さん。
+最近はもっぱらNode.jsをいじっています。","ja"
+"kimamula","株式会社カブク所属のフロントエンドエンジニア。前職では React で SSR していましたが、現職に移ってから Angular を始め、この度 SSR する運びとなりました。","株式会社カブク所属のフロントエンドエンジニア。前職では React で SSR していましたが、現職に移ってから Angular を始め、この度 SSR する運びとなりました。","株式会社カブク所属のフロントエンドエンジニア。前職では React で SSR していましたが、現職に移ってから Angular を始め、この度 SSR する運びとなりました。","ja"
+"sbntaminif","ウェブリオ株式会社Webエンジニア&プロダクトマネージャー。京都で働いてます。","ウェブリオ株式会社Webエンジニア&プロダクトマネージャー。京都で働いてます。","ウェブリオ株式会社Webエンジニア&プロダクトマネージャー。京都で働いてます。","ja"
+"daizplus","Nota Inc. Software Engineer","Nota Inc. Software Engineer","Nota Inc. Software Engineer","ja"
+"daikiyokoi","ビットバンク株式会社にてバックエンドを担当しています。
+前職ではモバイルゲームのクライアント・サーバー開発に携わりました。
+Node.js と TypeScript はもちろん、C/C++ での開発やAWSのインフラ構成について考えるのが好きです。","ビットバンク株式会社にてバックエンドを担当しています。
+前職ではモバイルゲームのクライアント・サーバー開発に携わりました。
+Node.js と TypeScript はもちろん、C/C++ での開発やAWSのインフラ構成について考えるのが好きです。","ビットバンク株式会社にてバックエンドを担当しています。
+前職ではモバイルゲームのクライアント・サーバー開発に携わりました。
+Node.js と TypeScript はもちろん、C/C++ での開発やAWSのインフラ構成について考えるのが好きです。","ja"
+"n0bisuke","Node.jsでQiita記事をよく書いています！
+IoTLTってコミュニティをやっています。遊びに来てね。","Node.jsでQiita記事をよく書いています！
+IoTLTってコミュニティをやっています。遊びに来てね。","Node.jsでQiita記事をよく書いています！
+IoTLTってコミュニティをやっています。遊びに来てね。","ja"
+"hepppook","エンジニアではないのですが、ものづくりが好きで、マイコンボードで楽しくおかしく何か作ってます。今回は、こちらの記事（https://dotstud.io/blog/face-robot-making-maruko/）で
+紹介していただいた作品の一つについてLTさせていただければと思います。","エンジニアではないのですが、ものづくりが好きで、マイコンボードで楽しくおかしく何か作ってます。今回は、こちらの記事（https://dotstud.io/blog/face-robot-making-maruko/）で
+紹介していただいた作品の一つについてLTさせていただければと思います。","エンジニアではないのですが、ものづくりが好きで、マイコンボードで楽しくおかしく何か作ってます。今回は、こちらの記事（https://dotstud.io/blog/face-robot-making-maruko/）で
+紹介していただいた作品の一つについてLTさせていただければと思います。","ja"
+"yanarchy ‏","Yan Fan is co-founder and CTO of Code Chrysalis. Prior, she has worked as an engineer at Ayasdi, an instructor for a prep programming course run by a leading Silicon Valley bootcamp, and CTO of a coding bootcamp in Jordan. Before she embarked on her career in tech, she worked in commodities trading. She holds degrees in Economics and Arabic from Dartmouth College.","Yan Fan is co-founder and CTO of Code Chrysalis. Prior, she has worked as an engineer at Ayasdi, an instructor for a prep programming course run by a leading Silicon Valley bootcamp, and CTO of a coding bootcamp in Jordan. Before she embarked on her career in tech, she worked in commodities trading. She holds degrees in Economics and Arabic from Dartmouth College.","ヤン・ファンはCode Chrysalisの共同出資者でCTOです。以前彼女はAyasdiでエンジニアとして働き、
+先進的なシリコンバレーのブートキャンプで行われているプログラミング予備校コースの講師であり、ヨルダンのコーディングブートキャンプのCTOでもあります。彼女は、技術のキャリアをスタートさせる前は、商品取引で働いていました。彼女は経済とアラビア語の学位をダートマス大学で取得しています、","en"
+"darai_0512","ヤフー株式会社：エンジニア
+PAY 株式会社（PAY, Inc.）：業務委託エンジニア
+株式会社ミツモア：業務委託エンジニア","ヤフー株式会社：エンジニア
+PAY 株式会社（PAY, Inc.）：業務委託エンジニア
+株式会社ミツモア：業務委託エンジニア","ヤフー株式会社：エンジニア
+PAY 株式会社（PAY, Inc.）：業務委託エンジニア
+株式会社ミツモア：業務委託エンジニア","ja"
+"sin_ikkyu","AWSに関わるDevOpsを担当しておりTypeScriptを用いたLambdaの開発、CodePipelineを利用した、デプロイフローの構築をしております。","AWSに関わるDevOpsを担当しておりTypeScriptを用いたLambdaの開発、CodePipelineを利用した、デプロイフローの構築をしております。","AWSに関わるDevOpsを担当しておりTypeScriptを用いたLambdaの開発、CodePipelineを利用した、デプロイフローの構築をしております。","ja"
+"sannekalkman","Sanne is a former teacher turned (mostly self-taught) software engineer. Currently, she works at TELE2 in Amsterdam, building applications that help her colleagues keep an eye on anything network-related. When she's not coding, you'll probably find her either 25 browser tabs deep into a new CS topic, or behind her sewing machine.","Sanne is a former teacher turned (mostly self-taught) software engineer. Currently, she works at TELE2 in Amsterdam, building applications that help her colleagues keep an eye on anything network-related. When she's not coding, you'll probably find her either 25 browser tabs deep into a new CS topic, or behind her sewing machine.","サンエーは先生でしたが、職業を主に自習によってプログラマーに変えました。今は TELE2 アムステルダムに働いて車内のネトワークモニタリングツールを開発しています。開発以外は情報工学の新トピックを 25 ブラウザタブを使って勉強するまたはミシンがすきです。","en"
+"sangwhanmoon","Sangwhan is the director of engineering at a startup specializing in computer vision called Odd Concepts. He has more than 10 years of experience in web standards, and has been an editor of multiple W3C standards and now is an elected member of the W3C Technical Architecture Group.","Sangwhan is the director of engineering at a startup specializing in computer vision called Odd Concepts. He has more than 10 years of experience in web standards, and has been an editor of multiple W3C standards and now is an elected member of the W3C Technical Architecture Group.","サンワンは Odd Concepts というコンピュータ ビジョンスタートアップの工学ディレクターです。10年間以上の Web 標準の経験であり、今は W3C Technical Architecture Group の選出されたメンバーです。","en"

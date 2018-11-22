@@ -13,7 +13,8 @@ const buffer = require('vinyl-buffer');
 const uglify = require('gulp-uglify');
 const del = require('del');
 const confCal = require('conf-cal');
-const confCalToCSV = require('conf-cal/toTranslationCSV')
+const confCalToCSV = require('conf-cal/toTranslationCSV');
+const csvParse = require('csv-parse/lib/sync');
 
 const srcDirs = {
   html: './src/html',
@@ -21,13 +22,54 @@ const srcDirs = {
   js:   './src/js',
   css:  './src/scss',
   confcal: './src/confcal',
+  csv:  './src/csv'
 };
 const srcPaths = {
   html: `${srcDirs.html}/*.ejs`,
   js:   `${srcDirs.js}/main.js`,
-  css:  `${srcDirs.css}/main.scss`,
+  css:  `${srcDirs.css}/main.scss`
 };
 const destPath = './';
+
+function readCSVs () {
+  const translations = {}
+  const dir = `${__dirname}/src/csv`
+  return fse.readdir(dir)
+    .then(fNames => fNames
+      .map(fName => {
+        const parts = /(.*)-(ja|en)\.csv$/.exec(fName)
+        if (!parts) return
+        return {
+          filepath: `${dir}/${fName}`,
+          setName: parts[1],
+          lang: parts[2]
+        }
+      })
+      .filter(Boolean)
+    )
+    .then(files => Promise.all(files.map(({filepath, setName, lang}) =>
+      fse.readFile(filepath)
+        .then(buffer => csvParse(buffer, {
+          columns: true
+        }))
+        .then(data => {
+          let setData = translations[setName]
+          if (!setData) {
+            setData = {}
+            translations[setName] = setData
+          }
+          data.forEach(line => {
+            let keyData = setData[line.key]
+            if (!keyData) {
+              keyData = {}
+              setData[line.key] = keyData
+            }
+            keyData[lang] = line[lang]
+          })
+        })
+    )))
+    .then(() => translations)
+} 
 
 function readSchedule () {
   const calendar = {};
@@ -91,6 +133,7 @@ function readData () {
   };
   return Promise.all([
       readSchedule().then(calendar => allData.calendar = calendar),
+      readCSVs().then(translations => allData.translations = translations),
       readJsonsTo(allData)
     ])
     .then(() => allData);
@@ -142,6 +185,7 @@ gulp.task('watch', () => {
   gulp.watch(`${srcDirs.confcal}/**/*.confcal`, ['html']);
   gulp.watch(`${srcDirs.css}/**/*.scss`,  ['css']);
   gulp.watch(`${srcDirs.js}/**/*.js`,     ['js']);
+  gulp.watch(`${srcDirs.csv}/**/*.csv`,   ['html']);
 });
 
 gulp.task('clean', del.bind(null, ['./*.html', './*.ejs']));
