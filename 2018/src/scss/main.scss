@@ -2738,3 +2738,14 @@ a.confcal-button-inactive {
     border-bottom: 4px solid $color-sunred;
   }
 }
+
+.room-list {
+
+  li {
+    display: none;
+
+    &.room-entry-before, &.room-entry-after, &.room-entry-current {
+      display: list-item;
+    }
+  }  
+}
