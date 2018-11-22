@@ -29,6 +29,17 @@ function toggle (node, clazz, flag) {
     }
 }
 
+function findNode (type, node, op) {
+    node = op(node)
+    while (node) {
+        if (type.test(node.nodeName)) {
+            return node
+        }
+        node = op(node)
+    }
+    return null
+}
+
 module.exports = function () {
     var overview = document.getElementById('rooms-container')
     var timeNode = document.getElementById('room-time')
@@ -36,8 +47,8 @@ module.exports = function () {
     var allParts = rooms.concat(overview)
     rooms = rooms.map(function (roomNode) {
         var entries = [].slice.call(roomNode.querySelectorAll('li'))
-        var first = entries.shift()
-        var last = entries.pop()
+        var before = entries.shift()
+        var after = entries.pop()
         entries.forEach(function (entryNode) {
             var start = entryNode.attributes['data-start']
             entryNode.start = momentTz(start.value).tz('Asia/Tokyo')
@@ -48,8 +59,9 @@ module.exports = function () {
         return {
             node: roomNode,
             entries: entries,
-            first: first,
-            last: last
+            allEntries: [before].concat(entries).concat(after),
+            before: before,
+            after: after
         }
     })
     var selectedRoom
@@ -96,44 +108,30 @@ module.exports = function () {
         if (!selectedRoom) {
             return
         }
-        var beforeStart = true
-        var previous
-        var before
-        var after
         var current
-        selectedRoom.entries.forEach(function (entryNode) {
-            var isBefore = compareHmm(entryNode.end, now) === -1
-            var isAfter = compareHmm(entryNode.start, now) === 1
-            // console.log(entryNode.start.format('HH:mm'), now.format('HH:mm'), entryNode.end.format('HH:mm'), isBefore, isAfter)
-            var isCurrent = !isBefore && !isAfter
-            if (isCurrent || isBefore) {
-                beforeStart = false
+        var firstEntry = selectedRoom.entries[0]
+        if (compareHmm(firstEntry.start, now) > 0) {
+            current = selectedRoom.before
+        } else {
+            selectedRoom.entries.forEach(function (entryNode) {
+                var isAfter = compareHmm(entryNode.start, now) < 0
+                if (isAfter && !current) {
+                    current = entryNode
+                }
+            })
+            if (!current) {
+                current = selectedRoom.after
             }
-            if (isCurrent) {
-                before = previous
-                current = entryNode
-            }
-            if (isAfter && !after) {
-                after = entryNode
-            }
-            previous = entryNode
-            return isCurrent
-        })
-        var afterFinish = !current && !beforeStart
-        if (afterFinish) {
-            before = previous
         }
-        selectedRoom.entries.forEach(function (entryNode) {
+        var nextSibling = findNode(/^li$/ig, current, function (curr) { return curr.nextSibling })
+        var prevSibling = findNode(/^li$/ig, current, function (curr) { return curr.prevSibling })
+        selectedRoom.allEntries.forEach(function (entryNode) {
             toggle(entryNode, 'room-entry-current', entryNode === current)
-            toggle(entryNode, 'room-entry-after', entryNode === after)
-            toggle(entryNode, 'room-entry-before', entryNode === before)
+            toggle(entryNode, 'room-entry-after', entryNode === nextSibling)
+            toggle(entryNode, 'room-entry-before', entryNode === prevSibling)
         })
-        toggle(selectedRoom.first, 'room-entry-current', beforeStart)
-        toggle(selectedRoom.first, 'room-entry-before', selectedRoom.entries[0].classList.contains('room-entry-current'))
-        toggle(selectedRoom.last, 'room-entry-current', afterFinish)
-        toggle(selectedRoom.last, 'room-entry-after', selectedRoom.entries[selectedRoom.entries.length - 1].classList.contains('room-entry-current'))
-        toggle(selectedRoom.node, 'room-before-start', beforeStart)
-        toggle(selectedRoom.node, 'room-after-finish', afterFinish)
+        toggle(selectedRoom.node, 'room-before-start', current === selectedRoom.before)
+        toggle(selectedRoom.node, 'room-after-finish', current === selectedRoom.after)
     }
     render()
     setInterval(render, 100)

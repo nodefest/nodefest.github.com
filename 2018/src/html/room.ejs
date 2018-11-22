@@ -3,6 +3,17 @@ var page = {
   title: 'Room'
 }
 var _enableBr = function(str) { return str.replace(/\n/g, '<br>'); };
+
+function itemHeader (start, end, clazz) {
+    %><li
+        data-start="<%= momentTz(start).tz('Asia/Tokyo').toISOString() %>"
+        data-end="<%= momentTz(start).tz('Asia/Tokyo').toISOString() %>"
+        class="<%- clazz %>"
+    ><p class="room-entry-time"><%= hh(start) + ' - ' + hh(end) %></p><%
+}
+function itemFooter () {
+    %></li><%
+}
 %>
 
 
@@ -40,6 +51,9 @@ var _enableBr = function(str) { return str.replace(/\n/g, '<br>'); };
             <%
             for (const calName in calendar ) {
                 const cal = calendar[calName]
+                function hh (time) {
+                    return momentTz(time).tz(cal.googleObject.timeZone).format('H:mm')
+                }
                 var count = 0.
                 for (const room in cal.rooms) {
                     const entries = cal.rooms[room]
@@ -50,23 +64,14 @@ var _enableBr = function(str) { return str.replace(/\n/g, '<br>'); };
                     var formerEnd;
                     for (const entry of entries) {
                         const speaker = speakers[entry.person]
-                        const slots = cal.toSlots()
                         const slotClasses = new Map()
-                        function hh (time) {
-                            return momentTz(time).tz(slots.tz).format('H:mm')
+                        if (formerEnd && entry.start > formerEnd) {
+                            itemHeader(formerEnd, entry.start, 'room-entry-break')
+                            %>Break<%
+                            itemFooter()
                         }
-                        if (formerEnd && entry.start > formerEnd) { %>
-                    <li
-                        data-start="<%= momentTz(formerEnd).tz('Asia/Tokyo').toISOString() %>"
-                        data-end="<%= momentTz(entry.start).tz('Asia/Tokyo').toISOString() %>"
-                    >Break</li><%
-                        }
+                        itemHeader(entry.start, entry.end)
                         %>
-                    <li
-                        data-start="<%= momentTz(entry.start).tz('Asia/Tokyo').toISOString() %>"
-                        data-end="<%= momentTz(entry.end).tz('Asia/Tokyo').toISOString() %>"
-                    >
-                        <p><%=`${room} ${hh(entry.start)} - ${hh(entry.end)}`%></p>
                         <hr/>
                         <h3><%= entry.summary %></h3>
                         <p><%= entry.description %></p>
@@ -80,8 +85,7 @@ var _enableBr = function(str) { return str.replace(/\n/g, '<br>'); };
                                 %><p><%- _enableBr(bio) %></p><%
                             }
                         }
-                        %>
-                    </li><%
+                        itemFooter()
                         formerEnd = entry.end
                     }
                 %>  
