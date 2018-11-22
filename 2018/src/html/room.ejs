@@ -43,12 +43,17 @@ var page = {
                     %>
                 <ul id="list-<%= calName + '-' + count %>" class="room-list">
                     <li class="room-entry-closed room-entry-notstarted">Closed</li>
-                    <% for (const entry of entries) {
+                    <%
+                    var formerEnd;
+                    for (const entry of entries) {
                         const speaker = speakers[entry.person]
                         const slots = cal.toSlots()
                         const slotClasses = new Map()
                         function hh (time) {
                             return momentTz(time).tz(slots.tz).format('H:mm')
+                        }
+                        if (formerEnd && entry.start > formerEnd) { %>
+                    <li data-start="<%= momentTz(formerEnd).tz('Asia/Tokyo').toISOString() %>">Break</li><%
                         }
                         %>
                     <li data-start="<%= momentTz(entry.start).tz('Asia/Tokyo').toISOString() %>">
@@ -67,6 +72,7 @@ var page = {
                             <%}%>
                             <%} %>
                     </li><%
+                        formerEnd = entry.end
                     }
                 %>  
                     <li class="room-entry-closed room-entry-finished">Closed</li>
