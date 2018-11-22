@@ -1,7 +1,9 @@
 var hashChange = require('../vendor/hashChange');
+var momentTz = require('moment-timezone');
 
 module.exports = function () {
     var overview = document.getElementById('rooms')
+    var timeNode = document.getElementById('room-time')
     var rooms = [].slice.call(document.querySelectorAll('.room-list'))
     var allParts = rooms.concat(overview)
     rooms = rooms.map(function (roomNode) {
@@ -11,11 +13,12 @@ module.exports = function () {
             entries: entries
         }
     })
+    var selectedRoom
     hashChange.addListener(function (hash) {
         var parts = /^[\/|#]?([^-]+)-(.+)/.exec(hash);
         var day = parts && parts[1];
         var roomName = parts && parts[2];
-        var selectedRoom
+        selectedRoom = null
         if (day) {
             var lookupId = 'list-' + day + '-' + roomName;
             selectedRoom = rooms.filter(function (part) {
@@ -32,4 +35,10 @@ module.exports = function () {
             }
         })
     })
+    function render () {
+        var now = momentTz(Date.now()).tz('Asia/Tokyo')
+        timeNode.innerText = now.format('HH:mm')
+    }
+    render()
+    setInterval(render, 100)
 }
