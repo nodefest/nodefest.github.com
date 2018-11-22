@@ -2,6 +2,7 @@
 var page = {
   title: 'Room'
 }
+var _enableBr = function(str) { return str.replace(/\n/g, '<br>'); };
 %>
 
 
@@ -70,15 +71,16 @@ var page = {
                         <h3><%= entry.summary %></h3>
                         <p><%= entry.description %></p>
                         <hr/>
-                        <% if(entry.person){%>
-                            <div class="room-image" style="background-image:url(img/speakers/pic-<%=entry.person%>.jpg);"></div>
-                        <%}%>
-                        <% if (speaker) {
-                            const bio = speaker.biography %>
-                            <% if(speaker){%>
-                                <p><%= bio %></p>
-                            <%}%>
-                            <%} %>
+                        <%
+                        if (speaker) {
+                            %><div class="room-image" style="background-image:url(img/speakers/pic-<%=speaker.id%>.jpg);"></div><%
+                            var translation = translations.speaker[speaker.id] || {}
+                            var bio = speaker['自己紹介'] || translation.ja || speaker.biography
+                            if (bio) {
+                                %><p><%- _enableBr(bio) %></p><%
+                            }
+                        }
+                        %>
                     </li><%
                         formerEnd = entry.end
                     }
