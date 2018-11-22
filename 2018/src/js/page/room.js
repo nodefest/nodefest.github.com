@@ -14,12 +14,18 @@ module.exports = function () {
     var allParts = rooms.concat(overview)
     rooms = rooms.map(function (roomNode) {
         var entries = [].slice.call(roomNode.querySelectorAll('li'))
+        var first = entries.shift()
+        var last = entries.pop()
         entries.forEach(function (entryNode) {
-            entryNode.start = momentTz(entryNode.attributes['data-start'].value).tz('Asia/Tokyo')
+            var start = entryNode.attributes['data-start']
+            entryNode.start = momentTz(start.value).tz('Asia/Tokyo')
         })
+
         return {
             node: roomNode,
-            entries: entries
+            entries: entries,
+            first: first,
+            last: last
         }
     })
     var selectedRoom
@@ -65,18 +71,22 @@ module.exports = function () {
             return
         }
         var newBefore
-        var newCurrent
-        var newAfter
+        var newCurrent = selectedRoom.first
+        var newAfter = selectedRoom.entries[0]
         selectedRoom.entries.forEach(function (entryNode) {
             var isBefore = entryNode.start.hours() < now.hours() ||
                 entryNode.start.hours() === now.hours() && entryNode.start.minutes() < now.minutes()
             if (isBefore) {
                 newBefore = newCurrent
                 newCurrent = entryNode
+                newAfter = null
             } else if(!newAfter) {
                 newAfter = entryNode
             }
         })
+        if (!newAfter) {
+            newAfter = selectedRoom.last
+        }
         current = replaceFlag(current, newCurrent, 'room-entry-current')
         before = replaceFlag(before, newBefore, 'room-entry-before')
         after = replaceFlag(after, newAfter, 'room-entry-after')
