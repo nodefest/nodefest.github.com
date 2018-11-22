@@ -116,4 +116,10 @@ at Yahoo Japan Corporation#ChIJ30G_l3iLGGARWbrLEBhHS3s
     need the workshop git repository (TBA), a Terminal / Console, Node.js 8+, and a text \
     editor of your choice.
 
-15:00-17:00 Workshop: JavaScript TodoMVC by yosuke_furukawa in en
+15:00-17:00 Workshop: JavaScript TodoMVC by yosuke_furukawa in ja
+
+    このワークショップは日本語で行われます。
+    リクルートテクノロジーズのJavaScript Bootcamp で使っている TodoMVC アプリを作りながら学ぶワークショップです。
+
+    ワークショップのゴール：
+    ・ JavaScriptの基礎から簡単なシングルページのアプリケーションを作れるようになるまでを教えます。
