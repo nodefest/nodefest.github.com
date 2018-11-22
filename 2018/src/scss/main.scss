@@ -2756,6 +2756,19 @@ a.confcal-button-inactive {
   flex: 4;
 }
 
+.room-entry-before {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  transition: .3s ease;
+  background-color:#b3b3b3;
+  z-index: 1;
+}
 .room-entry-before,.room-entry-after {
   flex: 1;
 }
@@ -2765,6 +2778,7 @@ a.confcal-button-inactive {
   display: flex;
   position: sticky;
   top: 0;
+  z-index: 2;
 }
 
 .room-time {
@@ -2775,8 +2789,8 @@ a.confcal-button-inactive {
 }
 
 .room-image {
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
   background-clip: content-box;
   background-size: cover;
   background-position: center;
