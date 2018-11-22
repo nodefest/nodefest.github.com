@@ -1,6 +1,7 @@
 {
   "addaleax": {
     "id": "addaleax",
+    "自己紹介": "",
     "featured": true,
     "name": "Anna Henningsen",
     "ruby": "アンナ ヘニングセン",
@@ -11,6 +12,7 @@
   },
   "ohhoe": {
     "id": "ohhoe",
+    "自己紹介": "",
     "featured": true,
     "name": "Rachel White",
     "ruby": "レイチェル ホワイト",
@@ -21,6 +23,7 @@
   },
   "littledan": {
     "id": "littledan",
+    "自己紹介": "",
     "featured": true,
     "name": "Daniel Ehrenberg",
     "ruby": "ダニエル エーレンベルグ",
@@ -37,10 +40,12 @@
     "ruby": "",
     "github": "tushuhei",
     "twitter": "tushuhei",
-    "photo": "https://tushuhei.com/static/images/shuhei.png"
+    "photo": "https://tushuhei.com/static/images/shuhei.png",
+    "biography": ""
   },
   "cjihrig": {
     "id": "cjihrig",
+    "自己紹介": "",
     "featured": true,
     "name": "Colin Ihrig",
     "ruby": "コリン イーリッグ",
@@ -51,6 +56,7 @@
   },
   "gioyik": {
     "id": "gioyik",
+    "自己紹介": "",
     "name": "Giovanny Gongora",
     "ruby": "ジョバンニ ゴンゴラ",
     "github": "gioyik",
@@ -60,6 +66,7 @@
   },
   "mafintosh": {
     "id": "mafintosh",
+    "自己紹介": "",
     "featured": true,
     "name": "Mathias Buus",
     "ruby": "マティアス ブース",
@@ -70,6 +77,7 @@
   },
   "jimpick": {
     "id": "jimpick",
+    "自己紹介": "",
     "name": "Jim Pick",
     "ruby": "ジム ピック",
     "github": "jimpick",
@@ -79,6 +87,7 @@
   },
   "poledesfetes": {
     "id": "poledesfetes",
+    "自己紹介": "",
     "name": "Vladimir de Turckheim",
     "ruby": "フラディミル デェ・デュルクハイム",
     "github": "vdeturckheim",
@@ -88,6 +97,7 @@
   },
   "PalmaSwell": {
     "id": "PalmaSwell",
+    "自己紹介": "",
     "name": "Mauricio Palma",
     "ruby": "マウリチオ パルマ",
     "github": "Palmaswell",
@@ -97,6 +107,7 @@
   },
   "leichtgewicht": {
     "id": "leichtgewicht",
+    "自己紹介": "",
     "name": "Martin Heidegger",
     "ruby": "マルティン ハイデッガー",
     "github": "martinheidegger",
@@ -106,6 +117,7 @@
   },
   "sitnikcode": {
     "id": "sitnikcode",
+    "自己紹介": "",
     "name": "Andrey Sitnik",
     "ruby": "アンドレイ シットニック",
     "github": "ai",
@@ -115,6 +127,7 @@
   },
   "smogami": {
     "id": "smogami",
+    "自己紹介": "",
     "name": "Yasuhiro Tatsuno",
     "ruby": "",
     "github": "exoego",
@@ -124,6 +137,7 @@
   },
   "kgryte": {
     "id": "kgryte",
+    "自己紹介": "",
     "name": "Athan Reines",
     "ruby": "イーサン レーヌス",
     "github": "kgryte",
@@ -138,7 +152,8 @@
     "ruby": "Ganeko Masashi",
     "github": "mganeko",
     "twitter": "massie_g",
-    "photo": "https://drive.google.com/uc?export=download&id=0B4-t1ajGXcMiSDZJemZEV2l6bk0"
+    "photo": "https://drive.google.com/uc?export=download&id=0B4-t1ajGXcMiSDZJemZEV2l6bk0",
+    "biography": ""
   },
   "sota1235": {
     "id": "sota1235",
@@ -151,6 +166,7 @@
   },
   "james_k_nelson": {
     "id": "james_k_nelson",
+    "自己紹介": "",
     "name": "James K Nelson",
     "ruby": "",
     "github": "jamesknelson",
@@ -165,7 +181,8 @@
     "ruby": "Wada Takuto",
     "github": "twada",
     "twitter": "t_wada",
-    "photo": "https://www.dropbox.com/s/w4mvuaheuk3gf33/twada.png?dl=1"
+    "photo": "https://www.dropbox.com/s/w4mvuaheuk3gf33/twada.png?dl=1",
+    "biography": ""
   },
   "vwxyutarooo": {
     "id": "vwxyutarooo",
@@ -174,7 +191,8 @@
     "ruby": "Miyazaki Yutaro",
     "github": "vwxyutarooo",
     "twitter": "vwxyutarooo",
-    "photo": "https://avatars0.githubusercontent.com/u/5744411"
+    "photo": "https://avatars0.githubusercontent.com/u/5744411",
+    "biography": ""
   },
   "yosuke_furukawa": {
     "id": "yosuke_furukawa",
@@ -183,7 +201,8 @@
     "ruby": "Furukawa Yosuke",
     "github": "yosuke-furukawa",
     "twitter": "yosuke_furukawa",
-    "photo": "https://nodefest.jp/2017/img/speakers/pic-yosuke.jpg"
+    "photo": "https://nodefest.jp/2017/img/speakers/pic-yosuke.jpg",
+    "biography": ""
   },
   "lulzneko": {
     "id": "lulzneko",
@@ -192,10 +211,12 @@
     "ruby": "",
     "github": "lulzneko",
     "twitter": "lulzneko",
-    "photo": "https://pbs.twimg.com/profile_images/916137923023532032/HkJ90iRR_400x400.jpg"
+    "photo": "https://pbs.twimg.com/profile_images/916137923023532032/HkJ90iRR_400x400.jpg",
+    "biography": ""
   },
   "damncabbage": {
     "id": "damncabbage",
+    "自己紹介": "",
     "name": "Rob Howard",
     "ruby": "ロッブ ハウワード",
     "github": "damncabbage",
@@ -210,7 +231,8 @@
     "ruby": "Sakakibara Masahiko",
     "github": "rdlabo",
     "twitter": "rdlabo",
-    "photo": "https://pbs.twimg.com/profile_images/894472371779682305/RjStTBFc_400x400.jpg"
+    "photo": "https://pbs.twimg.com/profile_images/894472371779682305/RjStTBFc_400x400.jpg",
+    "biography": ""
   },
   "sekikazu01": {
     "id": "sekikazu01",
@@ -219,7 +241,8 @@
     "ruby": "",
     "github": "kazuyaseki",
     "twitter": "sekikazu01",
-    "photo": "https://pbs.twimg.com/profile_images/944806096354422784/qzRjcEba_400x400.jpg"
+    "photo": "https://pbs.twimg.com/profile_images/944806096354422784/qzRjcEba_400x400.jpg",
+    "biography": ""
   },
   "maxmellon_9039": {
     "id": "maxmellon_9039",
@@ -228,7 +251,8 @@
     "ruby": "Tsuji Kento",
     "github": "maxmellon",
     "twitter": "maxmellon_9039",
-    "photo": "https://drive.google.com/uc?export=download&id=1_GIRqDoY4BS6yzM63q2KtaT5ZQ_TkMUN"
+    "photo": "https://drive.google.com/uc?export=download&id=1_GIRqDoY4BS6yzM63q2KtaT5ZQ_TkMUN",
+    "biography": ""
   },
   "4245Ryomt": {
     "id": "4245Ryomt",
@@ -236,7 +260,8 @@
     "name": "鈴木 亮太",
     "ruby": "Suzuki Ryota",
     "twitter": "4245Ryomt",
-    "photo": "https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/31944221_1106601502825593_4451264987012268032_o.jpg?_nc_cat=0&oh=ceab7dde8c9e1f0cf46e722263053e98&oe=5C61C422"
+    "photo": "https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/31944221_1106601502825593_4451264987012268032_o.jpg?_nc_cat=0&oh=ceab7dde8c9e1f0cf46e722263053e98&oe=5C61C422",
+    "biography": ""
   },
   "hrnkoji": {
     "id": "hrnkoji",
@@ -245,7 +270,8 @@
     "ruby": "",
     "github": "hrnkoji",
     "twitter": "hrnkoji",
-    "photo": "https://pbs.twimg.com/profile_images/980271684140777472/X-lQIIxZ_400x400.jpg"
+    "photo": "https://pbs.twimg.com/profile_images/980271684140777472/X-lQIIxZ_400x400.jpg",
+    "biography": ""
   },
   "tokutoku393": {
     "id": "tokutoku393",
@@ -254,7 +280,8 @@
     "ruby": "",
     "github": "tokutoku393",
     "twitter": "tokutoku393",
-    "photo": "https://drive.google.com/uc?export=download&id=1vPHc05iv1JL33Pu-oLtFqLaZyv5nIY3m"
+    "photo": "https://drive.google.com/uc?export=download&id=1vPHc05iv1JL33Pu-oLtFqLaZyv5nIY3m",
+    "biography": ""
   },
   "about_hiroppy": {
     "id": "about_hiroppy",
@@ -263,7 +290,8 @@
     "ruby": "",
     "github": "hiroppy",
     "twitter": "about_hiroppy",
-    "photo": "https://s.gravatar.com/avatar/a77866f68e951bed2a0bfb8e15b751c5?s=150"
+    "photo": "https://s.gravatar.com/avatar/a77866f68e951bed2a0bfb8e15b751c5?s=150",
+    "biography": ""
   },
   "ohbarye": {
     "id": "ohbarye",
@@ -277,6 +305,7 @@
   },
   "stephaniecodes": {
     "id": "stephaniecodes",
+    "自己紹介": "",
     "name": "Stephanie Nemeth",
     "ruby": "ステファニー ネメス",
     "github": "traumverloren",
@@ -291,7 +320,8 @@
     "ruby": "",
     "github": "shimataro",
     "twitter": "shimataro999",
-    "photo": "https://avatars0.githubusercontent.com/u/3448502"
+    "photo": "https://avatars0.githubusercontent.com/u/3448502",
+    "biography": ""
   },
   "kimamula": {
     "id": "kimamula",
@@ -300,7 +330,8 @@
     "ruby": "Imamura Kenshi",
     "github": "kimamula",
     "twitter": "kimamula",
-    "photo": "https://pbs.twimg.com/profile_images/378800000135653763/c7e0aee0c3c256e433c9f5bf1b6164ae_400x400.jpeg"
+    "photo": "https://pbs.twimg.com/profile_images/378800000135653763/c7e0aee0c3c256e433c9f5bf1b6164ae_400x400.jpeg",
+    "biography": ""
   },
   "sbntaminif": {
     "id": "sbntaminif",
@@ -309,7 +340,8 @@
     "ruby": "",
     "github": "taminif",
     "twitter": "sbntaminif",
-    "photo": "https://pbs.twimg.com/profile_images/860298124014768128/YwDzbVR-_400x400.jpg"
+    "photo": "https://pbs.twimg.com/profile_images/860298124014768128/YwDzbVR-_400x400.jpg",
+    "biography": ""
   },
   "daizplus": {
     "id": "daizplus",
@@ -318,7 +350,8 @@
     "ruby": "Iizuka Daiki",
     "github": "daiiz",
     "twitter": "daizplus",
-    "photo": "https://www.notainc.com/img/people/P1050293.jpg"
+    "photo": "https://www.notainc.com/img/people/P1050293.jpg",
+    "biography": ""
   },
   "daikiyokoi": {
     "id": "daikiyokoi",
@@ -326,7 +359,8 @@
     "name": "Daiki Yokoi",
     "ruby": "",
     "twitter": "",
-    "photo": "https://drive.google.com/uc?export=download&id=1Bytdui3Vi9XY4vntCEl5d4IobzVFcKKu"
+    "photo": "https://drive.google.com/uc?export=download&id=1Bytdui3Vi9XY4vntCEl5d4IobzVFcKKu",
+    "biography": ""
   },
   "n0bisuke": {
     "id": "n0bisuke",
@@ -335,7 +369,8 @@
     "ruby": "",
     "github": "n0bisuke",
     "twitter": "n0bisuke",
-    "photo": "https://pbs.twimg.com/profile_images/1182958704/9a09649f-0b54-4c57-8c91-60d76cbcabfa_400x400.jpg"
+    "photo": "https://pbs.twimg.com/profile_images/1182958704/9a09649f-0b54-4c57-8c91-60d76cbcabfa_400x400.jpg",
+    "biography": ""
   },
   "hepppook": {
     "id": "hepppook",
@@ -343,10 +378,12 @@
     "name": "へっぽこまるこ",
     "ruby": "",
     "twitter": "hepppook",
-    "photo": "https://pbs.twimg.com/profile_images/1033740679216685056/5zgwBx83_400x400.jpg"
+    "photo": "https://pbs.twimg.com/profile_images/1033740679216685056/5zgwBx83_400x400.jpg",
+    "biography": ""
   },
   "yanarchy": {
     "id": "yanarchy",
+    "自己紹介": "",
     "name": "Yan Fan",
     "ruby": "ヤン ファン",
     "github": "yanarchy",
@@ -360,7 +397,8 @@
     "name": "Daiki Arai",
     "ruby": "",
     "twitter": "darai_0512",
-    "photo": "https://avatars3.githubusercontent.com/u/11780786"
+    "photo": "https://avatars3.githubusercontent.com/u/11780786",
+    "biography": ""
   },
   "sin_ikkyu": {
     "id": "sin_ikkyu",
@@ -368,10 +406,12 @@
     "name": "石川 将吾",
     "ruby": "Ishikawa Shogo",
     "twitter": "sin_ikkyu",
-    "photo": "https://drive.google.com/uc?export=download&id=0B5DyL39llQvoN1AycmNJZkM3bm9Ca1ZPSHMyUWk3aF84YTVB"
+    "photo": "https://drive.google.com/uc?export=download&id=0B5DyL39llQvoN1AycmNJZkM3bm9Ca1ZPSHMyUWk3aF84YTVB",
+    "biography": ""
   },
   "sannekalkman": {
     "id": "sannekalkman",
+    "自己紹介": "",
     "featured": "",
     "name": "Sanne Kalkman",
     "ruby": "サンナ カルクマン",
@@ -382,6 +422,7 @@
   },
   "sangwhanmoon": {
     "id": "sangwhanmoon",
+    "自己紹介": "",
     "featured": "",
     "name": "Sangwhan Moon",
     "ruby": "サンワン ムーン",
@@ -389,5 +430,16 @@
     "twitter": "sangwhanmoon",
     "photo": "https://pbs.twimg.com/profile_images/896656760638906368/BDnJz08D_400x400.jpg",
     "biography": "Sangwhan is the director of engineering at a startup specializing in computer vision called Odd Concepts. He has more than 10 years of experience in web standards, and has been an editor of multiple W3C standards and now is an elected member of the W3C Technical Architecture Group."
+  },
+  "kosamari": {
+    "id": "kosamari",
+    "自己紹介": "",
+    "featured": "",
+    "name": "Mariko Kosaka",
+    "ruby": "",
+    "github": "kosamari",
+    "twitter": "kosamari",
+    "photo": "https://nodefest.jp/2017/img/speakers/pic-kosamari.jpg",
+    "biography": "Mariko Kosaka is an engineer who loves data and knitting."
   }
 }

@@ -106,4 +106,13 @@ We'll be stepping through:
 ・ Code Generating (taking that representation and turning it into, in this case, JavaScript).
 
 This workshop is for people who are already somewhat familiar with JavaScript (just the language itself, not any particular library or framework). To get started, you only need the workshop git repository (TBA), a Terminal / Console, Node.js 8+, and a text editor of your choice."
-#1 by yosuke_furukawa - summary,Workshop: JavaScript TodoMVC,,Workshop: JavaScript TodoMVC
+#1 by yosuke_furukawa - summary,Workshop: JavaScript TodoMVC,Workshop: JavaScript TodoMVC,
+#1 by yosuke_furukawa - description,"このワークショップは日本語で行われます。
+リクルートテクノロジーズのJavaScript Bootcamp で使っている TodoMVC アプリを作りながら学ぶワークショップです。
+
+ワークショップのゴール：
+・ JavaScriptの基礎から簡単なシングルページのアプリケーションを作れるようになるまでを教えます。","このワークショップは日本語で行われます。
+リクルートテクノロジーズのJavaScript Bootcamp で使っている TodoMVC アプリを作りながら学ぶワークショップです。
+
+ワークショップのゴール：
+・ JavaScriptの基礎から簡単なシングルページのアプリケーションを作れるようになるまでを教えます。",
