@@ -28,7 +28,9 @@ This talk will cover:
 #1 by sin_ikkyu - summary,Deploy TypeScript with CodePipeline in Fargate,Deploy TypeScript with CodePipeline in Fargate,
 #1 by sin_ikkyu - description,TypeScriptを用いたLambda開発をすることのメリットと、DevOpsの観点から、これのデプロイに関してCodePinelineとCodeBuildを用いてサーバレスに行う方法について発表します。,TypeScriptを用いたLambda開発をすることのメリットと、DevOpsの観点から、これのデプロイに関してCodePinelineとCodeBuildを用いてサーバレスに行う方法について発表します。,
 After Party - summary,After Party,,After Party
-#1 by n0bisuke - summary,NodeSchool,,NodeSchool
+#1 by n0bisuke - summary,NodeSchool,NodeSchool,
+#2 by n0bisuke - summary,LINE Bot ハンズオン,LINE Bot ハンズオン,
+#3 by n0bisuke - summary,LINE Things ハンズオン,LINE Things ハンズオン,
 Collaboration Space - summary,Collaboration Space,,Collaboration Space
 #1 by tokutoku393 - summary,Workshop: JavaScriptでハードウェア開発やってみよう,Workshop: JavaScriptでハードウェア開発やってみよう,
 #1 by tokutoku393 - description,"このワークショップは日本語で行われます。
