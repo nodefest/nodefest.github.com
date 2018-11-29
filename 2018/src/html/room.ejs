@@ -1,0 +1,102 @@
+<%
+var page = {
+  title: 'Room'
+}
+var _enableBr = function(str) { return str.replace(/\n/g, '<br>'); };
+
+function itemHeader (start, end, clazz) {
+    %><li
+        data-start="<%= momentTz(start).tz('Asia/Tokyo').toISOString() %>"
+        data-end="<%= momentTz(start).tz('Asia/Tokyo').toISOString() %>"
+        class="<%- clazz %>"
+    ><p class="room-entry-time"><%= hh(start) + ' - ' + hh(end) %></p><%
+}
+function itemFooter () {
+    %></li><%
+}
+%>
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Room</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="room-page">
+        <div id="room-time-container">
+             <div id="room-time" class="room-time"></div>
+        </div>
+        <div id="rooms-container">
+            <h1>Rooms</h1>
+            <ul id="rooms">
+            <%
+            for (const calName in calendar ) {
+                const cal = calendar[calName]
+                var count = 0
+                for (const room in cal.rooms) {
+                    const entries = cal.rooms[room]
+                    %>
+                <li><a href="#<%= calName %>-<%= count %>"><%= calName %> - <%= room %></a></li><%
+                    count += 1
+                }
+            }
+            %>
+            </ul>
+        </div>
+        <div>
+            <%
+            for (const calName in calendar ) {
+                const cal = calendar[calName]
+                function hh (time) {
+                    return momentTz(time).tz(cal.googleObject.timeZone).format('H:mm')
+                }
+                var count = 0.
+                for (const room in cal.rooms) {
+                    const entries = cal.rooms[room]
+                    const firstEntry = entries[0]
+                    %>
+                <ul id="list-<%= calName + '-' + count %>" class="room-list">
+                    <li class="room-entry-closed room-entry-notstarted">This rooms opens at <%= hh(firstEntry.start) %></li>
+                    <%
+                    var formerEnd;
+                    for (const entry of entries) {
+                        const speaker = speakers[entry.person]
+                        const slotClasses = new Map()
+                        if (formerEnd && entry.start > formerEnd) {
+                            itemHeader(formerEnd, entry.start, 'room-entry-break')
+                            %>Break<%
+                            itemFooter()
+                        }
+                        itemHeader(entry.start, entry.end)
+                        %>
+                        <hr/>
+                        <h3><%= entry.summary %></h3>
+                        <p><%= entry.description %></p>
+                        <hr/>
+                        <%
+                        if (speaker) {
+                            %><div class="room-image" style="background-image:url(img/speakers/pic-<%=speaker.id%>.jpg);"></div><%
+                            var translation = translations.speaker[speaker.id] || {}
+                            var bio = speaker['自己紹介'] || translation.ja || speaker.biography
+                            if (bio) {
+                                %><p><%- _enableBr(bio) %></p><%
+                            }
+                        }
+                        itemFooter()
+                        formerEnd = entry.end
+                    }
+                %>  
+                    <li class="room-entry-closed room-entry-finished">This room closes at <%= hh(formerEnd) %>. Thank you for joining us today!</li>
+                </ul><%
+                    count += 1
+                }
+            }%>    
+            </div>
+    </body>
+  <script src="main.js"></script>
+</html>
+
